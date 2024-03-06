@@ -6,49 +6,15 @@ layout: redirect
 
 ### Overview {#overview}
 
-Devices can authenticate against the {{< product-c8y-iot >}} platform via mTLS protocol using X.509 client certificates.  
+Devices can authenticate against the {{< product-c8y-iot >}} platform via mTLS over REST protocol using X.509 client certificates.  
 
 Each tenant individually defines whom it trusts by uploading the base CA certificate.
 
 Retrieving device access tokens from the platform with certificates does not require the tenant ID, username and password. Authentication information will be obtained from the certificates.
 
-#### General requirements for connecting devices with certificates {#general-requirements-for-connecting-devices-with-certificates}
-
-* The CA certificate may also be a self-signed certificate.
-* Certificates must be uploaded as X.509 version 3 certificates.
-* Uploaded certificates must have set `BasicConstraints:[CA:true]`.
-* Devices must trust the {{< product-c8y-iot >}} server certificate.
-* Certificates used by devices must contain the certificate chain that includes the uploaded CA certificate.
-* Certificates used by devices must be signed either by uploaded CA certificates or by intermediate certificates signed by uploaded CA certificates.
-
-### Registering devices using certificates {#registering-devices-using-certificates}
-
-{{< product-c8y-iot >}} supports two ways to register devices which will be able to connect using certificates:
-
-**Auto registration**
-
-The user for the device will be created during the first API call, if a device certificate is derived from a trusted certificate which was uploaded to the {{< product-c8y-iot >}} platform with a flag _autoRegistrationEnabled_ with a value of true.
-Auto-registration must be activated for the uploaded certificate.
-If auto-registration is not activated it is required to use the bulk registration (see below).
-To manage the auto registration field of uploaded certificates in the UI refer to [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates).
-
-**Bulk registration**
-
-The user for the device can also be created via the standard [bulk registration](/device-management-application/registering-devices/#to-bulk-register-devices) in the Device management application.
-
-The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/core/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}. Moreover, it is required that the CSV file has an additional column AUTH_TYPE with value CERTIFICATES, and that the column CREDENTIALS is either not present or has an empty value.
-
-**Single registration**
-
-Single registration is not supported for devices which are going to use certificates for authentication.
-
-{{< c8y-admon-info >}}
-During device registration, the device user is created, which is necessary for device communication with the platform.
-{{< /c8y-admon-info >}}
-
 ### JWT token retrieval {#jwt-token-retrieval}
 
-A device which is authenticated by certificates and retrieves tokens from the {{< product-c8y-iot >}} platform which can later be used to authenticate HTTP requests.
+The devices can connect to {{< product-c8y-iot >}} using the below REST endpoint and authenticate using the certificates. In response, a JWT session token is issued by the platform after successful authentication which can later be used to make subsequent requests.
 
 
 	POST /devicecontrol/deviceAccessToken
@@ -59,13 +25,11 @@ This call can be done by executing the following curl statement:
 
     curl -v -cert domain-cert.pem -key domain-private-key.pem \
        -H 'Accept: application/json' \
-       -H 'X-Ssl-Cert-Chain:<cert-chain>' \
+       -H 'X-Ssl-Cert-Chain:<device certificate chain>' \
        -X POST \
        https://<{{< product-c8y-iot >}} tenant domain>/devicecontrol/deviceAccessToken
 
-Replace `<cert-chain>` with your valid certificate chain when registering with {{< product-c8y-iot >}}.
-
-The same credentials used to access the {{< product-c8y-iot >}} Web UI can be used to execute the REST calls.
+Replace `<device certificate chain>` with your valid certificate chain when registering with {{< product-c8y-iot >}}.
 
 You will receive a response like that:
 
@@ -81,20 +45,26 @@ The default value is 1 hour.
 The minimum allowed value is 5 minutes.
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
-A device can fetch a new device token before the old one expires, if it requests a JWT token after half of the token's lifetime has passed.
+It is recommended that the devices invalidate the session by explicitly calling 'logout' API before closing the HTTP connection. This will avoid any misuse of JWT session tokens generated.
+Here is the logout API.
+
+        POST /user/logout
+        Accept: application/json
+        Content-Type: application/json
+        Authorization: Bearer "JWT Session token"
 
 {{< c8y-admon-caution >}}
-Only devices which are registered to use certificate authentication can retrieve a JWT token via mTLS protocol using this endpoint. Once the certificate-based mutual authentication is successful with a valid certificate chain the device retrieves the token. The mTLS protocol can be leveraged using the device certificate and its key using this endpoint only.
+Only devices that are registered to use certificate authentication can retrieve a JWT session token using this endpoint. Once the device successfully authenticates using certificates (ie., by using its private key and the certificate chain), the device retrieves the JWT session token. This mTLS over HTTP endpoint can be leveraged only over this endpoint.
 {{< /c8y-admon-caution >}}
 
 
-### mTLS example client {#mTLS-example-client}
+### x509 rest client {#x509-rest-client}
 
 The code of the {{< product-c8y-iot >}} mTLS example client implemented in Java, which connects to the platform using x.509 certificates, is available here: https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mtls-client.
 
 The following configuration is required before calling the device access token API:
 
-    private static final String KEYSTORE_NAME = "";
+     private static final String KEYSTORE_NAME = "";
 	 private static final String KEYSTORE_PASSWORD = "";
 	 private static final String KEYSTORE_FORMAT = "";
 	 private static final String TRUSTSTORE_NAME = "";

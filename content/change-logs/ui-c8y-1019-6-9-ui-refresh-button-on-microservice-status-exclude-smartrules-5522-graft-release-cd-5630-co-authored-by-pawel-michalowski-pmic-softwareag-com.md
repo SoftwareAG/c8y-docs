@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55911
 version: 1019.6.9
 ---
-The user interface refresh button on the microservice detail view was updated to exclude the SmartRules microservice status.
+The **Refresh** button on the microservice status details page includes the smart rules list.

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Support for Certificate Revocation List.
+title: CRL support in Device Certificate authentication.
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-41760
 version: 10.18.590.0
 ---
-Administrators can configure the Certificate Revocation List (CRL) settings (online or offline). If the revoked certificate information is maintained by the issuing Certificate Authority (CA), the online check option can be selected. If the CA does not maintain the CRL information, the offline setup can be selected. In offline setup, the revoked certificate serial number can either be added manually or can be uploaded in bulk using the file template attached.
+Administrators can configure the Certificate Revocation List (CRL) settings. When a certificate is compromised, the platform is now capable of performing the revocation check during the device authentication process. Administrators can choose an offline mode where one can manually add revoked certificate details or choose an online mode if their issuing CA maintains the revoked list of certificates.

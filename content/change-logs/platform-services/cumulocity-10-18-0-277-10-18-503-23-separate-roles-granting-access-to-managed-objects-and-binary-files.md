@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55275
 version: 10.18.0.277, 10.18.503.23
 ---
-Security improved by splitting the Inventory role permissions into separate roles for the Managed Objects and Binary.  This enables more granular permissions to be assigned, the existing permissions will still work.
+This features introduces two new permissions to control access to Managed Objects and Binaries separately. This enables tenant administrators to control the access to objects in a more granular way.

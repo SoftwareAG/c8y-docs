@@ -14,5 +14,5 @@ build_artifact:
 ticket: MTM-55259
 version: 10.20.6.0
 ---
-To improve security user administrators can no longer explicitly set passwords for other users in the tenant or other tenants' admin. This change prevents an attacker from having access to all users, in case the administrator account is compromised.
+For security reasons, The platform has disabled the administrator capability of changing passwords of other users. The users are allowed only to change their own passwords. However, Administrators can still enforce the users to change their passwords on their next login in case of any anticipated breaches.
 Note that the administrator will still have the option to force the user to reset the password on the next login or disable the user.

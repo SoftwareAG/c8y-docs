@@ -9,7 +9,7 @@ component:
   - value: component-1KLUzmqfe
     label: LWM2M
 build_artifact:
-  - value: tc-pjJiURv9Y
+  - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-3311
 version: 1018.540.66

@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: DM-3311
-version: 1018.503.55
+version: 1018.540.66
 ---
 When a LWM2M device sends a composite request with multiple Resource Instance IDs from a same Resource ID and this Resource ID has an additional action defined, only one of these Resource Instances values was sent to this additional action for processing. The same behavior is observed when you try to do a composite read (`cread`) device operation with a row of Resource Instance IDs. These issues are resolved and all requested Resource Instance IDs are processed

@@ -1,6 +1,6 @@
 ---
 date:
-title: Map marker visibility based on Location property values in map widget
+title: Markers correctly displayed in the Map widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Adjust widget coordinates and size to fit new dashboard grid
+title: Adjust device "Info" dashboard default settings to fit new grid
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3200
 version: 1019.7.7
 ---
-Adjust widget coordinates and size to fit new dashboard grid
+In Device management, resetting the device "Info" dashboard resulted in widgets taking only half of the available dashboard space. Default dashboard settings have been now adjusted to fit new dashboard grid and "Reset dashboard" works properly again.

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-07T10:00:00.100Z
 title: LWM2M agent process only one of a multiple Resource Instances sent in a row
 product_area: Device management & connectivity
 change_type:

@@ -83,12 +83,12 @@ Enter one of the following URLs in the browser:
 The Login screen appears. If this is your first login, log in with user "admin" and password "admin-pass" and change the password.
 
 {{< c8y-admon-important >}}
-After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}}  Edge tenants and change the admin credentials.
+After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}}  "edge" tenants and change the admin credentials.
 {{< /c8y-admon-important >}}
 
 - To log in to the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
 
-- To log in to the {{< product-c8y-iot >}}  Edge tenant, use the URL `https://edge.<domain_name>`.
+- To log in to the {{< product-c8y-iot >}}  "edge" tenant, use the URL `https://edge.<domain_name>`.
 
 If you are logging in for the first time, you will see a cookie banner at the bottom:
 

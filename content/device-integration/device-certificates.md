@@ -1,25 +1,35 @@
 ---
-weight: 80
-title: Device certificates
-layout: redirect
+weight: 20
+title: Device Certificates
+layout: bundle
+slug: device-certificates
+section:
+  - device_management
 ---
 
-### Overview {#overview}
-
-Devices can authenticate against the {{< product-c8y-iot >}} platform using X.509 client certificates.  
+Devices can also authenticate using X.509 certificates over REST (port 443) using mTLS, against the {{< product-c8y-iot >}}.
 
 Devices can communicate using the MQTT interface of the platform, but MQTT over WebSocket is not supported. The {{< product-c8y-iot >}} platform expects devices to connect using SSL on port 8883.
+
+Devices can also generate JWT session token by using X.509 certificates for authentication over a defined REST endpoint - device access token API. This session token can be used in subsequent requests to authenticate to the {{< product-c8y-iot >}}.
 
 Each tenant individually defines whom it trusts by uploading the base CA certificate.
 
 Devices connecting to the platform with certificates do not need to provide the tenant ID, username and password. Authentication information will be obtained from the certificates.
+
+
+### Prerequisites {#prerequisites}
+
+In order to follow this tutorial, check if the following prerequisites are met:
+
+-   You have a valid tenant, user and password in order to access {{< product-c8y-iot >}}.
+-   The command line tool CURL is installed on your system.
 
 #### General requirements for connecting devices with certificates {#general-requirements-for-connecting-devices-with-certificates}
 
 * The CA certificate may also be a self-signed certificate.
 * Certificates must be uploaded as X.509 version 3 certificates.
 * Uploaded certificates must have set `BasicConstraints:[CA:true]`.
-* The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
 * Devices must trust the {{< product-c8y-iot >}} server certificate.
 * Certificates used by devices must contain the certificate chain that includes the uploaded CA certificate.
 * Certificates used by devices must be signed either by uploaded CA certificates or by intermediate certificates signed by uploaded CA certificates.
@@ -35,6 +45,12 @@ Auto-registration must be activated for the uploaded certificate.
 If auto-registration is not activated it is required to use the bulk registration (see below).
 To manage the auto registration field of uploaded certificates in the UI refer to [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates).
 
+The device_user will be created when the API is called for the first time, provided:
+
+* The trusted certificate is uploaded to the platform.
+* The auto registration is enabled.
+* The device certificate is derived from a trusted certificate uploaded to the {{< product-c8y-iot >}}.
+
 **Bulk registration**
 
 The user for the device can also be created via the standard [bulk registration](/device-management-application/registering-devices/#to-bulk-register-devices) in the Device management application.
@@ -48,29 +64,6 @@ Single registration is not supported for devices which are going to use certific
 {{< c8y-admon-info >}}
 During device registration, the device user is created, which is necessary for device communication with the platform.
 {{< /c8y-admon-info >}}
-
-### JWT token retrieval {#jwt-token-retrieval}
-
-A device which is authenticated by certificates and connected to the {{< product-c8y-iot >}} platform can receive a token which can later be used to authenticate HTTP requests.
-
-* First the device subscribes to the topic <kbd>s/dat</kbd>.
-* Then the device publishes an empty message on the topic <kbd>s/uat</kbd>.
-* After a while a token will be published on the subscribed <kbd>s/dat</kbd> topic in the format:
-
-```plain
-71,<<Base64 encoded JWT token>>
-```
-
-A device token lifetime can be configured using tenant options with a category of `oauth.internal` and a key of `device-token.lifespan.seconds`.
-The default value is 1 hour.
-The minimum allowed value is 5 minutes.
-Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API) in the {{< openapi >}} for more details.
-
-A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
-
-{{< c8y-admon-caution >}}
-A device can only subscribe to a topic like <kbd>s/dat</kbd> once certificate based mutual authentication is successful. The MQTT broker will not make any information available on the device's subscribed topics until the device publishes a message to <kbd>s/uat</kbd> or <kbd>s/us</kbd>.
-{{< /c8y-admon-caution >}}
 
 ### Introduction to X.509 certificates {#introduction-to-x509-certificates}
 
@@ -155,23 +148,23 @@ To generate certificates we use the OpenSSL toolkit. If you do not have it alrea
 
 1. Create a directory for the root certificate and the signing configuration, for example:
 
-    `mkdir /home/user/Desktop/caCertificate`
+   `mkdir /home/user/Desktop/caCertificate`
 
 2. Go to the created directory and create a configuration file for your CA certificate:
 
-    `touch caConfig.cnf`
+   `touch caConfig.cnf`
 
 3. Create a database file for keeping the history of certificates signed by the CA:
 
-    `touch database.txt`
+   `touch database.txt`
 
 4. Create a serial file with initial serial number, which will be used to identify signed certificates. After assigning this serial to the signed certificate, the value in this file will be automatically incremented:
 
-    `echo 1000 > serial`
+   `echo 1000 > serial`
 
 5. Create subdirectories for signed certificates and the certificate revocation list:
 
-    `mkdir deviceCertificates crl`
+   `mkdir deviceCertificates crl`
 
 6. Fill in the configuration file. This is the example configuration, which can be used for tests after changing the directory `dir` to your own. If you want to use it in the production environment then please consult it first with some security specialist:
 
@@ -254,15 +247,15 @@ To generate certificates we use the OpenSSL toolkit. If you do not have it alrea
 
 7. Create a private key with aes256 encryption and a length of at least 2048 bits. You will also be asked to set the password for the key during its creation:
 
-    `openssl genrsa -aes256 -out caKey.pem 4096`
+   `openssl genrsa -aes256 -out caKey.pem 4096`
 
 8. Create a self-signed certificate using specifications from the configuration file. The "days" parameter says how long this certificate will be valid since the generation, so set it as you prefer:
 
-    `openssl req -config caConfig.cnf -key caKey.pem -new -x509 -days 7300 -sha256 -extensions v3_ca -out caCert.pem`
+   `openssl req -config caConfig.cnf -key caKey.pem -new -x509 -days 7300 -sha256 -extensions v3_ca -out caCert.pem`
 
 9. You can print the created certificate with the command:
 
-    `openssl x509 -noout -text -in caCert.pem`
+   `openssl x509 -noout -text -in caCert.pem`
 
 #### Creating an intermediate certificate {#creating-an-intermediate-certificate}
 
@@ -285,7 +278,7 @@ To create the intermediate certificate:
 7. Generate a private key for the intermediate certificate: `openssl genrsa -aes256 -out intermediateKey.pem 4096`
 8. Generate a certificate signing request: `openssl req -config intermediateConfig.cnf -new -sha256 -key intermediateKey.pem -out intermediateCsr.pem`
 9. Go to the caCertificate directory and generate a signed intermediate certificate. You must use the CA configuration here, because the private key specified in the configuration file will be used to sign the certificate: `openssl ca -config caConfig.cnf -extensions v3_ca -days 3650 -notext -md sha256 -in intermediateCertificate/intermediateCsr.pem -out intermediateCertificate/intermediateCert.pem`
-10. Verify if the generated certificate is correctly signed by CA: `openssl verify -CAfile caCert.pem intermediateCertificate/intermediateCert.pem`   
+10. Verify if the generated certificate is correctly signed by CA: `openssl verify -CAfile caCert.pem intermediateCertificate/intermediateCert.pem`
 
 #### Creating a device certificate signed by CA or intermediate {#creating-a-device-certificate-signed-by-ca-or-intermediate}
 
@@ -294,7 +287,7 @@ To create the intermediate certificate:
 3. Generate the certificate signing request (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl req -config caConfig.cnf -new -sha256 -key deviceCertificates/deviceKey.pem -out deviceCertificates/deviceCsr.pem`
    Remember that the `commonName` of the device certificate, which you will be asked to provide in the console, must match the [ClientId](/device-integration/mqtt/#mqtt-clientid) of the device during the connection.
 4. Generate the certificate signed by the CA or intermediate (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl ca -config caConfig.cnf -extensions v3_signed -days 365 -notext -md sha256 -in deviceCertificates/deviceCsr.pem -out deviceCertificates/deviceCert.pem`
-5. Verify if the generated certificate is correctly signed by CA or intermediate (change "caCert.pem" to "intermediateCert.pem" if you are in the intermediateCertificate directory): `openssl verify -partial_chain -CAfile caCert.pem deviceCertificates/deviceCert.pem`    
+5. Verify if the generated certificate is correctly signed by CA or intermediate (change "caCert.pem" to "intermediateCert.pem" if you are in the intermediateCertificate directory): `openssl verify -partial_chain -CAfile caCert.pem deviceCertificates/deviceCert.pem`
 
 #### Creating the chain of certificates {#creating-the-chain-of-certificates}
 
@@ -385,18 +378,18 @@ To ensure verification of ownership by the uploader, a proof of possession is re
 The steps for the proof of possession are as follows:
 
 1. Navigate to **Management** > **Trusted certificates** in the Device management application and verify that the certificate has been uploaded properly.
-<br>![Verify certificate](/images/mqtt/mqtt-cert-check.png)
+   <br>![Verify certificate](/images/mqtt/mqtt-cert-check.png)
 
 2. In the **Proof of Possession** section of the certificate details, download the verification code.
-<br>![Download verification code](/images/mqtt/mqtt-cert-download-unsigned.png)
+   <br>![Download verification code](/images/mqtt/mqtt-cert-download-unsigned.png)
 
 3. Encrypt the verification code using the private key of the certificate to produce the signed verification code.
-Use the following OpenSSL command:
+   Use the following OpenSSL command:
 
-    `openssl dgst -sha256 -sign <private.key> <verification_code.txt> | openssl base64 -A`
+   `openssl dgst -sha256 -sign <private.key> <verification_code.txt> | openssl base64 -A`
 
 4. Upload the signed verification code to the platform.
-<br>![Upload signed verification code](/images/mqtt/mqtt-cert-upload-signed.png)
+   <br>![Upload signed verification code](/images/mqtt/mqtt-cert-upload-signed.png)
 
 The proof of possession is confirmed if the uploaded signed verification code matches the signed verification code expected by the platform. This is indicated by switching the state from "Incomplete" to "Complete" in the **Proof of Possession** section.
 
@@ -404,50 +397,3 @@ The proof of possession is confirmed if the uploaded signed verification code ma
 {{< c8y-admon-info >}}
 If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< product-c8y-iot >}} support team can complete the proof of possession through a back end API upon reasonable verification.
 {{< /c8y-admon-info >}}
-
-### MQTT example client {#mqtt-example-client}
-
-The code of the {{< product-c8y-iot >}} MQTT example client implemented in Java, which connects to the platform using x.509 certificates, is available here: https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mqtt-client.
-This example client uses the implementation of Eclipse Paho, which is described in detail on their website: https://www.eclipse.org/paho/index.php?page=documentation.php.
-
-Here is an example that shows how to add the needed dependency in Maven to use Eclipse Paho client:
-
-    <dependency>
-        <groupId>org.eclipse.paho</groupId>
-        <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
-        <version>${paho.version}</version>
-    </dependency>
-
-Then the instance of the MQTT client can be created with a single line:
-
-
-    MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());
-
-The BROKER_URL should contain protocol, url and port, which the client will connect to, like this: `ssl://<cumulocity url>:8883`.
-The CLIENT_ID value must match the value of the common name of the device certificate that will be used.
-The "d:" prefix is used in {{< product-c8y-iot >}} for device connections and it should not be removed or changed.
-Now the only thing that must be configured to establish the SSL connection is to fill paths in the code fragment:
-
-    sslProperties.put(SSLSocketFactoryFactory.KEYSTORE, getClass().getClassLoader().getResource(KEYSTORE_NAME).getPath());
-    sslProperties.put(SSLSocketFactoryFactory.KEYSTOREPWD, KEYSTORE_PASSWORD);
-    sslProperties.put(SSLSocketFactoryFactory.KEYSTORETYPE, KEYSTORE_FORMAT);
-    sslProperties.put(SSLSocketFactoryFactory.TRUSTSTORE, getClass().getClassLoader().getResource(TRUSTSTORE_NAME).getPath());
-    sslProperties.put(SSLSocketFactoryFactory.TRUSTSTOREPWD, TRUSTSTORE_PASSWORD);
-    sslProperties.put(SSLSocketFactoryFactory.TRUSTSTORETYPE, TRUSTSTORE_FORMAT);
-
-* KEYSTORE_NAME is the path to your keystore, which contains the private key and the chain of certificates, which the device will use to authenticate itself.
-* KEYSTORE_PASSWORD is the password created for keystore to use its private key.
-* KEYSTORE_FORMAT should be "JKS" or "PKCS12" depending on the file format. The path is provided by KEYSTORE_NAME.
-* TRUSTSTORE_NAME is the path to your truststore, which contains the certificate of the server.
-* TRUSTSTORE_PASSWORD is the password to access the truststore.
-* TRUSTSTORE_FORMAT should be "JKS" or "PKCS12" depending on the file format. The path is provided by TRUSTSTORE.
-
-After filling in this data, the example client will use the provided data to connect to the specified platform using certificates.
-The example also shows how to create the callback for the connection.
-First thing is to create the class which implements the interface `MqttCallbackExtended`.
-Then such a class can be created and an instance of it can be provided to the MQTT client: `mqttClient.setCallback(this);`.
-
-In general, the MQTT Eclipse Paho Client uses the Java Secure Socket Extension, which is part of the Java Development Kit, to provide secure connections via SSL.
-JSSE provides the Java implementation of the SSL and TLS protocol, which can be configured by developers using its classes.
-The documentation of the Java Secure Socket Extension shows how the SSL connection is established and provides some examples of customizing the implementation.
-The full document is available on the [official Oracle website](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html).

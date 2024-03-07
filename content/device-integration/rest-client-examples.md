@@ -1,6 +1,6 @@
 ---
-weight: 25
-title: Device integration using MQTT
+weight: 40
+title: Rest client examples
 layout: bundle
 section:
   - device_management

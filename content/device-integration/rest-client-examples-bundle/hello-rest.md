@@ -1,10 +1,8 @@
 ---
-weight: 30
+weight: 10
 title: Hello REST!
 layout: redirect
 ---
-
-### Overview {#overview}
 
 This section gives a very basic example how to create a device representation in {{< product-c8y-iot >}} and subsequently how to send related measurement data.
 

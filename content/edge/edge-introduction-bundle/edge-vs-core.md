@@ -1,16 +1,16 @@
 ---
 weight: 30
-title: Cumulocity IoT Edge versus other Cumulocity IoT deployments
+title: Edge versus other Cumulocity IoT deployments
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} Edge uses the same software as {{< product-c8y-iot >}} platform.
+Edge uses the same software as {{< product-c8y-iot >}} platform.
 
 However, while the base software is the same, there are differences regarding the activated optional features and pre-installed agents.
 
 The following differences apply:
 
-|<div style="width:250px">Area</div>|{{< product-c8y-iot >}} Edge|{{< product-c8y-iot >}} platform
+|<div style="width:250px">Area</div>|Edge|{{< product-c8y-iot >}} platform
 |:---|:---|:--
 |Multi-tenancy|No; single tenant|Yes
 |Cluster|No; single server|Yes

@@ -24,7 +24,7 @@ On VMware Workstation, you must use UTC on your host machine. If you choose not 
 
 4. Start the Edge appliance by clicking **Play virtual machine**.
 
-Next, perform the Edge appliance installation. See, [Installing {{< product-c8y-iot >}} Edge](/edge/installation/).
+Next, perform the Edge appliance installation. See, [Installing Edge](/edge/installation/).
 
 ### Setting up for vmnetcfg utility
 

@@ -3,7 +3,7 @@ weight: 10
 title: Edge CR status InstallLoopBackOff or UpdateLoopBackOff
 layout: redirect
 ---
-After deploying or updating {{< product-c8y-iot >}} Edge, if the Edge CR status is `InstallationLoopBackOff` or `UpdateLoopBackOff`, as part of the output of `kubectl get edge c8yedge -n c8yedge`:
+After deploying or updating Edge, if the Edge CR status is `InstallationLoopBackOff` or `UpdateLoopBackOff`, as part of the output of `kubectl get edge c8yedge -n c8yedge`:
 
 ```shell
 NAME         DOMAIN NAME     VERSION     STATUS     
@@ -12,44 +12,44 @@ c8yedge      myown.iot.com   1017.0.0    InstallLoopBackOff
 
 Describe the Edge CR (cumulocity-iot-edge) with the command `kubectl describe edge c8yedge -n c8yedge`.
 
-In the events section, you will find the reasons for the install or update failure. For example: 
+In the events section, you will find the reasons for the install or update failure. For example:
 
 ```yaml
 Name: c8yedge
 Namespace: c8yedge
-API Version: edge.cumulocity.com/v1 
+API Version: edge.cumulocity.com/v1
 Kind: CumulocityIoTEdge
 
-Status: 
+Status:
 	Deploying Generation: x
-	State: InstallLoopBackOff 
+	State: InstallLoopBackOff
 
-Events: 
- Type    Reason               Age    From               Message 
- ------  ------               ----   ----               ------- 
- Normal  Validating           8m37s  cumulocityiotedge  validating 
- Normal  ValidationPassed     8m37s  cumulocityiotedge  validation passed 
- Normal  Installing           8m34s  cumulocityiotedge  installing 
-…… 
+Events:
+ Type    Reason               Age    From               Message
+ ------  ------               ----   ----               -------
+ Normal  Validating           8m37s  cumulocityiotedge  validating
+ Normal  ValidationPassed     8m37s  cumulocityiotedge  validation passed
+ Normal  Installing           8m34s  cumulocityiotedge  installing
 ……
- Normal  InstallLoopBackOff   1m00s  cumulocityiotedge  waiting for mongo server to be ready 
+……
+ Normal  InstallLoopBackOff   1m00s  cumulocityiotedge  waiting for mongo server to be ready
 ```
 
-Check the logs of the Edge Operator, MongoDB and core pods to get more insights. 
+Check the logs of the Edge Operator, MongoDB and core pods to get more insights.
 
-The Edge Operator logs: 
+The Edge Operator logs:
 
 ```shell
 kubectl logs -n c8yedge deployment.apps/c8yedge-operator-controller-manager -c manager
 ```
 
-MongoDB logs: 
+MongoDB logs:
 
 ```shell
 kubectl logs -n c8yedge logs stategulset.apps/edge-db-rs0 –all-containers --prefix
 ```
 
-Core logs: 
+Core logs:
 
 ```shell
 kubectl logs -n c8yedge logs stategulset.apps/c8ycore-sts –all-containers --prefix

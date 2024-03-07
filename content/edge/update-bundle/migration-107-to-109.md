@@ -1,19 +1,19 @@
 ---
 weight: 15
-title: Migrating Cumulocity IoT Edge 10.7 to 10.9
+title: Migrating Edge 10.7 to 10.9
 layout: redirect
 ---
 
-This section describes the steps to migrate from {{< product-c8y-iot >}} Edge 10.7 to {{< product-c8y-iot >}} Edge 10.9. If you are using a version earlier than {{< product-c8y-iot >}} Edge 10.7 and plan to upgrade to {{< product-c8y-iot >}} Edge 10.9, you must first upgrade to {{< product-c8y-iot >}} Edge 10.7.
+This section describes the steps to migrate from Edge 10.7 to Edge 10.9. If you are using a version earlier than Edge 10.7 and plan to upgrade to Edge 10.9, you must first upgrade to Edge 10.7.
 
 ### Before you begin
 
 - Import the Edge 10.9 appliance, see [Configuring the Edge infrastructure](/edge/setting-up-edge/) for further information.
-- Configure the network and complete the installation procedure on your Edge 10.9 appliance. For details see [Installing {{< product-c8y-iot >}} Edge](/edge/installation/).
+- Configure the network and complete the installation procedure on your Edge 10.9 appliance. For details see [Installing Edge](/edge/installation/).
 
 {{< c8y-admon-important >}} You can have both the Edge 10.7 and the Edge 10.9 appliances on the same host machine. Ensure that the IP address of the Edge 10.9 appliance is different from the IP address of the Edge 10.7 appliance.{{< /c8y-admon-important >}}
 
-For information about upgrading from an earlier version to {{< product-c8y-iot >}} Edge 10.7, see:
+For information about upgrading from an earlier version to Edge 10.7, see:
 
 - [Operating Cumulocity IoT Edge > Upgrading on VMware ESX](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi),
 - [Operating Cumulocity IoT Edge > Upgrading on VMware Workstation Player](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation),
@@ -80,7 +80,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    mongo management --quiet --eval 'db.cmdata.files.find({},{"_id":false, "metadata.id":true,"metadata.name":true})' | jq
    ```
    The command returns the name and ID of the application. For example:
-   
+
    ```shell
    {
      "metadata": {
@@ -117,7 +117,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    Here:
     - APP_ID refers to the ID of the application. For example, 112
     - APP_NAME refers to the name of the application. For example, devicemanagement.zip
-   
+
    For example:
    ```shell
    mongofiles -d management --prefix cmdata get  112 -l /tmp/apps/cockpit.zip
@@ -157,10 +157,10 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
    ```shell
    DEVICE_ID="DEVICE_ID_OF_EDGE_10.7"
-   
+
    curl -v --header "Content-Type: application/json" --request POST --data
    '{"device_id":"'$DEVICE_ID'"}' 127.0.0.1:3032/configuration/edge-agent
-   
+
    systemctl restart edge-agent
    ```
 
@@ -171,7 +171,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    ```
    Here:
     - PATH_TO_BACKED_UP_COLLECTION refers to the location of the 10.7 backup folders in your Edge 10.9 appliance.
-   
+
    For example:
    ```shell
    mongorestore --drop --db edge /home/admin/migration_data/edge/
@@ -187,7 +187,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
    ```
    Wait for Karaf to install the applications. After the installation is complete, the *$UI_VERSION.zip.installed* file appears at */webapps/2Install*.
-   
+
 
 9. Copy the */etc/opcua* directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
 
@@ -209,19 +209,19 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
     - Upload the *streaming-analytics-app.zip* file as a web application.
 
-    - Subscribe the Streaming Analytics application to the Edge tenant.
+    - Subscribe the Streaming Analytics application to the "Edge" tenant.
 
       {{< c8y-admon-important >}} To subscribe the application, the {{< management-tenant >}} user must have the "Tenant Manager" role.{{< /c8y-admon-important >}}
 
     - Delete the Apama Analytics Builder and Apama EPL Apps applications.
 
-    - Log in to the Edge tenant and verify the Streaming Analytics application.
+    - Log in to the "edge" tenant and verify the Streaming Analytics application.
 
 Restoring the Streaming Analytics application completes the migration procedure. Note that the tenants from the Edge 10.9 installation are removed after the successful migration. You are now be able to log in using the Edge 10.7 user credentials.
 
 Next, configure the Edge 10.9 appliance. For example, if you enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
 
-{{< c8y-admon-important >}} 
+{{< c8y-admon-important >}}
 To enable the microservice hosting feature, the {{< management-tenant >}} user must have the "Tenant Manager" role. Use the 10.7 {{< management-tenant >}} admin credentials. By default, the credentials are sysadmin/sysadmin-pass.
 {{< /c8y-admon-important >}}
 
@@ -310,7 +310,7 @@ Before copying the backup, ensure that there is sufficient disk space in your Ed
    ```
    Here:
    - USERNAME and PASSWORD refers to the {{< management-tenant >}} user credentials.
-   
+
 
    Running the *restore_analytics.sh* script completes the migration process.
 

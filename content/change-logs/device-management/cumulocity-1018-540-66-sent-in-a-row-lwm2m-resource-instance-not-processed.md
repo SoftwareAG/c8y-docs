@@ -3,7 +3,7 @@ date: 2024-03-07T10:00:00.100Z
 title: LWM2M agent processes all multiple resource instance IDs correctly
 product_area: Device management & connectivity
 change_type:
-  - value: change-2c7RdTdXo4
+  - value: change-VSkj2iV9m
     label: Fix
 component:
   - value: component-1KLUzmqfe

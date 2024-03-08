@@ -1,5 +1,5 @@
 ---
-date: 
+date:
 title: New utility functions for the EPL TimeFormat event library
 change_type:
   - value: change-2c7RdTdXo4
@@ -22,4 +22,4 @@ The following utility functions have been added to the TimeFormat event library 
 * `getOffset`: Gives the offset in seconds of the time zone from UTC at the given datetime, taking into account any daylight savings that may be being applied.
 * `getRawOffset`: Gives the base offset in seconds of the time zone, that is, without daylight savings applied.
 
-For usage information, see the API Reference for EPL (ApamaDoc).
+For usage information, see the API Reference for EPL (ApamaDoc). This is available in Apama 10.15.5.

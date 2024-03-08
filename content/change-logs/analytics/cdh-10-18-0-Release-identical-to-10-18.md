@@ -1,6 +1,6 @@
 ---
 date: TODO
-title: Apama correlator version
+title: 2024 release of Cumulocity IoT DataHub identical to 10.18 release
 change_type:
   - value: change-inv-3bw8e
     label: Announcement

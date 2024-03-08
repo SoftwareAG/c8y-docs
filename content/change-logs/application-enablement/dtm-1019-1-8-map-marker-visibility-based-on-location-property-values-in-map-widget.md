@@ -14,4 +14,4 @@ build_artifact:
 ticket: IOT-19589
 version: 1019.1.8
 ---
-When assets with location were imported in bulk in the "Map" widget, markers were not shown due to an incompatible data type of latitude and longitude values. Aligning the data type to number now correctly displays the markers on the map.
+When assets with location were imported in bulk, markers in the "Map" widget were not shown due to an incompatible data type of latitude and longitude values. Aligning the data type to number now correctly displays the markers on the map.

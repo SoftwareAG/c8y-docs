@@ -1,7 +1,7 @@
 ---
 date: ""
 title: AngularJS breadcrumbs updated to work with asynchronous values
-product_area: Application enablement & solutions
+product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

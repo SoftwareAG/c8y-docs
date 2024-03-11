@@ -1,6 +1,6 @@
 ---
 date: 2024-02-29T12:00:00.000Z
-title: Events no longer throw exceptions from the isCreate and isUpdate actions
+title: EPL events no longer throw exceptions from the isCreate and isUpdate actions
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

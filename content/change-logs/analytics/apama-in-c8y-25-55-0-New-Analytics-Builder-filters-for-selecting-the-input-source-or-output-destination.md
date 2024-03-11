@@ -1,6 +1,6 @@
 ---
 date: 2024-02-29T12:00:00.000Z
-title: New filters for selecting the input source or output destination
+title: New Analytics Builder filters for selecting the input source or output destination
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

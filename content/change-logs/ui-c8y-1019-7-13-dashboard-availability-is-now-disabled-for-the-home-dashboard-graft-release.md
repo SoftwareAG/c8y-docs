@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Dashboard availability is now disabled for the home dashboard. [GRAFT][release/cd] (#5765)
+title: Home dashboard availability disabled
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57098
 version: 1019.7.13
 ---
-Dashboard availability is now disabled for the home dashboard. [GRAFT][release/cd] (#5765)
+The availability feature has been disabled for the home dashboard. This change prevents issues with incorrect availability status being shown on the home dashboard.

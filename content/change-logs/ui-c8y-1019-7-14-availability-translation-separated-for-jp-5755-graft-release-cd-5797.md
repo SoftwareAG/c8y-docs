@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Availability" translation separated for JP (#5755) [GRAFT][release/cd] (#5797)
+title: Separate "Availability" translation for Japan
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57688
 version: 1019.7.14
 ---
-"Availability" translation separated for JP (#5755) [GRAFT][release/cd] (#5797)
+The "Availability" text is now translated separately for Japan to improve localization. This allows the availability text to be tailored for the Japanese market.

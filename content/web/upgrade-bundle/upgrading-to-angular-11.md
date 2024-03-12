@@ -1,7 +1,7 @@
 ---
 title: Upgrading to Angular 11
 layout: redirect
-weight: 6
+weight: 50
 ---
 
 Angular 11 is supported from version 10.10.4.0. AOT and Ivy are not yet supported. The following configuration changes are required before you can run the application:

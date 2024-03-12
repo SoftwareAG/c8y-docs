@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix navigator app icon size var (#5756) [GRAFT][release/cd] (#5769)
+title: Fix css-variable for sizing the app icon
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57153
 version: 1019.7.11
 ---
-Fix navigator app icon size var (#5756) [GRAFT][release/cd] (#5769)
+Fixed an issue with the variable that controls the size of app icons displayed in the navigator.

@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3200
 version: 1018.503.55
 ---
-In Device management, resetting the device "Info" dashboard resulted in widgets taking only half of the available dashboard space. Default dashboard settings have been now adjusted to fit new dashboard grid and "Reset dashboard" works properly again.
+Resetting the "Info" dashboard in the device details resulted in widgets taking only half of the available dashboard space. Default dashboard settings have now been adjusted to fit the new dashboard grid and resetting the dashboard works properly again.

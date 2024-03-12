@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Installing Cumulocity IoT Edge
+title: Installing Edge
 layout: redirect
 ---
 

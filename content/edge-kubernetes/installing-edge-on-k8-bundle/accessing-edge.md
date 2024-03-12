@@ -1,6 +1,6 @@
 ---
 weight: 25
-title: Accessing Cumulocity IoT Edge
+title: Accessing Edge
 layout: redirect
 ---
 

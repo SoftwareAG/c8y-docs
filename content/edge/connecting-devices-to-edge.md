@@ -1,5 +1,5 @@
 ---
 weight: 55
-title: Connecting devices to Cumulocity IoT Edge
+title: Connecting devices to Edge
 layout: bundle
 ---

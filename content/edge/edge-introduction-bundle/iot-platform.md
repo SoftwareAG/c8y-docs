@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-Since {{< product-c8y-iot >}} Edge is based on the same software as the cloud-based {{< product-c8y-iot >}} platform version, the included applications are the same in both versions, with minor restrictions.
+Since Edge is based on the same software as the cloud-based {{< product-c8y-iot >}} platform version, the included applications are the same in both versions, with minor restrictions.
 
 For general information about functionalities and features of {{< product-c8y-iot >}} platform, see [Get familiar with the UI](/get-familiar-with-the-ui/ui-introduction/).
 

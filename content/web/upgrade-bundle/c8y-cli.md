@@ -1,8 +1,12 @@
 ---
 title: C8Y Command Line Tool (CLI)
 layout: redirect
-weight: 10
+weight: 90
 ---
+
+{{< c8y-admon-important >}}
+The `c8ycli` tool was deprecated and should not be used anymore with the 1019.0.0 release of the WebSDK. Use the default Angular CLI instead and add our `@c8y/websdk` library to it as shown in the [Getting Started Guide](/web/gettingstarted/)
+{{< /c8y-admon-important >}}
 
 To support you with bootstrapping, running and deploying applications we have build a Command Line Interface. The tool is the successor of the `cumulocity-node-tools`. To avoid conflicts, it listens to the new command `c8ycli` instead of `c8y`. You can install it via npm:
 

@@ -1,6 +1,6 @@
 ---
 weight: 5
-title: Registering Cumulocity IoT Edge in the cloud tenant
+title: Registering Edge in the cloud tenant
 layout: redirect
 ---
 

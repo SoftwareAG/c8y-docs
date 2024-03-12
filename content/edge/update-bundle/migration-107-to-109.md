@@ -227,7 +227,7 @@ To enable the microservice hosting feature, the {{< management-tenant >}} user m
 
 If enabling the microservice hosting feature fails, it may be due to a [Kubernetes limitation](https://support.f5.com/csp/article/K18352919). After resolving the issue, delete the kube-registry pod and wait for it to be recreated.
 
-For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
+For more information about configuring the Edge 10.9 appliance, see [Configuring Edge](/edge/configuration/).
 
 ### Sample scripts to automate the migration
 
@@ -322,4 +322,4 @@ To enable the microservice hosting feature, the {{< management-tenant >}} user m
 
 If enabling the microservice hosting feature fails, it may be due to a [Kubernetes limitation](https://support.f5.com/csp/article/K18352919). After resolving the issue, delete the kube-registry pod and wait for it to be recreated.
 
-For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
+For more information about configuring the Edge 10.9 appliance, see [Configuring Edge](/edge/configuration/).

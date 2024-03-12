@@ -1,6 +1,6 @@
 ---
 weight: 25
-title: Accessing Cumulocity IoT Edge
+title: Accessing Edge
 layout: redirect
 ---
 
@@ -39,7 +39,7 @@ When manually assigning the external IP, see the following Kubernetes API docume
 
 You can access Edge using a domain name in a web browser.
 
-### Accessing Cumulocity IoT Edge using the domain name
+### Accessing Edge using the domain name
 
 Access Edge using the domain name configured as part of the installation. There are two ways of configuring the accessibility with the domain names:
 
@@ -74,7 +74,7 @@ Ping the &#60;domain_name> to verify it.
 
 If the ping is successful, the DNS resolution is working properly.
 
-#### To access Cumulocity IoT Edge
+#### To access Edge
 
 Enter one of the following URLs in the browser:
 * `https://<domain_name>`

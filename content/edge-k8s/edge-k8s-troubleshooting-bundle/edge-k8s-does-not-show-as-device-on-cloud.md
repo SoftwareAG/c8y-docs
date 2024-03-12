@@ -4,7 +4,7 @@ title: Edge not showing up as a device in the cloud tenant
 layout: redirect
 ---
 
-Edge is unable to register itself as a device in your cloud tenant. 
+Edge is unable to register itself as a device in your cloud tenant.
 
 Describe the Edge CR `kubectl describe edge c8yedge -n c8yedge`
 
@@ -34,7 +34,7 @@ Events:
 Possible reasons:
 * You didn’t add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant.
 For completing the registration process, sign into your cloud tenant and follow the steps described in [Managing trusted certificates](/users-guide/device-management/#managing-trusted-certificates) to add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant. For more details, see [Device certificates](/device-integration/mqtt/#device-certificates).
-For more information see [Connecting Cumulocity IoT Edge to the cloud](/edge-k8s/k8-edge-connecting-edge-to-cloud/).
+For more information see [Connecting Edge to the cloud](/edge-k8s/k8-edge-connecting-edge-to-cloud/).
 
 * The specified cloud tenant domain is not reachable or incorrect.
 

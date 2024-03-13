@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix: Add pipe to generate asset/group/device map marker pop… (#5771) [GRAFT][release/cd] (#5834)
+title: Fixed map marker popups link to assets and devices
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

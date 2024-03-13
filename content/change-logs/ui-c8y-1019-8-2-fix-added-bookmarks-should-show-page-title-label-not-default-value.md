@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix: Added Bookmarks should show page title label not default value (#5775) [GRAFT][release/cd] (#5832)
+title: Bookmarks now show page title as label instead of default value
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57950
 version: 1019.8.2
 ---
-fix: Added Bookmarks should show page title label not default value (#5775) [GRAFT][release/cd] (#5832)
+The bookmarks feature has been updated to display the page title as the bookmark label instead of a default value. This provides more context for users when viewing their bookmarks list.

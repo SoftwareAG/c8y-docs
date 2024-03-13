@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57688
 version: 1018.503.63
 ---
-"Availability" translation separated for JP (#5800) [GRAFT][release/y2024] (#5821)
+The "Availability" text is now translated separately for Japan to improve localization. This allows the availability text to be tailored for the Japanese market.

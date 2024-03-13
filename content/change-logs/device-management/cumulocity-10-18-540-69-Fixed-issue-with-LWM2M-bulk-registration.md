@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-3141
-version: 10.18.540.69
+version: 10.20.309.0
 ---
 This version of the LWM2M agent fixed large LWM2M bulk registrations and removals which were unreliable due to a race condition.

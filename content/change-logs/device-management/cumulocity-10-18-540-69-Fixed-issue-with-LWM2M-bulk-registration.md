@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2024-03-11T10:07:48.480Z
 title: "LWM2M agent processes large LWM2M bulk registration correctly"
 change_type:
   - value: change-VSkj2iV9m

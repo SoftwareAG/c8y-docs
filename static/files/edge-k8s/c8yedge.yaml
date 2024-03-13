@@ -162,7 +162,7 @@ spec:
 #
 # An optional ConfigMap used when accessing external endpoints through a Proxy
 #
-# This is used by the Edge Operator to acess Harbor Registry
+# This is used by the Edge Operator to access Harbor Registry
 #
 # http_proxy, https_proxy and optionally socks_proxy should be configured with the relevant URLs
 # kubernetes cluster IP range should be configured with the Edge cluster IP

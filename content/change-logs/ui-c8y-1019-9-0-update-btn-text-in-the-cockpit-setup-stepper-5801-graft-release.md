@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Update btn text in the cockpit setup stepper (#5801) [GRAFT][release/cd] (#5823)
+title: Update button text in cockpit setup wizard
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-56476
 version: 1019.9.0
 ---
-Update btn text in the cockpit setup stepper (#5801) [GRAFT][release/cd] (#5823)
+The text on the button in the cockpit setup wizard has been updated. This improves the clarity and consistency of the text for users going through the setup flow.

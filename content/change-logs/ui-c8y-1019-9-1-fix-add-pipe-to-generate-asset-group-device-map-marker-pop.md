@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57991
 version: 1019.9.1
 ---
-fix: Add pipe to generate asset/group/device map marker pop… (#5771) [GRAFT][release/cd] (#5834)
+The marker popup now referencing correctly to an asset or a group if the link in the popup is clicked.

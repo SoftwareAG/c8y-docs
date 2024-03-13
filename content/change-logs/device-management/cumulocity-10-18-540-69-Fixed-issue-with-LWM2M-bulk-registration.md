@@ -1,6 +1,6 @@
 ---
 date: 
-title: "LWM2M agent processes large LWM2M bulk registration correctly"
+title: LWM2M agent processes large LWM2M bulk registration reliably
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

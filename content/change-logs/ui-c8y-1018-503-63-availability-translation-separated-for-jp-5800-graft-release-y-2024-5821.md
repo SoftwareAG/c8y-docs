@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Availability" translation separated for JP (#5800) [GRAFT][release/y2024] (#5821)
+title: Separate "Availability" translation for Japan
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

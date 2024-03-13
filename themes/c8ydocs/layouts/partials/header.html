@@ -57,7 +57,11 @@
         aria-labelledby="releasesLinks"
         role="listbox"
       >
-        <li class="text-normal"><a href="//cumulocity.com/docs/2024">Release 2024</a></li>
+        {{ if site.Data.date_settings.yearly_release}}
+          <li class="text-normal"><a href="//cumulocity.com/docs">Latest release</a></li>
+        {{else}}
+          <li class="text-normal"><a href="//cumulocity.com/docs/2024">Release 2024</a></li>
+        {{end}}
         <li class="text-normal"><a href="//cumulocity.com/guides/welcome/intro-documentation/">Release 10.18.0</a></li>
         <li class="text-normal"><a href="//cumulocity.com/guides/10.17.0/welcome/intro-documentation/">Release 10.17.0</a></li>
       </ul>

@@ -255,7 +255,7 @@ Instead of uploading a model, you can also paste the JSON code for a model from 
 On the **Models** tab of the model manager, click **Import model** in the toolbar, and then click **Paste**.
 
 {{< c8y-admon-info>}}
-The **Paste** command is enabled only if the clipboard contains content, and only if your browser allows clipboard access. When you click **Import model** for the first time, some browsers ask if you want to allow or block clipboard access. In other browsers, such as Firefox, you must manually allow it in the browser settings.
+The **Paste** command is enabled only if the clipboard contains content.
 {{< /c8y-admon-info>}}
 
 If the clipboard contains valid JSON code for a model, a card for the pasted model is shown in the model manager.

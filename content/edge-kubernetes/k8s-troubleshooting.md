@@ -8,7 +8,7 @@ section:
 
 ### Edge CR status ValidationLoopBackOff
 
-After deploying or updating {{< product-c8y-iot >}} Edge, if the Edge CR status shows as “ValidationLoopBackOff” as shown below:
+After deploying or updating Edge, if the Edge CR status shows as “ValidationLoopBackOff” as shown below:
 
 Output of `kubectl get edge c8yedge -n c8yedge`:
 
@@ -39,7 +39,7 @@ Events:
 
 ### Edge CR status InstallLoopBackOff or UpdateLoopBackOff
 
-After deploying or updating {{< product-c8y-iot >}} Edge, if the Edge CR status is `InstallationLoopBackOff` or `UpdateLoopBackOff`, as part of the output of `kubectl get edge c8yedge -n c8yedge`:
+After deploying or updating Edge, if the Edge CR status is `InstallationLoopBackOff` or `UpdateLoopBackOff`, as part of the output of `kubectl get edge c8yedge -n c8yedge`:
 
 ```shell
 NAME         DOMAIN NAME     VERSION     STATUS     
@@ -105,7 +105,7 @@ For more information, see [Assigning an external IP](/edge-kubernetes/installing
 
 ### Edge not showing up as a device in the cloud tenant
 
-{{< product-c8y-iot >}} Edge is unable to register itself as a device in your cloud tenant.
+Edge is unable to register itself as a device in your cloud tenant.
 
 Describe the Edge CR `kubectl describe edge c8yedge -n c8yedge`
 
@@ -135,7 +135,7 @@ Events:
 Possible reasons:
 * You didn’t add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant.
 For completing the registration process, sign into your cloud tenant and follow the steps described in [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates) to add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant. For more details, see [Device certificates](/device-integration/mqtt/#device-certificates).
-For more information see [Connecting {{< product-c8y-iot >}} Edge to the cloud](/edge-kubernetes/k8-edge-connecting-edge-to-cloud/).
+For more information see [Connecting Edge to the cloud](/edge-kubernetes/k8-edge-connecting-edge-to-cloud/).
 
 * The specified cloud tenant domain is not reachable or incorrect.
 

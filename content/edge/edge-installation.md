@@ -1,5 +1,5 @@
 ---
-title: Installing Cumulocity IoT Edge
+title: Installing Edge
 weight: 30
 layout: bundle
 section:

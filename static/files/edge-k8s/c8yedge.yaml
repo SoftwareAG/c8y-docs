@@ -162,7 +162,7 @@ spec:
 #
 # An optional ConfigMap used when accessing external endpoints through a Proxy
 #
-# This is used by the Edge Operator to acess Harbor Registry
+# This is used by the Edge Operator to access Harbor Registry
 #
 # http_proxy, https_proxy and optionally socks_proxy should be configured with the relevant URLs
 # no_proxy should be configured with the following entries, and Kubernetes Pod CIDR (Cluster Pod IP Address Range),

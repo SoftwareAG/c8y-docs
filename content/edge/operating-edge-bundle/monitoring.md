@@ -8,7 +8,7 @@ section:
 
 Monit is a small open-source utility for managing and monitoring the Unix systems. The Monit utility conducts automatic maintenance and repair, and can execute meaningful causal actions in error situations.
 
-In {{< product-c8y-iot >}} Edge, Monit is used to monitor the processes and perform a restart if any of the processes is down or inactive. The usual Monit interval (cycle) is 30 seconds.
+In Edge, Monit is used to monitor the processes and perform a restart if any of the processes is down or inactive. The usual Monit interval (cycle) is 30 seconds.
 
 ### Using Monit {#using-monit}
 

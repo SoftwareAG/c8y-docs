@@ -34,9 +34,9 @@ The Edge Operator requests three PVCs, as outlined in the table below. Each of t
 |:---|:---|:---
 |75 GB|`mongod-data-edge-db-rs0-0`|Claimed by the MongoDB server to retain application data. The default size is 75 GB, but this value can be adjusted using the `spec.mongodb.resources.requests.storage` field in the Edge CR file.
 |10 GB|`microservices-registry-data`|Claimed by the private docker registry to store microservice images.
-|5 GB|`edge-logs`|Claimed by the {{< product-c8y-iot >}} Edge logging component to store the application and system logs.
+|5 GB|`edge-logs`|Claimed by the Edge logging component to store the application and system logs.
 
-To guarantee the retention of physical storage even after the PVC is deleted (for example, when {{< product-c8y-iot >}} Edge is deleted) and to enable future storage expansion if needed, it's crucial to configure the StorageClass and/or the PVs with the following settings:
+To guarantee the retention of physical storage even after the PVC is deleted (for example, when Edge is deleted) and to enable future storage expansion if needed, it's crucial to configure the StorageClass and/or the PVs with the following settings:
 
 1. **Reclaim Policy:** Ensure that the reclaim policy is set to **`Retain`**. This setting preserves the storage even after the PVC deletion.
 2. **Volume Expansion:** Set the volume expansion option to **`true`**. This setting enables the storage to be expanded when necessary.
@@ -57,7 +57,7 @@ Kubernetes provides a variety of persistent volume types, but two specific types
 You can skip this section if your Kubernetes cluster is already configured for dynamic provisioning of PVs.
 {{< /c8y-admon-info >}}
 
-This section outlines the steps for configuring the Kubernetes cluster to enable {{< product-c8y-iot >}} Edge to utilize NFS as a source for the PVs. For additional storage options, refer to the [Kubernetes documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/).
+This section outlines the steps for configuring the Kubernetes cluster to enable Edge to utilize NFS as a source for the PVs. For additional storage options, refer to the [Kubernetes documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/).
 
 - Storage provisioning by connecting directly to the NFS server via PV configuration
 

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-14T14:35:11.175Z
 title: Switching tabs with multiple widgets using the dashboard date context works smoothly
 product_area: Application enablement & solutions
 change_type:

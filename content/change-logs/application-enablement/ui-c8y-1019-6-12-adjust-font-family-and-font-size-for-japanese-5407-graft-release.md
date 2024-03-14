@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-14T14:35:11.175Z
 title: Adjust font family and size for Japanese text
 product_area: Application enablement & solutions
 change_type:

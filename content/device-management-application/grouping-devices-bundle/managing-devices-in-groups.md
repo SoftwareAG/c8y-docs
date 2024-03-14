@@ -40,7 +40,7 @@ In order to create a new group, the user must have the permissions ROLE&#95;INVE
 
 ### To unassign a device {#to-unassign-a-device}
 
-Hover over the respective device you want to unassign and click the unassign icon at the right.
+Hover over the respective device you want to unassign and click the unassign icon <i class="dlt-c8y-icon-link-off text-primary"></i> at the right.
 
 Unassigning a device does not delete the device, subdevices or any associated data. The device is only removed from this group.
 

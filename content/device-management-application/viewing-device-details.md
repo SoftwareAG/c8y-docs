@@ -182,7 +182,7 @@ Click on the entry in the list to show the entire log information.
 
 #### To download a log {#to-download-a-log}
 
-Hover over a row and click the download icon, to download the log excerpt to your file system.
+Hover over a row and click the download icon <i class="dlt-c8y-icon-download text-primary"></i>, to download the log excerpt to your file system.
 
 #### To delete a log {#to-delete-a-log}
 

@@ -56,7 +56,7 @@ For details on configuration snapshots, see [Managing configurations](#managing-
 
 To update a device profile click the menu icon at the right of the respective device profile entry and then click **Edit**.
 
-You may edit the name and the device types by clicking the pencil icon next to the respective fields. Make the desired changes and click **Save** to save your edits.
+You may edit the name and the device types by clicking the pencil icon <i class="dlt-c8y-icon-edit1 text-primary"></i> next to the respective fields. Make the desired changes and click **Save** to save your edits.
 
 Moreover, you can delete firmware, software or configuration items or add new ones.
 

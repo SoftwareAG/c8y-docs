@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57827
 version: 1018.503.52
 ---
-The information regarding certificate management along with a link to the documentation is available on the certificate settings page.
+Information about certificate management along with a link to the documentation has been added on the **Settings** tab of the **Trusted certificates** page.

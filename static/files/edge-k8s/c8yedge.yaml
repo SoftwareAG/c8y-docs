@@ -165,7 +165,8 @@ spec:
 # This is used by the Edge Operator to acess Harbor Registry
 #
 # http_proxy, https_proxy and optionally socks_proxy should be configured with the relevant URLs
-# kubernetes cluster IP range should be configured with the Edge cluster IP
+# no_proxy should be configured with the following entries, and Kubernetes Pod CIDR (Cluster Pod IP Address Range),
+# Service CIDR (Cluster Service IP Address Range) and any other domains, hosts or IPs you want to bypass the proxy when accessed.
 #
 #kind: ConfigMap
 #apiVersion: v1
@@ -175,5 +176,5 @@ spec:
 #data:
 #  http_proxy: <HTTP Proxy URL>
 #  https_proxy: <HTTPS Proxy URL>
-#  socks_proxy: <SOCKS Proxy URL> - Optional
-#  no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,<kubernetes cluster IP range e.g. 10.43.0.0/16>
+#  socks_proxy: <SOCKS Proxy URL>
+#  no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<kubernetes cluster IP range e.g. 10.43.0.0/16>

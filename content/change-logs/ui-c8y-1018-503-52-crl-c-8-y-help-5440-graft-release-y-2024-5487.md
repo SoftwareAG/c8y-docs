@@ -1,7 +1,7 @@
 ---
 date: ""
 title: Added information about certificate management
-product_area: Platform services
+product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

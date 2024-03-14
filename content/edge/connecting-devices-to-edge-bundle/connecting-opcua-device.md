@@ -14,7 +14,7 @@ To connect an OPC UA device in the Edge appliance, follow the steps below.
 
 **OPC UA Management service**
 
-Check if the OPC UA management service is running in {{< product-c8y-iot >}} Edge (running on port 8083):  
+Check if the OPC UA management service is running in Edge (running on port 8083):  
 
 ```shell
 [admin@iot-edge-server ~]$ sudo service opcua-mgmt-service status
@@ -28,7 +28,7 @@ If the agent is not running, start it with the following command:
 
 **OPC UA Device Gateway**
 
-Check if the OPC UA device gateway is running in {{< product-c8y-iot >}} Edge (running on port 1099):  
+Check if the OPC UA device gateway is running in Edge (running on port 1099):  
 
 ```shell
 [admin@iot-edge-server ~]$ sudo service opcua-device-gateway status

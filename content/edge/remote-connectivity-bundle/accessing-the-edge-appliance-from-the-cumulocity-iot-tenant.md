@@ -26,7 +26,7 @@ The following protocols are supported to connect to the Edge appliance through r
 
 {{< c8y-admon-important >}}
 
-Starting with {{< product-c8y-iot >}} Edge Release 10.15, the support for the Telnet protocol has been removed, as Telnet is considered to be an insecure protocol lacking built-in security measures. For accessing the Edge appliance remotely from the {{< product-c8y-iot >}} tenant, {{< company-sag >}} recommends you to use the SSH protocol instead.
+Starting with Edge Release 10.15, the support for the Telnet protocol has been removed, as Telnet is considered to be an insecure protocol lacking built-in security measures. For accessing the Edge appliance remotely from the {{< product-c8y-iot >}} tenant, {{< company-sag >}} recommends you to use the SSH protocol instead.
 {{< /c8y-admon-important >}}
 
 For more information about remote access, see [Cloud Remote Access](/cloud-remote-access/cra-general-aspects).

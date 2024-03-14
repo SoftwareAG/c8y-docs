@@ -11,7 +11,7 @@ The following section describes how [to select one top-level asset](#to-add-an-a
 ### To add an asset to a new or existing widget {#to-add-an-asset-to-a-new-or-existing-widget}
 
 On the **Configuration** tab of the widget editor, select the check boxes of the desired asset under **Asset selection**. Click **Save** to add the asset to the widget.
-You can select a single device or a whole group of devices, indicated by a folder icon. For details on selecting child devices, see [To select child devices within groups as asset](#to-select-child-devices-as-asset).
+You can select a single device or a whole group of devices, indicated by a folder icon <i class="dlt-c8y-icon-folder"></i>. For details on selecting child devices, see [To select child devices within groups as asset](#to-select-child-devices-as-asset).
 
 If you want to edit an asset of a widget, open the widget editor and click **Clear**. This clears the previous asset collection. Select the new desired asset and click **Save**.  
 
@@ -19,7 +19,7 @@ For general instructions on how to add or modify widgets, see [To add a widget t
 
 ### To select child devices as asset {#to-select-child-devices-as-asset}
 
-If the asset is a group or a device with children, you see a folder icon next to their name as well as an arrow icon pointing right. Click the desired group or device with children in the list to open a new level displaying all assigned assets to that group or device. Select the desired asset. To return to the previous level, click on the arrow icon pointing left.
+If the asset is a group or a device with children, you see a folder icon <i class="dlt-c8y-icon-folder"></i> next to their name as well as an arrow icon pointing right <i class="dlt-c8y-icon-forward"></i>. Click the desired group or device with children in the list to open a new level displaying all assigned assets to that group or device. Select the desired asset. To return to the previous level, click on the arrow icon pointing left.
 
 ![Select assets](/images/users-guide/cockpit/cockpit-asset-selection.png)
 

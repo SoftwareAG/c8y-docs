@@ -51,7 +51,7 @@ In the **Export** page you will find a list displaying all exports with their na
 
 In the **Filter** section, you can select filters to request object- or time-specific data.
 
-To filter for a particular object, enter a name or property value into the search field and click the search icon <i class="dlt-c8y-icon-search text-danger"></i>. All matching devices or groups will be displayed below the **Value** field. Click an object to select it (highlighted in green).
+To filter for a particular object, enter a name or property value into the search field and click the search icon <i class="dlt-c8y-icon-search"></i>. All matching devices or groups will be displayed below the **Value** field. Click an object to select it (highlighted in green).
 
 {{< c8y-admon-info >}}
 If you select a group, the data of direct child devices will be included. However the export will not contain the data of devices in subgroups (indirect children).

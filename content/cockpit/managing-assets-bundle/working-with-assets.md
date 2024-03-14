@@ -88,7 +88,7 @@ To add a new group as a child of an existing asset, navigate to its **Subassets*
 
 ### To delete a group {#to-delete-a-group}
 
-To delete a group either on top-level from the **Groups** page or from the **Subassets** tab of another group, hover over the respective entry you want to delete and click the delete icon at the right.
+To delete a group either on top-level from the **Groups** page or from the **Subassets** tab of another group, hover over the respective entry you want to delete and click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger"></i> at the right.
 
 In the resulting dialog box, you can select to also delete all devices inside the selected asset and all its subassets.
 

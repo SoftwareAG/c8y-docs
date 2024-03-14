@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Additional information about certificate settings page.
+title: Added information about certificate management
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

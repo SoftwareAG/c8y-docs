@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3141
 version: 10.20.309.0
 ---
-This version of the LWM2M agent fixed large LWM2M bulk registrations and removals which were unreliable due to a race condition.
+LWM2M bulk registrations and removals processed by the LWM2M agent were unreliable due to a race condition. This issue has been fixed and bulk registrations are now processed reliably.

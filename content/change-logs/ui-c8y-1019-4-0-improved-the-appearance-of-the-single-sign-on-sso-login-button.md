@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57675
 version: 1019.4.0
 ---
-The appearance of the SSO login button is unified with the Cumulocity application styles.
+The appearance of the SSO (single-sign-on) login button has been unified with the Cumulocity IoT application styles.

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Update button text in cockpit setup wizard
+title: Improved button text in Cockpit setup wizard
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

@@ -13,7 +13,7 @@ The [parameters](#configuration-parameters) are configured at the left side of t
 <img src="/images/users-guide/enterprise-tenant/et-branding.png" alt="Branding tab">
 
 {{< c8y-admon-info >}}
-Use the domain name to access the {{< product-c8y-iot >}} Edge platform to properly apply the branding and see the effects after branding.
+Use the domain name to access the Edge platform to properly apply the branding and see the effects after branding.
 {{< /c8y-admon-info >}}
 
 To access the branding feature:

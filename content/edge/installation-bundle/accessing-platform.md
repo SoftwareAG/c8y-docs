@@ -20,7 +20,7 @@ After the installation, you can access the {{< product-c8y-iot >}}  Edge applian
 [2] The Google Chrome support is based on Google Chrome Version 84. Due to frequent version upgrades of Google Chrome, compatibility of the Edge appliance with future versions of Google Chrome cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}.
 
 {{< c8y-admon-important >}}
-[3] Though the Edge appliance is functional on Internet Explorer 11, it does not allow us to provide you with a state-of-the-art user experience. As a result, {{< product-c8y-iot >}} Edge 10.7 will be the last release that supports this browser. With upcoming releases we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer.
+[3] Though the Edge appliance is functional on Internet Explorer 11, it does not allow us to provide you with a state-of-the-art user experience. As a result, Edge 10.7 will be the last release that supports this browser. With upcoming releases we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer.
 {{< /c8y-admon-important >}}
 
 You may also use recent smartphone and tablet web browsers. We have tested our products with the following mobile web browsers:
@@ -29,7 +29,7 @@ You may also use recent smartphone and tablet web browsers. We have tested our p
 * Safari on iOS (latest version) on Apple iPhone and iPad
 
 {{< c8y-admon-info >}}
-{{< product-c8y-iot >}} Edge on mobile devices shows some limitations.
+Edge on mobile devices shows some limitations.
 The limitations could be the following:
 
 * The usage may be constrained by the memory and the processing power available on the devices. <br>  
@@ -94,7 +94,7 @@ The Edge appliance login screen appears. Log in with your credentials created du
   - Username: management/<*Edge admin username*>
   - Password: password provided during the installation
 
-- To log in to the edge tenant, use the Edge admin credentials or prefix the Edge admin username with *edge*:
+- To log in to the "edge" tenant, use the Edge admin credentials or prefix the Edge admin username with *edge*:
   - Username: edge/<*Edge admin username*>
   - Password: password provided during the installation
 

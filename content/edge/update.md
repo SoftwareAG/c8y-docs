@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Updating Cumulocity IoT Edge
+title: Updating Edge
 layout: bundle
 ---
 

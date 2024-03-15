@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57991
 version: 1019.9.1
 ---
-The link in the marker popup of the map now correctly references the respective asset or a group.
+The link in the marker popup of a map now correctly references the respective asset or group.

@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55565
 version: 10.20.182.0
 ---
-The new solution has been introduced to simplify the login process, enabling tenant administrators to activate the option of allowing users to log in with case-insensitive usernames or aliases.
+To simplify the login process, tenant administrators can now activate an option which allows users to log in with case-insensitive usernames or aliases.

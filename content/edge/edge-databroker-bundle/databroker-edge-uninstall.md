@@ -6,13 +6,13 @@ section:
   - edge_server
 ---
 
-The bundle for the Messaging Service and data broker microservice does not have an uninstall command. 
+The bundle for the Messaging Service and data broker microservice does not have an uninstall command.
 If a mistake is made or an installation fails, the bundle components must be uninstalled manually.
 Afterwards, the installation can be reattempted.
 
 ### To uninstall manually
-1. Login to {{< product-c8y-iot >}} Edge using SSH.
-   
+1. Login to Edge using SSH.
+
 2. Uninstall the Pulsar Helm chart.
 ```shell
 sudo helm uninstall pulsar -n c8y-messaging-service
@@ -28,7 +28,7 @@ watch sudo kubectl get pods -n c8y-messaging-service
 sudo kubectl delete pvc -n c8y-messaging-service --all
 ```
 5. Find the names of the persistent volumes used by the Pulsar components.
-   
+
    Here the grep command is used to filter the output. The names are in the output's leftmost column.
 
 ```shell
@@ -38,14 +38,14 @@ ledgers0     10Gi       RWO            Retain           Released    c8y-messagin
 zookeeper0   2Gi        RWO            Retain           Released    c8y-messaging-service/pulsar-zookeeper-data-pulsar-zookeeper-0   local-storage            3h
 ```
 6. Delete each of the persistent volumes found in the previous step.
-```shell 
+```shell
 sudo kubectl delete pv journal0 ledgers0 zookeeper0
 ```
 7. Delete the directories used by the persistent volumes.
 ```shell
 sudo rm -rf /opt/bookie/ledgers /opt/bookie/journal /opt/zookeeper
 ```
-8. Unsubscribe the edge tenant from and delete, the databroker-agent-server microservice.
+8. Unsubscribe the "edge" tenant from and delete, the databroker-agent-server microservice.
 
    The databroker-agent-server application ID is required for the HTTP requests used to do both of these.   
    To find its application ID, you can use a cURL command of the following form and redirect the output to a jq command to make it easier to read the JSON response.
@@ -83,13 +83,13 @@ Enter host password for user 'edge/admin':
   ]
 }
 ```
-   Use that ID value in the request to unsubscribe from the microservice and again when deleting it. 
+   Use that ID value in the request to unsubscribe from the microservice and again when deleting it.
 
    To unsubscribe, use a command of the following form:
 ```shell
 curl -X DELETE http://<EDGE-HOSTNAME>/tenant/tenants/<TENANT>/applications/<APP-ID> -u <TENANT>/<USERNAME> -v
 ```
-   This returns an HTTP 204 (no content) response. For example: 
+   This returns an HTTP 204 (no content) response. For example:
 ```shell
 curl -X DELETE http://myown.iot.com/tenant/tenants/edge/applications/19 -u edge/admin -v
 Enter host password for user 'edge/admin':

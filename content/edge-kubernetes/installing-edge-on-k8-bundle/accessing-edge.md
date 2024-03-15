@@ -1,14 +1,14 @@
 ---
 weight: 25
-title: Accessing Cumulocity IoT Edge
+title: Accessing Edge
 layout: redirect
 ---
 
-Before you can access {{< product-c8y-iot >}} Edge, you must first get the external IP address. The Edge Operator creates a load balancer service named **cumulocity-core**, which receives an external IP. Clients outside of the cluster can access the {{< product-c8y-iot >}} Edge through this external IP.
+Before you can access Edge, you must first get the external IP address. The Edge Operator creates a load balancer service named **cumulocity-core**, which receives an external IP. Clients outside of the cluster can access the Edge through this external IP.
 
 ### Assigning an external IP {#assigning-an-external-ip}
 
-To get the external IP to access {{< product-c8y-iot >}} Edge, run the command below:
+To get the external IP to access Edge, run the command below:
 ```shell
 kubectl get service cumulocity-core -n c8yedge
 ```
@@ -37,20 +37,20 @@ When manually assigning the external IP, see the following Kubernetes API docume
 "These IPs are not managed by Kubernetes. The user is responsible for ensuring that traffic arrives at a node with this IP."
 {{< /c8y-admon-info >}}
 
-You can access {{< product-c8y-iot >}} Edge using a domain name in a web browser.
+You can access Edge using a domain name in a web browser.
 
-### Accessing {{< product-c8y-iot >}} Edge using the domain name {#accessing-cumulocity-iot-edge-using-the-domain-name}
+### Accessing Edge using the domain name {#accessing-cumulocity-iot-edge-using-the-domain-name}
 
-Access {{< product-c8y-iot >}} Edge using the domain name configured as part of the installation. There are two ways of configuring the accessibility with the domain names:
+Access Edge using the domain name configured as part of the installation. There are two ways of configuring the accessibility with the domain names:
 
 * Add an entry of the domain name and IP address mapping in the DNS servers.
 <br>For example, if your domain name is **myown.iot.com**, add an entry for both **myown.iot.com** and **management.myown.iot.com**.<br>
-* Alternatively, [Add the alias](#add-alias) to access {{< product-c8y-iot >}} Edge through the domain name provided during installation. This must be performed on each client host on which {{< product-c8y-iot >}} Edge is accessed.
+* Alternatively, [Add the alias](#add-alias) to access Edge through the domain name provided during installation. This must be performed on each client host on which Edge is accessed.
 
-The first option is always preferable so that {{< product-c8y-iot >}} Edge is accessible over LAN.
+The first option is always preferable so that Edge is accessible over LAN.
 
 {{< c8y-admon-important >}}
-{{< product-c8y-iot >}} Edge is installed with the admin user "admin" and password "admin-pass". Change the password on first login.
+Edge is installed with the admin user "admin" and password "admin-pass". Change the password on first login.
 {{< /c8y-admon-important >}}
 
 #### Adding the alias {#add-alias}
@@ -74,7 +74,7 @@ Ping the &#60;domain_name> to verify it.
 
 If the ping is successful, the DNS resolution is working properly.
 
-#### To access {{< product-c8y-iot >}} Edge {#to-access-cumulocity-iot-edge}
+#### To access Edge {#to-access-cumulocity-iot-edge}
 
 Enter one of the following URLs in the browser:
 * `https://<domain_name>`
@@ -83,19 +83,19 @@ Enter one of the following URLs in the browser:
 The login screen appears. If this is your first login, log in with user "admin" and password "admin-pass" and change the password.
 
 {{< c8y-admon-important >}}
-After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}}  Edge tenants and change the admin credentials.
+After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}}  "edge" tenants and change the admin credentials.
 {{< /c8y-admon-important >}}
 
 - To log in to the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
 
-- To log in to the {{< product-c8y-iot >}}  Edge tenant, use the URL `https://edge.<domain_name>`.
+- To log in to the {{< product-c8y-iot >}}  "edge" tenant, use the URL `https://edge.<domain_name>`.
 
 If you are logging in for the first time, you will see a cookie banner at the bottom:
 
 ![Login prompt](/images/users-guide/getting-started/getting-started-cookie-banner.png)
 
 {{< c8y-admon-info >}}
-The cookie banner is turned on by default on the {{< product-c8y-iot >}} Edge instances. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/enterprise-tenant/customization/#branding).
+The cookie banner is turned on by default on the Edge instances. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/enterprise-tenant/customization/#branding).
 {{< /c8y-admon-info >}}
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
@@ -109,9 +109,9 @@ The cookie banner is turned on by default on the {{< product-c8y-iot >}} Edge in
 If you have enabled functional cookies you can opt out of the product experience tracking later on via the **User settings** dialog, see [User options and settings](/get-familiar-with-the-ui/user-settings/).
 {{< /c8y-admon-info >}}
 
-Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as {{< product-c8y-iot >}} Edge requests you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
+Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as Edge requests you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
-Finally, click **Login** to enter {{< product-c8y-iot >}} Edge. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application (if not configured differently).
+Finally, click **Login** to enter Edge. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application (if not configured differently).
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 
@@ -123,7 +123,7 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 
 ### How to reset your password {#how-to-reset-your-password}
 
-To reset your password, you must first configure the "reset password" template and email server settings in {{< product-c8y-iot >}} Edge. For information about configuring the email server, see [Configuring the email server](/edge/edge-configuration/#configuring-email-server).  
+To reset your password, you must first configure the "reset password" template and email server settings in Edge. For information about configuring the email server, see [Configuring the email server](/edge/edge-configuration/#configuring-email-server).  
 
 For information about resetting the password, see [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password).
 

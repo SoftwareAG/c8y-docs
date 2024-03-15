@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improved the appearance of the Single Sign-On (SSO) login button.
+title: Improved the appearance of the SSO login button
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

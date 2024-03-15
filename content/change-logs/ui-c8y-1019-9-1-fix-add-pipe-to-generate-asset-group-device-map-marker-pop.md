@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed map marker popups link to assets and devices
+title: Map marker popup correctly links to assets and devices
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

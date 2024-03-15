@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Adjust device "Info" dashboard default settings to fit new grid
+title: Adjust device Info dashboard default settings to fit new grid
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

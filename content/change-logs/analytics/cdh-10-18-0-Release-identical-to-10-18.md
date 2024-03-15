@@ -9,7 +9,7 @@ component:
   - value: component-A8vMaVaTg
     label: DataHub
 build_artifact:
-  - value: TODO
+  - value: cdh
     label: TODO
 version: 10.18.0
 ---

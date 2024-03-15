@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-14T14:35:11.175Z
 title: Map widget correctly assigns smartphone as device
 product_area: Application enablement \u0026 solutions
 change_type:

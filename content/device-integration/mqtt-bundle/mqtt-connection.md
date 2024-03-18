@@ -36,7 +36,7 @@ Now the only thing that must be configured to establish the SSL connection is to
 * The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
 * KEYSTORE_NAME is the path to your keystore, which contains the private key and the chain of certificates, which the device will use to authenticate itself.
 * KEYSTORE_PASSWORD is the password created for keystore to use its private key.
-* KEYSTORE_FORMAT should be "JKS" or "PKCS12" depending on the file format. The path is provided by KEYSTORE_NAME.
+* KEYSTORE_FORMAT must be "JKS" or "PKCS12" depending on the file format. The path is provided by KEYSTORE_NAME.
 * TRUSTSTORE_NAME is the path to your truststore, which contains the certificate of the server.
 * TRUSTSTORE_PASSWORD is the password to access the truststore.
 * TRUSTSTORE_FORMAT should be "JKS" or "PKCS12" depending on the file format. The path is provided by TRUSTSTORE.

@@ -54,5 +54,5 @@ Here is the logout API. Refer to the [Users API](https://{{< domain-c8y >}}/api/
         Authorization: Bearer "JWT Session token"
 
 {{< c8y-admon-caution >}}
-Only devices that are registered to use certificate authentication can retrieve a JWT session token using this endpoint. Once the device successfully authenticates using certificates (ie., by using its private key and the certificate chain), the device retrieves the JWT session token. This mTLS over HTTP endpoint can be leveraged only over this endpoint.
+Only devices that are registered to use certificate authentication can retrieve a JWT session token using this endpoint. Once the device successfully authenticates using certificates (that is, by using its private key and the certificate chain), the device retrieves the JWT session token. This mTLS over HTTP endpoint can be leveraged only over this endpoint.
 {{< /c8y-admon-caution >}}

@@ -31,7 +31,7 @@ Copy a Java project which is configured with Maven from [cumulocity-examples](ht
 $ mvn clean install
 ```
 
-This will compile project.
+This will compile the project.
 
 #### To generate a valid certificate {#to-generate-a-valid-certificate}
 

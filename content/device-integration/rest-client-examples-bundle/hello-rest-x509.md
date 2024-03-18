@@ -62,7 +62,7 @@ The following configuration is required before calling the device access token A
 
 ### To change the configuration {#to-change-the-configuration}
 
-To change the configuration in the REST java client, copy the file *chain-with-private-key-iot-device-0001.jks* into the resource folder and set the configuration. Note that the script employed (Step 4.) uses the password `changeit`. If you changed the value in the script, also do it for `KEYSTORE_PASSWORD` and `TRUSTSTORE_PASSWORD` in the following example.
+To change the configuration in the REST Java client, copy the file *chain-with-private-key-iot-device-0001.jks* into the resource folder and set the configuration. Note that the script employed (Step 4.) uses the password `changeit`. If you changed the value in the script, also do it for `KEYSTORE_PASSWORD` and `TRUSTSTORE_PASSWORD` in the following example.
 
 ```java
 private static final String KEYSTORE_NAME = "chain-with-private-key-iot-device-0001.jks";

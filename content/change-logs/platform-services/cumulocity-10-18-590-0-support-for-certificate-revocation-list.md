@@ -1,6 +1,6 @@
 ---
 date: ""
-title: CRL support in Device Certificate authentication.
+title: CRL support in device certificate authentication
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP

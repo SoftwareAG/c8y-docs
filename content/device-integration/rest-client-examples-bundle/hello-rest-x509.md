@@ -95,7 +95,7 @@ What does the code in `main` do?
 
 -   Configure the mTLS connection.
 -   Connect with {{< product-c8y-iot >}} via a mTLS protocol.
--   Generate JWT token after successful authentication using X.509 certificates.
+-   Generate a JWT token after successful authentication using X.509 certificates.
 -   Using this JWT token further rest operation can be done without any certificates.
 
 #### Build and run the application {#build-and-run-the-application}

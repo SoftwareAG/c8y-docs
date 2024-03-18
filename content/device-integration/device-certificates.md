@@ -7,7 +7,7 @@ section:
   - device_management
 ---
 
-Devices can also authenticate using X.509 certificates over REST (port 443) using mTLS, against the {{< product-c8y-iot >}}.
+Devices can also authenticate to the {{< product-c8y-iot >}} using X.509 certificates over REST (port 443) using mTLS.
 
 Devices can communicate using the MQTT interface of the platform, but MQTT over WebSocket is not supported. The {{< product-c8y-iot >}} platform expects devices to connect using SSL on port 8883.
 

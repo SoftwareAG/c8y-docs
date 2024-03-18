@@ -45,7 +45,7 @@ The default value is 1 hour.
 The minimum allowed value is 5 minutes.
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
-It is recommended that the devices invalidate the session by explicitly calling 'logout' API before closing the HTTP connection. This will avoid any misuse of JWT session tokens generated.
+It is recommended that the devices invalidate the session by explicitly calling the `logout` API before closing the HTTP connection. This will avoid any misuse of JWT session tokens generated.
 Here is the logout API. Refer to the [Users API](https://{{< domain-c8y >}}/api/core/#tag/Users) in the {{< openapi >}} for more details.
 
         POST /user/logout

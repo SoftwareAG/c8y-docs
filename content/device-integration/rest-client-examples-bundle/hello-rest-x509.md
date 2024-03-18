@@ -13,13 +13,11 @@ In order to follow this tutorial, check the following prerequisites:
 * Verify that you have Maven 3 and at least Java 8 installed.
 * Verify that you have OpenSSL installed.
 
-```shell
-$ mvn -v
-Maven home: /Library/Maven/apache-maven-3.6.0
-Java version: 1.8.0_201, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre
-Default locale: en_GB, platform encoding: UTF-8
-OS name: "mac os x", version: "10.14.2", arch: "x86_64", family: "mac"
-```
+      $ mvn -v
+      Maven home: /Library/Maven/apache-maven-3.6.0
+      Java version: 1.8.0_201, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre
+      Default locale: en_GB, platform encoding: UTF-8
+      OS name: "mac os x", version: "10.14.2", arch: "x86_64", family: "mac"
 
 Maven can be downloaded from the [Maven website](http://maven.apache.org).
 
@@ -27,9 +25,7 @@ Maven can be downloaded from the [Maven website](http://maven.apache.org).
 
 Copy a Java project which is configured with Maven from [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/x509-rest-client) repository and execute the following command:
 
-```shell
-$ mvn clean install
-```
+    $ mvn clean install
 
 This will compile the project.
 
@@ -40,14 +36,11 @@ If you don't have a valid certificate, you can generate one for testing purposes
 1.  Download the scripts from the [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mqtt-client/scripts) repository.
 2.  Create a root self-signed certificate (execute the script *00createRootSelfSignedCertificate.sh*) and upload it to your tenant. You can do it via [the Device management application in the UI](/device-management-application/managing-device-data/#managing-trusted-certificates) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API).
 3.  Create and sign the certificate (execute the script *01createSignedCertificate.sh*).
-4.  Move the certificates to keystore (execute the script *02moveCertificatesToKeystore.sh*).
-5.  Download the public server key from the respective environment and import it into JKS using this command:
+4.  Move the certificates to keystore (execute the script *02moveCertificatesToKeystore.sh*). 
+5. Download the public server key from the respective environment and import it into JKS using this command:
+       
+       $ keytool -import -file platform.dev.c8y.io.crt -alias servercertificate -keystore truststore.jks
 
-```shell
-$ keytool -import -file platform.dev.c8y.io.crt -alias servercertificate -keystore truststore.jks 
-```
-
-The code of the {{< product-c8y-iot >}} client implemented in Java, which connects to the platform using x.509 certificates.
 The following configuration is required before calling the device access token API using:
 
 * KEYSTORE_NAME - The path to your keystore which contains the private key and the chain of certificates, which the device uses to authenticate itself.
@@ -64,18 +57,14 @@ The following configuration is required before calling the device access token A
 
 To change the configuration in the REST Java client, copy the file *chain-with-private-key-iot-device-0001.jks* into the resource folder and set the configuration. Note that the script employed (Step 4.) uses the password `changeit`. If you changed the value in the script, also do it for `KEYSTORE_PASSWORD` and `TRUSTSTORE_PASSWORD` in the following example.
 
-```java
-private static final String KEYSTORE_NAME = "chain-with-private-key-iot-device-0001.jks";
-private static final String KEYSTORE_PASSWORD = "changeit";
-private static final String KEYSTORE_FORMAT = "jks";
-
-private static final String TRUSTSTORE_NAME = "truststore.jks";
-private static final String TRUSTSTORE_PASSWORD = "changeit";
-private static final String TRUSTSTORE_FORMAT = "jks";
-
-private static final String LOCAL_DEVICE_CHAIN = "-----BEGIN CERTIFICATE----- MIIcQhNJJ0F/lfjm -----END CERTIFICATE-----";
-private static final String PLATFORM_URL = "<URL of the platform>";
-```  
+            private static final String KEYSTORE_NAME = "chain-with-private-key-iot-device-0001.jks";
+            private static final String KEYSTORE_PASSWORD = "changeit";
+            private static final String KEYSTORE_FORMAT = "jks";
+            private static final String TRUSTSTORE_NAME = "truststore.jks";
+            private static final String TRUSTSTORE_PASSWORD = "changeit";
+            private static final String TRUSTSTORE_FORMAT = "jks";
+            private static final String LOCAL_DEVICE_CHAIN = "-----BEGIN CERTIFICATE----- MIIcQhNJJ0F/lfjm -----END CERTIFICATE-----";
+            private static final String PLATFORM_URL = "<URL of the platform>";
 
 The device can now generate a JWT token. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-integration/certificate/#device-certificates) process.
 
@@ -96,42 +85,38 @@ What does the code in `main` do?
 -   Configure the mTLS connection.
 -   Connect with {{< product-c8y-iot >}} via a mTLS protocol.
 -   Generate a JWT token after successful authentication using X.509 certificates.
--   Using this JWT token further rest operation can be done without any certificates.
+-   Using this JWT token the further rest operation can be done without any certificates.
 
 #### Build and run the application {#build-and-run-the-application}
 
 Use the following commands to build the application:
 
-```shell
-$ cd x509-rest-client
-$ mvn clean install
-...
-[INFO]
-[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ x509-rest-client ---
-[INFO] Building jar: /home/schm/Pulpit/device-jwt-rest-client/target/x509-rest-client-1.0-SNAPSHOT.jar
-[INFO]
-[INFO] --- maven-install-plugin:2.4:install (default-install) @ x509-rest-client ---
-[INFO] Installing /home/schm/Pulpit/x509-rest-client/target/x509-rest-client-1.0-SNAPSHOT.jar to /home/schm/.m2/repository/c8y/example/x509/x509-rest-client/1.0-SNAPSHOT/x509-rest-client-1.0-SNAPSHOT.jar
-[INFO] Installing /home/schm/Pulpit/x509-rest-client/pom.xml to /home/schm/.m2/repository/c8y/example/x509/x509-rest-client/1.0-SNAPSHOT/x509-rest-client-1.0-SNAPSHOT.pom
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 2.642 s
-[INFO] Finished at: 2017-03-14T09:16:25+01:00
-[INFO] Final Memory: 14M/301M
-[INFO] ------------------------------------------------------------------------
-```
+          $ cd x509-rest-client
+          $ mvn clean install
+          ...
+          [INFO]
+          [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ x509-rest-client ---
+          [INFO] Building jar: /home/schm/Pulpit/device-jwt-rest-client/target/x509-rest-client-1.0-SNAPSHOT.jar
+          [INFO]
+          [INFO] --- maven-install-plugin:2.4:install (default-install) @ x509-rest-client ---
+          [INFO] Installing /home/schm/Pulpit/x509-rest-client/target/x509-rest-client-1.0-SNAPSHOT.jar to /home/schm/.m2/repository/c8y/example/x509/x509-rest-client/1.0-SNAPSHOT/x509-rest-client-1.0-SNAPSHOT.jar
+          [INFO] Installing /home/schm/Pulpit/x509-rest-client/pom.xml to /home/schm/.m2/repository/c8y/example/x509/x509-rest-client/1.0-SNAPSHOT/x509-rest-client-1.0-SNAPSHOT.pom
+          [INFO] ------------------------------------------------------------------------
+          [INFO] BUILD SUCCESS
+          [INFO] ------------------------------------------------------------------------
+          [INFO] Total time: 2.642 s
+          [INFO] Finished at: 2017-03-14T09:16:25+01:00
+          [INFO] Final Memory: 14M/301M
+          [INFO] ------------------------------------------------------------------------
 
 and this command to run it:
 
-```shell
-$ mvn exec:java -Dexec.mainClass="c8y.example.x509.X509RestClient"
-...
-[INFO]                                                                         
-[INFO] ------------------------------------------------------------------------
-[INFO] Building x509-rest-client 1.0-SNAPSHOT
-[INFO] ------------------------------------------------------------------------
-[INFO]
-[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ x509-rest-client ---
-access_token ="eyJhbGciOiJSUI6IkpXVCJ9.eyJktYTJmYy0x...S 04HPk3GQUd-fHyJ2oKSuetWFWpUSBPzJzl_73_3yauIlplHorlSoQ"
-```
+          $ mvn exec:java -Dexec.mainClass="c8y.example.x509.X509RestClient"
+          ...
+          [INFO]                                                                         
+          [INFO] ------------------------------------------------------------------------
+          [INFO] Building x509-rest-client 1.0-SNAPSHOT
+          [INFO] ------------------------------------------------------------------------
+          [INFO]
+          [INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ x509-rest-client ---
+          access_token ="eyJhbGciOiJSUI6IkpXVCJ9.eyJktYTJmYy0x...S 04HPk3GQUd-fHyJ2oKSuetWFWpUSBPzJzl_73_3yauIlplHorlSoQ"

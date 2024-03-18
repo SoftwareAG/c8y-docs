@@ -39,7 +39,7 @@ You will receive a response like that:
     {
         "accessToken": "eyJhbGciOiJSUI6IkpXVCJ9.eyJktYTJmYy0x...S 04HPk3GQUd-fHyJ2oKSuetWFWpUSBPzJzl_73_3yauIlplHorlSoQ"
     }
-A device token used to access {{< product-c8y-iot >}} via REST calls. There is no need to send certificate in subsequent request once device token is acquired.
+A device token is used to access {{< product-c8y-iot >}} via REST calls. There is no need to send the certificate in subsequent requests once a device token is acquired.
 A device token lifetime can be configured using tenant options with a category of `oauth.internal` and a key of `device-token.lifespan.seconds`.
 The default value is 1 hour.
 The minimum allowed value is 5 minutes.

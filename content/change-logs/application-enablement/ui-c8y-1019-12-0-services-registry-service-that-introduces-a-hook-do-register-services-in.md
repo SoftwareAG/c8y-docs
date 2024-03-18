@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3092
 version: 1019.12.0
 ---
-Services registry service that introduces a hook do register services in the core platform. [GRAFT][release/cd] (#5869)
+To enable better management and discoverability of services in the core platform, a new services registry has been introduced. This service provides a hook that allows services to register themselves with the core platform.

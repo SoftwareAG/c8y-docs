@@ -83,7 +83,7 @@ The device can now generate a JWT token. Note that before the first connect no o
 You do not need to set a password, user or tenant for the REST java client using certificates. {{< product-c8y-iot >}} will recognize the tenant and the user by the provided certificate.
 {{< /c8y-admon-info >}}
 
-After filling in this data, the example client will use the provided data to retrieve the device access token to the specified platform using certificates.
+After filling in this data, the example client uses the provided data to retrieve the device access token to the specified platform using certificates.
 
 In general, the mTLS protocol client uses the Java Secure Socket Extension, which is part of the Java Development Kit, to provide secure connections via SSL.
 JSSE provides the Java implementation of the SSL and TLS protocol which can be configured by developers using its classes.

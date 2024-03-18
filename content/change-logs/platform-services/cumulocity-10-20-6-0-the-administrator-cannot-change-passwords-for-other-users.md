@@ -15,4 +15,3 @@ ticket: MTM-55259
 version: 10.20.6.0
 ---
 For security reasons, administrators can no longer change passwords of other users. The users are only allowed to change their own passwords. However, administrators can still enforce the users to change their passwords on their next login in case of any anticipated breaches.
-Note that the administrator will still have the option to force the user to reset the password on the next login or disable the user.

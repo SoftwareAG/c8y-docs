@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Separate "Availability" translation for Japan
+title: Separate translation for the term "Aavilability" for Japanese
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

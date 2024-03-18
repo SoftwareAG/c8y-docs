@@ -27,6 +27,14 @@
     {
       "id": "tc-H-tuq-8Es",
       "option": "cdh"
+    },
+    {
+      "id": "tc-MLn0oFRX-",
+      "option": "opcua"
+    },
+    {
+      "id": "tc-ggH2M4hf3",
+      "option": "lwm2m-agent"
     }
   ]
 }

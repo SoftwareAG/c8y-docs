@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-14T14:35:11.175Z
 title: Enhanced XSS protection in Asset notes widget
 product_area: Device management & connectivity
 change_type:

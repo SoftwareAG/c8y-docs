@@ -18,10 +18,17 @@
     <a href='{{ if eq .Page.Params.type "change-log"}}/change-logs{{else}}{{.Page.Permalink}}{{end}}' class="product-card">
       <div class="product-card__header">
         <i class="c8y-icon-duocolor {{.Page.Params.icon}}"></i>
-        <h2>{{.Page.Title}}</h2>
+        {{ if eq .Page.Title "Change logs"}}
+          {{ if site.Data.date_settings.yearly_release}}
+            <h2>Release notes</h2>
+          {{else}}
+            <h2>{{.Page.Title}}</h2>
+          {{end}}
+        {{else}}
+          <h2>{{.Page.Title}}</h2>
+        {{end}}
       </div>
         {{.Page.Content}}
-       
     </a>
   {{ end }}
 </div>

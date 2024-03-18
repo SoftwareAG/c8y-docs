@@ -6,17 +6,17 @@ section:
   - edge_server
 ---
 
-{{< product-c8y-iot >}} Edge is delivered as a software appliance designed to run on industrial PC's or local servers.
+Edge is delivered as a software appliance designed to run on industrial PC's or local servers.
 
-In contrast to {{< product-c8y-iot >}} platform, which is available in the cloud (for example, using AWS, Azure or other data centers), {{< product-c8y-iot >}} Edge is installed in factories, that is, in the same site ("onsite") in which the IoT assets are located.    
+In contrast to {{< product-c8y-iot >}} platform, which is available in the cloud (for example, using AWS, Azure or other data centers), Edge is installed in factories, that is, in the same site ("onsite") in which the IoT assets are located.    
 
-Reasons for using an onsite installation of {{< product-c8y-iot >}} Edge include:
+Reasons for using an onsite installation of Edge include:
 
 * **Autonomy**: Even if there is no cloud connection, tasks like data collection and data analysis can still be performed.
 * **Data reduction**: Data is analyzed and aggregated close to assets, and thus less data needs to be sent to the cloud.
-* **Reactivity**: Both {{< product-c8y-iot >}} Edge and {{< product-c8y-iot >}} platform include real-time streaming analytics engines. However, placing the rule execution in {{< product-c8y-iot >}} Edge reduces latency, because the round-trip to cloud is omitted.
+* **Reactivity**: Both Edge and {{< product-c8y-iot >}} platform include real-time streaming analytics engines. However, placing the rule execution in Edge reduces latency, because the round-trip to cloud is omitted.
 
-Features of {{< product-c8y-iot >}} Edge include:
+Features of Edge include:
 
 * Edge Agent, which enables remote monitoring and management of an Edge instance from the {{< product-c8y-iot >}} tenant.
 * Data Broker to send IoT data to the cloud and receive operations from the cloud, with web-based UI to filter data.
@@ -31,4 +31,4 @@ Features of {{< product-c8y-iot >}} Edge include:
 * [Machine Learning](/machine-learning/introduction/) to train and deploy your machine learning models (optional component).
 
 
-<img src="/images/edge/cumulocity-edge-overview.png" name="{{< product-c8y-iot >}} Edge overview" style="width:75%;"/>
+<img src="/images/edge/cumulocity-edge-overview.png" name="Edge overview" style="width:75%;"/>

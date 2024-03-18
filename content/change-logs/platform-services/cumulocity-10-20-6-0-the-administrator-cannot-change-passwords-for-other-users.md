@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The administrator cannot change passwords for other users.
+title: Administrators cannot change passwords for other users
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP

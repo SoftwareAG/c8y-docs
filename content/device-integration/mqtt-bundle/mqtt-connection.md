@@ -20,7 +20,7 @@ Then the instance of the MQTT client can be created with a single line:
 
     MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());
 
-The BROKER_URL should contain protocol, url and port, which the client will connect to, like this: `ssl://<cumulocity url>:8883`.
+The BROKER_URL must contain the protocol, URL and port to which the client will connect, like this: `ssl://<cumulocity url>:8883`.
 The CLIENT_ID value must match the value of the common name of the device certificate that will be used.
 The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
 The "d:" prefix is used in {{< product-c8y-iot >}} for device connections and it should not be removed or changed.

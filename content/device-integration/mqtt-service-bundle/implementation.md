@@ -81,12 +81,16 @@ both message header and body. The header size varies, but its minimum is 2 bytes
 
 ### Features {#features}
 
-#### Authentication {#authentication}
+#### Authentication and authorization {#authentication-and-authorization}
 
 Authentication types supported by MQTT Service are:
 
 *   Username and password. The MQTT username must include the tenant ID and username in the format `<tenantID>/<username>`.
 *   Device certificates - not yet supported. This will be added in a future release.
+
+{{< c8y-admon-req >}}
+The MQTT user which is used to connect to the MQTT Service must have the `MQTT_SERVICE_ADMIN` role assigned.
+{{< /c8y-admon-req >}}
 
 #### ClientId {#client-id}
 

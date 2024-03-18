@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The size of the measurement displaying line was increased
+title: Increase measurement display line size
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

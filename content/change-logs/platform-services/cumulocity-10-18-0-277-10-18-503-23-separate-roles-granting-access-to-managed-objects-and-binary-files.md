@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55275
 version: 10.18.0.277, 10.18.503.23
 ---
-This features introduces two new permissions to control access to Managed Objects and Binaries separately. This enables tenant administrators to control the access to objects in a more granular way.
+Two new permissions have been added to control access to managed objects and binaries files separately. This feature enables tenant administrators to control the access to objects in a more granular way.

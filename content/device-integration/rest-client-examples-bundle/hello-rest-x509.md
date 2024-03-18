@@ -48,7 +48,7 @@ $ keytool -import -file platform.dev.c8y.io.crt -alias servercertificate -keysto
 ```
 
 The code of the {{< product-c8y-iot >}} client implemented in Java, which connects to the platform using x.509 certificates.
-The following configuration is required before calling the device access token API using :
+The following configuration is required before calling the device access token API using:
 
 * KEYSTORE_NAME - The path to your keystore which contains the private key and the chain of certificates, which the device uses to authenticate itself.
 * KEYSTORE_PASSWORD is the password created for keystore to use its private key.

@@ -11,7 +11,7 @@ Devices can also authenticate to the {{< product-c8y-iot >}} using X.509 certifi
 
 Devices can communicate using the MQTT interface of the platform, but MQTT over WebSocket is not supported. The {{< product-c8y-iot >}} platform expects devices to connect using SSL on port 8883.
 
-Devices can also generate JWT session token by using X.509 certificates for authentication over a defined REST endpoint - device access token API. This session token can be used in subsequent requests to authenticate to the {{< product-c8y-iot >}}.
+Devices can also generate JWT session tokens by using X.509 certificates for authentication over a defined REST endpoint - device access token API. This session token can be used in subsequent requests to authenticate to the {{< product-c8y-iot >}}.
 
 Each tenant individually defines whom it trusts by uploading the base CA certificate.
 

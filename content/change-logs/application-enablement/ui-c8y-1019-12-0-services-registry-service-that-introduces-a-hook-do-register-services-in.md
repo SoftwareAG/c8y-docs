@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Introduce services registry service with hook to register services in core platform
+title: Introduce services registry with a hook to register services in the core platform
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

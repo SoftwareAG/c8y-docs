@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Device Certificates
+title: Device certificates
 layout: bundle
 slug: device-certificates
 section:

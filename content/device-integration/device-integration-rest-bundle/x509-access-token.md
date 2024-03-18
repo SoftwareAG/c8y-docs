@@ -14,7 +14,7 @@ Retrieving device access tokens from the platform with certificates does not req
 
 ### JWT Session token retrieval {#jwt-token-retrieval}
 
-The devices can authenticate itself using X.509 certificates against {{< product-c8y-iot >}} by using below endpoint only. In response, a JWT session token is issued by the {{< product-c8y-iot >}} after successful authentication which can later be used to make subsequent requests.
+The devices can authenticate using X.509 certificates against {{< product-c8y-iot >}} by using the below endpoint only. In response, a JWT session token is issued by {{< product-c8y-iot >}} after successful authentication which can later be used to make subsequent requests.
 
 
 	POST /devicecontrol/deviceAccessToken

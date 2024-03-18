@@ -4,7 +4,7 @@ title: Hello X509 REST!
 layout: redirect
 ---
 
-In this section, we will learn how to generate JWT token using mTLS protocol with {{< product-c8y-iot >}}.
+In this section, we will learn how to generate a JWT token using mTLS protocol with {{< product-c8y-iot >}}.
 For authentication with {{< product-c8y-iot >}} we use X.509 certificates.
 
 ### Prerequisites {#prerequisites}

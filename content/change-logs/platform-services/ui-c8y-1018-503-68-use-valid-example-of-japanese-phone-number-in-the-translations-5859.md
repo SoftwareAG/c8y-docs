@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Use valid example of Japanese phone number in the translations (#5859) [GRAFT][release/y2024] (#5867)
+title: Valid example of Japanese phone number used in translations
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

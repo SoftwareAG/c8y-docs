@@ -21,7 +21,7 @@ The devices can authenticate using X.509 certificates against {{< product-c8y-io
     Accept: application/json
     X-Ssl-Cert-Chain: -----BEGIN CERTIFICATE----- MIIDTzCCAjegAwIB...TpaISZIs= -----END CERTIFICATE
 
-Device access token API can be called by executing the following curl statement:
+The device access token API can be called by executing the following curl statement:
 
     curl -v -cert domain-cert.pem -key domain-private-key.pem \
        -H 'Accept: application/json' \

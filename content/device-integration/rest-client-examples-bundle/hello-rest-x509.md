@@ -77,7 +77,7 @@ private static final String LOCAL_DEVICE_CHAIN = "-----BEGIN CERTIFICATE----- MI
 private static final String PLATFORM_URL = "<URL of the platform>";
 ```  
 
-The device can now generate JWT token. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-integration/certificate/#device-certificates) process.
+The device can now generate a JWT token. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-integration/certificate/#device-certificates) process.
 
 {{< c8y-admon-info >}}
 You do not need to set a password, user or tenant for the REST java client using certificates. {{< product-c8y-iot >}} will recognize the tenant and the user by the provided certificate.

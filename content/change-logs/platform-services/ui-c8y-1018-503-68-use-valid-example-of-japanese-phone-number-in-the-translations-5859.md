@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Valid example of Japanese phone number used in translations
+title: Valid examples of Japanese phone number used in translations
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

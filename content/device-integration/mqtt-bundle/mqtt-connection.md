@@ -46,7 +46,7 @@ The example also shows how to create the callback for the connection.
 First thing is to create the class which implements the interface `MqttCallbackExtended`.
 Then such a class can be created and an instance of it can be provided to the MQTT client: `mqttClient.setCallback(this);`.
 
-In general, the MQTT Eclipse Paho Client uses the Java Secure Socket Extension, which is part of the Java Development Kit, to provide secure connections via SSL.
+In general, the MQTT Eclipse Paho client uses the Java Secure Socket Extension, which is part of the Java Development Kit, to provide secure connections via SSL.
 JSSE provides the Java implementation of the SSL and TLS protocol, which can be configured by developers using its classes.
 The documentation of the Java Secure Socket Extension shows how the SSL connection is established and provides some examples of customizing the implementation.
 The full document is available on the [official Oracle website](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html).

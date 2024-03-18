@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed the appearance of the Single Sign-On (SSO) login button.
+title: Fixed the appearance of the SSO (Single Sign-On) login button
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

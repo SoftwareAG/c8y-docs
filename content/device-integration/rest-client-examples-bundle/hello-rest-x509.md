@@ -25,7 +25,7 @@ Maven can be downloaded from the [Maven website](http://maven.apache.org).
 
 #### Copy a Maven project {#copy-maven-project}
 
-Copy Java project which configured with Maven from [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/x509-rest-client) repository and execute the following command:
+Copy a Java project which is configured with Maven from [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/x509-rest-client) repository and execute the following command:
 
 ```shell
 $ mvn clean install

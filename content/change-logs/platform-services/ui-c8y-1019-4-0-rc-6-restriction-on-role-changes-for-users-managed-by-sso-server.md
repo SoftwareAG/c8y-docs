@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57096
 version:
 ---
-The administrator can no longer change the global roles and inventory roles of a user managed by the SSO server if they are updated during each login. This option can be set in access mapping of SSO configuration.
+Administrators can no longer change the global roles and inventory roles of a user managed by the SSO server if they are updated during each login. This option can be set in the access mapping of the SSO configuration.

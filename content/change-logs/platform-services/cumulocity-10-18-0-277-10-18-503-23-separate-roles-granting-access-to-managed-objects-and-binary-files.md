@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Separate roles granting access to managed objects and binary files.
+title: Separate roles granting access to managed objects and binary files
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP

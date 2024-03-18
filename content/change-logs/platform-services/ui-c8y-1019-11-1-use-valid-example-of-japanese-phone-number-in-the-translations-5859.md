@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58311
 version: 1019.11.1
 ---
-Use valid example of Japanese phone number in the translations (#5859) [GRAFT][release/cd] (#5868)
+In the Japanese translation of the user interface, an invalid example was used for the phone number field, which could lead to confusion for Japanese users trying to enter their phone number. This change updates the example to use a valid Japanese phone number format. With this fix, Japanese users should now be able to more easily understand the expected phone number format.

@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: MTM-57096
-version: 1019.4.0-rc.6
+version:
 ---
-The administrator cannot change the roles of a user managed by the SSO server if they are updated during each login.
+The administrator can no longer change the global roles and inventory roles of a user managed by the SSO server if they are updated during each login. This option can be set in access mapping of SSO configuration.

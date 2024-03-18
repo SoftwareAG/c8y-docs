@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Restriction on role changes for users managed by SSO server.
+title: Restriction on role changes for users managed by SSO server
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Services registry service that introduces a hook do register services in the core platform. [GRAFT][release/cd] (#5869)
+title: Introduce services registry service with hook to register services in core platform
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

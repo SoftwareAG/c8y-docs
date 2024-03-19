@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Css variable now correctly sizes the app icon
+title: CSS variable now correctly sizes the app icon
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

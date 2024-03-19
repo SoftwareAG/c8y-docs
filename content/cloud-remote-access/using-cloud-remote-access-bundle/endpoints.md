@@ -75,11 +75,11 @@ Telnet is considered to be an insecure protocol lacking built-in security measur
 
 #### To edit an endpoint {#to-edit-an-endpoint}
 
-To edit an endpoint, click the menu icon <i class="dlt-c8y-icon-more-menu text-muted icon-20"></i> at the right of the respective entry and select **Edit** from the context menu.
+To edit an endpoint, click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the respective entry and select **Edit** from the context menu.
 
 #### To delete an endpoint {#to-delete-an-endpoint}
 
-To delete an endpoint, click the menu icon at the right of the respective entry and select **Remove** from the context menu.
+To delete an endpoint, click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the respective entry and select **Remove** from the context menu.
 
 {{< c8y-admon-info >}}
 An active connection will not be terminated automatically after the endpoint was deleted.

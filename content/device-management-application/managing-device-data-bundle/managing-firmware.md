@@ -65,14 +65,14 @@ The firmware patch will be added to the version details within the firmware deta
 
 ### To edit a firmware {#to-edit-a-firmware}
 
-1. Click the menu icon at the right of a specific firmware entry and in the context menu click **Edit**.
+1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of a specific firmware entry and in the context menu click **Edit**.
 2. Update the name, description or device type filter by clicking the pencil icon next to it. Make the desired changes and click **Save**.
 
 The firmware will be updated accordingly.
 
 ### To delete a firmware {#to-delete-a-firmware}
 
-Click the menu icon at the right of a specific firmware entry and in the context menu click **Delete**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of a specific firmware entry and in the context menu click **Delete**.
 
 The object will be deleted from the firmware repository.
 

@@ -33,4 +33,4 @@ You can now navigate to the Device management application or the Cockpit applica
 
 ### To delete a data connector {#to-delete-a-data-connector}
 
-Click the menu icon and then click **Delete** to stop data forwarding and delete the data connector.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> and then click **Delete** to stop data forwarding and delete the data connector.

@@ -60,21 +60,21 @@ If you click **Add software** from within the details of a specific software, th
 
 ### To edit a software {#to-edit-a-software}
 
-1. Click the menu icon at the right of a specific software item and in the context menu click **Edit**.
-2. Update the name, description, device type filter or software type by clicking the pencil icon next to it. Make the desired changes and click **Save**.
+1. Click the pencil icon <i class="dlt-c8y-icon-edit1 text-primary"></i> at the right of a specific software item.
+2. Update the name, description, device type filter or software type by hovering over the pencil icon <i class="dlt-c8y-icon-edit1 text-primary"></i> next to it. Make the desired changes and click **Save**.
 
 The software will be updated accordingly.
 
 
 ### To delete a software {#to-delete-a-software}
 
-Click the menu icon at the right of a specific software item and in the context menu click **Delete**.
+Click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> at the right of a specific software item and in the context menu click **Delete**.
 
 The software and all its versions will be deleted from the software repository.
 
 ### To delete a software version {#to-delete-a-software-version}
 
-In the details of a specific software, hover over the version entry you want to delete and click the delete icon. The software version will be deleted from the software details.
+In the details of a specific software, hover over the version entry you want to delete and click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i>. The software version will be deleted from the software details.
 
 If the last version of a software is deleted, the software is entirely removed from the repository.
 

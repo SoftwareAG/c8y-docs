@@ -68,11 +68,11 @@ You may of course also delegate on a temporary basis, for example if you are tem
 
 #### To delegate permissions to a user {#to-delegate-permissions-to-a-user}
 
-Either open the user and click the delegate icon in the **Delegated by** field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Delegate**.
+Either open the user and click the delegate icon in the **Delegated by** field, or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the user entry in the user list and from the context menu, select **Delegate**.
 
 #### To undelegate permissions {#to-undelegate-permissions}
 
-Remove the delegation in the **Delegate by** field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Undelegate**.
+Remove the delegation in the **Delegate by** field, or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> in the user list and from the context menu, select **Undelegate**.
 
 If the delegated user must also manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Assigning inventory roles to users](/standard-tenant/managing-permissions/#to-assign-inventory-roles-to-users).
 

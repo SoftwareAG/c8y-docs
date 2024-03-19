@@ -64,5 +64,5 @@ For details on the fields, see the description on adding certificates above.
 
 ### To delete a trusted certificate {#to-delete-a-trusted-certificate}
 
-To permanently delete a certificate from the trusted certificates list, click the menu icon at the right of the respective entry and in the context menu click **Delete**.
+To permanently delete a certificate from the trusted certificates list, click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> at the right of the respective entry and in the context menu click **Delete**.
 The certificate will be permanently deleted.

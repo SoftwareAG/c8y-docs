@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-2674
-version: 10.20.317.0
+version: 10.18.540.74
 ---
 
 Changing the external microservice was not working as expected because the LWM2M agent would still point the custom

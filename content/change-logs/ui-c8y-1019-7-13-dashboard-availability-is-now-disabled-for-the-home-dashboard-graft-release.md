@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Dashboard availability setting has been removed from the Home dashboard. 
+title: Dashboard availability setting removed from the Home dashboard
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

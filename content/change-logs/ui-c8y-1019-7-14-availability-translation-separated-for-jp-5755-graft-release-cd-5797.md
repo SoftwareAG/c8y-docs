@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57688
 version: 1019.7.14
 ---
-The "Availability" text is now translated separately for Japan to improve localization. This allows the availability text to be tailored for the Japanese market.
+The term "Availability" in the UI now offers different translations for Japanese depending on the context. This improvement better tailors the localization for the Japanese market.

@@ -63,4 +63,4 @@ For further information on permissions, see [Managing permissions](/standard-ten
 
 ### To delete a group {#to-delete-a-group}
 
-Hover over the respective entry you want to delete and click the delete icon at the right.
+Hover over the respective entry you want to delete and click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> at the right.

@@ -46,7 +46,7 @@ Unassigning a device does not delete the device, subdevices or any associated da
 
 ### To delete a device {#to-delete-a-device}
 
-Hover over the respective device you want to delete and click the delete icon at the right.
+Hover over the respective device you want to delete and click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> at the right.
 
 The device will be permanently deleted.
 

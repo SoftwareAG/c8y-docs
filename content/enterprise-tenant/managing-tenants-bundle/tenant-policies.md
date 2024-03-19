@@ -47,7 +47,7 @@ When defining the retention rules and options you can select a checkbox to allow
 
 ### To edit a tenant policy {#to-edit-a-tenant-policy}
 
-Click the respective policy entry or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of the policy entry and then click **Edit**.
+Click the respective policy entry or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the policy entry and then click **Edit**.
 
 In the resulting dialog box, make your edits and click **Save** to save your settings.
 
@@ -55,8 +55,8 @@ To delete a retention rule or a tenant option from a policy, hover over it and c
 
 ### To duplicate a tenant policy {#to-duplicate-a-tenant-policy}
 
-Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of the policy entry you want to duplicate and then click **Duplicate**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> in the policy entry you want to duplicate and then click **Duplicate**.
 
 ### To delete a tenant policy {#to-delete-a-tenant-policy}
 
-Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of the policy entry you want to delete and then click **Delete**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> in the policy entry you want to delete and then click **Delete**.

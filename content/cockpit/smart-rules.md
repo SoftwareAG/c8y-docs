@@ -97,20 +97,20 @@ Smart rules can be instantiated multiple times.
 
 ### To edit a smart rule {#to-edit-a-smart-rule}
 
-Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of an entry and then click **Edit**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of an entry and then click **Edit**.
 
 For details on the fields see [To create a smart rule](#to-create-a-smart-rule).
 
 
 ### To duplicate a smart rule {#to-duplicate-a-smart-rule}
 
-1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of an entry and then click **Duplicate**.
+1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of an entry and then click **Duplicate**.
 2. Modify at least the name.
 3. Click **Save & close** to save the smart rule and return to the smart rule list.
 
 ### To delete a smart rule {#to-delete-a-smart-rule}
 
-Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of an entry and then click **Delete**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of an entry and then click **Delete**.
 
 ### To debug a smart rule {#to-debug-a-smart-rule}
 

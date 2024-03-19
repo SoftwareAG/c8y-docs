@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Input range component improvements (#5505) [GRAFT][release/cd] (#5569)
+title: Improvements to input range component
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

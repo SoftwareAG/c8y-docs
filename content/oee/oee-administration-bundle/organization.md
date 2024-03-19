@@ -30,7 +30,7 @@ Lines must be assigned to sites or areas.
 
 ### To edit an entity {#to-edit-an-entity}
 
-Click the pencil icon next to the entity name to open the entity editor and edit the entity.
+Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary"></i> next to the entity name to open the entity editor and edit the entity.
 
 ### To assign an entity {#to-assign-an-entity}
 

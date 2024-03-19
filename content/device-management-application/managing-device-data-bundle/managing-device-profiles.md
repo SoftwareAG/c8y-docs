@@ -56,7 +56,7 @@ For details on configuration snapshots, see [Managing configurations](#managing-
 
 To update a device profile click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the respective device profile entry and then click **Edit**.
 
-You may edit the name and the device types by clicking the pencil icon <i class="dlt-c8y-icon-edit1 text-primary"></i> next to the respective fields. Make the desired changes and click **Save** to save your edits.
+You may edit the name and the device types by clicking the edit icon <i class="dlt-c8y-icon-edit1 text-primary"></i> next to the respective fields. Make the desired changes and click **Save** to save your edits.
 
 Moreover, you can delete firmware, software or configuration items or add new ones.
 
@@ -71,7 +71,7 @@ Note that in case of firmware, only one item is allowed in a profile at a time.
 
 To duplicate a device profile, click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the respective device profile entry and then click **Duplicate**.
 
-Duplicating a profile creates another instance of the profile with the same content. Per default, the original profile name is extended with "Copy of". You may give the profile a more appropriate name by clicking the pencil icon next to the name field and editing it.
+Duplicating a profile creates another instance of the profile with the same content. Per default, the original profile name is extended with "Copy of". You may give the profile a more appropriate name by clicking the edit icon <i class="dlt-c8y-icon-edit1 text-primary"></i> next to the name field and editing it.
 
 ### To delete device profiles {#to-delete-device-profiles}
 

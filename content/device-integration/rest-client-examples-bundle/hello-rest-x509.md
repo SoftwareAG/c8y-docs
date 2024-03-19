@@ -44,7 +44,7 @@ If you don't have a valid certificate, you can generate one for testing purposes
 The following configuration is required before calling the device access token API using:
 
 * KEYSTORE_NAME - The path to your keystore which contains the private key and the chain of certificates, which the device uses to authenticate itself.
-* KEYSTORE_PASSWORD is the password created for keystore to use its private key.
+* KEYSTORE_PASSWORD - The password created for keystore to use its private key.
 * KEYSTORE_FORMAT - Either "JKS" or "PKCS12" depending on the file format. The path is provided by KEYSTORE_NAME.
 * TRUSTSTORE_NAME - The path to your truststore which contains the certificate of the server.
 * TRUSTSTORE_PASSWORD - The password to access the truststore.

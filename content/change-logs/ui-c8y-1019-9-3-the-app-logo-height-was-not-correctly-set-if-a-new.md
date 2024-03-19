@@ -1,6 +1,6 @@
 ---
 date: ""
-title: App logo height default value corrected when creating new branding
+title: App logo height set properly when creating new branding
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

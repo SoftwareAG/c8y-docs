@@ -1,0 +1,17 @@
+---
+date: ""
+title: Fixed issue with logging using user alias and TFA SMS with basic authentication
+product_area: Platform services
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+component:
+  - value: q3kclF6pO
+    label: Authentication
+build_artifact:
+  - value: tc-QHwMfWtBk7
+    label: cumulocity
+ticket: MTM-56608
+version: 10.18.540.63
+---
+Fixed a random *"invalid TFA token due to user inactivity"* issue when logging in using user alias and TFA SMS with basic authentication.

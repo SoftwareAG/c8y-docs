@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57884
 version: 1019.8.0
 ---
-Input range component improvements (#5505) [GRAFT][release/cd] (#5569)
+The input range component (c8y-range) can be used to show a slider to configure a range. The styling and documentation for this component was improved, so that it is more suiting the overall styling of components and forms. 

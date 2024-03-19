@@ -38,7 +38,7 @@ Now the only thing that must be configured to establish the SSL connection is to
 * KEYSTORE_PASSWORD - The password created for keystore to use its private key.
 * KEYSTORE_FORMAT - Either "JKS" or "PKCS12" depending on the file format. The path is provided by KEYSTORE_NAME.
 * TRUSTSTORE_NAME - The path to your truststore which contains the certificate of the server.
-* TRUSTSTORE_PASSWORD is the password to access the truststore.
+* TRUSTSTORE_PASSWORD - The password to access the truststore.
 * TRUSTSTORE_FORMAT must be "JKS" or "PKCS12" depending on the file format. The path is provided by TRUSTSTORE.
 
 After filling in this data, the example client will use the provided data to connect to the specified platform using certificates.

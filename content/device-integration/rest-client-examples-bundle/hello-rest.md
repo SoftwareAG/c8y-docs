@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Hello REST!
+title: Hello REST
 layout: redirect
 ---
 

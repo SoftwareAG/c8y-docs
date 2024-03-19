@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57098
 version: 1019.7.13
 ---
-The availability feature has been disabled for the Home dashboard. This change prevents issues with an incorrect availability status being shown on the Home dashboard.
+The availability feature has been removed for the Home dashboard. This change prevents issues with an incorrect availability status being shown on the Home dashboard.

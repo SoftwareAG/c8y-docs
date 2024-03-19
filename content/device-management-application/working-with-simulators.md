@@ -119,7 +119,7 @@ The new sleep instruction will be added to the simulator.
 
 #### To remove an instruction {#to-remove-an-instruction}
 
-Hover over the instruction or the sleep you want to remove and click the remove icon.
+Hover over the instruction or the sleep you want to remove and click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i>.
 
 The instruction will be removed from the simulator.
 

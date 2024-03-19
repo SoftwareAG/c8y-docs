@@ -108,6 +108,6 @@ The devices will be assigned to the selected group and shown as subassets in the
 ### To remove a device from a group {#to-remove-a-device-from-a-group}
 
 1. Navigate to the **Subassets** tab of the group.
-2. Hover over the respective device you want to remove and click the remove icon at the right.
+2. Hover over the respective device you want to remove and click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> at the right.
 
 Removing a device does not delete the device, subdevices or any associated data. The device is only removed from its location in the asset hierarchy. It can be assigned to this group or other groups later.

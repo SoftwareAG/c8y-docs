@@ -113,7 +113,7 @@ Once all required asset models are created, you can start creating [assets](/dtm
 2. In the dropdown select one or multiple allowed child asset models.
 3. The selected child asset models are then displayed under **Allowed child asset models** with the checkbox **Required** on the right.
    If the asset model requires this child asset model, select the checkbox. By default, it is clear.
-4. Click the remove icon next to the checkbox to remove the child asset model from the selected asset model.
+4. Click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> next to the checkbox to remove the child asset model from the selected asset model.
 
 {{< c8y-admon-info>}}
 If you do not select and check a child asset model, then the asset cannot have any subassets.
@@ -133,7 +133,7 @@ If the asset model is "Rotor" and you select "Blade" as an allowed child asset m
 3. The selected asset properties are then displayed on the **Asset properties** segment with the checkbox **Required** on the right.
    If the asset model requires this asset property, select the checkbox. By default, it remains clear.
 4. Reorder the asset properties via drag and drop.
-5. To remove the asset property from the asset model, click the remove icon next to the checkbox.
+5. To remove the asset property from the asset model, click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> next to the checkbox.
 6. Click **Save** to save your settings.
 
 {{< c8y-admon-info>}}
@@ -222,7 +222,7 @@ To import asset models, follow the steps below:
 2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset models from a DTM application on another tenant.
 3. Click **Next** to preview the asset models. Initially, all the asset models are collapsed. Click the expand icon to the left of each asset model to view the next level of child asset models.
 4. Click **Import** to import the asset models.
-5. Alternatively, click **Back** to go to previous step. Hover over the file name and click the remove icon to remove the current file and upload a different one.
+5. Alternatively, click **Back** to go to previous step. Hover over the file name and click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> to remove the current file and upload a different one.
 6. The newly imported asset models are listed on the **Asset models** page.
 
 ![Import asset models](/images/dtm/asset-type/dtm-asset-type-import.png)

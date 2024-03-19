@@ -8,7 +8,7 @@ section:
 
 Devices can authenticate to {{< product-c8y-iot >}} using X.509 certificates over REST (port 443) using mTLS.
 
-Devices can also generate JWT session tokens by using X.509 certificates for authentication over a defined REST endpoint - device access token API. This session token can be used in subsequent requests to authenticate to the {{< product-c8y-iot >}}.
+Devices can also generate JWT session tokens by using X.509 certificates for authentication over a defined REST endpoint - device access token API. This session token can be used in subsequent requests to authenticate to {{< product-c8y-iot >}}.
 
 Each tenant individually defines whom it trusts by uploading the base CA certificate.
 

@@ -16,5 +16,5 @@ version: 10.20.317.0
 ---
 
 Changing the external microservice was not working as expected because the LWM2M agent would still point the custom
-actions to the old microservice as the service-key was not being updated.This LWM2M agent version fixes the bug by
+actions to the old microservice as the service key was not being updated. Now 
 updating the service-key when the external microservice is changed.

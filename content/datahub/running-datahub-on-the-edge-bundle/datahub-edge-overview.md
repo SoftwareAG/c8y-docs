@@ -48,3 +48,6 @@ For your convenience, here is an overview of the contents:
 | Dremio container management | Docker daemon | Kubernetes |
 | {{< product-c8y-iot >}} DataHub backend container management | Docker daemon | Microservice in {{< product-c8y-iot >}} Core |
 | Data lakes | NAS | Azure Storage, S3, HDFS, (NAS) |
+
+#### Cumulocity IoT DataHub Edge variants
+{{< product-c8y-iot >}} DataHub Edge is available in two variants, with one being based solely on Docker containers and one being based on Docker containers running on Kubernetes.

@@ -20,7 +20,7 @@ data:
   no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<kubernetes cluster IP range e.g. 10.43.0.0/16>
 `
 
-By configuring Cumulocity IoT Edge with the appropriate proxy settings, you ensure that it can seamlessly communicate with external endpoints through the proxy server, allowing it to function effectively in environments where proxy usage is mandated.
+By configuring Edge with the appropriate proxy settings, you ensure that it can seamlessly communicate with external endpoints through the proxy server, allowing it to function effectively in environments where proxy usage is mandated.
 
 The table below provides more information:
 

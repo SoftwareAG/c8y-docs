@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3092
 version: 1019.12.0
 ---
-To improve the management and discoverability of services in the Cumulocity IoT platform, a new service registry has been introduced. This registry provides a hook that allows services to register themselves with the platform.
+To improve the management and discoverability of services in Cumulocity IoT, a new service registry has been introduced allowing services to register with the platform via hooks.

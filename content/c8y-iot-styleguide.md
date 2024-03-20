@@ -5,7 +5,7 @@ type: root
 layout: redirect
 external: "https://styleguide.cumulocity.com/apps/codex/#/"
 audience:
-  - Users
+  - Developers
 section:
 - app_enablement
 weight: 30

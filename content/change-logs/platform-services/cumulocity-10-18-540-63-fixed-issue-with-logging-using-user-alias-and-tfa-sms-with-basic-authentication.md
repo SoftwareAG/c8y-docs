@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue with logging using user alias and TFA SMS with basic authentication
+title: Login using user alias and TFA SMS with basic authentication works reliably again
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

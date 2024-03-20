@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-56608
 version: 10.18.540.63
 ---
-Fixed a random *"invalid TFA token due to user inactivity"* issue when logging in using user alias and TFA SMS with basic authentication.
+Fixed a random issue ("invalid TFA token due to user inactivity") when logging in using the user alias and TFA SMS with basic authentication.

@@ -21,7 +21,7 @@ In order to follow this tutorial, check the following prerequisites:
 
 Maven can be downloaded from the [Maven website](http://maven.apache.org).
 
-#### Copy a Maven project {#copy-maven-project}
+### Copy a Maven project {#copy-a-maven-project}
 
 Copy a Java project which is configured with Maven from [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/x509-rest-client) repository and execute the following command:
 
@@ -29,7 +29,7 @@ Copy a Java project which is configured with Maven from [cumulocity-examples](ht
 
 This will compile the project.
 
-#### To generate a valid certificate {#to-generate-a-valid-certificate}
+### To generate a valid certificate {#to-generate-a-valid-certificate}
 
 If you don't have a valid certificate, you can generate one for testing purposes, following the instructions below.
 
@@ -87,7 +87,7 @@ What does the code in `main` do?
 -   Generate a JWT token after successful authentication using X.509 certificates.
 -   Using this JWT token the further rest operation can be done without any certificates.
 
-#### Build and run the application {#build-and-run-the-application}
+### Build and run the application {#build-and-run-the-application}
 
 Use the following commands to build the application:
 

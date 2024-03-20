@@ -1,10 +1,12 @@
 ---
-weight: 70
-title: Device access token
+weight: 30
+title: Device authentication
 layout: redirect
 ---
 
-Devices can authenticate to the {{< product-c8y-iot >}} platform using X509 certificates over a defined REST endpoint protocol to procure the JWT session token.
+Devices can authenticate to the {{< product-c8y-iot >}} platform using:
+* Device User credentials i.e., Using Device username and password
+* Certificate Authentication i.e., Using X509 certificates over a defined REST endpoint protocol to procure the JWT session token.
 
 Mutual TLS (mTLS) is a security protocol that uses X.509 certificates for both client and server authentication in a communication session.
 
@@ -12,7 +14,7 @@ The mTLS protocol is commonly used to secure connections in web services, APIs, 
 
 Retrieving device access tokens from the platform with certificates does not require the tenant ID, username and password. Authentication information will be obtained from the certificates.
 
-### JWT Session token retrieval {#jwt-token-retrieval}
+### JWT session token retrieval {#jwt-session-token-retrieval}
 
 The devices can authenticate using X.509 certificates against {{< product-c8y-iot >}} by using the below endpoint only. In response, a JWT session token is issued by {{< product-c8y-iot >}} after successful authentication which can later be used to make subsequent requests.
 

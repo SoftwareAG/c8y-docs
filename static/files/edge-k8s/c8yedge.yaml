@@ -175,4 +175,4 @@ spec:
 #  http_proxy: <HTTP Proxy URL>
 #  https_proxy: <HTTPS Proxy URL>
 #  socks_proxy: <SOCKS Proxy URL>
-#  no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<kubernetes cluster IP range e.g. 10.43.0.0/16>
+#  no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain name, e.g. myown.iot.com>,<kubernetes cluster IP range e.g. 10.43.0.0/16>

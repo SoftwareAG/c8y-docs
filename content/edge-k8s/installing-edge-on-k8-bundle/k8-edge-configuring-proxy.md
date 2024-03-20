@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 When Cumulocity IoT Edge is deployed behind a proxy, it needs to be configured to communicate with external endpoints over the internet through the proxy server.
-To configure Cumulocity IoT Edge to use a proxy, you need to create or update a ConfigMap named `custom-environment-variables` in the c8yedge (or the one you deployed Edge into) namespace with the required proxy settings. The keys `http_proxy`, `https_proxy` and `socks_proxy` should be set to the URLs of the HTTP, HTTPS and Socks proxies, respectively. The key `no_proxy` should be set to specify a comma-separated list of domain suffixes, IP addresses, or CIDR ranges that Edge should bypass the proxy server for.
+To configure Edge to use a proxy, you need to create or update a ConfigMap named `custom-environment-variables` in the c8yedge (or the one you deployed Edge into) namespace with the required proxy settings. The keys `http_proxy`, `https_proxy` and `socks_proxy` should be set to the URLs of the HTTP, HTTPS and Socks proxies, respectively. The key `no_proxy` must be set to specify a comma-separated list of domain suffixes, IP addresses, or CIDR ranges that Edge should bypass the proxy server for.
 
 Here's an example of a ConfigMap with proxy settings:
 `

@@ -50,4 +50,12 @@ For your convenience, here is an overview of the contents:
 | Data lakes | NAS | Azure Storage, S3, HDFS, (NAS) |
 
 #### Cumulocity IoT DataHub Edge variants
-{{< product-c8y-iot >}} DataHub Edge is available in two variants, with one being based solely on Docker containers and one being based on Docker containers running on Kubernetes.
+{{< product-c8y-iot >}} DataHub Edge is available in two variants corresponding to two 
+delivery modes of {{< product-c8y-iot >}} Edge:
+* as appliance running in a Linux VM deployed into a supported hypervisor:
+  in this case, the DataHub backend and the DataHub server (Dremio) are running 
+  as docker containers
+* as an operator-based deployment into a Kubernetes environment:
+  the DataHub backend is running as a microservice within the {{< product-c8y-iot >}} 
+  platform and Dremio is deployed as set of Kubernetes pods 
+

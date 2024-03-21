@@ -66,7 +66,7 @@ Certificate revocation is an irreversible process. So, offline entries once made
 4. 4. Click **Save** to confirm your entries.
 
 {{< c8y-admon-info >}}
-If the date field is empty, then the current date is used. Future dates are not allowed.
+If the date field is empty or a future date, then the current date is used.
 {{< /c8y-admon-info >}}
 
 #### Offline CRL bulk upload {#offline-crl-bulk-upload}
@@ -74,8 +74,8 @@ If the date field is empty, then the current date is used. Future dates are not 
 {{< c8y-admon-info >}}
 Revoked certificate serial numbers can be added in bulk.
 Each file can hold at maximum 5000 revocation entries.
-If the date is in the future then the CRL entry is skipped.
-In case of a duplicate, the latest one (last one uploaded) is used.
+If the date is in the future then it defaults to the current date.
+In case of a duplicate, the existing entry is retained.
 {{< /c8y-admon-info >}}
 
 To bulk upload, follow these steps:

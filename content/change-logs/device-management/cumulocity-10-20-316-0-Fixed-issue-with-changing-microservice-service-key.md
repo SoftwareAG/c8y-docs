@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-2674
-version: 10.20.317.0
+version: 10.20.319.0
 ---
 
 In the custom action configuration of LWM2M device protocol resources, the exchange to another external decoder microservice

@@ -66,7 +66,7 @@ Certificate revocation is an irreversible process. So, offline entries once made
 4. 4. Click **Save** to confirm your entries.
 
 {{< c8y-admon-info >}}
-If the date field is empty or is a future date, then the current date is used.
+If the date field is empty or a future date, then the current date is used.
 {{< /c8y-admon-info >}}
 
 #### Offline CRL bulk upload {#offline-crl-bulk-upload}

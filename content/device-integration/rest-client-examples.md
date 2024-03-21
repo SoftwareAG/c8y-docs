@@ -1,6 +1,6 @@
 ---
-weight: 35
-title: Device integration using REST
+weight: 40
+title: Rest client examples
 layout: bundle
 section:
   - device_management

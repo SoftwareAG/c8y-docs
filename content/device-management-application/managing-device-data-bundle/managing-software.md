@@ -23,7 +23,7 @@ The available software objects will be displayed as a list.
 ![Software list](/images/users-guide/DeviceManagement/devmgmt-software-repository.png)
 
 Each entry shows the software name, the device type it is applicable for (if set), the software type (if set), and a badge indicating if and how many versions are available for a particular software.
-The values in every column except for the **Versions** column can be filtered and sorted by clicking the filter <i class="dlt-c8y-icon-filter"></i> and sort <i class="dlt-c8y-icon-sort-arrow"></i> icons in the column header.
+The values in every column except for the **Versions** column can be filtered and sorted by clicking the filter <i class="dlt-c8y-icon-filter icon-20"></i> and sort <i class="dlt-c8y-icon-sort-arrow icon-20"></i> icons in the column header.
 
 When clicking on an entry, the details for this software are displayed along with all available versions.
 

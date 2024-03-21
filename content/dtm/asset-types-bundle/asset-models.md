@@ -181,7 +181,7 @@ On the **Asset models** page, select the checkboxes next to the desired asset mo
 
 ### To sort asset models {#to-sort-asset-models}
 
-To sort columns, hover over the respective column header and click the sort icon for an ascending or descending order.
+To sort columns, hover over the respective column header and click the sort icon <i class="dlt-c8y-icon-sort-arrow icon-20"></i> for an ascending or descending order.
 
 ### To filter asset models {#to-filter-asset-models}
 

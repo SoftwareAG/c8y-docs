@@ -99,7 +99,7 @@ You can view, search or filter devices easily with the following options:
 
 4. To filter devices based on text, use the **Filter** option in the applicable columns. If you apply a filter, you see a notification at the top.
 
-5. To clear the filters, click **Clear all filters**. To see the sort icon and the filter icons hover over each column.
+5. To clear the filters, click **Clear all filters**. To see the sort icon <i class="dlt-c8y-icon-sort-arrow icon-20"></i> and the filter icon <i class="dlt-c8y-icon-filter icon-20"></i> hover over each column.
 
 ### To add multiple instances of an asset {#to-add-multiple-instances-of-an-asset}
 

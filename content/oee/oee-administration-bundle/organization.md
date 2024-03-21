@@ -12,7 +12,7 @@ The **Organization structure** area reflects the structure of the **Machine Park
 
 The entities listed in the **Unassigned entities** area, are not shown in the **Machine Park Overview** and no calculation is performed for them.
 
-Click the arrow icon at the right to expand or collapse the entity and show or hide its details.
+Click the arrow icon <i class="dlt-c8y-icon-expand-arrow icon-20"></i> at the right to expand or collapse the entity and show or hide its details.
 
 ### To create a new entity {#to-create-a-new-entity}
 

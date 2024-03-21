@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-55259
-version: 1018.504.17
+version: 10.20.6.0
 ---
 For security reasons, administrators can no longer change passwords of other users. The users are only allowed to change their own passwords. However, administrators can still enforce the users to change their passwords on their next login in case of any anticipated breaches.

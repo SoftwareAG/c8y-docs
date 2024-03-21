@@ -112,10 +112,10 @@ Widgets synchronized with the dashboard time range are indicated by a respective
 
 ### To edit a dashboard {#to-edit-a-dashboard}
 
-There are two primary ways to edit a dashboard:
+To edit a dashboard, edit mode must be enabled. There are two primary ways to enter edit mode:
 
-- **Dashboard settings**: This modifies the overall properties of the dashboard, such as its name, description, position, availability, or appearance.
-- **Edit widgets**: This manages the content of the dashboard, including adding, removing, or changing the position of widgets.
+- Clickng on **Dashboard settings**: This modifies the overall properties of the dashboard, such as its name, description, position, availability, or appearance.
+- Clicking on **Edit widgets**: This manages the content of the dashboard, including adding, removing, or changing the position of widgets.
 
 Once in edit mode, the redo and undo functionality is automatically enabled. This allows you to easily revert any unwanted changes you make to the dashboard. Any changes made to the dashboard in "Edit widgets" mode will not be reflected until you save them.
 

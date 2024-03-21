@@ -46,7 +46,7 @@ The general structure common to all {{< product-c8y-iot >}} applications include
 </tr>
 <tr>
 <td style="text-align:left"><b>Top bar</b></td>
-<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="/get-familiar-with-the-ui/gui-features/#search-and-filter-functionality" class="no-ajaxy">Search and filter functionality</a>. Not always available. <br><br><img src="/images/icons/switcher-icon.png" alt="Application switcher" style="max-width:100%"> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="#application-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you will find the <b>User</b> button with your username. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
+<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><i class="dlt-c8y-icon-search icon-20"></i> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="/get-familiar-with-the-ui/gui-features/#search-and-filter-functionality" class="no-ajaxy">Search and filter functionality</a>. Not always available. <br><br><i class="dlt-c8y-icon-app-switcher icon-20"></i> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="#application-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you will find the <b>User</b> button with your username. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Top menu bar</b></td>
@@ -84,7 +84,7 @@ If you are using {{< sag-cloud >}}, the application switcher also shows other {{
 
 #### Full text search {#full-text-search}
 
-{{< product-c8y-iot >}} provides a full text search, available through the **Search** button <img src="/images/icons/search-icon.png" alt="Search" style="display:inline-block; margin:0"> at the right of the top bar in the UI.
+{{< product-c8y-iot >}} provides a full text search, available through the **Search** button <i class="dlt-c8y-icon-search icon-20"></i> at the right of the top bar in the UI.
 
 On entering a search term into the textbox at the top of the **Search** window, {{< product-c8y-iot >}} returns all assets (groups, devices, child devices) matching the search criteria.
 

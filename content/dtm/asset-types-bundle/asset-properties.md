@@ -244,7 +244,7 @@ To upload the schematic diagram for a wind turbine, you name the asset property 
 
 1. Navigate to the **Asset properties** page.
 2. Enter the desired name in the search field on the top left.
-3. Click the search icon.
+3. Click the search icon <i class="dlt-c8y-icon-search icon-20"></i>.
 
 All asset properties matching the search values are displayed on the screen on the left. If the search entry does not match with any asset properties, you see a notification.
 

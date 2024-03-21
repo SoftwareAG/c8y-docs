@@ -47,62 +47,63 @@ ROLES & PERMISSIONS:
 To create your individualized dashboard, execute the following steps:
 
 1. In the **Groups** menu select the group or the device in the navigator for which to create a dashboard.
-2. Click the plus icon right from the tabs to open the dashboard editor.
+2. Click "Add dashboard" button right from the tabs to open the dashboard editor.
 
-3. In the **Tab** section of the dashboard editor, provide the following information:
+3. In the **General** tab of the dashboard editor, provide the following information:
 
     * An icon which is shown next to the dashboard name in the navigator.
     * A menu label to be used as the name of the dashboard.
-    * The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last.
+    * Description of the dashboard.
+    * The location of the dashboard in the navigator, with "5000" being ordered first and "-5000" last.
 <br><br>
 
-4. Enable the option **Apply dashboard to all devices of type <device type>** to share the dashboard with all devices of this type.
-
-5. In the **Availability** section, specify which users have access to the dashboard based on global roles. By default, all available global roles are selected, which means that a user with at least one such role has access to the dashboard.
+4. In the **Availability** section, specify which users have access to the dashboard based on global roles. By default, all available global roles are selected, which means that a user with at least one such role has access to the dashboard.
 
    {{< c8y-admon-info >}}
 - Dashboard are always visible to its owner and to users with ADMIN permission for the permission type "Inventory".
 - This functionality is entirely based on client-side solutions. If users have an accurate link to the dashboard, they will still be able to access it.
     {{< /c8y-admon-info >}}
 
-6. In the **Layout** section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
+5. Enable the option **Dashboard template** to share the dashboard with all devices of this type. Option available for devices dashboards only.
+
+6. In the **Appearance** tab you can select a theme for the dashboard (one of "Match UI", "Light", "Dark" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 12 px).
 7. Enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.
 
     {{< c8y-admon-info >}}
 The widget titles will be translated only if a valid translation is available.
     {{< /c8y-admon-info >}}
-8. In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
+8. User provided changes will be immediately displayed to visualize your selections in the dashboard below Dashboard settings.
 
 9. Click **Save** to create and open the dashboard.
 
-<br>Next, widgets can be added to the report. They allow you to display more detailed data in your dashboard.
+<br>Next, widgets can be added to the dashboard. They allow you to display more detailed data in your dashboard.
 
 Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for details on how to add, modify or remove widgets.
 
-### To share a dashboard {#to-share-a-dashboard}
+### Dashboard template {#to-share-a-dashboard}
 
 You can create a dashboard for a specific device and share it with all devices of the same type. This is only possible though, if the type property is set for the device.
 
-To do so, select the option **Apply dashboard to all devices of type [TYPE]** ([TYPE] is replaced with the type of the device that is currently selected).
-
-A corresponding message will be displayed in the editor.
+To do so, enable **Dashboard template** option. A corresponding message will be displayed in the editor.
+After enabling it, you can see how many devices will share this dashboard. There is also a possibility to duplicate type dashboard as regular one (assigned to current device only).
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/>
 
-Changes made to this dashboard are automatically applied to all dashboard instances.
+Dashboard with Dashboard template option enabled can be accessed and modified from all devices of this type. 
+Therefore, changes made to this dashboard are automatically applied to all dashboard instances, no matter which device view user is currently on.
 
 {{< c8y-admon-info >}}
 You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
 {{< /c8y-admon-info >}}
 
-### Global time context {#global-time-context}
+### Dashboard time range {#global-time-context}
 
-In the widget configuration, you can specify a global time range for your dashboards. When using a global time range, all data in a dashboard will be aligned to this range. After setting the global time range in a first widget, this shared context can then be used by other widgets that are configured to use the global date context.
+In the widget configuration, you can specify a dashboard time range for your dashboards. When using a dashboard time range, all data in a dashboard will be aligned to this range. After setting the dashboard time range in a first widget, this shared context can then be used by other widgets that are configured to use the dashboard date context.
 
-The global time range can be set to any time span, depending on the monitoring needs, by using a custom date picker. The time range is displayed at the top of the dashboard, so you can immediately see the context for which the data is presented. Additionally, you can share dashboards with a specific time context by including the time context parameters in a URL. URL parameters will be set automatically when users set the global time context with the picker.
+The dashboard time range can be set to any time span, depending on the monitoring needs, by using a custom date picker. The time range is displayed at the top of the dashboard, so you can immediately see the context for which the data is presented. Additionally, you can share dashboards with a specific time context by including the time context parameters in a URL. URL parameters will be set automatically when users set the dashboard time context with the picker.
 
 {{< c8y-admon-info >}}
-This feature is currently available for the following widgets: Event list, Data points graph, and Data points table.
+This feature is currently available for the following widgets: Event list, Data points graph, Data points table, Map.
 {{< /c8y-admon-info >}}
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-global-time.png" name="Global time context"/>

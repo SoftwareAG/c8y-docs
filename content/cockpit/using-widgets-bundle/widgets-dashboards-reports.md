@@ -23,7 +23,7 @@ Some of the widget require additional permissions in order to visualize the data
 
 ### To add a widget to a dashboard or a report {#to-add-a-widget-to-a-dashboard-or-a-report}
 
-1. Click **Add widget** in the top menu bar or click the **Add widget** button on the main page (only available in case of an empty dashboard/report).
+1. Click **edit widgets** to enter edit mode and then click **Add widget** in the top menu bar or click the **Add widget** button on the main page (only available in case of an empty dashboard/report).
 
 2. In the **Add widget** dialog, select a widget type.
 

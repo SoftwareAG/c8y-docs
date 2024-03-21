@@ -9,8 +9,8 @@ component:
   - value: component-1KLUzmqfe
     label: LWM2M
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+  - value: tc-ggH2M4hf3
+    label: lwm2m-agent
 ticket: DM-2674
 version: 10.20.319.0
 ---

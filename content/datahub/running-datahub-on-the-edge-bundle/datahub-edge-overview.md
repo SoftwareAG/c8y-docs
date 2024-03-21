@@ -52,10 +52,5 @@ For your convenience, here is an overview of the contents:
 #### Cumulocity IoT DataHub Edge variants
 {{< product-c8y-iot >}} DataHub Edge is available in two variants corresponding to two 
 delivery modes of {{< product-c8y-iot >}} Edge:
-* as appliance running in a Linux VM deployed into a supported hypervisor:
-  in this case, the DataHub backend and the DataHub server (Dremio) are running 
-  as docker containers
-* as an operator-based deployment into a Kubernetes environment:
-  the DataHub backend is running as a microservice within the {{< product-c8y-iot >}} 
-  platform and Dremio is deployed as set of Kubernetes pods 
-
+* An appliance running in a Linux VM deployed into a supported hypervisor; in this setup, the {{< product-c8y-iot >}} DataHub backend, the Dremio master, and the Dremio executor are running as Docker containers
+* An operator-based deployment into a Kubernetes environment; in this setup, the {{< product-c8y-iot >}} DataHub backend is running as a microservice within the {{< product-c8y-iot >}} platform while Dremio master and executor are deployed as a set of Kubernetes pods

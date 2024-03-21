@@ -41,7 +41,7 @@ For an asset with a location, click or drag the marker to the preferred position
 
 To delete a subasset or device in the hierarchy:
 
-1. Click the delete icon next to it.
+1. Click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> next to it.
 
     {{< c8y-admon-info>}}
 

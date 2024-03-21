@@ -173,7 +173,7 @@ There are two ways to delete an asset model:
 
 #### Delete each asset model individually {#delete-each-asset-model-individually}
 
-On the **Asset models** page, hover over the desired asset model and click the delete icon on the right.
+On the **Asset models** page, hover over the desired asset model and click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> on the right.
 
 #### Delete the asset models in bulk {#delete-the-asset-models-in-bulk}
 

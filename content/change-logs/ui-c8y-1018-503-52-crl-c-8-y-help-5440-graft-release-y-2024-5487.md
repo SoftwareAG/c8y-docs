@@ -7,7 +7,7 @@ change_type:
     label: Fix
 component:
   - value: q3kclF6pO
-    label: Authentication
+    label: Device Management app
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y

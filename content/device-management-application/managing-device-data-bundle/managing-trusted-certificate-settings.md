@@ -74,8 +74,8 @@ If the date field is empty or is a future date, then the current date is used.
 {{< c8y-admon-info >}}
 Revoked certificate serial numbers can be added in bulk.
 Each file can hold at maximum 5000 revocation entries.
-If the date is in the future then it will be defaulted to current date.
-In case of a duplicate, the existing entry stays.
+If the date is in the future then it defaults to the current date.
+In case of a duplicate, the existing entry is retained.
 {{< /c8y-admon-info >}}
 
 To bulk upload, follow these steps:

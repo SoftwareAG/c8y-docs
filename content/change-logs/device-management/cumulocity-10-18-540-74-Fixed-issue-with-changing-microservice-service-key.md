@@ -15,5 +15,5 @@ ticket: DM-2674
 version: 10.18.540.74
 ---
 
-In LWM2M device protocols resource's custom action configuration, the exchange to another external decoder microservice
+In the custom action configuration of LWM2M device protocol resources, the exchange to another external decoder microservice
 was not effective. This issue is now resolved.

@@ -23,17 +23,19 @@ Some of the widget require additional permissions in order to visualize the data
 
 ### To add a widget to a dashboard or a report {#to-add-a-widget-to-a-dashboard-or-a-report}
 
-1. Click **Add widget** in the top menu bar or click the **Add widget** button on the main page (only available in case of an empty dashboard/report).
+1. Click **Edit widgets** to enter edit mode
 
-2. In the **Add widget** dialog, select a widget type.
+2. Click **Add widget** in the top menu bar or click the **Add widget** button on the main page (only available in case of an empty dashboard/report).
 
-3. Next, configure the widget. According to the selected widget type, different parameters may be specified under **Configuration**. For details on each widget type refer to [Widgets collection](/cockpit/widgets-collection/).
+3. In the **Add widget** dialog, select a widget type.
 
-4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of a [dashboard](/cockpit/working-with-dashboards/#to-create-a-dashboard).
+4. Next, configure the widget. According to the selected widget type, different parameters may be specified under **Configuration**. For details on each widget type refer to [Widgets collection](/cockpit/widgets-collection/).
+
+5. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of a [dashboard](/cockpit/working-with-dashboards/#to-create-a-dashboard).
 
     {{< c8y-admon-info >}}
 
     The header styles "Regular" and "Border" can be used for all widgets while the header styles "Overlay" and "Hidden" remove the header and should only be used for widgets which benefit from a full-screen experience, for example "Image" or "Map". For other widgets, like "Alarms list" or "Data point table", these header styles should not be used.
     {{< /c8y-admon-info >}}
 
-5.  Click **Save** to add the widget to the dashboard or report.
+6.  Click **Save** to add the widget to the dashboard or report.

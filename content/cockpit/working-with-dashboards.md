@@ -16,7 +16,7 @@ helpcontent:
     Click the plus icon next to the dashboard tabs to add a dashboard. You may copy a dashboard from one device to another or you may share a dashboard with all devices of a specific device type.
 
 
-    On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
+    The dashboard is locked until eidt mode is enabled. To do so click on **Edit widgets** on the top menu bar. On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
 
 
     Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Widgets collection* in the user documentation for details on each widget type and its configuration."
@@ -111,9 +111,24 @@ Widgets synchronized with the dashboard time range are indicated by a respective
 
 ### To edit a dashboard {#to-edit-a-dashboard}
 
-To edit a dashboard, click **Edit** in the top menu bar.
+There are two primary ways to edit a dashboard:
 
-The dashboard editor will open up. For details on the fields, refer to [To create a dashboard](#to-create-a-dashboard).
+- **Dashboard settings**: This modifies the overall properties of the dashboard, such as its name, description, position, availability, or appearance.
+- **Edit widgets**: This manages the content of the dashboard, including adding, removing, or changing the position of widgets.
+
+Once in edit mode, the redo and undo functionality is automatically enabled. This allows you to easily revert any unwanted changes you make to the dashboard. Any changes made to the dashboard in "Edit widgets" mode will not be reflected until you save them.
+
+{{< c8y-admon-info >}}
+The widgets and content on the dashboard are locked in order to prevent accidental modifications. Clicking the "Edit widgets" button unlocks this functionality and allows you to manipulate the dashboard's content.
+{{< /c8y-admon-info >}}
+
+### To restore a dashboard state {#to-restore-a-dashboard}
+
+It is possible to restore your dashboard to a previous state using the version history. Navigate to the dashboard settings and open the "Version history" tab. This section will display a list of previous versions of your dashboard, including timestamps for each version. Hovering over a desired version from the list will reveal the "Restore" button.
+
+When a new version is created in the version history, it includes a brief description of the changes made. New version is added each time after saving the dashboard when in edit mode or when editing the general settings of the dashboard.
+
+<img src="/images/users-guide/cockpit/cockpit-dashboard-restore.png" name="Restore dashboard state"/>
 
 ### To copy a dashboard from one object to another {#to-copy-a-dashboard-from-one-object-to-another}
 
@@ -123,7 +138,6 @@ The dashboard editor will open up. For details on the fields, refer to [To creat
 
 An alternative way to copy a dashboard is to use the
 "dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [To share a dashboard](#to-share-a-dashboard).
-
 
 ### To delete a dashboard {#to-delete-a-dashboard}
 

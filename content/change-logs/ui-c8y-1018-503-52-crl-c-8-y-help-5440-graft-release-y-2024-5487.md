@@ -6,7 +6,7 @@ change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
-  - value: q3kclF6pO
+  - value: component--KIsStyzM 
     label: Device Management app
 build_artifact:
   - value: tc-pjJiURv9Y

@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-56608
-version: 10.18.540.63
+version: 10.18.0.373
 ---
 Fixed a random issue ("invalid TFA token due to user inactivity") when logging in using the user alias and TFA SMS with basic authentication.

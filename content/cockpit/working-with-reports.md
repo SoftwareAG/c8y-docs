@@ -66,12 +66,9 @@ Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for 
 
 ### To edit a report {#to-edit-a-report}
 
-Click on a report name in the report list to open its details.
+Click on a report name in the report list to open its dashboard.
 
-To edit the report, click **Edit** in the top menu bar.
-
-The report editor will open up. For details on the fields, refer to [To create a report](#to-create-a-report).
-
+For details on how to edit the report dashboard, refer to [To edit a dashboard](/cockpit/working-with-dashboards/#to-create-a-dashboard).
 
 ### To delete a report {#to-delete-a-report}
 

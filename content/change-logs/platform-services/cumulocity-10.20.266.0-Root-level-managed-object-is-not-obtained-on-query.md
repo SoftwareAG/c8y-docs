@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Root level managed object is not found by querying with the onlyRoots flag
+title: Root level managed object is now reliably found when querying with the onlyRoots flag
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-56734
 version: 10.20.266.0
 ---
-Fixed an issue in inventory with finding an asset by the onlyRoots flag when the object is removed from the asset hierarchy and becomes the root object again.
+In the inventory, when querying with the `onlyRoots` flag, assets could not be found if the object was removed from the asset hierarchy and became the root object again. This issue has now been fixed and root level managed objects are found when querying with the `onlyRoots` flag.

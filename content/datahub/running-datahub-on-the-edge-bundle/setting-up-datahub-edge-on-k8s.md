@@ -94,10 +94,6 @@ distStorage:
         mountPath: /datalake/distributedStorage
 ```
 
-```shell
-./install.sh -a
-```
-
 The **$DREMIO_USER** and **$DREMIO_PASSWORD** credentials are substituted during installation based on the values provided in datahub-config.json.
 
 In case you want to modify memory settings for Dremio master or executor, you must not exceed the following constraints:

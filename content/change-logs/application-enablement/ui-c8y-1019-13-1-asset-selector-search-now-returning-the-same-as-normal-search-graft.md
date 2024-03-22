@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset selector search now returning the same as normal search [GRAFT][release/cd] (#5902)
+title: Asset selector search results now consistent with normal search
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-56674
 version: 1019.13.1
 ---
-Asset selector search now returning the same as normal search [GRAFT][release/cd] (#5902)
+Previously, the asset selector search returned different results than the normal search, which could lead to confusion and inconsistency when selecting assets. With this change, the asset selector search now returns the same results as the normal search. This improvement ensures a consistent search experience across the application, making it easier for users to find and select the desired assets.

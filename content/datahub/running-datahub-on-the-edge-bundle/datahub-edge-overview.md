@@ -44,7 +44,7 @@ delivery modes of {{< product-c8y-iot >}} Edge:
 
 | Area | {{< product-c8y-iot >}} DataHub Edge | {{< product-c8y-iot >}} DataHub Edge Kubernetes | {{< product-c8y-iot >}} DataHub Cloud |
 | -----   | -----   | -----   | -----   |
-| High Availability | Depending on the underlying virtualization technology | ???(Tim) | Depending on the cloud deployment setup |
+| High Availability | Depending on the underlying virtualization technology | No | Depending on the cloud deployment setup |
 | Vertical scalability | Yes | Yes | Yes |
 | Horizontal scalability | No | No | Yes |
 | Upgrades with no downtime | No | No | No |

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2024-03-22"
 title: Enabled column compression for tenants that us enhanced time series support
 product_area: Platform services
 change_type:

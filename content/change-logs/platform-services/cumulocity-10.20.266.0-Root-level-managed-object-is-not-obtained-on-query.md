@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2024-03-22"
 title: Root level managed object is now reliably found when querying with the onlyRoots flag
 product_area: Platform services
 change_type:

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Manually provided units have higher priority than datapoint units
+title: Custom units overrule datapoint units
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58426
 version: 1018.503.70
 ---
-In some cases, users want to override the units of a datapoint with a custom unit to better fit their use case. Previously, the units specified on the datapoint would always take precedence over any manually specified units, even if this was not the desired behavior. With this change, manually provided units now have a higher priority and will be used instead of the datapoint units. This allows users to have more control over the units displayed in their dashboards and other assets.
+In some cases, users want to override the units of a datapoint with a custom unit. Previously, the datapoint unit had a higher priority than the manually specified unit, which was not the desired behavior. With this change, manually provided units now have a higher priority compared to the actual datapoint units. This ensures that the custom unit specified by the user is always used instead of the default datapoint unit.

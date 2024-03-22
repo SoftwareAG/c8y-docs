@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Ng cli prompt verison limit is now 5. Additionally, the latest tag is now shown for the correct version.
+title: The version selection is more clear when scaffolding a new application with Angular CLI
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57339
 version: 1019.13.3
 ---
-Ng cli prompt verison limit is now 5. Additionally, the latest tag is now shown for the correct version.
+The Angular CLI new command, which is used to create and manage Web SDK based Angular projects, previously had a version limit of 3. This has now been increased to 5, allowing users to select from a wider range of Web SDK versions when creating a new project. Additionally, a bug has been fixed where the "latest" tag was not always shown for the correct Web SDK version in the prompt. With this change, users will now see the "latest" tag next to the most recent stable version of the Web SDK, making it easier to select the desired version when creating a new project. These changes improve the user experience and flexibility when working with the Angular CLI new comand prompt.

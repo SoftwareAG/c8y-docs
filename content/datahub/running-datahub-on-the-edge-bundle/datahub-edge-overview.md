@@ -43,7 +43,7 @@ delivery modes of {{< product-c8y-iot >}} Edge:
 {{< product-c8y-iot >}} DataHub Edge uses the same software as {{< product-c8y-iot >}} DataHub, though in the following aspects these two variants differ:
 
 | Area | {{< product-c8y-iot >}} DataHub Edge | {{< product-c8y-iot >}} DataHub Edge Kubernetes | {{< product-c8y-iot >}} DataHub Cloud |
-| -----   | -----   | -----   |
+| -----   | -----   | -----   | -----   |
 | High Availability | Depending on the underlying virtualization technology | ???(Tim) | Depending on the cloud deployment setup |
 | Vertical scalability | Yes | Yes | Yes |
 | Horizontal scalability | No | No | Yes |

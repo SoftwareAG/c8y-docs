@@ -127,9 +127,9 @@ In order to access Dremio, the following entry needs to be added to /etc/hosts:
 ```
 <IP address>   datahub.<domain_name>
 ```
-where **<DOMAIN>** is the domain name chosen during the installation of {{< product-c8y-iot >}} Edge on Kubernetes.
+where **domain_name** is the domain name chosen during the installation of {{< product-c8y-iot >}} Edge on Kubernetes.
  
-The **<IP address>** can be obtained using
+The **IP address** can be obtained using
 ```shell
 kubectl get service -n c8yedge cumulocity-core -o jsonpath={.status.loadBalancer.ingress[*].ip}
 ```

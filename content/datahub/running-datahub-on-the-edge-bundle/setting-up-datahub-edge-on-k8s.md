@@ -198,7 +198,7 @@ You can monitor the startup of the microservice pod "datahub-scope-edge-deployme
 kubectl get pods -n c8yedge --watch
 ```
 
-The status *Running* indicates that the pod has started successfully:
+The status "Running" indicates that the pod has started successfully:
 ```
 NAMESPACE     NAME                                            READY   STATUS      RESTARTS    AGE
 ...

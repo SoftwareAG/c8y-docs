@@ -32,7 +32,7 @@ When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the 
 
 Subsequently, it is assumed that {{< product-c8y-iot >}} Edge on Kubernetes has been installed using the default Kubernetes namespace **c8yedge**. If another namespace has been chosen, you must adapt the commands and configuration files accordingly.
 
-Extract the archive **datahub-edgek8s.tar** to a working folder of your choice.
+Extract the archive *datahub-edgek8s.tar* to a working folder of your choice.
 ```
 tar -xvf datahub-edgek8s.tar
 ```  

@@ -8,7 +8,7 @@ In this setup an appliance is run within a Linux VM, which in turn is deployed i
 
 ### Prerequisites
 
-Before setting up {{< product-c8y-iot >}} DataHub Edge as appliance, you must check the following prerequisites:
+Before setting up {{< product-c8y-iot >}} DataHub Edge as an appliance, you must check the following prerequisites:
 
 | Item | Details |
 | -----   | -----   |

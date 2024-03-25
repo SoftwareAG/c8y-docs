@@ -12,8 +12,8 @@ Before setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes, you must c
 
 | Item | Details |
 | -----   | -----   |
-| Kubernetes | An environment with bash, jq, and admin access to Kubernetes via kubectl and helm command line tools. |
-| {{< product-c8y-iot >}} Edge on Kubernetes  | The corresponding version of {{< product-c8y-iot >}} Edge being set up in the Kubernetes environment; see also [Installing Cumulocity IoT Edge on Kubernetes](https://cumulocity.com/guides/10.17.0/edge-k8s/installing-edge-on-k8) |
+| Kubernetes | An environment with bash, jq, and administrator access to Kubernetes via kubectl and helm command line tools. |
+| {{< product-c8y-iot >}} Edge on Kubernetes  | The corresponding version of {{< product-c8y-iot >}} Edge being set up in the Kubernetes environment; see also [Installing {{< product-c8y-iot >}} Edge on Kubernetes](https://cumulocity.com/guides/10.17.0/edge-k8s/installing-edge-on-k8) |
 | {{< product-c8y-iot >}} DataHub Edge on Kubernetes archive | You have downloaded the archive **datahub-edgek8s.tar** from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}). |
 | Internet access | Internet access is required. |
 
@@ -30,7 +30,7 @@ When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the 
 
 ### Setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes
 
-Subsequently, it is assumed that {{< product-c8y-iot >}} Edge on Kubernetes has been installed using the default Kubernetes namespace **c8yedge**. If another namespace has been chosen, you need to adapt the commands and configuration files accordingly.
+Subsequently, it is assumed that {{< product-c8y-iot >}} Edge on Kubernetes has been installed using the default Kubernetes namespace **c8yedge**. If another namespace has been chosen, you must adapt the commands and configuration files accordingly.
 
 Extract the archive **datahub-edgek8s.tar** to a working folder of your choice.
 ```
@@ -132,7 +132,7 @@ kubectl get service -n c8yedge cumulocity-core -o jsonpath={.status.loadBalancer
 
 #### Using {{< product-c8y-iot >}} DataHub Edge on Kubernetes
 
-After you have logged into the {{< product-c8y-iot >}} UI, you should be able to navigate to the {{< product-c8y-iot >}} DataHub UI by selecting the corresponding entry in the application switcher.
+{{< product-c8y-iot >}} DataHub Edge on Kubernetes behaves like the Cloud and Edge appliance version. Please refer to the general documentation.
 
 ### Validation of {{< product-c8y-iot >}} DataHub Installation
 
@@ -208,3 +208,4 @@ c8yedge       datahub-scope-edge-deployment-XXXXXXXXXX-YYYYY  1/1     Running   
 #### DataHub Web Application
 
 When logged into the {{< product-c8y-iot >}} UI, the {{< product-c8y-iot >}} DataHub web application is available under *Administration > Ecosystem > Applications*.
+It should also be present in the usual {{< product-c8y-iot >}} Application Switcher.

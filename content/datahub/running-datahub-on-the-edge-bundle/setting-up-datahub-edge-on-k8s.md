@@ -4,7 +4,7 @@ title: Setting up Cumulocity IoT DataHub Edge on Kubernetes
 layout: redirect
 ---
 
-In this setup the application is deployed into a Kubernetes environment using an operator. The {{< product-c8y-iot >}} DataHub backend is run as a microservice within the {{< product-c8y-iot >}} platform. The Dremio master and executor are deployed as a set of Kubernetes pods.
+In this setup the application is deployed into a Kubernetes environment using an operator. The {{< product-c8y-iot >}} DataHub backend is run as a microservice within the {{< product-c8y-iot >}} platform. The Dremio master and executor are deployed as a set of the Kubernetes pods.
 
 ### Prerequisites
 
@@ -30,7 +30,7 @@ When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the 
 
 ### Setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes
 
-Subsequently, it is assumed that {{< product-c8y-iot >}} Edge on Kubernetes has been installed using the default Kubernetes namespace **c8yedge**. If another namespace has been chosen, you must adapt the commands and configuration files accordingly.
+Subsequently, it is assumed that {{< product-c8y-iot >}} Edge on Kubernetes has been installed using the default Kubernetes namespace ``c8yedge``. If another namespace has been chosen, you must adapt the commands and configuration files accordingly.
 
 Extract the archive *datahub-edgek8s.tar* to a working folder of your choice.
 ```
@@ -66,7 +66,7 @@ The *dremio-values.yaml* file contains the configuration settings for the Dremio
 
 The Dremio master uses a persistent volume to persist its metadata. The persistent volume claim is defined in the Dremio helm chart. You have to provide the name of the ``<CRITICAL_STORAGE_CLASS>`` used by that claim.
 
-The datalake storage needs to be available as a volume mounted into the Dremio master and executor pods. The mount path (typically "/datalake") later needs to be specified when configuring the initial settings in the DataHub UI.
+The datalake storage needs to be available as a volume mounted into the Dremio master and executor pods. The mount path (typically ``/datalake``) later needs to be specified when configuring the initial settings in the DataHub UI.
 The respective configuration in dremio-values.yaml may look as follows:
 ```
     datalakeNFS:
@@ -85,7 +85,7 @@ distStorage:
     nfs:
         mountPath: <MOUNT_PATH>
 ```
-If your Kubernetes cluster has only a single worker node, that means, both pods are running on the same node and you can use a subfolder of */datalake* mounted to a hostpath as shown above.
+If your Kubernetes cluster has only a single worker node, that means, both pods are running on the same node and you can use a subfolder of ``/datalake`` mounted to a hostpath as shown above.
 This may lead, for example, to the following configuration:
 ```
 distStorage:
@@ -119,7 +119,7 @@ Execute the following command to install {{< product-c8y-iot >}} DataHub Edge on
 
 #### Add entry to /etc/hosts
 
-In order to access Dremio, the following entry needs to be added to */etc/hosts*:
+In order to access Dremio, the following entry needs to be added to ``/etc/hosts``:
 ```
 <IP address>   datahub.<domain_name>
 ```
@@ -150,11 +150,11 @@ NAME              READY   STATUS    RESTARTS   AGE
 datahub-mysql-0   1/1     Running   0          4m55s
 ```
     
-When running the command
+When running the command:
 ```shell
 kubectl get svc -n c8yedge
 ```
-the output will be similar to:
+The output will be similar to:
 ```
 NAME          TYPE          CLUSTER-IP          EXTERNAL-IP          PORT(S)          AGE
 mysql-client  ClusterIP     XXX.XXX.XXX.XXX     <none>               3306/TCP         10m
@@ -177,12 +177,12 @@ dremio-executor-0 1/1            Running         0                6m34s
 dremio-master-0   1/1            Running         0                6m34s
 ```
 
-When running the command
+When running the command:
 ```shell
 kubectl get svc -n c8yedge
 ```
 
-the output will be similar to 
+The output will be similar to:
 
 ```
 NAME              TYPE              CLUSTER-IP              EXTERNAL-IP               PORT(S)                                         AGE

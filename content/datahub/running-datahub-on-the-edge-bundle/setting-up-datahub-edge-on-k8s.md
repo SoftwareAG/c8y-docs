@@ -74,19 +74,19 @@ The respective configuration in dremio-values.yaml may look as follows:
          mountPath: /datalake
 		 hostPath: <PATH_ON_HOST>
 ```
-If your Kubernetes cluster has only a single worker node, both pods are running on the same node and **<PATH_ON_HOST>** refers to a path on that node.
-Please assert that the folder does already exist.
+If your Kubernetes cluster has only a single worker node, both pods are running on the same node and ``<PATH_ON_HOST>`` refers to a path on that node.
+Assert that the folder does already exist.
 
-The **distributed storage** also needs to be available as a volume mounted into the Dremio master and executor pods.
-The respective configuration in dremio-values.yaml may look as follows:
+The distributed storage also needs to be available as a volume mounted into the Dremio master and executor pods.
+The respective configuration in *dremio-values.yaml* may look as follows:
 ```
 distStorage:
     type: nfs
     nfs:
         mountPath: <MOUNT_PATH>
 ```
-If your Kubernetes cluster has only a single worker node, i.e. both pods are running on the same node and you can use a subfolder of /datalake mounted to a hostpath as shown above.
-This may lead e.g. to the following configuration  
+If your Kubernetes cluster has only a single worker node, that means, both pods are running on the same node and you can use a subfolder of */datalake* mounted to a hostpath as shown above.
+This may lead, for example, to the following configuration:
 ```
 distStorage:
     type: nfs
@@ -94,21 +94,21 @@ distStorage:
         mountPath: /datalake/distributedStorage
 ```
 
-The **$DREMIO_USER** and **$DREMIO_PASSWORD** credentials are substituted during installation based on the values provided in datahub-config.json.
+The ``$DREMIO_USER`` and ``$DREMIO_PASSWORD`` credentials are substituted during installation based on the values provided in *datahub-config.json*.
 
 In case you want to modify resource settings for Dremio master or executor, you must not exceed the following constraints:
-* at maximum 48 GB RAM for each, master and executor
-* only one executor
+* At maximum 48 GB RAM for each, master and executor
+* Only one executor
 
 These constraints are checked during the installation procedure.
 
 #### Configuring Deployment of MySQL via mysql-values.yaml
 
-The **mysql-values.yaml** file contains the configuration settings for the MySQL deployment. It needs to be adapted as follows:
+The *mysql-values.yaml* file contains the configuration settings for the MySQL deployment. It needs to be adapted as follows:
 
-The MySQL database uses a persistent volume to persist its data. The persistent volume claim is defined in the MySQL helm chart. You have to provide the name of the **<STORAGE_CLASS>** used by that claim.
+The MySQL database uses a persistent volume to persist its data. The persistent volume claim is defined in the MySQL helm chart. You have to provide the name of the ``<STORAGE_CLASS>`` used by that claim.
 
-The **$MYSQL_PASSWORD** is substituted during installation based on the value provided in datahub-config.json. 
+The ``$MYSQL_PASSWORD`` is substituted during installation based on the value provided in *datahub-config.json*. 
 
 #### Running the installation script
 
@@ -119,20 +119,20 @@ Execute the following command to install {{< product-c8y-iot >}} DataHub Edge on
 
 #### Add entry to /etc/hosts
 
-In order to access Dremio, the following entry needs to be added to /etc/hosts:
+In order to access Dremio, the following entry needs to be added to */etc/hosts*:
 ```
 <IP address>   datahub.<domain_name>
 ```
-where **domain_name** is the domain name chosen during the installation of {{< product-c8y-iot >}} Edge on Kubernetes.
+where ``domain_name`` is the domain name chosen during the installation of {{< product-c8y-iot >}} Edge on Kubernetes.
  
-The **IP address** can be obtained using
+The IP address can be obtained using
 ```shell
 kubectl get service -n c8yedge cumulocity-core -o jsonpath={.status.loadBalancer.ingress[*].ip}
 ```
 
 #### Using {{< product-c8y-iot >}} DataHub Edge on Kubernetes
 
-{{< product-c8y-iot >}} DataHub Edge on Kubernetes behaves like the Cloud and Edge appliance version. Please refer to the general documentation.
+{{< product-c8y-iot >}} DataHub Edge on Kubernetes behaves like the Cloud and Edge appliance version.
 
 ### Validation of {{< product-c8y-iot >}} DataHub Installation
 
@@ -140,11 +140,11 @@ If the product doesn't work as intended after the installation, please go throug
 
 #### MySQL 
 
-You can monitor the startup of the MySQL pod **datahub-mysql-0** using
+You can monitor the startup of the MySQL pod ``datahub-mysql-0`` using
 ```shell
 kubectl get pods -n c8yedge datahub-mysql-0 --watch
 ```
-The result should be similar to:
+The result will be similar to:
 ```
 NAME              READY   STATUS    RESTARTS   AGE
 datahub-mysql-0   1/1     Running   0          4m55s
@@ -154,7 +154,7 @@ When running the command
 ```shell
 kubectl get svc -n c8yedge
 ```
-the output should be similar to:
+the output will be similar to:
 ```
 NAME          TYPE          CLUSTER-IP          EXTERNAL-IP          PORT(S)          AGE
 mysql-client  ClusterIP     XXX.XXX.XXX.XXX     <none>               3306/TCP         10m
@@ -162,12 +162,12 @@ mysql-client  ClusterIP     XXX.XXX.XXX.XXX     <none>               3306/TCP   
 
 #### Dremio
 
-You can monitor the state of the Dremio pods *zk-0*, *dremio-executor-0*, and *dremio-master-0* using
+You can monitor the state of the Dremio pods "zk-0", "dremio-executor-0", and "dremio-master-0" using
 ```shell
 kubectl get pods -n c8yedge --watch
 ```
 
-The status *Running* indicates that the pods have started successfully:
+The status "Running" indicates that the pods have started successfully:
 
 ```
 NAME              READY          STATUS          RESTARTS         AGE

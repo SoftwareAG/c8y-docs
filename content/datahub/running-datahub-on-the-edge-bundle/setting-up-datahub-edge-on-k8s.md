@@ -62,7 +62,7 @@ You have to apply the following changes:
 
 #### Configuring Dremio deployment via dremio-values.yaml
 
-The **dremio-values.yaml** file contains the configuration settings for the Dremio deployment. It needs to be adapted as follows:
+The *dremio-values.yaml* file contains the configuration settings for the Dremio deployment. It needs to be adapted as follows:
 
 The Dremio master uses a persistent volume to persist its **metadata**. The persistent volume claim is defined in the Dremio helm chart. You have to provide the name of the **<CRITICAL_STORAGE_CLASS>** used by that claim.
 

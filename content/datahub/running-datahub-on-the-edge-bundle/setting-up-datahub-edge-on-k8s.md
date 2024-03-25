@@ -56,7 +56,7 @@ Internet connectivity is required as the MySQL image, the Dremio image and some 
 #### Adapting datahub-config.json
 
 You have to apply the following changes:
-* If your {{< product-c8y-iot >}} Edge on Kubernetes configuration does not use **c8yedge** as namespace, change the Kubernetes namespace accordingly. 
+* If your {{< product-c8y-iot >}} Edge on Kubernetes configuration does not use ``c8yedge`` as namespace, change the Kubernetes namespace accordingly. 
 * Specify the username and password for admin access to Dremio. The password must have at least 8 characters, including at least 1 letter and 1 digit.
 * Set the password for the root user in MySQL.
 

@@ -66,7 +66,7 @@ The *dremio-values.yaml* file contains the configuration settings for the Dremio
 
 The Dremio master uses a persistent volume to persist its metadata. The persistent volume claim is defined in the Dremio helm chart. You have to provide the name of the ``<CRITICAL_STORAGE_CLASS>`` used by that claim.
 
-The **datalake storage** needs to be available as a volume mounted into the Dremio master and executor pods. The mount path (typically "/datalake") later needs to be specified when configuring the initial settings in the DataHub UI.
+The datalake storage needs to be available as a volume mounted into the Dremio master and executor pods. The mount path (typically "/datalake") later needs to be specified when configuring the initial settings in the DataHub UI.
 The respective configuration in dremio-values.yaml may look as follows:
 ```
     datalakeNFS:

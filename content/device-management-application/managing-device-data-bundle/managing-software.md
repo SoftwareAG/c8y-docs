@@ -60,8 +60,8 @@ If you click **Add software** from within the details of a specific software, th
 
 ### To edit a software {#to-edit-a-software}
 
-1. Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary"></i> at the right of a specific software item.
-2. Update the name, description, device type filter or software type by hovering over the edit icon <i class="dlt-c8y-icon-edit1 text-primary"></i> next to it. Make the desired changes and click **Save**.
+1. Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> at the right of a specific software item.
+2. Update the name, description, device type filter or software type by hovering over the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> next to it. Make the desired changes and click **Save**.
 
 The software will be updated accordingly.
 

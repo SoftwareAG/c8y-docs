@@ -346,7 +346,7 @@ You can import a maximum of 500 asset properties at a time.
 
 The **Location** property enables you to assign location (latitude and longitude) to an asset. You can set the default values of the latitude and longitude by entering the corresponding values or alternatively using the map view.
 
-To set the default values for the latitude and longitude using the map view, click **Choose on Map** at the end of the section. Click the full screen icon at the top right corner of the map to view it in full screen. Without values for latitude and longitude, the marker is hidden. To see the marker, click anywhere on the map. Click or drag the marker to the preferred position to select the default value for latitude and longitude.
+To set the default values for the latitude and longitude using the map view, click **Choose on Map** at the end of the section. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. Without values for latitude and longitude, the marker is hidden. To see the marker, click anywhere on the map. Click or drag the marker to the preferred position to select the default value for latitude and longitude.
 
 {{<c8y-admon-info>}}
 If a property with the label "Location" already exists, the default Location property will be created with the label "Asset Location" and with the key "c8y_Position".<br>

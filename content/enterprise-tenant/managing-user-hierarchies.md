@@ -32,7 +32,7 @@ On tenant creation, default roles are available which can be used as a sample co
 
 ### To view user hierarchies {#to-view-user-hierarchies}
 
-In the **Users** page, user hierarchies are indicated by an arrow left from the user icon. Clicking on the arrow unfolds the user hierarchy. You can also fold and unfold the entire user hierarchy using the **Expand all** and **Collapse all** links at the right of the top menu bar.
+In the **Users** page, user hierarchies are indicated by an arrow left <i class="dlt-c8y-icon-expand-arrow text-primary icon-20"></i> from the user icon. Clicking on the arrow unfolds the user hierarchy. You can also fold and unfold the entire user hierarchy using the **Expand all** and **Collapse all** links at the right of the top menu bar.
 
 A small number next to the user name shows how many direct sub-users a user has. Sub-users are users that can be managed by their respective parent user and that have at most the permissions of that parent user. In the example below, the user "Demo user" has one direct sub-user.
 
@@ -57,7 +57,7 @@ If you want an owner to manage only their sub-users, make sure that the owner do
 
 **Example**
 
-A user A has the role "business". User A becomes the owner of a new user B. User B can then only get a business role assigned (and not for example an admin role) as the user cannot have higher permissions than the owner. If you try to assign any other role except "business" for user B, then the role will be unavailable for subscription and will be indicated by a warning icon with a notification that this operation is not permitted.
+A user A has the role "business". User A becomes the owner of a new user B. User B can then only get a business role assigned (and not for example an admin role) as the user cannot have higher permissions than the owner. If you try to assign any other role except "business" for user B, then the role will be unavailable for subscription and will be indicated by a warning icon <i class="dlt-c8y-icon-warning text-warning icon-20"></i> with a notification that this operation is not permitted.
 
 
 ### To delegate user hierarchies to other users {#to-delegate-user-hierarchies-to-other-users}

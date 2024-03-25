@@ -30,7 +30,7 @@ Root asset models are asset models which are at the top of hierarchy and don't h
 
 6. Under **Asset properties**, fill in the required information. Here you find all [asset properties](/dtm/asset-types/#asset-properties) assigned to the asset model that you create.
 
-For an asset with a **Location** property, click **Choose on Map** in the section to set the values for the latitude and longitude using map view. Click the full screen icon at the top right corner of the map to view it in full screen.
+For an asset with a **Location** property, click **Choose on Map** in the section to set the values for the latitude and longitude using map view. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen.
 
 The marker is positioned at the default value set in the **Location** property. Click or drag the marker to the preferred position to set the value for both latitude and longitude. If you do not enter a latitude or longitude value, you will not see a marker on the map.
 
@@ -140,7 +140,7 @@ In the top right corner of the **Subassets** tab, you can [assign devices](#to-a
 
 ![Subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
 
-You can view the hierarchy of the asset in the **Asset tree** tab. Initially the asset hierarchy is collapsed. Click the expand icon to view the next level of subassets.
+You can view the hierarchy of the asset in the **Asset tree** tab. Initially the asset hierarchy is collapsed. Click the expand icon <i class="dlt-c8y-icon-forward text-primary icon-20"></i> to view the next level of subassets.
 
 Click **Add asset** to add more subassets or click **Import assets** to add [assets in bulk](/dtm/asset-hierarchy/#creating-assets-bulk-import).
 

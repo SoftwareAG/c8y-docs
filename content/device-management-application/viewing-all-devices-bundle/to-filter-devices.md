@@ -6,7 +6,7 @@ layout: redirect
 
 The device list offers a filtering functionality to filter devices in the list for specific criteria.
 
-Filtering is available on every column. Click the filter icon next to the name of the column you want to set a filter for.
+Filtering is available on every column. Click the filter icon <i class="dlt-c8y-icon-filter icon-20"></i> next to the name of the column you want to set a filter for.
 
 Specify your filter options in the dropdown list.
 

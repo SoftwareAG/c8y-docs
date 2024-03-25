@@ -66,7 +66,7 @@ The firmware patch will be added to the version details within the firmware deta
 ### To edit a firmware {#to-edit-a-firmware}
 
 1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of a specific firmware entry and in the context menu click **Edit**.
-2. Update the name, description or device type filter by clicking the edit icon <i class="dlt-c8y-icon-edit1 text-primary"></i> next to it. Make the desired changes and click **Save**.
+2. Update the name, description or device type filter by clicking the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> next to it. Make the desired changes and click **Save**.
 
 The firmware will be updated accordingly.
 

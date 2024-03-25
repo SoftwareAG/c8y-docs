@@ -121,7 +121,7 @@ From the {{< management-tenant >}}, you can enable other tenants to create subte
 
 ### To view or edit subtenant properties {#to-view-or-edit-subtenant-properties}
 
-Click on the desired subtenant or click the edit icon <i class="dlt-c8y-icon-edit1 text-primary"></i> at the right of the subtenant entry.
+Click on the desired subtenant or click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> at the right of the subtenant entry.
 
 In the **Properties** tab, all fields are editable except of **ID**, **Domain/ URL** and **Administrator's username**. For details on the fields, refer to [To create a subtenant](#to-create-a-subtenant).
 

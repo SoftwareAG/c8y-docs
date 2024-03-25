@@ -193,7 +193,7 @@ dremio-client     LoadBalancer      XXX.XXX.XXX.XXX         XXX.XXX.XXX.XXX     
 
 When logged into {{< product-c8y-iot >}} UI, the {{< product-c8y-iot >}} DataHub microservice is available under *Administration > Ecosystem > Microservices*.
 
-You can monitor the startup of the microservice pod *datahub-scope-edge-deployment-....* using
+You can monitor the startup of the microservice pod "datahub-scope-edge-deployment-...." using
 ```shell
 kubectl get pods -n c8yedge --watch
 ```

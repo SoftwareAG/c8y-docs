@@ -182,7 +182,7 @@ When running the command
 kubectl get svc -n c8yedge
 ```
 
-the output should be similar to 
+the output will be similar to 
 
 ```
 NAME              TYPE              CLUSTER-IP              EXTERNAL-IP               PORT(S)                                         AGE

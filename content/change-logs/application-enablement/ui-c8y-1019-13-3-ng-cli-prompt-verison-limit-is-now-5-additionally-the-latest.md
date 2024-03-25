@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The version selection is more clear when scaffolding a new application with Angular CLI
+title: Clearer version selection when scaffolding a new application with Angular CLI
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

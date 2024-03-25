@@ -19,7 +19,7 @@ Before setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes, you must c
 
 #### Resource requirements
 
-The resource requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in section [Requirements](/edge-k8s/installing-edge-on-k8/#prerequisites). 
+The resource requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in [Requirements](/edge-k8s/installing-edge-on-k8/#prerequisites). 
 When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the resource requirements change by following additional amount:
 
  * 100 GB of free disk space plus sufficient free disk space for the data lake contents

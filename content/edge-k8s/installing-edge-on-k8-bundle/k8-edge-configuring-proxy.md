@@ -29,4 +29,4 @@ The table below provides more information:
 |http_proxy|No|String||Specifies the URL of the HTTP proxy to be used for network connections.|
 |https_proxy|No|String||Specifies the URL of the HTTPS proxy to be used for secure network connections.|
 |socks_proxy|No|String||Specifies the URL of a SOCKS proxy.|
-|no_proxy|No|String||Specifies a comma-separated list of addresses or domains for which the proxy will be bypassed. This is configured with the specified entries, and Kubernetes Pod CIDR (Cluster Pod IP Address Range),  Kubernetes Service CIDR (Cluster Service IP Address Range) and any other domains, hosts or IPs you want to bypass the proxy when accessed.|
+|no_proxy|No|String||Specifies a comma-separated list of addresses or domains for which the proxy will be bypassed. This is configured with the specified entries, and Kubernetes Pod CIDR (Cluster Pod IP Address Range), Kubernetes Service CIDR (Cluster Service IP Address Range) and any other domains, hosts or IPs you want to bypass the proxy when accessed.|

@@ -14,7 +14,7 @@ Before setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes, you must c
 | -----   | -----   |
 | Kubernetes | An environment with bash, jq, and administrator access to Kubernetes via kubectl and helm command line tools. |
 | {{< product-c8y-iot >}} Edge on Kubernetes  | The corresponding version of {{< product-c8y-iot >}} Edge being set up in the Kubernetes environment; see also [Installing {{< product-c8y-iot >}} Edge on Kubernetes](https://cumulocity.com/guides/10.17.0/edge-k8s/installing-edge-on-k8) |
-| {{< product-c8y-iot >}} DataHub Edge on Kubernetes archive | You have downloaded the archive **datahub-edgek8s.tar** from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}). |
+| {{< product-c8y-iot >}} DataHub Edge on Kubernetes archive | You have downloaded the archive *datahub-edgek8s.tar* from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}). |
 | Internet access | Internet access is required. |
 
 #### Resource requirements

@@ -163,8 +163,8 @@ spec:
 # An optional ConfigMap used when accessing external endpoints through a Proxy
 #
 # http_proxy, https_proxy and optionally socks_proxy must be configured with the relevant URLs
-# no_proxy must be configured with the following entries, and Kubernetes Pod CIDR (Cluster Pod IP Address Range),
-# Service CIDR (Cluster Service IP Address Range) and any other domains, hosts or IPs you want to bypass the proxy when accessed.
+# no_proxy must be configured with the following entries, Edge domain name, Kubernetes Pod CIDR (Cluster Pod IP Address Range),
+# Kubernetes Service CIDR (Cluster Service IP Address Range) and any other domains, hosts or IPs you want to bypass the proxy when accessed.
 #
 #kind: ConfigMap
 #apiVersion: v1

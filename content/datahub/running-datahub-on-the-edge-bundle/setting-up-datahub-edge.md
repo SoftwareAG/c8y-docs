@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Setting up Cumulocity IoT DataHub Edge as Appliance
+title: Setting up Cumulocity IoT DataHub Edge as an Appliance
 layout: redirect
 ---
 

@@ -136,7 +136,7 @@ kubectl get service -n c8yedge cumulocity-core -o jsonpath={.status.loadBalancer
 
 ### Validation of {{< product-c8y-iot >}} DataHub Installation
 
-In case of problems, run the following validation steps:
+If the product doesn't work as intended after the installation, please go through the validation steps described below.
 
 #### MySQL 
 

@@ -3,6 +3,9 @@ weight: 10
 title: Prerequisites
 layout: redirect
 ---
+{{< c8y-admon-important >}}
+Edge on Kubernetes is only tested and supported on single-node Kubernetes clusters.
+{{< /c8y-admon-important >}}
 
 |<div style="width:140px">Item</div>|Details|
 |:---|:---|

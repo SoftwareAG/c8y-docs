@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-28
 title: Grid filter text not cleared on filter reset
 product_area: Device management & connectivity
 change_type:

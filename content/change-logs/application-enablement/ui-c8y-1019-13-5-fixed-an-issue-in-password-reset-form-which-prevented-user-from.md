@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed password reset form preventing users from setting a new password
+title: Users can reset their password properly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

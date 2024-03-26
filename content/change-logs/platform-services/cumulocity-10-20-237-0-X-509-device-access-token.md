@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added support for retrieving JWT session token with X.509 certificates
+title: Added support for retrieving JWT session token with X.509 certificates for devices
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP

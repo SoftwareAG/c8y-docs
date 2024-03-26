@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58234
 version: 1019.13.5
 ---
-Fixed an issue in password reset form which prevented user from setting a new password [GRAFT][release/cd] (#5965)
+In some cases, users were unable to set a new password using the password reset form. This issue has been resolved and users can now successfully reset their password as expected.

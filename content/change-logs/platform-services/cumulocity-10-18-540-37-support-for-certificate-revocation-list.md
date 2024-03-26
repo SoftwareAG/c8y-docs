@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-28
 title: CRL support in device certificate authentication
 product_area: Platform services
 change_type:
@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-41760
-version: 10.18.590.0
+version: 10.18.540.37
 ---
 Administrators can now configure the Certificate Revocation List (CRL) settings. When a certificate is compromised, the platform is now capable of performing the revocation check during the device authentication process. Administrators can choose an offline mode in which revoked certificate details can be added manually or choose an online mode if their issuing certificate authentication maintains the revoked list of certificates.

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed an issue in password reset form which prevented user from setting a new password [GRAFT][release/cd] (#5965)
+title: Fixed password reset form preventing users from setting a new password
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

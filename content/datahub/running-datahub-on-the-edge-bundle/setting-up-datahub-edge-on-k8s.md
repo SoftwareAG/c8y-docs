@@ -66,33 +66,20 @@ The *dremio-values.yaml* file contains the configuration settings for the Dremio
 
 The Dremio master uses a persistent volume to persist its metadata. The persistent volume claim is defined in the Dremio helm chart. You have to provide the name of the ``<CRITICAL_STORAGE_CLASS>`` used by that claim.
 
-The datalake storage needs to be available as a volume mounted into the Dremio master and executor pods. The mount path (typically ``/datalake``) later needs to be specified when configuring the initial settings in the DataHub UI.
-The respective configuration in dremio-values.yaml may look as follows:
-```
-    datalakeNFS:
-         enabled: true
-         mountPath: /datalake
-		 hostPath: <PATH_ON_HOST>
-```
-If your Kubernetes cluster has only a single worker node, both pods are running on the same node and ``<PATH_ON_HOST>`` refers to a path on that node.
-Assert that the folder does already exist.
-
-The distributed storage also needs to be available as a volume mounted into the Dremio master and executor pods.
-The respective configuration in *dremio-values.yaml* may look as follows:
+In addition, either a distributed storage and a datalake storage must be available as volumes mounted into the Dremio master and executor pods. They are mapped to a folder on the single worker node where these pods are running on.
+The respective configuration in *dremio-values.yaml* looks as follows:
 ```
 distStorage:
     type: nfs
-    nfs:
-        mountPath: <MOUNT_PATH>
+    nfs: 
+        hostPath: /datahub/distributedStorage
+    
+datalakeNFS:
+    enabled: true
+    hostPath: /datahub/datalake
 ```
-If your Kubernetes cluster has only a single worker node, that means, both pods are running on the same node and you can use a subfolder of ``/datalake`` mounted to a hostpath as shown above.
-This may lead, for example, to the following configuration:
-```
-distStorage:
-    type: nfs
-    nfs:
-        mountPath: /datalake/distributedStorage
-```
+The host directories (here: /datahub/distributedStorage and /datahub/datalake) can be changed as needed.
+The directories will be created by the installation. 
 
 The ``$DREMIO_USER`` and ``$DREMIO_PASSWORD`` credentials are substituted during installation based on the values provided in *datahub-config.json*.
 

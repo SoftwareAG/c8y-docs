@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-28
 title: Supported security modes retrieved dynamically from LWM2M agent
 product_area: Device management & connectivity
 change_type:
@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: DM-3161
-version: 1018.503.53
+version: 10.18.503.53
 ---
 The supported security modes which are available for selection on the configuration page are now retrieved dynamically from the LWM2M agent rather than being hardcoded in the UI.

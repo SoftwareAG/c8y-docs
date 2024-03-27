@@ -97,20 +97,20 @@ Smart rules can be instantiated multiple times.
 
 ### To edit a smart rule {#to-edit-a-smart-rule}
 
-Click the menu icon at the right of an entry and then click **Edit**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of an entry and then click **Edit**.
 
 For details on the fields see [To create a smart rule](#to-create-a-smart-rule).
 
 
 ### To duplicate a smart rule {#to-duplicate-a-smart-rule}
 
-1. Click the menu icon at the right of an entry and then click **Duplicate**.
+1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of an entry and then click **Duplicate**.
 2. Modify at least the name.
 3. Click **Save & close** to save the smart rule and return to the smart rule list.
 
 ### To delete a smart rule {#to-delete-a-smart-rule}
 
-Click the menu icon at the right of an entry and then click **Delete**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of an entry and then click **Delete**.
 
 ### To debug a smart rule {#to-debug-a-smart-rule}
 
@@ -120,7 +120,7 @@ This feature is not available with Apama.
 
 For easier debugging, there is a direct link from a smart rule to the corresponding event processing module.
 
-Click the menu icon at the right of an entry and then click **Inspect** to use this link.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of an entry and then click **Inspect** to use this link.
 
 ### To enable/disable a smart rule {#to-enabledisable-a-smart-rule}
 
@@ -153,7 +153,7 @@ To define a threshold rule follow these steps:
 1. In the navigator, select the desired group or device to apply a threshold to.
 2. Switch to the **Data explorer** tab.
 3. If the data point that should raise the threshold is not visible by default, select **Add data point** and [add a data point](/cockpit/data-point-library/#to-add-a-data-point-to-the-library).
-4. Click the menu icon at the end of the row of the respective data point and select **Create smart rule**.
+4. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the end of the row of the respective data point and select **Create smart rule**.
 5. Select the smart rule "On measurement explicit threshold create alarm".
 6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart rules collection](/cockpit/smart-rules-collection/).
 7. Under **Create Alarm** you can optionally edit the alarm type and the alarm text.

@@ -48,7 +48,7 @@ In the **UI settings** section change the language of the UI, see [To change the
 
 In the **Platform info** section, you find information on the infrastructure of your platform:
 
-- The ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.
+- The ID of your tenant, which might be required if you request support. Click the clipboard icon <i class="dlt-c8y-icon-paste1"></i> next to the tenant ID to copy it to the clipboard.
 - Version information for both the backend and the UI.
 
 Moreover you can click **Detailed info** to download more detailed platform information.

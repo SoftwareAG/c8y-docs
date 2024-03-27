@@ -119,7 +119,7 @@ After saving the configuration, you will see a security code displayed below you
 
 ### To edit a data connector {#to-edit-a-data-connector}
 
-Click the connector title, or click the menu icon at the right of a data connector entry and then click **Edit**.
+Click the connector title, or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of a data connector entry and then click **Edit**.
 
 In the **Settings** tab, edit the data connector configuration.
 
@@ -127,11 +127,11 @@ See [To add a data connector](#to-add-a-data-connector) for details on the setti
 
 ### To duplicate a data connector {#to-duplicate-a-data-connector}
 
-Click the menu icon at the right of a data connector entry and then click **Duplicate** to create another data connector with the same configuration.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of a data connector entry and then click **Duplicate** to create another data connector with the same configuration.
 
 ### To delete a data connector {#to-delete-a-data-connector}
 
-Click the menu icon at the right of a data connector entry and then click **Delete** to stop data forwarding and delete the data connector.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of a data connector entry and then click **Delete** to stop data forwarding and delete the data connector.
 
 {{< c8y-admon-info >}}
 A data connector can also be deleted from the **Settings** tab of a connector configuration.

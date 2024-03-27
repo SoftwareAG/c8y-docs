@@ -86,14 +86,14 @@ Next, click **Apply** to apply the changes.
 
  You can add or edit translations for every identifier in two ways:
 
-1. Hover over the respective column for the edit icon to be visible.
+1. Hover over the respective column for the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> to be visible.
 2. Click the icon to select the desired language.
 3. Add or edit the translation.
 4. Click **Save**.
 
 or:
 
-1. Click the edit icon in each row to open the **Edit translations** dialog window.
+1. Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> in each row to open the **Edit translations** dialog window.
 2. Add or edit the translation for any language.
 3. Click **Save**.
 

@@ -27,13 +27,13 @@ The archive functionality is not available for subscribed applications, as only 
 Users can restore previous versions of an application from an archive.
 
 1. Open the application properties for the respective application by clicking on it.
-2. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Set as active** to make it the active version.
+2. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> and select **Set as active** to make it the active version.
 
 ### To reactivate a single application {#to-reactivate-a-single-application}
 
 If a hosted application is not deployed correctly, users may reactivate it.
 
 1. Open the application properties for the respective application by clicking on it.
-3. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Reactivate archive**.
+3. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> and select **Reactivate archive**.
 
 The selected application will be reactivated by removing the respective files from the application directory and unpacking the web application package again.

@@ -100,5 +100,5 @@ Click the arrow on the right of a row to expand it and display further details o
 
 ### To change the status of an alarm {#to-change-the-status-of-an-alarm}
 
-To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon and select the desired status.
+To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> and select the desired status.
 It is also possible to change the status of all alarms to "clear" at once. Click **Clear all** in the top menu bar, to clear all alarms of the selected severities.

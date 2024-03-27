@@ -148,6 +148,9 @@ $grid-breakpoints: (
   color: var(--c8y-palette-status-info)!important;
 }
 .text-success {
+  color: var(--c8y-palette-status-success)!important;
+}
+.text-success-dark {
   color: var(--c8y-palette-status-success-dark)!important;
 }
 .text-primary {

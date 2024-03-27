@@ -45,7 +45,7 @@ Permissions are grouped into the following categories:
 |Device control|Permissions to remote control devices.
 |Full access|Complete access to the associated devices, mainly to simplify configuration.
 
-Add a permission to the role by clicking the plus icon next to the desired category.
+Add a permission to the role by clicking the plus icon <i class="dlt-c8y-icon-add text-primary icon-20"></i> next to the desired category.
 
 In the **Type** field, specify a fragment to further restrict the types of data that this permission applies to. Access will only be granted to objects that contain
 exactly the specified fragment types. If the selected object contains more fragment types than those defined in the inventory roles configuration, in order to display it, they also must be added to the inventory role configuration.

@@ -58,18 +58,18 @@ The device protocol will be added to the device database.
 
 ### To edit a device protocol {#to-edit-a-device-protocol}
 
-To edit a device protocol, just click on the protocol or click the menu icon at the right of the row and then click **Edit**.
+To edit a device protocol, just click on the protocol or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the row and then click **Edit**.
 
 Details on the fields can be found in the documentation of the particular device type, see [Protocol integration](/protocol-integration/).
 
 ### To delete a device protocol {#to-delete-a-device-protocol}
 
-To delete a device protocol, click the menu icon at the right of the row and then click **Delete**.
+To delete a device protocol, click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the row and then click **Delete**.
 
 The device protocol will be deleted from the device database.
 
 ### To export a device protocol {#to-export-a-device-protocol}
 
-To export a device protocol, click the menu icon at the right of the row and then click **Export**.
+To export a device protocol, click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the row and then click **Export**.
 
 The device protocol will be exported to your file system.

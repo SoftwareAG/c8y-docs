@@ -102,7 +102,7 @@ Once all required asset models are created, you can start creating [assets](/dtm
 
 #### To select an icon {#to-select-an-icon}
 
-1. Click the select icon on the left.
+1. Click the **Select icon** button on the left.
 2. In the following dialog window, search or filter icons by type or select an icon from the predefined list.
 3. Select the desired icon.
 4. Click **Save**.
@@ -113,7 +113,7 @@ Once all required asset models are created, you can start creating [assets](/dtm
 2. In the dropdown select one or multiple allowed child asset models.
 3. The selected child asset models are then displayed under **Allowed child asset models** with the checkbox **Required** on the right.
    If the asset model requires this child asset model, select the checkbox. By default, it is clear.
-4. Click the remove icon next to the checkbox to remove the child asset model from the selected asset model.
+4. Click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> next to the checkbox to remove the child asset model from the selected asset model.
 
 {{< c8y-admon-info>}}
 If you do not select and check a child asset model, then the asset cannot have any subassets.
@@ -133,7 +133,7 @@ If the asset model is "Rotor" and you select "Blade" as an allowed child asset m
 3. The selected asset properties are then displayed on the **Asset properties** segment with the checkbox **Required** on the right.
    If the asset model requires this asset property, select the checkbox. By default, it remains clear.
 4. Reorder the asset properties via drag and drop.
-5. To remove the asset property from the asset model, click the remove icon next to the checkbox.
+5. To remove the asset property from the asset model, click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> next to the checkbox.
 6. Click **Save** to save your settings.
 
 {{< c8y-admon-info>}}
@@ -162,7 +162,7 @@ This approach, allows you to create the desired hierarchy including all asset mo
 
 ### To modify an asset model {#to-modify-an-asset-model}
 
-1. Click the edit icon on the right side of each asset model.
+1. Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> on the right side of each asset model.
 2. Make your changes in the editor.
 3. Click **Save**.
 4. If this asset model is used by any asset, select **Confirm** in the resulting confirmation dialog to continue saving your changes.
@@ -173,7 +173,7 @@ There are two ways to delete an asset model:
 
 #### Delete each asset model individually {#delete-each-asset-model-individually}
 
-On the **Asset models** page, hover over the desired asset model and click the delete icon on the right.
+On the **Asset models** page, hover over the desired asset model and click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> on the right.
 
 #### Delete the asset models in bulk {#delete-the-asset-models-in-bulk}
 
@@ -181,13 +181,13 @@ On the **Asset models** page, select the checkboxes next to the desired asset mo
 
 ### To sort asset models {#to-sort-asset-models}
 
-To sort columns, hover over the respective column header and click the sort icon for an ascending or descending order.
+To sort columns, hover over the respective column header and click the sort icon <i class="dlt-c8y-icon-sort-arrow icon-20"></i> for an ascending or descending order.
 
 ### To filter asset models {#to-filter-asset-models}
 
 1. Use the filter option to filter asset models based on text in the respective asset group.
-2. Hover over a column title for the filter icon to appear on the right.
-3. Click the icon to filter the asset models in this column.
+2. Hover over a column title for the filter icon <i class="dlt-c8y-icon-filter icon-20"></i> to appear on the right.
+3. Click the icon <i class="dlt-c8y-icon-filter icon-20"></i> to filter the asset models in this column.
 4. To clear all applied filters click **Clear filters** at the top.
 
 ### To export asset models {#to-export-asset-models}
@@ -195,7 +195,7 @@ To sort columns, hover over the respective column header and click the sort icon
 To export asset models to add in another tenant, follow the steps below:
 
 1. On the **Asset models** page, click **Export asset models**.
-2. In the resulting dialog, you see the list of asset models. Initially, all the asset models are collapsed. Click the expand icon to the left of each asset model to view the next level of child asset models.
+2. In the resulting dialog, you see the list of asset models. Initially, all the asset models are collapsed. Click the expand icon <i class="dlt-c8y-icon-forward text-primary icon-20"></i> to the left of each asset model to view the next level of child asset models.
 3. Select one or more desired asset models.
 4. Click **Export** to export the selection.
 5. The dialog window closes and a JSON file named 'Export-asset-models.json' downloads.
@@ -220,9 +220,9 @@ To import asset models, follow the steps below:
 
 1. On the **Asset models** page, click **Import asset models**.
 2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset models from a DTM application on another tenant.
-3. Click **Next** to preview the asset models. Initially, all the asset models are collapsed. Click the expand icon to the left of each asset model to view the next level of child asset models.
+3. Click **Next** to preview the asset models. Initially, all the asset models are collapsed. Click the expand icon <i class="dlt-c8y-icon-forward text-primary icon-20"></i> to the left of each asset model to view the next level of child asset models.
 4. Click **Import** to import the asset models.
-5. Alternatively, click **Back** to go to previous step. Hover over the file name and click the remove icon to remove the current file and upload a different one.
+5. Alternatively, click **Back** to go to previous step. Hover over the file name and click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> to remove the current file and upload a different one.
 6. The newly imported asset models are listed on the **Asset models** page.
 
 ![Import asset models](/images/dtm/asset-type/dtm-asset-type-import.png)
@@ -237,11 +237,11 @@ You can import a maximum of 250 asset models and 500 associated properties at on
 
 When you navigate to the **Asset model samples** page following **Configuration > Asset models > Asset model samples**, you see a list of samples with name, description and tags associated with it.
 
-To view the sample, click the menu icon to the right of sample name and click **View**.
-In the resulting dialog, you see a list of asset models. Initially, the asset models in the list are collapsed. Click the expand icon to the left of each asset model to view the complete hierarchy.
+To view the sample, click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of sample name and click **View**.
+In the resulting dialog, you see a list of asset models. Initially, the asset models in the list are collapsed. Click the expand icon <i class="dlt-c8y-icon-forward text-primary icon-20"></i> to the left of each asset model to view the complete hierarchy.
 Click **Import** to import the asset models in the sample.
 
-Alternatively, to import the asset models in the sample without a preview, click the menu icon to the right of sample name and then click **Convert to asset model**.
+Alternatively, to import the asset models in the sample without a preview, click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of sample name and then click **Convert to asset model**.
 
 {{< c8y-admon-info>}}
 When you select **View** or **Convert to asset model**, the asset model sample undergoes a validation process. If the validation fails, you see a corresponding message in the resulting dialog box. Click **Download log file** to view the errors.

@@ -44,12 +44,12 @@ Click **Upload files** in the top menu bar. In the resulting dialog box, select 
 
 ### To download a file from your account {#to-download-a-file-from-your-account}
 
-Click the menu icon at the right of the respective row and then click **Download**.
+Click the download icon <i class="dlt-c8y-icon-download text-primary icon-20"></i> at the right of the respective row.
 
 
 ### To delete a file from your account {#to-delete-a-file-from-your-account}
 
-Hover your mouse over the row containing the file you want to delete, then click the trash icon <img src="/images/icons/trash-can.png" alt="Trash can icon" style="display:inline-block; margin:0"> at the right.
+Hover your mouse over the row containing the file you want to delete, then click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> at the right.
 
 #### To delete multiple files
 

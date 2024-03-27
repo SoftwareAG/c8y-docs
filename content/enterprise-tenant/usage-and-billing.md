@@ -162,7 +162,7 @@ You can filter the usage statistics list for a time period by adding the start a
 If a tenant was created after the selected time period, it will show up but the numbers are "0".
 {{< /c8y-admon-info >}}
 
-You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Filtering](/get-familiar-with-the-ui/gui-features/#filtering).
+You can also filter and sort the list on any column by clicking the filter icon <i class="dlt-c8y-icon-filter icon-20"></i> next to the column name and providing the filtering criteria. See also [Filtering](/get-familiar-with-the-ui/gui-features/#filtering).
 
 {{< c8y-admon-important >}}
 The date/time range used here might differ from your server time due to different time zones.

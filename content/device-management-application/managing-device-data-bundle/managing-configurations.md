@@ -34,7 +34,7 @@ The configuration snapshot will be added to the configuration repository.
 
 ### To edit a configuration snapshot {#to-edit-a-configuration-snapshot}
 
-To edit a configuration snapshot, click on the menu icon at the right of the row and then click **Edit**.
+To edit a configuration snapshot, click on the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the row and then click **Edit**.
 
 For details on the fields, see [To add a configuration snapshot](#to-add-a-configuration-snapshot).
 
@@ -44,7 +44,7 @@ Click **Update configuration** to save your changes.
 
 ### To delete a configuration snapshot {#to-delete-a-configuration-snapshot}
 
-To delete a configuration snapshot, click on the menu icon at the right of the row and then click **Delete**.
+To delete a configuration snapshot, click on the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the row and then click **Delete**.
 
 The configuration snapshot will be deleted from the configuration snapshot repository.
 

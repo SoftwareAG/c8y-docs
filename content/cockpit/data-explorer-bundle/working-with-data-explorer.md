@@ -85,7 +85,7 @@ The right hand side shows all of the selected data points.
 
 For further information on the data point library refer to [Data point library](/cockpit/data-point-library/).
 
-To remove a data point from the data point list, click the menu icon and select **Remove from list**.
+To remove a data point from the data point list, click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> and select **Remove from list**.
 
 ### To customize data point properties {#to-customize-data-point-properties}
 
@@ -163,7 +163,7 @@ In the upcoming dialog, you can select an alarm or event from the list of recent
 
 Expand an event, to modify its properties.
 
-Click the menu icon and in the context menu select **Remove**, to remove the entry from the list.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> and in the context menu select **Remove**, to remove the entry from the list.
 
 As with data points, you can turn the visibility of an alarm/ event in the data explorer on and off by using the toggle.
 

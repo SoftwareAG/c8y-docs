@@ -29,7 +29,7 @@ The list shows the execution history, with each execution consisting of the foll
 | Component | Description |
 | ---         | --- |
 | Status icon | The status of the execution, which is either running, successful, or error
-| Execution mode icon | The type of execution, which is either *scheduled* (calendar icon) or *manual* (user icon)
+| Execution mode icon | The type of execution, which is either *scheduled* (calendar icon <i class="dlt-c8y-icon-schedule1 text-muted icon-20"></i> ) or *manual* (user icon <i class="dlt-c8y-icon-supplier text-muted icon-20"></i>)
 | Records | The number of records which have been offloaded during this execution
 | Execution time | The point in time the execution was started
 | Runtime | The runtime of the execution

@@ -69,9 +69,9 @@ With the button next to the fragment and series fields you can pick the values f
 
 ### To edit a data point {#to-edit-a-data-point}
 
-Simply click the respective entry in the list or click the menu icon at the right of an entry and then click **Edit**.
+Simply click the respective entry in the list or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of an entry and then click **Edit**.
 
 
 ### To delete a data point {#to-delete-a-data-point}
 
-Click the menu icon at the right of an entry and then click **Delete**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of an entry and then click **Delete**.

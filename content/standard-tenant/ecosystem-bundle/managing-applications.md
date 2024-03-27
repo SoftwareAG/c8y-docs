@@ -55,7 +55,7 @@ Applications can be filtered by name or by availability.
 
 ### To edit an application {#to-edit-an-application}
 
-Click the application or click the menu icon at the right of an entry and then click **Edit**.
+Click the application or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of an entry and then click **Edit**.
 
 In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
@@ -65,7 +65,7 @@ Never change the system application names (such as "Device management", "Cockpit
 
 ### To delete an application {#to-delete-an-application}
 
-Click the menu icon at the right of an entry and then click **Delete**. You can also delete an application directly from the **Properties** tab in the application details.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of an entry and then click **Delete**. You can also delete an application directly from the **Properties** tab in the application details.
 
 If you delete an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.
 

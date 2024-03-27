@@ -28,7 +28,7 @@ Smart groups can be created from the device list.
 3. Click **Create smart group** at the right of the top menu bar.
 4. Enter a name for the group and click **Create**.
 
-The new group will appear as a top-level group in the **Groups** menu of the navigator. Smart groups can be distinguished by a small cogwheel in the folder icon.
+The new group will appear as a top-level group in the **Groups** menu of the navigator. Smart groups can be distinguished by a small cogwheel in the folder icon <i class="c8y-icon c8y-icon-group-smart icon-20"></i>.
 
 Below the smart group name and description you can see the filter criteria which have been applied on building the smart group. You can edit the filter settings here and adjust your selection.
 
@@ -36,7 +36,7 @@ Below the smart group name and description you can see the filter criteria which
 
 ### To delete a smart group {#to-delete-a-smart-group}
 
-Hover over the respective entry you want to delete and click the delete icon at the right.
+Hover over the respective entry you want to delete and click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> at the right.
 
 {{< c8y-admon-important >}}
 Deleting a smart group is irreversible.

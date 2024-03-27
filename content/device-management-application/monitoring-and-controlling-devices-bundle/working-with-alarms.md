@@ -100,6 +100,6 @@ Select an alarm by clicking on the alarm in the **Alarms list** that you are int
 
 ### To change the status of an alarm {#to-change-the-status-of-an-alarm}
 
-To change the status of an alarm, select the alarm and select the desired status.
+To change the status of an alarm, select the alarm and choose the desired status.
 ![Alarms status change button](/images/users-guide/DeviceManagement/devmgmt-alarms-status-change-btn.png)
 It is also possible to change the status of all alarms to "clear" at once. Click **Clear all** in the top menu bar, to clear all alarms of the selected severities.

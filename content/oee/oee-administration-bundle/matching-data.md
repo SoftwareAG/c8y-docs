@@ -6,7 +6,7 @@ layout: redirect
 
 In the Matching section of a profile configuration, you define rules to determine which machine data is used for the OEE input variables.
 
-### Overview {#overview}
+### Introduction {#introduction}
 
 The following image provides an overview on the matching capabilities.
 

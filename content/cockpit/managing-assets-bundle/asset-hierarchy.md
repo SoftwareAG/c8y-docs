@@ -37,7 +37,7 @@ Single devices are not managed in the Cockpit application. They are managed in t
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-related >}}
-- [Getting started > Technical concepts > {{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#overview) for details on {{< product-c8y-iot >}}'s domain model.
+- [Getting started > Technical concepts > {{< product-c8y-iot >}}'s domain model](/concepts/domain-model/) for details on {{< product-c8y-iot >}}'s domain model.
 - [Device management > Device management application](/device-management-application/) for details on working with devices in {{< product-c8y-iot >}}.
 - [Web SDK > Tutorials > Add a Jest-based unit test](/web/tutorials/#add-jest-based-unit-test) for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
@@ -48,7 +48,7 @@ Single devices are not managed in the Cockpit application. They are managed in t
 asset hierarchy.
 
 
-The device hierarchy tracks how devices are linked to {{< product-c8y-iot >}} from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the IoT devices. For details, refer to [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#overview).
+The device hierarchy tracks how devices are linked to {{< product-c8y-iot >}} from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the IoT devices. For details, refer to [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/).
 
 
 In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. The asset hierarchy depends on the IoT devices used. There are many types of IoT devices, but these two types are very common:

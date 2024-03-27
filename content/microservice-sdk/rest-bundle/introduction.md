@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Overview
+title: Introduction
 layout: redirect
 ---
 
@@ -18,7 +18,7 @@ The description is closely linked to the {{< openapi >}}, which describes each i
 - [Fragment library](/device-integration/fragment-library/) specifies the data model for device management.
 - [Sensor library](/concepts/domain-model/#sensor-library) specifies the data model for sensors and controls.
 
-If you develop applications using Java, check [Microservice SDK for Java](/microservice-sdk/java/#overview) for even more convenient access to {{< product-c8y-iot >}}'s functionality.
+If you develop applications using Java, check [Microservice SDK for Java](/microservice-sdk/java/#introduction) for even more convenient access to {{< product-c8y-iot >}}'s functionality.
 
 For further information on integrating devices using REST, refer to [Device integration using REST](/device-integration/rest).
 

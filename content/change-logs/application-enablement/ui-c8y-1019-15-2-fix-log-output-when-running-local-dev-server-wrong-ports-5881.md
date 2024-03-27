@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix log output when running local dev server (wrong ports) (#5881) [GRAFT][release/cd] (#5983)
+title: Fix wrong port numbers in log output when running local development server
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57344
 version: 1019.15.2
 ---
-Fix log output when running local dev server (wrong ports) (#5881) [GRAFT][release/cd] (#5983)
+When running a local development server with the `ng serve` command, the log output incorrectly displays the port numbers if the default port is already used. This has been fixed to show the correct port numbers that the local development server is actually using. This improves the developer experience by avoiding confusion about which ports are being used.

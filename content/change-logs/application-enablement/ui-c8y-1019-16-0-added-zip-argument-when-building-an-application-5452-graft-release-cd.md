@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added --zip argument when building an application. (#5452) [GRAFT][release/cd] (#5923)
+title: Zip option can now be provided when building an application. 
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57342
 version: 1019.16.0
 ---
-Added --zip argument when building an application. (#5452) [GRAFT][release/cd] (#5923)
+It is now possible to build an application with the --zip argument which now generate a ZIP archive containing the application and its dependencies in addition to the regular build artifacts.

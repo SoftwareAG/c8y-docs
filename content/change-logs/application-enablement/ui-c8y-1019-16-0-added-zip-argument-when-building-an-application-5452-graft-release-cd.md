@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Zip option can now be provided when building an application. 
+title: ZIP option now available when building an application 
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

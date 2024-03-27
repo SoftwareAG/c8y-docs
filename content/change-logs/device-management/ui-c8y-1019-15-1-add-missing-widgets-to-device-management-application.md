@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add missing widgets to Device management application
+title: Device management application now includes all available widgets
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

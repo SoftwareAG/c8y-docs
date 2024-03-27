@@ -47,7 +47,7 @@ For each profile, the following information is provided:
 
 #### To view profile details {#to-view-profile-details}
 
-Click the arrow icon on the left of an entry to expand or collapse it and show or hide the profile details, for example the machine name and the machine profile in case of machine profiles.
+Click the arrow icon <i class="dlt-c8y-icon-expand-arrow icon-20"></i> on the left of an entry to expand or collapse it and show or hide the profile details, for example the machine name and the machine profile in case of machine profiles.
 
 #### To create a new profile {#to-create-a-new-profile}
 

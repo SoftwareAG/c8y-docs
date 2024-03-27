@@ -20,9 +20,9 @@ The connection status is represented by arrows in the **Status** column in the d
 
 The top arrow represents the send connection (traffic from the device to {{< product-c8y-iot >}}). The status for the send connections may be one of:
 
-* Online (data was sent within the required interval)- indicated by a green arrow
-* Offline (data was not sent within the required interval) - indicated by a red arrow
-* Unknown or not monitored (no interval configured) - indicated by a grey arrow
+* Online (data was sent within the required interval)- indicated by a green arrow <i class="dlt-c8y-icon-long-arrow-right text-success icon-20"></i>.
+* Offline (data was not sent within the required interval) - indicated by a red arrow <i class="dlt-c8y-icon-long-arrow-right text-danger icon-20"></i>.
+* Unknown or not monitored (no interval configured) - indicated by a grey arrow <i class="dlt-c8y-icon-long-arrow-right text-muted icon-20"></i>.
 
 Hovering over the arrow displays the timestamp of the last request from the device to the server.
 
@@ -38,9 +38,9 @@ Empty PUT requests to the managed object of the device will also update a send c
 
 The bottom arrow represents the push connection (from {{< product-c8y-iot >}} to the device). The status for the push connections may be one of:
 
-* Online (connection established)- indicated by a green arrow
-* Offline (connection not established) - indicated by a red arrow
-* Not monitored - indicated by a grey arrow
+* Online (connection established)- indicated by a green arrow <i class="dlt-c8y-icon-long-arrow-left text-success icon-20"></i>.
+* Offline (connection not established) - indicated by a red arrow <i class="dlt-c8y-icon-long-arrow-left text-danger icon-20"></i>.
+* Not monitored - indicated by a grey arrow <i class="dlt-c8y-icon-long-arrow-left text-muted icon-20"></i>.
 
 A push connection is an active HTTPS long poll connection to the <kbd>/notification/operations</kbd> API endpoint or an active MQTT connection to the MQTT endpoint of {{< product-c8y-iot >}}.
 It is always green if the device is connected, even without data.
@@ -51,7 +51,7 @@ Connection monitoring is not real time. This means that the displayed connection
 
 **Maintenance mode**
 
-Moreover, the device may be in "Maintenance" mode, indicated by the tool icon in the **Status** column. This is a special connection status indicating that the device is currently being maintained and cannot be monitored. While a device is being maintained, no alarms for that device are raised.
+Moreover, the device may be in "Maintenance" mode, indicated by the tool icon <i class="dlt-c8y-icon-wrench1 text-warning icon-20"></i> in the **Status** column. This is a special connection status indicating that the device is currently being maintained and cannot be monitored. While a device is being maintained, no alarms for that device are raised.
 
 You can turn the maintenance mode on or off for a device through a toggle in the **Connection monitoring** card in its **Info** tab, see below.
 

@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3266
 version: 1019.15.1
 ---
-Add missing widgets to Device management application
+The Device Management application was missing some widgets that were available in other applications. With this change, all available widgets have now been added to the Device Management application. 

@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57344
 version: 1019.15.2
 ---
-When running a local development server with the `ng serve` command, the log output incorrectly displays the port numbers if the default port is already used. This has been fixed to show the correct port numbers that the local development server is actually using. This improves the developer experience by avoiding confusion about which ports are being used.
+When running a local development server with the `ng serve` command, the log output incorrectly displayed the port numbers if the default port was already used. This has been fixed to show the correct port numbers that the local development server is actually using. This improves the developer experience by avoiding confusion about which ports are being used.

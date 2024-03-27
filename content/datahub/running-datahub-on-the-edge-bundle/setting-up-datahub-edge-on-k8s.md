@@ -87,7 +87,7 @@ In case you want to modify resource settings for Dremio master or executor, you 
 * At maximum 48 GB RAM for each, master and executor
 * Only one executor
 
-These constraints are checked during the installation procedure.
+These licensing constraints are checked during the installation procedure.
 
 #### Configuring Deployment of MySQL via mysql-values.yaml
 

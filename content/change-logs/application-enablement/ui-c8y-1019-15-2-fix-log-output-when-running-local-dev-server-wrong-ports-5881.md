@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix wrong port numbers in log output when running local development server
+title: Correct port numbers shown in log output when running local development server
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: MTM-57342
-version: 1019.16.0
+version: 10.19.16.0
 ---
 It is now possible to build an application with the --zip argument. This will generate a ZIP archive which contains the application and its dependencies in addition to the regular build artifacts.

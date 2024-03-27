@@ -1,10 +1,10 @@
 ---
 weight: 20
-title: Setting up Cumulocity IoT DataHub Edge as an Appliance
+title: Setting up Cumulocity IoT DataHub Edge as an appliance
 layout: redirect
 ---
 
-In this setup an appliance is run within a Linux VM, which in turn is deployed into a supported hypervisor.The {{< product-c8y-iot >}} DataHub Edge backend, the Dremio master, and the Dremio executor are running as Docker containers within the appliance.
+In this setup an appliance is run within a Linux VM, which in turn is deployed into a supported hypervisor. The {{< product-c8y-iot >}} DataHub Edge backend, the Dremio master, and the Dremio executor are running as Docker containers within the appliance.
 
 ### Prerequisites
 

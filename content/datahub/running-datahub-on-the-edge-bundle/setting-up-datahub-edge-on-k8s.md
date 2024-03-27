@@ -55,7 +55,7 @@ Internet connectivity is required as the MySQL image, the Dremio image and some 
 
 #### Adapting datahub-config.json
 
-You have to apply the following changes:
+You must apply the following changes:
 * If your {{< product-c8y-iot >}} Edge on Kubernetes configuration does not use ``c8yedge`` as namespace, change the Kubernetes namespace accordingly. 
 * Specify the username and password for admin access to Dremio. The password must have at least 8 characters, including at least 1 letter and 1 digit.
 * Set the password for the root user in MySQL.
@@ -89,7 +89,7 @@ In case you want to modify resource settings for Dremio master or executor, you 
 
 These licensing constraints are checked during the installation procedure.
 
-#### Configuring Deployment of MySQL via mysql-values.yaml
+#### Configuring deployment of MySQL via mysql-values.yaml
 
 The *mysql-values.yaml* file contains the configuration settings for the MySQL deployment. It needs to be adapted as follows:
 
@@ -123,7 +123,7 @@ kubectl get service -n c8yedge cumulocity-core -o jsonpath={.status.loadBalancer
 
 ### Validation of {{< product-c8y-iot >}} DataHub Installation
 
-If the product doesn't work as intended after the installation, please go through the validation steps described below.
+If the product doesn't work as intended after the installation, go through the validation steps described below.
 
 #### MySQL 
 
@@ -192,7 +192,7 @@ NAMESPACE     NAME                                            READY   STATUS    
 c8yedge       datahub-scope-edge-deployment-XXXXXXXXXX-YYYYY  1/1     Running     0           16m
 ```
 
-#### DataHub Web Application
+#### DataHub web application
 
 When logged into the {{< product-c8y-iot >}} UI, the {{< product-c8y-iot >}} DataHub web application is available under *Administration > Ecosystem > Applications*.
-It should also be present in the usual {{< product-c8y-iot >}} Application Switcher.
+It should also be present in the usual {{< product-c8y-iot >}} application switcher.

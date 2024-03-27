@@ -43,7 +43,7 @@ The **Tenants** page provides the following information on each subtenant:
 * The ID and domain.
 * Optionally, a contact name.
 * The date when the tenant was created.
-* The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
+* The status of the tenant, either active (indicated by a green checkmark icon <i class="dlt-c8y-icon-ok text-success icon-20"></i>) or suspended (indicated by a red cross icon <i class="dlt-c8y-icon-block text-danger icon-20"></i>).
 
 {{< c8y-admon-info >}}
 In the {{< management-tenant >}}, you also find a column with information on the parent tenant. The parent tenant is the original tenant that created the subtenants that are listed in the table.

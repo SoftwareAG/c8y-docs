@@ -50,7 +50,7 @@ The general structure common to all {{< product-c8y-iot >}} applications include
 </tr>
 <tr>
 <td style="text-align:left"><b>Top menu bar</b></td>
-<td style="text-align:left">Depending on the active application and the active page, a secondary bar is displayed below the top bar providing further functionalities like a <b>Reload</b> link for reloading the page or a <b>Realtime</b> link for the display of real-time data. <br>A help icon indicates that inline contextual help content is available for the page. Clicking it opens a drawer with a short introduction on the page’s functionality and a direct link to the specific section in the user documentation for more details. Note that the help content is only available in English.</td>
+<td style="text-align:left">Depending on the active application and the active page, a secondary bar is displayed below the top bar providing further functionalities like a <b>Reload</b> link for reloading the page or a <b>Realtime</b> link for the display of real-time data. <br>A help icon <i class="dlt-c8y-icon-help-outline text-info icon-20"></i> indicates that inline contextual help content is available for the page. Clicking it opens a drawer with a short introduction on the page’s functionality and a direct link to the specific section in the user documentation for more details. Note that the help content is only available in English.</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Right drawer</b></td>

@@ -20,7 +20,7 @@ The connection status is represented by arrows in the **Status** column in the d
 
 The top arrow represents the send connection (traffic from the device to {{< product-c8y-iot >}}). The status for the send connections may be one of:
 
-* Online (data was sent within the required interval)- indicated by a green arrow <i class="dlt-c8y-icon-long-arrow-right text-success icon-20"></i>.
+* Online (data was sent within the required interval)- indicated by a green arrow <i class="dlt-c8y-icon-long-arrow-right text-success-dark icon-20"></i>.
 * Offline (data was not sent within the required interval) - indicated by a red arrow <i class="dlt-c8y-icon-long-arrow-right text-danger icon-20"></i>.
 * Unknown or not monitored (no interval configured) - indicated by a grey arrow <i class="dlt-c8y-icon-long-arrow-right text-muted icon-20"></i>.
 
@@ -38,7 +38,7 @@ Empty PUT requests to the managed object of the device will also update a send c
 
 The bottom arrow represents the push connection (from {{< product-c8y-iot >}} to the device). The status for the push connections may be one of:
 
-* Online (connection established)- indicated by a green arrow <i class="dlt-c8y-icon-long-arrow-left text-success icon-20"></i>.
+* Online (connection established)- indicated by a green arrow <i class="dlt-c8y-icon-long-arrow-left text-success-dark icon-20"></i>.
 * Offline (connection not established) - indicated by a red arrow <i class="dlt-c8y-icon-long-arrow-left text-danger icon-20"></i>.
 * Not monitored - indicated by a grey arrow <i class="dlt-c8y-icon-long-arrow-left text-muted icon-20"></i>.
 

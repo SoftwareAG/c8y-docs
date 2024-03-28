@@ -118,7 +118,7 @@ Finally, click **Login** to enter Edge. Initially, you will be taken to the [Coc
 To explicitly log out, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 
 {{< c8y-admon-info >}}
-The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
+The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level. Contact your Operations team for further support. The default value is 100.
 {{< /c8y-admon-info >}}
 
 ### How to reset your password {#how-to-reset-your-password}

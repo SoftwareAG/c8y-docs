@@ -72,5 +72,5 @@ For details on how to edit the report dashboard, refer to [To edit a dashboard](
 
 ### To delete a report {#to-delete-a-report}
 
-1. In the **Reports** page, hover over the report item you want to delete and click the delete icon showing up at the right.
+1. In the **Reports** page, hover over the report item you want to delete and click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> showing up at the right.
 2. Confirm to delete the report.

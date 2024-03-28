@@ -166,11 +166,11 @@ If you suspect that a device is not correctly reporting to {{< product-c8y-iot >
 
 In the **Connectivity** tab, check the following conditions:
 
-* the SIM is activated. If the SIM card is not activated, you can activate it selecting "ACTIVE" from the "SIM status" drop-down menu. It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
+* The SIM is activated. If the SIM card is not activated, you can activate it selecting "ACTIVE" from the "SIM status" drop-down menu. It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
 * The device is connected to the network. If the device is not connected to the network, this may have several reasons:
 
   * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the [**Measurements** tab](/device-management-application/viewing-device-details/#measurements) of the device and verify the last reported signal strength and error rate parameters.
-  * There is a network or hardware problem (antenna, modem). For the Jasper Control Center, for example, click the cogwheel icon on the top right and select **SIM details**, then open the Jasper Control Center diagnostics tool. If the device is not attempting to connect to the network, it may be broken.
+  * There is a network or hardware problem (antenna, modem). For the Jasper Control Center, for example, click the settings icon on the top right and select **SIM details**, then open the Jasper Control Center diagnostics tool. If the device is not attempting to connect to the network, it may be broken.
   * The device is in a data session. If the device is not in a data session, this may, again, have several reasons:
   * The APN settings are incorrectly configured in the device.
   * The SIM card is over traffic limit.

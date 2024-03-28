@@ -32,7 +32,7 @@ On tenant creation, default roles are available which can be used as a sample co
 
 ### To view user hierarchies {#to-view-user-hierarchies}
 
-In the **Users** page, user hierarchies are indicated by an arrow left from the user icon. Clicking on the arrow unfolds the user hierarchy. You can also fold and unfold the entire user hierarchy using the **Expand all** and **Collapse all** links at the right of the top menu bar.
+In the **Users** page, user hierarchies are indicated by an arrow left <i class="dlt-c8y-icon-expand-arrow text-primary icon-20"></i> from the user icon. Clicking on the arrow unfolds the user hierarchy. You can also fold and unfold the entire user hierarchy using the **Expand all** and **Collapse all** links at the right of the top menu bar.
 
 A small number next to the user name shows how many direct sub-users a user has. Sub-users are users that can be managed by their respective parent user and that have at most the permissions of that parent user. In the example below, the user "Demo user" has one direct sub-user.
 
@@ -57,7 +57,7 @@ If you want an owner to manage only their sub-users, make sure that the owner do
 
 **Example**
 
-A user A has the role "business". User A becomes the owner of a new user B. User B can then only get a business role assigned (and not for example an admin role) as the user cannot have higher permissions than the owner. If you try to assign any other role except "business" for user B, then the role will be unavailable for subscription and will be indicated by a warning icon with a notification that this operation is not permitted.
+A user A has the role "business". User A becomes the owner of a new user B. User B can then only get a business role assigned (and not for example an admin role) as the user cannot have higher permissions than the owner. If you try to assign any other role except "business" for user B, then the role will be unavailable for subscription and will be indicated by a warning icon <i class="dlt-c8y-icon-warning text-warning icon-20"></i> with a notification that this operation is not permitted.
 
 
 ### To delegate user hierarchies to other users {#to-delegate-user-hierarchies-to-other-users}
@@ -68,11 +68,11 @@ You may of course also delegate on a temporary basis, for example if you are tem
 
 #### To delegate permissions to a user {#to-delegate-permissions-to-a-user}
 
-Either open the user and click the delegate icon in the **Delegated by** field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Delegate**.
+Either open the user and click the delegate icon <i class="dlt-c8y-icon-batch-assign text-primary icon-20"></i> in the **Delegated by** field, or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the user entry in the user list and from the context menu, select **Delegate**.
 
 #### To undelegate permissions {#to-undelegate-permissions}
 
-Remove the delegation in the **Delegate by** field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Undelegate**.
+Remove the delegation in the **Delegate by** field, or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> in the user list and from the context menu, select **Undelegate**.
 
 If the delegated user must also manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Assigning inventory roles to users](/standard-tenant/managing-permissions/#to-assign-inventory-roles-to-users).
 

@@ -160,14 +160,14 @@ By default, manually created users always have the "Own user management" permiss
 
 ### To edit a user {#to-edit-a-user}
 
-1. Click the menu icon at the right of the respective row and then click **Edit**. All fields except **Username** and **Send password reset link as email** can be changed. For details on the fields, see [To add a user](#to-add-a-user).
+1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the respective row and then click **Edit**. All fields except **Username** and **Send password reset link as email** can be changed. For details on the fields, see [To add a user](#to-add-a-user).
 2. Click **Change password** to change the password.
 3. Click **Save** to apply your settings.
 
 
 ### To copy inventory roles {#to-copy-inventory-roles}
 
-1. Click the menu icon at the right of the respective row and then click **Copy inventory roles from another user**.
+1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the respective row and then click **Copy inventory roles from another user**.
 2. In the resulting dialog box, select if you want to merge the roles to be copied with the existing user roles (the default) or if you want to replace the existing user roles.
 3. Select the user from which you want to copy roles from the dropdown list.
 4. Click **Copy**.
@@ -176,7 +176,7 @@ The inventory roles will be copied from the selected user.
 
 ### To delegate/undelegate user hierarchies {#to-delegateundelegate-user-hierarchies}
 
-Click the menu icon at the right of the respective row and then click **Delegate** to delegate your user hierarchies and permissions to a user.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the respective row and then click **Delegate** to delegate your user hierarchies and permissions to a user.
 
 Click **Undelegate** to remove a delegation.
 
@@ -184,11 +184,11 @@ Refer to [Managing user hierarchies](/enterprise-tenant/managing-user-hierarchie
 
 ### To disable/enable a user {#to-disableenable-a-user}
 
-Click the menu icon at the right of the respective row and then click **Disable** to disable an active user, or click **Enable** to enable a user that has been disabled.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the respective row and then click **Disable** to disable an active user, or click **Enable** to enable a user that has been disabled.
 
 ### To delete a user {#to-delete-a-user}
 
-Click the menu icon at the right of the respective row and then click **Delete**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the respective row and then click **Delete**.
 
 ### To log out all users {#to-log-out-all-users}
 

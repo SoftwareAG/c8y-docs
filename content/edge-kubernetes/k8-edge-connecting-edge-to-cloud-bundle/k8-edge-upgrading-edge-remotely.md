@@ -35,7 +35,7 @@ Update the [sample version file](/files/edge-k8s/c8y-edge-version.yaml) to speci
 7. Select the firmware that you just uploaded and click **Install**.
    ![Edge version](/images/edge-k8s/edge-k8s-select-firmware.png)
 
-   - To check the status of the update, hover over the refresh icon as shown in the figure below:
+   - To check the status of the update, hover over the refresh icon <i class="dlt-c8y-icon-refresh text-info icon-20"></i> as shown in the figure below:
    ![Edge version](/images/edge-k8s/edge-k8s-check-remote-update-status.png)
    - To check the details of the update, click the text outlined in red in the figure below:
    ![Edge version](/images/edge-k8s/edge-k8s-check-remote-update-full-log.png)

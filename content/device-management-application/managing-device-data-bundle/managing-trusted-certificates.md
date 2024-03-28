@@ -21,7 +21,7 @@ All certificates owned by the tenant will be displayed.
 ![Trusted certificates List](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-list.png)
 
 The **Status** column indicates if the certificate is enabled or disabled. At any given time a tenant can have any number of enabled or disabled certificates.
-Expand a certificate by clicking the arrow icon at the right to view more details.
+Expand a certificate by clicking the arrow icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i> at the right to view more details.
 
 The information in the table at the right side is extracted from the provided certificate. The content is read-only and cannot be changed.
 
@@ -64,5 +64,5 @@ For details on the fields, see the description on adding certificates above.
 
 ### To delete a trusted certificate {#to-delete-a-trusted-certificate}
 
-To permanently delete a certificate from the trusted certificates list, click the menu icon at the right of the respective entry and in the context menu click **Delete**.
+To permanently delete a certificate from the trusted certificates list, click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> at the right of the respective entry and in the context menu click **Delete**.
 The certificate will be permanently deleted.

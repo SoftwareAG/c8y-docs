@@ -6,6 +6,10 @@
 # These owners will be the default owners for everything in the repo.
 * @BeateRixen marlene.windel@softwareag.com
 
+/content/change-logs/application-enablement/ @rahultsag @janhommes @BeateRixen
+/content/change-logs/device-management/ @Oezge-Akin @aaronraab @l2p- @BeateRixen
+/content/change-logs/platform-services/ @airdroplet @martin-sag @kalavathig1 @sarangovindarajan @pink-mongoose @BeateRixen
+
 /content/device-management-application/ @Oezge-Akin
 
 /content/streaming-analytics/ @kailol-sag @BeateRixen marlene.windel@softwareag.com

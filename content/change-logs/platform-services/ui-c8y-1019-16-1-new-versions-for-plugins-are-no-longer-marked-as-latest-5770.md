@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57691
 version: 1019.16.1
 ---
-New versions for plugins are no longer marked as latest. (#5770) [GRAFT][release/cd] (#5874)
+In the past, when a new version of a plugin was uploaded, it was automatically marked as the latest version. This could lead to confusion if an older version of the plugin was intended to be used as the latest one. With this change, new plugin versions are no longer automatically marked as latest when they are uploaded. This gives users more control to explicitly decide which version of a plugin should be marked as the latest one. Existing plugins and their latest version marking are not impacted by this change.

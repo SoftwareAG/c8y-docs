@@ -4,7 +4,7 @@ title: REST APIs for Edge
 layout: bundle
 ---
 
-For information about the REST APIs for {{< product-c8y-iot >}} Edge, see the [{{< openapi >}}](https://cumulocity.com/api/edge/).
+For information about the REST APIs for Edge, see the [{{< openapi >}}](https://cumulocity.com/api/edge/).
 
 {{< c8y-admon-important >}}
 
@@ -13,4 +13,3 @@ Wherever possible, the REST resources and its representations are maintained in 
 This API is not covered by the general {{< product-c8y-iot >}} API backwards compatibility statement mentioned in [Introduction to our IoT platform > Compatibility policy](/concepts/introduction/#compatibility-policy) in the *Concepts guide*.
 
 {{< /c8y-admon-important >}}
-

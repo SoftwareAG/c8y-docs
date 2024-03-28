@@ -4,9 +4,9 @@ title: Connecting devices
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} Edge uses REST and MQTT as protocols for external communication. Both protocols may be used to interface devices with {{< product-c8y-iot >}} Edge. For more information, see [Device integration using REST](/device-integration/rest) in *Device integration* and [SmartREST 2.0](/reference/smartrest-two) in the *Reference guide*.
+Edge uses REST and MQTT as protocols for external communication. Both protocols may be used to interface devices with Edge. For more information, see [Device integration using REST](/device-integration/rest) in *Device integration* and [SmartREST 2.0](/reference/smartrest-two) in the *Reference guide*.
 
-Additionally, {{< product-c8y-iot >}} Edge offers:
+Additionally, Edge offers:
 
 * Cloud Fieldbus functionality to collect data from fieldbus devices and remotely manage them. For example, Modbus protocol.
 

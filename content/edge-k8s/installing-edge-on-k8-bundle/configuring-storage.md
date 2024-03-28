@@ -4,7 +4,7 @@ title: Configuring storage
 layout: redirect
 ---
 
-Kubernetes makes physical storage devices available to your cluster in the form of two API resources, PersistentVolume and PersistentVolumeClaim. 
+Kubernetes makes physical storage devices available to your cluster in the form of two API resources, PersistentVolume and PersistentVolumeClaim.
 
 A Persistent Volume (PV) is a storage resource in Kubernetes that is provisioned and managed independently from the Pods that use it. It provides a way to store data in a durable and persistent manner, even if the Pod that uses it is deleted or restarted.
 
@@ -34,20 +34,20 @@ The Edge Operator requests three PVCs, as outlined in the table below. Each of t
 |:---|:---|:---
 |75 GB|`mongod-data-edge-db-rs0-0`|Claimed by the MongoDB server to retain application data. The default size is 75 GB, but this value can be adjusted using the `spec.mongodb.resources.requests.storage` field in the Edge CR file.
 |10 GB|`microservices-registry-data`|Claimed by the private docker registry to store microservice images.
-|5 GB|`edge-logs`|Claimed by the {{< product-c8y-iot >}} Edge logging component to store the application and system logs.
+|5 GB|`edge-logs`|Claimed by the Edge logging component to store the application and system logs.
 
-To guarantee the retention of physical storage even after the PVC is deleted (for example, when {{< product-c8y-iot >}} Edge is deleted) and to enable future storage expansion if needed, it's crucial to configure the StorageClass and/or the PVs with the following settings:
+To guarantee the retention of physical storage even after the PVC is deleted (for example, when Edge is deleted) and to enable future storage expansion if needed, it's crucial to configure the StorageClass and/or the PVs with the following settings:
 
 1. **Reclaim Policy:** Ensure that the reclaim policy is set to **`Retain`**. This setting preserves the storage even after the PVC deletion.
 2. **Volume Expansion:** Set the volume expansion option to **`true`**. This setting enables the storage to be expanded when necessary.
 
-If these recommended settings are not configured in the StorageClass, in the Edge CR status you receive the warnings below: 
+If these recommended settings are not configured in the StorageClass, in the Edge CR status you receive the warnings below:
 
 - persistent volume reclaim policy of StorageClass [storage-class] is currently set to [Delete] instead of the recommended value [Retain]
 
 - allow volume to expand setting of the StorageClass [storage-class] is currently set to [false] instead of the recommended value [true]
 
-These warnings serve as reminders to adjust these settings for optimal storage management. 
+These warnings serve as reminders to adjust these settings for optimal storage management.
 
 Kubernetes provides a variety of persistent volume types, but two specific types enable Pod containers to access either a Network File System (NFS) or the cluster node's local filesystem (often set up as a NFS drive mapped to a local folder). This configuration is especially prevalent in on-premises deployments.
 
@@ -55,9 +55,9 @@ Kubernetes provides a variety of persistent volume types, but two specific types
 
 {{< c8y-admon-info >}}
 You can skip this section if your Kubernetes cluster is already configured for dynamic provisioning of PVs.
-{{< /c8y-admon-info >}} 
+{{< /c8y-admon-info >}}
 
-This section outlines the steps for configuring the Kubernetes cluster to enable {{< product-c8y-iot >}} Edge to utilize NFS as a source for the PVs. For additional storage options, refer to the [Kubernetes documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/).
+This section outlines the steps for configuring the Kubernetes cluster to enable Edge to utilize NFS as a source for the PVs. For additional storage options, refer to the [Kubernetes documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/).
 
 - Storage provisioning by connecting directly to the NFS server via PV configuration
 
@@ -77,7 +77,7 @@ This section outlines the steps for configuring the Kubernetes cluster to enable
   - Create the folders in the local file system or mount NFS folders required for the 3 PVs defined in the *c8yedge-pv-local-path.yaml* file. Ensure that the user running Kubernetes server has read/write access to these folders.
 
   -  Run the command below:
-    
+
      ```shell
      kubectl apply -f c8yedge-pv-local-path.yaml
      ```

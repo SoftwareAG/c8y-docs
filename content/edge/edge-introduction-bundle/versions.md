@@ -4,7 +4,7 @@ title: Versions
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} Edge 10.17.0 uses the following versions:
+Edge 10.17.0 uses the following versions:
 
 |<div style="width:130px">Edge component</div>|<div style="width:300px">Version</div>|
 |:---|:---|

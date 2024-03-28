@@ -34,4 +34,4 @@ A VM with the provided name, for example, "EDGE-server", should now show up in t
 * Edit VM Settings -> VMware Tools: Check time synchronization
 * Edit VM Settings -> General Options: Set guest OS to CentOs 7 (64bit)
 
-Next, perform the Edge appliance installation. See, [Installing {{< product-c8y-iot >}} Edge](/edge/installation/).
+Next, perform the Edge appliance installation. See, [Installing Edge](/edge/installation/).

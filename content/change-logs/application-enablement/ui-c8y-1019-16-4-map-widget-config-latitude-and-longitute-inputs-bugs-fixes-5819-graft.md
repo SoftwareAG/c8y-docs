@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Map widget config latitude and longitute inputs bugs fixes (#5819) [GRAFT][release/cd] (#5984)
+title: Fixed bugs in the map widget configuration for latitude and longitude inputs
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

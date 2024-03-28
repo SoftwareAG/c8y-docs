@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-56466
 version: 1020.0.0
 ---
-In the upcoming release 1020.0.0, we are introducing redesigned dashboards with both visual and functional enhancements, as well as new functionalities.
+In a future version, we are introducing redesigned dashboards with both visual and functional enhancements, as well as new functionalities.
 
 **Visual and UX Enhancements**:
 

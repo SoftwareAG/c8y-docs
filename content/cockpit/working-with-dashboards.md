@@ -64,7 +64,7 @@ To create your individualized dashboard, execute the following steps:
 - This functionality is entirely based on client-side solutions. If users have an accurate link to the dashboard, they will still be able to access it.
     {{< /c8y-admon-info >}}
 
-5. Enable the option **Dashboard template** to share the dashboard with all devices of this type. This option is only available for devices dashboards.
+5. Enable the option **Dashboard template** to share the dashboard with all devices of this type. This option is only available for devices dashboards. See [To share a dashboard](#dashboard-template)
 
 6. In the **Appearance** tab you can select a theme for the dashboard (one of "Match UI", "Light", "Dark" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 12 px).
 7. Enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.

@@ -25,7 +25,7 @@ In a future version, we will introduce redesigned dashboards with both visual an
 * We have introduced an edit mode for dashboards.
 * The lock/unlock feature has been replaced with an edit mode for better control and clarity.
 
-**New Features**:
+**New features**:
 
 * Possibility to enable and disable dashboard template for device dashboards.
 * Versioning to manage and track dashboard changes.

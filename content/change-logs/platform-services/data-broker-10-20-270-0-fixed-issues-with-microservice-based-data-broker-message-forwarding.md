@@ -1,6 +1,6 @@
 ---
-date: 
-title: "Fixed issues with microservice-based Data Broker message forwarding"
+date: 2024-03-28T09:47:57.877Z
+title: "Data broker microservice resumes message forwarding after re-connection to the Messaging Service"
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-57995
-version: 1020.270.0
+version: 1020.296.0
 ---
-Resolved a defect where the microservice-based Data Broker failed to forward messages to the destination tenant after recovering from network interruptions or messaging service downtime.
+Resolved a defect where the microservice-based Data Broker might fail to forward messages to the destination tenant after recovering from a temporary loss of connection to the Messaging Service. This connection loss could be caused by, for example, a transient network interruption or by maintenance on the Messaging Service.

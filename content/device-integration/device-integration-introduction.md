@@ -2,7 +2,6 @@
 weight: 10
 title: Overview
 layout: bundle
-slug: introduction
 section:
   - device_management
 ---

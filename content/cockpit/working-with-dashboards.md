@@ -47,7 +47,7 @@ ROLES & PERMISSIONS:
 To create your individualized dashboard, execute the following steps:
 
 1. In the **Groups** menu select the group or the device in the navigator for which to create a dashboard.
-2. Click the plus icon right from the tabs to open the dashboard editor.
+2. Click the plus icon <i class="dlt-c8y-icon-add text-muted icon-20"></i> right from the tabs to open the dashboard editor.
 
 3. In the **Tab** section of the dashboard editor, provide the following information:
 

@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 25
 title: Device integration using MQTT
 layout: bundle
 section:

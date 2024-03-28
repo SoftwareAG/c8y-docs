@@ -13,13 +13,13 @@ Before setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes, you must c
 | Item | Details |
 | -----   | -----   |
 | Kubernetes | An environment with bash, jq, and administrator access to Kubernetes via kubectl and helm command line tools. |
-| {{< product-c8y-iot >}} Edge on Kubernetes  | The corresponding version of {{< product-c8y-iot >}} Edge being set up in the Kubernetes environment; see also [Installing {{< product-c8y-iot >}} Edge on Kubernetes](/guides/10.17.0/edge-k8s/installing-edge-on-k8) |
+| {{< product-c8y-iot >}} Edge on Kubernetes  | The corresponding version of {{< product-c8y-iot >}} Edge being set up in the Kubernetes environment; see also [Installing {{< product-c8y-iot >}} Edge on Kubernetes](/edge-k8s/installing-edge-on-k8) |
 | {{< product-c8y-iot >}} DataHub Edge on Kubernetes archive | You have downloaded the archive *datahub-edgek8s.tar* from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}). |
 | Internet access | Internet access is required. |
 
 #### Resource requirements
 
-The resource requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in [Requirements](/edge-k8s/installing-edge-on-k8/#prerequisites). 
+The resource requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in [Requirements](/edge-k8s/installing-edge-on-k8/#prerequisites).
 When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the resource requirements change by following additional amount:
 
  * 100 GB of free disk space plus sufficient free disk space for the data lake contents
@@ -36,8 +36,8 @@ Extract the archive *datahub-edgek8s.tar* to a working folder of your choice.
 ```
 tar -xvf datahub-edgek8s.tar
 ```  
-The folder will contain the following files: 
-  
+The folder will contain the following files:
+
 | File | Purpose | Adaptation required |
 | -----   | -----   |-----   |
 | install.sh | Installation script, which requires bash and jq command line tools for execution | | -
@@ -56,7 +56,7 @@ Internet connectivity is required as the MySQL image, the Dremio image and some 
 #### Adapting datahub-config.json
 
 You must apply the following changes:
-* If your {{< product-c8y-iot >}} Edge on Kubernetes configuration does not use ``c8yedge`` as namespace, change the Kubernetes namespace accordingly. 
+* If your {{< product-c8y-iot >}} Edge on Kubernetes configuration does not use ``c8yedge`` as namespace, change the Kubernetes namespace accordingly.
 * Specify the username and password for admin access to Dremio. The password must have at least 8 characters, including at least 1 letter and 1 digit.
 * Set the password for the root user in MySQL.
 
@@ -71,15 +71,15 @@ The respective configuration in *dremio-values.yaml* looks as follows:
 ```
 distStorage:
     type: nfs
-    nfs: 
+    nfs:
         hostPath: /datahub/distributedStorage
-    
+
 datalakeNFS:
     enabled: true
     hostPath: /datahub/datalake
 ```
 The host directories (here: /datahub/distributedStorage and /datahub/datalake) can be changed as needed.
-The directories will be created by the installation. 
+The directories will be created by the installation.
 
 The ``$DREMIO_USER`` and ``$DREMIO_PASSWORD`` credentials are substituted during installation based on the values provided in *datahub-config.json*.
 
@@ -95,7 +95,7 @@ The *mysql-values.yaml* file contains the configuration settings for the MySQL d
 
 The MySQL database uses a persistent volume to persist its data. The persistent volume claim is defined in the MySQL helm chart. You have to provide the name of the ``<STORAGE_CLASS>`` used by that claim.
 
-The ``$MYSQL_PASSWORD`` is substituted during installation based on the value provided in *datahub-config.json*. 
+The ``$MYSQL_PASSWORD`` is substituted during installation based on the value provided in *datahub-config.json*.
 
 #### Running the installation script
 
@@ -111,7 +111,7 @@ In order to access Dremio, the following entry needs to be added to ``/etc/hosts
 <IP address>   datahub.<domain_name>
 ```
 where ``domain_name`` is the domain name chosen during the installation of {{< product-c8y-iot >}} Edge on Kubernetes.
- 
+
 The IP address can be obtained using
 ```shell
 kubectl get service -n c8yedge cumulocity-core -o jsonpath={.status.loadBalancer.ingress[*].ip}
@@ -125,7 +125,7 @@ kubectl get service -n c8yedge cumulocity-core -o jsonpath={.status.loadBalancer
 
 If the product doesn't work as intended after the installation, go through the validation steps described below.
 
-#### MySQL 
+#### MySQL
 
 You can monitor the startup of the MySQL pod ``datahub-mysql-0`` using
 ```shell
@@ -136,7 +136,7 @@ The result will be similar to:
 NAME              READY   STATUS    RESTARTS   AGE
 datahub-mysql-0   1/1     Running   0          4m55s
 ```
-    
+
 When running the command:
 ```shell
 kubectl get svc -n c8yedge

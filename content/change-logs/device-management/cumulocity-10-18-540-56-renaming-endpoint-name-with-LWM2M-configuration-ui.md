@@ -15,4 +15,4 @@ ticket: DM-3084
 version: 10.18.540.74
 ---
 
-The modification of the LWM2M endpoint name via the device's LWM2M Configuration view now triggers the automatic adjustment of the corresponding external identifier, designated with the type c8y_Id, ensuring seamless synchronization between the endpoint name and its associated external ID.
+The modification of the LWM2M endpoint name via the device's LWM2M configuration now triggers the automatic adjustment of the corresponding external identifier, designated with the type c8y_Id, ensuring seamless synchronization between the endpoint name and its associated external ID.

@@ -14,13 +14,13 @@ build_artifact:
 ticket: MTM-56466
 version: 1020.0.0
 ---
-In a future version, we are introducing redesigned dashboards with both visual and functional enhancements, as well as new functionalities.
+In a future version, we will introduce redesigned dashboards with both visual and functional enhancements, as well as new functionalities.
 
-**Visual and UX Enhancements**:
+**Visual and UX enhancements**:
 
 * We have redesigned the way dashboards are edited.
 
-**Functional Improvements**:
+**Functional improvements**:
 
 * We have introduced an edit mode for dashboards.
 * The lock/unlock feature has been replaced with an edit mode for better control and clarity.

@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58127
 version: 1019.16.4
 ---
-Map widget config latitude and longitute inputs bugs fixes (#5819) [GRAFT][release/cd] (#5984)
+Fixes introduce enhancements to the Map Widget, including accurate handling of empty and zero longitude and latitude inputs, and implementation of input validation to ensure latitude and longitude values are within accepted ranges.

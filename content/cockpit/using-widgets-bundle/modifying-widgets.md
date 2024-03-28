@@ -22,7 +22,7 @@ Widgets may be rearranged on the dashboard/report. By dragging and dropping you 
 
 ### To edit the widget properties {#to-edit-the-widget-properties}
 
-To edit the properties of a widget first enter edit mode by clicking on **Edit widgets** in the top menu bar. Afterwards, click the cogwheel icon at the top right corner of the widget and from the context menu select **Edit**.
+To edit the properties of a widget first enter edit mode by clicking on **Edit widgets** in the top menu bar. Afterwards, click the cogwheel <i class="dlt-c8y-icon-settings text-muted icon-20"></i> at the top right corner of the widget and from the context menu select **Edit**.
 
 ### To remove a widget {#to-remove-a-widget}
 

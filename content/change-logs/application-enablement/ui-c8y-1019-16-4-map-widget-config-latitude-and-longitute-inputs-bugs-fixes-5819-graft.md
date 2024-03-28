@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed bugs in the map widget configuration for latitude and longitude inputs
+title: Accurate handling of latitude and longitude inputs in the Map widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

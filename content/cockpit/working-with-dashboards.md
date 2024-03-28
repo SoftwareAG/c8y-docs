@@ -64,7 +64,7 @@ To create your individualized dashboard, execute the following steps:
 - This functionality is entirely based on client-side solutions. If users have an accurate link to the dashboard, they will still be able to access it.
     {{< /c8y-admon-info >}}
 
-5. Enable the option **Dashboard template** to share the dashboard with all devices of this type. Option available for devices dashboards only.
+5. Enable the option **Dashboard template** to share the dashboard with all devices of this type. This option is only available for devices dashboards.
 
 6. In the **Appearance** tab you can select a theme for the dashboard (one of "Match UI", "Light", "Dark" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 12 px).
 7. Enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.
@@ -80,7 +80,7 @@ The widget titles will be translated only if a valid translation is available.
 
 Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for details on how to add, modify or remove widgets.
 
-### Dashboard template {#to-share-a-dashboard}
+### Dashboard template {#dashboard-template}
 
 You can create a dashboard for a specific device and share it with all devices of the same type. This is only possible though, if the type property is set for the device.
 
@@ -90,7 +90,7 @@ After enabling the dashboard, you can see how many devices will share this dashb
 <img src="/images/users-guide/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/>
 
 The dashboard with the dashboard template option enabled can be accessed and modified from all devices of this type. 
-Therefore, changes made to this dashboard are automatically applied to all dashboard instances, no matter which device view user is currently on.
+This means that changes made to this dashboard are automatically applied to all dashboard instances, no matter from which device they have been added.
 
 {{< c8y-admon-info >}}
 You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
@@ -138,7 +138,7 @@ When a new version is created in the version history, it includes a brief descri
 2. Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
 
 An alternative way to copy a dashboard is to use the
-"dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [To share a dashboard](#to-share-a-dashboard).
+"dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [To share a dashboard](#dashboard-template).
 
 ### To delete a dashboard {#to-delete-a-dashboard}
 

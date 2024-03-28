@@ -16,7 +16,7 @@ helpcontent:
     Click the plus icon next to the dashboard tabs to add a dashboard. You may copy a dashboard from one device to another or you may share a dashboard with all devices of a specific device type.
 
 
-    The dashboard is locked until eidt mode is enabled. To do so click on **Edit widgets** on the top menu bar. On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
+    The dashboard is locked until the edit mode is enabled. To do so click **Edit widgets** in the top menu bar. On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
 
 
     Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Widgets collection* in the user documentation for details on each widget type and its configuration."
@@ -47,13 +47,13 @@ ROLES & PERMISSIONS:
 To create your individualized dashboard, execute the following steps:
 
 1. In the **Groups** menu select the group or the device in the navigator for which to create a dashboard.
-2. Click "Add dashboard" button right from the tabs to open the dashboard editor.
+2. Click the **Add dashboard** button right from the tabs to open the dashboard editor.
 
 3. In the **General** tab of the dashboard editor, provide the following information:
 
     * An icon which is shown next to the dashboard name in the navigator.
     * A menu label to be used as the name of the dashboard.
-    * Description of the dashboard.
+    * A description of the dashboard.
     * The location of the dashboard in the navigator, with "5000" being ordered first and "-5000" last.
 <br><br>
 
@@ -72,7 +72,7 @@ To create your individualized dashboard, execute the following steps:
     {{< c8y-admon-info >}}
 The widget titles will be translated only if a valid translation is available.
     {{< /c8y-admon-info >}}
-8. User provided changes will be immediately displayed to visualize your selections in the dashboard below Dashboard settings.
+8. All changes are immediately displayed to visualize your selections in the dashboard below the dashboard settings.
 
 9. Click **Save** to create and open the dashboard.
 
@@ -84,12 +84,12 @@ Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for 
 
 You can create a dashboard for a specific device and share it with all devices of the same type. This is only possible though, if the type property is set for the device.
 
-To do so, enable **Dashboard template** option. A corresponding message will be displayed in the editor.
+To do so, enable the **Dashboard template** option. A corresponding message will be displayed in the editor.
 After enabling it, you can see how many devices will share this dashboard. There is also a possibility to duplicate type dashboard as regular one (assigned to current device only).
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/>
 
-Dashboard with Dashboard template option enabled can be accessed and modified from all devices of this type. 
+The dashboard with the dashboard template option enabled can be accessed and modified from all devices of this type. 
 Therefore, changes made to this dashboard are automatically applied to all dashboard instances, no matter which device view user is currently on.
 
 {{< c8y-admon-info >}}
@@ -103,7 +103,7 @@ In the widget configuration, you can specify a dashboard time range for your das
 The dashboard time range can be set to any time span, depending on the monitoring needs, by using a custom date picker. The time range is displayed at the top of the dashboard, so you can immediately see the context for which the data is presented. Additionally, you can share dashboards with a specific time context by including the time context parameters in a URL. URL parameters will be set automatically when users set the dashboard time context with the picker.
 
 {{< c8y-admon-info >}}
-This feature is currently available for the following widgets: Event list, Data points graph, Data points table, Map.
+This feature is currently available for the following widgets: Event list, Data points graph, Data points table, and Map.
 {{< /c8y-admon-info >}}
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-global-time.png" name="Global time context"/>
@@ -112,22 +112,22 @@ Widgets synchronized with the dashboard time range are indicated by a respective
 
 ### To edit a dashboard {#to-edit-a-dashboard}
 
-To edit a dashboard, edit mode must be enabled. There are two primary ways to enter edit mode:
+To edit a dashboard, the edit mode must be enabled. There are two primary ways to enter the edit mode:
 
-- Clickng on **Dashboard settings**: This modifies the overall properties of the dashboard, such as its name, description, position, availability, or appearance.
-- Clicking on **Edit widgets**: This manages the content of the dashboard, including adding, removing, or changing the position of widgets.
+- Clicking **Dashboard settings**: This modifies the overall properties of the dashboard, such as its name, description, position, availability, or appearance.
+- Clicking **Edit widgets**: This manages the content of the dashboard, including adding, removing, or changing the position of widgets.
 
-Once in edit mode, the redo and undo functionality is automatically enabled. This allows you to easily revert any unwanted changes you make to the dashboard. Any changes made to the dashboard in "Edit widgets" mode will not be reflected until you save them.
+Once in edit mode, the redo and undo functionality is automatically enabled. This allows you to easily revert any unwanted changes you make to the dashboard. Any changes made to the dashboard in the edit mode will only be reflected on saving.
 
 {{< c8y-admon-info >}}
-The widgets and content on the dashboard are locked in order to prevent accidental modifications. Clicking the "Edit widgets" button unlocks this functionality and allows you to manipulate the dashboard's content.
+The widgets and content on the dashboard are locked in order to prevent accidental modifications. Clicking **Edit widgets** unlocks this functionality and allows you to modify the dashboard's content.
 {{< /c8y-admon-info >}}
 
 ### To restore a dashboard state {#to-restore-a-dashboard}
 
-It is possible to restore your dashboard to a previous state using the version history. Navigate to the dashboard settings and open the "Version history" tab. This section will display a list of previous versions of your dashboard, including timestamps for each version. Hovering over a desired version from the list will reveal the "Restore" button.
+It is possible to restore your dashboard to a previous state using the version history. Navigate to the dashboard settings and open the **Version history** tab. This section will display a list of previous versions of your dashboard, including timestamps for each version. Hovering over a desired version from the list will reveal the **Restore** button.
 
-When a new version is created in the version history, it includes a brief description of the changes made. New version is added each time after saving the dashboard when in edit mode or when editing the general settings of the dashboard.
+When a new version is created in the version history, it includes a brief description of the changes made. A new version is added each time when saving the dashboard in edit mode or when editing the general settings of the dashboard.
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-restore.png" name="Restore dashboard state"/>
 

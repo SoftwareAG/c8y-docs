@@ -26,4 +26,4 @@ To edit the properties of a widget first enter edit mode by clicking on **Edit w
 
 ### To remove a widget {#to-remove-a-widget}
 
-To remove a widget from a dashboard or report first enter edit mode by clicking on **Edit widgets** in the top menu bar. Afterwards, click the cogwheel icon at the top right corner of the widget and from the context menu select **Remove**.
+To remove a widget from a dashboard or report first enter the edit mode by clicking **Edit widgets** in the top menu bar. Then click the cogwheel icon at the top right corner of the widget and from the context menu select **Remove**.

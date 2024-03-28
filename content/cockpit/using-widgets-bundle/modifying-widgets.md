@@ -8,7 +8,7 @@ section:
 
 ### To modify a widget {#to-modify-a-widget}
 
-Widgets can only be modified if the dashboard/report is in edit mode. To enter edit mode click either on **Edit widgets** or **General settings** in the top menu bar.
+Widgets can only be modified if the dashboard/report is in edit mode. To enter the edit mode click either **Edit widgets** or **General settings** in the top menu bar.
 
 By dragging the arrows on the bottom right corner of a widget, you can resize a widget.
 

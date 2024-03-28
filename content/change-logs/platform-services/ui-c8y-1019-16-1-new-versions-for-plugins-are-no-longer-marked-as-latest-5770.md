@@ -1,6 +1,6 @@
 ---
 date: ""
-title: New versions for plugins are no longer marked as latest. (#5770) [GRAFT][release/cd] (#5874)
+title: New plugin versions are no longer automatically marked as latest
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

@@ -1,6 +1,6 @@
 ---
 date: 2023-03-28
-title: Disabling default object actions using LWM2M configuration tab
+title: Disabling default object actions in the LWM2M configuration UI
 change_type:
   - value: change-QHu1GdukP
     label: Feature

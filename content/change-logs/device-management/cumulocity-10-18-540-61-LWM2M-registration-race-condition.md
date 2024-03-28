@@ -1,6 +1,6 @@
 ---
 date: 2024-03-28
-title: LWM2M client new registration robustness
+title: Improved robustness of LWM2M client registration process
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

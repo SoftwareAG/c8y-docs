@@ -85,7 +85,7 @@ Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for 
 You can create a dashboard for a specific device and share it with all devices of the same type. This is only possible though, if the type property is set for the device.
 
 To do so, enable the **Dashboard template** option. A corresponding message will be displayed in the editor.
-After enabling it, you can see how many devices will share this dashboard. There is also a possibility to duplicate type dashboard as regular one (assigned to current device only).
+After enabling the dashboard, you can see how many devices will share this dashboard. You also have the option to duplicate type dashboard as regular one (assigned to current device only).
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/>
 

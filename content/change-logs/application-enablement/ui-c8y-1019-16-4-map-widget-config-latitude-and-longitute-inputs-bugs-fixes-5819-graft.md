@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58127
 version: 1019.16.4
 ---
-Fixes introduce enhancements to the Map Widget, including accurate handling of empty and zero longitude and latitude inputs, and implementation of input validation to ensure latitude and longitude values are within accepted ranges.
+The "Map" widget has been enhanced with accurate handling of empty and zero longitude and latitude inputs, including input validation to ensure that the latitude and longitude values are within the accepted ranges.

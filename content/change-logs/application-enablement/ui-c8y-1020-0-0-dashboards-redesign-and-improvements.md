@@ -27,5 +27,6 @@ In a future version, we are introducing redesigned dashboards with both visual a
 
 **New Features**:
 
+* Possibility to enable and disable dashboard template for device dashboards.
 * Versioning to manage and track dashboard changes.
 * Undo/redo functionality for flexible editing.

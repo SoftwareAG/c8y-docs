@@ -1,6 +1,6 @@
 ---
 date: 
-title: Svg animation tag in scada widget in cockpit does not work
+title: SVG animation in Scada widget displayed correctly in dashboards
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

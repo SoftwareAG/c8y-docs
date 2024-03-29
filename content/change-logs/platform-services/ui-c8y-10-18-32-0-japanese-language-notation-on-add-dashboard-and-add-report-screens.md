@@ -1,6 +1,6 @@
 ---
 date: 
-title: Japanese language notation on add dashboard and add report screens
+title: Improved Japanese localization of various window titles
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -15,4 +15,4 @@ ticket: MTM-51106
 version: 10.18.32.0
 ---
 
-Improved the localization of the dialog window titles for adding and editing dashboards and reports. 
+Improved Japanese localization of the dialog window titles for adding and editing dashboards and reports. 

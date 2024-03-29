@@ -1,6 +1,6 @@
 ---
 date: 
-title: Activating or deactivating multiple devices in smart rules
+title: Improved performance of activation or deactivation of a smart rule for multiple devices
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -15,4 +15,4 @@ ticket: MTM-49732
 version: 10.18.292.0
 ---
 
-Activating or deactivating child assets is now executed with a single request. 
+Improved performance of activating or deactivating a smart rule for multiple child assets by executing only a single request.

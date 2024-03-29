@@ -1,6 +1,6 @@
 ---
 date: 
-title: Data picker closes only after clicking input field
+title: Improved date picker behavior to close on any click outside the picker
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -15,4 +15,4 @@ ticket: MTM-49980
 version: 10.18.497.9
 ---
 
-Clicks outside of date time picker will close calendar layout.
+Any click outside of date picker will close its calendar dropdown.

@@ -1,6 +1,6 @@
 ---
 date: 
-title: Changing application language using query parameters throws exceptions
+title: Improved changing application language by query parameter
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

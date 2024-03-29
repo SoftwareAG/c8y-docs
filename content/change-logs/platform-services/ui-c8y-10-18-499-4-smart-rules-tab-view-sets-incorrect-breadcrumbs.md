@@ -1,6 +1,6 @@
 ---
 date: 
-title: Smart rules tab view sets incorrect breadcrumbs in device detail view
+title: Breadcrumb for the Smart rules tab correctly set in the device details view
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -15,4 +15,4 @@ ticket: MTM-51262
 version: 10.18.499.4
 ---
 
-There is no breadcrumbs for Global smart rules in group view. If package.json is configured in a way to show breadcrumbs, then breadcrumbs will be shown in proper way.
+In the Groups view, the breadcrumb for the Smart rules tab was missing. If the *Application options* are configured in a way to show breadcrumbs, the breadcrumb will now be properly shown.

@@ -1,6 +1,6 @@
 ---
 date: 
-title: Extra placeholder in input field
+title: Improved placeholders in input fields
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

@@ -1,6 +1,6 @@
 ---
 date: 
-title: Description for audit logs item contains Aggregated resources
+title: Improved display of details of audit log items
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -15,4 +15,4 @@ ticket: MTM-53995
 version: 10.18.485.3
 ---
 
-Fixed an issue with displaying old and new object value in the audit log's details.
+Fixed an issue with displaying old and new object value in the audit log's details. Changes done to related objects are now visible in audit logs.

@@ -1,6 +1,6 @@
 ---
 date: 
-title: Time format consistency improvement
+title: Improved the consistency of time format
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

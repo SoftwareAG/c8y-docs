@@ -1,6 +1,6 @@
 ---
 date: 
-title: Issue with c8y cli task for extracting strings from source code on windows
+title: Strings are correctly extracted from source code on Windows using c8ycli command
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -15,4 +15,4 @@ ticket: MTM-56234
 version: 10.18.496.1
 ---
 
-Fixed an issue with `c8ycli locale-extract` on Windows where the extracted locales.pot file didn´t contain any entries. 
+Fixed an issue with `c8ycli locale-extract` on Windows where the strings where not correctly extracted from the source code. Now the extracted locales.pot file correctly contains all entries.

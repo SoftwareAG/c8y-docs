@@ -1,6 +1,6 @@
 ---
 date: 
-title: issue wuth c8y cli task for compiling po strings to json on windows
+title: Localization strings are correctly compiled to JSON on windows using c8ycli command
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

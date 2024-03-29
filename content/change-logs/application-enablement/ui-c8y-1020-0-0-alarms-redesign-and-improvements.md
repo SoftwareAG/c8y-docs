@@ -27,3 +27,4 @@ In a future version, we will introduce redesigned alarms with both visual and fu
 * The functionalities of the "Alarm list", "All critical alarms", and "Recent alarms" widgets have been merged into a single, comprehensive widget called "Alarm list".
 * The "Alarm list" widget has been migrated to Angular.
 * The real-time functionality has been replaced with an auto-refresh functionality.
+* Already existing widgets: "Alarm list", "All critical alarms", and "Recent alarms" will be automatically updated and migrated to the new version of the "Alarm list" widget.

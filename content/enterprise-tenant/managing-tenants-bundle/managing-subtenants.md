@@ -43,7 +43,7 @@ The **Tenants** page provides the following information on each subtenant:
 * The ID and domain.
 * Optionally, a contact name.
 * The date when the tenant was created.
-* The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
+* The status of the tenant, either active (indicated by a green checkmark icon <i class="dlt-c8y-icon-ok text-success icon-20"></i>) or suspended (indicated by a red cross icon <i class="dlt-c8y-icon-block text-danger icon-20"></i>).
 
 {{< c8y-admon-info >}}
 In the {{< management-tenant >}}, you also find a column with information on the parent tenant. The parent tenant is the original tenant that created the subtenants that are listed in the table.
@@ -121,7 +121,7 @@ From the {{< management-tenant >}}, you can enable other tenants to create subte
 
 ### To view or edit subtenant properties {#to-view-or-edit-subtenant-properties}
 
-Click on the desired subtenant or click the menu icon at the right of the subtenant entry and then click **Edit**.
+Click on the desired subtenant or click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> at the right of the subtenant entry.
 
 In the **Properties** tab, all fields are editable except of **ID**, **Domain/ URL** and **Administrator's username**. For details on the fields, refer to [To create a subtenant](#to-create-a-subtenant).
 
@@ -178,7 +178,7 @@ Suspended tenants for all {{< product-c8y-iot >}} public cloud instances will be
 If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well.
 {{< /c8y-admon-info >}}
 
-1. Click the menu icon at the right of the respective subtenant entry and then click **Suspend**.
+1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the respective subtenant entry and then click **Suspend**.
 
 	![Suspend tenant](/images/users-guide/enterprise-tenant/et-subtenant-suspend.png)
 
@@ -198,4 +198,4 @@ Deleting a subtenant cannot be reverted. For security reasons, it is therefore o
 Administrators in {{< enterprise-tenant >}}s are only allowed to suspend active subtenants, but not to delete them.
 {{< /c8y-admon-important >}}
 
-Click the menu icon at the right of the respective subtenant entry and then click **Delete** to finally delete a tenant and remove all the data of the tenant.
+Click the menu icon  <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the respective subtenant entry and then click **Delete** to finally delete a tenant and remove all the data of the tenant.

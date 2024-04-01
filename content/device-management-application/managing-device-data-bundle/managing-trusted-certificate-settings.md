@@ -3,7 +3,7 @@ weight: 41
 title: Managing trusted certificate settings
 layout: redirect
 helpcontent:
-  - label: trusted-certificates-settings
+  - label: managing-trusted-certificate-settings
     title: Trusted certificates settings
     content: "Administrators can configure the Certificate Revocation List (CRL) settings (online or offline). If the revoked certificate information is maintained by the issuing Certificate Authority (CA), the online check option can be selected. If the CA does not maintain the CRL information, the offline setup can be selected. In offline setup, the revoked certificate serial number can either be added manually or can be uploaded in bulk using the file template attached."
 ---
@@ -30,7 +30,7 @@ can inform the platform about the revoked certificates in two ways:
 
 1. Online revocation :
    To perform online revocation checks, the device administrator is expected to upload a trusted CA
-   which maintains the CRLs with the list of revoked certificate serial numbers 
+   which maintains the CRLs with the list of revoked certificate serial numbers
    and should provide this information in its CDP attribute.
 2. Offline revocation :
     The trusted CA doesn't maintain the revocation details of the certificates, in which case, the platform users
@@ -58,7 +58,7 @@ Certificate revocation is an irreversible process. So, offline entries once made
 3. To add revoked certificate serial numbers manually, enter the serial number and date in the **Revoked certificates list**
    panel.
 
-   Use the `+` button to add new entries in the format below:
+   Click <img src="/images/icons/add-more.png" alt="Down" style="max-width: 100%; display: inline-block; margin-bottom: 3px;"> to add new entries in the format below:
    | Field | Description | Example |
    |:------------------|:------------------------------------------------------------|:----------|
    | Serial number | Must be a hexadecimal value.| 0b8a5b9dd501a88775399b9a048811a3 |

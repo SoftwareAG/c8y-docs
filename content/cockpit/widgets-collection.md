@@ -114,7 +114,7 @@ You can also enter the JSON format for the operation that will be sent to the de
 
 To edit the header of a column, click on its value in the **Label** column and edit the label.
 
-You can rearrange the columns by clicking the icon at the very left of a row and dragging and dropping the entry.
+You can rearrange the columns by clicking the icon <i class="dlt-c8y-icon-menu text-muted icon-20"></i> at the very left of a row and dragging and dropping the entry.
 
 To remove a property or an action, hover over the respective row and click **Delete** at the right.
 

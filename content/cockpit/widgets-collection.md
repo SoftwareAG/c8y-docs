@@ -30,15 +30,8 @@ The "Alarm list" widget shows a list of alarms, filtered by objects, alarm sever
 |Status|Only show devices with alarms of of the selected alarm status.
 |Type|Only show alarms of the specified type(s). Details can be seen when clicking once on an alarm.
 |Severities|Only show alarms of the selected alarm severity.
-|Order|Alarms may be ordered by the active status (followed by severity and time, the default) or the severity (followed by time).
-
-### All critical alarms {#all-critical-alarms}
-
-The "All critical alarms" widget shows all objects with a critical alarm. Apart from the title, there are no additional parameters to be configured.
-
-![Critical alarms](/images/users-guide/cockpit/cockpit-widget-critical-alarms.png)
-
-For details on alarms, refer to [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms).
+|Order|Alarms may be ordered by the active status (followed by severity and time, the default), by date (followed by time, either in descending or ascending order), or by severity (followed by time).
+|Auto refresh|Enables you to automatically refresh the alarm list at the frequency you select.
 
 ### Applications {#applications}
 

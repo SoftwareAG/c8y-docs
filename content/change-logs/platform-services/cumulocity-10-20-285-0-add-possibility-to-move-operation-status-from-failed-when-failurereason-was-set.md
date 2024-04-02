@@ -15,5 +15,5 @@ build_artifact:
 ticket: MTM-51764
 version: 10.20.285.0
 ---
-Previously, an operation with a "failureReason" fragment could not be moved from the FAILED status, since the  "failureReason" fragment was not allowed for other statuses. 
+Previously, an operation with a "failureReason" fragment could not be moved from the FAILED status, since the "failureReason" fragment was not allowed for other statuses. 
 Now "failureReason" is automatically removed when moving an operation from the FAILED status.

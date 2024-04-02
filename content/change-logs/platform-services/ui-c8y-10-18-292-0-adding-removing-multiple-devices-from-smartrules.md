@@ -15,4 +15,4 @@ ticket: MTM-49732
 version: 10.18.292.0
 ---
 
-Improved performance of activating or deactivating a smart rule for multiple child assets by executing only a single request.
+The performance of activating or deactivating a smart rule for multiple child assets has been improved by executing only a single request instead of multiple requests.

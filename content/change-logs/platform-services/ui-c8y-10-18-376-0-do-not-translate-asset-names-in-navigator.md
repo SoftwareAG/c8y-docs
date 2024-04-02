@@ -1,6 +1,6 @@
 ---
 date: 
-title: Improved the consistency of displaying asset names
+title: Consistent asset names in various places of the UI
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

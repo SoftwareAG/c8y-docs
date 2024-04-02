@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add stepper example for codex components section (#5722) [GRAFT][release/cd] (#6020)
+title: Add stepper example to Codex components section
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

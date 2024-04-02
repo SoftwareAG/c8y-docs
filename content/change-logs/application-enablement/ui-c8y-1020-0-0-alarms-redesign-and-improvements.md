@@ -18,7 +18,7 @@ In the upcoming version, a redesign of the alarms feature will be introduced wit
 
 **Visual and UX enhancements**:
 
-* We have redesigned the way alarms are displayed in the "Alarms" view and widgets.
+* The way alarms are displayed in the "Alarms" view and widgets has been redesigned.
 
 **Functional improvements**:
 

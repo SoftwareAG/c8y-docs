@@ -366,14 +366,6 @@ The "Radial gauge" widget visualizes data points in form of a radial gauge.
 
 You must enable at least one data point to create the "Radial gauge" widget.
 
-### Recent alarms {#recent-alarms}
-
-The "Recent alarms" widget shows all alarms of all severity sorted by time. There are no additional parameters to be configured.
-
-![Recent alarms widget](/images/users-guide/cockpit/cockpit-widget-recent-alarms.png)
-
-For details on alarms, refer to [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms).
-
 ### Relay array control {#relay-array-control}
 
 The "Relay array control" widget lets you switch relays on or off independently in an array of relays. Only available for devices that support this type of operation.

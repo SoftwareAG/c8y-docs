@@ -15,4 +15,4 @@ ticket: MTM-51262
 version: 10.18.499.4
 ---
 
-In the Groups view, the breadcrumb for the Smart rules tab was missing. If the *Application options* are configured in a way to show breadcrumbs, the breadcrumb will now be properly shown.
+In the Groups view, the breadcrumb for the Smart rules tab was missing. If the *Application options* are configured in a way to show breadcrumbs, the breadcrumb will now be shown properly.

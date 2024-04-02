@@ -1,6 +1,6 @@
 ---
 date: 
-title: Improved performance of activation or deactivation of a smart rule for multiple devices
+title: Improved performance of activating or deactivating smart rules for multiple devices
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

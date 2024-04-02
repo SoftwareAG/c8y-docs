@@ -22,7 +22,6 @@ In the upcoming version, we will introduce redesigned dashboards with both visua
 
 **Functional improvements**:
 
-* We have introduced an edit mode for dashboards.
 * The lock/unlock feature has been replaced with an edit mode for better control and clarity.
 
 **New features**:

@@ -1,7 +1,6 @@
 ---
 date: ""
 title: Status can be changed from FAILED for operations with "failureReason"
-  was set.
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add possibility to move operation status from FAILED when "failureReason"
+title: Status can be changed from FAILED for operations with "failureReason"
   was set.
 product_area: Platform services
 change_type:

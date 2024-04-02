@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57995
 version: 1020.296.0
 ---
-Resolved a defect where the microservice-based Data Broker might fail to forward messages to the destination tenant after recovering from a temporary loss of connection to the Messaging Service. This connection loss could be caused by, for example, a transient network interruption or by maintenance on the Messaging Service.
+An issue has been resolved where the microservice-based data broker might fail to forward messages to the destination tenant after recovering from a temporary loss of connection to the Messaging Service. This connection loss could be caused by, for example, a transient network interruption or by maintenance on the Messaging Service.

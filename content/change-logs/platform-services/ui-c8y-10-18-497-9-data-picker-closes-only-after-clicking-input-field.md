@@ -1,6 +1,6 @@
 ---
 date: 
-title: Improved date picker behavior to close on any click outside the picker
+title: Date picker now closes on any click outside the picker
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

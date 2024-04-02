@@ -15,4 +15,4 @@ ticket: MTM-49980
 version: 10.18.497.9
 ---
 
-Any click outside of date picker will close its calendar dropdown.
+Any click outside of the date picker will now close its calendar dropdown.

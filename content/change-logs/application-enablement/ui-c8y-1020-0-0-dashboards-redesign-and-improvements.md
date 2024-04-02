@@ -24,7 +24,7 @@ In the upcoming version, we will introduce redesigned dashboards with both visua
 
 * The lock/unlock feature has been replaced with an edit mode for better control and clarity.
 
-**New features**:
+**New functionalities**:
 
 * Possibility to enable and disable dashboard template for device dashboards.
 * Versioning to manage and track dashboard changes.

@@ -15,4 +15,4 @@ ticket: MTM-48837
 version: 10.18.366.0
 ---
 
-The time format (12/24 hours) used for device availability and measurements is now consistent. 
+The time format (12/24 hours) used for device availability and measurements in the UI is now consistent. 

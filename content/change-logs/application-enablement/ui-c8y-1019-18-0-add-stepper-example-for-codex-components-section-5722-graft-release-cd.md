@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57884
 version: 1019.18.0
 ---
-Add stepper example for codex components section (#5722) [GRAFT][release/cd] (#6020)
+As part of enhancing the Codex components section and providing more comprehensive examples, a stepper example has been added. The stepper component allows users to divide content into logical steps, guiding them through a process or a series of fields they need to complete. This change improves the documentation and makes it easier for users to understand and utilize the stepper component in their own projects.

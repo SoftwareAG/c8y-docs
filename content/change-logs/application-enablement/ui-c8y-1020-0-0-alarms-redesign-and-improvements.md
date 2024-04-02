@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-52611
 version: 1020.0.0
 ---
-In the upcoming version, we will introduce redesigned alarms with both visual and functional enhancements.
+In the upcoming version, a redesign of the alarms feature will be introduced with both visual and functional enhancements.
 
 **Visual and UX enhancements**:
 

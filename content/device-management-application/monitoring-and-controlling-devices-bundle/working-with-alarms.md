@@ -43,10 +43,10 @@ Alarms are classified according to their severity. {{< product-c8y-iot >}} inclu
 |WARNING|There is a warning.
 
 
-In the top menu bar, a **Filter Alarms** button is provided to filter by severity. By clicking a filter button, you can check or uncheck severities that you want to show or hide, and after that, click **Apply**.
+In the top menu bar, a **Filter alarms** dropdown list is provided. Select the severities to be shown and then click **Apply**.
 
 {{< c8y-admon-info >}}
-The number provided in the filter menu refers to the number of active alarms for the given severity, as opposed to the counter provided as blue circle next to an active alarm, which shows the number of times this same alarm has occurred (see also the table below).
+The number provided in the filter dropdown refers to the number of active alarms for the given severity, as opposed to the counter provided as blue circle next to an active alarm, which shows the number of times this same alarm has occurred (see also the table below).
 {{< /c8y-admon-info >}}
 
 Within the **Alarms list**, the alarms are sorted by their occurrence, displaying the most recent alarm first.
@@ -92,9 +92,9 @@ In the **Alarms list**, the following information for an alarm is provided:
 </tbody>
 </table>
 
-Select an alarm by clicking on the alarm in the **Alarms list** that you are interested in, to display further details about the alarm.
+To display further details about an alarm, click on the respective alarm in the **Alarms list**.
 
-* **Status**: Provides further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in [Alarm mapping](/standard-tenant/alarm-mapping/).
+* **Status**: Provides further information on the alarm status and shows the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in [Alarm mapping](/standard-tenant/alarm-mapping/).
 * **Audit Logs**: Provides the server time when the alarm was created, which may differ from the device time.
 * **First Occurrence**: Provides information about when the alarm first occurred.
 

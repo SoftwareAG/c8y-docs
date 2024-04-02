@@ -1,6 +1,6 @@
 ---
 date: 
-title: Improved placeholders in input fields
+title: Placeholders in input fields no longer include extra suffix
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

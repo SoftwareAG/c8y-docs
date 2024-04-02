@@ -31,7 +31,7 @@ Devices can raise alarms to indicate that there is a problem requiring an interv
 By default,
 
 * only unresolved alarms are shown. If you turn on **Show cleared alarms** in the **Filter alarms** dropdown menu at the top, you will see the entire alarm history.
-* The alarms list is automatically refreshed every 30 seconds. Click **Disable auto-refresh** to stop the alarms list from refreshing automatically. ![Alarms refresh interval](/images/users-guide/DeviceManagement/devmgmt-alarms-refresh-interval.png)
+* The alarms list is automatically refreshed every 30 seconds. Click **Disable auto-refresh** to stop the alarms list from refreshing automatically.
 
 Alarms are classified according to their severity. {{< product-c8y-iot >}} includes four different alarm types:
 

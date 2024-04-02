@@ -29,4 +29,4 @@ In the upcoming version, we will introduce redesigned dashboards with both visua
 
 * Possibility to enable and disable dashboard template for device dashboards.
 * Versioning to manage and track dashboard changes.
-* Undo/redo functionality for flexible editing.
+* Edit mode with undo/redo functionality for flexible adjustments.

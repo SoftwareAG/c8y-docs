@@ -29,3 +29,5 @@ In the upcoming version, we will introduce redesigned dashboards with both visua
 * Possibility to enable and disable dashboard template for device dashboards.
 * Versioning to manage and track dashboard changes.
 * Edit mode with undo/redo functionality for flexible adjustments.
+
+For details refer to: [Working with dashboards](https://cumulocity.com/docs/cockpit/working-with-dashboards/).

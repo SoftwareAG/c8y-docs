@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2023-12-20
 title: Input in text fields on the Shell tab no longer truncated
 product_area: Device management & connectivity
 change_type:

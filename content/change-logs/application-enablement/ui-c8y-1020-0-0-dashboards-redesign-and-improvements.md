@@ -30,4 +30,4 @@ In the upcoming version, we will introduce redesigned dashboards with both visua
 * Versioning to manage and track dashboard changes.
 * Edit mode with undo/redo functionality for flexible adjustments.
 
-For details refer to: [Working with dashboards](https://cumulocity.com/docs/cockpit/working-with-dashboards/).
+For details refer to [Working with dashboards](https://cumulocity.com/docs/cockpit/working-with-dashboards/).

@@ -1,6 +1,6 @@
 ---
 date:
-title: Enabling data scraping for DTM Metrics on Grafana dashboard
+title: Enabling data scraping for Digital twin manager metrics on Grafana dashboard
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

@@ -1,6 +1,6 @@
 ---
 date: 2024-03-19
-title: Improved implementation of the /prometheus endpoint in the Streaming Analytics microservices
+title: More efficient implementation of the /prometheus endpoint in the Streaming Analytics microservices
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

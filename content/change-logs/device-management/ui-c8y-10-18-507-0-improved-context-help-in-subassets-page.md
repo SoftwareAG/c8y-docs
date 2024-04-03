@@ -1,7 +1,7 @@
 ---
 date: 2024-13-14
 title: Improved context help in Subassets page
-product_area: Application enablement & solutions
+product_area: Device management & connectivity
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

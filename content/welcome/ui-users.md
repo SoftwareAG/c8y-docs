@@ -34,7 +34,7 @@ Check out the following user guides which might serve as a starting point:
 </tr>
 
 <tr>
-<td align="left"><a href="/device-integration/integration-tutorials/tutorials-introduction/">Device integration tutorials</a></td>
+<td align="left"><a href="/device-integration/integration-tutorials/">Device integration tutorials</a></td>
 <td align="left">Check out our <i>Device integration tutorials</i> if you are looking for step-by-step instructions on integrating various demo devices, for example for proof-of-concept purposes in your {{< product-c8y-iot >}} environment.</td>
 </tr>
 

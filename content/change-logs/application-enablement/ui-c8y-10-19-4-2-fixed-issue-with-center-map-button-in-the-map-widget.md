@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57329
 version: 10.19.4.2
 ---
-The \*\*Center map\*\* button in the "Map" widget is now only enabled if the specified center point of the map is shifted from the current view center.
+The **Center map** button in the "Map" widget is now only enabled if the specified center point of the map is shifted from the current view center.

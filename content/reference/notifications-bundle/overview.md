@@ -212,11 +212,15 @@ to listen for them.
 An application can use this to discover new managed objects.
 It can then choose to create subscriptions with "mo" **context** for those managed objects.
 
-Notifications for managed object deletions are forwarded to topics by subscriptions with "mo" (managed object) **context**
-that include the "managedobjects" API, and by subscriptions with "tenant" **context** that include the "managedobjects" API.
-
 Subscriptions with "tenant" context can also use the alarms API and/or the events API to forward all alarms and/or events,
 respectively, which occur within the tenant, applying filters as desired.
+
+The following summarizes the context and API support.
+
+| Context  | ManagedObject Create | ManagedObject Update & Delete   | Alarms    | Events    | Measurements  | Operations   |
+|----------|----------------------|---------------------------------|-----------|-----------|---------------|--------------|
+| mo       | &cross;              | &check;                         | &check;   | &check;   | &check;       | &check;      |
+| tenant   | &check;              | &cross;                         | &check;   | &check;   | &cross;       | &cross;      |
 
 <a name="subscription-filter">&nbsp;</a>
 ### Subscription filters

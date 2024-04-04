@@ -1,5 +1,5 @@
 ---
-date: 24.03.2024
+date: 2024-03-24
 title: Improved changing application language by query parameter
 change_type:
   - value: change-VSkj2iV9m

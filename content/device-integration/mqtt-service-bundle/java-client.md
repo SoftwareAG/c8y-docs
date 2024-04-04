@@ -15,8 +15,8 @@ Follow the [Microservice SDK](/microservice-sdk/java/#add-repositories-and-depen
 To include MQTT Service Java Client into your project, add the following dependency inside the `<dependencies>` node:
 ```xml
 <dependency>
-    <groupId>com.cumulocity.client.mqtt</groupId>
-    <artifactId>mqtt-service-websocket</artifactId>
+    <groupId>com.cumulocity.sdk.mqtt</groupId>
+    <artifactId>mqtt-service-ws</artifactId>
     <version>${c8y.version}</version>
 </dependency>
 ```
@@ -27,54 +27,51 @@ Example of publishing messages to the MQTT Service via WebSocket:
 // Message to be sent
 final String payload = "Hello World";
 
-// Construct a new MqttMessage and set the payload
-final MqttMessage message = new MqttMessage();
+// Construct a new MqttServiceMessage and set the payload
+final MqttServiceMessage message = new MqttServiceMessage();
 message.setPayload(payload.getBytes());
 
-// Build MqttConfig with topic to which the message is to be sent
-final MqttConfig config = MqttConfig.webSocket().topic(topic).build();
-
-// Create an instance of MqttClient by specifying the server URI to connect to along with TokenApi
-final MqttClient client = MqttClient.webSocket()
+// Create an instance of MqttServiceApi by specifying the server URI to connect to along with TokenApi
+final MqttServiceApi mqttServiceApi = MqttServiceApi.webSocket()
         .url(webSocketBaseUrl)
         .tokenApi(tokenApi)
         .build();
 
-// Build MqttPublisher and publish MqttMessage. Close the resource either by using a [try-with-resources block](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html) as below or by calling publisher.close() explicitly
-try (final MqttPublisher publisher = client.buildPublisher(config)) {
+// Build PublisherConfig with topic to which the message is to be sent
+final PublisherConfig config = PublisherConfig.publisherConfig().topic(topic).build();
+
+// Build Publisher and publish MqttServiceMessage. Close the resource either by using a [try-with-resources block](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html) as below or by calling publisher.close() explicitly
+try (final Publisher publisher = mqttServiceApi.buildPublisher(config)) {
     publisher.publish(message);
 } catch (Exception e) {
     log.error("Could not sent message to {}", topic, e);
 }
+mqttServiceApi.close();
 ```
 
 Example of subscribing to messages from the MQTT Service via WebSocket:
 ```java
-// Build MqttConfig with topic and subscriber name
-final MqttConfig config = MqttConfig.webSocket().topic(topic).subscriber(subscriberName).build();
-
-// Create an instance of MqttClient by specifying the server URI to connect to along with TokenApi
-final MqttClient client = MqttClient.webSocket()
+// Create an instance of MqttServiceApi by specifying the server URI to connect to along with TokenApi
+final MqttServiceApi mqttServiceApi = MqttServiceApi.webSocket()
         .url(webSocketBaseUrl)
         .tokenApi(tokenApi)
         .build();
 
-// Build MqttSubscriber
-final MqttSubscriber subscriber = client.buildSubscriber(config);
+// Build SubscriberConfig with topic and subscriber name
+final SubscriberConfig config = SubscriberConfig.subscriberConfig().topic(topic).subscriber(subscriberName).build();
 
-// Subscribe by passing implementation of MqttMessageListener to handle events from the websocket server.
-subscriber.subscribe(new MqttMessageListener() {
+// Build Subscriber
+final Subscriber subscriber = mqttServiceApi.buildSubscriber(config);
+
+// Subscribe by passing implementation of MessageListener to handle messages from the MQTT Service.
+subscriber.subscribe(new MessageListener() {
     @Override
-    public void onMessage(MqttMessage message) {
+    public void onMessage(MqttServiceMessage message) {
         log.info("Message Received: {}", new String(message.getPayload()));
-    }
-
-    @Override
-    public void onError(Throwable t) {
-        log.error("WebSocket Error", t);
     }
 });
 
-// Close the resource after usage
+// Close the resources after usage
 subscriber.close();
+mqttServiceApi.close();
 ```

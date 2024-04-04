@@ -1,5 +1,5 @@
 ---
-date: 2024-03-24
+date: 2024-03-28
 title: Placeholders in input fields no longer include extra suffix
 change_type:
   - value: change-VSkj2iV9m

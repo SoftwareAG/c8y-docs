@@ -1,5 +1,5 @@
 ---
-date: 2024-03-24
+date: 2024-03-28
 title: SVG animation in SCADA widget displayed correctly in dashboards
 change_type:
   - value: change-VSkj2iV9m

@@ -17,7 +17,7 @@ There are several static templates available to create measurements in the 2xx r
 While using this template is possible for many use cases, we recommend you to create a custom template for all use cases where dynamically defining fragment and series are not required.
 
 **Get measurements**
-The `Get measurements` button in the action bar of a device is shown if the `c8y_MeasurementRequestOperation` fragment is present in the device's `c8y_SupportedOperations`.
+The **Get measurements** button in the action bar of a device is shown if the `c8y_MeasurementRequestOperation` fragment is present in the device's `c8y_SupportedOperations`.
 
 This action creates a c8y_MeasurementRequestOperation operation with the same fragment signature as found in the device’s managed object. Its 
 

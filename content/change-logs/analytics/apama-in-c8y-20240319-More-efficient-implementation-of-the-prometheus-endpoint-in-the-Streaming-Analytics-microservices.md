@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-4411
-version: 
+version:
 ---
 The implementation of the `/prometheus` endpoint has been optimized by removing redundant calls to other internal endpoints.

@@ -6,15 +6,15 @@
 # These owners will be the default owners for everything in the repo.
 * @BeateRixen @MWindel
 
-/content/change-logs/application-enablement/ @rahultsag @janhommes @BeateRixen
-/content/change-logs/device-management/ @Oezge-Akin @aaronraab @l2p- @BeateRixen
-/content/change-logs/platform-services/ @airdroplet @martin-sag @kalavathig1 @sarangovindarajan @sagscmi @pink-mongoose @BeateRixen
-/content/change-logs/application-enablement/dtm* @rahultsag @pavanshivajirao @lra-sag @BeateRixen
-/content/change-logs/analytics/apama-in-c8y* @kailol-sag @Rob-J-SAG @BeateRixen
-/content/change-logs/analytics/cdh* @cheinz-sag @ChrisFurlongSAG @BeateRixen
+/content/change-logs/application-enablement/ @rahultsag @janhommes @BeateRixen @MWindel
+/content/change-logs/device-management/ @Oezge-Akin @aaronraab @l2p- @BeateRixen @MWindel
+/content/change-logs/platform-services/ @airdroplet @martin-sag @kalavathig1 @sarangovindarajan @sagscmi @pink-mongoose @BeateRixen @MWindel
+/content/change-logs/application-enablement/dtm* @rahultsag @pavanshivajirao @lra-sag @BeateRixen @MWindel
+/content/change-logs/analytics/apama-in-c8y* @kailol-sag @Rob-J-SAG @BeateRixen @MWindel
+/content/change-logs/analytics/cdh* @cheinz-sag @ChrisFurlongSAG @BeateRixen @MWindel
 
 /content/device-management-application/ @Oezge-Akin @l2p- @BeateRixen
-/content/dtm/ @pavanshivajirao @lra-sag @BeateRixen
+/content/dtm/ @pavanshivajirao @lra-sag @BeateRixen @MWindel
 
 /content/streaming-analytics/ @kailol-sag @BeateRixen @MWindel
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS

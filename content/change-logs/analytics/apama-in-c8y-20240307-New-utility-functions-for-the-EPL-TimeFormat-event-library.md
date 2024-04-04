@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2024-04-04
 title: New utility functions for the EPL TimeFormat event library
 change_type:
   - value: change-2c7RdTdXo4
@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAM-34632
-version:
+version: 25.93.0
 ---
 The following utility functions have been added to the TimeFormat event library to help with comparing and manipulating datetimes. As with the existing functions, the new utility functions work for the local time zone, an arbitrary time zone and, where appropriate, the UTC time zone.
 

@@ -1,5 +1,5 @@
 ---
-date: 
+date: 24.03.2024
 title: Date picker now closes on any click outside the picker
 change_type:
   - value: change-VSkj2iV9m

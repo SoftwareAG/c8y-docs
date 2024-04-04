@@ -1,5 +1,5 @@
 ---
-date: 
+date: 24.03.2024
 title: Improved Japanese localization of various window titles
 change_type:
   - value: change-VSkj2iV9m

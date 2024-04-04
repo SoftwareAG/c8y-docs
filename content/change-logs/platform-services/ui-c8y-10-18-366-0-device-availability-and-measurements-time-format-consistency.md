@@ -1,5 +1,5 @@
 ---
-date: 
+date: 24.03.2024
 title: Consistent time format for device availability and measurements
 change_type:
   - value: change-VSkj2iV9m

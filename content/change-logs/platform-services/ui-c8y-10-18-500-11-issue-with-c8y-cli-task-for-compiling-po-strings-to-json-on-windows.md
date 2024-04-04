@@ -1,6 +1,6 @@
 ---
-date: 
-title: Localization strings are correctly compiled to JSON on windows using c8ycli command
+date: 24.03.2024
+title: Localization strings are correctly compiled to JSON on Windows using c8ycli command
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

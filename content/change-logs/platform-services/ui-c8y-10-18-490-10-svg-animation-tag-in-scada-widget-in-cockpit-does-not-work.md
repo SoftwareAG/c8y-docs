@@ -1,6 +1,6 @@
 ---
-date: 
-title: SVG animation in Scada widget displayed correctly in dashboards
+date: 24.03.2024
+title: SVG animation in SCADA widget displayed correctly in dashboards
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

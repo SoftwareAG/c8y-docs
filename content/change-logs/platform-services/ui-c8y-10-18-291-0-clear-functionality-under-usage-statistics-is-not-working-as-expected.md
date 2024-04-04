@@ -1,5 +1,5 @@
 ---
-date: 
+date: 24.03.2024
 title: Clear button in Usage statistics page removes applied filters properly
 change_type:
   - value: change-VSkj2iV9m

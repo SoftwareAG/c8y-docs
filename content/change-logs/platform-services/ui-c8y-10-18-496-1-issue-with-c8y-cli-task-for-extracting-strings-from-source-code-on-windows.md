@@ -1,5 +1,5 @@
 ---
-date: 
+date: 24.03.2024
 title: Strings are correctly extracted from source code on Windows using c8ycli command
 change_type:
   - value: change-VSkj2iV9m

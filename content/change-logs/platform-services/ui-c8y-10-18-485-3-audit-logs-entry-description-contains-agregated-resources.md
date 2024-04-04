@@ -1,5 +1,5 @@
 ---
-date: 
+date: 24.03.2024
 title: Improved display of details of audit log items
 change_type:
   - value: change-VSkj2iV9m

@@ -47,23 +47,24 @@ Only alphanumeric characters and slash (`/`) can be used in topic name.
 The original MQTT messages are re-packed into MQTT Service message format which includes the original payload and additional metadata fields.
 Assuming Java types, the packed message structure looks as follows:
 
-`MqttMessage`
-| Field name | Type         | Description                |
-|:-----------|:-------------|:---------------------------|
-| payload    | byte[]       | MQTT payload               |
-| metadata   | MqttMetadata | Metadata from the MQTT message |
+`MqttServiceMessage`
+| Field name | Type                | Description                    |
+|:-----------|:--------------------|:-------------------------------|
+| payload    | byte[]              | MQTT payload                   |
+| metadata   | MqttServiceMetadata | Metadata from the MQTT message |
 
-`MqttMetadata`
-| Field name             | Type    | Description                                                           |
-|:-----------------------|:--------|:----------------------------------------------------------------------|
-| clientId               | String  | Unique MQTT client identifier, usually used as an external identifier |
-| messageId              | int     | Unique MQTT message ID per client, available only with QoS 1 and 2    |
-| dupFlag                | boolean | Indicates this message is a resend by the MQTT client                 |
-| userProperties         | Map     | Reserved for future use of MQTT 5.0 features                          |
-| payloadFormatIndicator | enum    | Reserved for future use of MQTT 5.0 features                          |
-| contentType            | String  | Reserved for future use of MQTT 5.0 features                          |
-| correlationData        | byte[]  | Reserved for future use of MQTT 5.0 features                          |
-| responseTopic          | String  | Reserved for future use of MQTT 5.0 features                          |
+`MqttServiceMetadata`
+| Field name             | Type    | Description                                                             |
+|:-----------------------|:--------|:------------------------------------------------------------------------|
+| clientId               | String  | Unique MQTT client identifier, usually used as an external identifier   |
+| messageId              | int     | Unique MQTT message ID per client, available only with QoS 1 and 2      |
+| dupFlag                | boolean | Indicates this message is a resend by the MQTT client                   |
+| userProperties         | Map     | Reserved for future use of MQTT 5.0 features                            |
+| payloadFormatIndicator | enum    | Reserved for future use of MQTT 5.0 features                            |
+| contentType            | String  | Reserved for future use of MQTT 5.0 features                            |
+| correlationData        | byte[]  | Reserved for future use of MQTT 5.0 features                            |
+| responseTopic          | String  | Reserved for future use of MQTT 5.0 features                            |
+| topic                  | String  | The name of the MQTT topic that the message was published by the client |
 
 The [Java Client](/device-integration/mqtt-service#java-client) contains classes representing the above model.
 

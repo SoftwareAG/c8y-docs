@@ -1,6 +1,6 @@
 ---
 date: ""
-title: CRL entry response status with correct error code 
+title: Fixed the http response code for missing fields in CRL entries
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55154
 version: 10.20.294.0
 ---
-Wrong error code being shown for a missing field in CRL entry payload is now fixed.
+Wrong http response code was sent when there are missing fields in CRL entry. This is fixed now.

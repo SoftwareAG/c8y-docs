@@ -86,10 +86,7 @@ When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that
 
 You can cancel particular pending single operations or all pending single operations at once.
 
-To cancel a particular pending single operation, click the menu icon at the right of the respective single operation entry and select **Cancel operation**.
-
-To cancel all pending operations at once, click **More...** at the right of the top menu bar and select **Cancel all pending operations**.
-Alternatively, filter the list of single operations to show only single operations with status PENDING, then click **Cancel all** at the right of the top menu bar.
+To cancel a particular pending single operation, click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the respective single operation entry and select **Cancel operation**.
 
 ### To create a smart rule from a single operation {#to-create-a-smart-rule-from-a-single-operation}
 

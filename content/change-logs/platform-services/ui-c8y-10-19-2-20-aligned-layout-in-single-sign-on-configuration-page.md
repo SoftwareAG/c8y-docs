@@ -1,5 +1,5 @@
 ---
-date: Platform services
+date: 2024-03-14
 title: Aligned layout in single sign-on configuration page
 product_area: Platform services
 change_type:

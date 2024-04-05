@@ -8,7 +8,7 @@ In the OEE model the capturability of values as well as the identification of ca
 
 ![OEE model](/images/oee/theory/theory-oee-model.png)
 
-The model represents the view on quantity as well as on time in one diagram. To make this clear to the observer, the terms end with "Amount/amount" or "Time/time". If terms do not have these endings or if there is a special case, as with the ideal cycles, round brackets indicate whether the term refers to the quantity, time, quantity and time, or a ratio. Ratios will be indicated in terms of quantity per time, time per quantity, or percentage. The exact specification of units for quantity and time was deliberately dispensed in order to further underline the generic applicability. To show that the relationship to quantity or time is ultimately irrelevant, corresponding terms are linked with the following symbol:
+The model represents the view on quantity as well as on time in one diagram. To make this clear to the observer, the terms end with "Amount/amount" or "Time/time". If terms do not have these endings or if there is a special case, as with the ideal cycles, round brackets indicate whether the term refers to the quantity, time, quantity and time, or a ratio. Ratios will be indicated in terms of quantity per time, time per quantity, or percentage. The exact specification of units for quantity and time was deliberately dispensed in order to further underline the generic applicability. To show that the relationship to quantity or time is ultimately irrelevant, corresponding terms are linked with the following icon:
 
 ![Linking symbol](/images/oee/theory/theory-linking-symbol.png)
 

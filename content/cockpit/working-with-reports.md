@@ -48,16 +48,16 @@ See [To create a report](#to-create-a-report) below for details on how to config
 
 ### To create a report {#to-create-a-report}
 
-1. Click **Add report** in the top menu bar to open the **Add report** dialog.
+1. Click **Add report** in the top menu bar to open the **New report** dialog with the **General** tab opened.
   <br>![Add report](/images/users-guide/cockpit/cockpit-report-add.png)<br>
 2. In the **Menu label** field, enter a name for the report and optionally provide a description below.
 3. Select **Show in navigator** if you want the report to be displayed in the navigator. Select the position of the report in the navigator. Depending on the value it will be positioned relative to the existing items. If for example "Home" has the value "10000" it will be positioned above "Home", if the value is "10001" or higher.
-4. In the **Layout** section you can select a theme for the report (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 12 px).
+4. In the **Appearance** tab you can select a theme for the report (one of "Match UI", "Light", "Dark" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 12 px).
 If you enable the option **Translate widget titles if possible**, the widget title will be translated every time the language is changed. Note that the widget titles will be translated only if a valid translation is available.
 Click **Save** to create the report and add it to the report list.
 
 {{< c8y-admon-info >}}
-In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
+A preview of the selected layout settings is immediately displayed to visualize your selections on the dashboard below the settings drawer.
 {{< /c8y-admon-info >}}
 
 Next, widgets can be added to the report.
@@ -66,14 +66,11 @@ Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for 
 
 ### To edit a report {#to-edit-a-report}
 
-Click on a report name in the report list to open its details.
+Click on a report name in the report list to open its dashboard.
 
-To edit the report, click **Edit** in the top menu bar.
-
-The report editor will open up. For details on the fields, refer to [To create a report](#to-create-a-report).
-
+For details on how to edit the report dashboard, refer to [To edit a dashboard](/cockpit/working-with-dashboards/#to-create-a-dashboard).
 
 ### To delete a report {#to-delete-a-report}
 
-1. In the **Reports** page, hover over the report item you want to delete and click the delete icon showing up at the right.
+1. In the **Reports** page, hover over the report item you want to delete and click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> showing up at the right.
 2. Confirm to delete the report.

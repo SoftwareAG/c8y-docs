@@ -39,7 +39,7 @@ All {{< product-c8y-iot >}} applications share a common structure and include th
 
 On the left you have the navigator, which shows a list of entries leading to various pages of the application. The entries are grouped into menus and menu items.
 In the middle you find the content of the actual page which has been selected in the navigator.
-On the top you find the page title at the left. At the right you find various action buttons. Click the **Search** button <img class="Default" src="/images/icons/search-icon.png" alt="Search" style="display: inline-block; margin:0"> to enter text for a full-text search. The  **Application Switcher** button <img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline-block; margin:0"> allows you to quickly switch between all available applications. Clicking the **User** button <img class="Default" src="/images/icons/user-icon.png" alt="User" style="display: inline-block; margin:0;"> at the right opens a context menu with details on your [account settings](#account-settings), as described below.
+On the top you find the page title at the left. At the right you find various action buttons. Click the **Search** button <i class="dlt-c8y-icon-search icon-20"></i> to enter text for a full-text search. The  **Application Switcher** button <i class="dlt-c8y-icon-app-switcher icon-20"></i> allows you to quickly switch between all available applications. Clicking the **User** button <img class="Default" src="/images/icons/user-icon.png" alt="User" style="display: inline-block; margin:0;"> at the right opens a context menu with details on your [account settings](#account-settings), as described below.
 
 See [UI functionalities and features](/get-familiar-with-the-ui/gui-features/) for more information on all {{< product-c8y-iot >}}'s UI features.
 
@@ -61,7 +61,7 @@ To connect a device to {{< product-c8y-iot >}}, you must register it in the plat
 Moreover, we offer two step-by-step descriptions to easily register a first device to your {{< product-c8y-iot >}} account:
 
 * Connect a smartphone to {{< product-c8y-iot >}} using the [{{< sensor-app >}}](/sensor-app/introduction/). The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones.
-* Connect a [Raspberry Pi as demo device using thin.edge.io](/device-integration/thin-edge). The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
+* Connect a [Raspberry Pi as demo device using thin.edge.io](/device-integration/device-integration-thin-edge/#thin-edgeio-on-a-device). The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
 
 For the purpose of this tutorial, we will register a device via the {{< sensor-app >}}.
 

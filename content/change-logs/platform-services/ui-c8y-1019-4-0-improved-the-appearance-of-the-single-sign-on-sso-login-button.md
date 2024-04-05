@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-14
 title: Fixed the appearance of the SSO (Single Sign-On) login button
 product_area: Platform services
 change_type:

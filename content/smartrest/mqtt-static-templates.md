@@ -1267,9 +1267,9 @@ Update the software installed on the device.
 | 1...     | List of 5 values per software | (n/a)  |
 | 1.1      | name                          | String |
 | 1.2      | version                       | String |
-| 1.2      | type                          | String |
-| 1.3      | URL                           | String |
-| 1.4      | action to be performed        | String |
+| 1.3      | type                          | String |
+| 1.4      | URL                           | String |
+| 1.5      | action to be performed        | String |
 
 **Example**
 

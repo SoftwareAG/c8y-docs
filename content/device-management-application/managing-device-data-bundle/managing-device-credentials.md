@@ -22,7 +22,7 @@ The roles for the device will be updated accordingly.
 
 ### To edit device credentials {#to-edit-device-credentials}
 
-1. Click the menu icon at the right of a device credentials entry and then click **Edit** to open the device details.
+1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of a device credentials entry and then click **Edit** to open the device details.
 
 2. In the details page, you may disable/enable a device by clicking the **Active** toggle, change the password for a device, or assign or remove permissions by selecting/deselecting roles in the **Global roles** list.
 
@@ -34,13 +34,13 @@ The device credentials will be updated accordingly.
 
 ### To disable device credentials {#to-disable-device-credentials}
 
-Click the menu icon at the right of a device credentials entry and then click **Disable**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of a device credentials entry and then click **Disable**.
 
 The device credentials will be temporarily disabled.
 
 ### To delete device credentials {#to-delete-device-credentials}
 
-Click the menu icon at the right of a device credentials entry and then click **Delete**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of a device credentials entry and then click **Delete**.
 
 The device credentials will be permanently deleted.
 

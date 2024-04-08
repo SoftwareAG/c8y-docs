@@ -9,7 +9,7 @@ component:
   - value: component--KIsStyzM
     label: Device Management app
 build_artifact:
-  - value: tc-QHwMfWtBk7
+  - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: DM-3316
 version: 1020.0.0

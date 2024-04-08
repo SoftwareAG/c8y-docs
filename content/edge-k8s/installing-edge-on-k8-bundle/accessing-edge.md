@@ -73,14 +73,13 @@ If the ping is successful, the DNS resolution is working properly.
 #### To access Edge
 
 Enter one of the following URLs in the browser:
-* To log in to the "edge" tenant: `https://<domain_name>`
-* To log in to the {{< management-tenant >}}: `https://management.<domain_name>`
+- To log in to the "edge" tenant, use the URL `https://<domain_name>`.
+- To log in to the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
 
 The login screen appears.
 
-
 {{< c8y-admon-important >}}
-After a successful deployment, you must access both the {{< management-tenant >}} and "edge" tenants and change the admin credentials.
+After a successful deployment, you must access both the {{< management-tenant >}} and "edge" tenant and change the respective admin credentials.
 {{< /c8y-admon-important >}}
 
 ![Login prompt](/images/edge-k8s/edge-k8s-login-banner.png)
@@ -97,14 +96,6 @@ Substitute the Edge name and namespace name, which is currently **c8yedge** in t
 {{< /c8y-admon-important >}}
 
 ![Reset password](/images/edge-k8s/edge-k8s-reset-password.png)
-
-{{< c8y-admon-important >}}
-You must access both the {{< management-tenant >}} and "edge" tenant and change the respective admin credentials.
-{{< /c8y-admon-important >}}
-
-- To log in to the "edge" tenant, use the URL `https://<domain_name>`.
-
-- To log in to the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
 
 If you are logging in for the first time, you will see a cookie banner at the bottom of the login screen:
 

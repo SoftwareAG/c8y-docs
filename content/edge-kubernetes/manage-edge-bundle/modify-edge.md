@@ -1,10 +1,10 @@
 ---
 weight: 10
-title: Modifying Cumulocity IoT Edge
+title: Modifying Edge
 layout: redirect
 ---
 
-For this example, assume that the {{< product-c8y-iot >}} Edge is deployed using the [c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml).
+For this example, assume that the Edge is deployed using the [c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml).
 
 ### Example configuration change {#example-configuration-change}
 

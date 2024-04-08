@@ -80,13 +80,13 @@ The audit log list is not automatically refreshed after a realtime update for op
 
 ### To filter logs {#to-filter-logs}
 
-In order to easily search through logs, you can filter logs for:
+In order to easily search through logs, you can filter logs by:
 
- - The type (alarm, operation, smart rule, and so on).
- - A date range providing a "From" and/or a "To" date.
- - The user.
+ - Type (alarm, operation, smart rule, and so on)
+ - Device time (provide a date range in "From" and/or "To" inputs)
+ - User
 
-To apply a filter, click the **Apply** button next to the respective filter field. To discard filters, click the X icon next to the **Apply** button (only visible if filters are set).
+To apply a filter, click the **Apply** button next to the respective filter field. To discard filters, click the clear icon <i class="dlt-c8y-icon-clear text-primary icon-20"></i> next to the **Apply** button (only visible if filters are set).
 
 ### Audit log types {#audit-log-types}
 

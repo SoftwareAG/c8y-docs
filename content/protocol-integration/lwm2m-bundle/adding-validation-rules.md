@@ -34,7 +34,7 @@ After selecting a type, the following rules can be selected:
 Not all rules are available to each type.
 {{< /c8y-admon-info >}}
 
-To delete a rule, click on the red delete icon on the right side of that rule. Click **Save** to save your settings.
+To delete a rule, click on the red remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> on the right side of that rule. Click **Save** to save your settings.
 
 ### Complex rulesets {#complex-rulesets}
 

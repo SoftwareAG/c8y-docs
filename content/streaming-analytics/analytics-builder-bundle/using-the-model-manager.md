@@ -218,17 +218,47 @@ On the **Models** tab of the model manager, click the actions menu of the model 
 
 The resulting behavior depends on your browser. The model is usually downloaded to the download location of your browser.
 
-### Importing a model {#importing-a-model}
+{{< c8y-admon-info>}}
+The **Download** command is also available when the model is active (read-only mode). This allows you to download the model at any time.
+{{< /c8y-admon-info>}}
 
-You can import a model that has previously been downloaded in JSON format. This is helpful, for example, if you want to import a model from a different {{< product-c8y-iot >}} tenant.
+### Copying a model {#copying-a-model}
 
-#### To import a model {#to-import-a-model}
+Instead of downloading a model, you can also copy the JSON code of the model to the clipboard and then paste it into an editor of your choice.
 
-1.  On the **Models** tab of the model manager, click **Import model** in the toolbar.
-2.  In the resulting dialog box, navigate to the location where the model that you want to import is stored.
+#### To copy a model {#to-copy-a-model}
+
+On the **Models** tab of the model manager, click the actions menu of the model that you want to copy and then click **Copy**.
+
+{{< c8y-admon-info>}}
+The **Copy** command is also available when the model is active (read-only mode). This allows you to copy the JSON code at any time.
+{{< /c8y-admon-info>}}
+
+### Uploading a model {#uploading-a-model}
+
+You can upload a model that has previously been downloaded in JSON format. This is helpful, for example, if you want to upload a model from a different {{< product-c8y-iot >}} tenant.
+
+#### To upload a model {#to-upload-a-model}
+
+1.  On the **Models** tab of the model manager, click **Import model** in the toolbar, and then click **Upload**.
+2.  In the resulting dialog box, navigate to the location where the model that you want to upload is stored.
 3.  Select the model and click **Open**.
 
-A card for the imported model is shown in the model manager.
+A card for the uploaded model is shown in the model manager.
+
+### Pasting a model {#pasting-a-model}
+
+Instead of uploading a model, you can also paste the JSON code for a model from the clipboard.
+
+#### To paste a model {#to-paste-a-model}
+
+On the **Models** tab of the model manager, click **Import model** in the toolbar, and then click **Paste**.
+
+{{< c8y-admon-info>}}
+The **Paste** command is enabled only if the clipboard contains content.
+{{< /c8y-admon-info>}}
+
+If the clipboard contains valid JSON code for a model, a card for the pasted model is shown in the model manager.
 
 ### Removing a model {#removing-a-model}
 

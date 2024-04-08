@@ -26,7 +26,7 @@ You may also use recent smartphone and tablet web browsers. We have tested our p
 * Safari on iOS (latest version) on Apple iPhone and iPad
 
 {{< c8y-admon-info >}}
-{{< product-c8y-iot >}} Edge on mobile devices shows some limitations.
+Edge on mobile devices shows some limitations.
 The limitations could be the following:
 
 * The usage may be constrained by the memory and the processing power available on the devices. <br>  
@@ -91,7 +91,7 @@ The Edge appliance Login screen appears. Log in with your credentials created du
   - Username: management/<*Edge admin username*>
   - Password: password provided during the installation
 
-- To log in to the edge tenant, use the Edge admin credentials or prefix the Edge admin username with *edge*:
+- To log in to the "edge" tenant, use the Edge admin credentials or prefix the Edge admin username with *edge*:
   - Username: edge/<*Edge admin username*>
   - Password: password provided during the installation
 

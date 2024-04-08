@@ -24,14 +24,14 @@ Devices can raise alarms to indicate that there is a problem requiring an interv
 {{< product-c8y-iot >}} displays alarms at the level of individual devices and across all devices:
 
 * To check the alarms for all devices, click **Alarms** in the **Overview** menu in the navigator.
-* To check the alarms of a particular device, switch to the **Alarm** tab in the details of this device.
+* To check the alarms of a particular device, switch to the **Alarms** tab in the details of this device.
 
-![Alarms page](/images/users-guide/DeviceManagement/devmgmt-alarms.png)
+![Alarms page](/images/users-guide/DeviceManagement/devmgmt-alarms-view.png)
 
 By default,
 
-* only unresolved alarms are shown. If you turn on **Show cleared alarms** at the right of the top menu bar, you will see the entire alarm history.
-* alarms are shown as coming in from the devices in real time. Click **Realtime** in the top menu bar to disable real-time updates.
+* only unresolved alarms are shown. If you turn on **Show cleared alarms** in the **Filter alarms** dropdown menu at the top, you will see the entire alarm history.
+* The alarms list is automatically refreshed every 30 seconds. Click **Disable auto-refresh** to stop the alarms list from refreshing automatically.
 
 Alarms are classified according to their severity. {{< product-c8y-iot >}} includes four different alarm types:
 
@@ -42,17 +42,16 @@ Alarms are classified according to their severity. {{< product-c8y-iot >}} inclu
 |MINOR|The device has a problem that may be fixed.
 |WARNING|There is a warning.
 
-The **Alarm** tab is split into four sections corresponding to these alarm types.
 
-In the top menu bar, buttons are provided to filter for severity. By clicking a button, the corresponding section will be hidden. Click it once more to make it visible again.
+In the top menu bar, a **Filter alarms** dropdown list is provided. Select the severities to be shown and then click **Apply**.
 
 {{< c8y-admon-info >}}
-The number provided on the buttons in the top menu bar refers to the number of active alarms for the given severity, as opposed to the counter provided as red circle next to an active alarm, which shows the number of times this same alarm has occurred (see also the table below).
+The number provided in the filter dropdown refers to the number of active alarms for the given severity, as opposed to the counter provided as blue circle next to an active alarm, which shows the number of times this same alarm has occurred (see also the table below).
 {{< /c8y-admon-info >}}
 
-Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first.
+Within the **Alarms list**, the alarms are sorted by their occurrence, displaying the most recent alarm first.
 
-In each row, the following information for an alarm is provided:
+In the **Alarms list**, the following information for an alarm is provided:
 
 <table>
 <thead>
@@ -71,7 +70,7 @@ In each row, the following information for an alarm is provided:
 <td align="left">One of CRITICAL, MAJOR, MINOR, WARNING (see above).</td>
 </tr>
 <tr>
-<td align="left">Count (provided as number in a red circle) </td>
+<td align="left">Count (provided as number in a blue circle) </td>
 <td align="left">The number of times this alarm was sent by the device. Only one alarm of a particular type can be active for a certain device. If another alarm of the same type is sent by the device, the number is increased by 1.</td>
 </tr>
 <tr>
@@ -88,17 +87,19 @@ In each row, the following information for an alarm is provided:
 </tr>
 <tr>
 <td align="left">Device</td>
-<td align="left">The name of the device. Clicking the name leads you to the detailed view of the device.</td>
+<td align="left">The name of the device.</td>
 </tr>
 </tbody>
 </table>
 
-Click the arrow on the right of a row to expand it and display further details on the alarm.
+To display further details about an alarm, click on the respective alarm in the **Alarms list**.
 
-* **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in [Alarm mapping](/standard-tenant/alarm-mapping/).
-* **Change Log**: Providing the server time when the alarm was created, which may differ from the device time.
+* **Status**: Provides further information on the alarm status and shows the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in [Alarm mapping](/standard-tenant/alarm-mapping/).
+* **Audit Logs**: Provides the server time when the alarm was created, which may differ from the device time.
+* **First Occurrence**: Provides information about when the alarm first occurred.
 
 ### To change the status of an alarm {#to-change-the-status-of-an-alarm}
 
-To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon and select the desired status.
+To change the status of an alarm, select the alarm and choose the desired status.
+![Alarms status change button](/images/users-guide/DeviceManagement/devmgmt-alarms-status-change-btn.png)
 It is also possible to change the status of all alarms to "clear" at once. Click **Clear all** in the top menu bar, to clear all alarms of the selected severities.

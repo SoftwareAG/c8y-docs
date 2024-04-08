@@ -51,7 +51,7 @@ In the **Export** page you will find a list displaying all exports with their na
 
 In the **Filter** section, you can select filters to request object- or time-specific data.
 
-To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the **Value** field. Click an object to select it (highlighted in green).
+To filter for a particular object, enter a name or property value into the search field and click the search icon <i class="dlt-c8y-icon-search icon-20"></i>. All matching devices or groups will be displayed below the **Value** field. Click an object to select it (highlighted in green).
 
 {{< c8y-admon-info >}}
 If you select a group, the data of direct child devices will be included. However the export will not contain the data of devices in subgroups (indirect children).
@@ -204,17 +204,17 @@ limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceed
 
 ### To edit an export {#to-edit-an-export}
 
-Just click the respective row or click the menu icon at the end of the row and then click **Edit**.
+Just click the respective row or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the end of the row and then click **Edit**.
 
 For details on the fields see [To add an export](/cockpit/managing-exports/#to-add-an-export).
 
 
 ### To duplicate an export {#to-duplicate-an-export}
 
-1. Click the menu icon at the end of the row and then click **Duplicate**.
+1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the end of the row and then click **Duplicate**.
 2. Modify at least the name.
 3. Click **Save & close** to save the export and return to the export list.
 
 ### To delete an export {#to-delete-an-export}
 
-Click the menu icon at the end of the row and then click **Delete**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the end of the row and then click **Delete**.

@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-Since {{< product-c8y-iot >}} Edge is based on the same software as the cloud-based {{< product-c8y-iot >}} platform version, the included applications are the same in both versions, with minor restrictions.
+Since Edge is based on the same software as the cloud-based {{< product-c8y-iot >}} platform version, the included applications are the same in both versions, with minor restrictions.
 
 For general information about functionalities and features of {{< product-c8y-iot >}} platform, see [Get familiar with the UI](/get-familiar-with-the-ui/ui-introduction/).
 
@@ -16,7 +16,7 @@ Below you can find the links to the most common functionalities of {{< product-c
 
 The [Device Management application](/device-management-application/home-dashboard/) provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.
 
-The following functionalities are available in {{< product-c8y-iot >}} Edge and described in detail in these sections:
+The following functionalities are available in Edge and described in detail in these sections:
 
 |SECTION|CONTENT|
 |:---|:---|
@@ -36,16 +36,16 @@ The following functionalities are available in {{< product-c8y-iot >}} Edge and 
 
 The [Cockpit application](/cockpit/cockpit-introduction/) provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
 
-The following functionalities are available in {{< product-c8y-iot >}} Edge and described in detail in these sections:
+The following functionalities are available in Edge and described in detail in these sections:
 
 |Section|Content|
 |:---|:---|
 |[Managing assets](/cockpit/managing-assets/)|Organize assets in [hierarchies](/cockpit/managing-assets/#asset-hierarchy) by [creating groups](/cockpit/managing-assets/#to-add-a-group) and [assigning devices](/cockpit/managing-assets/#to-assign-devices-to-a-group).
 |[Data Explorer](/cockpit/data-explorer/)|Interactively explore, compare and visualize IoT data. <br> Describes how to access and use the [data explorer](/cockpit/data-explorer/), [add data points](/cockpit/data-explorer/#to-add-a-data-point) to the data explorer, [customize data point properties](/cockpit/data-explorer/#to-customize-data-point-properties), [modify the visualization](/cockpit/data-explorer/#changing-visualization), store the [data explorer as widget](/cockpit/data-explorer/#creating-widgets), and [export](/cockpit/data-explorer/#to-export-measurement-data) the data.
-|[Working with dashboards](/cockpit/working-with-dashboards/)|[Create your own analytics and monitor pages](/cockpit/working-with-dashboards/#to-create-a-dashboard) by adding and arranging [widgets](/cockpit/using-widgets/). [Share dashboards](/cockpit/working-with-dashboards/#to-share-a-dashboard) among all devices of the same type.
+|[Working with dashboards](/cockpit/working-with-dashboards/)|[Create your own analytics and monitor pages](/cockpit/working-with-dashboards/#to-create-a-dashboard) by adding and arranging [widgets](/cockpit/using-widgets/). [Share dashboards](/cockpit/working-with-dashboards/#dashboard-template) among all devices of the same type.
 |[Working with reports](/cockpit/working-with-reports/)|Handle [reports](/cockpit/working-with-reports/) based on dashboard layouts, create [reports for exporting data](/cockpit/working-with-reports/#to-create-a-report) in CSV or excel format and [schedule the export](/cockpit/managing-exports/#to-schedule-an-export).
 |[Using widgets in dashboards and reports](/cockpit/using-widgets/)|Widgets can display maps, images, graphs, tables and other graphic representations of data. [Add a widget to a dashboard or a report](/cockpit/using-widgets/#to-add-a-widget-to-a-dashboard-or-a-report), [modify](/cockpit/using-widgets/#modifying-widgets) widgets, and [add assets to a new or existing widget](/cockpit/using-widgets/#to-add-an-asset-to-a-new-or-existing-widget).
-|[Widgets collection](/cockpit/widgets-collection/)|Use various types of [widgets](/cockpit/using-widgets/) from the Widgets collection that comes with {{< product-c8y-iot >}} Edge and configure them according your needs.
+|[Widgets collection](/cockpit/widgets-collection/)|Use various types of [widgets](/cockpit/using-widgets/) from the Widgets collection that comes with Edge and configure them according your needs.
 |[Managing exports](/cockpit/managing-exports/)|[Export data](/cockpit/managing-exports/#to-export-data) to either CSV or Excel files. [Add](/cockpit/managing-exports/#to-add-an-export) and [schedule](/cockpit/managing-exports/#to-schedule-an-export) an export to a CSV or XLSX file to any point in time.
 |[Data point library](/cockpit/data-point-library/)|Manage default settings ("profiles") of your devices and apply them automatically using the [Data point library](/cockpit/data-point-library/).
 |[Smart Rules](/cockpit/smart-rules/)|[Create and manage business rules](/cockpit/smart-rules/#to-create-a-smart-rule) to work on incoming data in realtime and to perform actions based on this data.
@@ -56,15 +56,15 @@ The following functionalities are available in {{< product-c8y-iot >}} Edge and 
 
 The [Administration application](/standard-tenant/standard-tenant-introduction/) enables account administrators to manage their users, roles, tenants and applications and lets them configure a number of settings for their account.
 
-The following functionalities are available in {{< product-c8y-iot >}} Edge and described in detail in these sections:
+The following functionalities are available in Edge and described in detail in these sections:
 
 |SECTION|CONTENT|
 |:---|:---|
-|[Configuring {{< product-c8y-iot >}} Edge](/edge/edge-configuration/)|Providing information on Edge specific configuration options.
+|[Configuring Edge](/edge/edge-configuration/)|Providing information on Edge specific configuration options.
 |[Home screen](/standard-tenant/home-screen/)|Providing information on your capacity usage and subscribed applications.
 |[Managing users](/standard-tenant/managing-users/)|How to [add users](/standard-tenant/managing-users/#to-add-a-user), edit, disable or delete them.
 |[Managing permissions](/standard-tenant/managing-permissions/)|How to create and edit [global roles](/standard-tenant/managing-permissions/#global-roles) and [inventory roles](/standard-tenant/managing-permissions/#inventory-roles), how to assign them to users, and how to [grant application access](/standard-tenant/managing-permissions/#application-access).
-|[Managing applications](/standard-tenant/ecosystem/)|How to manage and [configure own applications](/standard-tenant/ecosystem/#managing-applications) in your {{< product-c8y-iot >}}  Edge account.
+|[Managing applications](/standard-tenant/ecosystem/)|How to manage and [configure own applications](/standard-tenant/ecosystem/#managing-applications) in your Edge account.
 |[Audit logs](/standard-tenant/audit-logs/)|How to [view](/standard-tenant/audit-logs/#to-view-audit-logs) and [filter](/standard-tenant/audit-logs/#to-filter-logs) audit logs that show security-relevant operations that have been processed by a user. See the different [audit log types](/standard-tenant/audit-logs/#audit-log-types) for more information.
 |[Alarm mapping](/standard-tenant/alarm-mapping/)|Change the severity and text of alarms to adapt them to your business priorities.
 |[Managing data](/standard-tenant/managing-data/)|How to manage and configure [retention rules](/standard-tenant/managing-data/#retention-rules) for your data and how to [manage stored files](/standard-tenant/managing-data/#file-repository) in the file repository.

@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: DM-2784
-version: 1020.0.0
+version: 1019.19.4
 ---
 Fixed OPC UA Address space device tab search results layout.

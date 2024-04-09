@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed search results overflow on small screens
+title: Search results on OPC UA Address space tab no longer overflow on small screens
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

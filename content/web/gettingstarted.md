@@ -17,7 +17,7 @@ npx @angular/cli@latest new --style=less
 or
 
 ```bash
-npx @angular/cli@v17-lts new --style=less
+npx @angular/cli@v17-lts new --style=less --standalone=false
 ```
 
 Second, navigate to the folder and add the `@c8y/websdk` package to your Angular application:

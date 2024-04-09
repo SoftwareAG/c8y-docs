@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2784
 version: 1019.19.4
 ---
-Fixed OPC UA Address space device tab search results layout.
+Proper search result layout on **Address space** tab of OPC UA devices

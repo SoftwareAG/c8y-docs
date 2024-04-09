@@ -11,7 +11,7 @@ This guide will setup your first application. The first step is to install the `
 
 Use `latest` tag if the current version available in the NPM is 17
 ```bash
-npx @angular/cli@latest new --style=less
+npx @angular/cli@latest new --style=less --standalone=false
 ```
 
 or

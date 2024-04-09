@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3316
 version: 1020.0.0
 ---
-The information that the data grid filter functionality as well as other functionalities are not available in mobile screens has been added to the Codex documentation.
+The information that the data grid filter as well as other functionalities are not available in mobile screens has been added to the Codex documentation.

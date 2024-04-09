@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T09:47:57.877Z
+date: 2024-04-04
 title: "Data broker microservice resumes message forwarding after re-connecting to the Messaging Service"
 product_area: Platform services
 change_type:

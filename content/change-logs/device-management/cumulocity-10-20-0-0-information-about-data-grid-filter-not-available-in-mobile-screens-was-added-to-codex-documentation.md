@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data Grid filter not available in mobile screens info added to Codex documentation.
+title: Info added to Codex documentation on data grid filter not available in mobile screens
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

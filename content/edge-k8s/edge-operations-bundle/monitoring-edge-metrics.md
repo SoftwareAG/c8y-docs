@@ -7,7 +7,7 @@ Edge on Kubernetes allows for monitoring of the Edge Deployment using Prometheus
 
 The measurements and health of the Edge Deployment are exposed over HTTP on the endpoint, 'https://<domain>:8443/metrics', where the domain is the one you specified in the {{< product-c8y-iot >}} Edge CR (or myown.iot.com if you followed the Quickstart installation steps). Some useful metrics are listed in the tables below, with more available at the above endpoint. Prefixes are used to denote metrics from the same component (for example, metrics related to the Logging Operator are all prefixed by 'c8yedge_logging_').
 
-#### Edge Operator Metrics {#operator-metrics}
+### Edge Operator Metrics {#operator-metrics}
 Metrics related to the Edge Operator, prefixed by 'c8yedge_'
 |<div style="width:250px">Metric Name</div>|Description
 |:---|:---
@@ -18,14 +18,14 @@ Metrics related to the Edge Operator, prefixed by 'c8yedge_'
 |c8yedge_deployment|Total number of pods in the deployment size
 |c8yedge_controller_runtime_reconcile_errors_total|Total number of reconciliation errors per controller
 
-#### MongoDB Metrics {#mongodb-metrics}
+### MongoDB Metrics {#mongodb-metrics}
 Metrics related to MongoDB, prefixed by 'c8yedge_db_'
 |<div style="width:250px">Metric Name</div>|Description
 |:---|:---
 |c8yedge_db_go_memstats_alloc_bytes|Number of bytes allocated and still in use.
 |c8yedge_db_monc8yedge_db_godb_up|Whether MongoDB is up.
 
-#### Logging Operator Metrics {#logging-metrics}
+### Logging Operator Metrics {#logging-metrics}
 Metrics related to the Logging Operator, prefixed by 'c8yedge_logging_'
 |<div style="width:250px">Metric Name</div>|Description
 |:---|:---
@@ -37,7 +37,7 @@ Metrics related to the Logging Operator, prefixed by 'c8yedge_logging_'
 |c8yedge_logging_logging_resource_state{kind="Output",name="output",namespace="<example-ns>",status="active"}|c8yedge_logging_logging resource state
 |c8yedge_logging_logging_resource_state{kind="Output",name="output",namespace="<example-ns>",status="inactive"}|c8yedge_logging_logging resource state
 
-#### {{< product-c8y-iot >}} Core Metrics {#core-metrics}
+### {{< product-c8y-iot >}} Core Metrics {#core-metrics}
 Metrics related to {{< product-c8y-iot >}} Core, prefixed by 'c8yedge_core_'
 |<div style="width:250px">Metric Name</div>|Description
 |:---|:---
@@ -52,7 +52,7 @@ Metrics related to {{< product-c8y-iot >}} Core, prefixed by 'c8yedge_core_'
 |c8yedge_core_sag_c8y_jetty_requests_active|Number of requests currently active
 |c8yedge_core_sag_c8y_jetty_async_requests_waiting|Currently waiting async requests
 
-#### Apama Metrics {#apama-metrics}
+### Apama Metrics {#apama-metrics}
 Metrics related to the Apama Microservice, prefixed by 'c8yedge_apama_'
 For more details, see [Monitoring with Prometheus]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DepAndManApaApp_monitoring_with_prometheus.html) in the Apama documentation.
 
@@ -65,56 +65,3 @@ For more details, see [Monitoring with Prometheus]({{< link-apama-webhelp >}}ind
 |c8yedge_apama_logging_resource_state{kind="Flow",name="flow",namespace="<example-ns>",status="inactive"}|c8yedge_apama_logging resource state
 |c8yedge_apama_logging_resource_state{kind="Output",name="output",namespace="<example-ns>",status="active"}|c8yedge_apama_logging resource state
 |c8yedge_apama_logging_resource_state{kind="Output",name="output",namespace="<example-ns>",status="inactive"}|c8yedge_apama_logging resource state
-
-#### Appendix {#appendix}
-
-#### Installing Prometheus {#prometheus-install}
-Prometheus is an open-source project that is used for monitoring application state. See https://prometheus.io/ for detailed information on Prometheus and how to use it. Installation steps can be found at [Installing Prometheus](https://prometheus.io/docs/prometheus/latest/installation/)
-
-#### Installing Grafana {#Grafana-install}
-Grafana is an open-source project which serves as an introductory tool for querying, visualising, alerting, and exploring metrics, logs, and traces from diverse storage locations. See https://grafana.com/docs/grafana/latest/ for detailed information on Grafana and how to use it. Installation steps can be found at [Installing Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/)
-
-#### Configuring Prometheus {#prometheus-config}
-Prometheus can be configured with a custom configuration file. The file should be placed into /etc/prometheus/prometheus.yml. Two example files are provided below, one for when certificate validation is skipped, and one for validating with certificates.
-
-Configuration file when skipping certificate validation:
-```
-global:
-  scrape_interval: 90s
-  scrape_timeout: 90s
-  evaluation_interval: 1m
-
-scrape_configs:
-- job_name: 'c8yedge-metrics'
-  scrape_interval: 120s
-
-  metrics_path: /metrics
-  scheme: https
-  tls_config:
-    insecure_skip_verify: true
-  static_configs:
-    - targets:
-      - <domain>:8443
-```
-
-Configuration file with certificate validation:
-```
-global:
-  scrape_interval: 90s
-  scrape_timeout: 90s
-  evaluation_interval: 1m
-
-scrape_configs:
-- job_name: 'c8yedge-metrics'
-  scrape_interval: 120s
-
-  metrics_path: /metrics
-  scheme: https
-  tls_config:
-    ca_file: /etc/ssl/ca.crt
-    cert_file: /etc/ssl/client.crt
-    key_file: /etc/ssl/client.key
-  static_configs:
-    - targets:
-      - <domain>:8443
-```

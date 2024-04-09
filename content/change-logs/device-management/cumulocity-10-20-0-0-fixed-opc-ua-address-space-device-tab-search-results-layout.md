@@ -7,7 +7,7 @@ change_type:
     label: Fix
 component:
   - value: component--KIsStyzM
-    label: Device Management app
+    label: OPC UA
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y

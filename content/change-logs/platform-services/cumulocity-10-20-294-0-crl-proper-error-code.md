@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed the http response code for missing fields in CRL entries
+title: Correct HTTP response code sent on missing fields in certificate revocation list (CRL) entries
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55154
 version: 10.20.294.0
 ---
-Wrong http response code was sent when there are missing fields in CRL entry. This is fixed now.
+A wrong HTTP response code was sent when fields were missing in the certificate revocation list (CRL) entry. This behavior has been fixed now.

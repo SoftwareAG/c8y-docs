@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data point list widget now redirects to the correct asset's devices
+title: Clicking on an asset name in the "Data point list" widget now redirects to the correct asset page.
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57677
 version: 1019.18.1
 ---
-In the past, when clicking on a data point in the data point list widget, users were sometimes redirected to the wrong asset's devices. This issue has now been resolved. With this fix, clicking on a data point in the data point list widget will always take the user to the correct asset's devices as expected. The change improves the usability and navigation within the application.
+In the past, when clicking on the asset name in the data point list widget, users were sometimes redirected to the wrong url. This issue has now been resolved. With this fix, clicking on an asset name in the data point list widget will now redirect the user to the correct asset page.

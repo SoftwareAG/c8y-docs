@@ -11,7 +11,7 @@ Your remote tenant must subscribe to the [advanced software management](/referen
 {{< /c8y-admon-important >}}
 
 - Applications - You need a {{< product-c8y-iot >}} application, see [Web SDK](/web/overview/) for details. Upload the application zip to the software repository with the software type _c8yedge_application_
-- Microservices - You need a Microservice, see [Microservice SDK](/microservice-sdk/introduction/) for details. Upload the microservice zip to the software repository with the software type _c8yedge_microservice_
+- Microservices - You need a microservice, see [Microservice SDK](/microservice-sdk/introduction/) for details. Upload the microservice zip to the software repository with the software type _c8yedge_microservice_
 - Extensions - You need either a widget or plugin, see [Micro frontends](/web/microfrontends/) for details. Upload the extension zip to the software repository with the software type _c8yedge_extension_
 
 {{< c8y-admon-info >}}

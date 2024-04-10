@@ -5,12 +5,13 @@ set -e  # Exit script on failure
 # Function Definitions
 function stop_services_old_VM() {
     #stop services in old VM
-    sshpass -p $edge_10_17_OS_ROOT_PASSWORD ssh root@$edge_10_17_VM_IP "monit unmonitor all; systemctl stop opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod"
+    sshpass -p $edge_10_17_OS_ROOT_PASSWORD ssh root@$edge_10_17_VM_IP "monit unmonitor all; systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod"
 }
 
 function perform_data_transfer() { 
     # Stop the services
-    systemctl stop installation-service
+    monit unmonitor all
+    systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod
 
     # Perform all scp operations 
     echo "Copying data and configuration from 10.17 appliance."

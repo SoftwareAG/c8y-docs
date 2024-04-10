@@ -30,7 +30,7 @@ Perform the following steps as a `root` user on your Edge 10.17 appliance.
 
    ```shell
    monit unmonitor all
-   systemctl stop opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod
+   systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod
    ```
 
 2. Back up the MongoDB data, Edge, Cumulocity Agent, and OPC UA configurations using the following command to create the `/opt/edge-1017-backup.tar` file:

@@ -1,15 +1,15 @@
 ---
-weight: 30
+weight: 10
 title: Home screen
 layout: redirect
 ---
 
 You access the Streaming Analytics application using the [application switcher](/get-familiar-with-the-ui/gui-features/#application-switcher).
 
-![Streaming Analytics home screen](/images/streaming-analytics/overview-streaming-analytics/streaming-analytics-home-screen.png)
+![Streaming Analytics home screen](/images/streaming-analytics/introduction-analytics/streaming-analytics-home-screen.png)
 
 The home screen of the Streaming Analytics application lets you navigate to the different pages of the application.
-These are [Analytics Builder](#analytics-builder) and [EPL Apps](/streaming-analytics/overview-analytics/#apama-epl-apps).
+These are [Analytics Builder](#analytics-builder) and [EPL Apps](#apama-epl-apps).
 You can access these pages using the corresponding **Open** button on the home screen or by using the navigator on the left.
 
 If you need more space for a page, you can hide the navigator. Click the small arrow at the very left of the top bar to toggle the display of the navigator.

@@ -57,4 +57,4 @@ Using the Streaming Analytics application, you can add your own logic to your Io
 
 See also [Analytics Builder](/glossary/a/#analytics-builder) and [EPL Apps](/glossary/e/#epl-apps).
 
-For details see [Analytics > Streaming Analytics](/streaming-analytics/overview-analytics/).
+For details see [Analytics > Streaming Analytics](/streaming-analytics/introduction-analytics/).

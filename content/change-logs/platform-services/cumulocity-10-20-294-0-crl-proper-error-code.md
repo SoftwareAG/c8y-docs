@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Correct HTTP response code sent on missing fields in certificate revocation list (CRL) entries
+title: Correct HTTP response code sent on missing fields in CRL (Certificate Revocation List) entries
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

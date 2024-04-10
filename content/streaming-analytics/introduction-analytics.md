@@ -1,7 +1,11 @@
 ---
+title: Introduction
+layout: bundle
+section:
+  - data_analytics
 weight: 10
-title: Streaming analytics and Cumulocity IoT
-layout: redirect
+aliases:
+  - /streaming-analytics/overview-analytics/
 ---
 Devices and sensors can be connected to {{< product-c8y-iot >}}. See [Interfacing devices](/concepts/interfacing-devices/) and [Device integration using MQTT](/device-integration/mqtt/).
 

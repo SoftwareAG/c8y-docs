@@ -1,5 +1,5 @@
 ---
-weight: 50
+weight: 30
 title: EPL Apps
 layout: redirect
 ---

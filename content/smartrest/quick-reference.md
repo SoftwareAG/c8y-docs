@@ -6,8 +6,6 @@ section:
 weight: 70
 ---
 
-### Quick reference {#quick-reference}
-
 #### Connection {#connection}
 
 * <kbd>CONNECT d:1234:myDevice_10 acme/device_1234</kbd> \

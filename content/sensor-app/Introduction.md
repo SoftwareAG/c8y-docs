@@ -1,9 +1,11 @@
 ---
 weight: 10
-title: Overview
+title: Introduction
 layout: bundle
 section:
   - getting_started
+aliases:
+  - /sensor-app/overview/
 ---
 
 The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones. It is the successor of the previous Cloud Sensor App.

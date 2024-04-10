@@ -7,7 +7,7 @@ layout: redirect
 You can remotely manage the applications, microservices and extensions installed on Edge using the {{< product-c8y-iot >}} software management feature. This process requires you to first upload an application, microservice or extension to the software repository before installing them. For more information on uploading items to the software repository, see [To add a new software or software version](/users-guide/device-management/#to-add-a-new-software-or-software-version). For more information about the software management feature in general, see [Managing device software](/users-guide/device-management/#managing-device-software).
 
 {{< c8y-admon-important >}}
-Your remote tenant must subscribe to the [advanced software management](/reference/device-management-library/#advanced-software-management) microservice to manage software remotely.
+The [advanced software management](/reference/device-management-library/#advanced-software-management) microservice must be deployed to manage software remotely. The microservice name is _advanced-software-mgmt_. It is packaged as a standard Cumulocity IoT microservice ZIP file. The ZIP file must be deployed as a microservice to {{< product-c8y-iot >}} using the UI or any of the other deployment options provided by the platform.
 {{< /c8y-admon-important >}}
 
 - Applications - You need a {{< product-c8y-iot >}} application, see [Web SDK](/web/overview/) for details. Upload the application zip to the software repository with the software type _c8yedge_application_

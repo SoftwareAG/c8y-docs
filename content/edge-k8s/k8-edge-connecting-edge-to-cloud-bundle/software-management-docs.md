@@ -20,7 +20,7 @@ When using the remote software management feature, the manifest for applications
 
 ### Installing software
 1. Navigate to your Edge device's **Software** tab. The **Software** tab lists your installed applications, microservices and extensions. Click **Install software**. The **Install software** dialog lists the software from the software repository which matches Edge's supported types of _c8yedge_application_, _c8yedge_microservice_ and _c8yedge_extension_.
-2. Select one or multiple software items
+2. Select one or multiple software items.
 3. Click **Install**
 4. Under **Software changes** on the right, review your planned changes and confirm the software update operation by clicking **Apply changes**
 

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: adjust UI info gauge widget labels (#6018) [GRAFT][release/cd] (#6049)
+title: Labels in the "Info gauge" have been improved.
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57703
 version: 1019.19.7
 ---
-adjust UI info gauge widget labels (#6018) [GRAFT][release/cd] (#6049)
+Labels in the Info gauge widget have been improved. Previously, labels with lengthy names encountered display issues. Now, adjustments have been made to ensure clearer and more accurate label representation.

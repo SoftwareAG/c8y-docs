@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55154
 version: 10.20.294.0
 ---
-A wrong HTTP response code was sent when fields were missing in the certificate revocation list (CRL) entry. This behavior has been fixed now.
+A wrong HTTP response code was sent when fields were missing in the CRL (Certificate Revocation List) entry. This behavior has been fixed now.

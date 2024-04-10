@@ -80,9 +80,9 @@ Before copying the backup, ensure that there is sufficient disk space available 
    reboot
    ```
 
-5. After the Edge appliance restarts, verify its health by following the instructions in the [Health check](/edge/operating-edge/#health-check) section. Ensure that the `monit summary` command returns status *OK* for all services and processes as described in [Using Monit](/edge/operating-edge/#using-monit) section.
+5. Once the Edge appliance restarts, verify its health by following the instructions in the [Health check](/edge/operating-edge/#health-check) section. Ensure that the `monit summary` command returns status *OK* for all services and processes as described in [Using Monit](/edge/operating-edge/#using-monit) section.
 
-6. Follow the steps outlined in [Updating Edge](/edge/update/) to finalize the data migration process.
+6. Follow the steps outlined in [Updating Edge](/edge/update/#updating-edge-gui) to finalize the data migration process.
 
 ## Configuring Edge 10.18 after data migration {#configuring-edge-1018-after-data-migration}
 After migrating data to Edge 10.18, proceed to configure the appliance to the same level as Edge 10.17.
@@ -99,28 +99,26 @@ For detailed guidance on configuring the Edge 10.18 appliance, consult [Configur
 
 
 ## Sample script to automate the data migration {#sample-script-to-automate-data-migration}
+{{< company-sag >}} provides the `edge-1017-to-1018-data-migration.sh` script as a reference for automating the data migration process. You can customize this script according to your requirements. Click [here](/files/edge/edge-1017-to-1018-data-migration.sh) to download the script.
 
-{{< company-sag >}} provides the `edge-1017-to-1018-data-migration.sh` script for your reference. You may customize this script for your requirements and automate the data migration process. Click [here](/files/edge/edge-1017-to-1018-data-migration.sh) to download the script.
-
-{{< c8y-admon-important >}}{{< company-sag >}} does not officially support this migration script. This is provided only for your reference.{{< /c8y-admon-important >}}
+{{< c8y-admon-important >}}{{< company-sag >}} does not officially support this migration script. It is provided for reference purposes only.{{< /c8y-admon-important >}}
 
 ### Using the script {#using-the-script}
 
-1. Install Edge 10.18 appliance by following the instructions in [Installing Edge 10.18](/edge/update/#installing-edge-1018)
+1. Install the Edge 10.18 appliance by following the instructions in [Installing Edge 10.18](/edge/update/#installing-edge-1018)
 
-2. Download and copy the [edge-1017-to-1018-data-migration.sh](/files/edge/edge-1017-to-1018-data-migration.sh) script to your Edge 10.18 appliance.
+2. Download the [edge-1017-to-1018-data-migration.sh](/files/edge/edge-1017-to-1018-data-migration.sh) script and copy it to your Edge 10.18 appliance.
 
-3. Run the `edge-1017-to-1018-data-migration.sh` as a `root` user. Provide the IP Address and the `root` user password for the Edge 10.17 appliance as the script prompts for them. Note that, for this script to work, you need to allow the `root` user to remote login to Edge 10.17 appliance.
+3. Execute the `edge-1017-to-1018-data-migration.sh` script as a root user. Provide the IP address and `root` user password for the Edge 10.17 appliance when prompted. Note that you need to allow remote login for the `root` user on the Edge 10.17 appliance for the script to work properly.
 
-4. Reboot the Edge appliance with the following command:
+4. After executing the script, reboot the Edge appliance using the following command:
 
    ```shell
    reboot
    ```
 
-5. After the Edge appliance restarts, verify its health by following the instructions in the [Health check](/edge/operating-edge/#health-check) section. Ensure that the `monit summary` command returns status *OK* for all services and processes as described in [Using Monit](/edge/operating-edge/#using-monit) section.
+5. Once the Edge appliance restarts, verify its health by following the instructions in the [Health check](/edge/operating-edge/#health-check) section. Ensure that the `monit summary` command returns status *OK* for all services and processes as described in [Using Monit](/edge/operating-edge/#using-monit) section.
 
-6. Follow the steps outlined in [Updating Edge](/edge/update/) to finalize the data migration process.
+6. Follow the steps outlined in [Updating Edge](/edge/update/#updating-edge-gui) to finalize the data migration process.
 
-7. Follow the steps outlined in [Configuring Edge 10.18 after data migration](/edge/update/#configuring-edge-1018-after-data-migration) to configure the new Edge appliance.
-
+7. Refer to [Configuring Edge 10.18 after data migration](/edge/update/#configuring-edge-1018-after-data-migration) for instructions on configuring the new Edge appliance.

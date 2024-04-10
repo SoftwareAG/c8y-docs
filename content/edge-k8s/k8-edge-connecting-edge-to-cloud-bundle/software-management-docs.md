@@ -1,0 +1,40 @@
+---
+weight: 20
+title: Managing Software
+layout: redirect
+---
+
+### Managing software remotely
+
+You can remotely manage the applications, microservices and extensions installed on Edge using the {{< product-c8y-iot >}} software management feature. This process requires you to first upload an application, microservice or extension to the software repository before installing them. For more information on uploading items to the software repository, see [To add a new software or software version](/users-guide/device-management/#to-add-a-new-software-or-software-version). For more information about the software management feature in general, see [Managing device software](/users-guide/device-management/#managing-device-software).
+
+- Applications - You need a {{< product-c8y-iot >}} application, see [Web SDK](/web/overview/) for details. Upload the application zip to the software repository with the software type _c8yedge_application_
+- Microservices - You need a Microservice, see [Microservice SDK](https://cumulocity.com/docs/microservice-sdk/microservice-sdk-introduction/) for details. Upload the microservice zip to the software repository with the software type _c8yedge_microservice_
+- Extensions - You need either a widget or plugin, see [Micro frontends](/web/microfrontends/) for details. Upload the extension zip to the software repository with the software type _c8yedge_extension_
+
+{{< c8y-admon-info >}}
+When using the remote software management feature, the manifest for applications, microservices and extensions must contain a _name_, _key_, _version_ and _contextPath_. These values are used when installing the software rather than using the name and version from the software repository. The name and version from the manifest are also listed on the devices software tab when installed.
+{{< /c8y-admon-info >}}
+
+{{< c8y-admon-important >}}
+Your remote tenant must have [advanced software management](/reference/device-management-library/#software) !! would prefer better link !!
+{{< /c8y-admon-important >}}
+
+### Install software
+
+1. Navigate to your Edge device's software tab. The software tab lists your installed applications, microservices and extensions. Click **Install software**. The **Install software** dialog lists the software from the software repository which matches Edge's supported types of _c8yedge_application_, _c8yedge_microservice_ and _c8yedge_extension_
+2. Select one or multiple software items
+3. Click **Install**
+4. Under **Software changes** on the right, review your planned changes and confirm the software update operation by clicking **Apply changes**
+
+The install operation will be created and executed on the device. The software installation is completed as soon as the device has installing the software.
+
+{{< c8y-admon-info >}}
+Applications and microservices will be installed and subscribed to on your 'edge' tenant but extensions will only be installed.
+{{< /c8y-admon-info >}}
+
+### Update software
+To update software on your Edge device, hover over the software item which you want to update and click **Update**. Select a version from the list and click **Update** again. The software will be updated with the selected version.
+
+### Remove software
+To remove software on your Edge device, hover over the software item which you want to delete and click the delete icon.

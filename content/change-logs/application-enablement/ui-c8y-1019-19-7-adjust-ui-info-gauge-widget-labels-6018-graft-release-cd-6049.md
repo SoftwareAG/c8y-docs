@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57703
 version: 1019.19.7
 ---
-Labels in the Info gauge widget have been improved. Previously, labels with lengthy names encountered display issues. Now, adjustments have been made to ensure clearer and more accurate label representation.
+Labels in the "Info gauge" widget have been improved. Previously, labels with lengthy names encountered display issues. Now, adjustments have been made to ensure clearer and more accurate label representation.

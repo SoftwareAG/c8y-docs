@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Labels in the "Info gauge" have been improved.
+title: Label display in the "Info gauge" widget has been improved
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

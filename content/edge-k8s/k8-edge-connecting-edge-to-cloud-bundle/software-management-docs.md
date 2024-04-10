@@ -1,15 +1,13 @@
 ---
 weight: 20
-title: Managing Software
+title: Managing Software Remotely
 layout: redirect
 ---
-
-### Managing software remotely
 
 You can remotely manage the applications, microservices and extensions installed on Edge using the {{< product-c8y-iot >}} software management feature. This process requires you to first upload an application, microservice or extension to the software repository before installing them. For more information on uploading items to the software repository, see [To add a new software or software version](/users-guide/device-management/#to-add-a-new-software-or-software-version). For more information about the software management feature in general, see [Managing device software](/users-guide/device-management/#managing-device-software).
 
 {{< c8y-admon-important >}}
-Your remote tenant must have [advanced software management](/reference/device-management-library/#software) enabled to manage software remotely. !! would prefer better link !!
+Your remote tenant must subscribe to the [advanced software management](/reference/device-management-library/#advanced-software-management) microservice to manage software remotely.
 {{< /c8y-admon-important >}}
 
 - Applications - You need a {{< product-c8y-iot >}} application, see [Web SDK](/web/overview/) for details. Upload the application zip to the software repository with the software type _c8yedge_application_

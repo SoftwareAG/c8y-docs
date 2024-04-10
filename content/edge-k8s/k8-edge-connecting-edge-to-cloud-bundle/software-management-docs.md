@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Managing Software Remotely
+title: Managing software remotely
 layout: redirect
 ---
 

@@ -1,9 +1,11 @@
 ---
 weight: 10
-title: Overview
+title: Introduction
 layout: bundle
 section:
   - app_enablement
+aliases:
+  - /web/overview/
 ---
 
 
@@ -92,7 +94,7 @@ Since version 1019.0.0 the versioning schema of the Web SDK isn't aligned anymor
 
 {{< c8y-admon-info >}}
 As npm and semantic versioning only support three parts in the version number, the WebSDK will not use the commonly seen four parts versioning. For example a version sometimes refered to 10.19.0.0, will in the WebSDK be displayed as 1019.0.0. For simplicity this guide will only show three parts versioning numbers.
-{{< /c8y-admon-info >}} 
+{{< /c8y-admon-info >}}
 
 We recommend to use the `^` or `~` in the `package.json` for all `@c8y` liberaries. When you are using a yealy long term support release, it is best to use the npm tag in your `package.json`. The long term support versions always end with `-lts`.
 

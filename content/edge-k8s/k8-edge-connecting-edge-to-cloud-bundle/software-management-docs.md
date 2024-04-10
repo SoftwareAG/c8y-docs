@@ -15,7 +15,7 @@ Your remote tenant must subscribe to the [advanced software management](/referen
 - Extensions - You need either a widget or plugin, see [Micro frontends](/web/microfrontends/) for details. Upload the extension zip to the software repository with the software type _c8yedge_extension_
 
 {{< c8y-admon-info >}}
-When using the remote software management feature, the manifest for applications, microservices and extensions must contain a _name_, _key_, _version_ and _contextPath_. These values are used when installing the software rather than using the name and version from the software repository. The name and version from the manifest are also listed on the devices software tab when installed.
+When using the remote software management feature, the manifest for applications, microservices and extensions must contain a _name_, _key_, _version_ and _contextPath_. These values are used when installing the software rather than using the name and version from the software repository. The name and version from the manifest are also listed on the devices **Software** tab when installed.
 {{< /c8y-admon-info >}}
 
 ### Installing software

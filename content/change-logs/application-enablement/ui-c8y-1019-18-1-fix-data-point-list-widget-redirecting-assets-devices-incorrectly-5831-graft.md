@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset links in the "Data point list" widget now redirect to the correct URL
+title: Asset names in the "Data point list" widget now redirect to the correct URL
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

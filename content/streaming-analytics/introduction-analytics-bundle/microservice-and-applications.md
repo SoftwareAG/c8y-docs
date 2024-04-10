@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 50
 title: Microservice runtime and applications
 layout: redirect
 ---

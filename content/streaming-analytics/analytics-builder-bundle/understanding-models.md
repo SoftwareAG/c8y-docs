@@ -139,7 +139,7 @@ You write the custom blocks in Apama's Event Processing Language \(EPL\). Once y
 analytics_builder build extension --input path --cumulocity_url $C8Y_URL --username $C8Y_USERNAME --password $C8Y_PASSWORD --name customBlocks --restart
 ```
 
-To upload an extension, the user specified in the `--username` argument must have CREATE permission for "Inventory" in {{< product-c8y-iot >}}, in addition to the permissions listed in [Prerequisites](/streaming-analytics/overview-analytics/#prerequisites).
+To upload an extension, the user specified in the `--username` argument must have CREATE permission for "Inventory" in {{< product-c8y-iot >}}, in addition to the permissions listed in [Prerequisites](/streaming-analytics/introduction-analytics/#prerequisites).
 
 The Apama-ctrl microservice is restarted after running the above command. The user must have the ADMIN permission for "CEP management" to request a restart.
 

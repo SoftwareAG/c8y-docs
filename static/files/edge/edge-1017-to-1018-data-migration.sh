@@ -14,19 +14,19 @@ function perform_data_transfer() {
 
     # Perform all scp operations 
     echo "Copying data and configuration from 10.17 appliance."
-    
-	echo "Copying MongoDB data."
+
+    echo "Copying MongoDB data."
     sshpass -p $edge_10_17_OS_ROOT_PASSWORD scp -r root@$edge_10_17_VM_IP:/opt/mongodb /opt
-	
-	echo "Copying cumulocity-agent configurations."
+
+    echo "Copying cumulocity-agent configurations."
     sshpass -p $edge_10_17_OS_ROOT_PASSWORD scp -r root@$edge_10_17_VM_IP:/var/lib/cumulocity-agent /var/lib
     sshpass -p $edge_10_17_OS_ROOT_PASSWORD scp -r root@$edge_10_17_VM_IP:/usr/edge /usr
-    
-	echo "Copying OPCUA service and agent configurations."
+
+    echo "Copying OPCUA service and agent configurations."
     sshpass -p $edge_10_17_OS_ROOT_PASSWORD scp -r root@$edge_10_17_VM_IP:/opt/opcua /opt
 
     # Update ownership and configurations
-	echo "Updating folder/file ownerships."
+    echo "Updating folder/file ownerships."
     chown -R mongod:mongod /opt/mongodb
     chown -R root:root /opt/opcua
     chown -R root:root /var/lib/cumulocity-agent

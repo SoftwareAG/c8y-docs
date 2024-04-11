@@ -48,7 +48,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 <tbody>
 
 <tr>
-<td style="text-align:left"><a href="/streaming-analytics/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-*</a></td>
+<td style="text-align:left"><a href="/streaming-analytics/introduction-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-*</a></td>
 <td style="text-align:left">Streaming Analytics microservices, including runtime for Analytics Builder, EPL apps and smart rules. Capabilities and resources vary depending on the microservice variant used</td>
 <td style="text-align:left">apama-ctrl-*</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>

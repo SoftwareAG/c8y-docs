@@ -14,7 +14,7 @@ The device protocol mapping helps the agent to know how to deal with incoming da
 
 	![Device protocol details](/images/device-protocols/snmp/snmp-device-protocol-detail.png)
 
-3. Click the menu icon at the right of the component and click **Edit** to configure the mapping for the component.
+3. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the component and click **Edit** to configure the mapping for the component.
 4. Under **Functionalities**, switch the toggle button to turn on the mapping for the required {{< product-c8y-iot >}} model (**Send measurement**, **Raise alarm** and/or **Send event**). Fill in the values for the respective fields and click **Save**.
 
 	![Edit components details](/images/device-protocols/snmp/snmp-device-protocol-mapping.png)

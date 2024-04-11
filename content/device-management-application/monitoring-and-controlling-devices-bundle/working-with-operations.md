@@ -90,7 +90,7 @@ To cancel a particular pending single operation, click the menu icon <i class="d
 
 ### To create a smart rule from a single operation {#to-create-a-smart-rule-from-a-single-operation}
 
-Click the menu icon at the right of the single operation that you want to create a smart rule for, and select **Create smart rule**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the single operation that you want to create a smart rule for, and select **Create smart rule**.
 
 See [To create a smart rule](/cockpit/smart-rules/#to-create-a-smart-rule) for further steps.
 
@@ -186,14 +186,14 @@ Follow these steps:
 You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a **Control** tab of a particular device.
 Follow these steps:
 
-1. Click the menu icon at the right of the single operation that you want to schedule as a bulk operation and then click **Schedule as bulk operation**.
+1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the single operation that you want to schedule as a bulk operation and then click **Schedule as bulk operation**.
 2. The resulting wizard is similar to the new bulk operation wizard described in [To add a bulk operation using the wizard](#to-add-a-bulk-operation-using-the-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#to-add-a-bulk-operation-using-the-wizard) and follow it.
 
 ### To edit the schedule of bulk operations {#to-edit-the-schedule-of-bulk-operations}
 
 You may only edit the schedule of bulk operations with status = SCHEDULED.
 
-1. Click the menu icon to the right of the bulk operation that you want to edit, and then click **Edit schedule**.
+1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> to the right of the bulk operation that you want to edit, and then click **Edit schedule**.
 3. In the resulting dialog box you may change the **Start date** and **Delay** values.
 5. Click **Reschedule** to apply your changes.
 
@@ -205,7 +205,7 @@ You may only cancel bulk operations with status = SCHEDULED or EXECUTING.
 If it is executing, you may only cancel the operation until all of its single operations are created.
 This way, you can cancel the creation of the remaining single operations.
 
-Click the menu icon to the right of the bulk operation that you want to cancel, then click **Cancel bulk operation**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> to the right of the bulk operation that you want to cancel, then click **Cancel bulk operation**.
 
 ### To retry failed operations {#to-retry-failed-operations}
 
@@ -215,12 +215,12 @@ To do so, expand the desired bulk operation, then click **Retry failed operation
 To retry a single operation, hover over the operation and click **Retry operation**.
 This will create a new single operation.
 
-For a bulk operation that completed with failures, you may also click the menu icon to the right of the operation, then click **Retry failed operations**.
+For a bulk operation that completed with failures, you may also click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> to the right of the operation, then click **Retry failed operations**.
 
 ### To manually set failed bulk operations to successful {#to-manually-set-failed-bulk-operations-to-successful}
 
 You may manually set a failed bulk operation to the status SUCCESSFUL.
 
-To do so, click the menu icon to the right of the bulk operation, then click **Set operation to successful**.
+To do so, click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> to the right of the bulk operation, then click **Set operation to successful**.
 
 This may be useful if the operation is generally a success, but contains operation failures on devices that are not too important. These failures would otherwise still leave the bulk operation in status FAILED.

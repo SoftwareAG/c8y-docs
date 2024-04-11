@@ -6,7 +6,7 @@ layout: redirect
 
 The device list offers a filtering functionality to filter devices in the list for specific criteria.
 
-Filtering is available on every column. Click the filter icon next to the name of the column you want to set a filter for.
+Filtering is available on every column. Click the filter icon <i class="dlt-c8y-icon-filter icon-20"></i> next to the name of the column you want to set a filter for.
 
 Specify your filter options in the dropdown list.
 
@@ -23,7 +23,7 @@ Finally, click **Apply** to carry out the filtering.
 
 The devices list will now only display devices matching the filtering options.
 
-Sorting is available on every column. Click the sort icon in the respective column header once to sort the entries in ascending order and twice to sort the entries in descending order. Click the sort icon once more to remove sorting for this column.
+Sorting is available on every column. Click the sort icon <i class="dlt-c8y-icon-sort-arrow icon-20"></i> in the respective column header once to sort the entries in ascending order and twice to sort the entries in descending order. Click the sort icon <i class="dlt-c8y-icon-sort-arrow icon-20"></i> once more to remove sorting for this column.
 
 Click **Clear filters** in the table header if you want to clear all filters and view all devices.
 

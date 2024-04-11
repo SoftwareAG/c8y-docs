@@ -45,7 +45,7 @@ Metadata:
   Generation:          1
 
 Spec:
-  Version:             1017.0.0
+  Version:             1018.0.0
   License Key:         ***************
   Company:             IoT Company
   Domain:              myown.iot.com
@@ -57,7 +57,7 @@ Status:
   Deployed Generation:  1
   Last Deployed Time:  2023-08-11T00:15:00Z
   State:               Ready
-  Version:             1017.0.0-4638
+  Version:             1018.0.0-XXXX
 
   Help Commands:
     Download Logs:   

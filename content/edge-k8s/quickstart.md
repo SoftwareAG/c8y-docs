@@ -33,7 +33,7 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
    curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh
    ```
 
-5. Run the command below to apply Edge CR ([c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml)) for installing Edge version **1017.0.0** named **c8yedge** with the domain **myown.iot.com**.
+5. Run the command below to apply Edge CR ([c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml)) for installing Edge version **1018.0.0** named **c8yedge** with the domain **myown.iot.com**.
 
    ```shell
    kubectl apply -f {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-sample.yaml

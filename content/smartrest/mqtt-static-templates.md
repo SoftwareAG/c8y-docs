@@ -52,6 +52,7 @@ If a parameter is in square brackets, it is optional.
 + <a href="#141">141,appendAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
 + <a href="#142">142,deleteAdvancedSWname1,AdvancedSWVersion1,sw2,ver2,...</a>
 + <a href="#143">143,supportedSoftwareType1,supportedSoftwareType2,...</a>
++ <a href="#150">150,cloudRemoteAccessProtocol1,cloudRemoteAccessProtocol2,... </a>
 
 <strong><a href="#measurement-templates">Measurement templates</a></strong>
 + <a href="#200">200,fragment,series,value[,unit,time]</a>
@@ -551,7 +552,7 @@ Removes advanced software items from the list that exists for the device.
 
 ##### Set supported software types (143) {#143}
 
-Set the supported software types of the device. Ignores empty elements. An empty list removes the `c8y_SupportedSoftwareTypes` fragment entirely.
+Sets the supported software types of the device. Ignores empty elements. An empty list removes the `c8y_SupportedSoftwareTypes` fragment entirely.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
@@ -561,6 +562,20 @@ Set the supported software types of the device. Ignores empty elements. An empty
 
 ```text
 143,yum,docker
+```
+
+##### Set supported software types (150) {#150}
+
+Sets the list of cloud remote access protocols supported by the device. Possible values are `SSH`,`TELNET`,`VNC` and `PASSTHROUGH`. Empty elements are ignored. An empty list removes the `c8y_RemoteAccessSupportedProtocols` fragment entirely.
+
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1...|List of supported protocols|NO|String|
+
+**Examples**
+
+```text
+150,ssh,vnc
 ```
 
 #### Measurement templates (2xx) {#measurement-templates}

@@ -34,4 +34,4 @@ Applications and microservices will be installed and subscribed to on your 'edge
 To update software on your Edge device, hover over the software item which you want to update and click **Update**. Select a version from the list and click **Update** again. The software will be updated with the selected version.
 
 ### Removing software
-To remove software on your Edge device, hover over the software item which you want to delete and click the delete icon.
+To remove software on your Edge device, hover over the software item which you want to remove and click the remove icon.

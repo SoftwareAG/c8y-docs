@@ -24,7 +24,7 @@ When using the remote software management feature, the manifest for applications
 3. Click **Install**.
 4. Under **Software changes** on the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.
 
-The install operation will be created and executed on the device. The software installation is completed as soon as the device has installing the software.
+The install operation will be created and executed on the device. The software installation is completed when the device has installed the software.
 
 {{< c8y-admon-info >}}
 Applications and microservices will be installed and subscribed to on your 'edge' tenant but extensions will only be installed.

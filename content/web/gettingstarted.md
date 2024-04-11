@@ -30,8 +30,8 @@ The CLI will prompt you in two steps for the version and the base template. Afte
 
 ```bash
 ? Which base version do you want to scaffold from? (Use arrow keys)
-> 1019.0.X 
-> 1019.X.0 
+> 1019.0.X
+> 1019.X.0
 > other
 ```
 
@@ -75,7 +75,7 @@ You must provide your tenant name or the tenant ID on login (as the application 
 {{< /c8y-admon-info >}}  
 
 You are now setup. Any changes you make to your local files will lead to recompiling. After a
-refresh you will see your changes. 
+refresh you will see your changes.
 
 ### Create your first custom component
 
@@ -153,7 +153,7 @@ example `C8Y_USER` for the `-U` flag.
 ### Next steps
 
 We recommend you to familiarize yourself with our
-[package setup](/web/overview/#libraries) and read about which library is used in which case.
+[package setup](/web/introduction/#libraries) and read about which library is used in which case.
 Afterwards, we recommend you to read our guides which will explain the following topics in detail:
 
 - [How to extend the platform](#/getting-started/guides/extension-points)

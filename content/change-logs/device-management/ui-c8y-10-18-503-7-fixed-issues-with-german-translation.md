@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2023-12-20
 title: Fixed issues with German translation
 product_area: Device management & connectivity
 change_type:

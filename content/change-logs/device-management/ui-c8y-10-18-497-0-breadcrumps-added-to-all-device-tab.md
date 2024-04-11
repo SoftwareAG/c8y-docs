@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2023-12-06
 title: Breadcrumps added to all device details tabs
 product_area: Device management & connectivity
 change_type:

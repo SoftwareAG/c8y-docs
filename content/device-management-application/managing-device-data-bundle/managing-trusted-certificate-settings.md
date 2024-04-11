@@ -3,7 +3,7 @@ weight: 41
 title: Managing trusted certificate settings
 layout: redirect
 helpcontent:
-  - label: trusted-certificates-settings
+  - label: managing-trusted-certificate-settings
     title: Trusted certificates settings
     content: "Administrators can configure the Certificate Revocation List (CRL) settings (online or offline). If the revoked certificate information is maintained by the issuing Certificate Authority (CA), the online check option can be selected. If the CA does not maintain the CRL information, the offline setup can be selected. In offline setup, the revoked certificate serial number can either be added manually or can be uploaded in bulk using the file template attached."
 ---

@@ -1,6 +1,6 @@
 ---
 date: 2023-12-20
-title: Added information on restrictions to auto-registration
+title: Added information on restrictions to auto-registration of LWM2M devices
 product_area: Device management & connectivity
 change_type:
   - value: change-2c7RdTdXo4

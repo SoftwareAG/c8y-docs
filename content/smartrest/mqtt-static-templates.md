@@ -6,8 +6,6 @@ section:
 weight: 60
 ---
 
-### Overview {#overview}
-
 To ease device integration {{< product-c8y-iot >}} already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
 
 To use the templates listed below, you must publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [Processing mode](/smartrest/smartrest-one/#processing-mode) for further information.
@@ -1269,9 +1267,9 @@ Update the software installed on the device.
 | 1...     | List of 5 values per software | (n/a)  |
 | 1.1      | name                          | String |
 | 1.2      | version                       | String |
-| 1.2      | type                          | String |
-| 1.3      | URL                           | String |
-| 1.4      | action to be performed        | String |
+| 1.3      | type                          | String |
+| 1.4      | URL                           | String |
+| 1.5      | action to be performed        | String |
 
 **Example**
 

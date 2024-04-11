@@ -10,7 +10,7 @@ section:
 
 The data broker functionality is an optional feature in {{< enterprise-tenant >}}s which lets you share data selectively with other tenants.
 
-For details see [Platform administration > Using the data broker](/data-broker/data-broker-application/#using-the data-broker).
+For details see [Platform administration > Using the data broker](/data-broker/data-broker-application/#using-data-broker).
 
 
 ### Data explorer {#data-explorer}

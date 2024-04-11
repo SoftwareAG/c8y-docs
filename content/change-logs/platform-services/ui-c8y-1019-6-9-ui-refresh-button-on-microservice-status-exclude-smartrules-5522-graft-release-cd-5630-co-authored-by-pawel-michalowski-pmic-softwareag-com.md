@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-14
 title: Refresh button on microservice status tab includes smart rules list
 product_area: Platform services
 change_type:

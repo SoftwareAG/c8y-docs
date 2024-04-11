@@ -20,7 +20,7 @@ The <a href="/concepts/introduction/">Technical concepts</a> section serves as a
 
 Check out the following sections if you are looking for step-by-step instructions to specific topics from the developer perspective:
 
-  - [Integration tutorials](/device-integration/thin-edge) - Integrate devices using thin-edge.io.
+  - [Device integration using thin-edge.io](/device-integration/device-integration-thin-edge/) - Integrate devices using thin-edge.io.
   - [Device integration using MQTT](/device-integration/mqtt) - Integrate devices using the MQTT protocol.
   - [Device integration using REST](/device-integration/rest) - Integrate devices using REST.
 <br><br>

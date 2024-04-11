@@ -77,6 +77,10 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 <td>Requests a device to send a log file and view the log file in the log viewer</td>
 </tr>
 <tr>
+<td><a href="#measurements">c8y_MeasurementRequestOperation</a></td>
+<td>Displays a "Get measurements" action in the device action menu that sends an operation for retrieving measurements from a device.</td>
+</tr>
+<tr>
 <td><a href="#connectivity">c8y_Mobile</a></td>
 <td>Holds basic connectivity-related information, such as the equipment identifier of the modem (IMEI) in the device or the SIM card (for example ICCID)</td>
 </tr>

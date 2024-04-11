@@ -4,13 +4,21 @@
 # Either @username and email.address@domain.com can be used
 
 # These owners will be the default owners for everything in the repo.
-* @BeateRixen marlene.windel@softwareag.com
+* @BeateRixen @MWindel
 
-/content/device-management-application/ @Oezge-Akin
+/content/change-logs/application-enablement/ @rahultsag @janhommes @BeateRixen @MWindel
+/content/change-logs/device-management/ @Oezge-Akin @aaronraab @l2p- @BeateRixen @MWindel
+/content/change-logs/platform-services/ @airdroplet @martin-sag @mgrumann @kalavathig1 @sarangovindarajan @sagscmi @pink-mongoose @BeateRixen @MWindel
+/content/change-logs/application-enablement/dtm* @rahultsag @pavanshivajirao @lra-sag @BeateRixen @MWindel
+/content/change-logs/analytics/apama-in-c8y* @kailol-sag @Rob-J-SAG @BeateRixen @MWindel
+/content/change-logs/analytics/cdh* @cheinz-sag @ChrisFurlongSAG @doernemt @BeateRixen @MWindel
 
-/content/streaming-analytics/ @kailol-sag @BeateRixen marlene.windel@softwareag.com
-/content/change-logs/analytics/apama-in-c8y* @kailol-sag @BeateRixen marlene.windel@softwareag.com
+/content/datahub/ @cheinz-sag @BeateRixen @MWindel
+/content/device-management-application/ @Oezge-Akin @l2p- @BeateRixen
+/content/dtm/ @pavanshivajirao @lra-sag @BeateRixen @MWindel
+
+/content/streaming-analytics/ @kailol-sag @BeateRixen @MWindel
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
 /content/streaming-analytics/block-reference-bundle/ @kailol-sag
 
-/content/edge/ @sharath-jk @BeateRixen marlene.windel@softwareag.com
+/content/edge/ @BeateRixen marlene.windel@softwareag.com

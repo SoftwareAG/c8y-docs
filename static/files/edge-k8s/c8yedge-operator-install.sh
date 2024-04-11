@@ -8,7 +8,7 @@
 #   ENV_VAR=... ./c8yedge-operator-install.sh
 #
 # Example:
-#   Installing latest version (1017.0.0) into 'c8yedge' namespace:
+#   Installing latest version (1018.0.0) into 'c8yedge' namespace:
 #     ./c8yedge-operator-install.sh -n 'c8yedge' -u 'edge' -p '*******'
 #			or
 #	  C8YEDGE_OPERATOR_NAMESPACE='c8yedge' C8YEDGE_REPO_USERNAME='edge' C8YEDGE_REPO_PASSWORD='*******' ./c8yedge-operator-install.sh
@@ -38,7 +38,7 @@ display_usage() {
 	echo "  ENV_VAR=... ./c8yedge-operator-install.sh"
 	echo ""
 	echo "Example:"
-	echo "  Installing latest version (1017.0.0) into 'c8yedge' namespace:"
+	echo "  Installing latest version (1018.0.0) into 'c8yedge' namespace:"
 	echo "    ./c8yedge-operator-install.sh -n 'c8yedge' -u 'edge' -p '*******'"
 	echo "		or"
 	echo "  C8YEDGE_OPERATOR_NAMESPACE='c8yedge' C8YEDGE_REPO_USERNAME='edge' C8YEDGE_REPO_PASSWORD='*******' ./c8yedge-operator-install.sh"
@@ -77,7 +77,7 @@ done
 
 # Set defaults if not specified
 if [ -z "$C8YEDGE_OPERATOR_VERSION" ]; then
-	C8YEDGE_OPERATOR_VERSION="1017.0.0"
+	C8YEDGE_OPERATOR_VERSION="1018.0.0"
 fi
 
 if [ -z "$C8YEDGE_OPERATOR_NAMESPACE" ]; then
@@ -96,15 +96,28 @@ if [ -z "$C8YEDGE_REPO_PASSWORD" ]; then
 	read -s -p "Enter password to access Edge Operator repository: " C8YEDGE_REPO_PASSWORD
 fi
 
+# Attempt to login to the registry using provided credentials
+login_output=$(echo "$C8YEDGE_REPO_PASSWORD" | helm registry login -u "$C8YEDGE_REPO_USERNAME" --password-stdin "$C8YEDGE_REPO_URI" 2>&1)
 
+# Check if the login succeeded
+if ! echo "$login_output" | grep -qi "Login Succeeded"; then
+	echo -e "\n\n$login_output\n"
+	if echo "$login_output" | grep -qi "unauthorized"; then
+		echo -e "Error: Invalid credentials provided for the Edge Operator repository \"${C8YEDGE_REPO_URI}\"."
+		exit 1
+	else
+		echo -e "Error: Unable to establish a connection with the Edge Operator repository \"${C8YEDGE_REPO_URI}\"."
+		exit 1
+	fi
+fi
 
 # Stop on errors
 set -e
 
-echo -e "\n\nInstalling Cumulocity IoT Edge Operator, version ${C8YEDGE_OPERATOR_VERSION} from ${C8YEDGE_REPO_URI}\n\n"
+echo -e "\n\nInstalling Cumulocity IoT Edge Operator version \"${C8YEDGE_OPERATOR_VERSION}\" from \"${C8YEDGE_REPO_URI}\"\n\n"
 
 # Add Edge Operator chart repository to Helm
-helm repo add --username "${C8YEDGE_REPO_USERNAME}" --password "${C8YEDGE_REPO_PASSWORD}" --force-update c8yedge-repo "https://${C8YEDGE_REPO_URI}/chartrepo/edge"
+echo "$C8YEDGE_REPO_PASSWORD" | helm repo add --username "${C8YEDGE_REPO_USERNAME}" --password-stdin --force-update c8yedge-repo "https://${C8YEDGE_REPO_URI}/chartrepo/edge"
 helm repo update
 
 # Install or upgrade Edge Operator 

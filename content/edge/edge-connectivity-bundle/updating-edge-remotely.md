@@ -52,8 +52,8 @@ To remotely update your Edge appliance:
 12. Select the firmware that you just uploaded and click **Install**.
     ![Edge version](/images/edge/edge-select-firmware.png)
 
-    - To check the status of the update, hover over the refresh icon as shown in the figure below:
-    ![Edge version](/images/edge/edge-check-remote-update-status.png)
+    - To check the status of the update, hover over the refresh icon <i class="dlt-c8y-icon-refresh text-info icon-20"></i> as shown in the figure below:
+    ![Edge update status](/images/edge/edge-check-remote-update-status.png)
     - To check the details of the update, click the text outlined in red in the figure below:
     ![Edge version](/images/edge/edge-check-remote-update-full-log.png)
 

@@ -60,13 +60,13 @@ The simulator will be created and added to the list.
 
 ### To edit a simulator {#to-edit-a-simulator}
 
-1. Click the menu icon at the top right of a simulator card and then click **Edit**, or simply click the simulator card.
+1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of a simulator card and then click **Edit**, or simply click the simulator card.
 2. In the resulting dialog box, make the relevant changes.
 3. Click **Save** to apply your changes.
 
 ### To duplicate a simulator {#to-duplicate-a-simulator}
 
-1. Click the menu icon at the top right of a simulator card and then click **Duplicate**.
+1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of a simulator card and then click **Duplicate**.
 2. In the resulting dialog box, provide a name for the new simulator.
 3. Click **Duplicate**.
 
@@ -74,7 +74,7 @@ The new simulator will be added to the list.
 
 ### To remove a simulator {#to-remove-a-simulator}
 
-1. Click the menu icon at the top right of a simulator card and then click **Remove**.
+1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of a simulator card and then click **Remove**.
 2. In the resulting dialog box, confirm to remove the simulator.
 3. Click **Save**.
 
@@ -119,7 +119,7 @@ The new sleep instruction will be added to the simulator.
 
 #### To remove an instruction {#to-remove-an-instruction}
 
-Hover over the instruction or the sleep you want to remove and click the remove icon.
+Hover over the instruction or the sleep you want to remove and click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i>.
 
 The instruction will be removed from the simulator.
 

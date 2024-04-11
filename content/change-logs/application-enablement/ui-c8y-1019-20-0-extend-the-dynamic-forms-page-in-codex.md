@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3282
 version: 1019.20.0
 ---
-The Dynamic forms page in Codex has been extended with additional details and examples to better explain the concept and usage of dynamic forms.
+The Components > Forms > Dynamic forms page in the Codex has been extended with additional details and examples to better explain the concept and usage of dynamic forms.

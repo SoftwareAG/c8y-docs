@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3507
 version: 10.20.325.0
 ---
-A new SmartREST template has been added. Using the template id 150, it is now possible to set the list of cloud remote access protocols supported by a device.
+A new SmartREST template has been added. Using the template ID 150, it is now possible to set the list of Cloud Remote Access protocols supported by a device.

@@ -1,6 +1,6 @@
 ---
 date:
-title: Set cloud remode access protocols using SmartREST
+title: Set supported Cloud Remote Access protocols using SmartREST
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

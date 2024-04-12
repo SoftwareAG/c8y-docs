@@ -12,7 +12,7 @@ Once the [asset hierarchy](/dtm/asset-hierarchy/#asset-hierarchy) is created by 
 
 2. The **Subassets** page contains the asset details, created and last updated time displayed at the top right.
 
-3. Optionally [assign devices](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset) from the top bar.
+3. Optionally [add subassets](/dtm/asset-hierarchy/#to-add-subassets), or [assign devices](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset) from the top bar.
 
 4. The asset name and description along with the icon are displayed at the top.
 All subassets and devices for this asset will get listed in the **Subassets** section.

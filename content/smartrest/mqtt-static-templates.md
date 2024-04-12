@@ -566,7 +566,7 @@ Sets the supported software types of the device. Ignores empty elements. An empt
 
 ##### Set supported software types (150) {#150}
 
-Sets the list of cloud remote access protocols supported by the device. Possible values are `SSH`,`TELNET`,`VNC` and `PASSTHROUGH`. Empty elements are ignored. An empty list removes the `c8y_RemoteAccessSupportedProtocols` fragment entirely.
+Sets the list of Cloud Remote Access protocols supported by the device. Possible values are `SSH`,`TELNET`,`VNC` and `PASSTHROUGH`. Empty elements are ignored. An empty list removes the `c8y_RemoteAccessSupportedProtocols` fragment entirely.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|

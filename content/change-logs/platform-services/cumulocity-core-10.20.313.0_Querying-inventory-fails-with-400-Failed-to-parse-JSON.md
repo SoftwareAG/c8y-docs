@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Querying inventory fails with 400 Failed to parse JSON string
+title: Adding validation that prevents entering an empty key for custom attributes.
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58302
 version: 10.20.313.0
 ---
-Added key validation for custom attributes to prevent creating empty keys in the inventory that cause issue with parsing when fetching data.
+In the inventory, key validation has been added for custom attributes to prevent creating empty keys which cause issues with parsing when fetching data.

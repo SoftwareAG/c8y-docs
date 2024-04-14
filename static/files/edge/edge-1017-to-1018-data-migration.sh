@@ -17,6 +17,7 @@ function perform_data_transfer() {
     echo "Copying data and configuration from 10.17 appliance."
 
     echo "Copying MongoDB data."
+    rm -rf /opt/mongodb/*
     sshpass -p $edge_10_17_OS_ROOT_PASSWORD scp -r root@$edge_10_17_VM_IP:/opt/mongodb /opt
 
     echo "Copying cumulocity-agent configurations."

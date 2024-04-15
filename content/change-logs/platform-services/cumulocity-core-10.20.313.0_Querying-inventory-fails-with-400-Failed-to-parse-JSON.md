@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Adding validation that prevents entering an empty key for custom attributes.
+title: Preventing creation of empty keys for custom attributes
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

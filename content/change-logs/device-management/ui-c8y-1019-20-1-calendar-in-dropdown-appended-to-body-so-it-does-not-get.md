@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Calendar in dropdown appended to body so it does not get cut off. [GRAFT][release/cd]
+title: Calendar dropdown is now appended to body to avoid being cut off
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

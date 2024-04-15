@@ -68,7 +68,7 @@ Before copying the backup, ensure that there is sufficient disk space available 
    systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod
    ```
 
-3. Cleanup the MongoDB data from 10.18 installation before replacing it the backup data:
+3. Cleanup the MongoDB data before replacing it the backup data with the following command:
    ```shell
    rm -rf /opt/mongodb/* 
    ```

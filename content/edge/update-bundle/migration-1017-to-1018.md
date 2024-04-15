@@ -68,21 +68,26 @@ Before copying the backup, ensure that there is sufficient disk space available 
    systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod
    ```
 
-3. Untar the backup file you using the following command:
+3. Cleanup the MongoDB data before replacing it the backup data with the following command:
+   ```shell
+   rm -rf /opt/mongodb/* 
+   ```
+
+4. Untar the backup file you using the following command:
 
    ```shell
    tar -xf /opt/edge-1017-backup.tar -C /
    ```
 
-4. Reboot the Edge appliance with the following command:
+5. Reboot the Edge appliance with the following command:
 
    ```shell
    reboot
    ```
 
-5. Once the Edge appliance restarts, verify its health by following the instructions in the [Health check](/edge/operating-edge/#health-check) section. Ensure that the `monit summary` command returns status *OK* for all services and processes as described in [Using Monit](/edge/operating-edge/#using-monit) section.
+6. Once the Edge appliance restarts, verify its health by following the instructions in the [Health check](/edge/operating-edge/#health-check) section. Ensure that the `monit summary` command returns status *OK* for all services and processes as described in [Using Monit](/edge/operating-edge/#using-monit) section.
 
-6. Follow the steps outlined in [Updating Edge](/edge/update/#updating-edge-gui) to finalize the data migration process.
+7. Follow the steps outlined in [Updating Edge](/edge/update/#updating-edge-gui) to finalize the data migration process.
 
 ## Configuring Edge 10.18 after data migration {#configuring-edge-1018-after-data-migration}
 After migrating data to Edge 10.18, proceed to configure the appliance to the same level as Edge 10.17.

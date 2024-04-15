@@ -33,7 +33,7 @@ Perform the following steps as a `root` user on your Edge 10.17 appliance.
    systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod
    ```
 
-2. Back up the MongoDB data, Edge, Cumulocity Agent, and OPC UA configurations using the following command to create the `/opt/edge-1017-backup.tar` file:
+2. Back up the MongoDB data, data lake contents from the DataHub if installed, Edge, Cumulocity Agent, and OPC UA configurations using the following command to create the `/opt/edge-1017-backup.tar` file:
 
    ```shell
    tar -zcf /opt/edge-1017-backup.tar /opt/mongodb /var/lib/cumulocity-agent /usr/edge /opt/opcua
@@ -68,7 +68,8 @@ Before copying the backup, ensure that there is sufficient disk space available 
    systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod
    ```
 
-3. Cleanup the MongoDB data before replacing it the backup data with the following command:
+3. Cleanup the MongoDB data before replacing the backup data with the following command:
+   
    ```shell
    rm -rf /opt/mongodb/* 
    ```
@@ -98,7 +99,9 @@ After migrating data to Edge 10.18, proceed to configure the appliance to the sa
 
 3. If you had enabled the microservice hosting feature in the Edge 10.17 appliance, follow the instructions in [Enabling the microservice hosting feature](edge/configuration/#configuring-microservices) to enable the same in Edge 10.18.
 
-4. For information about security configuration, refer to [Configuring security](edge/configuration/#configuring-security).
+4. If you had installed {{< product-c8y-iot >}} DataHub in the Edge 10.17 appliance, follow the instructions in [Setting up {{< product-c8y-iot >}} DataHub Edge](/datahub/running-datahub-on-the-edge/#setting-up-datahub-edge) to install the same in Edge 10.18.
+
+5. For information about security configuration, refer to [Configuring security](edge/configuration/#configuring-security).
 
 For detailed guidance on configuring the Edge 10.18 appliance, consult [Configuring Edge](/edge/configuration/).
 
@@ -112,7 +115,7 @@ For detailed guidance on configuring the Edge 10.18 appliance, consult [Configur
 
 1. Install the Edge 10.18 appliance by following the instructions in [Installing Edge 10.18](/edge/update/#installing-edge-1018)
 
-2. Download the [edge-1017-to-1018-data-migration.sh](/files/edge/edge-1017-to-1018-data-migration.sh) script and copy it to your Edge 10.18 appliance.
+2. Download the [edge-1017-to-1018-data-migration.sh](/files/edge/edge-1017-to-1018-data-migration.sh) script and copy it to your Edge 10.18 appliance. This script migrates the necessary data including data lake contents from the DataHub.
 
 3. Execute the `edge-1017-to-1018-data-migration.sh` script as a root user. Provide the IP address and `root` user password for the Edge 10.17 appliance when prompted. Note that you need to allow remote login for the `root` user on the Edge 10.17 appliance for the script to work properly.
 

@@ -11,3 +11,17 @@ In case of any issues, {{< company-sag >}} recommends you to follow these steps:
 * Check the log files, see [Log files](/edge/operating-edge/#logs-files).
 
 These steps help you analyze the issue and provide a fix. If you need to contact {{< company-sag >}} support, include the output of the diagnostics dump. For more information about using the diagnostics, see [Diagnostics](#diagnostics).
+
+### Troubleshooting Microservices {#troubleshooting-microservices}
+
+In case of any microservices related issues, we recommend you to check if `_microservice_hosting_` is disabled using the command `sudo monit status microservice_hosting`
+
+![Microservice Hosting Status](/images/edge/monit_status_microservice_hosting.png)
+If it shows up as disabled, enable the microservice hosting feature through [the GUI](/edge/configuration/#enabling-or-disabling-the-microservice-hosting-feature-using-the-ui) or [the REST API](/api/edge/#tag/Microservice-hosting-feature).
+If enabling the microservice hosting feature fails, check the status of the Kubernetes system pods using the command below:
+```shell
+sudo kubectl get pods --namespace kube-system
+```
+If any pod in the list show its status as evicted, the most probable cause is that the system ran out of disk space. Expand the disk size through [the GUI](/edge/operating-edge/#expanding-the-disk-size) or [the REST API](/api/edge/#operation/expandDiskSize). Enable the microservice hosting feature after disk expansion.
+
+When running any kubectl command (for example `sudo kubectl get pods --namespace kube-system`), if the message `-bash: kubectl: command not found` is seen then the microservice hosting feature has not been enabled or the process to enable the microservice hosting feature has failed. Attempt to enable the microservice hosting feature through [the GUI](/edge/configuration/#enabling-or-disabling-the-microservice-hosting-feature-using-the-ui) or [the REST API](/api/edge/#tag/Microservice-hosting-feature).

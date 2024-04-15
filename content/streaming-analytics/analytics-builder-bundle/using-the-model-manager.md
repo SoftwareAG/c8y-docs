@@ -32,7 +32,7 @@ There are two types of models, and the cards for these models look different:
 
 As long as a model has no template parameters, there will be zero instances and the card shows the controls for selecting a mode and activating it.
 
-Each card that is shown for a model has an actions menu \(the three vertical dots that are shown at the top right of a card\) which contains commands for managing the model \(for example, to download or remove the model\).
+Each card that is shown for a model has an actions menu \(the three vertical dots that are shown at the top right of a card\) which contains commands for managing the model \(for example, to download or delete the model\).
 
 If a description or tags have been defined for the model, this is shown on the card for that model. If you want to change the name, the description or the tags of a model, you must do this in the model editor. See [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model).
 
@@ -260,14 +260,14 @@ The **Paste** command is enabled only if the clipboard contains content.
 
 If the clipboard contains valid JSON code for a model, a card for the pasted model is shown in the model manager.
 
-### Removing a model {#removing-a-model}
+### Deleting a model {#deleting-a-model}
 
-You can remove each model that is currently listed in the model manager. When you remove a model that is currently deployed, it is first undeployed and then removed.
+You can delete each model that is currently listed in the model manager. When you delete a model that is currently deployed, it is first undeployed and then deleted.
 
-#### To remove a model {#to-remove-a-model}
+#### To delete a model {#to-delete-a-model}
 
-1.  On the **Models** tab of the model manager, click the actions menu of the model that you want to remove and then click **Remove**.
-2.  In the resulting dialog box, click **Remove** to confirm the removal.
+1.  On the **Models** tab of the model manager, click the actions menu of the model that you want to delete and then click **Delete**.
+2.  In the resulting dialog box, click **Delete** to confirm the deletion.
 
 ### Reloading all models {#reloading-all-models}
 

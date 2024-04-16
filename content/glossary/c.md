@@ -12,6 +12,12 @@ The Cockpit application is one of the default applications of {{< product-c8y-io
 
 For details see [Application enablement & solutions > Cockpit](/cockpit/).
 
+### Component {#component}
+
+In the change logs (or release notes for yearly releases respectively) changes can be filtered for various parameters one of which is the component. Components reflect functional subcategories from a user perspective, for example, "Administration" or "Authentication".
+
+See also [Product area](/glossary/c/#product-area).
+
 
 ### Continuous Deployment model {#continuous-deplyoment-model}
 

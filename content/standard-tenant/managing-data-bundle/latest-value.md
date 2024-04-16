@@ -50,7 +50,7 @@ POST /measurement/measurements
 ```
 then,  considering the example configuration, only `c8y_Temperature.T` is stored as part of the device, while `c8y_Speed.S` is ignored.
 This means, that the measurement is stored like before, only the state update is skipped.
-To read the latest values on device level you must use the Inventory API.
+To read the latest values on device level you must use the Inventory API and explicitly specify the `withLatestValues` parameter. For more information refer to the API documentation [Cumulocity IoT - OpenAPI Specification](https://www.{{< domain-c8y >}}/api/core/#operation/getManagedObjectResource)  
 To get a single device:
 ```
 GET /inventory/managedObjects/5413?withLatestValues=true

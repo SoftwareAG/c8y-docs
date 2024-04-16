@@ -1,5 +1,5 @@
 ---
-date: 2024-13-14
+date: 2024-03-14
 title: Fixed issue with 0 as value in custom event and operation fields
 product_area: Device management & connectivity
 change_type:

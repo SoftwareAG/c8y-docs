@@ -1,16 +1,16 @@
 ---
-date: TODO
-title: Enhancement of home screen to support investigation of offloading status
+date:
+title: Enhancement of Home page to support investigation of offloading status
 product_area: Analytics
 change_type:
-  - value: TODO
+  - value: change-QHu1GdukP
     label: Feature
 component:
-  - value: TODO
+  - value: component-A8vMaVaTg
     label: DataHub
 build_artifact:
-  - value: TODO
+  - value: tc-H-tuq-8Es
     label: cdh
-version: TODO
+version:
 ---
-The Home screen has been enhanced so that you can investigate the current offloading status. The status includes which offloadings are currently running, which ones have recently failed, and which ones have completed successfully.
+The Home page has been enhanced so that you can investigate the current status of your offloading pipelines. The status includes which offloadings are currently running, which ones have recently failed, and which ones have completed successfully.

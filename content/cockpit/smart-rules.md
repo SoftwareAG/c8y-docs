@@ -80,7 +80,7 @@ Smart rules can be seen in two places:
 
 ### To create a smart rule {#to-create-a-smart-rule}
 
-Smart rules can both be created in the **Global smart rules** page (global smart rules), accessible from the **Configuration** menu in the navigator, or in the **Info** tab of any group or a device (local smart rules).
+Smart rules can both be created in the **Global smart rules** page (global smart rules), accessible from the **Configuration** menu in the navigator, or in the **Smart rules** tab of any group or a device (local smart rules).
 
 1. Click **Add smart rule** in the top menu bar. <br>
 2. Select a smart rule template from the list. Note that this list might differ based on your installation.
@@ -124,17 +124,17 @@ Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i
 
 ### To enable/disable a smart rule {#to-enabledisable-a-smart-rule}
 
-If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (that means, its underlying module gets deployed) so that the rule is available for devices and groups.
+If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Smart rules** tab of a particular device/group), it is globally "turned on" (that means, its underlying module gets deployed) so that the rule is available for devices and groups.
 
 If it is set to **Disabled** it is "turned off" (that means, its underlying module is not deployed).
 
 In addition to globally enabling/disabling a smart rule, a smart rule can be in **active** or **inactive** state for particular objects (groups or devices). If **active**, the rule will process events for these groups and devices.
 
 {{< c8y-admon-info >}}
-On creating a smart rule in the **Global smart rules** page, it will be active by default for all assets, unless you explicitly select target asset(s). If specific target assets are selected, it will be deactivated for all other assets. A local smart rule created in the **Info** page of a particular group or device is automatically activated for the respective target asset (and its direct children).
+On creating a smart rule in the **Global smart rules** page, it will be active by default for all assets, unless you explicitly select target asset(s). If specific target assets are selected, it will be deactivated for all other assets. A local smart rule created in the **Smart rules** tab of a particular group or device is automatically activated for the respective target asset (and its direct children).
 {{< /c8y-admon-info >}}
 
-To explicitly activate or deactivate a rule, navigate to the **Info** tab of the particular group or device and set the **Active/Inactive** toggle to **Active** or **Inactive** respectively.  
+To explicitly activate or deactivate a rule, navigate to the **Smart rules** tab of the particular group or device and set the **Active/Inactive** toggle to **Active** or **Inactive** respectively.  
 
 An example use case for deactivating a smart rule for a single object could be that a particular device is generating too many threshold alarms. The rule can be deactivated for this device only, but still be active for all other objects.
 

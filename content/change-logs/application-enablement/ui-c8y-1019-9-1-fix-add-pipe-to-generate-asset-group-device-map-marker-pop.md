@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-21
 title: Map marker popup correctly links to assets and devices
 product_area: Application enablement & solutions
 change_type:

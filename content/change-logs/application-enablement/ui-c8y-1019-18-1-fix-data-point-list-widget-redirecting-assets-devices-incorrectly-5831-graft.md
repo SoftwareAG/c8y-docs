@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-04-04
 title: Asset names in the "Data point list" widget now redirect to the correct URL
 product_area: Application enablement & solutions
 change_type:

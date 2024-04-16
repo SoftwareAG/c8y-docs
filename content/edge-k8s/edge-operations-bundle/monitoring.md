@@ -5,8 +5,8 @@ layout: redirect
 ---
 Edge on Kubernetes allows for monitoring of the Edge Deployment using Prometheus, an open-source project that is used for monitoring application state. See https://prometheus.io/ for detailed information on Prometheus and how to use it.
 
-The Edge operator exposes a Prometheus-compatible metrics endpoint, 'https://\<domain>:8443/metrics', where the domain is the one you specified in the {{< product-c8y-iot >}} Edge CR (or myown.iot.com if you followed the Quickstart installation steps). This endpoint provides a quick overview of essential metrics, designed for efficient data retrieval where in-depth analysis is not required.
-You can monitor the recommended list of metrics below or for more comprehensive metrics details, including granular data points and extended analytics for in-depth analysis, use the detailed metrics endpoint, 'https://\<domain>:8443/metrics-detailed'.
+The Edge operator exposes a Prometheus-compatible metrics endpoint, 'https://\<domain>:8443/metrics', where the domain is the one you specified in the {{< product-c8y-iot >}} Edge CR (or myown.iot.com if you followed the Quickstart installation steps).
+You can monitor the recommended list of metrics below, with more available at the above endpoint.
 
 ### Edge Operator Metrics {#operator-metrics}
 Metrics related to the Edge Operator, prefixed by 'c8yedge_'

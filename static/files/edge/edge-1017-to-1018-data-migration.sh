@@ -2,14 +2,17 @@
 set -e  # Exit script on failure
 #set -x # debug mod
 
+# RUN THIS SCRIPT USING BASH:  bash ./edge-1017-to-1018-data-migration.sh        
+
 # Function Definitions
 function stop_services_old_VM() {
-    #stop services in old VM
+    echo "Stopping services in 10.17 appliance"
     sshpass -p $edge_10_17_OS_ROOT_PASSWORD ssh root@$edge_10_17_VM_IP "monit unmonitor all; systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod"
 }
 
 function perform_data_transfer() { 
     # Stop the services
+    echo "Stopping services in 10.18 appliance"
     monit unmonitor all
     systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod
 
@@ -26,6 +29,8 @@ function perform_data_transfer() {
 
     echo "Copying OPCUA service and agent configurations."
     sshpass -p $edge_10_17_OS_ROOT_PASSWORD scp -r root@$edge_10_17_VM_IP:/opt/opcua /opt
+   
+    sshpass -p $edge_10_17_OS_ROOT_PASSWORD scp -r root@$edge_10_17_VM_IP:/opt/softwareag/  /opt
 
     # Update ownership and configurations
     echo "Updating folder/file ownerships."
@@ -33,6 +38,12 @@ function perform_data_transfer() {
     chown -R root:root /opt/opcua
     chown -R root:root /var/lib/cumulocity-agent
     chown -R edge-agent:edge-agent /usr/edge
+    chown -R  root:root /opt/softwareag
+
+    if [ -d "/opt/mongodb/cdh-master" ]; then
+        #It seems ,in rocky it using one of the systemd user
+        chown -R systemd-coredump:systemd-coredump /opt/mongodb/cdh-*
+    fi
 }
 
 
@@ -55,6 +66,9 @@ function main() {
 
     echo -e "\033[0;32m Successfully copied the data and configuration from Edge 10.17 appliance. \033[0m"
     echo -e "\033[0;32m Reboot the appliance and follow the instructions in the user guide to update and configure the Edge 10.18 appliance. \033[0m"
+    if [ -d "/opt/mongodb/cdh-master" ]; then
+        echo -e "\033[0;32m After Edge is updated and configured, follow the instructions in the user guide to install and configure DataHub.\033[0m"
+    fi
 }
 
 # Call the main function

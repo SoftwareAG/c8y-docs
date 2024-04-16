@@ -1,5 +1,5 @@
 ---
-date: 2024-13-14
+date: 2024-03-14
 title: Improved information on "Use source timestamp" configuration
 product_area: Device management & connectivity
 change_type:

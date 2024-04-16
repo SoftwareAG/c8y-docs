@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-04-08
 title: Device Management application now includes all available widgets
 product_area: Device management & connectivity
 change_type:
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3266
 version: 10.19.15.1
 ---
-The Device Management application was missing some widgets that were available in other applications. With this change, all available widgets have now been added to the Device Management application. 
+The Device Management application was missing some widgets that were available in other applications. With this change, all available widgets have now been added to the Device Management application.

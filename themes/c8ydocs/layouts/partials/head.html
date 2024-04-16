@@ -11,6 +11,10 @@
     <meta name="author" content="{{ .Site.Author.name }}">
     <meta name="keywords" content="{{ with .Keywords }}{{ delimit . ", " }}{{ end }}{{ if .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}">
 
+    <meta property="og:title" content="{{ with .Title }}{{ . }} - {{$.Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}">
+    <meta property="og:description" content="This documentation offers comprehensive information on the Cumulocity IoT platform both from a user and from a developer perspective. It reflects the latest state of the Cumulocity IoT platform and is continuously updated to align with recent software updates.">
+    <meta property="og:image" content="{{ "images/cumulocity-docs-web.jpg" | absURL}}">
+    <meta property="og:url" content="https://cumulocity.com/docs/">
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | absURL}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32x32.png" | absURL}}">

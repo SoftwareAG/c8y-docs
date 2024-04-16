@@ -138,13 +138,7 @@
             </h2>
           </div>
           <div class="change-log__summary">
-            {{ if .Params.ticket }} 
-            <button class="btn-tooltip" data-tooltip="{{ .Params.ticket }}">
-              {{ partial "change-log-labels.html" (index .Params.change_type 0).label}}
-            </button>
-            {{else}}
-              {{ partial "change-log-labels.html" (index .Params.change_type 0).label}}
-            {{end}}
+            {{ partial "change-log-labels.html" (index .Params.change_type 0).label}}
             <div class="metadata">
               <button class="btn-metadata" data-tag="productarea-{{.Params.product_area | urlize}}">
                 <small class="text-muted">Product area</small><br>
@@ -155,14 +149,18 @@
                 <small class="text-muted">Component</small>
                 <p>{{(index .Params.component 0).label}}</p>
               </button>
-              {{/*  Display the build artifact only in yearly releases  */}}
-              {{ if site.Data.date_settings.yearly_release}}
-                <button class="btn-metadata" data-tag="technicalcomponent-{{(index .Params.build_artifact 0).label | urlize}}">
+              {{/*  Display the build artifact and version only in yearly releases  or setting the `internal` url parameter to `true` */}}
+                <button class="btn-metadata {{ if not site.Data.date_settings.yearly_release}} hidden {{end}}" data-internal data-tag="technicalcomponent-{{(index .Params.build_artifact 0).label | urlize}}">
                   <small class="text-muted">Build artifact {{ if .Params.version}}/ version{{end}}</small>
                   <p>{{(index .Params.build_artifact 0).label}}
                   {{ if .Params.version}} - {{ .Params.version}}{{end}}
                   </p>
                 </button>
+              {{ if .Params.ticket }}
+                <div class="p-t-4 {{ if not site.Data.date_settings.yearly_release}} hidden {{end}}" data-internal>
+                  <small class="text-muted">Ticket</small>
+                  <p><strong>{{.Params.ticket}}</strong></p>
+                </div>
               {{end}}
             </div>
           </div>

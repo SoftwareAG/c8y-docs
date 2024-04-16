@@ -1,6 +1,9 @@
 let filters = {};
 let $list;
 let dates;
+let internal = false;
+
+
 
 function getURLParameters() {
   const urlSearchParams = new URLSearchParams(window.location.search);
@@ -8,10 +11,25 @@ function getURLParameters() {
 
   for (const [key, value] of urlSearchParams) {
     if (value != '') {
-      params[key] = value;
+      if (key === 'internal' && value === 'true') {
+        internal = true;
+      } else {
+        params[key] = value;
+      }
     }
   }
+  handleInternal();
   return params;
+}
+
+// Conditionally removes the class `hidden` from specific elements
+function handleInternal() {
+  let els = document.querySelectorAll('[data-internal]');
+  if (internal) {
+    els.forEach(el => {
+      el.classList.remove('hidden');
+    });
+  }
 }
 
 function concatFilters(obj) {

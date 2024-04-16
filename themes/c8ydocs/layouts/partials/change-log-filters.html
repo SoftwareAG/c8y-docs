@@ -98,8 +98,7 @@
       </label>
       {{ end }}
     </fieldset>
-    {{ if site.Data.date_settings.yearly_release}}
-    <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="technicalcomponent">
+    <fieldset class="filter-fieldset c8y-fieldset {{ if not site.Data.date_settings.yearly_release}} hidden {{end}}" data-internal data-filter-group="technicalcomponent">
       <legend>Build artifact</legend>
       {{ range sort site.Data.buildartifact.options "option" "asc"}}
       <label class="c8y-checkbox m-b-4">
@@ -111,7 +110,6 @@
       </label>
       {{ end }}
     </fieldset>
-    {{end}}
     
     <script src="{{ "js/cl-filters.js" | absURL }}"></script>
   </nav>

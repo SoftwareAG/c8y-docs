@@ -7,7 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="" />
     <meta name="generator" content="Hugo {{ hugo.Version }} with theme C8yDocs">
-    <title>{{ with .Title }}{{ . }} - {{$.Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+    {{if eq .Title $.Site.Title }}
+      <title>{{ .Title }}</title>
+    {{else}}
+      <title>{{ with .Title }}{{ . }} - {{$.Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+    {{end}}
     <meta name="author" content="{{ .Site.Author.name }}">
     <meta name="keywords" content="{{ with .Keywords }}{{ delimit . ", " }}{{ end }}{{ if .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}">
 

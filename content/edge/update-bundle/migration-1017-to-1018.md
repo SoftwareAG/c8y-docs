@@ -21,7 +21,8 @@ in the *10.17.0 {{< product-c8y-iot >}} Edge guide*.
 ## Backing Up Data and Configuration on Edge 10.17 {#backing-up-data-on-edge-1017}
 In your Edge 10.17 appliance, back up the MongoDB data, Edge, Cumulocity Agent, and OPC UA configurations.
 
-{{< c8y-admon-important >}} Before attempting the backup, ensure that there is sufficient disk space to save the backup in your Edge 10.17 appliance.  
+{{< c8y-admon-important >}}
+Before attempting the backup, ensure that there is sufficient disk space to save the backup in your Edge 10.17 appliance.  
 {{< /c8y-admon-important >}}
 
 Perform the following steps as a `root` user on your Edge 10.17 appliance.
@@ -45,7 +46,9 @@ Perform the following steps as a `root` user on your Edge 10.17 appliance.
 ## Installing Edge 10.18 {#installing-edge-1018}
 Install the Edge appliance 10.18 following the instructions below. 
 
-{{< c8y-admon-important >}} If you have both the Edge 10.17 and Edge 10.18 appliances on the same host machine, ensure that the IP addresses of both appliances are different.{{< /c8y-admon-important >}}
+{{< c8y-admon-important >}}
+If you have both the Edge 10.17 and Edge 10.18 appliances on the same host machine, ensure that the IP addresses of both appliances are different.
+{{< /c8y-admon-important >}}
 
 1. Refer to [Configuring the Edge infrastructure](/edge/setting-up-edge/) for detailed instructions on importing the Edge 10.18 appliance.
 2. Follow the installation procedure on your Edge 10.18 appliance, ensuring to configure the network settings appropriately. For detailed steps, refer to [Installing Edge](/edge/installation/).
@@ -112,7 +115,9 @@ For detailed guidance on configuring the Edge 10.18 appliance, consult [Configur
 ## Sample script to automate the data migration {#sample-script-to-automate-data-migration}
 {{< company-sag >}} provides the `edge-1017-to-1018-data-migration.sh` script as a reference for automating the data migration process. You can customize this script according to your requirements. Click [here](/files/edge/edge-1017-to-1018-data-migration.sh) to download the script.
 
-{{< c8y-admon-important >}}{{< company-sag >}} does not officially support this migration script. It is provided for reference purposes only.{{< /c8y-admon-important >}}
+{{< c8y-admon-important >}}
+{{< company-sag >}} does not officially support this migration script. It is provided for reference purposes only.
+{{< /c8y-admon-important >}}
 
 ### Using the script {#using-the-script}
 

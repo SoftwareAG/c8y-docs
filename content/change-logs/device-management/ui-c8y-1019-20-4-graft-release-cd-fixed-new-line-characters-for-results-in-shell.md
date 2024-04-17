@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed missing newline characters in the result section in the shell tab on the device details page.
+title: Command output of shell operations in the Shell tab now correctly includes newline characters
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

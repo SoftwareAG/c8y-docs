@@ -152,9 +152,7 @@ example `C8Y_USER` for the `-U` flag.
 
 ### Next steps
 
-We recommend you to familiarize yourself with our
-[package setup](/web/introduction/#libraries) and read about which library is used in which case.
-Afterwards, we recommend you to read our guides which will explain the following topics in detail:
+We recommend you to familiarize yourself with our [Library overview](https://styleguide.cumulocity.com/apps/codex/#/getting-started/library/overview) in the [Cumulocity IoT Codex](https://styleguide.cumulocity.com/apps/codex/#/) and read about which library is used in which case. Afterwards, we recommend you to read our guides which will explain the following topics in detail:
 
-- [How to extend the platform](#/getting-started/guides/extension-points)
-- [Adding data to your application](#/getting-started/guides/data-access)
+- [How to extend the platform](https://styleguide.cumulocity.com/apps/codex/#/getting-started/guides/extension-points/overview)
+- [Adding data to your application](https://styleguide.cumulocity.com/apps/codex/#/getting-started/guides/data-access/overview)

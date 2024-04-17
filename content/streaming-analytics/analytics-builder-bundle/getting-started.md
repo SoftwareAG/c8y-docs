@@ -61,7 +61,7 @@ You design your model in the model editor. The model editor is shown after you h
    {{< c8y-admon-info>}}
 If the block parameter editor is not shown (for example, because you clicked an empty space on the canvas after dragging the input block onto the canvas), click the block using the left mouse button to show the block parameter editor.
    {{< /c8y-admon-info>}}
-3. Click the three dots that are shown for **Input Source**. In the resulting dialog box, click the **Select device** button for the device that you want to use. This button is shown when you hover over a device.
+3. Click the three dots <i class="dlt-c8y-icon-menu-horizontal text-primary icon-20"></i> that are shown for **Input Source**. In the resulting dialog box, click the **Select device** button for the device that you want to use. This button is shown when you hover over a device.
    {{< c8y-admon-info>}}
 By default, an input block is listening to all input sources, that is, the **All Inputs** option is set. However, these first steps assume that you are using your smartphone. Therefore, you must select a single device as described above.
    {{< /c8y-admon-info>}}
@@ -99,8 +99,8 @@ To pass the values from one block to another, you must connect the blocks with w
 
 #### Step 7: Save the model and go back to the model manager {#step-7-save-the-model-and-go-back-to-the-model-manager}
 
-1. In the toolbar of the model editor, click the save icon <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0"> to save your newly created model.
-2. In the toolbar of the model editor, click the close icon <img src="/images/streaming-analytics/analytics-builder/icon-exit.png" alt="Close icon" style="display:inline-block; margin:0"> to leave the model editor and thus to return to the model manager.
+1. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save your newly created model.
+2. In the toolbar of the model editor, click the close icon <i class="dlt-c8y-icon-clear icon-20"></i> to leave the model editor and thus to return to the model manager.
 
 {{< c8y-admon-info>}}
 Only saved models are listed on the **Models** tab of the model manager. When you add a new model and then leave the model editor without saving the model, it will not be listed in the model manager, and all the edits you made will be lost.
@@ -152,11 +152,11 @@ The following is a brief description of the blocks that are defined within the s
 The **Samples** tab of the model manager lists all sample models that are provided with Analytics Builder. You can view a sample by simply clicking on its card, but you cannot edit or deploy it. However, you can use the samples as a basis for developing your own models, by creating a model from a sample.
 
 1. Go to the **Samples** tab of the model manager.
-2. Click the actions menu of the **On missing measurements create alarm** sample and then click **Create model from sample**.
+2. Click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the **On missing measurements create alarm** sample and then click **Create model from sample**.
    The new model is immediately shown in the model editor. It has the same name, description and tags as the sample.
 3. If you want to rename the model, click the model name which is shown at the left of the toolbar. You can then specify a new name in the resulting **Model Configuration** dialog box.
-4. In the toolbar of the model editor, click the save icon <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0"> to save the new model.
-5. In the toolbar of the model editor, click the close icon <img src="/images/streaming-analytics/analytics-builder/icon-exit.png" alt="Close icon" style="display:inline-block; margin:0"> to leave the model editor and thus to return to the model manager.
+4. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the new model.
+5. In the toolbar of the model editor, click the close icon <i class="dlt-c8y-icon-clear icon-20"></i> to leave the model editor and thus to return to the model manager.
    {{< c8y-admon-info>}}
 Keep in mind that only saved models are listed on the **Models** tab of the model manager.
    {{< /c8y-admon-info>}}

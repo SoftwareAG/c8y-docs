@@ -62,7 +62,6 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 	The Apama features affected by this include:
 	* Apama Database Connector (ADBC).
 	* Correlator-integrated support for the Java Message Service (JMS).
-	* Digital Event Services.
 	* Distributed memory stores.
 	* Connections between correlators.
 * For security and implementing user access control, {{< product-c8y-iot >}} does not make the correlator port available to external processes, see [Microservices](/concepts/applications#microservices).

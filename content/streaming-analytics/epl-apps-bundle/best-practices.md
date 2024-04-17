@@ -83,7 +83,6 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 	The Apama features affected by this include:
 	* Persistence.
 	* Connectivity plug-ins.
-	* Management via Command Central.
 * For security, the file system used by the correlator is not accessible.
 	The Apama features affected by this include:
 	* Accessing the input log.

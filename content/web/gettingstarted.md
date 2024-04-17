@@ -10,7 +10,7 @@ This guide will setup your first application. The first step is to install the `
 
 
 ```bash
-npx @angular/cli@v16-lts new --style=less
+npx @angular/cli@v16-lts new --style=less --routing=true
 ```
 
 Second, navigate to the folder and add the `@c8y/websdk` package to your Angular application:

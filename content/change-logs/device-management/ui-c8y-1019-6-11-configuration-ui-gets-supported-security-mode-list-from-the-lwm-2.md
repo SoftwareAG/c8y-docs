@@ -1,5 +1,5 @@
 ---
-date: 2024-13-14
+date: 2024-03-14
 title: Supported security modes retrieved dynamically from LWM2M agent
 product_area: Device management & connectivity
 change_type:

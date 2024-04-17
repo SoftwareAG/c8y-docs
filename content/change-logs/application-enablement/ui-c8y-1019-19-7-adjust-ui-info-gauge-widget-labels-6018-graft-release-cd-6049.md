@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-04-04
 title: Label display in the "Info gauge" widget has been improved
 product_area: Application enablement & solutions
 change_type:

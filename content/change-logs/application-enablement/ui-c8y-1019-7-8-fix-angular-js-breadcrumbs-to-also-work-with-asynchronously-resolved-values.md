@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-14
 title: AngularJS breadcrumbs updated to work with asynchronous values
 product_area: Device management & connectivity
 change_type:

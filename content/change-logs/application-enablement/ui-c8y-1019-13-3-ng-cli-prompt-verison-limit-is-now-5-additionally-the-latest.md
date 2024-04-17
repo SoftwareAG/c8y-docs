@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-27
 title: Clearer version selection when scaffolding a new application with Angular CLI
 product_area: Application enablement & solutions
 change_type:

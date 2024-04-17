@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3505
 version: 1019.20.4
 ---
-In the Cumulocity IoT shell, commands executed through the shell operation previously returned results with missing new line characters, making the output difficult to read. This issue has now been resolved. The shell operation now correctly includes new line characters in the command output as expected. This improvement makes the results of shell commands much easier to read and interpret for users working with the shell operation.
+In the Cumulocity IoT device details shell tab, commands executed through the shell operation previously displayed result template with missing new line characters, making it difficult to read. This issue has now been resolved. The shell operation now correctly includes newline characters in the command output as expected. This improvement makes the results of shell commands much easier to read and interpret for users working with the shell operation.

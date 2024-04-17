@@ -8,16 +8,8 @@ section:
 
 This guide will setup your first application. The first step is to install the `@angular/cli` in the right version.
 
-
-Use  the `latest` tag if the current version available in the NPM is version 17.
 ```bash
-npx @angular/cli@latest new --style=less --standalone=false
-```
-
-or
-
-```bash
-npx @angular/cli@v17-lts new --style=less --standalone=false
+npx @angular/cli@17 new --style=less --standalone=false
 ```
 
 Second, navigate to the folder and add the `@c8y/websdk` package to your Angular application:
@@ -78,7 +70,6 @@ or
 
 ```
  ng serve <appName> -u http://mytenant.acme.iot
-
 ```
 
 

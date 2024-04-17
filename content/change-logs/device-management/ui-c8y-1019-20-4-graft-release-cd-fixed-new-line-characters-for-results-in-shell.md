@@ -1,6 +1,6 @@
 ---
 date: ""
-title: [GRAFT][release/cd] Fixed new line characters for results in shell operation.  (#6112)
+title: Fixed new line characters for results in shell operation
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

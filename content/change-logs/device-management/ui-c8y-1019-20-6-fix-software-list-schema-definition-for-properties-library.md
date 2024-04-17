@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix software list schema definition for properties library
+title: Fixed "Software list" schema definition for properties library
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

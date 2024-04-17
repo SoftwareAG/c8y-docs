@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed new line characters for results in shell operation
+title: Fixed missing newline characters in the result section in the shell tab on the device details page.
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

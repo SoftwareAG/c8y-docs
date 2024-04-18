@@ -1,5 +1,5 @@
 ---
-date: 2024-05-05
+date:
 title: OPC UA device gateway node scan retry properties
 product_area: Device management & connectivity
 change_type:

@@ -278,8 +278,7 @@ In the **Asset properties** simple asset properties are listed with their type.
 
 #### Complex asset property {#complex-asset-property}
 
-A complex asset property consists of multiple key value pairs, meaning, it contains a root object followed by one or more key value pairs. You can select the complex asset property option by switching on the toggle. If you switch on the toggle, you must define each key value pair as well as providing a type for each pair. You can arrange the properties in the required order by dragging and dropping them. Hover over the row to see the drag icon. Click and drag the drag icon for reordering. 
-You can expand all key value pairs at a time using **Expand all**. Alternatively, you can expand each key-value pair to see a specific property. When you add a new key value pair, it automatically expands.
+A complex asset property consists of multiple key value pairs, meaning, it contains a root object followed by one or more key value pairs. You can select the complex asset property option by switching on the toggle. If you switch on the toggle, you must define each key value pair as well as providing a type for each pair. You can arrange the properties in the required order by dragging and dropping them. Hover over the row to see the drag icon. Click and drag the drag icon for reordering. You can expand all key value pairs at a time using **Expand all**. Alternatively, you can expand each key value pair to see a specific property. When you add a new key value pair, it automatically expands.
 
 In the **Asset properties** complex asset properties are listed with the label "Object".
 

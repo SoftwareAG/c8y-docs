@@ -34,13 +34,21 @@ Perform the following steps as a `root` user on your Edge 10.17 appliance.
    systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod
    ```
 
-2. Back up the MongoDB data, data lake contents from the DataHub if present, Edge, Cumulocity Agent, and OPC UA configurations using the following command to create the `/opt/edge-1017-backup.tar` file:
+2. If you have installed {{< product-c8y-iot >}} DataHub in the Edge 10.17 appliance, run the following commands to stop the `cdh-console`, `cdh-master` and `cdh-executor` services:
+
+   ```shell
+   service cdh-console stop
+   service cdh-master stop
+   service cdh-executor stop
+   ```
+
+3. Back up the MongoDB data, data lake contents from the DataHub if present, Edge, Cumulocity Agent, and OPC UA configurations using the following command to create the `/opt/edge-1017-backup.tar` file:
 
    ```shell
    tar -zcf /opt/edge-1017-backup.tar /opt/softwareag /opt/mongodb /var/lib/cumulocity-agent /usr/edge /opt/opcua 
    ```
 
-3. After creating the `/opt/edge-1017-backup.tar` file, copy it to a network drive or storage location that is accessible from the Edge 10.18 appliance you will create in the next step. Once the backup file is safely stored, shut down the Edge 10.17 appliance to prevent any further changes to the system during the migration process. This step is optional and if not performed, you need to copy it directly into the Edge 10.18 appliance once it is created. 
+4. After creating the `/opt/edge-1017-backup.tar` file, copy it to a network drive or storage location that is accessible from the Edge 10.18 appliance you will create in the next step. Once the backup file is safely stored, shut down the Edge 10.17 appliance to prevent any further changes to the system during the migration process. This step is optional and if not performed, you need to copy it directly into the Edge 10.18 appliance once it is created. 
 
 
 ## Installing Edge 10.18 {#installing-edge-1018}

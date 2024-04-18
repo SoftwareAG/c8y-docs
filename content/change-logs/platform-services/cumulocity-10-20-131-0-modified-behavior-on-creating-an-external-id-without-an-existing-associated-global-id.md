@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-04-04
 title: Modified behavior on creating an external ID without an existing
   associated global ID
 product_area: Platform services

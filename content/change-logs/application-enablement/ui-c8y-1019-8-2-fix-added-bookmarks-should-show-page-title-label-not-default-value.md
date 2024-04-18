@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-21
 title: Bookmarks now show page title as label instead of default value
 product_area: Application enablement & solutions
 change_type:

@@ -1,6 +1,6 @@
 ---
-date: ""
-title: ZIP option now available when building an application 
+date: 2024-04-04
+title: ZIP option now available when building an application
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-04-04
 title: Fixed issue with SMS requests to Bics provider
 product_area: Platform services
 change_type:

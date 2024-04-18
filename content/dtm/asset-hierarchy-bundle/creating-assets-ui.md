@@ -148,7 +148,7 @@ Click **Add asset** to add more subassets or click **Import assets** to add [ass
 
 #### To add subassets {#to-add-subassets}
 
-To add subassets to an asset open the **Asset tree** tab.
+To add subassets to an asset open the **Subassets** or **Asset tree** tab.
 
 1. Click **Add asset** to load the **Asset hierarchy** for the selected asset.
 
@@ -159,7 +159,7 @@ To add subassets to an asset open the **Asset tree** tab.
 **Example:**
 
 If "Wind turbine" is a root level asset, then "Rotor" is a subasset of "Wind turbine" and "Blade" is a subasset of "Rotor".
-If you navigate to the **Asset tree** page of "Wind turbine" and click **Add asset**, the asset hierarchy loads for "Rotor" and "Blade".
+If you navigate to the **Subassets** or **Asset tree** page of "Wind turbine" and click **Add asset**, the asset hierarchy loads for "Rotor" and "Blade".
 
 If you navigate to the existing "Rotor" asset and want to add a subasset, you can only add subassets for "Blade".
 

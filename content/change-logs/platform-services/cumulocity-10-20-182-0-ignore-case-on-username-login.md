@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-04-04
 title: Option to ignore case of username or alias on login
 product_area: Platform services
 change_type:

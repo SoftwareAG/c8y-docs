@@ -21,6 +21,12 @@ In the [Continuous Deployment](/glossary/c/#continuous_deployment) model, the Pr
 
 See also [General Availability](/glossary/g/#ga) and [Public Preview](/glossary/p/#public-preview).
 
+### Product area {#product-area}
+
+In the change logs (or release notes for yearly releases respectively) changes can be filtered for various parameters one of which is the product area. The product area is a high-level functional area, for example, "Device Management & connectivity". 
+
+See also [Components](/glossary/c/#components).
+
 ### Public Preview mode {#public-preview}
 
 In the [Continuous Deployment](/glossary/c/#continuous_deployment) model, the Public Preview mode refers to a feature for which customers can opt-in to have the feature activated.

@@ -14,5 +14,5 @@ build_artifact:
 ticket: DM-2992
 version: 10.20.42.0
 ---
-An issue has been resolved that the OPC UA device gateway property which contains the count of retries for the node scan (`gateway.scanAddressSpace.retries`) was ignored.
+The issue of the count of retries for the node scan (`gateway.scanAddressSpace.retries`) that is stored in the OPC UA device gateway property is being ignored has been resolved.
 A new OPC UA device gateway property has been added that allows to configure the pause time between retries (`gateway.scanAddressSpace.pauseMillisForRetry`) during the address space scan.

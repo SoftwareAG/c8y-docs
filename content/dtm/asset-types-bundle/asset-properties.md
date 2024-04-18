@@ -278,7 +278,7 @@ In the **Asset properties** simple asset properties are listed with their type.
 
 #### Complex asset property {#complex-asset-property}
 
-A complex asset property consists of multiple key value pairs, meaning, it contains a root object followed by one or more key value pairs. You can select the complex asset property option by switching on the toggle. If you switch on the toggle, you must define each key value pair as well as providing a Type for each pair.
+A complex asset property consists of multiple key value pairs, meaning, it contains a root object followed by one or more key value pairs. You can select the complex asset property option by switching on the toggle. If you switch on the toggle, you must define each key value pair as well as providing a Type for each pair. You can arrange the properties in the required order simply by dragging and dropping them. You can expand all key value pairs at a time using **Expand all**. Alternatively, you can expand each key-value pair to see a specific property. When you add a new key value pair, it automatically expands.
 
 In the **Asset properties** complex asset properties are listed with the label "Object".
 
@@ -289,12 +289,6 @@ You see the preview of data model on the right side of properties section.
 If the asset property is called "Gearbox specifications" with the key "gearbox_specifications", then power, speed increasing ratio and weight are the multiple key value pairs defining the property "Gearbox specifications". Switch on the **Complex property** toggle (see image below). Enter the required information for all key value pairs and click **Save**.
 
 ![Complex asset property](/images/dtm/custom-property/dtm-property-library-complex-property.png)
-
-{{< c8y-admon-info>}}
-
-If you do not fill out the **Order** field, the order is determined by the sequence in which the key value pairs are added and the field will be automatically filled on saving the asset property.
-
-{{< /c8y-admon-info>}}
 
 ### To export asset properties {#to-export-asset-properties}
 

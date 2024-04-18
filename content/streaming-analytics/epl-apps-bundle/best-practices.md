@@ -57,7 +57,7 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 * For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard {{< product-c8y-iot >}} constraint that all microservices (either provided by the platform, or custom) must be stateless, see [Microservices](/concepts/applications#microservices).
 	The Apama features affected by this include:
 	* Correlator persistence.
-	* MemoryStore persistence.
+	* MemoryStore persistence. 
 * Non-HTTP/REST connections to an external system or process are mostly impractical. Although if a service is available over the internet, then it can be used (for example, an HTTP client inside Apama could connect to publicly accessible HTTP servers).
 	The Apama features affected by this include:
 	* Apama Database Connector (ADBC).

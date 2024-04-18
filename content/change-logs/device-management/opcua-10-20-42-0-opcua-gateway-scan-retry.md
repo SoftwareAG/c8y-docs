@@ -1,6 +1,6 @@
 ---
 date:
-title: OPC UA device gateway node scan retry properties
+title: Improved configuration for OPC UA device gateway node scan retries
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

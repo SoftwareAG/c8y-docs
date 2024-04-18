@@ -61,7 +61,7 @@ You design your model in the model editor. The model editor is shown after you h
    {{< c8y-admon-info>}}
 If the block parameter editor is not shown (for example, because you clicked an empty space on the canvas after dragging the input block onto the canvas), click the block using the left mouse button to show the block parameter editor.
    {{< /c8y-admon-info>}}
-3. Click the three dots <i class="dlt-c8y-icon-menu-horizontal text-primary icon-20"></i> that are shown for **Input Source**. In the resulting dialog box, click the **Select device** button for the device that you want to use. This button is shown when you hover over a device.
+3. Click the menu <i class="dlt-c8y-icon-menu-horizontal text-primary icon-20"></i> that is shown for **Input Source**. In the resulting dialog box, click the **Select device** button for the device that you want to use. This button is shown when you hover over a device.
    {{< c8y-admon-info>}}
 By default, an input block is listening to all input sources, that is, the **All Inputs** option is set. However, these first steps assume that you are using your smartphone. Therefore, you must select a single device as described above.
    {{< /c8y-admon-info>}}

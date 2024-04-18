@@ -4,7 +4,7 @@ title: Home screen
 layout: redirect
 ---
 
-You access the Streaming Analytics application using the [application switcher](/get-familiar-with-the-ui/gui-features/#application-switcher).
+To access the home screen of the Streaming Analytics application, click the <i class="c8y-icon c8y-icon-streaming-analytics c8y-icon-duocolor icon-20"></i> icon in the  [application switcher](/get-familiar-with-the-ui/gui-features/#application-switcher).
 
 ![Streaming Analytics home screen](/images/streaming-analytics/introduction-analytics/streaming-analytics-home-screen.png)
 

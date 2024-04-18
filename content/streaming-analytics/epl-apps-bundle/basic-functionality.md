@@ -31,7 +31,7 @@ Any user on the tenant wishing to use the **EPL Apps** page must be a **CEP Mana
 
 ##### Step 1 - Invoke the Streaming Analytics application {#step-1---invoke-the-streaming-analytics-application}
 
-Open the application switcher and click the icon for the **Streaming Analytics** application. Then navigate to the **EPL Apps** page.
+Open the application switcher and click the <i class="c8y-icon c8y-icon-streaming-analytics c8y-icon-duocolor icon-20"></i> icon for the **Streaming Analytics** application. Then navigate to the **EPL Apps** page.
 
 When you go to the **EPL Apps** page, the EPL app manager is shown first, listing any existing EPL apps. Each app is shown as a card. You can add new EPL apps and manage existing EPL apps from here.
 

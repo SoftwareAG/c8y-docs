@@ -163,8 +163,8 @@ Select the **Trigger Device** option instead to send the output to the device wh
 3.  It is possible to use a template parameter instead of specifying a value for a block parameter. This allows different values to be used for this block parameter in different instances of the model \(see [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for more information\). Create a template parameter of a matching type in the **Template Parameters** dialog box \(see [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters)\), switch the block parameter to use a template parameter \(see below\) and select the desired template parameter from the drop-down list box. Or create the template parameter directly in the block parameter editor \(see below\).
 
     The block parameter editor provides the following options in a drop-down list box:
-    - <img src="/images/streaming-analytics/analytics-builder/icon-defined-parameter.png" alt="Option for specifying a parameter value" style="display:inline-block; margin:0"> When selected, you can specify a value for this parameter using the adjacent control. This value is validated in the block parameter editor.
-    - <img src="/images/streaming-analytics/analytics-builder/icon-model-parameter.png" alt="Option for selecting a template parameter" style="display:inline-block; margin:0"> When selected, you can select a template parameter from the adjacent drop-down list box. You can only select a template parameter that is of the same type as the block parameter to which you want to assign it; template parameters of unsuitable types are not available for selection. Template parameters are not validated in the block parameter editor.
+    - <img src="/images/streaming-analytics/analytics-builder/option-defined-parameter.png" alt="Option for specifying a parameter value" style="display:inline-block; margin:0"> When selected, you can specify a value for this parameter using the adjacent control. This value is validated in the block parameter editor.
+    - <img src="/images/streaming-analytics/analytics-builder/option-template-parameter.png" alt="Option for selecting a template parameter" style="display:inline-block; margin:0"> When selected, you can select a template parameter from the adjacent drop-down list box. You can only select a template parameter that is of the same type as the block parameter to which you want to assign it; template parameters of unsuitable types are not available for selection. Template parameters are not validated in the block parameter editor.
 
         If you want to add a new template parameter directly in the block parameter editor, type a name in the text box of the above drop-down list box. As soon as you start typing and if a template parameter with that name does not yet exist, the option **Add template parameter name** is shown below the text box. Click this option to add the new template parameter and thus make it available in the **Template Parameters** dialog box. The new template parameter will have the same type, optional and default values as the block parameter. If a template parameter with the name that you are specifying exists already, but with an incompatible type, the name and type is shown below the text box but cannot be selected.
 4.  Some blocks support multi-line input for certain block parameters. For example, the **Send Email** block supports this in the **Text** parameter and the **Alarm Output** block supports this in the **Message** parameter. Your input is automatically wrapped in the text box and you can press Enter to start text on a new line. When you add a new template parameter for such block parameter directly in the block parameter editor \(as described above\), the type of the new template parameter is automatically set to **Multi-line String**.
@@ -362,8 +362,8 @@ Models with no template parameters can be directly activated in the model manage
 
 ##### To define the template parameters for the instances of the current model {#to-define-the-template-parameters-for-the-instances-of-the-current-model}
 
-1.  In the toolbar of the model editor, click the template parameters icon <img src="/images/streaming-analytics/analytics-builder/icon-model-parameters.png" alt="Template parameters icon" style="display:inline-block; margin:0"> to invoke the **Template Parameters** dialog box.
-    When at least one template parameter has been defined, a checkmark is shown on the above icon: <img src="/images/streaming-analytics/analytics-builder/icon-model-parameters-with-checkmark.png" alt="Template parameters icon with a checkmark" style="display:inline-block; margin:0">.
+1.  In the toolbar of the model editor, click the template parameters icon <i class="c8y-icon c8y-icon-parameters icon-20"></i> to invoke the **Template Parameters** dialog box.
+    When at least one template parameter has been defined, a checkmark is shown on the above icon: <i class="c8y-icon c8y-icon-parameters-on c8y-icon-duocolor icon-20"></i>.
 
     This dialog box is initially empty and you must create the template parameters that you want to use in your model. When template parameters have already been defined, they are all shown in this dialog box.
 
@@ -497,7 +497,7 @@ It is not possible to create an empty group. You must first add a group as descr
 
 1.  On the canvas of the model editor, select one or more blocks that you want to add to a group. You need not select wires; all existing wires are retained. See also [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires).
 
-2.  In the toolbar of the model editor, click the group icon <img src="/images/streaming-analytics/analytics-builder/icon-group.png" alt="Group icon" style="display:inline-block; margin:0">.
+2.  In the toolbar of the model editor, click the group icon <i class="dlt-c8y-icon-group icon-20"></i>.
     Or press Ctrl+G.
 
 #### Collapsing and expanding a group {#collapsing-and-expanding-a-group}
@@ -546,7 +546,7 @@ You can only move/drag blocks into a group when its contents are visible, that i
 2. On the canvas of the model editor, select the blocks that you want to move into the group \(see also [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires)\). You need not select the wires between the blocks; they are automatically moved together with the blocks.
 3. Do one of the following:
    - Drag the selection into the group and drop it there.
-   - Or select the group into which you want to move the blocks. Then click the group icon <img src="/images/streaming-analytics/analytics-builder/icon-group.png" alt="Group icon" style="display:inline-block; margin:0"> in the toolbar of the model editor, or press Ctrl+G.
+   - Or select the group into which you want to move the blocks. Then click the group icon <i class="dlt-c8y-icon-group icon-20"></i> in the toolbar of the model editor, or press Ctrl+G.
 
 #### Moving blocks from a group to the canvas {#moving-blocks-from-a-group-to-the-canvas}
 
@@ -558,7 +558,7 @@ When the last item of a group has been moved to the canvas, the group is automat
 
 - To move one or more blocks at the same time:
     1.  In the expanded group, select the blocks that you want to move.
-    2.  In the toolbar of the model editor, click the ungroup icon <img src="/images/streaming-analytics/analytics-builder/icon-ungroup.png" alt="Ungroup icon" style="display:inline-block; margin:0">.
+    2.  In the toolbar of the model editor, click the ungroup icon <i class="dlt-c8y-icon-ungroup icon-20"></i>.
     Or press Ctrl+Shift+G.
 - Or to move a single block:
     1.  In the expanded group, select the block that you want to move.
@@ -595,7 +595,7 @@ You can ungroup several groups at the same time. In this case, it is important t
 
 1.  On the canvas of the model editor, select one or more groups that you want to ungroup. It does not matter whether a group is currently collapsed or expanded.
 
-2.  In the toolbar of the model editor, click the ungroup icon <img src="/images/streaming-analytics/analytics-builder/icon-ungroup.png" alt="Ungroup icon" style="display:inline-block; margin:0">.
+2.  In the toolbar of the model editor, click the ungroup icon <i class="dlt-c8y-icon-ungroup icon-20"></i>.
     Or press Ctrl+Shift+G.
 
 #### Removing a group {#removing-a-group}
@@ -632,9 +632,9 @@ The overview area, which shows the entire model, is shown at bottom right of the
 
 ##### To show or hide the overview {#to-show-or-hide-the-overview}
 
-To hide the overview, click the hide icon <img src="/images/streaming-analytics/analytics-builder/icon-overview-hide.png" alt="Hide overview icon" style="display:inline-block; margin:0"> which is shown directly above the overview area.
+To hide the overview, click the hide icon <i class="dlt-c8y-icon-compass text-muted icon-20"></i> which is shown directly above the overview area.
 
-To show the overview, click the show icon <img src="/images/streaming-analytics/analytics-builder/icon-overview-show.png" alt="Show overview icon" style="display:inline-block; margin:0"> at the bottom right of the canvas.
+To show the overview, click the show icon <i class="dlt-c8y-icon-compass text-primary icon-20"></i> at the bottom right of the canvas.
 
 #### Zooming the canvas {#zooming-the-canvas}
 
@@ -649,10 +649,10 @@ When you use the key combinations mentioned below, the currently selected area d
 
 ##### To zoom the canvas {#to-zoom-the-canvas}
 
-To zoom out, click the zoom out icon <img src="/images/streaming-analytics/analytics-builder/icon-zoomout.png" alt="Zoom out icon" style="display:inline-block; margin:0"> in the toolbar of the model editor.
+To zoom out, click the zoom out icon <i class="dlt-c8y-icon-minus-circle text-muted icon-20"></i> in the toolbar of the model editor.
 Alternatively, press Ctrl and the minus key.
 
-To zoom in, click the zoom in icon <img src="/images/streaming-analytics/analytics-builder/icon-zoomin.png" alt="Zoom in icon" style="display:inline-block; margin:0"> in the toolbar of the model editor.
+To zoom in, click the zoom in icon <i class="dlt-c8y-icon-plus-circle text-muted icon-20"></i> in the toolbar of the model editor.
 Alternatively, press Ctrl and the plus key.
 
 #### Showing and hiding the grid {#showing-and-hiding-the-grid}
@@ -663,8 +663,8 @@ The blocks, wires and groups on the canvas always snap to a grid. You can decide
 
 In the model editor, click the toolbar icon for toggling the display of the grid.
 
-When the grid is hidden, the icon looks as follows: <img src="/images/streaming-analytics/analytics-builder/icon-grid-inactive.png" alt="Icon when grid is hidden" style="display:inline-block; margin:0">.
+When the grid is hidden, the icon looks as follows: <i class="dlt-c8y-icon-grid-on icon-20"></i>.
 
-When the grid is shown, the icon looks as follows: <img src="/images/streaming-analytics/analytics-builder/icon-grid-active.png" alt="Icon when grid is shown" style="display:inline-block; margin:0">.
+When the grid is shown, the icon looks as follows: <i class="dlt-c8y-icon-grid-off icon-20"></i>.
 
 When the model is active \(read-only mode\), it is not possible to toggle the display of the grid and this icon is therefore disabled.

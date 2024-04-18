@@ -24,11 +24,11 @@ A horizontal scrollbar is available if not all template parameters \(columns\) c
 
 The right side of the table shows the mode and status of each instance. You activate \(deploy\) and deactivate \(undeploy\) the instances from here. See also [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance) and [Undeploying an instance](/streaming-analytics/analytics-builder/#undeploying-an-instance).
 
-Each row that is shown for an instance has an actions menu \(the three vertical dots that are shown at the very right of the row\) which contains commands for managing the instance \(for example, to remove the instance\).
+Each row that is shown for an instance has an actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the very right which contains commands for managing the instance \(for example, to remove the instance\).
 
 You can control the list of instances by filtering and sorting. See [Filtering and sorting the instances](/streaming-analytics/analytics-builder/#filtering-and-sorting-the-instances) for more information.
 
-If the error icon <img src="/images/streaming-analytics/analytics-builder/instance-editor-error.png" alt="Error icon" style="display:inline-block; margin:0"> is shown near the end of a row, the corresponding instance is no longer processing events. Click that icon to get more information.
+If the error icon <i class="dlt-c8y-icon-warning text-danger icon-20"></i> is shown near the end of a row, the corresponding instance is no longer processing events. Click that icon to get more information.
 
 When you open the instance editor, it may happen that template parameters have been changed since you last edited the instances and that they no longer use the same values types as before. If the values specified in the instance editor are still compatible, they are converted to the new value types. Incompatible values \(including check boxes for boolean types and values that are shown in drop-down list boxes\) are automatically removed. Each field from which the value has been removed shows an error underline and a corresponding error message.
 
@@ -76,7 +76,7 @@ Once an instance is active, you cannot modify the template parameter values or m
 2.  If you have selected simulation mode, click the calendar icon which is now shown, specify the time span that is to be used, and click **Apply**. See also [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
 
 3.  When the toggle button in the **Status** column currently shows **Inactive**, click this button to change the state to **Active**. For simulation mode, you can only set the state to **Active** when a valid time range has been defined.
-    In the case of an error, the error icon <img src="/images/streaming-analytics/analytics-builder/instance-editor-error.png" alt="Error icon" style="display:inline-block; margin:0"> is shown at the right of the table and the instance cannot be activated. Click the error icon to get more information.
+    In the case of an error, the error icon <i class="dlt-c8y-icon-warning text-danger icon-20"></i> is shown at the right of the table and the instance cannot be activated. Click the error icon to get more information.
 
 ### Undeploying an instance {#undeploying-an-instance}
 
@@ -108,7 +108,7 @@ You can duplicate each instance \(row\) that is currently listed in the instance
 
 #### To duplicate an instance {#to-duplicate-an-instance}
 
-In the instance editor, click the actions menu of the instance that you want to duplicate and then click **Duplicate**.
+In the instance editor, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the instance that you want to duplicate and then click **Duplicate**.
 
 A new row for the duplicated instance is immediately shown at the bottom of the instance editor table.
 
@@ -118,7 +118,7 @@ You can remove each instance that is currently listed in the instance editor. Wh
 
 #### To remove an instance {#to-remove-an-instance}
 
-1.  In the instance editor, click the actions menu of the instance that you want to remove and then click **Remove**.
+1.  In the instance editor, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the instance that you want to remove and then click **Remove**.
 
 2.  In the resulting dialog box, click **Remove** to confirm the removal.
 
@@ -152,6 +152,6 @@ When you leave the instance editor as described below, you are returned to the m
 
 #### To leave the instance editor {#to-leave-the-instance-editor}
 
-In the toolbar of the instance editor, click the close icon <img src="/images/streaming-analytics/analytics-builder/icon-instance-editor-exit.png" alt="X icon" style="display:inline-block; margin:0">.
+In the toolbar of the instance editor, click the close icon <i class="dlt-c8y-icon-clear icon-20"></i>.
 
 If there are unsaved changes when leaving, you are prompted to save these changes first.

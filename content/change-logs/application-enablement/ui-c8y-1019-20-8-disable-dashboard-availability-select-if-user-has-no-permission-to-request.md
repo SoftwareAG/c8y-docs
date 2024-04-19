@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57128
 version: 1019.20.8
 ---
-Disable dashboard availability select if user has no permission to request roles to populate it. (#6021) [GRAFT][release/cd] (#6173)
+Previously, the dashboard availability selection was always visible for users, even if they did not have the permission to see it. With this change, the dashboard availability selection is hidden for users who do not have the required permission. Users must have User Management READ permission to see and modify the availability property of a dashboard.

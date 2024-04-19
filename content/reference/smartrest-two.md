@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: SmartREST 2.0
+title: SmartREST
 layout: bundle
 collection: 'reference/smartrest-two'
 toc: true

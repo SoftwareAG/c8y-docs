@@ -4,8 +4,6 @@ title: SmartREST 2.0
 layout: redirect
 ---
 
-### Overview
-
 This section describes the SmartREST 2.0 payload format that can be used with the {{< product-c8y-iot >}} MQTT implementation.
 
 SmartREST 2.0 was designed to make use of the MQTT protocol, so it may reduce the payload even more than the SmartREST 1.0 via HTTP.

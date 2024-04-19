@@ -152,7 +152,4 @@ example `C8Y_USER` for the `-U` flag.
 
 ### Next steps
 
-We recommend you to familiarize yourself with our [Library overview](https://styleguide.cumulocity.com/apps/codex/#/getting-started/library/overview) in the [Cumulocity IoT Codex](https://styleguide.cumulocity.com/apps/codex/#/) and read about which library is used in which case. Afterwards, we recommend you to read our guides which will explain the following topics in detail:
-
-- [How to extend the platform](https://styleguide.cumulocity.com/apps/codex/#/getting-started/guides/extension-points/overview)
-- [Adding data to your application](https://styleguide.cumulocity.com/apps/codex/#/getting-started/guides/data-access/overview)
+We recommend you to refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/) for more information on developer documentation and our [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) for tutorials.

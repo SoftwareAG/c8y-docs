@@ -38,7 +38,7 @@ ROLES & PERMISSIONS:
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
-- **points to removed section** [Web SDK > Tutorials > Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
+- Refer to our [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
 - [Web SDK > Application configuration](/web/application-configuration/) for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 

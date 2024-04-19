@@ -64,7 +64,9 @@ ROLES & PERMISSIONS in devices context:
 
 If dashboards have been created for a group or device, they will also be added as a tab. See [Working with dashboards](/cockpit/working-with-dashboards/) for details.
 
-Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our **points to removed section** [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) to see how to add a custom tab.
+Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Refer to our [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) for more information.
+
+
 
 ### To add a group {#to-add-a-group}
 

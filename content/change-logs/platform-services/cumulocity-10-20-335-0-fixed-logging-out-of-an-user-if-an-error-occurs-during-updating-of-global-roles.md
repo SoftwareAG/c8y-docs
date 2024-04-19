@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed logging out of an user if an error occurs during updating user global roles
+title: OAI-Secure users are no longer logged out during unsuccessful global roles updates
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

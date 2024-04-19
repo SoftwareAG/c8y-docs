@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add cdkTrapFocus to the list group actions dropdown (#6016) [GRAFT][release/cd] (#6129)
+title: List group dropdown accessibility has been improved
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

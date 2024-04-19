@@ -225,7 +225,7 @@ kubectl edit configmap coredns -n kube-system
 Then, insert your changes under the NodeHosts section.
 
 4. Wait for CoreDNS to Reload
-CoreDNS automatically reloads its configuration files, thanks to the reload directive in your Corefile (e.g., reload 15s). Consequently, CoreDNS should recognize the changes within approximately 15 seconds after saving them.
+CoreDNS automatically reloads its configuration files, thanks to the reload directive in your Corefile (for example, reload 15s). Consequently, CoreDNS should recognize the changes within approximately 15 seconds after saving them.
 
 5. Verify the Configuration
 After giving CoreDNS time to reload its configuration, test the DNS resolution from a pod in your cluster to confirm that your new domain resolves correctly:

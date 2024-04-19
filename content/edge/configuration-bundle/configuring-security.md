@@ -8,23 +8,23 @@ The Edge appliance is security hardened by default.
 Furthermore, you can apply specific security configurations to enhance the security of your Edge appliance.
 
 {{< c8y-admon-important >}}
-For information about deployment security best practices and tenant administration security configuration guidelines, see [Security Hardening Guidelines](https://empower.softwareag.com/sl24sec/SecuredServices/document/java/cumulocity_iot_platform/iot10-15-0/10-15-0_Security_Hardening_Guidelines_guide.pdf).
+For information about deployment security best practices and tenant administration security configuration guidelines, see [Security Hardening Guidelines](files/edge/Security_Hardening_Guidelines_guide_1017.pdf).
 {{< /c8y-admon-important >}}
 
-To apply the security configuration, follow the steps below: 
+To apply the security configuration, follow the steps below:
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
 
    - Username: management/<*Edge admin username*>
    - Password: password provided during the installation
-   
+
 2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 
 3. Click **Edge** > **Security** in the navigator.
 
 4. Click **Download configuration** to download a sample JSON syntax for the current configuration. You can use the same JSON file in the POST operation using the REST API.
 
-5. Click **Edit configuration** to edit the configuration. 
+5. Click **Edit configuration** to edit the configuration.
 
    You can either import a JSON file to prefill the values or enter the values manually.
 
@@ -37,7 +37,7 @@ In the enforcing mode, you cannot access the Edge appliance remotely through VNC
     ||SSH|**SSH enabled**|Enables or disables the SSH functionality of the Edge appliance. By default, the SSH functionality is enabled.<br><br>Changing the value to false disables the SSH functionality. When disabled, you will not be able to SSH into the Edge appliance, locally or remotely.<br><br>Default value: True
     ||Session inactivity|**Login sessions inactivity timeout (seconds)**|The idle duration before a user session is terminated. When configured, the user session terminates after the specified idle duration.<br><br>Default value: 600 seconds<br>Minimum value: 0<br>
     ||Linux Auditing System|**Audit logging enabled**|The *Linux Auditing System* helps system administrators create an audit trail, a log for every action on the server. You can track the security-relevant events, record the events in a log file, and detect misuse or unauthorized activities by inspecting the audit log files.<p>Enables or disables Linux Auditing System. A value of true enables and creates an audit log file at `/var/log/audit/audit.log`.<p>Enabling auditing system increases the consumption of disk space.<br>You can configure the operating system to transfer the audit logs to a centralized logging server by configuring **Audisp remote logging server**.<br>{{< c8y-admon-important >}}
-Once enabled, you cannot disable the auditing system configuration. 
+Once enabled, you cannot disable the auditing system configuration.
     {{< /c8y-admon-important >}}<br>Default value: False
     ||Remote logging|**Audisp remote logging server**|The centralized logging server to transfer the audit logs to.<br> When configured, the operating system audit logs are transferred to the specified centralized logging server.
     |||**Server**|The IP address or the hostname of the destination server.

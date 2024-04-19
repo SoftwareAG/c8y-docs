@@ -59,7 +59,7 @@ This metric tracks the health status of StatefulSets in the Edge. StatefulSets a
 |c8yedge_statefulset{statefulset="c8ycore-sts"}|- `statefulset="c8ycore-sts"`<br> - `statefulset="edge-db-rs0"`<br> - `statefulset="logging-fluentd"`<br> - `statefulset="event-tailer-event-tailer"`<br>
 
 ### Deployments Metrics {#deployment-metrics}
-These metrics represent the health status of Deployments in the Edge. Deployments are another type of Kubernetes workload that manage stateless applications, ensuring that a specified number of replicas of the application are running at any given time.
+These metrics represent the health status of Deployments in Edge. Deployments are another type of Kubernetes workload that manage stateless applications, ensuring that a specified number of replicas of the application are running at any given time.
 <br>The _c8yedge_deployment_ metric can be qualified by the Deployment name, such as `deployment="c8yedge-operator-controller-manager"`, `deployment="apama-ctrl-scope-edge-deployment"`, and so on, for monitoring different Deployments in the Edge. A gauge value of 1 for a Deployment indicates that it is healthy, meaning all desired replicas are up and serving without issues. A value of 0 indicates a failure, such as one or more replicas not running as expected.
 
 |Metrics|Label Options

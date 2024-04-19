@@ -262,7 +262,7 @@ To create the ConfigMap in your Kubernetes cluster, apply the following YAML def
     data:
       OPERATOR_REGISTRY_INSECURE_SKIP_TLS_VERIFY: "true"
 ```
-You can deploy this ConfigMap by saving the above content to a file (e.g., custom-env-configmap.yaml) and running:
+You can deploy this ConfigMap by saving the above content to a file (for example, custom-env-configmap.yaml) and running:
 ```shell
 kubectl apply -f custom-env-configmap.yaml
 ```

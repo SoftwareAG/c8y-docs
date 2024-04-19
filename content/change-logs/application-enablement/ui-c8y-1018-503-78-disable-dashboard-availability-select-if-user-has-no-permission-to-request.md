@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57128
 version: 1018.503.78
 ---
-Previously, the dashboard availability select was always enabled for users, even if they did not have permission to request the roles necessary to display availability select list. With this change, the dashboard availability select is now hidden for users who do not have permission to request roles. User need User management READ permission to see and modify availability property of dashboard.
+Previously, the dashboard availability selection was always visible for users, even if they did not have the permission to see it. With this change, the dashboard availability selection is hidden for users who do not have the required permission. Users must have User Management READ permission to see and modify the availability property of a dashboard.

@@ -18,4 +18,4 @@ This feature is in Public Preview, that is, it is not enabled by default and may
 
 Support of automated persistence of measurement values under the `c8y_LatestMeasurements` fragment has been introduced. If a measurement is created with a series that matches the configuration the device managed object is updated with the last series sent to the platform.
 
-For details on how to enable the feature and how it works, refer to the managing data section in the platform administration guide [Managing data - Cumulocity IoT documentation](https://cumulocity.com/docs/standard-tenant/managing-data/#latest-value).
+For details on how to enable the feature and how it works, refer to [Managing data](https://cumulocity.com/docs/standard-tenant/managing-data/#latest-value).

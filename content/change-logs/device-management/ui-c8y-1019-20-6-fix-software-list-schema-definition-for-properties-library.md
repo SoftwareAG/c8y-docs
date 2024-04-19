@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed "Software list" schema definition for properties library
+title: Software items are now properly shown in the Device data widget
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

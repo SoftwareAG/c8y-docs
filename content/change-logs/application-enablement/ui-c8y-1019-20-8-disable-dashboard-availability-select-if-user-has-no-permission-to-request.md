@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Disable dashboard availability select if user has no permission to request roles to populate it. (#6021) [GRAFT][release/cd] (#6173)
+title: Dashboard availability selection is hidden for users who do not have the required permission
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

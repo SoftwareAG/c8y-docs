@@ -17,13 +17,13 @@ To enhance the performance and resource allocation for Karaf, you can change the
 After changing the file, restart the `cumulocity-core-karaf` service:
 
 ```shell
-[admin@iot-edge-server ~]$  sudo service cumulocity-core-karaf stop
+sudo service cumulocity-core-karaf stop
 ```
 
 and
 
 ```shell
-[admin@iot-edge-server ~]$  service cumulocity-core-karaf start
+service cumulocity-core-karaf start
 ```
 
 {{< c8y-admon-important >}}
@@ -42,7 +42,7 @@ Increasing the memory of the Edge appliance must be followed by increasing the m
 
 ### Changing log level for Karaf
 
-This section describes how to change the log level for {{< product-c8y-iot >}} Edge specific applications in the back-end. It does not explain how to change log settings for standard components like databases or other operating system related services.
+This section describes how to change the log level for Edge specific applications in the back-end. It does not explain how to change log settings for standard components like databases or other operating system related services.
 
 The log level for Karaf is defined in the following file.
 
@@ -53,7 +53,7 @@ The file has the following structure:
 	# Root logger
 	log4j.rootLogger=INFO,out,osgi:*
 	log4j.throwableRenderer=org.apache.log4j.OsgiThrowableRenderer
-	
+
 	# Error appender
 	log4j.appender.out=org.apache.log4j.rolling.RollingFileAppender
 	log4j.appender.out.rollingPolicy=org.apache.log4j.rolling.FixedWindowRollingPolicy
@@ -65,14 +65,14 @@ The file has the following structure:
 	log4j.appender.out.layout=org.apache.log4j.PatternLayout
 	log4j.appender.out.layout.ConversionPattern=%d{yyyy-MM-dd} %d{HH:mm:ss}  | %-5.5p | %-16.16t | %-32.32c{1} | %X{bundle.id} - %X{bundle.name} - %X{bundle.version} | %m%n
 	log4j.appender.out.append=true
-	
+
 	# CXF request and response info:
 	# * ERROR - none
 	# * INFO - just headers (default)
 	# * DEBUG - whole, with payloads
 	log4j.additivity.com.cumulocity.rest.interceptors=false
 	log4j.logger.com.cumulocity.rest.interceptors=INFO,access
-	
+
 	# Access appender
 	log4j.appender.access=org.apache.log4j.rolling.RollingFileAppender
 	log4j.appender.access.rollingPolicy=org.apache.log4j.rolling.FixedWindowRollingPolicy
@@ -84,7 +84,7 @@ The file has the following structure:
 	log4j.appender.access.layout=org.apache.log4j.PatternLayout
 	log4j.appender.access.layout.ConversionPattern=%d{yyyy-MM-dd} %d{HH:mm:ss}  | %-5.5p | %-16.16t | %-32.32c{1} | %X{bundle.id} - %X{bundle.name} - %X{bundle.version} | %m%n
 	log4j.appender.access.append=true
-	
+
 	# Error response info:
 	# * INFO - just error message (default)
 	# * DEGUB - full stack trace
@@ -94,9 +94,9 @@ The file has the following structure:
 Change the following entries to adjust the log levels:
 
 	log4j.rootLogger=INFO,out,osgi:*
-	
+
 	log4j.logger.com.cumulocity.rest.interceptors=INFO,access
-	
+
 	log4j.logger.com.cumulocity.rest.mediatypes=INFO
 
 Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all "lower" log levels, for example, when you set the level to WARN you will also get ERROR events.

@@ -4,7 +4,7 @@ title: Installing Edge using the UI
 layout: redirect
 ---
 
-To install {{< product-c8y-iot >}} Edge using the user interface:
+To install Edge using the user interface:
 
 1. Connect and start the Edge appliance in the hypervisor. Wait until the network configuration screen appears.
     <img src="/images/edge/edge-network-configurator.png" name="Network Configurator" style="width:75%;"/>
@@ -15,7 +15,7 @@ The network configuration blue screen does not appear post installation. After t
 
 2. Configure the network for your Edge appliance, see the sample screenshot.
     <img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>
-    
+
     {{< c8y-admon-important >}}
 
 While configuring the network on VMware based hypervisors, do not us the IP addresses:
@@ -46,15 +46,15 @@ While configuring the network on VMware based hypervisors, do not us the IP addr
 Do not use the root credentials to perform any task. The root credentials must be used only when asked by {{< company-sag >}} support personnel. Using it otherwise might void the appliance support.
     {{< /c8y-admon-important >}}
 
-8. Create an administrator account to access the {{< product-c8y-iot >}} Edge tenant and the {{< product-c8y-iot >}} Edge {{< management-tenant >}}, and click **Next**.
+8. Create an administrator account to access the "edge" tenant and the {{< management-tenant >}}, and click **Next**.
 
 9. Provide a fully qualified domain name below **Domain name**.
 
-   For example, "myown.iot.com". Here, you must have the {{< product-c8y-iot >}} Edge license for the domain name **iot.com** or **myown.iot.com**.
+   For example, "myown.iot.com". Here, you must have the Edge license for the domain name **iot.com** or **myown.iot.com**.
 
    The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
-10. Provide the {{< product-c8y-iot >}} Edge license file associated with your domain name below **Licence file**.
+10. Provide the Edge license file associated with your domain name below **Licence file**.
 
 11. Provide the SSL certificate file and the SSL certificate key file.
 
@@ -62,13 +62,13 @@ Do not use the root credentials to perform any task. The root credentials must b
 
 12. Click **Install**.
 
-During the installation, the certificates are updated in the Edge appliance. If these certificates are not accepted by your browser, the browser does not get the progress of the installation. In such case, you must refresh the browser and follow the browser instructions for more details. The installation takes some time to complete. After the installation is complete, the "{{< product-c8y-iot >}} Edge installation is now complete" message appears.
+During the installation, the certificates are updated in the Edge appliance. If these certificates are not accepted by your browser, the browser does not get the progress of the installation. In such case, you must refresh the browser and follow the browser instructions for more details. The installation takes some time to complete. After the installation is complete, the "Cumulocity IoT Edge installation is now complete" message appears.
 
 {{< c8y-admon-info >}}
 If you still see the installation in progress, refresh the browser.
 {{< /c8y-admon-info >}}
 
-Next, click **Open {{< product-c8y-iot >}} Edge**.
+Next, click **Open Cumulocity IoT Edge**.
 
 {{< c8y-admon-important >}}
 In case you need to reset the password, you must configure the "reset password" template and email server settings to receive the password reset email. For more information, see [Configuring password reset](/users-guide/enterprise-tenant/#password-reset) and [Configuring email server](/users-guide/enterprise-tenant/#email-server) in the *User guide*.

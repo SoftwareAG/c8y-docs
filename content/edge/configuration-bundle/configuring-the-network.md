@@ -8,7 +8,7 @@ Configuring the network enables you to access the Edge appliance using the domai
 
 {{< c8y-admon-important >}}
 
-Do not use the IP addresses from the below blocks in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
+Do not use the IP addresses from the below blocks in your network configuration. These IP addresses are reserved for Edge internal purpose.
 
 - 10.96.0.0/12 - reserved for Kubernetes service
 - 10.88.0.1/16 - reserved for Podman network

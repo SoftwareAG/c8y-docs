@@ -10,16 +10,16 @@ Before you connect a Modbus device, ensure that the agent is running.
 
 #### How to check/change the agent state
 
-Use the following command to check if the agent is running in {{< product-c8y-iot >}} Edge (running on port  6670):  
+Use the following command to check if the agent is running in Edge (running on port  6670):  
 
 ```shell
-[admin@iot-edge-server ~]$ systemctl status cumulocity-agent
+systemctl status cumulocity-agent
 ```
 
 If the agent is not running, start it with the following command:
 
 ```shell
-[admin@iot-edge-server ~]$ systemctl start cumulocity-agent
+systemctl start cumulocity-agent
 ```
 
 The Modbus agent is pre-registered.

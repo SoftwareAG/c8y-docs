@@ -32,19 +32,25 @@ For your convenience, here is an overview of the contents:
 * The query processing is based on a Dremio master and a Dremio executor as well as on a ZooKeeper instance. Dremio master and ZooKeeper run in one Docker container and the Dremio executor runs in another one. Both containers are run by the Docker daemon. The internal state of the containers, for example, the query job history, is persisted on the central data disk. In the above figure just Dremio is shown for reasons of simplicity.
 * The data lake is located on the central data disk.
 
+#### Cumulocity IoT DataHub Edge variants
+{{< product-c8y-iot >}} DataHub Edge is available in two variants corresponding to two 
+delivery modes of {{< product-c8y-iot >}} Edge:
+* An appliance running in a Linux VM deployed into a supported hypervisor. In this setup, the {{< product-c8y-iot >}} DataHub backend, the Dremio master, and the Dremio executor are running as Docker containers
+* An operator-based deployment into a Kubernetes environment. In this setup, the {{< product-c8y-iot >}} DataHub backend is running as a microservice within the {{< product-c8y-iot >}} platform while Dremio master and executor are deployed as a set of the Kubernetes pods
+
 #### Cumulocity IoT DataHub Edge versus Cumulocity IoT DataHub cloud deployments
 
 {{< product-c8y-iot >}} DataHub Edge uses the same software as {{< product-c8y-iot >}} DataHub, though in the following aspects these two variants differ:
 
-| Area | {{< product-c8y-iot >}} DataHub Edge | {{< product-c8y-iot >}} DataHub Cloud |
-| -----   | -----   | -----   |
-| High Availability | Depending on the underlying virtualization technology | Depending on the cloud deployment setup |
-| Vertical scalability | Yes | Yes |
-| Horizontal scalability | No | Yes |
-| Upgrades with no downtime | No | No |
-| Root access | No | Yes, if customer is hosting |
-| Installation | Offline | Online |
-| Dremio cluster setup | 1 master, 1 executor | Minimum 1 master, 1 executor |
-| Dremio container management | Docker daemon | Kubernetes |
-| {{< product-c8y-iot >}} DataHub backend container management | Docker daemon | Microservice in {{< product-c8y-iot >}} Core |
-| Data lakes | NAS | Azure Storage, S3, HDFS, (NAS) |
+| Area | {{< product-c8y-iot >}} DataHub Edge | {{< product-c8y-iot >}} DataHub Edge Kubernetes | {{< product-c8y-iot >}} DataHub Cloud |
+| -----   | -----   | -----   | -----   |
+| High Availability | Depending on the underlying virtualization technology | No | Depending on the cloud deployment setup |
+| Vertical scalability | Yes | Yes | Yes |
+| Horizontal scalability | No | No | Yes |
+| Upgrades with no downtime | No | No | No |
+| Root access | No | Yes | Yes, if customer is hosting |
+| Installation | Offline | Online | Online |
+| Dremio cluster setup | 1 master, 1 executor | 1 master, 1 executor | Minimum 1 master, 1 executor |
+| Dremio container management | Docker daemon | Kubernetes | Kubernetes |
+| {{< product-c8y-iot >}} DataHub backend container management | Docker daemon | Microservice in {{< product-c8y-iot >}} Edge Kubernetes | Microservice in {{< product-c8y-iot >}} Core |
+| Data lakes | NAS | NAS | Azure Storage, S3, HDFS, (NAS) |

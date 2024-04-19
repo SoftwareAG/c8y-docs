@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Disable dashboard availability select if user has no permission to request roles to populate it. (#6173) [GRAFT][release/y2024] (#6180)
+title: Hide dashboard availability select if user has no permission to request roles to populate it.
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

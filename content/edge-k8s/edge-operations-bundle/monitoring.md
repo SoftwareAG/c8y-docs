@@ -3,7 +3,7 @@ weight: 10
 title: Monitoring
 layout: redirect
 ---
-Edge on Kubernetes allows for monitoring of the Edge Deployment using Prometheus, an open-source project that is used for monitoring application state. See https://prometheus.io/ for detailed information on Prometheus and how to use it.
+Edge on Kubernetes allows for monitoring of the Edge deployment using Prometheus, an open-source project that is used for monitoring application state. See https://prometheus.io/ for detailed information on Prometheus and how to use it.
 
 The Edge operator exposes a Prometheus-compatible metrics endpoint, `https://\<domain>:8443/metrics`, where the domain is the one you specified in the Edge CR (or myown.iot.com if you followed the Quickstart installation steps).
 You can monitor the recommended list of metrics below, with more available at the above endpoint.
@@ -28,9 +28,9 @@ For more details, see [Monitoring with Prometheus]({{< link-apama-webhelp >}}ind
 |c8yedge_apama_process_cpu_usage|CPU usage by Apama process.|Essential for understanding how Apama impacts overall system CPU resources.
 |c8yedge_apama_system_cpu_usage|The total CPU usage percentage by the system, including Apama and other process.|Helps gauge the overall CPU load and identify potential bottlenecks.
 |c8yedge_apama_system_load_average_1m|The system's 1-minute load average, including Apama's impact.|Gives an immediate view of system demand, useful for identifying sudden increases in load.
-|c8yedge_apama_sag_apama_in_c8y_uptime_secs|This metric measures the uptime of Apama and its correlator in seconds within the Edge.|These are crucial for tracking the stability and reliability of the Apama service.
+|c8yedge_apama_sag_apama_in_c8y_uptime_secs|This metric measures the uptime of Apama and its correlator in seconds within the Edge deployment.|These are crucial for tracking the stability and reliability of the Apama service.
 |c8yedge_apama_process_uptime_seconds|Measures how long the Apama process has been running in seconds.|Similar to the uptime metrics above, this provides insights into Apama's process stability.
-|c8yedge_apama_sag_apama_correlator_uptime_seconds|metrics measure the uptime of Apama and its correlator in seconds within the Edge.|These are crucial for tracking the stability and reliability of the Apama service.
+|c8yedge_apama_sag_apama_correlator_uptime_seconds|metrics measure the uptime of Apama and its correlator in seconds within the Edge deployment.|These are crucial for tracking the stability and reliability of the Apama service.
 |c8yedge_apama_process_files_open_files|The number of files currently open by Apama process.|Critical for ensuring Apama does not run into file descriptor limits, affecting its ability to operate.
 |c8yedge_apama_jvm_threads_peak_threads|The peak thread count used by Apama's JVM (Java Virtual Machine).|Indicates the maximum concurrency level required by Apama, useful for JVM tuning and performance optimization.
 |c8yedge_apama_process_start_time_seconds|The start time of the Apama process, measured in seconds since the Unix epoch.|Can be used to determine the Apama process's age, correlating with other events or metrics.
@@ -51,8 +51,8 @@ Metrics related to MongoDB, prefixed by **c8yedge_db**
 |c8yedge_db_process_start_time_seconds|The start time of the database process, measured in seconds since the Unix epoch.|This metric can be used to determine how long the database has been running since its last restart. It's useful for tracking uptime and correlating with other events or metrics.
 
 ### StatefulSets Metrics {#statefulset-metrics}
-This metric tracks the health status of StatefulSets in the Edge. StatefulSets are Kubernetes workloads that manage stateful applications, ensuring that the deployment and scaling of the application are handled properly, and that the application maintains its state across restarts and migrations.
-<br>The _c8yedge_statefulset_ metric can be qualified by the StatefulSet name, such as `statefulset="c8ycore-sts"`, `statefulset="edge-db-rs0"`, and so on, for monitoring different StatefulSets in the Edge. A gauge value of 1 for a StatefulSet indicates that it is healthy, meaning all desired replicas are up and serving without issues. A value of 0 indicates a failure, such as one or more replicas not running as expected.
+This metric tracks the health status of StatefulSets in the Edge deployment. StatefulSets are Kubernetes workloads that manage stateful applications, ensuring that the deployment and scaling of the application are handled properly, and that the application maintains its state across restarts and migrations.
+<br>The _c8yedge_statefulset_ metric can be qualified by the StatefulSet name, such as `statefulset="c8ycore-sts"`, `statefulset="edge-db-rs0"`, and so on, for monitoring different StatefulSets in the Edge deployment. A gauge value of 1 for a StatefulSet indicates that it is healthy, meaning all desired replicas are up and serving without issues. A value of 0 indicates a failure, such as one or more replicas not running as expected.
 
 |Metrics|Label Options
 |:---|:---
@@ -60,7 +60,7 @@ This metric tracks the health status of StatefulSets in the Edge. StatefulSets a
 
 ### Deployments Metrics {#deployment-metrics}
 These metrics represent the health status of Deployments in Edge. Deployments are another type of Kubernetes workload that manage stateless applications, ensuring that a specified number of replicas of the application are running at any given time.
-<br>The _c8yedge_deployment_ metric can be qualified by the Deployment name, such as `deployment="c8yedge-operator-controller-manager"`, `deployment="apama-ctrl-scope-edge-deployment"`, and so on, for monitoring different Deployments in the Edge. A gauge value of 1 for a Deployment indicates that it is healthy, meaning all desired replicas are up and serving without issues. A value of 0 indicates a failure, such as one or more replicas not running as expected.
+<br>The _c8yedge_deployment_ metric can be qualified by the Deployment name, such as `deployment="c8yedge-operator-controller-manager"`, `deployment="apama-ctrl-scope-edge-deployment"`, and so on, for monitoring different Deployments in Edge. A gauge value of 1 for a Deployment indicates that it is healthy, meaning all desired replicas are up and serving without issues. A value of 0 indicates a failure, such as one or more replicas not running as expected.
 
 |Metrics|Label Options
 |:---|:---
@@ -68,7 +68,7 @@ These metrics represent the health status of Deployments in Edge. Deployments ar
 
 ### Pod Metrics (CPU and Memory Usage) {#cpu-metrics}
 These metrics track the CPU and memory usage of the workloads in your Edge deployment. CPU usage is a critical performance metric, indicating how much of the allocated CPU resources are being utilized by a container. Monitoring memory usage helps in managing application scalability, optimizing resource allocation, and preventing out-of-memory (OOM) issues that could lead to application downtime.
-<br>The _c8yedge_pod_cpu_usage_ and _c8yedge_pod_cpu_usage_ metric can be qualified by the Pod and Container names, such as `container="cumulocity-core", pod="c8ycore-sts-0"` and so on for monitoring the CPU and memory usage of different containers in the Edge.
+<br>The _c8yedge_pod_cpu_usage_ and _c8yedge_pod_cpu_usage_ metric can be qualified by the Pod and Container names, such as `container="cumulocity-core", pod="c8ycore-sts-0"` and so on for monitoring the CPU and memory usage of different containers in the Edge deployment.
 
 <br>Pod names often contain a unique hash or a set of alphanumeric characters that change every time the pod is restarted, redeployed, or rescheduled on a different node. To continuously monitor the CPU usage of a container across pod restarts, you can use regular expressions (regex) in your monitoring queries to match only the static part of the pod name. For example, if you want to monitor the `apama-ctrl-scope-edge-pod` container regardless of pod restarts, you must construct a query that matches any pod name starting with `apama-ctrl-scope-edge-deployment` without specifying the unique hash, like `container="apama-ctrl-scope-edge-pod",pod=~"apama-ctrl-scope-edge-deployment.*"`.
 

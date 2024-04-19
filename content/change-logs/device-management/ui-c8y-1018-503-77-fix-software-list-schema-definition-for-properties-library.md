@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix software list schema definition for properties library
+title: Software items are now properly shown in the Device data widget
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3470
 version: 1018.503.77
 ---
-Fix software list schema definition for properties library
+The properties library schema definition for the `c8y_SoftwareList` fragment did not match the actual managed object properties. Hence, when the "Software" property was selected in the "Device data" widget no data was shown. The property is now called "Software list" and displays all software items contained in the `c8y_SoftwareList` fragment.

@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57974
 version: 10.20.335.0
 ---
-An error with logging out of a user using OAI-Secure has been fixed, the user is not logged out if an error occurs while assigning or unassigning global roles.
+An issue has been fixed with logging out users using OAI-Secure during global roles updates. Now users are no longer logged out if an error occurs while assigning or unassigning global roles.

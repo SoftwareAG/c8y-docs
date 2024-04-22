@@ -1,6 +1,6 @@
 ---
 date: ""
-title: adjust UI info gauge widget labels (#6018) [GRAFT][release/y2024] (#6048)
+title: Label display in the "Info gauge" widget has been improved
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

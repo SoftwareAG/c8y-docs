@@ -9,7 +9,7 @@ component:
   - value: component--KIsStyzM
     label: Device Management app
 build_artifact:
-  - value: tc-QHwMfWtBk7
+  - value: tc-TlhlHnKTa
     label: advanced-software-mgmt
 ticket: DM-3475
 version: 1.2.0, 10.16.0.478, 10.18.0.398, 10.17.0.506, 10.18.540.102

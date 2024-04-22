@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Removal of Deprecated JWT login mode
+title: Removal of deprecated JWT login mode
 product_area: Platform services
 change_type:
   - value: change-inv-3bw8e

@@ -10,7 +10,7 @@ component:
     label: Device Management app
 build_artifact:
   - value: tc-QHwMfWtBk7
-    label: cumulocity
+    label: advanced-software-mgmt
 ticket: DM-3475
 version: 1.2.0, 10.16.0.478, 10.18.0.398, 10.17.0.506, 10.18.540.102
 ---

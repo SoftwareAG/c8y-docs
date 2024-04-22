@@ -35,6 +35,30 @@
     {
       "id": "tc-ggH2M4hf3",
       "option": "lwm2m-agent"
+    },
+    {
+      "id": "tc-veSW5rwrq",
+      "option": "device-simulator"
+    },
+    {
+      "id": "tc-ycWx1InI9",
+      "option": "loriot-agent"
+    },
+    {
+      "id": "tc-TlhlHnKTa",
+      "option": "advanced-software-mgmt"
+    },
+    {
+      "id": "tc--fVxjY7du",
+      "option": "actility-agent"
+    },
+    {
+      "id": "tc-aHRoC2cxY",
+      "option": "cloud-remote-access"
+    },
+    {
+      "id": "tc-F7MbgH6a0",
+      "option": "connectivity-agent"
     }
   ]
 }

@@ -15,4 +15,4 @@ ticket: CTM-953
 version: 1020.1.4
 ---
 
-Users can now order the complex property keys by dragging and dropping them using the drag icon which appears on hover.
+Users can now order the complex property keys by dragging and dropping them using the drag icon which appears on hovering over the row.

@@ -12,3 +12,5 @@ With {{< product-c8y-iot >}} we provide a product and tooling to do exactly that
 
 1. Connect machines, collect the raw machine data, and make it accessible for AI/ML model training in your data science tool of choice.
 2. Focus on the operational aspects of the Machine Learning lifecycle, which involves applying a trained model to the incoming IoT data to obtain predictions, scoring, or insights in the cloud and/or at the edge.  
+
+![Machine Learning integration](/images/machine-learning-guide/machine-learning-integration.png)

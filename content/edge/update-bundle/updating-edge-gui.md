@@ -12,7 +12,7 @@ When you update your Edge appliance, the update also applies operating system pa
 
 {{< c8y-admon-important >}}
 
-Before you update to Edge version 10.15, you must first upgrade to version 10.13.
+For information about upgrading from an earlier version to Edge 10.18, refer to [Migrating Edge 10.17 to 10.18](/edge/update/#migration-1017-to-1018).
 
 {{< /c8y-admon-important >}}
 

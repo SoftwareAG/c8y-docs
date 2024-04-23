@@ -15,12 +15,12 @@ This section describes how to install and configure Harbor on Kubernetes using [
 Make sure that your target host meets the following prerequisites.
 |<div style="width:140px">Item</div>|Details|
 |:---|:---|
-|Hardware|CPU: 2 cores<br>RAM: 4 GB<br>CPU Architecture: x86-64 <p><p>**Info:** These are the minimum system requirements for deploying Harbor. If you are deploying Harbor in the same cluster as you intend to deploy Edge, please note that these requirements are additional to those required for Edge.|
+|Hardware|CPU: 2 cores<br>RAM: 4 GB<br>CPU Architecture: x86-64 <p><p>{{< c8y-admon-info>}}These are the minimum system requirements for deploying Harbor. If you are deploying Harbor in the same cluster as you intend to deploy Edge, please note that these requirements are additional to those required for Edge.{{< /c8y-admon-info>}}|
 |Kubernetes|Version 1.25.x has been tested (with potential compatibility for subsequent versions)|
 |Helm version 3.x|Refer to [Installing Helm](https://helm.sh/docs/intro/install/) for the installation instructions.|
 |Helm cm-push plugin|Helm plugin to push chart package to ChartMuseum. Refer to [Installing cm-push plugin](https://github.com/chartmuseum/helm-push?tab=readme-ov-file#install) for the installation instructions.|
 |Disk space|Four static Persistent Volumes (PV) or a StorageClass configured with dynamic provisioning to bind.<br>- 5 GB each for the Persistent Volume Claims (PVC) made for the registry (storing container images) and the chartmuseum (storing Helm Charts).<br>- 1 GB each for the Persistent Volume Claims (PVC) made for the harbor database and the jobservice.|
-|TLS/SSL key and TLS/SSL certificate|Optional. Use your internal or an external CA (Certification Authority) to generate these files. Ensure that the TLS/SSL certificate has the complete certificate chain in the right order.<p><p>**Info:** The .crt and .key files must be in the PEM format and the .key file must not be encrypted.|
+|TLS/SSL key and TLS/SSL certificate|Optional. Use your internal or an external CA (Certification Authority) to generate these files. Ensure that the TLS/SSL certificate has the complete certificate chain in the right order.<p><p>{{< c8y-admon-info>}} The .crt and .key files must be in the PEM format and the .key file must not be encrypted.{{< /c8y-admon-info>}}|
 
 #### Install Harbor using Helm Charts
 You can download and edit the Harbor configuration file [c8yedge-harbor-values.yaml](/files/edge-k8s/c8yedge-harbor-values.yaml) if necessary.

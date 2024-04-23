@@ -59,10 +59,10 @@ After completing this step, you should be able to sign into the Harbor registry 
 Run the below commands to trust the self-signed Harbor server certificates:
 
 ```shell
+sudo sh -c '
 LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local       # Change harbor domain if necessary
 LOCAL_HARBOR_PORT=5001                         # Change harbor port if necessary
 C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT=$(echo quit | openssl s_client -showcerts -servername $LOCAL_HARBOR_DOMAIN -connect $LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT) && \
-sudo sh -c '
 if command -v "update-ca-certificates" > /dev/null 2>&1; then 
 	mkdir -p /usr/local/share/ca-certificates 
 	echo "$C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT" > /usr/local/share/ca-certificates/c8yedge-harbor-registry-ca.crt 
@@ -74,7 +74,7 @@ elif command -v "update-ca-trust" > /dev/null 2>&1; then
 fi'
 ```
 
-You should restart the container runtime and Kubernetes cluster after running the above commands for the changes to take effect. For example, you can restart k3s using `systemctl restart k3s` or `service k3s restart` commands.
+You should restart the container runtime and Kubernetes cluster after running the above commands for the changes to take effect. For example, you can restart k3s using `sudo systemctl restart k3s` or `sudo service k3s restart` commands.
 
 
 ### Download and publish Edge artifacts to local Harbor registry  
@@ -101,7 +101,7 @@ LOCAL_HARBOR_PORT=5001                          # Change harbor port if necessar
 LOCAL_HARBOR_USER=admin                         # Change if you used different credentails while installing the Harbor registry
 LOCAL_HARBOR_PASSWORD=admin-pass                # Change if you used different credentails while installing the Harbor registry
 
-edge_repository_sync sync -v 1018.0.0 -sr registry.c8y.io -sru $EDGE_REPO_USER -srp $EDGE_REPO_PASSWORD -tr $LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT -tru $EDGE_REPO_USER -trp $EDGE_REPO_PASSWORD --dryrun False
+edge_repository_sync sync -v 1018.0.0 -sr registry.c8y.io -sru "$EDGE_REPO_USER" -srp "$EDGE_REPO_PASSWORD" -tr "$LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT" -tru "$EDGE_REPO_USER" -trp "$EDGE_REPO_PASSWORD" --dryrun False
 ```
 
 {{< c8y-admon-info >}}

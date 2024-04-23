@@ -69,7 +69,7 @@ if command -v "update-ca-certificates" > /dev/null 2>&1; then
 	update-ca-certificates 
 elif command -v "update-ca-trust" > /dev/null 2>&1; then 
 	mkdir -p /etc/pki/tls/certs 
-	echo "$C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT" > /etc/pki/tls/certs/edge-microservices-registry-ca.crt 
+	echo "$C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT" > /etc/pki/tls/certs/c8yedge-harbor-registry-ca.crt 
 	update-ca-trust extract 
 fi'
 ```

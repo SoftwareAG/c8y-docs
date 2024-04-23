@@ -39,7 +39,7 @@ The next step is about deploying the created model for inferencing or model scor
 
 ### Step 2 - Deploy your AI/ML model {#step-2-deploy-your-aiml-model}
 
-In general, there are three possible scenarios for deploying your AI/ML model, depending on the requirements of your use-case:
+In general, there are three possible scenarios for deploying your AI/ML model, depending on the requirements of your use case:
 
 * External hosting
 * Embedded hosting using a custom inference microservice

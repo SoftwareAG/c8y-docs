@@ -23,7 +23,8 @@ Make sure that your target host meets the following prerequisites.
 |TLS/SSL key and TLS/SSL certificate|Optional. Use your internal or an external CA (Certification Authority) to generate these files. Ensure that the TLS/SSL certificate has the complete certificate chain in the right order.<p><p>**Info:** The .crt and .key files must be in the PEM format and the .key file must not be encrypted.|
 
 #### Install Harbor using Helm Charts
-Download and edit if necessary the Harbor configuration ([c8yedge-harbor-values.yaml](/files/edge-k8s/c8yedge-harbor-values.yaml)), before running the commands below to install Harbor in *c8yedge-harbor* namespace: 
+You can download and edit the Harbor configuration file [c8yedge-harbor-values.yaml](/files/edge-k8s/c8yedge-harbor-values.yaml) if necessary.
+After making any required edits, execute the following commands to install Harbor in the *c8yedge-harbor* namespace:
 
 ```shell
 helm repo add harbor-repo https://helm.goharbor.io
@@ -32,9 +33,15 @@ helm upgrade --install -f c8yedge-harbor-values.yaml --namespace c8yedge-harbor 
 ```
 
 #### Update /etc/hosts to resolve the domain
-Run the below commands:
+Run the below commands to update the `/etc/hosts` file and trust the self-signed Harbor server certificates:
 
+```shell
+# Update /etc/hosts to resolve the Harbor domain
+HARBOR_DOMAIN=c8yedge.harbor.local \
+sudo sed -i "/$HARBOR_DOMAIN/d" /etc/hosts \
+echo "$(kubectl get svc -n c8yedge-harbor c8yedge-harbor-lb -o jsonpath='{.status.loadBalancer.ingress[0].ip}') $HARBOR_DOMAIN" | sudo tee -a /etc/hosts \
 
+```
 
 #### Step 2: Install Docker
 Docker must be installed before Harbor can be run.

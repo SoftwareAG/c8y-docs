@@ -1,6 +1,6 @@
 ---
 date:
-title: Software packages in c8y_InstalledSoftwareList are no longer emptied after resubscription of the ASM microservice  
+title: Installed software packages are no longer emptied after restart of the Advanced software management microservice  
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

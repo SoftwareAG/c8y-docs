@@ -12,7 +12,6 @@ function stop_services_old_VM() {
     sshpass -p $edge_10_17_OS_ROOT_PASSWORD ssh root@$edge_10_17_VM_IP "service cdh-console stop || true"
     sshpass -p $edge_10_17_OS_ROOT_PASSWORD ssh root@$edge_10_17_VM_IP "service cdh-master stop || true"
     sshpass -p $edge_10_17_OS_ROOT_PASSWORD ssh root@$edge_10_17_VM_IP "service cdh-executor stop || true"
-
 }
 
 function perform_data_transfer() { 

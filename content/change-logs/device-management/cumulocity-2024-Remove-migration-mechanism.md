@@ -14,5 +14,4 @@ build_artifact:
 ticket: DM-3475
 version: 10.18.540.102
 ---
-The issue has been resolved that software packages in `c8y_InstalledSoftwareList` were emptied after the Advanced Software Management microservice (ASM) was resubscribed. 
 An old data model migration mechanism was erroneously removing installed software information from devices when the Advanced software management microservice was resubscribed or restarted. We have removed this mechanism entirely so that existing data is no longer modified. 

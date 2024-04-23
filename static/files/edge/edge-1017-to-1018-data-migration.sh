@@ -8,6 +8,11 @@ set -e  # Exit script on failure
 function stop_services_old_VM() {
     echo "Stopping services in 10.17 appliance"
     sshpass -p $edge_10_17_OS_ROOT_PASSWORD ssh root@$edge_10_17_VM_IP "monit unmonitor all; systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod"
+    #always try to stop cdh services if cdh installed or not and ignore error.
+    sshpass -p $edge_10_17_OS_ROOT_PASSWORD ssh root@$edge_10_17_VM_IP "service cdh-console stop || true"
+    sshpass -p $edge_10_17_OS_ROOT_PASSWORD ssh root@$edge_10_17_VM_IP "service cdh-master stop || true"
+    sshpass -p $edge_10_17_OS_ROOT_PASSWORD ssh root@$edge_10_17_VM_IP "service cdh-executor stop || true"
+
 }
 
 function perform_data_transfer() { 

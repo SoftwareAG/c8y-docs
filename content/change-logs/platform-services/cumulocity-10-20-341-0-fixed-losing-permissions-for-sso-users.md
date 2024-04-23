@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58907
 version: 10.20.341.0
 ---
-An issue has been fixed with losing permissions for SSO users after the platform upgrade from version 10.17 to newer. Now, updating the platform version does not affect user permissions.
+After a platform upgrade from version 10.17 to a later version an issue occurred that the permissions for some SSO users got lost. This issue has been fixed and updating the platform version does no longer affect user permissions.

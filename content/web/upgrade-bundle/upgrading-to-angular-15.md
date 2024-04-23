@@ -28,7 +28,7 @@ Deprecated HOOK Tokens and Their Replacements
 | `HOOK_STEPPER`      | `hookStepper`     |
 
 {{< c8y-admon-info >}}
-For more information on the multi provider, see **points to removed section** [Multi provider (MP)](/web/libraries/#multi-provider-mp).
+For more information on the multi provider, refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/).
 {{< /c8y-admon-info >}}
 
 

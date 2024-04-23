@@ -4,7 +4,7 @@ title: Installing Edge in an air-gapped environment
 layout: redirect
 ---
 
-Cumulocity IoT Edge on Kubernetes supports extended offline operations with intermittent or no internet connection. This capability enables seamless operation in environments where continuous internet access is not guaranteed. In order to achieve seamless operation of Edge in offline environments, it is essential to ensure that all required artifacts, including Helm Charts and Docker images, are readily available. This can be accomplished by hosting these artifacts in a local Harbor registry.
+Edge on Kubernetes supports extended offline operations with intermittent or no internet connection. This capability enables seamless operation in environments where continuous internet access is not guaranteed. In order to achieve seamless operation of Edge in offline environments, it is essential to ensure that all required artifacts, including Helm Charts and Docker images, are readily available. This can be accomplished by hosting these artifacts in a local Harbor registry.
 
 Harbor is an open-source container image registry which can be installed and configured to host the Edge artifacts. This guide will walk you through the process of installing and configuring Harbor version 2.5, providing step-by-step instructions to help you set up the registry for Edge deployment. For more information on Harbor, refer to [Harbor 2.5 Documentation](https://goharbor.io/docs/2.5.0/)
 
@@ -27,287 +27,118 @@ You can download and edit the Harbor configuration file [c8yedge-harbor-values.y
 After making any required edits, execute the following commands to install Harbor in the *c8yedge-harbor* namespace:
 
 ```shell
-helm repo add harbor-repo https://helm.goharbor.io
-kubectl create namespace c8yedge-harbor
-helm upgrade --install -f c8yedge-harbor-values.yaml --namespace c8yedge-harbor c8yedge-harbor harbor-repo/harbor --version 1.9.6
+NAMESPACE_NAME=c8yedge-harbor && \     # Change namespace name if necessary
+helm repo add harbor-repo https://helm.goharbor.io && \
+kubectl create namespace $NAMESPACE_NAME && \
+helm upgrade --install -f c8yedge-harbor-values.yaml -n $NAMESPACE_NAME c8yedge-harbor harbor-repo/harbor --version 1.9.6
 ```
 
+#### Wait for Harbor server to start
+You can verify if the Harbor server has started by checking the status of the pods using the following command:
+
+```shell
+NAMESPACE_NAME=c8yedge-harbor && \     # Change namespace name if necessary
+kubectl get pods -n $NAMESPACE_NAME
+```
+This command will display the status of all pods in the specified namespace (*c8yedge-harbor* in this case), allowing you to confirm whether the Harbor server pods are running successfully.
+
 #### Update /etc/hosts to resolve the domain
-Run the below commands to update the `/etc/hosts` file and trust the self-signed Harbor server certificates:
+Run the below commands to update the `/etc/hosts` file to resolve the harbor domain:
 
 ```shell
 # Update /etc/hosts to resolve the Harbor domain
-HARBOR_DOMAIN=c8yedge.harbor.local
-sudo sed -i "/$HARBOR_DOMAIN/d" /etc/hosts
-echo "$(kubectl get svc -n c8yedge-harbor c8yedge-harbor-lb -o jsonpath='{.status.loadBalancer.ingress[0].ip}') $HARBOR_DOMAIN" | sudo tee -a /etc/hosts
-
+NAMESPACE_NAME=c8yedge-harbor && \                # Change namespace name if necessary
+LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local && \     # Change harbor domain if necessary
+sudo sed -i "/$LOCAL_HARBOR_DOMAIN/d" /etc/hosts && \
+echo "$(kubectl get service -n $NAMESPACE_NAME c8yedge-harbor-lb -o jsonpath='{.status.loadBalancer.ingress[0].ip}') $LOCAL_HARBOR_DOMAIN" | sudo tee -a /etc/hosts
 ```
 
-#### Step 2: Install Docker
-Docker must be installed before Harbor can be run.
+After completing this step, you should be able to sign into the Harbor registry at https://c8yedge.harbor.local:5001 with the username *admin* and password *admin-pass*.
 
-1. Add Docker's official GPG key:
-```shell
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-```
-
-2. Set up the Docker repository:
-```shell
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-```
-
-3. Install Docker Engine and Docker Compose:
-```shell
-sudo apt update
-sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
-```
-
-4. Verify that Docker is running:
-```shell
-sudo systemctl status docker
-```
-
-5. If Docker is not running, start it with:
-```shell
-sudo systemctl start docker
-```
-
-#### Step 3: Download Harbor Offline Installer
-Harbor's offline installer package includes all the components for installing and running Harbor.
-
-1. Download the Harbor offline installer for version 2.5.1:
-```shell
-cd /tmp
-wget https://github.com/goharbor/harbor/releases/download/v2.5.1/harbor-offline-installer-v2.5.1.tgz
-```
-2. Extract the installer:
-```shell
-tar -xzvf harbor-offline-installer-v2.5.1.tgz
-```
-
-3. Move the Harbor directory to /opt/:
-```shell
-sudo mv harbor /opt/
-```
-
-#### Step 4: Configure harbor.yaml
-Before installing Harbor, you must configure the harbor.yaml file with your specific settings.
-
-1. Navigate to the Harbor directory:
-``` shell
-cd /opt/harbor
-```
-
-2. Create the harbor.yaml file with your domain, certificates, and other settings. Replace `harbor.vm.local` with your actual domain name.
-```shell
-hostname: harbor.vm.local
-http:
-  port: 80
-https:
-  port: 443
-  certificate: /opt/harbor/harbor.vm.local.crt
-  private_key: /opt/harbor/harbor.vm.local.key
-harbor_admin_password: Harbor12345
-database:
-  password: root123
-  max_idle_conns: 100
-  max_open_conns: 900
-  conn_max_lifetime: 5m
-  conn_max_idle_time: 0
-data_volume: /data
-trivy:
-  ignore_unfixed: false
-  skip_update: false
-  offline_scan: false
-  security_check: vuln
-  insecure: false
-jobservice:
-  max_job_workers: 10
-  job_loggers:
-    - STD_OUTPUT
-    - FILE
-notification:
-  webhook_job_max_retry: 3
-log:
-  level: info
-  local:
-    rotate_count: 50
-    rotate_size: 200M
-    location: /var/log/harbor
-_version: 2.10.0
-proxy:
-  http_proxy:
-  https_proxy:
-  no_proxy:
-  components:
-    - core
-    - jobservice
-    - trivy
-upload_purging:
-  enabled: true
-  age: 168h
-  interval: 24h
-  dryrun: false
-cache:
-  enabled: false
-  expire_hours: 24
-```
-
-#### Step 5: Generate SSL Certificates
-Generate SSL certificates for your domain. Replace `harbor.vm.local` with your actual domain name.
-```shell
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout harbor.vm.local.key -out harbor.vm.local.crt -subj "/CN=harbor.vm.local" -addext "subjectAltName = DNS:harbor.vm.local"
-```
-Move the generated certificates to the specified location in your harbor.yaml configuration.
-
-#### Step 6: Install Harbor
-With the configuration and certificates in place, you can now install Harbor. The following command installs Harbor along with Notary, which is used for signing images, and ChartMuseum, which is used for storing Helm charts.
+#### Trust the self-signed Harbor server certificates
+Run the below commands to trust the self-signed Harbor server certificates:
 
 ```shell
-sudo ./install.sh --with-notary --with-chartmuseum
+LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local && \     # Change harbor domain if necessary
+LOCAL_HARBOR_PORT=5001 && \                       # Change harbor port if necessary
+C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT=$(echo quit | openssl s_client -showcerts -servername $LOCAL_HARBOR_DOMAIN -connect $LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT) && \ 
+if command -v "update-ca-certificates" > /dev/null 2>&1; then \
+	mkdir -p /usr/local/share/ca-certificates \
+	echo "$C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT" > /usr/local/share/ca-certificates/c8yedge-harbor-registry-ca.crt \
+	update-ca-certificates \
+elif command -v "update-ca-trust" > /dev/null 2>&1; then \
+	mkdir -p /etc/pki/tls/certs \
+	echo "$C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT" > /etc/pki/tls/certs/edge-microservices-registry-ca.crt \
+	update-ca-trust extract \
+fi
 ```
 
-#### Verification
-After installation, you can verify that Harbor is running by accessing it through your web browser at https://harbor.vm.local. Use the default admin password `Harbor12345` to log in, which you should change immediately after logging in for the first time.
+You should restart the container runtime and Kubernetes cluster after running the above commands for the changes to take effect. For example, you can restart k3s using `systemctl restart k3s` or `service k3s restart` commands.
 
-### Synchronizing Harbor Repositories
-To synchronize Harbor repositories between your local machine and a remote Harbor instance, follow these steps. This guide includes running a synchronization script and ensuring your local system trusts the Harbor certificate.
 
-#### Creating Projects in Harbor
-Before running the synchronization script, ensure that the following projects are created in Harbor to properly organize the repositories:
+### Download and publish Edge artifacts to local Harbor registry  
+This section outlines the steps to download the Edge artifacts from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and publish them to the local Harbor registry. You need to run a Python script to achieve this.
 
-* edge
-* edge-thirdparty
-* microservice-hosting
-* stack
-* thin-edge
+#### Install reposiotry sync script
+To install Edge repository synchronization script run the commands below:
+{{< c8y-admon-info >}}
+Refer to [Python Setup and Usage](https://docs.python.org/3/using/index.html) for installing Python 3 required to run this script.
+{{< /c8y-admon-info >}}
 
-These projects will host the various container images and Helm charts as per your organizational structure and deployment needs.
-
-#### Running the Synchronization Script
-Use the provided [registrysync.py](/files/edge-k8s/registrysync.py) script to synchronize repositories. Ensure you replace sensitive information such as passwords with placeholders or securely manage the credentials.
-
-Execute the synchronization script:
 ```shell
-./registrysync.py sync -v 1018.0.0 -sr registry.stage.c8y.io -sru edge -srp [MASKED_PASSWORD] -tr harbor.vm.local -tru admin -trp Harbor12345
+pip install --force-reinstall {{< link-c8y-doc-baseurl >}}/files/edge-k8s/edge_repository_sync-1018.0.0-py3-none-any.whl
 ```
-In this command, replace [MASKED_PASSWORD] with your actual source registry password.
 
-#### Adding Certificate to Trusted Store
-To avoid SSL certificate errors and securely connect to your Harbor instance, you must add the Harbor certificate to your system's trusted store.
+#### Run reposiotry sync script
+To download and publish the Edge artifacts to local Harbor registry, run the command below:
 
-1. Copy the Harbor certificate to the CA certificates directory:
 ```shell
-sudo cp -av harbor.vm.local.crt /usr/local/share/ca-certificates/
+EDGE_REPO_USER=EDGE-REPO-USER                     # Edge repository credentials
+EDGE_REPO_PASSWORD=EDGE-REPO-PASS                 # Edge repository credentials
+LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local && \     # Change harbor domain if necessary
+LOCAL_HARBOR_PORT=5001 && \                       # Change harbor port if necessary
+LOCAL_HARBOR_USER=admin && \                      # Change if you used different credentails while installing the Harbor registry
+LOCAL_HARBOR_PASSWORD=admin-pass && \             # Change if you used different credentails while installing the Harbor registry
+
+edge_repository_sync sync -v 1018.0.0 -sr registry.c8y.io -sru $EDGE_REPO_USER -srp $EDGE_REPO_PASSWORD -tr $LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT -tru $EDGE_REPO_USER -trp $EDGE_REPO_PASSWORD --dryrun False
 ```
-2. Update the CA certificates store:
+
+{{< c8y-admon-info >}}
+To request the Edge repository credentials, contact the logistics team for your region:
+* North and South America: LogisSrvus@softwareagusa.com
+* All Other Regions: LogisticsServiceCenterGER@softwareag.com
+{{< /c8y-admon-info >}}
+
+
+### Installing the Edge Operator
+To install the Edge Operator, run and enter the version (for example, 1018.0.0) you want to install, and the local Harbor registry credentials.
+
 ```shell
-sudo update-ca-certificates
+EDGE_NAMESPACE=c8yedge && \                 # Change namespace name if you want to deploy Edge in a different namespace
+kubectl create namespace $EDGE_NAMESPACE && \
+kubectl apply -n $EDGE_NAMESPACE -f {{< link-c8y-doc-baseurl >}}/files/edge-k8s/custom-environment-variables.yaml && \ 
+
+LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local && \     # Change harbor domain if necessary
+LOCAL_HARBOR_PORT=5001 && \                       # Change harbor port if necessary
+curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh -n $EDGE_NAMESPACE -r $LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT 
 ```
-Executing these commands will ensure your system recognizes and trusts the SSL certificate issued for your Harbor registry, facilitating secure connections.
+Provide the local Harbor registry credentials in the prompt:
 
-#### Restarting Docker Service
-After adding the Harbor certificate to the trusted certificate store, it is necessary to restart the Docker service. This ensures that Docker recognizes the newly trusted certificate and can establish secure connections to your Harbor registry.
+```text
+Enter username to access Edge Operator repository:  
+Enter password to access Edge Operator repository:
+```
+By default, the Edge Operator is deployed within the **c8yedge** namespace. If you wish to install the Edge Operator and Edge in a different namespace, you can specify it using the `-n` option in the installation script.
 
-Restart the Docker service using:
+Run the following command to follow the logs for the Edge Operator pod:
 ```shell
-sudo systemctl restart docker
+EDGE_NAMESPACE=c8yedge && \                 # Change namespace name if you want to deploy Edge in a different namespace
+kubectl logs -f -n $EDGE_NAMESPACE deployment/c8yedge-operator-controller-manager manager
 ```
-This command will stop and then start the Docker service again, applying any changes made to the system's trusted certificates.
+{{< c8y-admon-info >}}
+Substitute the namespace name **c8yedge** in the command above with the namespace name where you have installed the Edge Operator.
+{{< /c8y-admon-info >}}
 
-Ensure you have appropriate permissions to restart services on your machine. Restarting Docker will temporarily interrupt any running containers or services managed by Docker, so it's best to plan this step accordingly to minimize downtime.
 
-#### Add local domain to k3s coredns resolution
-Based on your current CoreDNS ConfigMap setup, you're leveraging a custom hosts file (/etc/coredns/NodeHosts) within CoreDNS for domain name resolution. This method allows you to add custom domain-to-IP mappings directly within CoreDNS, affecting all pods that use the cluster DNS for name resolution across the cluster.
-
-1. Locate the NodeHosts Section
-Your provided NodeHosts section may currently look like this:
-```shell
-NodeHosts: |
-  192.168.5.251 sag-291zvl3.softwareag.com
-```
-
-2. Add Your Custom Domain
-To introduce a new local domain, simply append it to the NodeHosts list. For instance, to add harbor.vm.local that resolves to 192.168.1.100, you would update it as follows:
-```shell
-NodeHosts: |
-  192.168.5.251 sag-291zvl3.softwareag.com
-  192.168.1.100 harbor.vm.local
-```
-
-3. Apply the Changes
-The NodeHosts data resides directly in your CoreDNS ConfigMap YAML output. To apply your modifications, edit this ConfigMap with:
-```shell
-kubectl edit configmap coredns -n kube-system
-```
-Then, insert your changes under the NodeHosts section.
-
-4. Wait for CoreDNS to Reload
-CoreDNS automatically reloads its configuration files, thanks to the reload directive in your Corefile (for example, reload 15s). Consequently, CoreDNS should recognize the changes within approximately 15 seconds after saving them.
-
-5. Verify the Configuration
-After giving CoreDNS time to reload its configuration, test the DNS resolution from a pod in your cluster to confirm that your new domain resolves correctly:
-```shell
-kubectl run -i --tty --rm debug --image=busybox --restart=Never -- nslookup harbor.vm.local
-```
-This command initiates a temporary pod and employs nslookup to verify the resolution of your newly added custom domain. If everything is configured properly, it should resolve to the IP address you've specified.
-
-This direct management of DNS entries through the CoreDNS ConfigMap is particularly effective for static domain-to-IP mappings, providing a cluster-wide solution for custom domain resolutions.
-
-### Creating a ConfigMap for TLS Verification Bypass in Edge Operator
-This guide outlines the creation of a ConfigMap named custom-environment-variables, specifically designed for the edge operator pod within Kubernetes. The ConfigMap facilitates communication with services utilizing self-signed TLS certificates by instructing the edge operator to bypass TLS certificate verification.
-
-#### The ConfigMap Details
-* API Version: v1
-* Kind: ConfigMap
-* Metadata:
-  * Name: custom-environment-variables
-  * Namespace: c8yedge
-* Data:
-  * OPERATOR_REGISTRY_INSECURE_SKIP_TLS_VERIFY: "true"
-
-#### Purpose
-The OPERATOR_REGISTRY_INSECURE_SKIP_TLS_VERIFY environment variable, set to "true", serves as a directive for the edge operator to ignore TLS verification failures. This is crucial for ensuring uninterrupted operation when interacting with operator registries or Helm repositories secured with self-signed certificates.
-
-#### Creating the ConfigMap
-To create the ConfigMap in your Kubernetes cluster, apply the following YAML definition:
-```shell
-    apiVersion: v1
-    kind: ConfigMap
-    metadata:
-      name: custom-environment-variables
-      namespace: c8yedge
-    data:
-      OPERATOR_REGISTRY_INSECURE_SKIP_TLS_VERIFY: "true"
-```
-You can deploy this ConfigMap by saving the above content to a file (for example, custom-env-configmap.yaml) and running:
-```shell
-kubectl apply -f custom-env-configmap.yaml
-```
-
-#### Utilization by Edge Operator
-Once the ConfigMap is created, it's available for use within the c8yedge namespace. The edge operator pod can be configured to utilize this ConfigMap to set the OPERATOR_REGISTRY_INSECURE_SKIP_TLS_VERIFY environment variable, thereby bypassing TLS verification as required.
-
-#### Security Consideration
-Bypassing TLS verification, while necessary in certain contexts, carries inherent security risks, such as the potential for Man-In-The-Middle (MITM) attacks. It is recommended to use this approach in controlled environments and consider more secure alternatives, such as certificates from trusted CAs, for production use.
-
-### K3s Air-Gapped Installation
-An air-gapped environment is any environment that is not directly connected to the Internet. You can either deploy a private registry and mirror docker.io, or you can manually deploy images such as for small clusters. [Local Harbor Registry Installation Guide on Ubuntu 22.04](#local-harbor-registry-installation-guide-on-ubuntu-2204) describes the installation and synchronization of images.
-
-#### Download K3s Binary and Install Script
-1. Obtain the K3s binary from the releases page, ensuring it matches the version of the airgap images used.
-2. Place the binary in /usr/local/bin on each node and mark it as executable.
-3. Download the K3s install script from get.k3s.io and place it on each node.
-
-#### Installation Steps
-For a Single Server Configuration, execute the following on the server node:
-```shell
-sudo mkdir -p /var/lib/rancher/k3s/agent/images/
-sudo curl -L -o /var/lib/rancher/k3s/agent/images/k3s-airgap-images-amd64.tar.zst "https://github.com/k3s-io/k3s/releases/download/v1.29.1-rc2%2Bk3s1/k3s-airgap-images-amd64.tar.zst"
-curl -sfL https://get.k3s.io > install.sh
-wget https://github.com/k3s-io/k3s/releases/download/v1.29.3-rc1%2Bk3s1/k3s
-sudo mv -v ./k3s /usr/local/bin/
-sudo chmod +x /usr/local/bin/k3s
-sudo chmod +x ./install.sh
-INSTALL_K3S_VERSION=v1.29.13+k3s1 INSTALL_K3S_SKIP_DOWNLOAD=true ./install.sh --disable=traefik --write-kubeconfig-mode 644 --protect-kernel-defaults true --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook
-```
+### Installing Edge
+Continue with installing Edge by following the instructions in [Installing Edge](/edge-k8s/installing-edge-on-k8/#install-edge) section.

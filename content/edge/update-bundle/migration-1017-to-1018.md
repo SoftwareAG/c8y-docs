@@ -37,9 +37,9 @@ Perform the following steps as a `root` user on your Edge 10.17 appliance.
 2. If you have installed {{< product-c8y-iot >}} DataHub in the Edge 10.17 appliance, run the following commands to stop the `cdh-console`, `cdh-master` and `cdh-executor` services:
 
    ```shell
-   service cdh-console stop || \
-   service cdh-master stop  || \
-   service cdh-executor stop || true
+   service cdh-console stop && \
+   service cdh-master stop && \
+   service cdh-executor stop
    ```
 
 3. Back up the MongoDB data, data lake contents from the DataHub if present, Edge, Cumulocity Agent, and OPC UA configurations using the following command to create the `/opt/edge-1017-backup.tar` file:

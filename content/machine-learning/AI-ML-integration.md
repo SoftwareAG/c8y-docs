@@ -47,7 +47,7 @@ In general, there are three possible scenarios for deploying your AI/ML model, d
 
 #### Scenario A: External hosting {#scenario-a-external-hosting}
 
-In this scenario, you leverage the AI/ML execution environment of a third party, which is typically closely related to the third party used to create and train the AI/ML model in [Step 1](#step-1-create-and-bring-your-own-aiml-model). The execution environment of the 3rd party exposes an endpoint, which can be used for sending input readings and returning the model scoring output. Using externally hosted AI/ML models offers advantages such as scalability, reduced infrastructure management, and access to cutting-edge AI/ML capabilities. Allowing you to focus on your core functionality and leverage state-of-the-art machine learning without the burden of maintaining infrastructure.
+In this scenario, you leverage the AI/ML execution environment of a third party, which is typically closely related to the third party used to create and train the AI/ML model in [Step 1](#step-1-create-and-bring-your-own-aiml-model). The execution environment of the third party exposes an endpoint, which can be used for sending input readings and returning the model scoring output. Using externally hosted AI/ML models offers advantages such as scalability, reduced infrastructure management, and access to cutting-edge AI/ML capabilities. Allowing you to focus on your core functionality and leverage state-of-the-art Machine Learning without the burden of maintaining infrastructure.
 
 From an architectural perspective, scenario A looks like this:
 

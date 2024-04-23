@@ -18,13 +18,17 @@ sudo monit summary
 
 There might be cases where Monit has stopped monitoring some resources because of timeout on constant failures or dependency issues.
 
-<img src="/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/>
+<img src="/images/edge/edge-monitoring.png" name="Status report" style="width:75%;"/>
 
 A specific component, for example, `apama-ctrl_proc`, can be restarted using the following command:
 
 ```shell
 sudo monit restart apama-ctrl_proc
 ```
+
+The status of a specific component, for example, `apama-ctrl_proc`, can be viewed using the following command:
+```shell
+sudo monit status apama-ctrl_proc
 
 The Monit status can be checked by running:
 

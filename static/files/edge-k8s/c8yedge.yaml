@@ -15,7 +15,7 @@ metadata:
   name: c8yedge                                                             # Name of the C8y Edge deployment.
   namespace: c8yedge                                                        # Specify the Namespace name into which you installed the Edge Operator. By default, the Edge Operator is installed in 'c8yedge'.
 spec:
-  version: "1017.0.0"                                                       # Edge version you want to install.
+  version: "1018.0.0"                                                       # Edge version you want to install.
   licenseKey:  <LICENSE-KEY>                                                # Edge license key you received.
 
   company: <COMPANY-NAME>                                                   # Replace with the company name.

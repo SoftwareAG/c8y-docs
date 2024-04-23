@@ -21,6 +21,10 @@ Enabling the microservice hosting feature takes about 10 to 15 minutes to comple
 To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
 {{< /c8y-admon-important >}}
 
+{{< c8y-admon-info >}}
+For information regarding any microservices related issues, see [Troubleshooting Microservices](/edge/operating-edge/#troubleshooting-microservices).
+{{< /c8y-admon-info >}}
+
 ### Enabling or disabling the microservice hosting feature using the UI
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.

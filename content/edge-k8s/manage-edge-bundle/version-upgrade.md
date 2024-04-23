@@ -12,7 +12,7 @@ For this example, assume that Edge is deployed using the [c8yedge-sample.yaml](/
 
 ### Starting the upgrade
 
-To upgrade the Edge deployment, change the `spec.version` field in the Edge CR file to the appropriate version. For example to `1017.0.1`.
+To upgrade the Edge deployment, change the `spec.version` field in the Edge CR file to the appropriate version. For example to `1018.0.1`.
 
 Save the file and use the command below to apply the changes:
 

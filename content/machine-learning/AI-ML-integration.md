@@ -22,7 +22,7 @@ See the [DataHub documentation](/datahub/) for more information.
 
 ### Step 1 - Create and bring your own AI/ML model (BYOM) {#step-1-create-and-bring-your-own-aiml-model}
 
-There is a wide variety of Open-Source libraries (such as, Tensorflow®, PyTorch, Keras, Scikit-learn) and commercial 3rd party tooling (such as, Microsoft Azure Machine Learning Studio, Amazon SageMaker, IBM Watson, MATLAB, Google Cloud) available for developing machine learning models. Therefore, {{< product-c8y-iot >}} offers you the flexibility to have your data science team remain working in their own optimized technology stack but still leverage their results in the field.
+There is a wide variety of open-source libraries (such as, Tensorflow®, PyTorch, Keras, Scikit-learn) and commercial 3rd party tooling (such as, Microsoft Azure Machine Learning Studio, Amazon SageMaker, IBM Watson, MATLAB, Google Cloud) available for developing ML models. Therefore, {{< product-c8y-iot >}} offers you the flexibility to have your data science team remain working in their own optimized technology stack but still leverage their results in the field.
 
 Some examples of model creation in the mentioned tools that can inspire you:
 

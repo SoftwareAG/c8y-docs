@@ -4,26 +4,37 @@ title: Installing Edge in an air-gapped environment
 layout: redirect
 ---
 
-### Local Harbor Registry Installation Guide on Ubuntu 22.04
-Harbor is an open-source container image registry that secures images with role-based access control, scans images for vulnerabilities, and signs images as trusted. This guide will walk you through the process of installing Harbor version 2.5.1 on Ubuntu 22.04, including Docker installation and Harbor configuration.
+Cumulocity IoT Edge on Kubernetes supports extended offline operations with intermittent or no internet connection. This capability enables seamless operation in environments where continuous internet access is not guaranteed. In order to achieve seamless operation of Edge in offline environments, it is essential to ensure that all required artifacts, including Helm Charts and Docker images, are readily available. This can be accomplished by hosting these artifacts in a local Harbor registry.
+
+Harbor is an open-source container image registry which can be installed and configured to host the Edge artifacts. This guide will walk you through the process of installing and configuring Harbor version 2.5, providing step-by-step instructions to help you set up the registry for Edge deployment. For more information on Harbor, refer to [Harbor 2.5 Documentation](https://goharbor.io/docs/2.5.0/)
+
+### Harbor Installation and Configuration
+This section describes how to install and configure Harbor on Kubernetes using [Helm Chart for Harbor](https://artifacthub.io/packages/helm/harbor/harbor/1.9.6).
 
 #### Prerequisites
+Make sure that your target host meets the following prerequisites.
+|<div style="width:140px">Item</div>|Details|
+|:---|:---|
+|Hardware|CPU: 2 cores<br>RAM: 4 GB<br>CPU Architecture: x86-64 <p><p>**Info:** These are the minimum system requirements for deploying Harbor. If you are deploying Harbor in the same cluster as you intend to deploy Edge, please note that these requirements are additional to those required for Edge.|
+|Kubernetes|Version 1.25.x has been tested (with potential compatibility for subsequent versions)|
+|Helm version 3.x|Refer to [Installing Helm](https://helm.sh/docs/intro/install/) for the installation instructions.|
+|Helm cm-push plugin|Helm plugin to push chart package to ChartMuseum. Refer to [Installing cm-push plugin](https://github.com/chartmuseum/helm-push?tab=readme-ov-file#install) for the installation instructions.|
+|Disk space|Four static Persistent Volumes (PV) or a StorageClass configured with dynamic provisioning to bind.<br>- 5 GB each for the Persistent Volume Claims (PVC) made for the registry (storing container images) and the chartmuseum (storing Helm Charts).<br>- 1 GB each for the Persistent Volume Claims (PVC) made for the harbor database and the jobservice.|
+|TLS/SSL key and TLS/SSL certificate|Optional. Use your internal or an external CA (Certification Authority) to generate these files. Ensure that the TLS/SSL certificate has the complete certificate chain in the right order.<p><p>**Info:** The .crt and .key files must be in the PEM format and the .key file must not be encrypted.|
 
-* Ubuntu 22.04 server
-* User with sudo privileges
-* Domain name
-
-{{< c8y-admon-important >}}
-This guide assumes `harbor.vm.local` as a placeholder domain. Ensure you replace it with your actual domain throughout the guide. Remember, the SSL certificate generation step is crucial for secure communication with your Harbor registry.
-{{< /c8y-admon-important >}}
-
-#### Step 1: Install Required Packages
-Update the package list and installing required packages:
+#### Install Harbor using Helm Charts
+Download and edit if necessary the Harbor configuration ([c8yedge-harbor-values.yaml](/files/edge-k8s/c8yedge-harbor-values.yaml)), before running the commands below to install Harbor in *c8yedge-harbor* namespace: 
 
 ```shell
-sudo apt update
-sudo apt install ca-certificates curl gnupg lsb-release -y
+helm repo add harbor-repo https://helm.goharbor.io
+kubectl create namespace c8yedge-harbor
+helm upgrade --install -f c8yedge-harbor-values.yaml --namespace c8yedge-harbor c8yedge-harbor harbor-repo/harbor --version 1.9.6
 ```
+
+#### Update /etc/hosts to resolve the domain
+Run the below commands:
+
+
 
 #### Step 2: Install Docker
 Docker must be installed before Harbor can be run.

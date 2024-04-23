@@ -1,5 +1,5 @@
 ---
-title: Edge on Kubernetes (Public Preview)
+title: Edge on Kubernetes
 bundle: edge-k8s
 icon: "fa fa-book"
 type: root

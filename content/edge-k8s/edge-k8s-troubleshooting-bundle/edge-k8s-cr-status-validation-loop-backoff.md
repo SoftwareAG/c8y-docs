@@ -10,7 +10,7 @@ Output of `kubectl get edge c8yedge -n c8yedge`:
 
 ```shell
 NAME        DOMAIN NAME     VERSION     STATUS
-c8yedge     myown.iot.com   1017.0.0    ValidationLoopBackOff
+c8yedge     myown.iot.com   1018.0.0    ValidationLoopBackOff
 ```
 Describe the Edge CR (c8yedge): `kubectl describe edge c8yedge -n c8yedge`.
 

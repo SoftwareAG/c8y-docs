@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed losing permissions for SSO users
+title: Permissions for SSO users no longer lost when upgrading the platform from version 10.17
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

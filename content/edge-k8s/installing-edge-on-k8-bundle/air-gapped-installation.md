@@ -37,9 +37,9 @@ Run the below commands to update the `/etc/hosts` file and trust the self-signed
 
 ```shell
 # Update /etc/hosts to resolve the Harbor domain
-HARBOR_DOMAIN=c8yedge.harbor.local \
-sudo sed -i "/$HARBOR_DOMAIN/d" /etc/hosts \
-echo "$(kubectl get svc -n c8yedge-harbor c8yedge-harbor-lb -o jsonpath='{.status.loadBalancer.ingress[0].ip}') $HARBOR_DOMAIN" | sudo tee -a /etc/hosts \
+HARBOR_DOMAIN=c8yedge.harbor.local
+sudo sed -i "/$HARBOR_DOMAIN/d" /etc/hosts
+echo "$(kubectl get svc -n c8yedge-harbor c8yedge-harbor-lb -o jsonpath='{.status.loadBalancer.ingress[0].ip}') $HARBOR_DOMAIN" | sudo tee -a /etc/hosts
 
 ```
 

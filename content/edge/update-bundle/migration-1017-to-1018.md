@@ -30,16 +30,16 @@ Perform the following steps as a `root` user on your Edge 10.17 appliance.
 1. Run the following commands to unmonitor all services and stop the `opcua-mgmt-service`, `opcua-device-gateway`, `smartrule`, `apama`, `cumulocity-core-karaf` and `mongod` services:
 
    ```shell
-   monit unmonitor all
+   monit unmonitor all && \
    systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod
    ```
 
 2. If you have installed {{< product-c8y-iot >}} DataHub in the Edge 10.17 appliance, run the following commands to stop the `cdh-console`, `cdh-master` and `cdh-executor` services:
 
    ```shell
-   service cdh-console stop
-   service cdh-master stop
-   service cdh-executor stop
+   service cdh-console stop || \
+   service cdh-master stop  || \
+   service cdh-executor stop || true
    ```
 
 3. Back up the MongoDB data, data lake contents from the DataHub if present, Edge, Cumulocity Agent, and OPC UA configurations using the following command to create the `/opt/edge-1017-backup.tar` file:
@@ -75,7 +75,7 @@ Before copying the backup, ensure that there is sufficient disk space available 
 2. Run the following commands to unmonitor and stop the relevant services:
 
    ```shell
-   monit unmonitor all
+   monit unmonitor all && \
    systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf mongod
    ```
 

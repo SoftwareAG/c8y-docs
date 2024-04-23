@@ -20,7 +20,7 @@ Enter username to access Edge Operator repository:
 Enter password to access Edge Operator repository:
 ```
 {{< c8y-admon-info >}}
-To request the repository credentials, contact the logistics team for your region:
+To request the Edge repository credentials, contact the logistics team for your region:
 * North and South America: LogisSrvus@softwareagusa.com
 * All Other Regions: LogisticsServiceCenterGER@softwareag.com {{< /c8y-admon-info >}}
 

@@ -77,8 +77,8 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 <td>Requests a device to send a log file and view the log file in the log viewer</td>
 </tr>
 <tr>
-<td><a href="#measurements">c8y_MeasurementRequestOperation</a></td>
-<td>Displays a "Get measurements" action in the device action menu that sends an operation for retrieving measurements from a device.</td>
+<td><a href="#measurement-request">c8y_MeasurementRequestOperation</a></td>
+<td>Displays a "Get measurements" action in the device action menu that sends an operation for triggering a manual status update of a device.</td>
 </tr>
 <tr>
 <td><a href="#connectivity">c8y_Mobile</a></td>

@@ -27,10 +27,12 @@ You can download and edit the Harbor configuration file [c8yedge-harbor-values.y
 After making any required edits, execute the following commands to install Harbor in the *c8yedge-harbor* namespace:
 
 ```shell
+sh -c '
 NAMESPACE_NAME=c8yedge-harbor     # Change namespace name if necessary
+
 helm repo add harbor-repo https://helm.goharbor.io && \
 kubectl create namespace $NAMESPACE_NAME && \
-helm upgrade --install -f c8yedge-harbor-values.yaml -n $NAMESPACE_NAME c8yedge-harbor harbor-repo/harbor --version 1.9.6
+helm upgrade --install -f c8yedge-harbor-values.yaml -n $NAMESPACE_NAME c8yedge-harbor harbor-repo/harbor --version 1.9.6'
 ```
 
 #### Wait for Harbor server to start

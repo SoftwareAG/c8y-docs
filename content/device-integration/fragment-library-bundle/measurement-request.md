@@ -1,6 +1,6 @@
 ---
 weight: 130
-title: Measurements
+title: Manual status update
 layout: bundle
 section: 
   - device_management

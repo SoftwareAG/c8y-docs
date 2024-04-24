@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-21
 title: Improved measurement display in Linear Gauge and Silo widgets
 product_area: Application enablement & solutions
 change_type:

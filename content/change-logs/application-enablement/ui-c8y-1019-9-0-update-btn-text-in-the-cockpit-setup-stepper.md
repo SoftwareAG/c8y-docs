@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-21
 title: Improved button text in Cockpit setup wizard
 product_area: Application enablement & solutions
 change_type:

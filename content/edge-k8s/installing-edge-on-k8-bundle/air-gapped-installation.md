@@ -50,13 +50,14 @@ This command will display the status of all pods in the specified namespace (*c8
 Run the below commands to update the `/etc/hosts` file to resolve the harbor domain:
 
 ```shell
-# Update /etc/hosts to resolve the Harbor domain
 sh -c '
 NAMESPACE_NAME=c8yedge-harbor               # Change namespace name if necessary
 LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local    # Change harbor domain if necessary
 
 LOCAL_HARBOR_IP=$(kubectl get service -n $NAMESPACE_NAME c8yedge-harbor-lb -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 sudo sed -i "/$LOCAL_HARBOR_DOMAIN/d" /etc/hosts && \
+
+# Update /etc/hosts to resolve the Harbor domain
 echo "$LOCAL_HARBOR_IP $LOCAL_HARBOR_DOMAIN" | sudo tee -a /etc/hosts'
 ```
 
@@ -114,7 +115,7 @@ LOCAL_HARBOR_PORT=5001                          # Change harbor port if necessar
 LOCAL_HARBOR_USER=admin                         # Change if you used different credentails while installing the Harbor registry
 LOCAL_HARBOR_PASSWORD=admin-pass                # Change if you used different credentails while installing the Harbor registry
 
-edge_repository_sync sync -v 1018.0.0 -sr registry.c8y.io -sru "$EDGE_REPO_USER" -srp "$EDGE_REPO_PASSWORD" -tr "$LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT" -tru "$EDGE_REPO_USER" -trp "$EDGE_REPO_PASSWORD" --dryrun False'
+edge_repository_sync sync -v 1018.0.0 -sr registry.c8y.io -sru "$EDGE_REPO_USER" -srp "$EDGE_REPO_PASSWORD" -tr "$LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT" -tru "$LOCAL_HARBOR_USER" -trp "$LOCAL_HARBOR_PASSWORD" --dryrun False'
 ```
 
 {{< c8y-admon-info >}}

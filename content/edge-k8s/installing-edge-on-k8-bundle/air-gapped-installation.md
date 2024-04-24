@@ -107,13 +107,13 @@ To download and publish the Edge artifacts to local Harbor registry, run the com
 
 ```shell
 sudo sh -c '
-EDGE_REPO_USER=EDGE-REPO-USER                   # Edge repository credentials
-EDGE_REPO_PASSWORD=EDGE-REPO-PASS               # Edge repository credentials
+EDGE_REPO_USER="EDGE-REPO-USER"               # Edge repository credentials
+EDGE_REPO_PASSWORD="EDGE-REPO-PASS"           # Edge repository credentials
 
-LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local        # Change harbor domain if necessary
-LOCAL_HARBOR_PORT=5001                          # Change harbor port if necessary
-LOCAL_HARBOR_USER=admin                         # Change if you used different credentails while installing the Harbor registry
-LOCAL_HARBOR_PASSWORD=admin-pass                # Change if you used different credentails while installing the Harbor registry
+LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local      # Change harbor domain if necessary
+LOCAL_HARBOR_PORT=5001                        # Change harbor port if necessary
+LOCAL_HARBOR_USER="admin"                     # Change if you used different credentails while installing the Harbor registry
+LOCAL_HARBOR_PASSWORD="admin-pass"            # Change if you used different credentails while installing the Harbor registry
 
 edge_repository_sync sync -v 1018.0.0 -sr registry.c8y.io -sru "$EDGE_REPO_USER" -srp "$EDGE_REPO_PASSWORD" -tr "$LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT" -tru "$LOCAL_HARBOR_USER" -trp "$LOCAL_HARBOR_PASSWORD" --dryrun False'
 ```

@@ -105,8 +105,8 @@ To download and publish the Edge artifacts to local Harbor registry, run the com
 
 ```bash
 sudo sh -c '
-EDGE_REPO_USER="EDGE-REPO-USER"             # Edge repository credentials
-EDGE_REPO_PASSWORD="EDGE-REPO-PASS"         # Edge repository credentials
+EDGE_REPO_USER="EDGE-REPO-USER"             # Edge repository credentials can be obtained from the {{< company-sag >}} logistics team for your region
+EDGE_REPO_PASSWORD="EDGE-REPO-PASS"         # Edge repository credentials can be obtained from the {{< company-sag >}} logistics team for your region
 
 LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local    # Change harbor domain if necessary
 LOCAL_HARBOR_PORT=5001                      # Change harbor port if necessary
@@ -118,7 +118,7 @@ c8yedge_repository_sync sync -v 1018.0.0 -sr registry.c8y.io -sru "$EDGE_REPO_US
 ```
 
 {{< c8y-admon-info >}}
-To request the Edge repository credentials, contact the logistics team for your region:
+To request the Edge repository credentials, contact the {{< company-sag >}} logistics team for your region:
 * North and South America: LogisSrvus@softwareagusa.com
 * All Other Regions: LogisticsServiceCenterGER@softwareag.com
 {{< /c8y-admon-info >}}

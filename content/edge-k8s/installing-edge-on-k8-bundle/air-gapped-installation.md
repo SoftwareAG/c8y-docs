@@ -103,7 +103,7 @@ pip install --force-reinstall {{< link-c8y-doc-baseurl >}}/files/edge-k8s/edge_r
 #### Run reposiotry sync script
 To download and publish the Edge artifacts to local Harbor registry, run the command below:
 
-```shell
+```bash
 sudo sh -c '
 EDGE_REPO_USER="EDGE-REPO-USER"               # Edge repository credentials
 EDGE_REPO_PASSWORD="EDGE-REPO-PASS"           # Edge repository credentials
@@ -125,7 +125,7 @@ To request the Edge repository credentials, contact the logistics team for your 
 
 ### Update CoreDNS configuration
 Run the commands below to modify the CoreDNS configuration of the Kubernetes cluster to enable resolution of the local Harbor registry's domain:
-```shell
+```bash
 LOCAL_HARBOR_NAMESPACE=c8yedge-harbor         # Change namespace name if necessary
 LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local      # Change harbor domain if necessary
 

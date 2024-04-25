@@ -27,22 +27,20 @@ You can download and edit the Harbor configuration file [c8yedge-harbor-values.y
 After making any required edits, execute the following commands to install Harbor in the *c8yedge-harbor* namespace:
 
 ```shell
-sh -c '
-NAMESPACE_NAME=c8yedge-harbor     # Change namespace name if necessary
+LOCAL_HARBOR_NAMESPACE=c8yedge-harbor     # Change namespace name if necessary
 
 helm repo add harbor-repo https://helm.goharbor.io && \
-kubectl create namespace $NAMESPACE_NAME && \
-helm upgrade --install -f c8yedge-harbor-values.yaml -n $NAMESPACE_NAME c8yedge-harbor harbor-repo/harbor --version 1.9.6'
+kubectl create namespace $LOCAL_HARBOR_NAMESPACE && \
+helm upgrade --install -f c8yedge-harbor-values.yaml -n $LOCAL_HARBOR_NAMESPACE c8yedge-harbor harbor-repo/harbor --version 1.9.6
 ```
 
 #### Wait for Harbor server to start
 You can verify if the Harbor server has started by checking the status of the pods using the following command:
 
 ```shell
-sh -c '
-NAMESPACE_NAME=c8yedge-harbor # Change namespace name if necessary   
+LOCAL_HARBOR_NAMESPACE=c8yedge-harbor # Change namespace name if necessary   
 
-kubectl get pods -n $NAMESPACE_NAME'
+kubectl get pods -n $LOCAL_HARBOR_NAMESPACE
 ```
 This command will display the status of all pods in the specified namespace (*c8yedge-harbor* in this case), allowing you to confirm whether the Harbor server pods are running successfully.
 
@@ -50,15 +48,14 @@ This command will display the status of all pods in the specified namespace (*c8
 Run the below commands to update the `/etc/hosts` file to resolve the harbor domain:
 
 ```shell
-sh -c '
-NAMESPACE_NAME=c8yedge-harbor               # Change namespace name if necessary
+LOCAL_HARBOR_NAMESPACE=c8yedge-harbor               # Change namespace name if necessary
 LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local    # Change harbor domain if necessary
 
-LOCAL_HARBOR_IP=$(kubectl get service -n $NAMESPACE_NAME c8yedge-harbor-lb -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+LOCAL_HARBOR_IP=$(kubectl get service -n $LOCAL_HARBOR_NAMESPACE c8yedge-harbor-lb -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 sudo sed -i "/$LOCAL_HARBOR_DOMAIN/d" /etc/hosts && \
 
 # Update /etc/hosts to resolve the Harbor domain
-echo "$LOCAL_HARBOR_IP $LOCAL_HARBOR_DOMAIN" | sudo tee -a /etc/hosts'
+echo "$LOCAL_HARBOR_IP $LOCAL_HARBOR_DOMAIN" | sudo tee -a /etc/hosts
 ```
 
 After completing this step, you should be able to sign into the Harbor registry at https://c8yedge.harbor.local:5001 with the username *admin* and password *admin-pass*.
@@ -74,16 +71,17 @@ sudo sh -c '
 LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local       # Change harbor domain if necessary
 LOCAL_HARBOR_PORT=5001                         # Change harbor port if necessary
 
-C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT=$(echo quit | openssl s_client -showcerts -servername $LOCAL_HARBOR_DOMAIN -connect $LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT) && \
+LOCAL_HARBOR_REGISTRY_CA_CERT=$(echo quit | openssl s_client -showcerts -servername $LOCAL_HARBOR_DOMAIN -connect $LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT) && \
 if command -v "update-ca-certificates" > /dev/null 2>&1; then 
 	mkdir -p /usr/local/share/ca-certificates 
-	echo "$C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT" > /usr/local/share/ca-certificates/c8yedge-harbor-registry-ca.crt 
+	echo "$LOCAL_HARBOR_REGISTRY_CA_CERT" > /usr/local/share/ca-certificates/c8yedge-harbor-registry-ca.crt 
 	update-ca-certificates 
 elif command -v "update-ca-trust" > /dev/null 2>&1; then 
 	mkdir -p /etc/pki/tls/certs 
-	echo "$C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT" > /etc/pki/tls/certs/c8yedge-harbor-registry-ca.crt 
+	echo "$LOCAL_HARBOR_REGISTRY_CA_CERT" > /etc/pki/tls/certs/c8yedge-harbor-registry-ca.crt 
 	update-ca-trust extract 
-fi'
+fi
+'
 ```
 {{< c8y-admon-important >}}
 You should restart the container runtime and Kubernetes cluster after running the above commands for the changes to take effect. For example, you can restart k3s using `sudo systemctl restart k3s` or `sudo service k3s restart` commands.
@@ -115,7 +113,8 @@ LOCAL_HARBOR_PORT=5001                        # Change harbor port if necessary
 LOCAL_HARBOR_USER="admin"                     # Change if you used different credentails while installing the Harbor registry
 LOCAL_HARBOR_PASSWORD="admin-pass"            # Change if you used different credentails while installing the Harbor registry
 
-edge_repository_sync sync -v 1018.0.0 -sr registry.c8y.io -sru "$EDGE_REPO_USER" -srp "$EDGE_REPO_PASSWORD" -tr "$LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT" -tru "$LOCAL_HARBOR_USER" -trp "$LOCAL_HARBOR_PASSWORD" --dryrun False'
+edge_repository_sync sync -v 1018.0.0 -sr registry.c8y.io -sru "$EDGE_REPO_USER" -srp "$EDGE_REPO_PASSWORD" -tr "$LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT" -tru "$LOCAL_HARBOR_USER" -trp "$LOCAL_HARBOR_PASSWORD" --dryrun False
+'
 ```
 
 {{< c8y-admon-info >}}
@@ -127,36 +126,34 @@ To request the Edge repository credentials, contact the logistics team for your 
 ### Update CoreDNS configuration
 Run the commands below to modify the CoreDNS configuration of the Kubernetes cluster to enable resolution of the local Harbor registry's domain:
 ```shell
-sh -c '
-NAMESPACE_NAME=c8yedge-harbor                 # Change namespace name if necessary
+LOCAL_HARBOR_NAMESPACE=c8yedge-harbor         # Change namespace name if necessary
 LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local      # Change harbor domain if necessary
 
 # Retrieve Local Harbor IP 
-LOCAL_HARBOR_IP=$(kubectl get service -n $NAMESPACE_NAME c8yedge-harbor-lb -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+LOCAL_HARBOR_IP=$(kubectl get service -n "$LOCAL_HARBOR_NAMESPACE" c8yedge-harbor-lb -o jsonpath="{.status.loadBalancer.ingress[0].ip}")
 
 # Retrieve the existing NodeHosts value
-EXISTING_NODEHOSTS=$(kubectl get configmap coredns -n kube-system -o jsonpath="{.data.NodeHosts}")
-EXISTING_NODEHOSTS=$(echo -n "$EXISTING_NODEHOSTS" | sed ":a;N;$!ba;s/\n/\\n/g")
+EXISTING_NODEHOSTS=$(kubectl get configmap coredns -n kube-system -o jsonpath='{.data.NodeHosts}')
+EXISTING_NODEHOSTS=$(echo -n "$EXISTING_NODEHOSTS" | sed ':a;N;$!ba;s/\n/\\n/g')
 
 # Append the new domain and IP address to the existing NodeHosts value
-UPDATED_NODEHOSTS=$(echo $EXISTING_NODEHOSTS\\n$LOCAL_HARBOR_IP $LOCAL_HARBOR_DOMAIN)
+UPDATED_NODEHOSTS=$(echo "$EXISTING_NODEHOSTS\\n$LOCAL_HARBOR_IP $LOCAL_HARBOR_DOMAIN")
 
 # Patch the CoreDNS ConfigMap with the updated NodeHosts value
-kubectl patch configmap coredns -n kube-system --type merge -p "{\"data\":{\"NodeHosts\":\"$UPDATED_NODEHOSTS\"}}"'
+kubectl patch configmap coredns -n kube-system --type merge -p "{\"data\":{\"NodeHosts\":\"$UPDATED_NODEHOSTS\"}}"
 ```
 
 ### Installing the Edge Operator
 To install the Edge Operator, run and enter the version (for example, 1018.0.0) you want to install, and the local Harbor registry credentials.
 
 ```shell
-sh -c '
-EDGE_NAMESPACE=c8yedge                        # Change namespace name if you want to deploy Edge in a different namespace
+EDGE_NAMESPACE=c8yedge                        # Change namespace name if you want to deploy Edge operator and Edge in a different namespace
 LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local      # Change harbor domain if necessary
 LOCAL_HARBOR_PORT=5001                        # Change harbor port if necessary
 
 kubectl create namespace $EDGE_NAMESPACE && \
 kubectl apply -n $EDGE_NAMESPACE -f {{< link-c8y-doc-baseurl >}}/files/edge-k8s/custom-environment-variables.yaml && \ 
-curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh -n $EDGE_NAMESPACE -r $LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT'
+curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh -n $EDGE_NAMESPACE -r $LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT
 ```
 Provide the local Harbor registry credentials in the prompt:
 
@@ -164,19 +161,12 @@ Provide the local Harbor registry credentials in the prompt:
 Enter username to access Edge Operator repository:  
 Enter password to access Edge Operator repository:
 ```
-By default, the Edge Operator is deployed within the **c8yedge** namespace. If you wish to install the Edge Operator and Edge in a different namespace, you can specify it using the `-n` option in the installation script.
-
 Run the following command to follow the logs for the Edge Operator pod:
 ```shell
-sh -c '
-EDGE_NAMESPACE=c8yedge                  # Change namespace name if you want to deploy Edge in a different namespace
+EDGE_NAMESPACE=c8yedge                  # Change namespace name if you deployed Edge operator in a different namespace
 
-kubectl logs -f -n $EDGE_NAMESPACE deployment/c8yedge-operator-controller-manager manager'
+kubectl logs -f -n $EDGE_NAMESPACE deployment/c8yedge-operator-controller-manager manager
 ```
-{{< c8y-admon-info >}}
-Substitute the namespace name **c8yedge** in the command above with the namespace name where you have installed the Edge Operator.
-{{< /c8y-admon-info >}}
-
 
 ### Installing Edge
 Continue with installing Edge by following the instructions in [Installing Edge](/edge-k8s/installing-edge-on-k8/#install-edge) section.

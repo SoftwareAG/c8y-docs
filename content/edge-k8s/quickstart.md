@@ -23,7 +23,8 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
    cp /etc/rancher/k3s/k3s.yaml ~/.kube/config && \
    chown $USER: ~/.kube/config && \
    chmod 600 ~/.kube/config && \
-   echo "\e[32mSuccessfully installed k3s!\e[0m"'
+   echo "\e[32mSuccessfully installed k3s!\e[0m"
+   '
    ```
 
 3. Run the command below to install Helm v3.

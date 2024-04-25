@@ -104,7 +104,6 @@ pip install --force-reinstall {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedg
 To download and publish the Edge artifacts to local Harbor registry, run the command below:
 
 ```bash
-sudo sh -c '
 EDGE_REPO_USER="EDGE-REPO-USER"             # Edge repository credentials can be obtained from the {{< company-sag >}} logistics team for your region
 EDGE_REPO_PASSWORD="EDGE-REPO-PASS"         # Edge repository credentials can be obtained from the {{< company-sag >}} logistics team for your region
 
@@ -114,7 +113,6 @@ LOCAL_HARBOR_USER="admin"                   # Change if you used different crede
 LOCAL_HARBOR_PASSWORD="admin-pass"          # Change if you used different credentails while installing the Harbor registry
 
 c8yedge_repository_sync sync -v 1018.0.0 -sr registry.c8y.io -sru "$EDGE_REPO_USER" -srp "$EDGE_REPO_PASSWORD" -tr "$LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT" -tru "$LOCAL_HARBOR_USER" -trp "$LOCAL_HARBOR_PASSWORD" --dryrun False
-'
 ```
 
 {{< c8y-admon-info >}}

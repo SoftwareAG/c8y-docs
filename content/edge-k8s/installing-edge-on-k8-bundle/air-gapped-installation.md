@@ -97,7 +97,7 @@ Refer to [Python Setup and Usage](https://docs.python.org/3/using/index.html) fo
 {{< /c8y-admon-info >}}
 
 ```bash
-pip install --force-reinstall {{< link-c8y-doc-baseurl >}}/files/edge-k8s/edge_repository_sync-1018.0.0-py3-none-any.whl
+pip install --force-reinstall {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge_repository_sync-1018.0.0-py3-none-any.whl
 ```
 
 #### Run reposiotry sync script
@@ -113,7 +113,7 @@ LOCAL_HARBOR_PORT=5001                      # Change harbor port if necessary
 LOCAL_HARBOR_USER="admin"                   # Change if you used different credentails while installing the Harbor registry
 LOCAL_HARBOR_PASSWORD="admin-pass"          # Change if you used different credentails while installing the Harbor registry
 
-edge_repository_sync sync -v 1018.0.0 -sr registry.c8y.io -sru "$EDGE_REPO_USER" -srp "$EDGE_REPO_PASSWORD" -tr "$LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT" -tru "$LOCAL_HARBOR_USER" -trp "$LOCAL_HARBOR_PASSWORD" --dryrun False
+c8yedge_repository_sync sync -v 1018.0.0 -sr registry.c8y.io -sru "$EDGE_REPO_USER" -srp "$EDGE_REPO_PASSWORD" -tr "$LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT" -tru "$LOCAL_HARBOR_USER" -trp "$LOCAL_HARBOR_PASSWORD" --dryrun False
 '
 ```
 

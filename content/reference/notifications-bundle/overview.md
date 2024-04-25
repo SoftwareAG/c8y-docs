@@ -29,7 +29,7 @@ However, it does not yet support all of the notifications available from the Rea
 See the rest of this section and the detailed API documentation for full details of the notifications supported by this release of the Notifications 2.0 API.
 
 {{< c8y-admon-caution >}}
-If you assign Notification 2.0 access to users, they can create Notification 2.0 subscriptions and receive notification for any device, including those to which assigned inventory roles do not grant access, bypassing the inventory role RBAC.
+If you assign Notification 2.0 roles or permissions to users, they can create Notification 2.0 subscriptions and receive notifications for any device, including those to which assigned inventory roles do not grant access, bypassing the inventory role RBAC.
 {{< /c8y-admon-caution >}}
 
 

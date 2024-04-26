@@ -16,6 +16,10 @@ version: 1020.0.0
 ---
 In the upcoming version, a redesign of the alarms feature will be introduced with both visual and functional enhancements.
 
+**Breaking change**
+
+* The AngularJS alarms view and widget implementation is no longer available, to use the alarms in a custom application, users will need to import the `AlarmsModule` from `@c8y/ngx-components/alarms`.
+
 **Visual and UX enhancements**:
 
 * The way alarms are displayed in the "Alarms" view and widgets has been redesigned.

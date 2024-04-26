@@ -1,6 +1,6 @@
 ---
 date: 
-title: New Bookmarks section in the Streaming Analytics application
+title: Bookmarks available from User menu in Streaming Analytics application
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

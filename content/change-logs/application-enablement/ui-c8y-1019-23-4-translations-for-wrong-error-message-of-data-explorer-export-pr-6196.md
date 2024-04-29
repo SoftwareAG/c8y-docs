@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57881
 version: 1019.23.4
 ---
-Translations for "wrong error message of data explorer export" - PR#6196 [GRAFT][release/cd] (#6218)
+In the data explorer, when attempting to export data that exceeds the configured maximum number of rows, an incorrect error message was displayed. This change fixes the error message to provide the correct information to the user. The user will now see an accurate error message explaining that the export failed because the number of rows selected exceeds the configured maximum limit.

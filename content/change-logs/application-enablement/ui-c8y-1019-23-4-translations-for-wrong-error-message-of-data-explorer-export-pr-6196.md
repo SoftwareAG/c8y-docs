@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Translations for "wrong error message of data explorer export" - PR#6196 [GRAFT][release/cd] (#6218)
+title: Fixed incorrect error message when exporting data in the data explorer
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

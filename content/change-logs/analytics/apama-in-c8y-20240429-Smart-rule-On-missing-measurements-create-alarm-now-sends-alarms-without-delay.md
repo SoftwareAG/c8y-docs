@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAB-4461
 version:
 ---
-The "On missing measurements create alarm" smart rule now generates the alarms at the time period configured in the smart rule. Previously, the alarms were generated with a slight delay.
+The "On missing measurements create alarm" smart rule now generates the alarms at the time period configured in the smart rule. Previously, the alarms were generated with a delay of approximately one minute.

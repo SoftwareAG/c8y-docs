@@ -4,7 +4,7 @@ title: UI improvement for ordering of complex properties
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
-    label: Fix
+    label: Improvement
 component:
   - value: component-Tl88RYb4A
     label: Digital Twin Manager

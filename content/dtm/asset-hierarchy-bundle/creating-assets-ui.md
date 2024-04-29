@@ -38,7 +38,7 @@ The marker is positioned at the default value set in the **Location** property. 
 The values of latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The altitude value is not represented on the map.<br>
 The asset properties are defined when [creating the asset model](/dtm/asset-types/#to-create-an-asset-model).
 When creating an asset you must provide the values for all asset properties.<br>
-For complex properties, the keys are ordered as specified in the **Order** field of property definition.
+For complex properties, the keys are ordered as specified in the property definition.
 {{< /c8y-admon-info>}}
 
 7. Click **Next** to reach the next hierarchy level of your **asset hierarchy** and fill out the fields as necessary for your asset. Repeat for all asset hierarchy levels.

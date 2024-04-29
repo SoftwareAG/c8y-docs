@@ -18,7 +18,7 @@ This guide provides information on the Web SDK which enables you to
 {{< c8y-admon-important >}}
  Web SDK for Angular JS is deprecated. Therefore, its documentation is no longer provided here.  As all {{< product-c8y-iot >}} REST APIs are backward compatible, Angular JS applications will still continue to work.
 
-Web SDK for plugins is based on Angular JS and is also deprecated. For Angular-based development, we recommend you to implement native Angular modules. You can import plugins to Angular as described in [Extension points](/web/libraries/#extension-points).
+Web SDK for plugins is based on Angular JS and is also deprecated. For Angular-based development, we recommend you to implement native Angular modules. For more information, refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}).
 {{< /c8y-admon-important >}}
 
 ### When can I use the Web SDK?
@@ -102,7 +102,6 @@ As our releases are bound to the Angular versioning, you must to ensure that you
 
 | Angular version | Web SDK version | Comment |
 | --- | --- | --- |
-| 17.x.x | 1020.x.x | No support for the standalone flag |
 | 16.x.x | 1019.x.x | Using [Angular CLI tooling](https://angular.io/cli). |
 | 15.x.x | 1018.1.x - 1018.x.x | Using `c8ycli` tooling, only yearly release |
 | 14.x.x | 1016.x.x - 1018.0.x | Using `c8ycli` tooling |

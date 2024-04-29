@@ -44,4 +44,4 @@ ng serve
 
 In your browser, open `http://localhost:4200/` to see the new application run.
 
-You can configure the [application options](/web/application-configuration/#application-options) inside the package.json file and customize [branding](/web/application-configuration#branding) with LESS or CSS custom variables.
+You can configure the [application options](/web/application-configuration/#application-options) inside the package.json file and customize [branding](/web/application-configuration#branding-your-application) with LESS or CSS custom variables.

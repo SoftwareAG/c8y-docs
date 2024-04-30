@@ -1,6 +1,6 @@
 ---
 date: ""
-title: If the max value of a datapoint is 0 it is now correctly displayed in the range display. [GRAFT][release/cd] (#6226)
+title: Range display now shows correct value if datapoint maximum is 0
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58555
 version: 1019.23.3
 ---
-If the max value of a datapoint is 0 it is now correctly displayed in the range display. [GRAFT][release/cd] (#6226)
+In some cases, datapoints with a configured maximum value of 0 were not displayed correctly in the range display of dashboards and other visualizations. This issue has been resolved and the range display now correctly shows the value for datapoints with a maximum of 0. This change improves the accuracy and consistency of data visualizations for all users.

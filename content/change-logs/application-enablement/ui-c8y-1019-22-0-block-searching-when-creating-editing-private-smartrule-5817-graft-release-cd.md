@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55913
 version: 1019.22.0
 ---
-block searching when creating editing private smartrule (#5817) [GRAFT][release/cd] (#6198)
+In the past, it was possible to search for devices when creating or editing a private smart rule, which could potentially leak information about devices the user should not have access to. To address this security concern, searching for devices is now blocked when creating or editing a private smart rule. This change ensures that users can only select devices they are authorized to access, preventing any potential data leaks. The impact of this change is limited to the creation and editing of private smart rules, and users can still search for devices when creating or editing non-private smart rules as before.

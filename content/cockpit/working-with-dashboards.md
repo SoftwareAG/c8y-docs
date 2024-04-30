@@ -38,7 +38,7 @@ ROLES & PERMISSIONS:
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
-- [Web SDK > Tutorials > Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
+- Refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
 - [Web SDK > Application configuration](/web/application-configuration/) for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
@@ -89,7 +89,7 @@ After enabling the dashboard, you can see how many devices will share this dashb
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/>
 
-The dashboard with the dashboard template option enabled can be accessed and modified from all devices of this type. 
+The dashboard with the dashboard template option enabled can be accessed and modified from all devices of this type.
 This means that changes made to this dashboard are automatically applied to all dashboard instances, no matter from which device they have been added.
 
 {{< c8y-admon-info >}}

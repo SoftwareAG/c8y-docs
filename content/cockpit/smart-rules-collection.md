@@ -521,7 +521,10 @@ The rule checks once a minute if the configured time interval was exceeded. Ther
 **Functionality**
 
 If a certain alarm occurs, the specified operation is sent back to the device that raised the alarm.
-The device ID of the target device specified in the operation is not used in this case.
+
+{{< c8y-admon-info >}}
+Any alternative target device specified in the operation is ignored.
+{{< /c8y-admon-info >}}
 
 **Parameters**
 

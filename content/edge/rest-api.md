@@ -4,7 +4,7 @@ title: REST APIs for Edge
 layout: bundle
 ---
 
-For information about the REST APIs for Edge, see the [{{< openapi >}}](https://cumulocity.com/api/edge/).
+For information about the REST APIs for Edge, see the [{{< openapi >}}](https://cumulocity.com/api/edge/10.17.0/).
 
 {{< c8y-admon-important >}}
 

@@ -64,7 +64,7 @@ The following types are available:
 </tr>
 <tr>
 <td align="left"><a href="#alarm-operation">On alarm execute operation</a></td>
-<td align="left">If a certain alarm occurs, the specified operation will be sent to the device.</td>
+<td align="left">If a certain alarm occurs, the specified operation is sent back to the device that raised the alarm.</td>
 </tr>
 <tr>
 <td align="left"><a href="#threshold-explicit">On measurement explicit threshold create alarm</a></td>
@@ -594,8 +594,11 @@ The rule checks once a minute if the configured time interval was exceeded. Ther
 
 **Functionality**
 
-If a certain alarm occurs, the specified operation will be send to the device.
+If a certain alarm occurs, the specified operation is sent back to the device that raised the alarm.
 
+{{< c8y-admon-info >}}
+Any alternative target device specified in the operation is ignored.
+{{< /c8y-admon-info >}}
 
 **Parameters**
 

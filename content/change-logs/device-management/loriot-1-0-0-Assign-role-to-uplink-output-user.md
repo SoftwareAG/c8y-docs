@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3411
 version: 1.0.0
 ---
-Newly established Loriot connections failed initially because the user account created for sending uplink requests from devices lacked the necessary permissions. This issue has been resolved by granting the required permissions to both existing and new connections.
+Newly established Loriot connections failed initially because the user account created for sending uplink requests from devices lacked the necessary admin permissions. This issue has been resolved by granting the required permissions to both existing and new connections.

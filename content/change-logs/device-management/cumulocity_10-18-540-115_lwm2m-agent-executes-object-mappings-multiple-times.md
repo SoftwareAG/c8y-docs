@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3620
 version: 10.18.540.115
 ---
-When a LwM2M 1.1 send request that includes multiple timestamps has been received, the object resource mapping actions have in some cases been processed multiple times by the LwM2M agent. This issue has been resolved to ensure that mapping actions get only triggered once.
+When a LWM2M 1.1 send request that includes multiple timestamps has been received, the object resource mapping actions have in some cases been processed multiple times by the LwM2M agent. This issue has been resolved to ensure that mapping actions get only triggered once.

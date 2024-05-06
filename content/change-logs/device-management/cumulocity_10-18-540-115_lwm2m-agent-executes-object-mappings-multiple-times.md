@@ -1,6 +1,6 @@
 ---
 date:
-title: LWM2M agent executes object mappings multiple times on LWM2M 1.1 SEND
+title: Object mapping actions only executed once on LWM2M 1.1 send request
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Group navigation tree now refreshes correctly after removing groups via Sub-Asset view
+title: Group navigation tree in navigator now refreshes correctly after removing groups via Subassets view
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

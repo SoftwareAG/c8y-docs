@@ -395,7 +395,7 @@ Refer to inventory child operations in the [Inventory API](https://{{< domain-c8
 
 #### Synchronizing assets with external systems {#synchronizing-assets-with-external-systems}
 
-Often, {{< product-c8y-iot >}} will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/device-integration/rest#device-integration):
+Often, {{< product-c8y-iot >}} will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/device-integration/device-integration-rest/):
 
 - Use the Identity API to link the asset ID of the external IT system to the asset ID of {{< product-c8y-iot >}}.
 - Use the Inventory API to create or update the assets in {{< product-c8y-iot >}}'s inventory based on the external system's data.
@@ -443,7 +443,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobjectcollection+json; c
 
 Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [fragment library](/device-integration/fragment-library/).
 
-Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/device-integration/rest)).
+Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/device-integration/device-integration-rest/)).
 
 Note that queries do not necessarily return all query results at once, but only a page of the results. For more information on paging, refer to [REST implementation > REST usage > Query result paging](https://{{< domain-c8y >}}/api/core/#section/REST-implementation/REST-usage) in the {{< openapi >}}. The optional parameter `withTotalPages` will make the query contain full page statistics at the expense of slightly slower performance.
 
@@ -486,7 +486,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.measurementcollection+json; cha
 
 #### Sending operations to devices {#sending-operations-to-devices}
 
-To trigger an operation on a device, POST the operation to the [Device Control API](https://{{< domain-c8y >}}/api/core/#tag/Device-control-API). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in [Device integration](/device-integration/rest#device-integration).
+To trigger an operation on a device, POST the operation to the [Device Control API](https://{{< domain-c8y >}}/api/core/#tag/Device-control-API). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in [Device integration](/device-integration/device-integration-rest/).
 
 ```http
 POST /devicecontrol/operations

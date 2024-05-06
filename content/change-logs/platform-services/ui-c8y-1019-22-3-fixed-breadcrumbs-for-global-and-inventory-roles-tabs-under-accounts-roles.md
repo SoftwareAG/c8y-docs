@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed breadcrumbs for global and inventory roles tabs under Accounts > Roles [GRAFT][release/cd] (#6201)
+title: Fixed location information for Global roles and Inventory roles tabs under Accounts > Roles menu
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

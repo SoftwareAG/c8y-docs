@@ -1,6 +1,6 @@
 ---
 date: ""
-title: disable inventoryRoles page for external users if inventory… (#5129) [GRAFT][release/cd] (#6157)
+title: Inventory roles tab disabled for external users without the required permissions
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

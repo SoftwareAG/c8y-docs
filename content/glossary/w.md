@@ -27,7 +27,7 @@ The {{< product-c8y-iot >}} Web SDK enables you to develop web applications that
 * apply default or
 * branded UI components to your custom application.
 
-For details see the [Application enablement & solutions > Web SDK](/web/introduction/).
+For details see the [Application enablement & solutions > Web SDK](/web/websdk-introduction/).
 
 
 ### Widgets {#widgets}

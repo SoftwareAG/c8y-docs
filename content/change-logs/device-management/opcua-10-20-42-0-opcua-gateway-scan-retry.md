@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-04-26
 title: Improved configuration for OPC UA device gateway node scan retries
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2024-04-26
 title: LWM2M agent processes large LWM2M bulk registration reliably
 change_type:
   - value: change-VSkj2iV9m

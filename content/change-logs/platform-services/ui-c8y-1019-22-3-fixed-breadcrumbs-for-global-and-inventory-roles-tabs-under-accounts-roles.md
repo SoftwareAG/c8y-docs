@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57553
 version: 1019.22.3
 ---
-In the Administration application, the location information for the **Global roles**  and **Inventory roles** tabs under the **Accounts** > **Roles** menu was incorrect, making navigation confusing for users. This issue has been resolved with the user's location within the application now accurately reflected.
+In the Administration application, the location information for the **Global roles** and **Inventory roles** tabs under the **Accounts** > **Roles** menu was incorrect, making navigation confusing for users. This issue has been resolved with the user's location within the application now accurately reflected.

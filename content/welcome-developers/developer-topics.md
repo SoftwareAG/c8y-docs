@@ -22,7 +22,7 @@ Check out the following sections if you are looking for step-by-step instruction
 
   - [Device integration using thin-edge.io](/device-integration/device-integration-thin-edge/) - Integrate devices using thin-edge.io.
   - [Device integration using MQTT](/device-integration/mqtt) - Integrate devices using the MQTT protocol.
-  - [Device integration using REST](/device-integration/rest) - Integrate devices using REST.
+  - [Device integration using REST](/device-integration/device-integration-rest/) - Integrate devices using REST.
 <br><br>
   - [Web SDK](/web/) - Extend applications with your own plugins, add your own applications or implement additional functionality tailored to your use case.
 <br><br>

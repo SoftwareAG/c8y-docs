@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed breadcrumbs for Global roles and Inventory roles tabs
+title: Fixed location information for Global roles and Inventory roles tabs
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

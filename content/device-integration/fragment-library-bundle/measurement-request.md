@@ -6,7 +6,6 @@ section:
   - device_management
 ---
 
-**Manual status update**
 For cases where devices need a manual trigger for uploading a status update to the platform, the **Get measurements** button in the action bar of a device is available. It is shown when the device's `c8y_SupportedOperations` contains `c8y_MeasurementRequestOperation`.
 
 This action creates a `c8y_MeasurementRequestOperation` operation.

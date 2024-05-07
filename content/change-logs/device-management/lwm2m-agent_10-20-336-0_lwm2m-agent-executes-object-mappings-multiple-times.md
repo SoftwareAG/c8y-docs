@@ -1,6 +1,6 @@
 ---
 date:
-title: Object mapping actions only executed once on LWM2M 1.1 send request
+title: Object mapping actions no longer executed multiple times on LWM2M 1.1 send request
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

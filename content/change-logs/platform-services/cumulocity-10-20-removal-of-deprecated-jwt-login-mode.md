@@ -27,5 +27,5 @@ To verify that the deprecated JWT is not used in your environment follow the 2 s
 
 If the “authenticationProvider” or tenant option with the "token.publicKey" category exists it may indicate that a deprecated JWT is or was used in the past.
 In that case, check whether external services do not use this type of authentication.
-Please note that all usages of 'deprecated jwt' can be replaced with the currently supported authentication login method
+Please note that all usages of the deprecated JWT can be replaced with the currently supported authentication login method
 using [SSO](https://cumulocity.com/guides/users-guide/administration/#configuring-single-sign-on) or [authentication with external tokens](https://cumulocity.com/guides/users-guide/administration/#configuring-authentication-with-oauth2-access-tokens-from-authorization-servers).

@@ -1,6 +1,6 @@
 ---
 date:
-title: Assign Loriot Admin Role to the Loriot agent output user for existing and new devices.   
+title: Admin permissions added to the Loriot agent output user for existing and new devices   
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3411
 version: 10.18.540.104
 ---
-Newly established LORIOT connections failed initially because the user account created for sending uplink requests from devices lacked the necessary permissions. This issue has been resolved by granting the required permissions to both existing and new connections.
+Newly established Loriot connections failed initially because the user account created for sending uplink requests from devices lacked the necessary admin permissions. This issue has been resolved by granting the required permissions to both existing and new connections.

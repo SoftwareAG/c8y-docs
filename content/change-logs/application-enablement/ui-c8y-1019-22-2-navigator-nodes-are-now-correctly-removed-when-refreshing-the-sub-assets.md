@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Group navigation tree in navigator now refreshes correctly after removing groups via Subassets view
+title: Group navigation tree in navigator now refreshes correctly after removing groups via subassets view
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58562
 version: 1019.22.2
 ---
-In the Cumulocity IoT user interface, the subassets view and the navigator did not always update correctly after removing a group of devices via the API. This caused the navigator to still show the removed devices and made the UI inconsistent with the actual API state. With this fix, the subassets view and the navigator now correctly refresh after a group of devices is removed through the API, ensuring the user interface stays in sync and provides an accurate view of the current inventory.
+In the Cumulocity IoT user interface, the the navigator did not always update correctly after removing a group or device via the subassets view. This caused the navigator to still show the removed groups or devices and made the UI inconsistent. With this fix, the navigator now correctly refresh after a group or device is removed through the subassets view, ensuring the user interface stays in sync and provides an accurate view of the current inventory.

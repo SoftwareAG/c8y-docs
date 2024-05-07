@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-Edge 10.18.0 uses the following versions:
+{{< product-c8y-iot >}} Edge 10.18 uses the following versions:
 
 |<div style="width:130px">Edge component</div>|<div style="width:300px">Version</div>|
 |:---|:---|

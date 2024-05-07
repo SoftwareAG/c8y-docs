@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58818
 version: 1018.503.82
 ---
-Previously an incorrect limit of 6 package versions could be uploaded via the user interface. This has now been fixed to match the intended higher limit. The limit is 20 by default. 
+The number of package versions that could be uploaded via the UI was incorrectly limited to 6. This has been fixed to match the default limit of 20 package versions. 

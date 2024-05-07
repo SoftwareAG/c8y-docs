@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: DM-2970
-version: .
+version:
 ---
 The functionality for services has been modularized into a plugin within the device management application. By default, users will have access to services within the application. However, if needed, the plugin can be removed, thus disabling the services within the application. This approach offers flexibility for users who may or may not require certain functionalities within the application.

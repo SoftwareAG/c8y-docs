@@ -18,7 +18,7 @@ In the upcoming version, a redesign of the alarms feature will be introduced wit
 
 **Breaking change**
 
-* The AngularJS widget implementation is no longer available, to use the alarms widgets in a custom application, users will need to import the `AlarmsWidgetModule` from `@c8y/ngx-components/widgets/implementations/alarms`. To use the new alarms view only, users will need to import the `AlarmsModule` from `@c8y/ngx-components/alarms`.
+* The AngularJS widget implementation is no longer available. To use the "Alarms" widgets in a custom application, users must import the `AlarmsWidgetModule` from `@c8y/ngx-components/widgets/implementations/alarms`. To use the new alarms view only, users must import the `AlarmsModule` from `@c8y/ngx-components/alarms`.
 
 **Visual and UX enhancements**:
 

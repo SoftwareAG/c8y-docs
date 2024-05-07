@@ -24,15 +24,15 @@ The Edge appliance must be connected to the internet to install the VNC componen
 
 1. Run the script *vnc-setup.sh*.
 
-   `[admin@iot-edge-server ~]$ sudo /opt/c8y/utilities/vnc-setup.sh`
+   `sudo /opt/c8y/utilities/vnc-setup.sh`
 
    The *vnc-setup.sh* script installs the VNC components. After installing the VNC components, you should configure the VNC server for each user.
 
 2. After installing the VNC components, log in as a root user and add the *vnc-server* service to the *firewalld* firewall. For example, the following commands add the *vnc-server* to the *firewalld* with the zone set to public:
 
-   `[root@iot-edge-server ~]# firewall-cmd --zone=public --permanent --add-service=vnc-server`
+   `firewall-cmd --zone=public --permanent --add-service=vnc-server`
 
-   `[root@iot-edge-server ~]# firewall-cmd --reload`
+   `firewall-cmd --reload`
 
     {{< c8y-admon-info >}}These are sample commands and may vary based on your requirements.{{< /c8y-admon-info >}}
 
@@ -42,7 +42,7 @@ To configure the VNC server, run the *vnc-user-setup.sh* script. Each user shoul
 
 1. Run the script *vnc-user-setup.sh*.
 
-   ` [admin@iot-edge-server ~]$ /opt/c8y/utilities/vnc-user-setup.sh`
+   `/opt/c8y/utilities/vnc-user-setup.sh`
 
 2. Provide and verify the password.
 

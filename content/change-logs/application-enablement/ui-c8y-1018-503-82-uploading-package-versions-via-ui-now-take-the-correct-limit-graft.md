@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The package version upload limit via the user interface has been increased.
+title: Package version upload limit via UI has been increased to match the default
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

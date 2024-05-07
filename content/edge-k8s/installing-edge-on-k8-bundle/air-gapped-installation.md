@@ -70,7 +70,6 @@ If you intend to install Edge on a different Kubernetes cluster, you need to run
 
 ```bash
 sudo sh -c '
-
 LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local    # Change harbor domain if necessary
 LOCAL_HARBOR_PORT=5001                      # Change harbor port if necessary
 

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: private smart rule no longer require contextData from c8y_Context property (#6031) [GRAFT][release/cd] (#6197)
+title: Private smart rules no longer require the contextData property
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

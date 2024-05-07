@@ -28,6 +28,11 @@ New capabilities are added to Notifications 2.0 in each release of {{< product-c
 However, it does not yet support all of the notifications available from the Real-time notification API so it is not yet a complete replacement for the older API.
 See the rest of this section and the detailed API documentation for full details of the notifications supported by this release of the Notifications 2.0 API.
 
+{{< c8y-admon-caution >}}
+If you assign Notification 2.0 roles or permissions to users, they can create Notification 2.0 subscriptions and receive notifications for any device, including those to which assigned inventory roles do not grant access, bypassing the inventory role RBAC.
+{{< /c8y-admon-caution >}}
+
+
 ### Topics and subscriptions
 Internally, Notifications 2.0 uses a [publish-subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
 pattern, allowing use-cases to organize their desired selections of measurement, event, alarm, operation and/or inventory messages
@@ -226,7 +231,7 @@ The following summarizes the context and API support.
 ### Subscription filters
 Subscription filters provide fine-grained selection of the {{< product-c8y-iot >}} messages a subscription will forward.
 Filters can be provided as the **subscriptionFilter** field in a subscription's JSON object at creation time.
-It is a JSON object with **apis** and **typeFilter** fields.  
+It is a JSON object with **apis** and **typeFilter** fields.
 Filters specified by subscriptions with "tenant" **context** must provide a **typeFilter** value.
 Filters specified by those with "mo" **context** can provide either or both filter fields.
 

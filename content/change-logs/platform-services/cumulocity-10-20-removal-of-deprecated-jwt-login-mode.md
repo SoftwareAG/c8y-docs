@@ -25,7 +25,7 @@ To verify that the deprecated JWT is not used in your environment follow the 2 s
 1. Verify if any empty `authenticationProviders` configuration exists in the management database in the tenants' collections.
 2. Verify if any tenant has configured the tenant options with the category "token.publicKey".
 
-If the “authenticationProvider” or tenant option with the "token.publicKey" category exists it may indicate that a deprecated JWT is or was used in the past.
+If the `authenticationProvider` configuration or a tenant option with the `token.publicKey` category exists it may indicate that a deprecated JWT is or was used in the past.
 In that case, check whether external services do not use this type of authentication.
 Please note that all usages of the deprecated JWT can be replaced with the currently supported authentication login method
 using [SSO](/authentication/sso/) or [authentication with external tokens](/authentication/basic-settings/#token-generation-with-oai-secure).

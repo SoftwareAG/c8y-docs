@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Groups in the navigator and subassets view now refresh correctly after removing groups via API
+title: Group navigation tree in navigator now refreshes correctly after removing groups via subassets view
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

@@ -63,14 +63,14 @@ sudo sh -c '
 LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local       # Change harbor domain if necessary
 LOCAL_HARBOR_PORT=5001                         # Change harbor port if necessary
 C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT=$(echo quit | openssl s_client -showcerts -servername $LOCAL_HARBOR_DOMAIN -connect $LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT) && \
-if command -v "update-ca-certificates" > /dev/null 2>&1; then 
-	mkdir -p /usr/local/share/ca-certificates 
-	echo "$C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT" > /usr/local/share/ca-certificates/c8yedge-harbor-registry-ca.crt 
-	update-ca-certificates 
-elif command -v "update-ca-trust" > /dev/null 2>&1; then 
-	mkdir -p /etc/pki/tls/certs 
-	echo "$C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT" > /etc/pki/tls/certs/c8yedge-harbor-registry-ca.crt 
-	update-ca-trust extract 
+if command -v "update-ca-certificates" > /dev/null 2>&1; then
+	mkdir -p /usr/local/share/ca-certificates
+	echo "$C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT" > /usr/local/share/ca-certificates/c8yedge-harbor-registry-ca.crt
+	update-ca-certificates
+elif command -v "update-ca-trust" > /dev/null 2>&1; then
+	mkdir -p /etc/pki/tls/certs
+	echo "$C8Y_LOCAL_HARBOR_REGISTRY_CA_CERT" > /etc/pki/tls/certs/c8yedge-harbor-registry-ca.crt
+	update-ca-trust extract
 fi'
 ```
 
@@ -80,7 +80,7 @@ You should restart the container runtime and Kubernetes cluster after running th
 ### Download and publish Edge artifacts to local Harbor registry  
 This section outlines the steps to download the Edge artifacts from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and publish them to the local Harbor registry. You need to run a Python script to achieve this.
 
-#### Install reposiotry sync script
+#### Install repository sync script
 To install Edge repository synchronization script run the commands below:
 {{< c8y-admon-info >}}
 Refer to [Python Setup and Usage](https://docs.python.org/3/using/index.html) for installing Python 3 required to run this script.
@@ -90,7 +90,7 @@ Refer to [Python Setup and Usage](https://docs.python.org/3/using/index.html) fo
 pip install --force-reinstall {{< link-c8y-doc-baseurl >}}/files/edge-k8s/edge_repository_sync-1018.0.0-py3-none-any.whl
 ```
 
-#### Run reposiotry sync script
+#### Run repository sync script
 To download and publish the Edge artifacts to local Harbor registry, run the command below:
 
 ```shell
@@ -117,11 +117,11 @@ To install the Edge Operator, run and enter the version (for example, 1018.0.0) 
 ```shell
 EDGE_NAMESPACE=c8yedge                        # Change namespace name if you want to deploy Edge in a different namespace
 kubectl create namespace $EDGE_NAMESPACE && \
-kubectl apply -n $EDGE_NAMESPACE -f {{< link-c8y-doc-baseurl >}}/files/edge-k8s/custom-environment-variables.yaml && \ 
+kubectl apply -n $EDGE_NAMESPACE -f {{< link-c8y-doc-baseurl >}}/files/edge-k8s/custom-environment-variables.yaml && \
 
 LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local      # Change harbor domain if necessary
 LOCAL_HARBOR_PORT=5001                        # Change harbor port if necessary
-curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh -n $EDGE_NAMESPACE -r $LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT 
+curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh -n $EDGE_NAMESPACE -r $LOCAL_HARBOR_DOMAIN:$LOCAL_HARBOR_PORT
 ```
 Provide the local Harbor registry credentials in the prompt:
 

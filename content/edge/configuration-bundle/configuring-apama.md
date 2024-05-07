@@ -23,7 +23,7 @@ To change the memory and CPU limit:
 2. Open the file "/etc/init.d/apama".
 3. Edit the parameter `CTRL_DOCKER_OPTIONS` to the required values.
 4. Restart the Apama service:
-   - sudo service apama restart`
+   - `sudo service apama restart`
 
 {{< c8y-admon-important >}}
 

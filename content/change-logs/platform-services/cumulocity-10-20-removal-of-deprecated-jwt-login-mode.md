@@ -22,7 +22,7 @@ Tokens are sent to the Cumulocity IoT platform using the Authorization: Bearer h
 
 To verify that the deprecated JWT is not used in your environment follow the 2 steps below. This must be done by the Operations team that has access to the database:
 
-1. Verify if any empty authenticationProviders configuration exists in the management database in the tenants' collections.
+1. Verify if any empty `authenticationProviders` configuration exists in the management database in the tenants' collections.
 2. Verify if any tenant has configured the tenant options with the category "token.publicKey".
 
 If the “authenticationProvider” or tenant option with the "token.publicKey" category exists it may indicate that a deprecated JWT is or was used in the past.

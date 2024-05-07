@@ -17,6 +17,7 @@ Make sure that your target host meets the following prerequisites.
 |:---|:---|
 |Hardware|CPU: 2 cores<br>RAM: 4 GB<br>CPU Architecture: x86-64 <p><p>{{< c8y-admon-info>}}These are the minimum system requirements for deploying Harbor. If you are deploying Harbor in the same cluster as you intend to deploy Edge, please note that these requirements are additional to those required for Edge.{{< /c8y-admon-info>}}|
 |Kubernetes|Version 1.25.x has been tested (with potential compatibility for subsequent versions)|
+|Docker CLI|Install `docker-ce` and `docker-ce-cli` packages. Refer to [Installing Docker](https://docs.docker.com/engine/install/) for installation instructions.|
 |Helm version 3.x|Refer to [Installing Helm](https://helm.sh/docs/intro/install/) for the installation instructions.|
 |Helm cm-push plugin|Helm plugin to push chart package to ChartMuseum. Refer to [Installing cm-push plugin](https://github.com/chartmuseum/helm-push?tab=readme-ov-file#install) for the installation instructions.|
 |ORAS CLI version 1.0.0|OCI Registry As Storage (ORAS) CLI is used to publish non-container artifacts to the Harbor registry. Refer to [Installing ORAS CLI](https://oras.land/docs/installation) for installation instructions.|  
@@ -91,7 +92,7 @@ You should restart the Docker, container runtime and Kubernetes cluster after ru
 ### Download and publish Edge artifacts to local Harbor registry  
 This section outlines the steps to download the Edge artifacts from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and publish them to the local Harbor registry. You need to run a Python script to achieve this.
 
-#### Install reposiotry sync script
+#### Install repository sync script
 To install Edge repository synchronization script run the commands below:
 {{< c8y-admon-info >}}
 Refer to [Python Setup and Usage](https://docs.python.org/3/using/index.html) for installing Python 3 required to run this script.
@@ -101,7 +102,7 @@ Refer to [Python Setup and Usage](https://docs.python.org/3/using/index.html) fo
 pip install --force-reinstall {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge_repository_sync-1018.0.0-py3-none-any.whl
 ```
 
-#### Run reposiotry sync script
+#### Run repository sync script
 To download and publish the Edge artifacts to local Harbor registry, run the command below:
 
 ```bash

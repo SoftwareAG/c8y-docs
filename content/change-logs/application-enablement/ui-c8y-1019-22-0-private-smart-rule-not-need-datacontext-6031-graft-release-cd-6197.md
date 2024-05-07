@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55916
 version: 1019.22.0
 ---
-In the past, private smart rules had property contextData in c8y_Context, even if the rule did not use it. This unnecessary requirement has now been removed. Private smart rules can be created without specifying a contextData, to avoid storing redundant MO data in the database. This change only affects the creation of new private smart rules. Existing smart rules are not impacted.
+In the past, private smart rules had the property `contextData` in `c8y_Context`, even if the rule did not use it. This is no longer required. Private smart rules can now be created without the `contextData` property, to avoid storing redundant data in the database. This change only affects the creation of new private smart rules. Existing smart rules are not impacted.

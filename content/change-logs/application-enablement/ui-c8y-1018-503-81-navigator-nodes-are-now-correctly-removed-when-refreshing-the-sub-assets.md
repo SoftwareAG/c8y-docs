@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Navigator nodes are now correctly removed when refreshing the sub-assets grid after removing groups via API. [GRAFT][release/y2024] (#6205)
+title: Groups in the navigator and subassets view now refresh correctly after removing groups via API
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

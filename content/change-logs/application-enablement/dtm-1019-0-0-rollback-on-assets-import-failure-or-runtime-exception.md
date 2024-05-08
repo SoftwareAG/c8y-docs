@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Rollback on assets import failure or runtime exception
 product_area: Application enablement & solutions
 change_type:

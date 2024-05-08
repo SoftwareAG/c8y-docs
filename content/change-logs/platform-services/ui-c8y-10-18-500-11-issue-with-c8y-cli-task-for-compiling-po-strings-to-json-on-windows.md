@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Localization strings are correctly compiled to JSON on Windows using c8ycli command
 change_type:
   - value: change-VSkj2iV9m

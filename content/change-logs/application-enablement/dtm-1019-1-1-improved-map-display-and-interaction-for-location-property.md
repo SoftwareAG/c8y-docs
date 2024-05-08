@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title:  Improved map display and interaction for Location property in subassets
 product_area: Application enablement & solutions
 change_type:

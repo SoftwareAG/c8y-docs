@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Changing the endpoint name in the LWM2M configuration view automatically adjusts external ID
 change_type:
   - value: change-VSkj2iV9m

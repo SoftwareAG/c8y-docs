@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Location view migrated to Angular
 change_type:
   - value: change-2c7RdTdXo4

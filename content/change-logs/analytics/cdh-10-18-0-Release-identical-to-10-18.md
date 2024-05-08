@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: 2024 release of Cumulocity IoT DataHub identical to 10.18 release
 change_type:
   - value: change-inv-3bw8e

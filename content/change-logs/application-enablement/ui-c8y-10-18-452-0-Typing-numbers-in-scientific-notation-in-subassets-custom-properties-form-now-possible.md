@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Typing numbers in scientific notation in subassets custom properties form
   now possible
 change_type:

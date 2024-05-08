@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Handled grid configuration issues in the Assets page  
 product_area: Application enablement & solutions
 change_type:

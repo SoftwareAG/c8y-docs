@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Main branding colors now used to brand SVG images and dashboards
 change_type:
   - value: change-VSkj2iV9m

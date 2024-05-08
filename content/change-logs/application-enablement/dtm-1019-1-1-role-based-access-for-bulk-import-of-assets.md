@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Role-based access for bulk import of assets
 product_area: Application enablement & solutions
 change_type:

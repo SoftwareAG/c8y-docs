@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Data grid components return to first page after reload
 change_type:
   - value: change-2c7RdTdXo4

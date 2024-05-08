@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T15:34:00.835Z
+date: 2024-03-26T15:34:00.835Z
 title: Fixed issue with password strength indicator
 change_type:
   - value: change-VSkj2iV9m

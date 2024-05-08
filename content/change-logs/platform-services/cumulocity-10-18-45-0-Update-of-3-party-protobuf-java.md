@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T16:04:16.688Z
+date: 2024-03-26T16:04:16.688Z
 title: Update of 3-party protobuf-java
 change_type:
   - value: change-2c7RdTdXo4

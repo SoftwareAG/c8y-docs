@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T14:19:34.192Z
+date: 2024-03-26T14:19:34.192Z
 title: Customizable dashboard in the device details
 change_type:
   - value: change-QHu1GdukP

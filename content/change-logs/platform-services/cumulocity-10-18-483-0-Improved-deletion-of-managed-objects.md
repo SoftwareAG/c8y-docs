@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Improved deletion of managed objects
 product_area: Platform services
 change_type:

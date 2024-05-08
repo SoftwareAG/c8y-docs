@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: New toggle for switching off empty data
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T14:49:03.473Z
+date: 2024-03-26T14:49:03.473Z
 title: Improved microservice subscriptions
 change_type:
   - value: change-VSkj2iV9m

@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: SCADA widget mapping now holds child device data properly
 change_type:
   - value: change-VSkj2iV9m

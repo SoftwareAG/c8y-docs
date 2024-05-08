@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Improved robustness of LWM2M client registration process
 change_type:
   - value: change-VSkj2iV9m

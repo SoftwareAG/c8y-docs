@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Time range expands and current range data is shown in "Data points graph"
   widget
 change_type:

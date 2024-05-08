@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Creating an asset with the Location property adjustments
 change_type:
   - value: change-VSkj2iV9m

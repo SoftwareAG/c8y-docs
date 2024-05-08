@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Latest events now correctly displayed in data point graph
 change_type:
   - value: change-VSkj2iV9m

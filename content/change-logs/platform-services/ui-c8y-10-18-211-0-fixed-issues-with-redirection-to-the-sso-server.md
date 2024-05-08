@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Fixed issues with redirection to the SSO server
 product_area: Platform services
 change_type:

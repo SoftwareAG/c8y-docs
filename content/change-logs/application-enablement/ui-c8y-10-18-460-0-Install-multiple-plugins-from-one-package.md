@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Install multiple plugins from one package
 change_type:
   - value: change-VSkj2iV9m

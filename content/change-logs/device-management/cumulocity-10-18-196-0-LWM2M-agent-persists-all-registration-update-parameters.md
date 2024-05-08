@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T15:54:36.563Z
+date: 2024-03-26T15:54:36.563Z
 title: LWM2M agent persists all registration update parameters
 change_type:
   - value: change-VSkj2iV9m

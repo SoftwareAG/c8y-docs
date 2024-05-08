@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Custom Web SDK implementations shown with correct title
 change_type:
   - value: change-VSkj2iV9m

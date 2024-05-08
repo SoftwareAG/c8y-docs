@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Addressed the redirection issues for support user
 product_area: Platform services
 change_type:

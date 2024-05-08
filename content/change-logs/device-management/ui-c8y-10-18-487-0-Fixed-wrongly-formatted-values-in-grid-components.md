@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T10:27:01.985Z
+date: 2024-03-26T10:27:01.985Z
 title: Fixed wrongly formatted values in grid components
 change_type:
   - value: change-VSkj2iV9m

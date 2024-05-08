@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T16:20:15.159Z
+date: 2024-03-26T16:20:15.159Z
 title: Fixed issues with the Ericsson DCP SMS provider
 product_area: Platform services
 change_type:

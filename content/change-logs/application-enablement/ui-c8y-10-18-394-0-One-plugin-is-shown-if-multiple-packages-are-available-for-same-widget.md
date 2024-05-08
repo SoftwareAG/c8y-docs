@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: One plugin is shown if multiple packages are available for same widget
 change_type:
   - value: change-VSkj2iV9m

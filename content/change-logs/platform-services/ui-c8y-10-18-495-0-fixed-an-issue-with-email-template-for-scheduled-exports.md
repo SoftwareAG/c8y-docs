@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T15:35:57.705Z
+date: 2024-03-26T15:35:57.705Z
 title: Fixed an issue with email template for scheduled exports
 change_type:
   - value: change-VSkj2iV9m

@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Refresh interval keeps configured value in map widget configuration
 change_type:
   - value: change-VSkj2iV9m

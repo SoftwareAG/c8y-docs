@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T16:21:55.139Z
+date: 2024-03-26T16:21:55.139Z
 title: Users with inventory roles can add new groups
 change_type:
   - value: change-VSkj2iV9m

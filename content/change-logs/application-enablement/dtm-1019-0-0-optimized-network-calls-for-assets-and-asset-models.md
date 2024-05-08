@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title:  Optimized network calls for assets and asset models
 product_area: Application enablement & solutions
 change_type:

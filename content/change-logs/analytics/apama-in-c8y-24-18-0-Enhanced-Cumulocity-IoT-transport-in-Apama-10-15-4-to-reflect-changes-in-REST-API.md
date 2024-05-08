@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T15:49:00.513Z
+date: 2024-03-26T15:49:00.513Z
 title: Enhanced Cumulocity IoT transport in Apama 10.15.4 to reflect changes in
   REST API
 change_type:

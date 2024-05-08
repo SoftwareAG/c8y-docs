@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T15:53:08.842Z
+date: 2024-03-26T15:53:08.842Z
 title: New text index
 change_type:
   - value: change-2c7RdTdXo4

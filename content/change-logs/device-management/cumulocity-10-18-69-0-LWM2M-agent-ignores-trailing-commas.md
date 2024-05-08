@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T16:03:22.720Z
+date: 2024-03-26T16:03:22.720Z
 title: LWM2M agent ignores trailing commas
 change_type:
   - value: change-VSkj2iV9m

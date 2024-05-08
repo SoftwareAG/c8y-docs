@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Users navigated to the top of the assets list
 product_area: Application enablement & solutions
 change_type:

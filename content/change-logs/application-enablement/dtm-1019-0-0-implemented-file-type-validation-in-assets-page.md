@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Implemented file type validation in Assets page
 product_area: Application enablement & solutions
 change_type:

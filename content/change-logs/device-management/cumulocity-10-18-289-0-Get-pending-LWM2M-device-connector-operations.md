@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T15:34:45.003Z
+date: 2024-03-26T15:34:45.003Z
 title: Get pending LWM2M device connector operations
 change_type:
   - value: change-VSkj2iV9m

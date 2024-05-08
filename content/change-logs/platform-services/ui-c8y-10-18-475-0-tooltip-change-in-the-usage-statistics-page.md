@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T14:50:56.185Z
+date: 2024-03-26T14:50:56.185Z
 title: Tooltip change in the Usage statistics page
 change_type:
   - value: change-VSkj2iV9m

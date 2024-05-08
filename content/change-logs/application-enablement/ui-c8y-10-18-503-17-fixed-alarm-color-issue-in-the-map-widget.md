@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Fixed alarm color issue in the Map widget
 product_area: Application enablement & solutions
 change_type:

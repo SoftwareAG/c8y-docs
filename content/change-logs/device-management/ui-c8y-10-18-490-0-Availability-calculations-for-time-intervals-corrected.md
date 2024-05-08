@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T10:23:03.826Z
+date: 2024-03-26T10:23:03.826Z
 title: Availability calculations for time intervals corrected
 change_type:
   - value: change-VSkj2iV9m

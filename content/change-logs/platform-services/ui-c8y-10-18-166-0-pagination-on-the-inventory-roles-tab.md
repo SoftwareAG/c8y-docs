@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T16:16:11.447Z
+date: 2024-03-26T16:16:11.447Z
 title: Pagination on the Inventory roles tab
 change_type:
   - value: change-VSkj2iV9m

@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28T15:47:22.131Z
+date: 2024-03-26T15:47:22.131Z
 title: LWM2M agent processes and stores object instances correctly
 change_type:
   - value: change-VSkj2iV9m

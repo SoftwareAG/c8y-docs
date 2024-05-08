@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: New activeClassName input in data-grid and device-grid components
 change_type:
   - value: change-2c7RdTdXo4

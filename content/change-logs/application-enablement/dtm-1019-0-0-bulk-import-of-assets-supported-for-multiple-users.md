@@ -1,5 +1,5 @@
 ---
-date:  2024-03-28
+date:  2024-03-26
 title: Bulk import of assets supported for multiple users
 product_area: Application enablement & solutions
 change_type:

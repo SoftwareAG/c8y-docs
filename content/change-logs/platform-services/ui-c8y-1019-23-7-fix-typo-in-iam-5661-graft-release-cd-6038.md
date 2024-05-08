@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix typo in IAM (#5661) [GRAFT][release/cd] (#6038)
+title: Fixed typo in IAM (AIM -> IAM).
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55205
 version: 1019.23.7
 ---
-fix typo in IAM (#5661) [GRAFT][release/cd] (#6038)
+The typo has been corrected. IAM stands for Identity and Access Management.

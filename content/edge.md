@@ -6,6 +6,8 @@ layout: redirect
 bundle: edge
 audience:
   - Users
+  - Administrators
+  - Developers
 section:
   - edge_server
 weight: 10

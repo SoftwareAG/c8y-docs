@@ -6,6 +6,8 @@ layout: redirect
 bundle: edge-kubernetes
 audience:
   - Users
+  - Administrators
+  - Developers
 section:
   - edge_server
 weight: 11

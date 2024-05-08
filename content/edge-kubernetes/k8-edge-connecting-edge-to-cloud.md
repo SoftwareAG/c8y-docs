@@ -6,4 +6,4 @@ section:
   - edge_server
 ---
 
-{{< product-c8y-iot >}} Edge can be managed, configured, and monitored remotely through a {{< product-c8y-iot >}} cloud tenant. You can control and troubleshoot your instance of Edge deployments remotely.
+Edge can be managed, configured, and monitored remotely through a {{< product-c8y-iot >}} cloud tenant. You can control and troubleshoot your instance of Edge deployments remotely.

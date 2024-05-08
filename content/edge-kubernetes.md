@@ -1,8 +1,7 @@
 ---
-title: Edge on Kubernetes - Public Preview
+title: Edge on Kubernetes
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
-external: "https://cumulocity.com/guides/edge-k8s/k8-edge-introduction/"
 layout: redirect
 bundle: edge-kubernetes
 audience:

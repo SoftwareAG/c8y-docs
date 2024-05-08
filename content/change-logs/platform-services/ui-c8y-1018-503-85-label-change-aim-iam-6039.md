@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55205
 version: 1018.503.85
 ---
-The typo has been corrected. IAM stands for Identity and Access Management.
+In the **Single sign-on** page, a typo  has been fixed (AIM -> IAM). IAM stands for Identity and Access Management.

@@ -1,6 +1,6 @@
 ---
 date: 2024-05-07
-title: Device management services functionality is now available as a plugin.
+title: Device management services functionality is now available as a plugin
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP

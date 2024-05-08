@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Inventory roles tab disabled for external users without the required permissions
+title: Restriction on role changes for users managed by SSO server
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57096
 version: 1019.22.1
 ---
-In an effort to improve the user experience and prevent confusion, the inventory roles page is now disabled for external users if the inventory feature is not enabled. Previously, external users were able to access the inventory roles page even if the inventory was disabled, which could lead to misunderstandings about the availability and functionality of the feature. With this change, external users will no longer see the inventory roles page when the inventory is turned off, providing a clearer and more consistent experience across the application.
+Administrators can no longer change the global roles and inventory roles of a user managed by the SSO server if they are updated during each login. This option can be set in the access mapping of the SSO configuration.

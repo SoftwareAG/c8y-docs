@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:37:55.655Z
+date: 2024-03-28T10:37:55.655Z
 title: Group filter issues in device grids fixed
 change_type:
   - value: change-VSkj2iV9m

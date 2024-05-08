@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T13:35:23.509Z
+date: 2024-03-28
 title: Improved shell applications behavior
 change_type:
   - value: change-2c7RdTdXo4

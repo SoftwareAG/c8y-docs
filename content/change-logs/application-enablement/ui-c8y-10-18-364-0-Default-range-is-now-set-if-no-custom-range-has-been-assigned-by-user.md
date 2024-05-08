@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:18:36.103Z
+date: 2024-03-28
 title: Default range is now set if no custom range has been assigned by user
 change_type:
   - value: change-VSkj2iV9m

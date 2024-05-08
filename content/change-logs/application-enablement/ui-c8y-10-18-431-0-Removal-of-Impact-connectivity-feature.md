@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T13:24:24.427Z
+date: 2024-03-28
 title: Removal of Impact connectivity feature
 change_type:
   - value: change-2c7RdTdXo4

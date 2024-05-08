@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T13:25:11.494Z
+date: 2024-03-28
 title: Context path in the remotes application option
 change_type:
   - value: change-2c7RdTdXo4

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T13:02:40.392Z
+date: 2024-03-28
 title: Changed form validation for assets defined via the Digital twin manager
 change_type:
   - value: change-2c7RdTdXo4

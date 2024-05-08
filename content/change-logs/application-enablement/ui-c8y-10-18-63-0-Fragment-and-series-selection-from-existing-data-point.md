@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:28:20.356Z
+date: 2024-03-28
 title: Fragment and series selection from existing data point
 change_type:
   - value: change-VSkj2iV9m

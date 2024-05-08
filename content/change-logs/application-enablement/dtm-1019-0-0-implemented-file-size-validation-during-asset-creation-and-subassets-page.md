@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: 2024-03-28
 title: Implemented file size validation during asset creation and in the Subassets page
 product_area: Application enablement & solutions
 change_type:

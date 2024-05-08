@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: 2024-03-28
 title: User with inventory role permission can view asset models
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:34:15.146Z
+date: 2024-03-28
 title: Add dashboard button no longer removed when removing all common tabs
 change_type:
   - value: change-VSkj2iV9m

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:43:22.745Z
+date: 2024-03-28T10:43:22.745Z
 title: Fixed device availability connection status flashing
 change_type:
   - value: change-VSkj2iV9m

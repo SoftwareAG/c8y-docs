@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:24:23.009Z
+date: 2024-03-28T10:24:23.009Z
 title: Confirmation pop-up after editing device protocol details
 change_type:
   - value: change-VSkj2iV9m

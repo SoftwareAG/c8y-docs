@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: 2024-03-28
 title: Default values of asset properties available in assets bulk import template
 product_area: Application enablement & solutions
 change_type:

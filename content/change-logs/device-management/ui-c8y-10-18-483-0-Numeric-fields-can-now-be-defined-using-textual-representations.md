@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:14:00.732Z
+date: 2024-03-28T10:14:00.732Z
 title: Numeric fields can now be defined using textual representations
 change_type:
   - value: change-VSkj2iV9m

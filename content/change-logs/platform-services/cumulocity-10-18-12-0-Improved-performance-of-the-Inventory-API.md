@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T16:03:34.877Z
+date: 2024-03-28T16:03:34.877Z
 title: Improved performance of the Inventory API
 change_type:
   - value: change-2c7RdTdXo4

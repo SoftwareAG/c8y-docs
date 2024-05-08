@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: 2024-03-28
 title: Filtering models applied to template models
 product_area: Analytics
 change_type:

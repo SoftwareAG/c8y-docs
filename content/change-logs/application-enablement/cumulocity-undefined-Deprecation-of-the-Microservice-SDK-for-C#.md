@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T14:53:24.832Z
+date:  2024-03-28
 title: Deprecation of the Microservice SDK for C#
 change_type:
   - value: change-inv-3bw8e

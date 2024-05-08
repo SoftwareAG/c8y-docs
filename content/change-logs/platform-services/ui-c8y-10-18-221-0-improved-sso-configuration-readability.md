@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: 2024-03-28
 title: Improved SSO configuration readability
 product_area: Platform services
 change_type:

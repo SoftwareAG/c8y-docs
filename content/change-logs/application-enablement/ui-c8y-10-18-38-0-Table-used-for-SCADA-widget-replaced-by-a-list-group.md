@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:30:44.574Z
+date: 2024-03-28
 title: Table used for SCADA widget replaced by a list group
 change_type:
   - value: change-VSkj2iV9m

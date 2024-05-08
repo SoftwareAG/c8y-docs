@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:11:58.877Z
+date: 2024-03-28T11:11:58.877Z
 title: Introduced required parameters in the Alarms, Events, Measurements APIs
 change_type:
   - value: change-3BQrQ6adS

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:41:30.864Z
+date: 2024-03-28
 title: Fixed widget behavior when real-time connection was interrupted
 change_type:
   - value: change-VSkj2iV9m

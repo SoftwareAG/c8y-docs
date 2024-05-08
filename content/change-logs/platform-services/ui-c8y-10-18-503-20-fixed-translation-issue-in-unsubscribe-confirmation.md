@@ -1,5 +1,5 @@
 ---
-date: 2024-02-08
+date: 2024-03-28
 title: Fixed translation issue in unsubscribe confirmation
 product_area: Application enablement & solutions
 change_type:

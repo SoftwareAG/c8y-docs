@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:45:34.442Z
+date: 2024-03-28
 title: Increased timestamp width in "Event list" widget
 change_type:
   - value: change-VSkj2iV9m

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-20
+date: 2024-03-28
 title: UI component c8y-stepper function corrected
 product_area: Application enablement & solutions
 change_type:

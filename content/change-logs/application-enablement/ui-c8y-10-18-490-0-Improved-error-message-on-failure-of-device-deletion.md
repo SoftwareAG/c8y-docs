@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T13:19:09.229Z
+date: 2024-03-28
 title: Improved error message on failure of device deletion
 change_type:
   - value: change-2c7RdTdXo4

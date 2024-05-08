@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T09:24:02.026Z
+date: 2024-03-28
 title: Fixed issue with Add report button
 change_type:
   - value: change-VSkj2iV9m

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date:  2024-03-28
 title: Error handling for cancelled delete operations in Asset models and Asset properties page
 product_area: Application enablement & solutions
 change_type:

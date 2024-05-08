@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:38:37.132Z
+date: 2024-03-28
 title: Fixed an issue with SVG files in the SCADA widget
 change_type:
   - value: change-VSkj2iV9m

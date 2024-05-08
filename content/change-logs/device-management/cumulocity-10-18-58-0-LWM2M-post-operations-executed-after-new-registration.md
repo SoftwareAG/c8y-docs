@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T16:04:55.242Z
+date: 2024-03-28T16:04:55.242Z
 title: LWM2M post-operations executed after new registration
 change_type:
   - value: change-VSkj2iV9m

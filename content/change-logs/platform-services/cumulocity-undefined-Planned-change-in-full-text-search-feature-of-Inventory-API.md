@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:55:52.890Z
+date: 2024-03-28T15:55:52.890Z
 title: Planned change in full text search feature of Inventory API
 change_type:
   - value: change-3BQrQ6adS

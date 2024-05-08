@@ -1,5 +1,5 @@
 ---
-date: 2024-02-07
+date: 2024-03-28
 title: Fixed issue with Notifications 2.0 subscriptions with a type filter
 product_area: Platform services
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: "2024-02-06"
+date: 2024-03-28
 title: LWM2M Time-to-Live duration for device operation realtime subscription
 product_area: Device management & connectivity
 change_type:

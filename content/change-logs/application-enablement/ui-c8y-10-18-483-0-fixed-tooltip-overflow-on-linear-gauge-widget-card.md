@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:41:23.168Z
+date: 2024-03-28
 title: Fixed tooltip overflow on "Linear gauge" widget card
 change_type:
   - value: change-VSkj2iV9m

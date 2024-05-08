@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:41:14.121Z
+date: 2024-03-28T10:41:14.121Z
 title: Filter issues in device grid fixed
 change_type:
   - value: change-VSkj2iV9m

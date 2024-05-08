@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:51:05.293Z
+date: 2024-03-28T15:51:05.293Z
 title: New sorting of Inventory API queries
 change_type:
   - value: change-2c7RdTdXo4

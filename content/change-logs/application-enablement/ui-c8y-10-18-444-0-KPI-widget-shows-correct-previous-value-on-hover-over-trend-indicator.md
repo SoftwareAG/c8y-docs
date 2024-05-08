@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:46:49.897Z
+date: 2024-03-28
 title: KPI widget shows correct previous value on hover over trend indicator
 change_type:
   - value: change-VSkj2iV9m

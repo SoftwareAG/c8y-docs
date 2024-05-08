@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T09:41:07.117Z
+date: 2024-03-28T09:41:07.117Z
 title: New wizard layout
 change_type:
   - value: change-2c7RdTdXo4

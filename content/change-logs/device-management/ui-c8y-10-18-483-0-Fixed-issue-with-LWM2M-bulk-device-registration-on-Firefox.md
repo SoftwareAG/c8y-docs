@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:32:50.845Z
+date: 2024-03-28T15:32:50.845Z
 title: Fixed issue with LWM2M bulk device registration on Firefox
 change_type:
   - value: change-VSkj2iV9m

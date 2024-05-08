@@ -1,5 +1,5 @@
 ---
-date: 2024-03-27
+date: 2024-03-28
 title: Markers correctly displayed in the Map widget
 product_area: Application enablement & solutions
 change_type:

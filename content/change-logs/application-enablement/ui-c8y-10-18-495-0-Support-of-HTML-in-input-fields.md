@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T13:12:05.334Z
+date: 2024-03-28
 title: Support of HTML in input fields
 change_type:
   - value: change-2c7RdTdXo4

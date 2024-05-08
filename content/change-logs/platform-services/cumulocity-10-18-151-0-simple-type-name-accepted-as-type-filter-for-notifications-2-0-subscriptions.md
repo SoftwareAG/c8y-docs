@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: 2024-03-28
 title: Simple type name accepted as type filter for Notifications 2.0 subscriptions
 product_area: Platform services
 change_type:

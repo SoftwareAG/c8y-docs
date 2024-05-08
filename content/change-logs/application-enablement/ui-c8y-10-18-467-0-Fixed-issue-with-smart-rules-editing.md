@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:44:26.354Z
+date: 2024-03-28
 title: Fixed issue with smart rules editing
 change_type:
   - value: change-VSkj2iV9m

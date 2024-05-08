@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:55:48.796Z
+date: 2024-03-28T15:55:48.796Z
 title: Improved handling of LWM2M device content format
 change_type:
   - value: change-VSkj2iV9m

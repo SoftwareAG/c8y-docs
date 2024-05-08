@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T16:00:00.758Z
+date: 2024-03-28T16:00:00.758Z
 title: Fixed status of LWM2M bulk device registrations
 change_type:
   - value: change-VSkj2iV9m

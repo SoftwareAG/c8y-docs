@@ -1,5 +1,5 @@
 ---
-date: 2024-03-04
+date: 2024-03-28
 title: Asynchronous alarm inputs no longer cause internal errors in model chains
 change_type:
   - value: change-VSkj2iV9m

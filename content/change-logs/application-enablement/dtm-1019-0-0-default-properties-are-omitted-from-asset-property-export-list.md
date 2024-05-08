@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date:  2024-03-28
 title: Default properties are omitted from asset property export list
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T16:03:07.301Z
+date: 2024-03-28T16:03:07.301Z
 title: Improved performance of GET requests on /user/users
 change_type:
   - value: change-2c7RdTdXo4

@@ -1,6 +1,6 @@
 ---
-date: 2023-12-14
-title: Bulk import of assets supported for multiple users 
+date:  2024-03-28
+title: Bulk import of assets supported for multiple users
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

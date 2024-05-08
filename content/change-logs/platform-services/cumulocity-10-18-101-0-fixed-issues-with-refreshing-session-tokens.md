@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: 2024-03-28
 title: Fixed issues with refreshing session tokens
 product_area: Platform services
 change_type:

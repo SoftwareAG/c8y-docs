@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:38:26.638Z
+date:  2024-03-28
 title: Updated org.eclipse.jetty:jetty dependencies
 change_type:
   - value: change-VSkj2iV9m

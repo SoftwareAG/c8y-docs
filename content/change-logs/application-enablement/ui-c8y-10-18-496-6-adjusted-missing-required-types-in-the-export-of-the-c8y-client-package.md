@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:41:22.794Z
+date: 2024-03-28
 title: Adjusted missing required types in the export of the @c8y/client package
 change_type:
   - value: change-VSkj2iV9m

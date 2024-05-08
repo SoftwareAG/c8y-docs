@@ -1,5 +1,5 @@
 ---
-date:  2024-03-26
+date: 2024-03-26
 title: DTM version moved under platform info section
 product_area: Application enablement & solutions
 change_type:

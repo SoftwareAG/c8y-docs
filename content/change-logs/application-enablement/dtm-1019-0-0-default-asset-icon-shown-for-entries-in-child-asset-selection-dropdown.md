@@ -1,5 +1,5 @@
 ---
-date:  2024-03-26
+date: 2024-03-26
 title: Default asset icon shown for entries in child asset selection dropdown
 product_area: Application enablement & solutions
 change_type:

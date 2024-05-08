@@ -1,5 +1,5 @@
 ---
-date:  2024-03-26
+date: 2024-03-26
 title: Fixed issue with realtime notifications
 product_area: Application enablement & solutions
 change_type:

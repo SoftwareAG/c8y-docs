@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-05-06
 title: New plugin versions are no longer automatically marked as latest
 product_area: Platform services
 change_type:

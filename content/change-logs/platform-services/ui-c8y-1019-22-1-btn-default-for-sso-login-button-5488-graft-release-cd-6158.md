@@ -1,6 +1,6 @@
 ---
 date: ""
-title: btn-default for sso login button (#5488) [GRAFT][release/cd] (#6158)
+title: Improved styling of single sign-on login button
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57675
 version: 1019.22.1
 ---
-btn-default for sso login button (#5488) [GRAFT][release/cd] (#6158)
+The styling of the single sign-on (SSO) login button has been updated. Previously, the SSO login button used a custom style which did not match the overall look and feel of the application. With this change, the SSO login button now uses the default button style (btn-default).

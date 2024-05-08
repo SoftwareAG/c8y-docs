@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed typo in IAM (AIM -> IAM).
+title: Fixed typo in Single sign-on page
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

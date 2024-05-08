@@ -1,6 +1,6 @@
 ---
 date: ""
-title: toogle switch for password case sensitive (#5334) [GRAFT][release/cd] (#6003)
+title: A switch enabling the differentiation of letter case in user names.
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-56865
 version: 1019.23.0
 ---
-toogle switch for password case sensitive (#5334) [GRAFT][release/cd] (#6003)
+To enhance the user experience, a switch has been added to the authentication settings, allowing the option to disable case sensitivity in usernames. With this change, when the switch is turned on, username validation will treat uppercase and lowercase letters as distinct, requiring users to enter their username exactly as it was set. This affects all users.

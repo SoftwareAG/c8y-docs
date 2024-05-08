@@ -20,7 +20,7 @@ The Messaging Service microservice uses API version 1. To install the Messaging 
 Using SCP, copy the bundle to the */tmp* directory on the Edge server. Enter the password for the Edge Linux administrative/login account when prompted. For example:
 
 ```bash
-scp pulsar-edge-install-1015.0.0.tgz	 "<LOGIN_USERNAME>@<DNS_NAME_OF_SERVER>:/tmp/"
+scp pulsar-edge-install-1018.0.0.tgz	 "<LOGIN_USERNAME>@<DNS_NAME_OF_SERVER>:/tmp/"
 ```
 
 Substitute the relevant values of `<LOGIN_USERNAME>` and `<DNS_NAME_OF_SERVER>`. Then run:

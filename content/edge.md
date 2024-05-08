@@ -2,7 +2,6 @@
 title: Edge Appliance VM
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
-external: "https://cumulocity.com/guides/edge/edge-introduction/"
 layout: redirect
 bundle: edge
 audience:

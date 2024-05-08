@@ -1,6 +1,6 @@
 ---
 date: ""
-title: A switch enabling the differentiation of letter case in user names.
+title: New switch for disabling/enabling case-sensitivity in usernames
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP

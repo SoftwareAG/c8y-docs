@@ -2,6 +2,7 @@
 weight: 10
 title: Introduction to our IoT platform
 layout: bundle
+slug: concepts-introduction
 section:
   - getting_started
 ---

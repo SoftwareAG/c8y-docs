@@ -12,5 +12,5 @@ In contrast to many other IoT platforms, {{< product-c8y-iot >}} uses the same A
 The plugin concept of {{< product-c8y-iot >}} enables you to write new user interface functionality that will seamlessly extend the existing {{< product-c8y-iot >}} platform.
 
 {{< c8y-admon-important >}}
-The public APIs for {{< product-c8y-iot >}} are backward compatible where possible. For details see [API compatibility](/concepts/introduction/#api-compatibility).
+The public APIs for {{< product-c8y-iot >}} are backward compatible where possible. For details see [API compatibility](/concepts/concepts-introduction/#api-compatibility).
 {{< /c8y-admon-important >}}

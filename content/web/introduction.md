@@ -9,11 +9,11 @@ aliases:
 ---
 
 
-This guide provides information on the Web SDK which enables you to
+This guide provides information on the Web SDK which enables you to:
 
-* develop web applications that can be deployed to the platform,
-* communicate authenticated with our API,
-* apply default or branded UI components to your custom application.
+* Develop web applications that can be deployed to the platform.
+* Communicate authenticated with our API.
+* Apply default or branded UI components to your custom application.
 
 {{< c8y-admon-important >}}
  Web SDK for Angular JS is deprecated. Therefore, its documentation is no longer provided here.  As all {{< product-c8y-iot >}} REST APIs are backward compatible, Angular JS applications will still continue to work.
@@ -24,9 +24,9 @@ Web SDK for plugins is based on Angular JS and is also deprecated. For Angular-b
 ### When can I use the Web SDK?
 
 The Web SDK is designed to extend default application or build new IoT solutions. It provides many default components to compose such applications. However, if one of our default applications already fits your usecase, you should think about extending it via the less-code approach and install plugins to them. If you simply have very special needs or can't find the right plugin for you use-case, consider building a custom application with the help of the Web SDK. There you basically have three options:
- 1. Extend existing applications
- 2. Build a new application with the help of the Web SDK
- 3. Build a application from scratch
+ 1. Extend existing applications.
+ 2. Build a new application with the help of the Web SDK.
+ 3. Build a application from scratch.
 
 The third option is the hardest option as you need to build nearly everything new. However, you are free to choose your frameworks and tools. To support you on either of the options, we have developed and published certain packages to npm. Those packages help you to connect to our data, provides you with default components or help you test and deploy the app. Depending on your needs, you can decide which package you want to include. However we always encourage everyone to start with our boilerplates and the full Web SDK. You can find a description on how to use them in the [Getting started](/web/gettingstarted/) guide.
 
@@ -45,7 +45,7 @@ Following is a list which explains the use cases of each package.
 
 * [@c8y/client](https://www.npmjs.com/package/@c8y/client): Use this client to access our API. The client is isomorphic, that means it could be used in node.js and in the browser.
 * [@c8y/ngx-components](https://www.npmjs.com/package/@c8y/ngx-components): A components collection and data access layer for Angular applications. This package can be used to build Angular applications.
-* [@c8y/style](https://www.npmjs.com/package/@c8y/style): The styles for the look & feel of an application. Extend this package to apply a custom branding to your application.
+* [@c8y/style](https://www.npmjs.com/package/@c8y/style): The styles for the look and feel of an application. Extend this package to apply a custom branding to your application.
 * @c8y/&lt;&lt;apps&gt;&gt;: The different applications. E.g. `@c8y/cockpit`, `@c8y/devicemanagement` and `@c8y/administraiton`.
 * [@c8y/websdk](https://www.npmjs.com/package/@c8y/websdk): The scaffolding package that you can use to add the Cumulocity applicaiton to your Angular application.
 * [@c8y/devkit](https://www.npmjs.com/package/@c8y/devkit): The builders to build or run a dev server.
@@ -87,9 +87,9 @@ Additional two build tools are added, which help scaffolding (`@c8y/websdk`) and
 
 ### Versioning: The WebSDK uses semantic version numbers
 Since version 1019.0.0 the versioning schema of the Web SDK isn't aligned anymore to the versioning schema of the {{< product-c8y-iot >}} platform. The versioning schema is now reflecting via semantic versioning the changes in the Web SDK:
- - Major version (e.g. **1019**.x.x): Can contain breaking changes. Updating to such versions needs proper testing and validation. Often those versions also contain an Angular upgrade.
- - Minor version (e.g. x.**3**.x): Contains features that should work without breaking anything. However it is recommended to properly verify the feature a minor version contains.
- - Fix version (e.g. x.x.**7**): Cotains only fixes that should not break anything.
+ * Major version (e.g. **1019**.x.x): Can contain breaking changes. Updating to such versions needs proper testing and validation. Often those versions also contain an Angular upgrade.
+ * Minor version (e.g. x.**3**.x): Contains features that should work without breaking anything. However it is recommended to properly verify the feature a minor version contains.
+ * Fix version (e.g. x.x.**7**): Cotains only fixes that should not break anything.
 
 
 {{< c8y-admon-info >}}

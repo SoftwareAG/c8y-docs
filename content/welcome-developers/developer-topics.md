@@ -14,7 +14,7 @@ For our developer community, we offer a variety of sources to quickly get starte
 
 If you are new to {{< product-c8y-iot >}}, you might want to learn about the architecture, technical concepts and domain models behind {{< product-c8y-iot >}}.
 
-The <a href="/concepts/introduction/">Technical concepts</a> section serves as a god starting point for anyone technically interested in our IoT platform.
+The [Technical concepts](/concepts/concepts-introduction/) section serves as a god starting point for anyone technically interested in our IoT platform.
 
 ### Step-by-step instructions {#step-by-step-instructions}
 

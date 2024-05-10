@@ -37,7 +37,7 @@ jobs:
 
     - name: Setup base URL env var
       run: |
-        echo "BASEURL=https://${{ github.repository_owner }}-${{ github.event.repository.name }}-${{ github.job }}-pr-${{ github.event.number }}.surge.sh" >> $GITHUB_ENV
+        echo -n "BASEURL=https://${{ github.repository_owner }}-${{ github.event.repository.name }}-${{ github.job }}-pr-${{ github.event.number }}.surge.sh" >> $GITHUB_ENV
 
     - name: Report base URL env var
       run: echo "${{ env.BASEURL }}"

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The update of the TFA strategy takes place through the TFA endpoint.
+title: TFA strategy is now updated through the TFA endpoint
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

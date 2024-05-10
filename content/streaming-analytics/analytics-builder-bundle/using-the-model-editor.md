@@ -342,7 +342,7 @@ After you have replaced the devices, you must verify that the measurements that 
 
     Repeat this step until all required sources and destinations have been selected for replacement. You can add as many rows as there are sources or destinations in the current model.
 
-5.  If you want to remove a row \(for example, when you no longer want to replace a selected device\), click the remove icon <img src="/images/streaming-analytics/analytics-builder/icon-delete-row.png" alt="Remove icon" style="display:inline-block; margin:0"> next to that row. This is only available if the dialog box currently shows more than one row.
+5.  If you want to delete a row \(for example, when you no longer want to replace a selected device\), click the delete icon <i class="dlt-c8y-icon-delete text-danger icon-20"></i> next to that row. This is only available if the dialog box currently shows more than one row.
 
 6.  Click **Replace**.
 
@@ -402,7 +402,7 @@ If there is a block parameter for which a required value has not been specified,
 
 5.  When the model is inactive, you can reorder the template parameters. This affects the sequence in which they are shown in the instance editor. Drag a row to a different position using the move icon <img src="/images/streaming-analytics/analytics-builder/icon-move-row.png" alt="Move icon" style="display:inline-block; margin:0"> which is shown next to the row. See also [Filtering and sorting the instances](/streaming-analytics/analytics-builder/#filtering-and-sorting-the-instances).
 
-6.  You can only remove a template parameter if it is not used in any block of the model. To remove a template parameter, click the remove icon <img src="/images/streaming-analytics/analytics-builder/icon-remove-template-parameter.png" alt="Remove icon" style="display:inline-block; margin:0"> which is shown next to the row.
+6.  You can only delete a template parameter if it is not used in any block of the model. To delete a template parameter, click the delete icon <i class="dlt-c8y-icon-delete text-danger icon-20"></i> which is shown next to the row.
 
 7.  Click **OK** to store the changes in memory and to close the dialog box.
 

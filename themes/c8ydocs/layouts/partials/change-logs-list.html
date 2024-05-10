@@ -114,6 +114,17 @@
           >
             <h5>{{$listDate}}</h5>
           </div>
+          {{else}}
+          {{ range $index, $v := site.Data.date_settings.versions }}
+            {{ if eq $v.date $listDate}}
+              <div
+                id="cl-{{$listDate | urlize }}"
+                class="page-section change-log__date {{range $classes}}{{.}} {{end}}"
+              >
+                <h5>{{$v.version}}</h5>
+              </div>
+            {{end}}
+          {{end}}
         {{end}}
       {{end}}
 

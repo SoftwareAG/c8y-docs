@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-04-26
 title: Permissions for SSO users no longer lost when upgrading the platform from version 10.17
 product_area: Platform services
 change_type:

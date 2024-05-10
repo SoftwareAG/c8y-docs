@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-04-26
 title: Set supported Cloud Remote Access protocols using SmartREST
 change_type:
   - value: change-2c7RdTdXo4

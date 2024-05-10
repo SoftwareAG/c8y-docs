@@ -57,13 +57,13 @@ jobs:
         echo "Branch: ${{ steps.extract_branch.outputs.branch }}"
         if [[ "${{ steps.extract_branch.outputs.branch }}" == "develop" ]]; then
           echo "Branch is develop"
-          echo BASEURL="${{ secrets.BASE_URL }}" >> $GITHUB_ENV
-          echo DESTINATION_PATH="${{ secrets.DESTINATION_PATH }}" >> $GITHUB_ENV
+          echo "BASEURL=${{ secrets.BASE_URL }}" >> $GITHUB_ENV
+          echo "DESTINATION_PATH=${{ secrets.DESTINATION_PATH }}" >> $GITHUB_ENV
         else
           suffix=$(echo "${{ steps.extract_branch.outputs.branch }}" | sed  's/release\/y//g')
           echo "Suffix: ${suffix}"
-          echo BASEURL="${{ secrets.BASE_URL }}/${suffix}" >> $GITHUB_ENV
-          echo DESTINATION_PATH="${{ secrets.DESTINATION_PATH }}/${suffix}" >> $GITHUB_ENV
+          echo "BASEURL=${{ secrets.BASE_URL }}/${suffix}" >> $GITHUB_ENV
+          echo "DESTINATION_PATH=${{ secrets.DESTINATION_PATH }}/${suffix}" >> $GITHUB_ENV
         fi
       id: path_to_append
 

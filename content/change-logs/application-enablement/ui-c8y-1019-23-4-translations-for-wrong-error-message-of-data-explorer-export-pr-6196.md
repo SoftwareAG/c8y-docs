@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-05-07
 title: Fixed incorrect error message when exporting data in the data explorer
 product_area: Application enablement & solutions
 change_type:

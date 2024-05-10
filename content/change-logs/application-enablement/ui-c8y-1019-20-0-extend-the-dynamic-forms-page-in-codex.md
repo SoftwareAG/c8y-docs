@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-04-25
 title: Dynamic forms page in Codex extended with additional information
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-04-25
 title: Software items are now properly shown in the Device data widget
 product_area: Device management & connectivity
 change_type:

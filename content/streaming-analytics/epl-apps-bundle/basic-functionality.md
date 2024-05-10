@@ -37,7 +37,7 @@ When you go to the **EPL Apps** page, the EPL app manager is shown first, listin
 
 ![EPL Apps](/images/streaming-analytics/epl-apps/epl-apps-cards.png)
 
-Each card that is shown for an app has an actions menu at the top which allows you to edit, download or remove the app.
+Each card that is shown for an app has an actions menu at the top which allows you to edit, download or delete the app.
 
 From this page, you can:
 

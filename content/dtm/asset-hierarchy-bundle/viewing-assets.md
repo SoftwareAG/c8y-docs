@@ -27,8 +27,8 @@ If the asset has a location, you can see it on the map under the properties sect
 
 {{< c8y-admon-info>}}
 The buttons [Import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import), and [Add asset](/dtm/asset-hierarchy/#to-add-subassets) are not visible for the last hierarchical level.<br>
-If you edit an asset property or an asset model associated with the selected asset, you see a warning icon <i class="dlt-c8y-icon-warning text-warning icon-20"></i> next to the asset model name.<br>
 You see a warning message if one or more properties associated with the asset are not present.
+For complex properties, the keys are ordered as specified in the property definition.
 {{< /c8y-admon-info>}}
 
 ### To modify an asset {#to-modify-an-asset}

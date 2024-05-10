@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-03-21
 title: Introduce service registry with a hook for registering services
 product_area: Application enablement & solutions
 change_type:

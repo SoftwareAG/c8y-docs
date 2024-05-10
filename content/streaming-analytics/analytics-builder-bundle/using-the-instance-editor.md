@@ -24,7 +24,7 @@ A horizontal scrollbar is available if not all template parameters \(columns\) c
 
 The right side of the table shows the mode and status of each instance. You activate \(deploy\) and deactivate \(undeploy\) the instances from here. See also [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance) and [Undeploying an instance](/streaming-analytics/analytics-builder/#undeploying-an-instance).
 
-Each row that is shown for an instance has an actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the very right which contains commands for managing the instance \(for example, to remove the instance\).
+Each row that is shown for an instance has an actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the very right which contains commands for managing the instance \(for example, to delete the instance\).
 
 You can control the list of instances by filtering and sorting. See [Filtering and sorting the instances](/streaming-analytics/analytics-builder/#filtering-and-sorting-the-instances) for more information.
 
@@ -112,15 +112,15 @@ In the instance editor, click the actions menu <i class="dlt-c8y-icon-menu-verti
 
 A new row for the duplicated instance is immediately shown at the bottom of the instance editor table.
 
-### Removing an instance {#removing-an-instance}
+### Deleting an instance {#deleting-an-instance}
 
-You can remove each instance that is currently listed in the instance editor. When you remove an instance that is currently deployed, it is first undeployed and then removed.
+You can delete each instance that is currently listed in the instance editor. When you delete an instance that is currently deployed, it is first undeployed and then deleted.
 
-#### To remove an instance {#to-remove-an-instance}
+#### To delete an instance {#to-delete-an-instance}
 
-1.  In the instance editor, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the instance that you want to remove and then click **Remove**.
+1.  In the instance editor, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the instance that you want to delete and then click **Delete**.
 
-2.  In the resulting dialog box, click **Remove** to confirm the removal.
+2.  In the resulting dialog box, click **Delete** to confirm the deletion.
 
 ### Saving the instances {#saving-the-instances}
 

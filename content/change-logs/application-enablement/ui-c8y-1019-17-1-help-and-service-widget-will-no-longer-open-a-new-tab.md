@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-04-04
 title: Help and Service widget no longer opens a new tab when redirecting to the current application
 product_area: Application enablement & solutions
 change_type:

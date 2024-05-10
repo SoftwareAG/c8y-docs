@@ -514,9 +514,9 @@ When you save the model, the state of each group \(that is, whether it is curren
 
 ##### To collapse or expand a group {#to-collapse-or-expand-a-group}
 
--   To collapse a group, click the collapse icon <i class="dlt-c8y-icon-fullscreen-exit text-primary icon-20"></i>  which is shown next to the group name.
+-   To collapse a group, click the collapse icon <i class="dlt-c8y-icon-fullscreen-exit text-primary-light icon-20"></i>  which is shown next to the group name.
 
--   To expand a group, click the expand icon <i class="dlt-c8y-icon-fullscreen text-primary icon-20"></i> which is shown above the top right of the collapsed group.
+-   To expand a group, click the expand icon <i class="dlt-c8y-icon-fullscreen text-primary-light icon-20"></i> which is shown above the top right of the collapsed group.
 
 #### Renaming a group {#renaming-a-group}
 

@@ -3,8 +3,8 @@
 ########################################################################################################################
 ---
 #
-# This Custom Resource (CR) YAML file has the {{< product-c8y-iot >}} Edge deployment settings. 
-# You can edit this file and apply it to your Kubernetes cluster to deploy or update your Edge. 
+# This Custom Resource (CR) YAML file has the {{< product-c8y-iot >}} Edge deployment settings.
+# You can edit this file and apply it to your Kubernetes cluster to deploy or update your Edge.
 #
 # For more information about the CR specification, see [https://cumulocity.com/guides/edge-k8s/edge-custom-resource-definition/](https://cumulocity.com/guides/edge-k8s/edge-custom-resource-definition/).
 #
@@ -15,7 +15,7 @@ metadata:
   name: c8yedge                                                             # Name of the C8y Edge deployment.
   namespace: c8yedge                                                        # Specify the Namespace name into which you installed the Edge Operator. By default, the Edge Operator is installed in 'c8yedge'.
 spec:
-  version: "1017.0.0"                                                       # Edge version you want to install.
+  version: "1018.0.0"                                                       # Edge version you want to install.
   licenseKey:  <LICENSE-KEY>                                                # Edge license key you received.
 
   company: <COMPANY-NAME>                                                   # Replace with the company name.
@@ -39,7 +39,7 @@ spec:
 #  mongodb:
 #    credentialsSecretName: mongodb-credentials                             # Secret for supplying database admin credentials of MongoDB server. If not provided for the Edge Operator managed MongoDB, databaseAdmin and admin-pass are used.
 
-#    connectionString: <CONNECTION-STRING-URI>                              # Connection string to connect to an externally hosted MongoDB server. URI Format: mongodb://host1[:port1][,...hostN[:portN]] 
+#    connectionString: <CONNECTION-STRING-URI>                              # Connection string to connect to an externally hosted MongoDB server. URI Format: mongodb://host1[:port1][,...hostN[:portN]]
 #    tlsSecretName: mongodb-tls                                             # Secret for supplying the Certificate Authority (CA) certificate to trust.
 
 #    resources:                                                             # Specify resource limits for the MongoDB server pod.
@@ -90,7 +90,7 @@ spec:
 
 ---
 #
-# Secret for supplying the TLS Key/Certificates of C8y Edge to authenticate with 
+# Secret for supplying the TLS Key/Certificates of C8y Edge to authenticate with
 # Cumulocity cloud tenant as a device. Accepts only PEM format.
 #
 # This secret is optional. If not provided the Edge Operator will generate self-signed certificates.
@@ -126,22 +126,22 @@ spec:
 #stringData:
 # MONGODB_DATABASE_ADMIN_USER: admin                                        # Specify the database admin username of the Edge Operator managed MongoDB or that of the externally hosted MongoDB server.
 # MONGODB_DATABASE_ADMIN_PASSWORD: admin-pass                               # Specify the database password of the Edge Operator managed MongoDB or that of the externally hosted MongoDB server. configured.
- 
+
 # MONGODB_USER_ADMIN_USER: userAdmin                                        # Specify if you want to use a different username
 # MONGODB_USER_ADMIN_PASSWORD: <USER-ADMIN-PASSWORD>                        # If not provided, the password defaults to value provided in the field MONGODB_DATABASE_ADMIN_PASSWORD
- 
+
 # MONGODB_CLUSTER_ADMIN_USER: clusterAdmin                                  # Specify if you want to use a different username
 # MONGODB_CLUSTER_ADMIN_PASSWORD: <CLUSTER-ADMIN-PASSWORD>                  # If not provided, the password defaults to value provided in the field MONGODB_DATABASE_ADMIN_PASSWORD
- 
+
 # MONGODB_CLUSTER_MONITOR_USER: clusterMonitor                              # Specify if you want to use a different username
 # MONGODB_CLUSTER_MONITOR_PASSWORD: <CLUSTER-MONITOR-PASSWORD>              # If not provided, the password defaults to value provided in the field MONGODB_DATABASE_ADMIN_PASSWORD
- 
+
 # MONGODB_BACKUP_USER: backup                                               # Specify if you want to use a different username
 # MONGODB_BACKUP_PASSWORD: <BACKUP-USER-PASSWORD>                           # If not provided, the password defaults to value provided in the field MONGODB_DATABASE_ADMIN_PASSWORD
 
 ---
 #
-# Secret for supplying the Certificate Authority (CA) certificate issuing the tls key and certificates 
+# Secret for supplying the Certificate Authority (CA) certificate issuing the tls key and certificates
 # with which the tls of externally hosted MongoDB server is configured. Accepts only PEM format.
 #
 # Not needed if the server certificates are issued by a trusted public CA.
@@ -157,3 +157,22 @@ spec:
 #type: Opaque
 #stringData:
 #  ca.crt: <CA-CERTIFICATE>                                                 # Specify the Certificate Authority (CA) certificate in PEM format
+
+---
+#
+# An optional ConfigMap used when accessing external endpoints through a Proxy
+#
+# http_proxy, https_proxy and optionally socks_proxy must be configured with the relevant URLs
+# no_proxy must be configured with the following entries, Edge domain name, Kubernetes Pod CIDR (Cluster Pod IP Address Range),
+# Kubernetes Service CIDR (Cluster Service IP Address Range) and any other domains, hosts or IPs you want to bypass the proxy when accessed.
+#
+#kind: ConfigMap
+#apiVersion: v1
+#metadata:
+#  name: custom-environment-variables
+#  namespace: c8yedge  # Specify the Namespace name into which you installed the Edge Operator
+#data:
+#  http_proxy: <HTTP Proxy URL>
+#  https_proxy: <HTTPS Proxy URL>
+#  socks_proxy: <SOCKS Proxy URL>
+#  no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain name, for example, myown.iot.com>,<kubernetes cluster IP range, for example, 10.43.0.0/16>

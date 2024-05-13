@@ -56,7 +56,6 @@ If the IP address of the Edge appliance overlaps with the Edge appliance's addre
 
 To configure the network using the REST APIs, see the `/edge/configuration/network` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/10.18.0/#operation/edgeNetworkConfig).
 
-
 ### Troubleshooting the network CIDR {#troubleshooting-the-network-cidr}
 
 The network CIDR fails in the following scenarios:

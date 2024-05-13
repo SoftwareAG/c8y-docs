@@ -52,6 +52,10 @@ Do not use the IP addresses from the below blocks in your network configuration.
 If the IP address of the Edge appliance overlaps with the Edge appliance's address range, then you must update the **Address range CIDR**.
 		{{< /c8y-admon-info >}}
 
+### Configuring the network using the REST APIs {#configuring-the-hostname-using-the-rest-apis}
+
+To configure the network using the REST APIs, see the `/edge/configuration/network` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/10.18.0/#operation/edgeNetworkConfig).
+
 ### Troubleshooting the network CIDR {#troubleshooting-the-network-cidr}
 
 The network CIDR fails in the following scenarios:

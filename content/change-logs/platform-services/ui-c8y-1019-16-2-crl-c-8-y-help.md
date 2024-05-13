@@ -1,12 +1,12 @@
 ---
-date: ""
+date: 2024-04-04
 title: Added information about certificate management
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
-  - value: component--KIsStyzM 
+  - value: component--KIsStyzM
     label: Device Management app
 build_artifact:
   - value: tc-pjJiURv9Y

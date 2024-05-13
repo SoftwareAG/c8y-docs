@@ -1,5 +1,5 @@
 ---
-date: ""
+date:
 title: Group navigation tree in navigator now refreshes correctly after removing groups via subassets view
 product_area: Application enablement & solutions
 change_type:

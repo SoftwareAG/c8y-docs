@@ -294,7 +294,7 @@ All dropped input events are also sent to channel `AnalyticsDroppedEvents`, allo
 
 #### Monitoring the model life-cycle {#monitoring-the-model-life-cycle}
 
-Life-cycle messages are written to the correlator log whenever a model is created or removed, or when it fails. The log messages may look as follows:
+Life-cycle messages are written to the correlator log whenever a model is created or deleted, or when it fails. The log messages may look as follows:
 
 ```
 Model "Build Pipeline" with PRODUCTION mode has started.

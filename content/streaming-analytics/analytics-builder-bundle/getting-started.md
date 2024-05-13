@@ -12,7 +12,7 @@ You build the models in a graphical environment by combining pre-built blocks in
 
 Analytics Builder consists of the following tools:
 
--   **Model manager**. When you invoke Analytics Builder, the model manager is shown first. It lists all available models and lets you manage them. For example, you can test and deploy the models from the model manager, or you can duplicate or remove them. You can create new models or edit existing models; in this case, the model editor is invoked. Samples are also available which help you get started with creating your own models. See [Using the model manager](/streaming-analytics/analytics-builder/#using-the-model-manager) for detailed information.
+-   **Model manager**. When you invoke Analytics Builder, the model manager is shown first. It lists all available models and lets you manage them. For example, you can test and deploy the models from the model manager, or you can duplicate or delete them. You can create new models or edit existing models; in this case, the model editor is invoked. Samples are also available which help you get started with creating your own models. See [Using the model manager](/streaming-analytics/analytics-builder/#using-the-model-manager) for detailed information.
 -   **Model editor**. The model editor lets you define the blocks that are used within a model and how they are wired together. User-visible documentation \(the so-called *block reference*\) is available in the model editor, describing the functionality of each block. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for detailed information.
 -   **Instance editor**. If template parameters have been defined in a model, the instance editor lets you set up different instances of the same model which can then be activated and managed separately. The instance editor uses the template parameters that have been defined in the model editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
 
@@ -22,7 +22,7 @@ The blocks are implemented in the Event Processing Language (EPL) of Apama. At r
 
 This topic gives a brief overview of how to add and design a new model, and how to view its output. It is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that at least one device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. These first steps assume that you are using a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/introduction/) for details.
+The steps below require that at least one device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. These first steps assume that you are using a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/sensorapp-introduction/) for details.
 
 The model that you add will contain three blocks:
 
@@ -129,7 +129,7 @@ This topic gives a brief overview of how to create a model from a sample. It is 
 
 This topic is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that at least one device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. These first steps assume that you are using a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/introduction/) for details.
+The steps below require that at least one device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. These first steps assume that you are using a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/sensorapp-introduction/) for details.
 
 The following image shows the blocks that are defined in the **On missing measurements create alarm** sample.
 

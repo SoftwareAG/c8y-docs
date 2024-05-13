@@ -8,10 +8,10 @@ A Helm chart is available for installing the Edge Operator. To begin, create a n
 
 Edge provides a script to install the Edge Operator. This script is located at [c8yedge-operator-install.sh](/files/edge-k8s/c8yedge-operator-install.sh).
 
-To install the Edge Operator, run and enter the version (for example, 1017.0.0) you want to install, and the repository credentials you received along with the license.
+To install the Edge Operator, run and enter the version (for example, 1018.0.0) you want to install, and the repository credentials you received along with the license.
 
 ```shell
-curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh
+curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh
 ```
 Provide the Edge Operator repository credentials in the prompt:
 
@@ -20,7 +20,7 @@ Enter username to access Edge Operator repository:
 Enter password to access Edge Operator repository:
 ```
 {{< c8y-admon-info >}}
-To request the repository credentials, contact the logistics team for your region:
+To request the Edge repository credentials, contact the {{< company-sag >}} logistics team for your region:
 * North and South America: LogisSrvus@softwareagusa.com
 * All Other Regions: LogisticsServiceCenterGER@softwareag.com {{< /c8y-admon-info >}}
 

@@ -8,8 +8,9 @@ section:
 
 This guide will setup your first application. The first step is to install the `@angular/cli` in the right version.
 
+
 ```bash
-npx @angular/cli@17 new --style=less --standalone=false
+npx @angular/cli@v16-lts new --style=less --routing=true
 ```
 
 Second, navigate to the folder and add the `@c8y/websdk` package to your Angular application:
@@ -34,8 +35,7 @@ The CLI will prompt you in two steps for the version and the base template. Afte
 > other
 ```
 
-In the first step, the base scaffolding version must be selected. The interface will provide the
-last the latest available release. Additionally a version can be manually entered by selecting the
+In the first step, the base scaffolding version must be selected. The interface will provide the latest available release. Additionally a version can be manually entered by selecting the
 `other` option. If you do not know which version to select, we recommend to use the latest.
 
 ### Step 2: Select the base project to start from
@@ -65,13 +65,6 @@ application using the `-u` flag. For example:
 ```bash
 npm start -- -u http://mytenant.acme.iot
 ```
-
-or
-
-```
- ng serve <appName> -u http://mytenant.acme.iot
-```
-
 
 When you start the command the application begins to compile. After it is compiled, you can navigate to
 `http://localhost:4200/apps/<<your-app-name>>/` and login to your tenant.
@@ -158,9 +151,4 @@ example `C8Y_USER` for the `-U` flag.
 
 ### Next steps
 
-We recommend you to familiarize yourself with our
-[package setup](/web/introduction/#libraries) and read about which library is used in which case.
-Afterwards, we recommend you to read our guides which will explain the following topics in detail:
-
-- [How to extend the platform](#/getting-started/guides/extension-points)
-- [Adding data to your application](#/getting-started/guides/data-access)
+- Refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/) for more information on developing applications in the {{< product-c8y-iot >}} environment. Moreover find various related tutorials in the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}).

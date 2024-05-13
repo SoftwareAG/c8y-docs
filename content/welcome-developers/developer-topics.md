@@ -14,7 +14,7 @@ For our developer community, we offer a variety of sources to quickly get starte
 
 If you are new to {{< product-c8y-iot >}}, you might want to learn about the architecture, technical concepts and domain models behind {{< product-c8y-iot >}}.
 
-The <a href="/concepts/introduction/">Technical concepts</a> section serves as a god starting point for anyone technically interested in our IoT platform.
+The [Technical concepts](/concepts/concepts-introduction/) section serves as a god starting point for anyone technically interested in our IoT platform.
 
 ### Step-by-step instructions {#step-by-step-instructions}
 
@@ -22,7 +22,7 @@ Check out the following sections if you are looking for step-by-step instruction
 
   - [Device integration using thin-edge.io](/device-integration/device-integration-thin-edge/) - Integrate devices using thin-edge.io.
   - [Device integration using MQTT](/device-integration/mqtt) - Integrate devices using the MQTT protocol.
-  - [Device integration using REST](/device-integration/rest) - Integrate devices using REST.
+  - [Device integration using REST](/device-integration/device-integration-rest/) - Integrate devices using REST.
 <br><br>
   - [Web SDK](/web/) - Extend applications with your own plugins, add your own applications or implement additional functionality tailored to your use case.
 <br><br>

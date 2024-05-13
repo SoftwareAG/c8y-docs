@@ -14,23 +14,36 @@ In Edge, Monit is used to monitor the processes and perform a restart if any of 
 
 Monit can provide a quick status report of all the configured services and processes by running the following command:
 
-	[admin@iot-edge-server ~]$ sudo monit summary
+```shell
+sudo monit summary
+```
 
 There might be cases where Monit has stopped monitoring some resources because of timeout on constant failures or dependency issues.
 
-<img src="/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/>
+<img src="/images/edge/edge-monitoring.png" name="Status report" style="width:75%;"/>
 
 A specific component, for example, `apama-ctrl_proc`, can be restarted using the following command:
 
-	[admin@iot-edge-server ~]$ sudo monit restart apama-ctrl_proc
+```shell
+sudo monit restart apama-ctrl_proc
+```
+
+The status of a specific component, for example, `apama-ctrl_proc`, can be viewed using the following command:
+```shell
+sudo monit status apama-ctrl_proc
+```
 
 The Monit status can be checked by running:
 
-	[admin@iot-edge-server ~]$ sudo systemctl status monit
+```shell
+sudo systemctl status monit
+````
 
 Monit can be restarted by running:
 
-	[admin@iot-edge-server ~]$ sudo systemctl restart monit
+```shell
+sudo systemctl restart monit
+```
 
 The log file for monit is located in /var/log/monit.log.
 

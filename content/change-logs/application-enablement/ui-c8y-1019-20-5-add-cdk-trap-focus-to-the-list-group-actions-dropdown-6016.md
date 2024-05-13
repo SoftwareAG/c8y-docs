@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-04-25
 title: List group dropdown accessibility has been improved
 product_area: Application enablement & solutions
 change_type:

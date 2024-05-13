@@ -11,7 +11,7 @@ Edge provides a script to install the Edge Operator. This script is located at [
 To install the Edge Operator, run and enter the version (for example, 1018.0.0) you want to install, and the repository credentials you received along with the license.
 
 ```shell
-curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh
+curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh
 ```
 Provide the Edge Operator repository credentials in the prompt:
 

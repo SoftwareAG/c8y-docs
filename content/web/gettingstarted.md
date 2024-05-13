@@ -35,8 +35,7 @@ The CLI will prompt you in two steps for the version and the base template. Afte
 > other
 ```
 
-In the first step, the base scaffolding version must be selected. The interface will provide the
-last the latest available release. Additionally a version can be manually entered by selecting the
+In the first step, the base scaffolding version must be selected. The interface will provide the latest available release. Additionally a version can be manually entered by selecting the
 `other` option. If you do not know which version to select, we recommend to use the latest.
 
 ### Step 2: Select the base project to start from

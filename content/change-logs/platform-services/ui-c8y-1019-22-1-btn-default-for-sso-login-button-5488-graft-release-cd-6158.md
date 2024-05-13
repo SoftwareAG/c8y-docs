@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57675
 version: 1019.22.1
 ---
-The layout of the single sign-on (SSO) login button has been updated. Previously, the SSO login button used a custom style which did not match the overall look and feel of the application. With this change, the SSO login button now uses the default button style (btn-default).
+The layout of the single sign-on (SSO) login button has been updated. Previously, the SSO login button used a custom style which did not match the overall look and feel of the application. With this change, the SSO login button now uses the default layout.

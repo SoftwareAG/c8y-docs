@@ -25,7 +25,7 @@ The following snippet shows an operation for setting the state of the relay with
 }
 ```
 
-Just like other types of data, operations are also standardized through the sensor library to simplify application development (see below). For example, setting a switch should be the same for all switches regardless of their make.
+Just like other types of data, operations are also standardized to simplify application development (see below). For example, setting a switch should be the same for all switches regardless of their make.
 
 Operations are modeled just like fragments in the inventory model (see above). The same extensibility concept applies. Random vendor-proprietary extensions to the standard operations are possible. These are not denied or modified by {{< product-c8y-iot >}}.
 

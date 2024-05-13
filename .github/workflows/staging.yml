@@ -74,7 +74,7 @@ jobs:
         HUGO_ENV: production
       run: |
         hugo \
-          --baseURL "${{ env.BASEURL }}"
+          --baseURL "${{ env.BASEURL }}/"
 
     - name: Set known SSH hosts
       run: |

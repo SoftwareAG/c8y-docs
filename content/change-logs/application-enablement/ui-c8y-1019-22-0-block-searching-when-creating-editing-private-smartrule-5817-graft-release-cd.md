@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-04-25
 title: Searching for devices blocked when creating or editing a private smart rule
 product_area: Application enablement & solutions
 change_type:

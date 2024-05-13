@@ -14,7 +14,7 @@ build_artifact:
 ticket: DM-3601
 version: 10.18.540.112
 ---
-When the LWM2M device sends LWM2M registration or registration update to the LWM2M agent, the LWM2M agent also subscribes to the realtime channel so that user defined operations are immediately executed on this device during the instance level time to live configuration period of the LWM2M agent.
+When the LWM2M device sends a registration or registration update to the LWM2M agent, the LWM2M agent also subscribes to the real-time channel so that user-defined operations are immediately executed on this device during the instance level time-to-live configuration period of the LWM2M agent.
 
 The changes are added for the following cases:
 Firstly, when the device does a registration update to the LWM2M server within the previous realtime subscription period, then the subscription expiry period was not extended and the device is automatically unsubscribed from realtime.

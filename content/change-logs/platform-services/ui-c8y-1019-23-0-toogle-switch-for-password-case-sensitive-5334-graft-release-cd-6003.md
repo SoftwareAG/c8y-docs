@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-56865
 version: 1019.23.0
 ---
-To enhance the user experience, a switch has been added to the authentication settings, allowing the option to disable case sensitivity in usernames. With this change, when the switch is turned on, username validation will treat uppercase and lowercase letters as distinct, requiring users to enter their username exactly as it was set. This affects all users.
+To enhance the user experience, a switch has been added to the authentication settings, which allows to disable/enable case-sensitivity in usernames. When the switch is turned on, username validation will now treat uppercase and lowercase letters as distinct, requiring users to enter their username exactly as it was set. This affects all users.

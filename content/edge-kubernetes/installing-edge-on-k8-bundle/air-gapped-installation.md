@@ -99,7 +99,7 @@ Refer to [Python Setup and Usage](https://docs.python.org/3/using/index.html) fo
 {{< /c8y-admon-info >}}
 
 ```bash
-pip install --force-reinstall {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge_repository_sync-1018.0.0-py3-none-any.whl
+pip install --force-reinstall {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge_repository_sync-1018.0.0-py3-none-any.whl
 ```
 
 #### Run repository sync script {#run-repository-sync-script}
@@ -152,8 +152,8 @@ LOCAL_HARBOR_DOMAIN=c8yedge.harbor.local  # Change harbor domain if necessary
 LOCAL_HARBOR_PORT=5001                    # Change harbor port if necessary
 
 kubectl create namespace ${EDGE_NAMESPACE} && \
-kubectl apply -n ${EDGE_NAMESPACE} -f {{< link-c8y-doc-baseurl >}}/files/edge-k8s/custom-environment-variables.yaml && \
-curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh -n ${EDGE_NAMESPACE} -r ${LOCAL_HARBOR_DOMAIN}:${LOCAL_HARBOR_PORT}
+kubectl apply -n ${EDGE_NAMESPACE} -f {{< link-c8y-doc-baseurl >}}files/edge-k8s/custom-environment-variables.yaml && \
+curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh -n ${EDGE_NAMESPACE} -r ${LOCAL_HARBOR_DOMAIN}:${LOCAL_HARBOR_PORT}
 ```
 Provide the local Harbor registry credentials in the prompt:
 

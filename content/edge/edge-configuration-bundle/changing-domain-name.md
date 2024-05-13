@@ -44,6 +44,10 @@ Before you change the domain name, see [Domain name validation for Edge license 
 
 8. Click **Save**.
 
+### Changing the domain name using the REST APIs {#changing-the-domain-name-using-the-rest-apis}
+
+To change the domain name using the REST APIs, see the `/edge/configuration/domain` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/10.18.0/#operation/postDomainName).
+
 ### License and certificate compatibility {#license-and-certificate-compatibility}
 
 The example below describes a scenario where an existing license or certificate is compatible with the new domain name:

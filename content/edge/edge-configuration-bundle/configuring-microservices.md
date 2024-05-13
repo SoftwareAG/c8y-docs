@@ -59,6 +59,11 @@ For more information about developing and hosting a microservice, see [Microserv
 Edge appliance will be temporarily non-operational during the operation.
 {{< /c8y-admon-info >}}
 
+### Enabling or disabling the microservice hosting feature using the REST APIs {#enabling-or-disabling-the-microservice-hosting-feature-using-the-rest-apis}
+
+To enable or disable the microservice hosting feature using the REST APIs, see the `/edge/configuration/microservices` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/10.18.0/#operation/enableMicroserviceHosting).
+
+
 ### Deploying microservices with a lower manifest version {#deploying-microservices-with-a-lower-manifest-version}
 
 A microservice specifies an API version in the microservice manifest. Depending on this API version, the microservice runs with all or only a restricted set of Linux kernel capabilities. More precisely, all capabilities are granted to microservices with API version 1 whereas only the capability `CAP_NET_BIND_SERVICE` is granted to microservices with API version 2. For more information, see [Microservice migration to API Version 2](/microservice-sdk/general-aspects/#migration).

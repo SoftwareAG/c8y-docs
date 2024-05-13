@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improved styling of single sign-on login button
+title: Improved layout of single sign-on login button
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

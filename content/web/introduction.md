@@ -7,11 +7,11 @@ section:
 ---
 
 
-This guide provides information on the Web SDK which enables you to
+This guide provides information on the Web SDK which enables you to:
 
-* develop web applications that can be deployed to the platform,
-* communicate authenticated with our API,
-* apply default or branded UI components to your custom application.
+* Develop web applications that can be deployed to the platform.
+* Communicate authenticated with our API.
+* Apply default or branded UI components to your custom application.
 
 If you have previously been working with older versions you might be interested in some short information on the evolution of the UI stack ([Migration history](/web/appendix-migration-history)) to better understand how and why it is now designed the way it is.
 

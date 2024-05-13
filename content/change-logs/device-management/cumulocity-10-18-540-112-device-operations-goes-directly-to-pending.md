@@ -21,4 +21,4 @@ Firstly, when the device does a registration update to the LWM2M server within t
 This has been resolved by renewing the real-time subscription period every time when the device does a registration update.
 
 Secondly, when a device operation is created, this operation extended the real-time subscription based on the instance level time-to-live extension period defined for the LWM2M agent for the cases of the real-time time-to-live period being expired earlier than this extension.
-This is now changed to add the extension on top of realtime subscription time to live period in order to have longer realtime subscription periods.
+This is now changed to add the extension on top of the real-time subscription time-to-live period in order to have longer real-time subscription periods.

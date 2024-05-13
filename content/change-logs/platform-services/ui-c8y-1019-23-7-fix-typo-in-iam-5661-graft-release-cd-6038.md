@@ -6,8 +6,8 @@ change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
-  - value: component-0UgqXH1Ys
-    label: Administration
+  - value: q3kclF6pO
+    label: Authentication
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y

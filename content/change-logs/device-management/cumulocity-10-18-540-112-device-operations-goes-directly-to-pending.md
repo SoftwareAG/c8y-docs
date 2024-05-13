@@ -1,6 +1,6 @@
 ---
 date: 2024-04-10T15:05:45.132Z
-title: LWM2M devices operations goes directly to Pending state
+title: LWM2M device operations directly go to Pending state
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

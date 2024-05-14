@@ -15,4 +15,4 @@ ticket: DM-3529
 version: ""
 ---
 
-The deprecated hookDeviceGridAction has been removed. Instead the recently introduced hookDataGridActionControls should be used. It gives more control over data grid actions allowing actions to be added to any data grid, to override existing actions, etc.
+The deprecated `hookDeviceGridAction` has been removed. Instead the recently introduced `hookDataGridActionControls` should be used. It gives more control over data grid actions, such as allowing actions to be added to any data grid or to override existing actions.

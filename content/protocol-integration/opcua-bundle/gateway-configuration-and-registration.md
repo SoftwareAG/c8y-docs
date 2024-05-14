@@ -252,7 +252,8 @@ gateway:
   operation:
     # Default behavior that controls if the OPC UA gateway performs an address space scan when it connects the first time to an OPC UA server. Can be overridden in the OPC UA Server config.
     autoScanAddressSpace: true
-
+    # Controls if the operation for the device is validated. If set to true, the gateway will check if the operation nodes are childs of the root node of the device. If not, the gateway will execute but create an alarm for the device.
+    validateDeviceOperationNodes: true
   # Cyclic-Reader settings
   cyclicRead:
     # The cyclic readers use a dedicated threadpool to perform periodic read tasks.

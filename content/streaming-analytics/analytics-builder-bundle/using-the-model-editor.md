@@ -76,7 +76,7 @@ It may happen that you and another user are editing the same model at the same t
 
 In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i>.
 
-The save icon is only enabled when changes have been applied to the model and the model has been given a name.
+The save icon <i class="dlt-c8y-icon-save icon-20"></i> is only enabled when changes have been applied to the model and the model has been given a name.
 
 #### Leaving the model editor {#leaving-the-model-editor}
 

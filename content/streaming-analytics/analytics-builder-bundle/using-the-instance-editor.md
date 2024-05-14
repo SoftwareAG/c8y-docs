@@ -73,7 +73,7 @@ Once an instance is active, you cannot modify the template parameter values or m
 1.  In the **Run Mode** column of the instance editor, click the drop-down menu for the instance that you want to deploy and select one of **Production**, **Test** or **Simulation**.
     You cannot activate instances that are in draft mode.
 
-2.  If you have selected simulation mode, click the calendar icon which is now shown, specify the time span that is to be used, and click **Apply**. See also [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
+2.  If you have selected simulation mode, click the calendar icon <i class="dlt-c8y-icon-calendar text-muted icon-20"></i> which is now shown, specify the time span that is to be used, and click **Apply**. See also [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
 
 3.  When the toggle button in the **Status** column currently shows **Inactive**, click this button to change the state to **Active**. For simulation mode, you can only set the state to **Active** when a valid time range has been defined.
     In the case of an error, the error icon <i class="dlt-c8y-icon-warning text-danger icon-20"></i> is shown at the right of the table and the instance cannot be activated. Click the error icon to get more information.

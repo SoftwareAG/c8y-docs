@@ -20,10 +20,3 @@ However, this timeframe remained static even after the device underwent registra
 despite the previous operational window not yet expiring.
 This limitation has now been addressed,
 ensuring that each LWM2M device registration update extends the device operations timeframe.
-
-Furthermore,
-the operational timeframe of LWM2M devices could also be extended if a new operation occurred before its expiration.
-However, the extension previously began from the time of operation execution.
-Now, if the execution time of a device operation, plus the extension duration,
-exceeds the original timeframe, the extension time is added on top of the existing operational timeframe.
-This enhancement ensures operations can continue smoothly beyond the initial expiration.

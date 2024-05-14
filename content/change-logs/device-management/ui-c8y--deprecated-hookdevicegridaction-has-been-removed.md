@@ -1,10 +1,10 @@
 ---
 date: ""
 title: Deprecated hookDeviceGridAction has been removed
-product_area: Device management & connectivity
+product_area: Application enablement & solutions
 change_type:
-  - value: change-3BQrQ6adS
-    label: API change
+  - value: change-inv-3bw8e
+    label: Announcement
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK

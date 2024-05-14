@@ -14,11 +14,8 @@ build_artifact:
 ticket: DM-3601
 version: 10.18.540.112
 ---
-When the LWM2M device sends a registration or registration update to the LWM2M agent, the LWM2M agent also subscribes to the real-time channel so that user-defined operations are immediately executed on this device during the instance level time-to-live configuration period of the LWM2M agent.
+When a device using LWM2M sends a registration or update to the LWM2M agent, the agent also connects to a real-time channel. This allows immediate execution of user-defined actions on the device during a set period determined by the LWM2M agent.
 
-The changes are added for the following cases:
-Firstly, when the device does a registration update to the LWM2M server within the previous real-time subscription period, then the subscription expiry period was not extended and the device was automatically unsubscribed from realtime.
-This has been resolved by renewing the real-time subscription period every time when the device does a registration update.
-
-Secondly, when a device operation is created, this operation extended the real-time subscription based on the instance level time-to-live extension period defined for the LWM2M agent for the cases of the real-time time-to-live period being expired earlier than this extension.
-This is now changed to add the extension on top of the real-time subscription time-to-live period in order to have longer real-time subscription periods.
+Changes were made to address two cases:
+1. Previously, if a device updated its registration within the real-time subscription period, the subscription period wouldn't extend, and the device would be automatically unsubscribed. Now, the real-time subscription period is renewed with each registration update.
+2. Initially, when a device operation occurred, it extended the real-time subscription based on a specified time-to-live extension period. If the real-time period expired sooner, the extension didn't apply. Now, the extension is added on top of the existing real-time subscription period, allowing for longer subscriptions.

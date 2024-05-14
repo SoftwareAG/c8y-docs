@@ -3,7 +3,7 @@ date: 2024-05-16
 title: Support for OPC UA operations directly on the generated devices.
 product_area: Device management & connectivity
 change_type:
-  - value: change-VSkj2iV9m
+  - value: change-QHu1GdukP
     label: Feature
 component:
   - value: component-Tf05_KQ-B

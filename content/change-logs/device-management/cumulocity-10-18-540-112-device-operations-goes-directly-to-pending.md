@@ -14,8 +14,16 @@ build_artifact:
 ticket: DM-3601
 version: 10.18.540.112
 ---
-When a device using LWM2M sends a registration or update to the LWM2M agent, the agent also connects to a real-time channel. This allows immediate execution of user-defined actions on the device during a set period determined by the LWM2M agent.
+Previously,
+the execution of LWM2M device operations was limited to a specific timeframe following the device's registration with the platform.
+However, this timeframe remained static even after the device underwent registration updates,
+despite the previous operational window not yet expiring.
+This limitation has now been addressed,
+ensuring that each LWM2M device registration update extends the device operations timeframe.
 
-Changes were made to address two cases:
-1. Previously, if a device updated its registration within the real-time subscription period, the subscription period wouldn't extend, and the device would be automatically unsubscribed. Now, the real-time subscription period is renewed with each registration update.
-2. Initially, when a device operation occurred, it extended the real-time subscription based on a specified time-to-live extension period. If the real-time period expired sooner, the extension didn't apply. Now, the extension is added on top of the existing real-time subscription period, allowing for longer subscriptions.
+Furthermore,
+the operational timeframe of LWM2M devices could also be extended if a new operation occurred before its expiration.
+However, the extension previously began from the time of operation execution.
+Now, if the execution time of a device operation, plus the extension duration,
+exceeds the original timeframe, the extension time is added on top of the existing operational timeframe.
+This enhancement ensures operations can continue smoothly beyond the initial expiration.

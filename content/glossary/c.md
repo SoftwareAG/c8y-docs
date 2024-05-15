@@ -54,7 +54,7 @@ Internal datastore of {{< product-c8y-iot >}} where all data (such as [alarms](/
 
 The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones. The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into {{< product-c8y-iot >}}.
 
-For details see [{{< sensor-app >}}](/sensor-app/introduction/).
+For details see [{{< sensor-app >}}](/sensor-app/sensorapp-introduction/).
 
 
 ### {{< product-c8y-iot >}} Streaming Analytics {#streaming-analytics}

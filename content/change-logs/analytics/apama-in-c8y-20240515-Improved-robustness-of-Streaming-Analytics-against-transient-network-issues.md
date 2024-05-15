@@ -15,4 +15,4 @@ ticket: PAB-4447
 version:
 ---
 The robustness of EPL apps and Analytics Builder models against transient network issues has been improved.
-Specifically, if a temporary network issue causes a problem retrieving EPL apps from the inventory during recovery, then the EPL app is displayed with an ERROR state in the UI instead of the EPL app not being displayed at all.
+Specifically, if a temporary network issue causes a problem while saving EPL apps or Analytics Builder models to the inventory, then the EPL app or the Analytics Builder model is still displayed with the correct state in the UI, instead of being displayed with an incorrect state or not displayed at all.

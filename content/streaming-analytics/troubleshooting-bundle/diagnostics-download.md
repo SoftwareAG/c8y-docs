@@ -14,7 +14,7 @@ To download diagnostics information, you need READ permission for "CEP managemen
 ADMIN permission for "CEP management" does not include READ permission.
 {{< /c8y-admon-info>}}
 
-If you have READ permission for "CEP management", links for downloading diagnostics information are available when you click the **User** button <img src="/images/icons/user-icon.png" alt="User button" style="display: inline-block; margin:0;"> in the Streaming Analytics application.
+If you have READ permission for "CEP management", links for downloading diagnostics information are available when you click the **User** button in the Streaming Analytics application.
 This opens the right drawer which contains a **Diagnostics** section with the following links:
 
 - A **Basic diagnostics (ZIP)** link for downloading basic diagnostics information. This should typically be a few megabytes and take about 5 seconds to generate.

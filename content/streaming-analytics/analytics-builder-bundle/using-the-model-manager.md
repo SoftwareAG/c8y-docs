@@ -32,7 +32,7 @@ There are two types of models, and the cards for these models look different:
 
 As long as a model has no template parameters, there will be zero instances and the card shows the controls for selecting a mode and activating it.
 
-Each card that is shown for a model has an actions menu \(the three vertical dots that are shown at the top right of a card\) which contains commands for managing the model \(for example, to download or delete the model\).
+Each card that is shown for a model has an actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right which contains commands for managing the model \(for example, to download or delete the model\).
 
 If a description or tags have been defined for the model, this is shown on the card for that model. If you want to change the name, the description or the tags of a model, you must do this in the model editor. See [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model).
 
@@ -82,9 +82,9 @@ Filtering also works in combination with a model or sample name that you specify
 
    All of the above-mentioned drop-down list boxes include a **Filter** search box that you can use to reduce the number of items that are offered for selection. You can enter a name or part of a name. For example, enter the word "test" to show only the items that have this word in their names. The characters that you type in may be contained at any position within the name. These filter criteria are not case-sensitive. Clicking the **All** check box selects all items that are currently shown in the drop-down list box, depending on the contents of the **Filter** search box.
 3. Click **Apply filters**.
-   The toolbar of the **Models** or **Samples** tab now shows the types of filters that are currently applied. This is an example of the **Models** tab:
+   The toolbar of the **Models** or **Samples** tab now shows the filters that are currently applied. This is an example of the **Models** tab:
    ![Toolbar showing the current filters](/images/streaming-analytics/analytics-builder/filters.png)
-   Click **Clear filters** in the toolbar if you want to clear these filters. Or to clear a specific filter, click the X that is shown in a filter icon, or click the filter name in the icon and deselect that filter \(and other filters if required\) in the resulting dialog box. Clicking **Reset filters** in that dialog box clears all filters.
+   Click **Clear filters** in the toolbar if you want to clear all filters. Or to clear a specific filter, click the X that is shown in the label for this filter, or click the filter name in the label and deselect that filter \(and other filters if required\) in the resulting dialog box. Clicking **Reset filters** in that dialog box clears all filters.
 
 ### Adding a new model {#adding-a-new-model}
 
@@ -110,13 +110,13 @@ You can also create a new model from a sample. See [Creating a model from a samp
 
 You can edit \(or view\) each model that is currently listed in the model manager.
 
-When a model is active, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything. The save icon <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0"> in the model editor is therefore disabled.
+When a model is active, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything. The save icon <i class="dlt-c8y-icon-save icon-20"></i> in the model editor is therefore disabled.
 
 #### To edit a model {#to-edit-a-model}
 
 On the **Models** tab of the model manager, simply click the card that is shown for the model \(but not on the toggle button for changing the state or the drop-down menu for changing the mode\).
 
-Alternatively, click the actions menu of the card and then click **Edit**.
+Alternatively, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the card and then click **Edit**.
 
 When the model is active, a dialog appears informing you that you can only view the model. When you click **Continue**, the model editor appears and you can view the model, but you cannot change it. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for further information.
 
@@ -140,7 +140,7 @@ On the **Models** tab of the model manager, click the total number of instances 
 
 Alternatively, you can also do one the following:
 
-- Click the actions menu of the card and then click **Instances**.
+- Click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the card and then click **Instances**.
 - Or click **Show instances summary** to flip the card and then click the **Edit Instances** button on the back of the card.
 
 {{< c8y-admon-info>}}
@@ -179,7 +179,7 @@ When a model is imported by loading a JSON file, it is always imported as an ina
 #### To deploy a model {#to-deploy-a-model}
 
 1.  On the **Models** tab of the model manager, click the drop-down menu on the card for the model that you want to deploy and select one of **Production**, **Test** or **Simulation**.
-2.  If you have selected simulation mode, click the calendar icon which is now shown, specify the time span that is to be used, and click **Apply**. See also [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
+2.  If you have selected simulation mode, click the calendar icon <i class="dlt-c8y-icon-calendar text-muted icon-20"></i> which is now shown, specify the time span that is to be used, and click **Apply**. See also [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
 3.  When the toggle button currently shows **Inactive**, click this button to change the state to **Active**. For simulation mode, you can only set the state to **Active** when a valid time range has been defined.
 
 ### Undeploying a model {#undeploying-a-model}
@@ -204,7 +204,7 @@ The duplicated model gets the same name as the original model followed by the nu
 
 #### To duplicate a model {#to-duplicate-a-model}
 
-On the **Models** tab of the model manager, click the actions menu of the model that you want to duplicate and then click **Duplicate**.
+On the **Models** tab of the model manager, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the model that you want to duplicate and then click **Duplicate**.
 
 A card for the duplicated model is immediately shown in the model manager.
 
@@ -214,7 +214,7 @@ You can download each model that is currently listed in the model manager. This 
 
 #### To download a model {#to-download-a-model}
 
-On the **Models** tab of the model manager, click the actions menu of the model that you want to download and then click **Download**.
+On the **Models** tab of the model manager, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the model that you want to download and then click **Download**.
 
 The resulting behavior depends on your browser. The model is usually downloaded to the download location of your browser.
 
@@ -228,7 +228,7 @@ Instead of downloading a model, you can also copy the JSON code of the model to 
 
 #### To copy a model {#to-copy-a-model}
 
-On the **Models** tab of the model manager, click the actions menu of the model that you want to copy and then click **Copy**.
+On the **Models** tab of the model manager, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the model that you want to copy and then click **Copy**.
 
 {{< c8y-admon-info>}}
 The **Copy** command is also available when the model is active (read-only mode). This allows you to copy the JSON code at any time.
@@ -266,7 +266,7 @@ You can delete each model that is currently listed in the model manager. When yo
 
 #### To delete a model {#to-delete-a-model}
 
-1.  On the **Models** tab of the model manager, click the actions menu of the model that you want to delete and then click **Delete**.
+1.  On the **Models** tab of the model manager, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the model that you want to delete and then click **Delete**.
 2.  In the resulting dialog box, click **Delete** to confirm the deletion.
 
 ### Reloading all models {#reloading-all-models}
@@ -287,7 +287,7 @@ For example, you can look at the block parameters and view the documentation for
 
 On the **Samples** tab of the model manager, simply click the card that is shown for the sample.
 
-Alternatively, click the actions menu of the card and then click **View**.
+Alternatively, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the card and then click **View**.
 
 ### Creating a model from a sample {#creating-a-model-from-a-sample}
 
@@ -299,7 +299,7 @@ You must save the new model so that it is listed in the model manager. If a mode
 
 #### To create a model from a sample {#to-create-a-model-from-a-sample}
 
-On the **Samples** tab of the model manager, click the actions menu of the sample from which you want to create a new model and then click **Create model from sample**.
+On the **Samples** tab of the model manager, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the sample from which you want to create a new model and then click **Create model from sample**.
 
 Alternatively, when the sample is currently shown in the model editor, click **Create model from sample** in the toolbar.
 

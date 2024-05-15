@@ -14,7 +14,7 @@ We will be making use of the `CumulocityRequestInterface` API. For more technica
 
 ### Creating an EPL app {#creating-an-epl-app}
 
-Click the Streaming Analytics icon in the application switcher. On the resulting home screen, navigate to the **EPL Apps** page and then click **New EPL app**. You will now see an EPL editor window in which to create the app which interacts with another microservice.
+Click the Streaming Analytics icon <i class="c8y-icon c8y-icon-streaming-analytics c8y-icon-duocolor icon-20"></i> in the application switcher. On the resulting home screen, navigate to the **EPL Apps** page and then click **New EPL app**. You will now see an EPL editor window in which to create the app which interacts with another microservice.
 
 ### Connecting to the {{< product-c8y-iot >}} platform {#connecting-to-the-platform}
 

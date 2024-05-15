@@ -75,7 +75,7 @@ The following information is provided for each subtenant (not completely visible
     </tr>
     <tr>
       <td align="left">Root devices</td>
-      <td align="left">Number of root devices, excluding child devices</td>
+      <td align="left">Number of root devices, excluding child devices, see <a href="#devices-count">Devices count</a> for details</td>
     </tr>
     <tr>
       <td align="left">Peak root devices</td>
@@ -175,6 +175,15 @@ The date/time range used here might differ from your server time due to differen
 3. Click **Download** to start the export.
 
 The CSV file will be downloaded to your file system.
+
+#### Devices count details {#devices-count}
+For the device count calculations we use backwards compatibility approach and assume that only the top level devices are marked with the [device marker](/device-integration/fragment-library/#device-marker) fragment (`c8y_IsDevice`).
+For this reason, the following formulas are used in the calculations:
+* root devices - all devices with the `c8y_IsDevice` fragment
+* all devices - all devices with the `c8y_IsDevice` fragment and their children from the whole device hierarchy
+* leaf devices - only leafs of the device hierarchies starting from devices with `c8y_IsDevice` fragment
+
+In case child devices are also marked with `c8y_IsDevice` fragment, the calculation results may look different than expected.
 
 
 ### Microservice usage {#microservice-usage}

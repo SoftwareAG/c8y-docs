@@ -1,5 +1,5 @@
 ---
-date: 2024-05-09
+date: 2024-05-06
 title: Improved runtime performance of Analytics Builder
 change_type:
   - value: change-VSkj2iV9m

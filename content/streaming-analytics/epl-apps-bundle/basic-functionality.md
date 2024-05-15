@@ -72,7 +72,7 @@ It is also possible to change the mode from **Inactive** to **Active** (or vice 
 Be aware that the EPL editor makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.
 {{< /c8y-admon-info >}}
 
-Click the close <i class="dlt-c8y-icon-clear icon-20"></i> icon in the top menu bar to leave the EPL editor and thus to return to the list of EPL apps.
+Click the close icon <i class="dlt-c8y-icon-clear icon-20"></i> in the top menu bar to leave the EPL editor and thus to return to the list of EPL apps.
 
 {{< c8y-admon-caution >}}
 All unsaved changes are lost when you navigate to a different URL or close the browser window.

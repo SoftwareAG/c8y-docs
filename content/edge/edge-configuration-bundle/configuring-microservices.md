@@ -23,6 +23,10 @@ Enabling the microservice hosting feature takes about 10 to 15 minutes to comple
 To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
 {{< /c8y-admon-important >}}
 
+{{< c8y-admon-info >}}
+For information regarding any microservices related issues, see [Troubleshooting Microservices](/edge/operating-edge/#troubleshooting-microservices).
+{{< /c8y-admon-info >}}
+
 ### Enabling or disabling the microservice hosting feature using the UI {#enabling-or-disabling-the-microservice-hosting-feature-using-the-ui}
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
@@ -54,6 +58,10 @@ For more information about developing and hosting a microservice, see [Microserv
 {{< c8y-admon-info >}}
 Edge appliance will be temporarily non-operational during the operation.
 {{< /c8y-admon-info >}}
+
+### Enabling or disabling the microservice hosting feature using the REST APIs {#enabling-or-disabling-the-microservice-hosting-feature-using-the-rest-apis}
+
+To enable or disable the microservice hosting feature using the REST APIs, see the `/edge/configuration/microservices` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/10.18.0/#operation/enableMicroserviceHosting).
 
 ### Deploying microservices with a lower manifest version {#deploying-microservices-with-a-lower-manifest-version}
 

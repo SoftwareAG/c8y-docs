@@ -5,12 +5,13 @@ layout: bundle
 section:
   - edge_server
 ---
+### Configuring security using the UI {#configuring-security-using-the-ui}
 
 The Edge appliance is security hardened by default.
 Furthermore, you can apply specific security configurations to enhance the security of your Edge appliance.
 
 {{< c8y-admon-important >}}
-For information about deployment security best practices and tenant administration security configuration guidelines, see [Security Hardening Guidelines]({{< link-sag-portal >}}sl24sec/SecuredServices/document/java/cumulocity_iot_platform/iot10-15-0/10-15-0_Security_Hardening_Guidelines_guide.pdf).
+For information about deployment security best practices and tenant administration security configuration guidelines, see [Security Hardening Guidelines](/files/edge/Security_Hardening_Guidelines_guide_1018.pdf).
 {{< /c8y-admon-important >}}
 
 To apply the security configuration, follow the steps below:
@@ -56,3 +57,7 @@ Once enabled, you cannot disable the auditing system configuration.
       |||**Maximum size (megabytes)**|The maximum size in megabytes of the Kubernetes audit log file before it gets rotated. A high value has more impact on the disk space.<br><br>Default value: 100 MB<br>Minimum value: 0<br>
 
 7. Click **Save**.
+
+### Configuring security using the REST APIs {#configuring-security-using-the-rest-apis}
+
+To configure security using the REST APIs, see the `/edge/configuration/security` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/10.18.0/#operation/postSecurityConfiguration).

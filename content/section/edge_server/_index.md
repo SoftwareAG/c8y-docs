@@ -1,5 +1,5 @@
 ---
-title: "Edge 10.17"
+title: "Edge 10.18"
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 weight: 60
 svg: '<svg

@@ -2,6 +2,8 @@
 weight: 10
 title: Introduction to our IoT platform
 layout: bundle
+aliases:
+  - /concepts/introduction/
 section:
   - getting_started
 ---

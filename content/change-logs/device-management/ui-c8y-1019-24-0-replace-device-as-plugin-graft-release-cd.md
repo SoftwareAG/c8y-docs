@@ -14,4 +14,6 @@ build_artifact:
 ticket: DM-3546
 version: 1019.24.0
 ---
-Replace device as plugin [GRAFT][release/cd]
+The Replace device feature is now delivered as a self-hosted plugin by the Device management application. This allows that the feature is easily removable from the application if not needed and that it is plugged to other applications with All devices list or Subassets grid.
+
+Additionally, WebSDK hooks hookDataGridActionControls and hookService have been introduced.

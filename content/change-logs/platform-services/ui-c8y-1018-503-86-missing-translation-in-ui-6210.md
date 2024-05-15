@@ -1,6 +1,6 @@
 ---
 date: ""
-title: missing translation in UI (#6210)
+title: Provided translations for default global roles (#6210)
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58187
 version: 1018.503.86
 ---
-missing translation in UI (#6210)
+Provided translations for following global roles: "admins", "business", "devices", "readers". Also translated following inventory roles: "Manager". (#6210)

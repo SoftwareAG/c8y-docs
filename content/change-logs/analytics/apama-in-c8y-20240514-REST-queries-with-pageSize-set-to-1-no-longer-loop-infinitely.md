@@ -1,6 +1,6 @@
 ---
 date:
-title: Queries with pageSize set to 1 no longer loop infinitely 
+title: REST queries with pageSize set to 1 no longer loop infinitely
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAM-34761
 version:
 ---
-The Cumulocity IoT transport had a regression (introduced in Streaming Analytics 10.16) that could cause queries to infinitely loop if `pageSize` was set to 1. This is now fixed.
+The Cumulocity IoT transport had a regression (introduced in Streaming Analytics 10.16) that could cause REST queries to infinitely loop if `pageSize` was set to 1. This is now fixed.

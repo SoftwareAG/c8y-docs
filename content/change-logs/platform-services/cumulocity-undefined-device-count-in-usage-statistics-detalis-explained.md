@@ -17,4 +17,4 @@ version: 10.20.0.0
 
 ---
 
-The details of the algorithms counting root devices, all devices, and leaf devices are explained in the documentation of Usage statistics and billing. 
+Details about the algorithms counting root devices, all devices, and leaf devices have been added to the user documentation, see [Usage statistics and billing](/enterprise-tenant/usage-and-billing/). 

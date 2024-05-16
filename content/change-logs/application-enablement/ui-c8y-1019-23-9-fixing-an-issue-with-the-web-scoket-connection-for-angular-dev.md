@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix websocket connection issue for Angular dev server
+title: Fix websocket connection issue for Angular development server
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

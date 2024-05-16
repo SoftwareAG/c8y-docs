@@ -1,6 +1,6 @@
 ---
 date:
-title: Issue fix for enterprise connection creation   
+title: Actility device registration no longer fails due to issue with enterprise connection
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3560
 version: 1.11.0
 ---
-The Actility device regitration using an enterprise connection was failing due to an issue with the enterprise connection creation step. This issue has been resolved by fixing the enterprise connection creation part.
+Actility device registrations using an enterprise connection were failing due to an issue with the enterprise connection creation. This issue has been resolved by fixing the enterprise connection creation step.

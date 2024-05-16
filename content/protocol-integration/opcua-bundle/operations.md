@@ -631,7 +631,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 Prerequisites:
 - Open and Read methods for the file node must be implemented on server side, either as the children of the file node itself or as the children of the data type node
 
-With this operation, a file can be downloaded from the OPC UA server at the given fileNodeId. The `deviceId` of the operation can be either OPC UA Server device ID or generated device ID (child device of OPC UA Server).
+With this operation, a file can be downloaded from the OPC UA server at the given fileNodeId. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 
 ```json

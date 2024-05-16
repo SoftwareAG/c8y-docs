@@ -1004,7 +1004,7 @@ The result describes a method, it's parent object, input and output arguments.
 
 ### Call method {#call-method}
 
-This operation calls the method on the OPC UA server. It requires complete input arguments with an additional "value" fragment. The `deviceId` of the operation can be either OPC UA Server device ID or generated device ID (child device of OPC UA Server).
+This operation calls the method on the OPC UA server. It requires complete input arguments with an additional "value" fragment. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```json
 {

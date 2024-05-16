@@ -51,7 +51,7 @@ allowing the server to forget the message.
 Each acknowledgement is unique to a particular notification and consumer. Batch and cumulative acknowledgements are _not_ supported.
 
 When a WebSocket connection is lost, whether that is due to deliberate connection closure or connection failure, 
-messages that were received but not successfully acknowledged before the connection loss are sent to the consumer again.
+messages that were received but not successfully acknowledged before the connection loss are sent to the consumer again when it reconnects.
 This can result in duplicate messages being received by the consumer. 
 Additionally, internally, message acknowledgement is handled in batches - this means any messages in the current (partially acknowledged) batch
 will also be resent, even though they may have been successfully acknowledged.

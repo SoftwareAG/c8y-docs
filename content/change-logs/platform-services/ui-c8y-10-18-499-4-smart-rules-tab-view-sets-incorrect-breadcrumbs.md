@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Breadcrumb for the Smart rules tab correctly set in the device details view
 change_type:
   - value: change-VSkj2iV9m

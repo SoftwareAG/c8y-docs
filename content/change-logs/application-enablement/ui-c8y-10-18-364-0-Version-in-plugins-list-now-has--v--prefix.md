@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T14:19:57.191Z
+date: 2024-03-26
 title: Version in plugins list now has "v" prefix
 change_type:
   - value: change-VSkj2iV9m

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T14:17:24.974Z
+date: 2024-03-26
 title: Return types of static functions adjusted
 change_type:
   - value: change-VSkj2iV9m

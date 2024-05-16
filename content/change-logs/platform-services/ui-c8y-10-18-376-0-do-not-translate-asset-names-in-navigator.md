@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Consistent asset names in various places of the UI
 change_type:
   - value: change-VSkj2iV9m

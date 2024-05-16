@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:25:10.104Z
+date: 2024-03-26
 title: Fixed asset icon issue
 change_type:
   - value: change-VSkj2iV9m

@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Enabling multiple links on the Login page which are shown on all public-facing pages
 product_area: Application enablement & solutions
 change_type:

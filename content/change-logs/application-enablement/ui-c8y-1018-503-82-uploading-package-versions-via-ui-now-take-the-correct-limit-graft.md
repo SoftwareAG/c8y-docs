@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-05-06
 title: Package version upload limit via UI increased to match the default
 product_area: Application enablement & solutions
 change_type:
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58818
 version: 1018.503.82
 ---
-The number of package versions that could be uploaded via the UI was incorrectly limited to 6. This has been fixed to match the default limit of 20 package versions. 
+The number of package versions that could be uploaded via the UI was incorrectly limited to 6. This has been fixed to match the default limit of 20 package versions.

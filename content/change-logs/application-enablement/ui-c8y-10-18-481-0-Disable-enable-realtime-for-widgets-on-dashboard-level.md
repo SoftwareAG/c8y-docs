@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T12:59:20.707Z
+date: 2024-03-26
 title: Disable/enable realtime for widgets on dashboard level
 change_type:
   - value: change-QHu1GdukP

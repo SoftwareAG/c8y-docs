@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:31:17.177Z
+date: 2024-03-26T10:31:17.177Z
 title: "Device profiles repository items now correctly shown"
 change_type:
   - value: change-VSkj2iV9m

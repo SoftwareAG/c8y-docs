@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:31:59.374Z
+date: 2024-03-26
 title: Enable realtime in data point graph by clicking real-time indicator
 change_type:
   - value: change-VSkj2iV9m

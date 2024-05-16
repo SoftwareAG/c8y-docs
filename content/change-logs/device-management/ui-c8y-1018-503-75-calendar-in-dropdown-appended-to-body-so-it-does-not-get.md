@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-05-06
 title: Calendar in dropdown is no longer being cut off
 product_area: Device management & connectivity
 change_type:

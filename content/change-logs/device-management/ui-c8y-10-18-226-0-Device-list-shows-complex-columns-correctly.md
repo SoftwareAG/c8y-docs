@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:36:47.675Z
+date: 2024-03-26T10:36:47.675Z
 title: Device list shows complex columns correctly
 change_type:
   - value: change-VSkj2iV9m

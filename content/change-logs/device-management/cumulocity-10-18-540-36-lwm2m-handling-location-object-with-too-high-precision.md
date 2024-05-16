@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: LWM2M agent correctly rounds values from location object 6
 change_type:
   - value: change-VSkj2iV9m

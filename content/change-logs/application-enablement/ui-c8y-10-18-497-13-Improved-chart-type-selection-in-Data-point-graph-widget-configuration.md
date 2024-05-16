@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:08:15.231Z
+date: 2024-03-26
 title: Improved chart type selection in Data point graph widget configuration
 change_type:
   - value: change-VSkj2iV9m

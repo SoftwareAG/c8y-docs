@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: 2024-03-26
 title: Valid examples of Japanese phone number used in translations
 product_area: Platform services
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:23:22.520Z
+date: 2024-03-26
 title: c8y_Global fragment no longer unintentionally set to null
 change_type:
   - value: change-VSkj2iV9m

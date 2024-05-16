@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T09:45:04.195Z
+date: 2024-03-26T09:45:04.195Z
 title: Platform configuration form migrated to Angular
 change_type:
   - value: change-2c7RdTdXo4

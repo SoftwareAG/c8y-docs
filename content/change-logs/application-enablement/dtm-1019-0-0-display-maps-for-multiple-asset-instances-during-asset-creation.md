@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: 2024-03-26
 title: Display maps for multiple asset instances during asset creation
 product_area: Application enablement & solutions
 change_type:

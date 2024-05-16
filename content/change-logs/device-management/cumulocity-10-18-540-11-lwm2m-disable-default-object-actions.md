@@ -1,5 +1,5 @@
 ---
-date: 2023-03-28
+date: 2024-03-26
 title: Disabling default object actions in the LWM2M configuration UI
 change_type:
   - value: change-QHu1GdukP

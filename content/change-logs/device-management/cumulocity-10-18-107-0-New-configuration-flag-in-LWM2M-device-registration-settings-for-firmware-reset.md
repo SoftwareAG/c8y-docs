@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T13:10:46.129Z
+date: 2024-03-26T13:10:46.129Z
 title: New configuration flag in LWM2M device registration settings for firmware reset
 change_type:
   - value: change-2c7RdTdXo4

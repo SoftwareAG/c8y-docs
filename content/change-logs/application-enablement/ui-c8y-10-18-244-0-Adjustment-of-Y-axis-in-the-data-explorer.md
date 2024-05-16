@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T14:25:52.550Z
+date: 2024-03-26
 title: Adjustment of Y-axis in the data explorer
 change_type:
   - value: change-VSkj2iV9m

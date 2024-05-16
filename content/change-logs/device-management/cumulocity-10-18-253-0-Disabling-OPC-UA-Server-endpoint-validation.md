@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T13:13:47.431Z
+date: 2024-03-26T13:13:47.431Z
 title: Disabling OPC UA Server endpoint validation
 change_type:
   - value: change-2c7RdTdXo4

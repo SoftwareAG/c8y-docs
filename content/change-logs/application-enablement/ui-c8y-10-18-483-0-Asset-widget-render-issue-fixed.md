@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T14:12:10.696Z
+date: 2024-03-26
 title: Asset widget render issue fixed
 change_type:
   - value: change-VSkj2iV9m

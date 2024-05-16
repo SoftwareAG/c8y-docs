@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T12:59:20.707Z
+date: 2024-03-26
 title: Map shown for assets created in the Digital twin manager
 change_type:
   - value: change-QHu1GdukP

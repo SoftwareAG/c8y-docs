@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T14:04:23.551Z
+date: 2024-03-26
 title: Fixed issue with locales.pot file
 change_type:
   - value: change-VSkj2iV9m

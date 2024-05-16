@@ -1,5 +1,5 @@
 ---
-date: "2024-02-06"
+date: 2024-03-26
 title: "Fixed an issue in the realtime API "
 product_area: Platform services
 change_type:

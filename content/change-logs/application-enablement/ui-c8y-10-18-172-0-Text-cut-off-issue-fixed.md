@@ -1,6 +1,5 @@
 ---
-date: 2023-12-06T14:27:34.823Z
-title: Text cut off issue fixed
+date: 2024-03-26
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

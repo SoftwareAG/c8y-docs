@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T16:00:12.648Z
+date: 2024-03-26T16:00:12.648Z
 title: Log files of devices can now be downloaded
 change_type:
   - value: change-VSkj2iV9m

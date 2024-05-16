@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:48:48.480Z
+date: 2024-03-26T15:48:48.480Z
 title: "Fixed issue with LWM2M queueMode property"
 change_type:
   - value: change-VSkj2iV9m

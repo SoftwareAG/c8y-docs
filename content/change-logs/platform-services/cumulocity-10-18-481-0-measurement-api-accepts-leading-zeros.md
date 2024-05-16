@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: 2024-03-26
 title: Measurement API accepts leading zeros
 product_area: Platform services
 change_type:

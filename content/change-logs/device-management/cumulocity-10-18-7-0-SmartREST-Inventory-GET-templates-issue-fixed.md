@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:45:36.353Z
+date: 2024-03-26T10:45:36.353Z
 title: SmartREST Inventory GET templates issue fixed
 change_type:
   - value: change-VSkj2iV9m

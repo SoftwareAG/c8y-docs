@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: 2024-03-26
 title: Fixed the error when value for latitude or longitude is "0"
 product_area: Application enablement & solutions
 change_type:

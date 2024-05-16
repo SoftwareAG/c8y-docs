@@ -13,7 +13,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-56104
-version: 10.18.0.0
+version: 10.18.540.100
 
 ---
 

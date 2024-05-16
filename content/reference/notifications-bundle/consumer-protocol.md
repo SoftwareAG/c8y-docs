@@ -36,12 +36,36 @@ wss://your.{{< product-c8y >}}.environment.fullqualifieddomainname/notification2
 
 There is a timeout of 5 minutes set on idle WebSocket connections after which the connection will be closed by the server side. Therefore the consumer must be prepared to handle closed connections which is required for fault tolerant operation in any case. All consuming microservices or applications should handle the WebSocket being closed and re-connect as necessary.
 
+<a name="notification-acknowledgements">&nbsp;</a>
 ### Notification acknowledgements
+The WebSocket service sends a sequence of UTF-8 encoded textual notification messages to the consumer.
+Each notification message includes headers and a data payload.
+Headers occur first in the message and are separated by new line characters. The data payload is last in the message,
+separated from the last header by 2 new line characters (one blank line occurs between the last header and the payload).
+The first header in the message is always the acknowledgement header. 
 
-The WebSocket established with such an URL is a textual bi-directional connection using UTF-8 encoding.
-The WebSocket service sends a sequence of notifications to the consumer and the consumer should send back a short acknowledgement over this connection for each notification received.
-This acknowledgement is for a particular notification and the server will periodically resend a notification until it is acknowledged.
-This will cease once the server has received and processed an acknowledgement for a particular notification.
+When the client has _finished_ processing a notification message,
+it _must_ send that message's acknowledgement header back to the server on the same connection the message was received on. 
+Sending the acknowledgement tells the server that the consumer has successfully received and processed that message, 
+allowing the server to forget the message.
+Each acknowledgement is unique to a particular notification and consumer. Batch and cumulative acknowledgements are _not_ supported.
+
+When a WebSocket connection is lost, whether that is due to deliberate connection closure or connection failure, 
+messages that were received but not successfully acknowledged before the connection loss are sent to the consumer again.
+This can result in duplicate messages being received by the consumer. 
+Additionally, internally, message acknowledgement is handled in batches - this means any messages in the current (partially acknowledged) batch
+will also be resent, even though they may have been successfully acknowledged.
+
+If too many of a consumer's notifications (1000  by default) remain unacknowledged, 
+the flow of notification messages to that consumer will stop until some of its unacknowledged messages are acknowledged.
+It is therefore best practise to process and acknowledge them quickly, to minimise the potential for a connection interruption causing a need to redeliver them.
+An acknowledgement should not be sent until its notification has been successfully processed.
+Otherwise, for example, if the client crashed during or before such processing,
+the message may be lost as acknowledged messages are not (usually) resent by the server.
+
+The *hello-world-notification-microservice* example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice)
+shows an example of how to send the acknowledgement back to the server in a self-contained WebSocket text message. 
+It should be sent without quotation marks (it is not a JSON message) and without any trailing new-line characters.
 
 ### Notification message header and content
 
@@ -55,9 +79,10 @@ If the notification is binary data or includes binary data then it will be [Base
 
 The header lines for a notification are as follows (separated by `\n` newlines):
 
-* Required message identifier for message acknowledgement. This opaque value is an encoded binary 64 bit value. It must be returned as part of the acknowledgement for the notification as described below.
+* Required message identifier for message acknowledgement. This opaque value is an encoded binary 64 bit value. 
+  After the consumer has finished processing a notification, it _must_ be send this header back to the server to [acknowledge the notification](../notifications/#notification-acknowledgements).
 
-* The notification description on the second header line. This is a string describing what type of notification this is and its source. Measurements ("measurements"), events ("events") and alarms ("alarms") are examples of notifications, as are inventory creates, updates and deletes ("managedObjects"). There is a direct correspondence with realtime notifications which features similar notification descriptions. These are not enumerated here and are expected to increase in number in the future. For REST API notifications, they follow a 3 part format, separated by "/". More details on notification descriptions is given below.
+* The [notification description](../notifications/#notification-description-header) on the second header line. This is a string describing what type of notification this is and its source. Measurements ("measurements"), events ("events") and alarms ("alarms") are examples of notifications, as are inventory creates, updates and deletes ("managedObjects"). There is a direct correspondence with realtime notifications which features similar notification descriptions. These are not enumerated here and are expected to increase in number in the future. For REST API notifications, they follow a 3 part format, separated by "/". More details on notification descriptions is given below.
 
 * An action string is the third header. Examples are CREATE, UPDATE and DELETE. More actions may be added in the future. Together with the notification type they describe the logical event that generated the notification, such as a CREATE of an alarm or measurement.
 
@@ -66,51 +91,33 @@ In order to be future proof and forward compatible, we encourage consumer code t
 
 See the *hello-world-notification-microservice* example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this.
 
-After the headers, the notification body follows as UTF-8 text.
-Typically a JSON document is carried in this text.
+After the headers, the notification body follows as UTF-8 text. This is typically a JSON document.
 
+<a name="notification-description-header">&nbsp;</a>
 #### Notification description header
 
 The second header line is the notification description string in the form of a `/`-separated path. For API notifications descriptions have three parts: tenantId, type and sourceId.
 
 * tenantId - this the identifier for the tenant under which the notification was generated.
-
 * type - the platform type of notification generated. For example, event, measurement, alarm or managed object.
-
 * sourceId - the identifier of the "source" object that generated or is the subject of the notification. Source is a very loose term here, much as in "event sourcing" but generally indicates which managed object the notification is about.
 
 Some examples are provided in [Traces](#traces) and backwards compatibility to real-time notifications is provided for.
 
-Also see the rest of the documentation, examples and experiment to get values for events that you are interested in.
-
-### Processing notification acknowledgements
-
-The first header line in each notification consists of an opaque, encoded binary identifier that must be returned as is in a reply to the Notification 2.0 service in a message acknowledgement.
-
-See the *hello-world-notification-microservice* example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this.
-It involves sending the identifier back to the service in a self-contained WebSocket text message, that means, send back the first header without the trailing `\n` to the server.
 
 ### Dealing with notification duplication
+Notification messages do not contain any specific unique identifiers to aid in de-duplication. 
+Therefore, any de-duplication of messages must be done by the consumer based upon the [notification description header](../notifications/#notification-description-header) and payload. 
+Note: the acknowledgement header is _not_ guaranteed to be unique across consumer reconnections (and consumer reconnections may be involved when there is duplication).
 
-Until a notification is acknowledged, the WebSocket service will attempt to re-deliver it.
-It is therefore desirable that a notification is acknowledged as soon as possible (to help avoid duplicates).
-However, this should not be done until the notification has been successfully processed to make use of the at-least-once semantics that the Notification 2.0 service provides.
+Some events are easy to de-duplicate, such as inventory events where a unique source object is first CREATED and then DELETED. 
+It will often be possible to use the notification message headers to determine these cases.
+However, inventory UPDATES or logically sequenced events such as alarms and measurements will typically require application-specific understanding of the payload fields.
+Ideally the payload would include a field specifically for that purpose. If it is not possible to include such a field in the payload,
+then other existing fields will have to be used, maybe on a best effort basis.
 
-Simply process the message and only return the acknowledgement identifier when that processing completes successfully.
-If processing is longer than a minute or so, the service will resend the notification so the WebSocket client application must be prepared to deal with duplicates.
-Duplicates can also occur due to underlying network failures, consumer crashes or perceived failures (slow transmissions) and subsequent failure masking re-transmission attempts.
-
-A duplicate can be delivered out of order if several notifications are unacknowledged but only after follow-on notifications so should be easy to deal with.
-
-For example, in the logical sequence 1,2,3,4, the notification number 2 can be duplicated after 3 or even 4 as in 1,2,3,2,4 or even several times, as in 1,2,3,4,2,3,2.
-
-The notifications don't contain any unique identifier or timestamps to aid in de-duplication.
-Some events are easy to de-duplicate, such as inventory events where a unique source object is first CREATED and then DELETED.
-But inventory UPDATES or logically sequenced events such as alarms and measurements require application-specific sequencing.
-
-This can be achieved by including unique identifiers, sequence numbers or timestamps in the notification JSON (body) as required.
-An alternative is to look up the current value in the {{< product-c8y-iot >}} database, treating the notification as a signal only and ignoring the value carried.
-
-As can be seen from the notification [Traces](#traces), some notifications do carry timestamps.
-If the timestamps are not generated by the device client, then they may only be loosely synchronized between notifications and therefore should be used carefully or not at all for de-duplication.
-
+A specific field in the payload would typically be a [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) or increasing sequence number. 
+The latter may aid the efficiency of de-duplication by using ordering, 
+though the sequence numbers will be unrelated across publishers (typically IoT devices) when the messages are originated from more than one publisher. 
+Any messages received from the same publisher with a lower sequence number than the last one processed from that publisher can be quickly discarded 
+(assuming the sequence has not rolled over). It is also easier for a human to understand that the ordering is correct and all messages are present.  

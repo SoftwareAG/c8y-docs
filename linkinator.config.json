@@ -14,6 +14,6 @@
   "retryErrors": true,
   "retryErrorsCount": 3,
   "retryErrorsJitter": 5,
-  "urlRewriteSearch": "/#/",
-  "urlRewriteReplace": "/",
+  "urlRewriteSearch": "/pattern/",
+  "urlRewriteReplace": "replacement",
 }

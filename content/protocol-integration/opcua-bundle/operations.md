@@ -817,7 +817,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 
 ### Write attribute {#write-attribute}
 
-This operation is similar to the previous one, but instead of writing to the value attribute, this operation writes attributes' values to any writable attributes. The following example writes two different attributes to two different nodes. The `deviceId` of the operation can be either OPC UA Server device ID or generated device ID (child device of OPC UA Server).
+This operation is similar to the previous one, but instead of writing to the value attribute, this operation writes attributes' values to any writable attributes. The following example writes two different attributes to two different nodes. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```json
 {

@@ -1,12 +1,12 @@
 ---
-date: ""
+date: 2024-05-16
 title: TFA strategy is now updated through the TFA endpoint
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
-  - value: q3kclF6pO 
+  - value: q3kclF6pO
     label: Authentication
 build_artifact:
   - value: tc-pjJiURv9Y

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-05-16
 title: New switch for disabling/enabling case-sensitivity in usernames
 product_area: Platform services
 change_type:

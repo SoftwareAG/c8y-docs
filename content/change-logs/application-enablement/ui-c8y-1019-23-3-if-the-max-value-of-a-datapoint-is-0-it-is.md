@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-05-16
 title: Range display now shows correct value if datapoint maximum is 0
 product_area: Application enablement & solutions
 change_type:

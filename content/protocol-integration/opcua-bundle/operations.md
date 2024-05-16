@@ -80,7 +80,7 @@ We do not recommend you to directly work with the persisted address space data s
 
 ### Reading the value of a node/nodes {#reading-the-value-of-a-nodenodes}
 
-This operation reads the value attribute of specific node or list of nodes. The `deviceId` of the operation can be either OPC UA Server device ID or generated device ID (child device of OPC UA Server).
+This operation reads the value attribute of specific node or list of nodes. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```
 POST /devicecontrol/operations/

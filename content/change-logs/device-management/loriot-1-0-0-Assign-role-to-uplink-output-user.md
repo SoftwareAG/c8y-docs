@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-05-16
 title: Admin permissions added to the Loriot agent output user for existing and new devices   
 product_area: Device management & connectivity
 change_type:

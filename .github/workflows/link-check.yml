@@ -11,4 +11,4 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
-          config_file: '.linkspector.yml'
+          config_file: .github/workflows/.linkspector.yml'

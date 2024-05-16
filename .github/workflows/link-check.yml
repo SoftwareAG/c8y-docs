@@ -1,0 +1,18 @@
+name: link-check
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+name: ci
+jobs:
+  linkinator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: JustinBeckwith/linkinator-action@v1.10.4
+        with:
+          paths: "**/*.md"
+          concurrency: 1
+          markdown: true
+          linksToSkip: "http://fake.local, http://fake.local/fake"

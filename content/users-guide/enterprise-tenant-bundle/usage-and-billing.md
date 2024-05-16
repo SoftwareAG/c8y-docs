@@ -164,7 +164,7 @@ The date/time range used here might differ from your server time due to differen
 The CSV file will be downloaded to your file system.
 
 #### Devices count details {#devices-count}
-The device count calculations assume that only top-level devices are marked with the [device marker](/device-integration/fragment-library/#device-marker) fragment `c8y_IsDevice`.
+The device count calculations assume that only top-level devices are marked with the [device marker](/reference/device-management-library/#device-marker) fragment `c8y_IsDevice`.
 Accordingly, the following formulas are used in the calculations:
 * root devices - all devices with the `c8y_IsDevice` fragment
 * all devices - all devices with the `c8y_IsDevice` fragment and their children from the whole device hierarchy

@@ -11,4 +11,3 @@ jobs:
           paths: "content/microservice-sdk/microservice-sdk-introduction.md"
           concurrency: 1
           markdown: true
-          skip: "images/"

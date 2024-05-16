@@ -8,6 +8,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: JustinBeckwith/linkinator-action@v1.10.4
         with:
-          paths: "content/microservice-sdk/"
+          paths: "content/microservice-sdk/*.md"
           concurrency: 1
           markdown: true

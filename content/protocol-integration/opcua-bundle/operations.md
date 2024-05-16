@@ -536,7 +536,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 
 ### Historic data binary upload {#historic-data-binary-upload}
 
-This operation reads historic values and only saves those values to a file which can be retrieved using the binary API. The `deviceId` of the operation can be either OPC UA Server device ID or generated device ID (child device of OPC UA Server).
+This operation reads historic values and only saves those values to a file which can be retrieved using the binary API. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```json
 {

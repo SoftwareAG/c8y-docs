@@ -80,13 +80,13 @@ We do not recommend you to directly work with the persisted address space data s
 
 ### Reading the value of a node/nodes {#reading-the-value-of-a-nodenodes}
 
-This operation reads the value attribute of specific node or list of nodes.
+This operation reads the value attribute of specific node or list of nodes. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```
 POST /devicecontrol/operations/
 
 {
-    "deviceId" : "<server-device-Id>",
+    "deviceId" : "<server-or-child-device-Id>",
     "c8y_ua_command_ReadValue": {
      "nodes": ["NODE_ID"],
      "timestampsToReturn": "Neither"
@@ -173,11 +173,11 @@ The result of this operation will contain output in the following format:
 
 ### Reading all attributes of a node {#reading-all-attributes-of-a-node}
 
-This operation returns all attributes of specific node.
+This operation returns all attributes of specific node. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```json
 {
-    "deviceId": "<server-device-Id>",
+    "deviceId": "<server-or-child-device-Id>",
     "c8y_ua_command_ReadNodeAttributes": {
         "node": "ns=2;s=MyEnumObject"
     },
@@ -238,11 +238,11 @@ The result may differ depending on the node type.
 
 ### Reading an attribute {#reading-an-attribute}
 
-This operation supports to read one or more attributes of one or more nodes. This includes support of the range parameter to read a single element or a range of elements when the attribute value is an array.
+This operation supports to read one or more attributes of one or more nodes. This includes support of the range parameter to read a single element or a range of elements when the attribute value is an array. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```json
 {
-    "deviceId": "<server-device-Id>",
+    "deviceId": "<server-or-child-device-Id>",
     "c8y_ua_command_ReadAttribute": {
          "nodes": ["ns=3;s=FloatArray"],
          "attribute":"13"
@@ -372,11 +372,11 @@ The result may differ depending on the node type.
 
 ### Read complex {#read-complex}
 
-This operation reads many attributes from many nodes at single call.
+This operation reads many attributes from many nodes at single call. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```json
 {
-  "deviceId" : "<server-device-Id>",
+  "deviceId" : "<server-or-child-device-Id>",
   "c8y_ua_command_ReadComplex": {
        "nodeAttrs": {
          "ns=2;s=MyEnumObject": {
@@ -445,11 +445,11 @@ Empty string ("") can be given to not define any range.
 
 ### Historic read {#historic-read}
 
-This operation reads history values and applies the mappings except of alarm mappings.
+This operation reads history values and applies the mappings except of alarm mappings. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```json
 {
-    "deviceId": "<server-device-Id>",
+    "deviceId": "<server-or-child-device-Id>",
     "c8y_ua_command_HistoricReadOperation": {
         "nodeId": "ns=2;s=MyLevel",
         "processMappings": true,
@@ -536,11 +536,11 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 
 ### Historic data binary upload {#historic-data-binary-upload}
 
-This operation reads historic values and only saves those values to a file which can be retrieved using the binary API.
+This operation reads historic values and only saves those values to a file which can be retrieved using the binary API. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```json
 {
-    "deviceId": "<server-device-Id>",
+    "deviceId": "<server-or-child-device-Id>",
     "c8y_ua_command_HistoricDataUploadOperation": {
         "nodeId": "ns=2;s=MyLevel",
         "dateFrom": "2019-01-03T09:53:00+02:00",
@@ -631,12 +631,12 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 Prerequisites:
 - Open and Read methods for the file node must be implemented on server side, either as the children of the file node itself or as the children of the data type node
 
-With this operation, a file can be downloaded from the OPC UA server at the given fileNodeId.  
+With this operation, a file can be downloaded from the OPC UA server at the given fileNodeId. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 
 ```json
 {
-  "deviceId" : "DEVICE_ID",
+  "deviceId" : "<server-or-child-device-Id>",
   "c8y_ua_command_ReadFileOperation": {
     "fileNodeId": "ns=2;s=sampleFile",
     "bufferSize": <bufferSize>
@@ -726,11 +726,11 @@ For further information, refer to [binaries API](https://www.{{< domain-c8y >}}/
 
 ### Write value {#write-value}
 
-This operation writes values to the node/nodes.
+This operation writes values to the node/nodes. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```json
 {
-    "deviceId": "<server-device-Id>",
+    "deviceId": "<server-or-child-device-Id>",
     "c8y_ua_command_WriteValue": {
         "values": {
             "ns=3;s=LocalizedText": {
@@ -817,11 +817,11 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 
 ### Write attribute {#write-attribute}
 
-This operation is similar to the previous one, but instead of writing to the value attribute, this operation writes attributes' values to any writable attributes. The following example writes two different attributes to two different nodes.
+This operation is similar to the previous one, but instead of writing to the value attribute, this operation writes attributes' values to any writable attributes. The following example writes two different attributes to two different nodes. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```json
 {
-    "deviceId": "<server-device-Id>",
+    "deviceId": "<server-or-child-device-Id>",
     "c8y_ua_command_WriteAttribute": {
         "values": {
             "ns=3;s=LocalizedText": {
@@ -934,11 +934,11 @@ Example operation with ranges fragment:
 
 ### Get method description {#get-method-description}
 
-This operation reads the description of a method node.
+This operation reads the description of a method node. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```json
 {
-    "deviceId": "<server-device-Id>",
+    "deviceId": "<server-or-child-device-Id>",
     "c8y_ua_command_GetMethodDescriptionOperation": {
         "nodeId": "ns=2;s=MyMethod"
     },
@@ -1004,11 +1004,11 @@ The result describes a method, it's parent object, input and output arguments.
 
 ### Call method {#call-method}
 
-This operation calls the method on the OPC UA server. It requires complete input arguments with an additional "value" fragment.
+This operation calls the method on the OPC UA server. It requires complete input arguments with an additional "value" fragment. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```json
 {
-    "deviceId": "<server-device-Id>",
+    "deviceId": "<server-or-child-device-Id>",
     "c8y_ua_command_CallMethodOperation": {
         "request": {
             "nodeId": "ns=2;s=MyMethod",
@@ -1376,7 +1376,7 @@ In order to know what is the current state of a device type application, use the
 ```json
 {
 	"description": "Get device type application state",
-	"deviceId": "{server ID}",
+	"deviceId": "{server-device-Id}",
 	"c8y_ua_command_GetDeviceTypeApplicationState": {
 		"deviceTypeId": "{device protocol ID}",
 		"matchingRootNodes": ["{root node ID #1}", "{root node ID #2}"]

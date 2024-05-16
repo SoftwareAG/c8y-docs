@@ -934,7 +934,7 @@ Example operation with ranges fragment:
 
 ### Get method description {#get-method-description}
 
-This operation reads the description of a method node. The `deviceId` of the operation can be either OPC UA Server device ID or generated device ID (child device of OPC UA Server).
+This operation reads the description of a method node. The `deviceId` of the operation can be either the OPC UA Server device ID or the generated device ID (child device of OPC UA Server).
 
 ```json
 {

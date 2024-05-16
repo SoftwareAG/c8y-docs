@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAM-34761
-version:
+version: 25.146.0
 ---
 The Cumulocity IoT transport had a regression (introduced in Streaming Analytics 10.16) that could cause REST queries to infinitely loop if `pageSize` was set to 1. This is now fixed.

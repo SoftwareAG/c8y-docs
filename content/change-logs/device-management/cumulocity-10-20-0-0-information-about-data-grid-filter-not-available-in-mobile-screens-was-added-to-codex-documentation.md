@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-05-16
 title: Info added to Codex documentation on data grid filter not available in mobile screens
 product_area: Device management & connectivity
 change_type:

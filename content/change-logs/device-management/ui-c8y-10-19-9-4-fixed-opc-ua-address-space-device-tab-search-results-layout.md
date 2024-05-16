@@ -1,12 +1,12 @@
 ---
-date: ""
+date: 2024-04-08
 title: Search results on OPC UA Address space tab no longer overflow on small screens
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
-  - value: component-Tf05_KQ-B 
+  - value: component-Tf05_KQ-B
     label: OPC UA
 build_artifact:
   - value: tc-pjJiURv9Y

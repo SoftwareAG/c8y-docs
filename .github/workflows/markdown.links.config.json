@@ -1,5 +1,10 @@
 {
   "ignorePatterns": [
-  
+    {
+       "pattern": "images/"
+     }
+     ,{
+        "pattern": "/#"
+      }
   ]
 }

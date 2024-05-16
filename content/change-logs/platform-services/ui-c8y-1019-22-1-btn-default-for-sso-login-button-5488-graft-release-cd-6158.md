@@ -1,5 +1,5 @@
 ---
-date: 2024-05-16
+date: 2024-05-13
 title: Improved layout of single sign-on login button
 product_area: Platform services
 change_type:

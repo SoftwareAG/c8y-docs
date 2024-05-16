@@ -1,13 +1,13 @@
 ---
-date: 2024-05-16
+date:
 title: Info added to Codex documentation on data grid filter not available in mobile screens
-product_area: Device management & connectivity
+product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
-  - value: component--KIsStyzM
-    label: Device Management app
+  - value: component-YbYJ3gLU_
+    label: Web SDK
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y

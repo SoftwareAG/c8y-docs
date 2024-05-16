@@ -1,5 +1,5 @@
 ---
-date: 2024-05-16
+date: 2024-05-13
 title: Restriction on role changes for users managed by SSO server
 product_area: Platform services
 change_type:

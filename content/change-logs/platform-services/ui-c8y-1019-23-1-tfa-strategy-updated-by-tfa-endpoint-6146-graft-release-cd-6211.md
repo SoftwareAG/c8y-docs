@@ -1,5 +1,5 @@
 ---
-date: 2024-05-16
+date: 2024-05-13
 title: TFA strategy is now updated through the TFA endpoint
 product_area: Platform services
 change_type:

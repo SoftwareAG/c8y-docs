@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data points graph realtime disabled when tab is in background (#6288) [GRAFT][release/y2024] (#6331)
+title: Data points graph realtime is disabled when tab is in background issue fix.
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58410
 version: 1018.503.88
 ---
-Data points graph realtime disabled when tab is in background (#6288) [GRAFT][release/y2024] (#6331)
+Data points graph realtime was automatically disabled when tab was in the background. With this fix, realtime is kept enabled and can be disabled only by direct user's interaction.

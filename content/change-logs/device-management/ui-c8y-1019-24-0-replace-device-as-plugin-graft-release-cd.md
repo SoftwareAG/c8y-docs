@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Replace device as plugin
+title: Replace device functionality available as plugin
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP

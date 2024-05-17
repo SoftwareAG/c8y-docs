@@ -46,15 +46,9 @@ The first header in the message is always the acknowledgement header.
 
 When the client has _finished_ processing a notification message,
 it _must_ send that message's acknowledgement header back to the server on the same connection the message was received on. 
-Sending the acknowledgement tells the server that the consumer has successfully received and processed that message, 
+Sending the acknowledgement tells the server that the consumer has successfully received _and processed_ that message, 
 allowing the server to forget the message.
 Each acknowledgement is unique to a particular notification and consumer. Batch and cumulative acknowledgements are _not_ supported.
-
-When a WebSocket connection is lost, whether that is due to deliberate connection closure or connection failure, 
-messages that were received but not successfully acknowledged before the connection loss are sent to the consumer again when it reconnects.
-This can result in duplicate messages being received by the consumer. 
-Additionally, internally, message acknowledgement is handled in batches - this means any messages in the current (partially acknowledged) batch
-will also be resent, even though they may have been successfully acknowledged.
 
 If too many of a consumer's notifications (1000  by default) remain unacknowledged, 
 the flow of notification messages to that consumer will stop until some of its unacknowledged messages are acknowledged.
@@ -106,6 +100,12 @@ Some examples are provided in [Traces](#traces) and backwards compatibility to r
 
 
 ### Dealing with notification duplication
+When a WebSocket connection is lost, whether that is due to deliberate connection closure or connection failure,
+messages that were received but not successfully acknowledged before the connection loss are sent to the consumer again when it reconnects.
+This can result in duplicate messages being received by the consumer.
+Additionally, message acknowledgement is handled in batches by the server - this means any messages in the current (partially acknowledged) batch
+will also be resent, even though they may have been successfully acknowledged.
+
 Notification messages do not contain any specific unique identifiers to aid in de-duplication. 
 Therefore, any de-duplication of messages must be done by the consumer based upon the [notification description header](../notifications/#notification-description-header) and payload. 
 Note: the acknowledgement header is _not_ guaranteed to be unique across consumer reconnections (and consumer reconnections may be involved when there is duplication).

@@ -14,6 +14,6 @@ build_artifact:
 ticket: DM-3546
 version: 1019.24.0
 ---
-The "Replace device" functionality is now delivered as a self-hosted plugin by the Device management application. This way, the functionality can easily be removed from the application if not needed and plugged to other applications with an **All devices** list or **Subassets** view.
+The "Replace device" functionality is now delivered as a self-hosted plugin by the Device management application. This way, the functionality can easily be removed from the application if not needed.
 
 Additionally, WebSDK hooks hookDataGridActionControls and hookService have been introduced.

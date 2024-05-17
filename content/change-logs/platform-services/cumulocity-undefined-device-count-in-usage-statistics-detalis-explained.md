@@ -1,5 +1,5 @@
 ---
-date: 2024-05-15
+date: 2024-05-06
 title: Device count details for usage statistics documented
 
 product_area: Platform services
@@ -17,4 +17,4 @@ version: 10.18.540.100
 
 ---
 
-Details about the algorithms counting root devices, all devices, and leaf devices have been added to the user documentation, see [Usage statistics and billing](/enterprise-tenant/usage-and-billing/). 
+Details about the algorithms counting root devices, all devices, and leaf devices have been added to the user documentation, see [Usage statistics and billing](/enterprise-tenant/usage-and-billing/).

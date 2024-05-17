@@ -1,5 +1,5 @@
 ---
-weight: 50
+weight: 25
 title: Data exchange using data broker
 layout: bundle
 section:
@@ -30,9 +30,9 @@ A data connector describes the subset of the data that you would like to send to
 
 To create a data connector and upload the data to the tenant account, perform the following steps:
 
-1. In your Edge appliance, log in to the *edge* tenant.
+1. In your Edge, log in to the *edge* tenant.
 
-2. In your Edge appliance, go to the Administration application. Click **Data broker** > **Data connectors**.
+2. In your Edge, go to the Administration application. Click **Data broker** > **Data connectors**.
 
    <img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus">
 

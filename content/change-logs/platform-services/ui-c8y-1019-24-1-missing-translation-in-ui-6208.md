@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Provided translations for default global roles (#6208)
+title: Provided translations for default roles 
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58187
 version: 1019.24.1
 ---
-Provided translations for following global roles: "admins", "business", "devices", "readers". Also translated following inventory roles: "Manager". (#6210)
+The labels for the following roles are now translated. Global roles: "admins", "business", "devices". Inventory roles: "Manager".

@@ -74,11 +74,6 @@ Note that the key is automatically generated based on the label. You can modify 
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>
-<td style="text-align:left"><b>Order</b></td>
-<td style="text-align:left">Used to define the order in which the key value pairs of a complex property must be shown.</td>
-<td style="text-align:left">Optional</td>
-</tr>
-<tr>
 <td style="text-align:left"><b>Type</b></td>
 <td style="text-align:left">Defines the type of the asset property. It can be any of the following categories – <a href="#text" class="no-ajaxy">Text</a>, <a href="#number" class="no-ajaxy">Number</a>, <a href="#date-picker" class="no-ajaxy">Date picker</a>, <a href="#enumeration" class="no-ajaxy">Enumeration</a>, <a href="#boolean" class="no-ajaxy">Boolean</a> or <a href="#file-upload" class="no-ajaxy">File upload</a>.</td>
 <td style="text-align:left">Mandatory</td>
@@ -92,8 +87,7 @@ Note that the key is automatically generated based on the label. You can modify 
 </table>
 
 {{< c8y-admon-info>}}
-The **Default value** field is only shown if the selected **Type** is either "Text" or "Number". <br>
-The **Order** field is shown only for complex properties with an exception for Default properties. See [Default properties](#default-properties) to view the list of properties available.
+The **Default value** field is only shown if the selected **Type** is either "Text" or "Number".
 {{< /c8y-admon-info>}}
 
 Once you have defined all necessary asset properties for your project, you must define the [asset models](/dtm/asset-types/#asset-models).

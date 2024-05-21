@@ -130,7 +130,7 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 
 ### How to reset your password {#how-to-reset-your-password}
 
-To reset your password, you must first configure the "reset password" template and email server settings in Edge. For information about configuring the email server, see [Configuring the email server](/edge/edge-configuration/#configuring-email-server).  
+To reset your password, you must first configure the "reset password" template and email server settings in Edge. For information about configuring the email server, see [Configuring the email server](/edge-kubernetes/edge-configuration/#configuring-email-server).  
 
 For information about resetting the password, see [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password).
 

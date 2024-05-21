@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58187
 version: 1019.24.1
 ---
-The labels for the following roles are now translated. Global roles: "admins", "business", "devices". Inventory roles: "Manager".
+The labels for the following default roles are now translated. Global roles: "admins", "business", "devices". Inventory roles: "Manager".

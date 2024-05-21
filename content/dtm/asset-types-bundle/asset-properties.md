@@ -288,14 +288,14 @@ If the asset property is called "Gearbox specifications" with the key "gearbox_s
 
 Follow the steps below:
 
-1. On the **Asset properties** page, click **Export asset properties**. In the resulting dialog box, you see the list of asset properties along with their description and type.
+1. On the **Asset properties** page, click **Export**. In the resulting dialog box, you see the list of asset properties along with their description and type.
 2. Select one or more desired asset properties and click **Export**.
 3. The dialog closes and a JSON file named 'Export-asset-properties.json' downloads.
 
 Use the downloaded file to import the asset properties into a DTM application on another tenant.
 
 {{< c8y-admon-info>}}
-Default properties are not listed under **Export asset properties**. See [Default properties](#default-properties) to view the list of properties available.
+Default properties are not listed under **Export**. See [Default properties](#default-properties) to view the list of properties available.
 You can export a maximum of 500 asset properties at a time.
 {{< /c8y-admon-info>}}
 
@@ -305,7 +305,7 @@ You can export a maximum of 500 asset properties at a time.
 
 To import asset properties into the DTM application, follow the steps below:
 
-1. On the **Asset properties** page, click **Import asset properties**.
+1. On the **Asset properties** page, click **Import**.
 2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset properties from a DTM application on another tenant.
 3. Click **Next** to preview the asset properties before importing them.
 4. Click **Import** to import the asset properties.

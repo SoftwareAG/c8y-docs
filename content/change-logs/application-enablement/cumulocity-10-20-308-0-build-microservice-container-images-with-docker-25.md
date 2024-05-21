@@ -11,6 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
+ticket: MTM-58938
 version: 10.18.308.0
 ---
 Cumulocity IoT allows you to extend the platform API with customer-specific functionality by deploying microservices. Technically, microservices are Docker containers hosted by Cumulocity IoT and they follow specific conventions. When building the microservice container image with Docker version 25 it could happen that the microservice upload failed with the following error: config file does not have .json extension. This issue is now fixed.

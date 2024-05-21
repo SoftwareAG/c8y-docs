@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-05-13
 title: Direct sub-users count indicator added in the Users page
 product_area: Platform services
 change_type:

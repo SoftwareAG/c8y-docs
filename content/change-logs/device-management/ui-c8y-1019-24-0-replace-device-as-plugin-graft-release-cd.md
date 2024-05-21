@@ -16,4 +16,4 @@ version: 1019.24.0
 ---
 The "Replace device" functionality is now delivered as a self-hosted plugin by the Device Management application. This way, the functionality can easily be removed from the application if not needed.
 
-Additionally, WebSDK hooks hookDataGridActionControls and hookService have been introduced.
+Additionally, the device replace wizard was made more extensible by introducing hookable interfaces (`hookDataGridActionControls` and `hookService`).

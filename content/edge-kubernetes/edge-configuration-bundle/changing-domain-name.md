@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-A key feature of Edge is the ability to operate the platform using a custom domain name. This means that you can configure the Edge appliance to serve you using a domain name of choice, for example *.iot.mycompany.com rather than the default URL of Edge. In addition, you can create subtenants
+A key feature of Edge is the ability to operate the platform using a custom domain name. This means that you can configure the Edge to serve you using a domain name of choice, for example *.iot.mycompany.com rather than the default URL of Edge. In addition, you can create subtenants
 using your domain. These will use *\<subtenantName\>.iot.mycompany.com* as their host names.
 
 {{< c8y-admon-important >}}
@@ -15,10 +15,7 @@ Before you change the domain name, see [Domain name validation for Edge license 
 
 ### Changing the domain name using the GUI {#changing-the-domain-name-using-the-gui}
 
-1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
-
-	- Username: management/<*Edge admin username*>
-	- Password: password provided during the installation
+1. Log into the {{< management-tenant >}} using the management domain (for example, management.myown.iot.com) and administrator credentials created during the installation. For more information on logging in to the {{< management-tenant >}}, see [To access Edge](/edge-kubernetes/installing-edge-on-k8/#to-access-cumulocity-iot-edge)
 
 2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 

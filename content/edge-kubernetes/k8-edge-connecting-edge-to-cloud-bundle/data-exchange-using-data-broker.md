@@ -38,7 +38,7 @@ To create a data connector and upload the data to the tenant account, perform th
 
    Note down the security code. This security code will be used to subscribe the connector in the tenant account.
 
-4. Log in to the {{< product-c8y-iot >}} tenant account.
+4. Log in to the {{< product-c8y-iot >}} tenant account. For more information on, see [To access Edge](/edge-kubernetes/installing-edge-on-k8/#to-access-cumulocity-iot-edge)
 
 5. In the tenant account, go to the Administration application. Click **Data broker** > **Data subscriptions** to subscribe the connector created in your Edge appliance.
 

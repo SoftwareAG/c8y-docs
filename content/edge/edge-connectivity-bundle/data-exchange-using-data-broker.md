@@ -34,8 +34,6 @@ To create a data connector and upload the data to the tenant account, perform th
 
 2. In your Edge appliance, go to the Administration application. Click **Data broker** > **Data connectors**.
 
-   <img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus">
-
 3. Click **Add data connector** and provide all the information and filters. See [To add a data connector](/data-broker/data-broker-application/#to-add-a-data-connector).
 
    Note down the security code. This security code will be used to subscribe the connector in the tenant account.

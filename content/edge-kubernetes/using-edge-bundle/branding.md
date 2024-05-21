@@ -18,10 +18,7 @@ Use the domain name to access the Edge platform to properly apply the branding a
 
 To access the branding feature:
 
-1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
-
-	- Username: management/<*Edge admin username*>
-	- Password: password provided during the installation
+1. Log into the {{< management-tenant >}} using the management domain (for example, management.myown.iot.com) and administrator credentials created during the installation. For more information on logging in to the {{< management-tenant >}}, see [To access Edge](/edge-kubernetes/installing-edge-on-k8/#to-access-cumulocity-iot-edge)
 
 2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 

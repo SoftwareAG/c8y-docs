@@ -10,12 +10,12 @@ Edge uses REST and MQTT as protocols for external communication. Both protocols 
 
 Additionally, Edge offers:
 
-* Cloud Fieldbus functionality to collect data from fieldbus devices and remotely manage them. For example, Modbus protocol.
-
 * OPC UA protocol. OPC UA protocols support through the OPC UA device gateway and OPC UA management service.
 
-For details on how to integrate devices using Modbus and OPC UA protocols, see [Connecting a Modbus device](/edge/connecting-devices-to-edge/#connecting-modbus-device) and [Connecting an OPC UA device](/edge/connecting-devices-to-edge/#connecting-opcua-device).
+* Cloud Fieldbus functionality to collect data from fieldbus devices and remotely manage them. For example, Modbus protocol. With the release of Cumulocity IoT Edge version 10.18, we are announcing the deprecation of the Cumulocity Linux Agent included in the Cumulocity IoT Edge offering. For further details see the **Deprecation of Cumulocity Linux Agent in Cumulocity IoT Edge** section in the [10.18 release notes](https://cumulocity.com/releasenotes/release-10-18-0/edge-10-18-0/).
+
+For details on how to integrate devices using OPC UA protocols, see [Connecting an OPC UA device](/edge/connecting-devices-to-edge/#connecting-opcua-device).
 
 {{< c8y-admon-info >}}
-Currently, only the Modbus and OPC UA protocols are supported.
+Currently, only OPC UA protocols are supported.
 {{< /c8y-admon-info >}}

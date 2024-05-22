@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improved user message on device list page when no devices are available
+title: Improved user message on Device list page when no devices are available
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

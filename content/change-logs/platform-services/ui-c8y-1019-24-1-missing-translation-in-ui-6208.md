@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Provided translations for default roles 
+title: Provided translations for default roles labels
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

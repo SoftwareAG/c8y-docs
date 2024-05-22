@@ -4,7 +4,7 @@ title: MQTT protocol implementation
 layout: redirect
 ---
 
-This section lists the implementation details for MQTT Service. The MQTT Service implementation supports MQTT Version 3.1.1, support for 5.0 is planned.
+This section lists the implementation details for the MQTT Service. The MQTT Service implementation supports MQTT Version 3.1.1, support for 5.0 is planned.
 
 ### Connecting via MQTT {#connecting-via-mqtt}
 
@@ -19,7 +19,7 @@ Available ports:
 
 Port 9883 is enabled by default. It currently supports one-way SSL meaning that only the client validates the server certificate to ensure its identity.
 The client is authenticated by the server via standard username and password credentials.
-To enable port 2883 please contact [product support](/additional-resources/contacting-support/).
+To enable port 2883 please contact [Product support](/additional-resources/contacting-support/).
 
 ### Topic {#topic}
 
@@ -30,7 +30,7 @@ The messages stored on these subscriptions can be consumed using a dedicated [Ja
 #### Topic restrictions {#topic-restrictions}
 
 MQTT Service does not impose any topic structure. There are just a few topic names which are reserved for historic purposes and future use, namely:
-* all [SmartREST 2.0](/smartrest/smartrest-two) related topics
+* All [SmartREST 2.0](/smartrest/smartrest-two) related topics
 * `error`
 * `devicecontrol/notifications`
 
@@ -39,7 +39,7 @@ Other than that you are free to use any topic name which is compatible with the 
 {{< c8y-admon-info >}}
 Wildcard topics are not supported.
 
-Only alphanumeric characters and slash (`/`) can be used in topic name.
+Only alphanumeric characters and slash (`/`) can be used in the topic name.
 {{< /c8y-admon-info >}}
 
 ### Payload {#payload}
@@ -86,8 +86,8 @@ both message header and body. The header size varies, but its minimum is 2 bytes
 
 Authentication types supported by MQTT Service are:
 
-*   Username and password. The MQTT username must include the tenant ID and username in the format `<tenantID>/<username>`.
-*   Device certificates - not yet supported. This will be added in a future release.
+*   Username and password: The MQTT username must include the tenant ID and username in the format `<tenantID>/<username>`.
+*   Device certificates: Not yet supported. This will be added in a future release.
 
 {{< c8y-admon-req >}}
 The MQTT user which is used to connect to the MQTT Service must have the `MQTT_SERVICE_ADMIN` role assigned.
@@ -95,7 +95,7 @@ The MQTT user which is used to connect to the MQTT Service must have the `MQTT_S
 
 #### ClientId {#client-id}
 
-The MQTT ClientId field identifies the connected client. ClientId may consist of up to 128 alphanumeric characters.
+The **MQTT ClientID** field identifies the connected client. **ClientID** may consist of up to 128 alphanumeric characters.
 Each client connecting to MQTT Service must have a unique client identifier, connecting a second client with the same identifier will result in the previous client's disconnection.
 
 #### Quality of Service (QoS) {#quality-of-service-qos}
@@ -106,12 +106,13 @@ The {{< product-c8y-iot >}} implementation supports two levels of MQTT QoS:
     - The client just sends the message once (fire and forget).
     - No response from the server.
     - No guarantee that subscribers will receive the message.
-* QoS 1: At least once
+* QoS 1: At least once:
     - The client awaits server acknowledgment for each published message.
     - The client should re-send the message if there was no acknowledgement from the server.
     - It is guaranteed that subscribers will receive a message that was acknowledged by the server.
     - Subscribers may receive more than one copy of a message.
-* QoS 2: Exactly once - not supported
+* QoS 2: Exactly once:
+          - not supported
 
 For subscriptions, MQTT Service will deliver all messages in the QoS that the client defined when subscribing to the topic.
 

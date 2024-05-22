@@ -1,6 +1,6 @@
 ---
 date: ""
-title: User message in device list page is incorrect when no devices are available in the tenant [GRAFT][release/cd]
+title: Improved user message on device list page when no devices are available
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

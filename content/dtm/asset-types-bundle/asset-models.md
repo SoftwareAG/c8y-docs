@@ -117,7 +117,7 @@ Once all required asset models are created, you can start creating [assets](/dtm
 
 {{< c8y-admon-info>}}
 If you do not select and check a child asset model, then the asset cannot have any subassets. <br>
-The selected child asset models are not listed in the dropdown.
+The selected child asset models are not listed in the dropdown menu.
 {{< /c8y-admon-info>}}
 
 If one or more child asset models are checked as required, an asset created with this asset model can have only subassets belonging to the selected child asset models.

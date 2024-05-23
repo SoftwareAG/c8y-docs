@@ -6,8 +6,8 @@ change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
-  - value: component--KIsStyzM
-    label: Device Management app
+  - value: component-REmGxwkF2
+    label: LPWAN
 build_artifact:
   - value: tc-ycWx1InI9
     label: loriot-agent

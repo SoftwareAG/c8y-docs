@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-05-22
 title: Data points graph realtime is kept enabled when the browser tab is in background
 product_area: Application enablement & solutions
 change_type:

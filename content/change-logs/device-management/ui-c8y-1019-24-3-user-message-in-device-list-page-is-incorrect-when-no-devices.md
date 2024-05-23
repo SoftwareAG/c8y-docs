@@ -14,6 +14,6 @@ build_artifact:
 ticket: DM-1214
 version: 1019.24.3
 ---
-The layout of the empty state message displayed in data grids across all standard applications has been adjusted and unified. Grid that did not differentiate between no data available and no filter matches or search results are now adjusted to display the corresponding empty state message.
+The layout of the empty state message displayed in data grids across all standard applications has been adjusted and unified. Grids that did not differentiate between no data available and no filter matches or search results are now adjusted to display the corresponding empty state message.
 
 For developers the `emptyStateContext` directive was introduced that injects data source statistics variable into template context.

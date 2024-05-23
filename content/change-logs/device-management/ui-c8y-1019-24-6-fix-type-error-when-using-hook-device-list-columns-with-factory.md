@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix type error when using `hookDeviceListColumns` with factory
+title: Fixed type error when using hookDeviceListColumns with factory
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

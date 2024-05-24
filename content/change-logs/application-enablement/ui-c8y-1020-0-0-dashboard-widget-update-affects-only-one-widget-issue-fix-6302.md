@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Dashboard widget update affects only one widget issue fix (#6302)
+title: Dashboard widget update affects only one widget issue fix
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59201
 version: 1020.0.0
 ---
-Dashboard widget update affects only one widget issue fix (#6302)
+Previously, when more than one dashboard widget was edited, only changes from last edited widget were saved. Now every change is taken into account.

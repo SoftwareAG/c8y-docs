@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Dashboard widget update affects only one widget issue fix
+title: Changes from all dashboard widgets now properly saved
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

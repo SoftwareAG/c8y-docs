@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Create a type dashboard list view (#5975)
+title: Add Dashboard manager feature with list of type dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data points graph realtime disabled when tab is in background (#6288)
+title: Data points graph realtime is kept enabled when the browser tab is in background
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

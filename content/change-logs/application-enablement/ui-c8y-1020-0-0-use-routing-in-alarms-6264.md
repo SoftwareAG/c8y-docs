@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Use routing in alarms (#6264)
+title: Alarms can be routed via a link
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59106
 version: 1020.0.0
 ---
-Use routing in alarms (#6264)
+Alarms previously could not be shared, as they had no unique link to reference them e.g. in mails or chats. With this change, each alarm gets an unique link, helping to sharing and navigating between alarms more easily.

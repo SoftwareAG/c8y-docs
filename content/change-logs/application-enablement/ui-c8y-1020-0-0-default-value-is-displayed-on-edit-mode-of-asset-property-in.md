@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58456
 version: 1020.0.0
 ---
-Default value is displayed on edit mode of asset property in sub-assets page even when user clears the value (#5930)
+When editing an asset property value in the sub-assets page, the default value was still displayed even after the user had cleared the value. This issue has now been resolved. With this fix, when a user clears an asset property value in the sub-asset page and saves the changes, the field will be empty as expected without retaining the default value.

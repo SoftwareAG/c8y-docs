@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59259
 version: 1020.0.0
 ---
-Angular CDK library update caused our dashboard widget drag feature to stop working. We aligned our logic to new version of package so dragging widgets is possible again.
+An Angular CDK library update caused the dashboard widget drag functionality to stop working. This issue has been fixed by aligning to the new version and dragging widgets is possible again.

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Default value is displayed on edit mode of asset property in sub-assets page even when user clears the value (#5930)
+title: Asset property default value displayed in sub-asset edit mode after clearing the value
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

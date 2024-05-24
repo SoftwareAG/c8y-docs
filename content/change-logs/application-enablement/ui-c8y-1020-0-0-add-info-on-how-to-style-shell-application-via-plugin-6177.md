@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add information on how to style the shell application using a plugin
+title: Styling shell application with plugins
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58246
 version: 1020.0.0
 ---
-add info on how to style shell application via plugin (#6177)
+Documentation has been added on how to style the shell application via plugins. 

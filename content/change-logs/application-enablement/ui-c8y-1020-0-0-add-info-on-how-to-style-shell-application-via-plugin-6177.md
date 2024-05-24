@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Styling shell application with plugins
+title: Adde documentation for styling shell application via plugins
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

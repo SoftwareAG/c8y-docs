@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Alarms can be routed via a link
+title: Alarms can now be referenced via a link
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Widget drag fix (#6358)
+title: Fixed widget dragging in dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59259
 version: 1020.0.0
 ---
-Widget drag fix (#6358)
+Angular CDK library update caused our dashboard widget drag feature to stop working. We aligned our logic to new version of package so dragging widgets is possible again.

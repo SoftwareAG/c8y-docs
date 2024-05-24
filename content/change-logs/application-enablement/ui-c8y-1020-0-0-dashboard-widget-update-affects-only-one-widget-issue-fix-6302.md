@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59201
 version: 1020.0.0
 ---
-Previously, when more than one dashboard widget was edited, only changes from last edited widget were saved. Now every change is taken into account.
+Previously, when more than one dashboard widget was edited, only the changes from the last edited widget were saved. Now every change is taken into account.

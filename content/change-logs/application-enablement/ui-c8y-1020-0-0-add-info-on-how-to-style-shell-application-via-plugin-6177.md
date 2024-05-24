@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add info on how to style shell application via plugin (#6177)
+title: Add information on how to style the shell application using a plugin
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

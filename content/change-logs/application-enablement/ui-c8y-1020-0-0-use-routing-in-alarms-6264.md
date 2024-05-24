@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59106
 version: 1020.0.0
 ---
-Alarms previously could not be shared, as they had no unique link to reference them e.g. in mails or chats. With this change, each alarm gets an unique link, helping to sharing and navigating between alarms more easily.
+Previously, alarms could not be shared as they had no unique link to reference them, for example in mails or chats. With this change, each alarm gets an unique link. This allows to share alarms and navigate between alarms more easily.

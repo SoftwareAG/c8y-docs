@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58380
 version: 1020.0.0
 ---
-[MTM-58276] Adjust branded dashboard (#6024)
+The styling of the branded dashboard was adjusted to improve readability and accessibility.

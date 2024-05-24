@@ -1,6 +1,6 @@
 ---
 date: ""
-title: [MTM-58276] Adjust branded dashboard (#6024)
+title: Adjusted styling of branded dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

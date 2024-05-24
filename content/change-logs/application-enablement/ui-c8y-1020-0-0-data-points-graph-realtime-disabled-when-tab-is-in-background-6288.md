@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58410
 version: 1020.0.0
 ---
-Data points graph realtime disabled when tab is in background (#6288)
+The realtime functionality for the data points graph was automatically disabled when the browser tab was in the background. With this fix, realtime is kept enabled and can be disabled only by direct user interaction.

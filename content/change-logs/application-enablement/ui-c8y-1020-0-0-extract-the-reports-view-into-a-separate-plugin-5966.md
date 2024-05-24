@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-58448
 version: 1020.0.0
 ---
-The Report module has been extracted from the Cockpit application and added as a separate plugin.
+As announced earlier, the report module has been extracted from the Cockpit application and added as a separate plugin.
 This is a first step towards removing the reports module entirely and replacing it with the dashboard manager.
 This change might be a breaking change as the reports module is no longer a part of `@c8y/ngx-components/context-dashboard`, but is be part of `@c8y/ngx-components/report-dashboard`.
 

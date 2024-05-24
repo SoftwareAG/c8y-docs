@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58599
 version: 1020.0.0
 ---
-expandable rows in the data grid. (#6017)
+To provide a better user experience when displaying hierarchical data in a data grid, expandable rows have been introduced. With this change, users can now expand or collapse rows in the data grid to show or hide nested information. This allows for a more compact and organized presentation of data, especially when dealing with complex hierarchies or large amounts of related information. The expandable rows feature seamlessly integrates with the existing data grid component, providing a consistent and intuitive way for users to interact with and navigate through the displayed data.

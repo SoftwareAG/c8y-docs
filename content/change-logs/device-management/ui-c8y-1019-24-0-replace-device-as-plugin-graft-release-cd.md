@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-05-21
 title: Replace device functionality available as plugin
 product_area: Device management & connectivity
 change_type:

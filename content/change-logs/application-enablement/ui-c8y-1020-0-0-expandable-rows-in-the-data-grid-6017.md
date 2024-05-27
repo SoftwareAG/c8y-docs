@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The data grid now supports expandable rows.
+title: Data grid now support expandable rows
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

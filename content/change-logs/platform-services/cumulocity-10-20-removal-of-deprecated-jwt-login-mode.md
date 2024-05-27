@@ -19,7 +19,7 @@ This authentication method is not to be confused with SSO (single sign-on) or OA
 This change will only impact you if your organization was an early adopter of SSO on {{< product-c8y-iot >}}.
 For customers on the public cloud instances we get in touch with you if you are using this type of authentication.
 For self-hosted or self-managed instances you need to do the following:
-Ask your Operations Team to run the [script](https://getsupport.softwareag.com/servicedesk/customer/kb/view/429359127). This will verify
+Ask your Operations team to run this [script](https://getsupport.softwareag.com/servicedesk/customer/kb/view/429359127). This will verify
 whether any tenant collections have an authenticationProviders configuration, and
 verify if any tenant has tenant options configured with the category "token.publicKey".
 If either an “authenticationProvider” configuration or the tenant option "token.publicKey" category exists it will indicate that the deprecated JWT is, or was, used in the past. In this case you need to check your external services for use of the JWT authentication and change it to use either SSO or OAuthSecure. These two approaches provide a better and more secure approach to authentication.

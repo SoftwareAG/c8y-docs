@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-53448
 version: "10.20"
 ---
-JWT authentication with Cumulocity, which was deprecated in version 10.6, will be removed during Q3 2024 for SaaS instance and 2025 for the annual release.
+JWT authentication with {{< product-c8y-iot >}} is deprecated since release 10.6 and will be removed in Q3 2024 for the SaaS instances and in 2025 for the yearly releases.
 This authentication method should not be confused with SSO or OAI-Secure authentication, which are recommended and still supported.
 This change will only impact you if your organisation was an early adopter of SSO on Cumulocity.
 For customers on public Cloud we will have been in touch with you if you are using this type of authentication.

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Support loading dynamic options from app-specific paths
+title: Support for loading dynamic options from app-specific paths
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

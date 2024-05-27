@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset property default value displayed in sub-asset edit mode after clearing the value
+title: Asset property field in subassets view now empty after clearing the value
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

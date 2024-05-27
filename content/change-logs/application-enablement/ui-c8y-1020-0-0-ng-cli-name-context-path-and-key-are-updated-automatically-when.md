@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Ng-cli name, context-path and key are updated automatically when they are not present.
+title: Ng-cli name, context-path and key are updated automatically when they are not present in the "cumulocity.config.ts" file.
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57348
 version: 1020.0.0
 ---
-Ng-cli name, context-path and key are updated automatically when they are not present.
+Ng-cli name, context-path and key are updated automatically when they are not present in the "cumulocity.config.ts" file. If they are not present they will be derived from the "name" property in the "package.json" file.

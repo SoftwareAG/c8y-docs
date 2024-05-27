@@ -17,7 +17,7 @@ version: "10.20"
 JWT authentication with {{< product-c8y-iot >}} is deprecated since release 10.6 and will be removed in Q3 2024 for the SaaS instances and in 2025 for the yearly releases.
 This authentication method is not to be confused with SSO (single sign-on) or OAI-Secure authentication, which are both recommended and still supported.
 This change will only impact you if your organisation was an early adopter of SSO on Cumulocity.
-For customers on public Cloud we will have been in touch with you if you are using this type of authentication.
+For customers on the public cloud instances we get in touch with you if you are using this type of authentication.
 For self-hosted or self-managed instances you need to do the following:
 Ask your Operations Team to run the [script](https://getsupport.softwareag.com/servicedesk/customer/kb/view/429359127). This will verify
 whether any tenant collections have an authenticationProviders configuration, and

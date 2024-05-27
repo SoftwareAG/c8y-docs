@@ -1,6 +1,6 @@
 ---
 date: ""
-title: An alert is shown for long-running managed object operations.
+title: Alert for long-running managed object operations
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

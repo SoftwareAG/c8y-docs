@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2973
 version: 1020.0.0
 ---
-The services component was previously an integral part of the default Device Management application. In this update, the services component has been restructured to function as a plugin. It remains included by default but now offers the flexibility to be added or removed as needed. (#4897)
+The services component was previously an integral part of the default Device Management application. With this change, the services component has been restructured to function as a separate plugin. It remains included by default but now offers the flexibility to be added or removed as needed. 

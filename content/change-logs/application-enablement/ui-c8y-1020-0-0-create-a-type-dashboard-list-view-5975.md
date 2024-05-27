@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add Dashboard manager feature with list of type dashboards
+title: New dashboard manager with list of device type dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58509
 version: 1020.0.0
 ---
-Add Dashboard manager view. For now it contains only list of device type dashboards. It aggregates all dashboards that has device type assigned, it allows to remove these dashboards and it is also possible to view all the devices that has access to particular dashboard from list. User can edit dashboard by navigating to device view.
+A dashboard manager view has been added. This dashboard manager shows a list of device type dashboards by aggregating all dashboards that have a device type assigned. Dashboards can be removed via the list. Moreover you can view all devices that have access to a particular dashboard. Dashboards can be edited by navigating to the device view.

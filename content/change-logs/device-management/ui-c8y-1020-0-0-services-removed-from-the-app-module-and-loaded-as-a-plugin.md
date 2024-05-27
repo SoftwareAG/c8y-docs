@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Services removed from the app module and loaded as a plugin. (#4897)
+title: Services component extracted as separate plugin
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP

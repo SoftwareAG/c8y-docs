@@ -1,6 +1,6 @@
 ---
 date:
-title: LWM2M agent bulk registration fails when using an Excel created CSV file
+title: LWM2M agent bulk registration no longer fails when using an Excel-generated CSV file
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

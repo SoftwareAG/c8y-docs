@@ -23,4 +23,6 @@ Ask your Operations team to run this [script](https://getsupport.softwareag.com/
 whether any tenant collections have an `authenticationProviders` configuration and
 if any tenant has the tenant options configured with the category `token.publicKey`.
 If either an `authenticationProvider` configuration or the tenant option `token.publicKey` category exists this indicates that the deprecated JWT is, or was, used in the past. In this case you need to check your external services for use of the JWT authentication and change it to use either SSO or OAI-Secure. These two methods provide a better and more secure approach to authentication.
-These two methods are documented here: using [SSO](https://cumulocity.com/docs/authentication/sso/#configuration) or [authentication with external tokens](https://cumulocity.com/docs/authentication/sso/#configuring-access-tokens).
+These methods are documented here: 
+- [Single sign-on](https://cumulocity.com/docs/authentication/sso/#configuration)
+- [Token generation with OAI-Secure](https://cumulocity.com/docs/authentication/sso/#configuring-access-tokens).

@@ -110,7 +110,6 @@ See below for detailed information about available settings.
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<tr>
 <td style="text-align:left">billingMode</td>
 <td style="text-align:left">Enum</td>
 <td style="text-align:left">Values: RESOURCES, SUBSCRIPTION<br>Default: RESOURCES<br><br> In case of RESOURCES, the number of resources used is exposed for billing calculation per usage. In case of SUBSCRIPTION, all resources usage is counted for the microservice owner and the subtenant is charged for subscription.</td>
@@ -131,7 +130,7 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">replicas</td>
 <td style="text-align:left">Integer</td>
-<td style="text-align:left">Value range: 1 - 5<br><br>Defines the number of microservice instances. For auto-scaled microservices, the value represents the minimum number of microservices instances.</td>
+<td style="text-align:left">Value range: 1 - 5<br>Default: 1<br/><br/>Defines the number of microservice instances. For auto-scaled microservices, the value represents the minimum number of microservices instances. <br/>Use the default value only for development versions. Production microservices must use at least two replicas.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
@@ -161,7 +160,7 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">requiredRoles</td>
 <td style="text-align:left">String[ ]</td>
-<td style="text-align:left">List of permissions required by a microservice to work.</td>
+<td style="text-align:left">List of permissions required by a microservice to work.<br/>Default: [ ] (no permissions)</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
@@ -173,13 +172,13 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">livenessProbe</td>
 <td style="text-align:left">Probe</td>
-<td style="text-align:left">Defines the strategy used to verify if a microservice is alive or requires a restart.</td>
+<td style="text-align:left">Defines the strategy used to verify if a microservice is alive or requires a restart. If no probe is specified, the microservice is assumed to be always healthy. We recommend to implement liveness probes for production microservices.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">readinessProbe</td>
 <td style="text-align:left">Probe</td>
-<td style="text-align:left">Defines the strategy used to verify if a microservice is ready to accept traffic.</td>
+<td style="text-align:left">Defines the strategy used to verify if a microservice is ready to accept traffic. If no probe is specified, the microservice is assumed to be always able to accept traffic immediately after it was started. Omitting the readinessProbe in production microservices will lead to clients of the microservice being exposed to startup errors.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>

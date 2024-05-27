@@ -1,6 +1,6 @@
 ---
 date: ""
-title: load dynamic options from app specific path (#6207)
+title: Support loading dynamic options from app-specific paths
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,6 @@ build_artifact:
 ticket: MTM-59023
 version: 1020.0.0
 ---
-load dynamic options from app specific path (#6207)
+To provide more flexibility for configuring applications, Cumulocity IoT now supports loading dynamic options from application-specific paths. With this change, each hosted application will load its dynamic options from a path that includes the applications context path. This allows application-specific configurations to be loaded dynamically.
+The Cockpit application would now load it's dynamic options from: `/apps/public/public-options@app-cockpit/options.json` while it previously did so from: `/apps/public/public-options/options.json`.
+This change was done as a preparation for upcoming changes to the branding manager.

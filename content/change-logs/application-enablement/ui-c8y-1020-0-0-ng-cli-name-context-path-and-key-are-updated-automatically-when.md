@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Missing values in cumulocity.config.ts file automatically added
+title: Missing properties in cumulocity.config.ts file automatically added
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

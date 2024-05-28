@@ -172,7 +172,7 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">livenessProbe</td>
 <td style="text-align:left">Probe</td>
-<td style="text-align:left">Defines the strategy used to verify if a microservice is alive or requires a restart. If no probe is specified, the microservice is assumed to be always healthy. We recommend to implement liveness probes for production microservices.</td>
+<td style="text-align:left">Defines the strategy used to verify if a microservice is alive or requires a restart. If no probe is specified, the microservice is assumed to be always healthy. We recommend that you implement liveness probes for production microservices.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>

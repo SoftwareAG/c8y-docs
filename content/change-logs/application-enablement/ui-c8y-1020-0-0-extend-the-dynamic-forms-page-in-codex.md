@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Extend the "Dynamic forms" page in Codex
+title: Extended information on dynamic forms in Codex
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

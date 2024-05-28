@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Ng-cli name, context-path and key are updated automatically when they are not present in the "cumulocity.config.ts" file.
+title: Missing values in cumulocity.config.ts file automatically added
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3471
 version: 1020.0.0
 ---
-The Advanced software management logic was previously an integral part of the default Device Management application. With this change, the Advanced software management service has been restructured to function as a separate plugin. It remains included by default but now offers the flexibility to be added or removed as needed. (#5939)
+The Advanced Software Management functionality was previously an integral part of the default Device Management application. With this change, the Advanced Software Management service has been restructured to function as a separate plugin. It remains included by default but now offers the flexibility to be added or removed as needed. 

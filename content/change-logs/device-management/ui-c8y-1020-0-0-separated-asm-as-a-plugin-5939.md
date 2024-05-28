@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Separated Advanced software management functionality as a plugin. (#5939)
+title: Separated Advanced Software Management functionality as a plugin
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP

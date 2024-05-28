@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58690
 version: 1020.0.0
 ---
-In the past, restoring a dashboard did not properly update the node property of the navigator, leading to inconsistencies. This has now been fixed. The navigator node property is correctly changed after a dashboard restore, ensuring the restored dashboard matches the expected state. This improvement provides a more reliable and consistent user experience when restoring dashboards.
+In the past, restoring a dashboard did not properly update the node property of the navigator, leading to inconsistencies. This has now been fixed. The navigator node property is correctly changed after a dashboard restore, ensuring the restored dashboard matches the expected state.

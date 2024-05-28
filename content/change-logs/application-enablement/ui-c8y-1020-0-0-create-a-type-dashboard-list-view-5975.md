@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58509
 version: 1020.0.0
 ---
-A dashboard manager view has been added. This dashboard manager shows a list of device type dashboards by aggregating all dashboards that have a device type assigned. Dashboards can be removed via the list. Moreover you can view all devices that have access to a particular dashboard. Dashboards can be edited by navigating to the device view.
+A dashboard manager view has been added to streamline the management of device type dashboards. This view aggregates and displays a list of all dashboards assigned to specific device types. From this list, dashboard templates linked to device types can be viewed, edited by navigating to a particular instance and templates can also be deleted if needed.

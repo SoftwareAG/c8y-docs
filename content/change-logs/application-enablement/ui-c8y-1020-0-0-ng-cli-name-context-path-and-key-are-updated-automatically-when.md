@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57348
 version: 1020.0.0
 ---
-If `ng-cli name`, `context-path` and `key` are not present in the *cumulocity.config.ts* file they are automatically derived from the `name` property in the *package.json* file.
+If values for `ng-cli name`, `context-path` and `key` are missing in the *cumulocity.config.ts* file they are automatically derived from the `name` property in the *package.json* file.

@@ -14,7 +14,7 @@ In the example below the selected calculation interval is '1 minute'. There are 
 
 ### What do alarms in a Machine Dashboard mean? {#what-do-alarms-in-a-machine-dashboard-mean}
 
-If an alarm occurs in an OEE Machine Dashboard, this indicates that the mapping must be revised and adapted again. If this has been done, no further alarms should occur. Nevertheless, it is recommended to clear the alarm in the device details of the profile in the {{< product-c8y-iot >}} Device management application. This is the only way, the parameters displayed in the alarm will be renewed if a similar alarm occurs. The time stamp is also updated automatically without further action.
+If an alarm occurs in an OEE Machine Dashboard, this indicates that the mapping must be revised and adapted again. If this has been done, no further alarms should occur. Nevertheless, it is recommended to clear the alarm in the device details of the profile in the {{< product-c8y-iot >}} Device Management application. This is the only way, the parameters displayed in the alarm will be renewed if a similar alarm occurs. The time stamp is also updated automatically without further action.
 
 ![Dashboard alarm](/images/oee/faq/faq-dashboard-alarm.png)
 

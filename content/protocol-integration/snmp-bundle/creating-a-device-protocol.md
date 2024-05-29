@@ -11,7 +11,7 @@ SNMP device protocols can either be created manually or by importing a MIB file 
 
 1. Create a ZIP file which contains the top-level MIB file along with dependent MIB files and an index file named mib-index which contains the name of the top level MIB file.<br>
 ![Subscribed applications](/images/device-protocols/snmp/snmp-mib-zipfile-structure.png)
-2. In the Device management application, click **Device protocols** in the **Device types** menu in the navigator.
+2. In the Device Management application, click **Device protocols** in the **Device types** menu in the navigator.
 3. In the top menu bar of the **Device protocols** page, click **Import**.
 4. Select the MIB ZIP file from the dropdown list or upload the file from your file system.
 5. In the **Name** field, enter a name for the device protocol.
@@ -55,7 +55,7 @@ On successful import, the newly added device protocol will be listed in the devi
 
 Device protocols can also be created manually. To do so, you must know the OIDs supported by the device. This method is suitable for small number of OIDs supported by the device or for testing purposes.
 
-1. In the Device management application, click **Device protocols** in the **Device types** menu in the navigator.
+1. In the Device Management application, click **Device protocols** in the **Device types** menu in the navigator.
 2. In the top menu bar of the **Device protocols** page, click **Add device protocol**.
 3. Select SNMP as device protocol.
 4. Enter the name and a description for the device protocol.

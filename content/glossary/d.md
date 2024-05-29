@@ -44,7 +44,7 @@ Devices are a special type of [asset](/glossary/a/#asset). They can constitute a
 The Device Management application is one of the default applications of {{< product-c8y-iot >}}.
 The Device Management application provides functionalities for connecting, managing and monitoring devices and allows to control and troubleshoot devices remotely.
 
-For details see [Device management > Device management application](/device-management-application/).
+For details see [Device management > Device Management application](/device-management-application/).
 
 
 ### Device protocol {#device-protocol}

@@ -115,7 +115,7 @@ If you have enabled functional cookies you can opt out of the product experience
 
 Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as Edge requests you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
-Finally, click **Login** to enter Edge. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application, if not configured differently. For further information about the Cumulocity IoT standard applications see [Available applications](/get-familiar-with-the-ui/available-applications/).
+Finally, click **Login** to enter Edge. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application, if not configured differently. For further information about the {{< product-c8y-iot >}} standard applications see [Available applications](/get-familiar-with-the-ui/available-applications/).
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 

@@ -13,3 +13,4 @@ Angular 17 is supported from version `1020.0.0`. The following configuration cha
 - Run the command `ng update @angular/core@17 @angular/cli@17` to update Angular core and CLI to version 17.
 - Update `ngx-bootstrap` to version `12.0.0`.
 - Update `@angular/cdk` to version `17.x.x`.
+- Remove any reference of `loginOptions` in the *src/main.ts* file. The `loginOptions` function is now called under the hood as part of the `loadOptions` function.

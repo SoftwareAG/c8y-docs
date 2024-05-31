@@ -6,9 +6,9 @@ section:
   - edge_server
 ---
 
-This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster with default options. For detailed instructions, see [Installing Edge on Kubernetes](/edge-kubernetes/k8-installing-edge-on-k8/).
+This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster with default options. For detailed instructions, see [Installing Edge on Kubernetes](/edge-kubernetes/installing-edge-on-k8/).
 
-1. Verify that your hardware meets the requirements specified in [Prerequisites](/edge-kubernetes/k8-installing-edge-on-k8/#prerequisites).
+1. Verify that your hardware meets the requirements specified in [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
 
 2. Run the command below to install K3s.
 
@@ -47,4 +47,4 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
    kubectl apply -f {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-sample.yaml
    ```
 
-6. See [Verifying the Edge installation](/edge-kubernetes/k8-installing-edge-on-k8/#verifying-the-edge-installation) and [Accessing Edge](/edge-kubernetes/k8-installing-edge-on-k8/#accessing-edge) to sign into Edge.
+6. See [Verifying the Edge installation](/edge-kubernetes/installing-edge-on-k8/#verifying-the-edge-installation) and [Accessing Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) to sign into Edge.

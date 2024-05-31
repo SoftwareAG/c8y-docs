@@ -14,6 +14,7 @@ build_artifact:
 ticket: CTM-1308
 version: 1020.1.8
 ---
-Updated action button labels: in the **Assets** page, "Import assets" is now "Import". In the **Asset Models** page, "Import asset models" and "Export asset models" are now "Import" and "Export" respectively. Similarly in the **Asset properties** page, "Import asset properties" and  "Export asset properties" are also shortened to "Import" and "Export" respectively.
+
+Updated action button labels: in the **Assets** page, "Import assets" is now "Import". In the **Asset Models** page, "Import asset models" and "Export asset models" are now "Import" and "Export" respectively. Similarly in the **Asset properties** page, "Import asset properties" and "Export asset properties" are also shortened to "Import" and "Export" respectively.
 'Add Asset Model,' 'Import,' and 'Export' in the **Asset model** page.
 'Import' and 'Export' in **Asset properties** page.

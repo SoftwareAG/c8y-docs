@@ -1,6 +1,6 @@
 ---
 date: 2024-05-30
-title: Improved dropdown functionality for asset model page.
+title: Improved dropdown for Child Asset Models and Asset properties
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

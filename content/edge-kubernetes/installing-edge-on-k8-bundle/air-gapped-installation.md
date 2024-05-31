@@ -169,4 +169,4 @@ kubectl logs -f -n ${EDGE_NAMESPACE} deployment/c8yedge-operator-controller-mana
 ```
 
 ### Installing Edge {#installing-edge}
-Continue with installing Edge by following the instructions in [Installing Edge](/edge-kubernetes/k8-installing-edge-on-k8/#install-edge) section.
+Continue with installing Edge by following the instructions in [Installing Edge](/edge-kubernetes/installing-edge-on-k8/#install-edge) section.

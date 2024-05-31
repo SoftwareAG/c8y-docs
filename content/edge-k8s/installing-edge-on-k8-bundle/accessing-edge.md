@@ -72,7 +72,7 @@ If the ping is successful, the DNS resolution is working properly.
 
 #### To access Edge
 
-To log in in to the Edge, enter one of the following URLs in the browser:
+To access Edge, enter one of the following URLs in the browser:
 - For the "edge" tenant, use the URL `https://<domain_name>`.
 - For the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
 

@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-ggH2M4hf3
     label: lwm2m-agent
 ticket: DM-2452
-version: 10.20.350.0
+version: 10.20.348.0
 ---
 
 When an Excel-generated CSV file was submitted to the LWM2M bulk device registration, the process failed due to the inability to parse the UTF-8 with a BOM marker present at the beginning of the file. This issue has been addressed, and the LWM2M bulk device registration system now successfully accepts CSV files encoded in UTF-8 with BOM format.

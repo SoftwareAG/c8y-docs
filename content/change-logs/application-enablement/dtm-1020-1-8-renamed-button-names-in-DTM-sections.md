@@ -1,6 +1,6 @@
 ---
 date: 2024-05-30
-title: Renamed button names in DTM Sections
+title: Updated labels for buttons
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

@@ -1,6 +1,6 @@
 ---
 date: 2024-05-30
-title: Default tree view for importing asset models
+title: Additional columns in preview step of Import asset models
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

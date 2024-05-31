@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-1217
 version: 1020.1.8
 ---
-Previously on the asset model page, custom properties and child asset models already added would still appear in the dropdown menu during model creation.Now, users will no longer see the child models and properties that are already assigned in the dropdown.
+When adding child asset models or asset properties to an asset model, those already added will no longer appear in the options.

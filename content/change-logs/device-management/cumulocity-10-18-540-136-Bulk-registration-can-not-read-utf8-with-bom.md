@@ -1,5 +1,5 @@
 ---
-date: 2024-05-28
+date: 
 title: LWM2M agent bulk registration no longer fails when using an Excel-generated CSV file
 product_area: Device management & connectivity
 change_type:

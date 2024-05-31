@@ -14,7 +14,6 @@ build_artifact:
 ticket: CTM-1308
 version: 1020.1.8
 ---
-
 Users can now see simplified button names in different sections of the DTM interface: 'Add Assets,' 'Import' in the **Assets** page;
 'Add Asset Model,' 'Import,' and 'Export' in the **Asset model** page.
 'Import' and 'Export' in **Asset properties** page.

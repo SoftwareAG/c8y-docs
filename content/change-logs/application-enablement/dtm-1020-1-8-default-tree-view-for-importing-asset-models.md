@@ -14,5 +14,4 @@ build_artifact:
 ticket: CTM-1307
 version: 1020.1.8
 ---
-
 During the import of asset models, users can now see child asset models and asset properties by default in the tree view within the import popup on the **Asset model** page.

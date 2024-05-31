@@ -72,37 +72,34 @@ If the ping is successful, the DNS resolution is working properly.
 
 #### To access Edge {#to-access-cumulocity-iot-edge}
 
-Enter one of the following URLs in the browser:
-- To log in to the "edge" tenant, use the URL `https://<domain_name>`.
-- To log in to the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
+To access Edge, enter one of the following URLs in the browser:
+- For the "edge" tenant, use the URL `https://<domain_name>`.
+- For the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
 
-The Login screen appears.
-
-{{< c8y-admon-important >}}
-After a successful deployment, you must access both the {{< management-tenant >}} and "edge" tenant and change the respective admin credentials.
-{{< /c8y-admon-important >}}
+This will bring up the below login screen. Enter the default credentials username "admin" and password "admin-pass" to log in in to both the "edge" tenant and the {{< management-tenant >}}.
 
 ![Login prompt](/files/edge-k8s/edge-k8s-login-banner.png)
 
-Change the password on first login.
-
-{{< c8y-admon-important >}}
-Edge is installed with the admin user "admin" and password "admin-pass". The email address to change the password on the first login is the one you specified in the {{< product-c8y-iot >}} Edge CR (or myown@iot.com if you followed the Quickstart installation steps).
-Alternatively, run the following command to retrieve the email address:
+On the first login, you see the dialog window below, forcing you to change the password. The email address to change the password is the one you specified in the {{< product-c8y-iot >}} Edge CR (or myown@iot.com if you followed the Quickstart installation steps). Alternatively, run the following command to retrieve the email address:
 
 `kubectl get edge c8yedge -n c8yedge -o jsonpath='{.spec.email}' && echo`
 
+{{< c8y-admon-info >}}
 Substitute the Edge name and namespace name, which is currently **c8yedge** in the command, with the specific Edge name and namespace name you have specified in your Edge CR.
-{{< /c8y-admon-important >}}
+{{< /c8y-admon-info >}}
 
 ![Reset password](/files/edge-k8s/edge-k8s-reset-password.png)
+
+{{< c8y-admon-important >}}
+After a successful deployment, it is crucial to access both the {{< management-tenant >}} and the "edge" tenant and change their respective admin credentials.
+{{< /c8y-admon-important >}}
 
 If you are logging in for the first time, you will see a cookie banner at the bottom of the login screen:
 
 ![Cookie Banner](/files/edge-k8s/edge-k8s-cookie-banner.png)
 
 {{< c8y-admon-info >}}
-The cookie banner is turned on by default. This feature can be configured. For more information see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/enterprise-tenant/customization/#branding).
+The cookie banner is turned on by default. This feature can be configured. For more information see [Branding](/edge/using-edge/#branding).
 {{< /c8y-admon-info >}}
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
@@ -118,7 +115,7 @@ If you have enabled functional cookies you can opt out of the product experience
 
 Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as Edge requests you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
-Finally, click **Login** to enter Edge. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application (if not configured differently).
+Finally, click **Login** to enter Edge. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application, if not configured differently. For further information about the {{< product-c8y-iot >}} standard applications see [Available applications](/get-familiar-with-the-ui/available-applications/).
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 
@@ -128,11 +125,11 @@ To explicitly log out, click the **User** button at the right of the top bar, th
 The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level. Contact your Operations team for further support. The default value is 100.
 {{< /c8y-admon-info >}}
 
-### How to reset your password {#how-to-reset-your-password}
+### How to reset or change your password {#how-to-reset-your-password}
 
 To reset your password, you must first configure the "reset password" template and email server settings in Edge. For information about configuring the email server, see [Configuring the email server](/edge/edge-configuration/#configuring-email-server).  
 
-For information about resetting the password, see [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password).
+For information about changing the password, see [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password).
 
 ### How to access pages using URLs {#how-to-access-pages-using-urls}
 

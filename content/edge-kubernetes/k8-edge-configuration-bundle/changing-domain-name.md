@@ -15,7 +15,7 @@ Before you change the domain name, see [Domain name validation for Edge license 
 
 ### Changing the domain name using the GUI {#changing-the-domain-name-using-the-gui}
 
-1. Log into the {{< management-tenant >}} using the management domain (for example, management.myown.iot.com) and administrator credentials created during the installation. For more information on logging in to the {{< management-tenant >}}, see [To access Edge](/edge-kubernetes/installing-edge-on-k8/#to-access-cumulocity-iot-edge)
+1. Log into the {{< management-tenant >}} using the management domain (for example, management.myown.iot.com) and administrator credentials created during the installation. For more information on logging in to the {{< management-tenant >}}, see [To access Edge](/edge-kubernetes/k8-installing-edge-on-k8/#to-access-cumulocity-iot-edge)
 
 2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 

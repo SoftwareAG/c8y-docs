@@ -17,8 +17,8 @@ API Version: edge.cumulocity.com/v1
 Kind: CumulocityIoTEdge
 
 Status:
-	Deployed Generation:  x
-	State: Ready
+  Deployed Generation:  x
+  State: Ready
 
 Events:
  Type      Reason                       Age    From               Message
@@ -38,4 +38,4 @@ For more information see [Connecting Edge to the cloud](/edge-kubernetes/k8-edge
 
 * The specified cloud tenant domain is not reachable or incorrect.
 
-If you must contact {{< sag-support >}}, include the output of the diagnostics dump. For more information about accessing diagnostic logs, see [Accessing logs](/edge-kubernetes/installing-edge-on-k8/#accessing-logs).
+If you must contact {{< sag-support >}}, include the output of the diagnostics dump. For more information about accessing diagnostic logs, see [Accessing logs](/edge-kubernetes/k8-installing-edge-on-k8/#accessing-logs).

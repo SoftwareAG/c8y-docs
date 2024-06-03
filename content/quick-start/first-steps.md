@@ -13,7 +13,7 @@ If you are technically interested in our IoT platform, you might want to learn a
 
 ### Step 1: Logging into {{< product-c8y-iot >}} for the first time
 
-To log in in to the {{< product-c8y-iot >}} platform and access your tenant, use the following URL:
+To log in to the {{< product-c8y-iot >}} platform and access your tenant, use the following URL:
 
 ```http
 https://<tenant-domain>.{{< domain-c8y >}}/

@@ -90,11 +90,11 @@ See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
 ##### Step 1 - Install Apama {#step-1---install-apama}
 
-If you have licensed Apama, install it using {{< sag-installer >}}.
+Download the `apama-c8y-dev` package of Apama from [https://www.apamacommunity.com/downloads/](https://www.apamacommunity.com/downloads/) and extract it to install Apama. This installs the freemium Apama Community Edition with reduced capabilities and several restrictions. To unlock all features you need a license.
 
-You can also use a freemium version of Apama which runs with reduced capabilities and several restrictions. If you want to use this, download the Apama Community Edition from [https://www.apamacommunity.com/downloads/](https://www.apamacommunity.com/downloads/) and install it.
+If you have a license, copy the license file into the Apama work directory (*APAMA_WORK/license*).
 
-Both versions, the licensed version and the freemium version, include {{< sag-designer >}}.
+The `apama-c8y-dev` package includes {{< sag-designer >}} which is available for both the Apama Community Edition and licensed editions of Apama.
 
 ##### Step 2 - Create a project {#step-2---create-a-project}
 

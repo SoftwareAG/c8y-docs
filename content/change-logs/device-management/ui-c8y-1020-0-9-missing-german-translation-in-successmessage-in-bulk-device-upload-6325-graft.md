@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57157
 version: 1020.0.9
 ---
-Missing german translation in successmessage in bulk device upload (#6325) [GRAFT][release/cd] (#6455)
+The success message displayed after uploading devices in bulk was not properly translated to German. This issue has been resolved and the success message now correctly appears in German for users with that language selected. 

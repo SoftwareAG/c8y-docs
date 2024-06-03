@@ -1,6 +1,6 @@
 ---
 date: ""
-title: As a developer I want to migrate alarms widget to the Angular
+title: Redesign of the alarms feature
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

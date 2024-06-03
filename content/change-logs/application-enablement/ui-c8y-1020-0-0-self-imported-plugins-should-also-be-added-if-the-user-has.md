@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-59272
 version: 1020.0.0
 ---
-In case a user upgrades one of the default web applications (for example Cockpit) after it has been cloned, it would only include the plugins that the application had offered during the initial clone/installation of the application.
+If users upgraded one of the default web applications (for example, Cockpit) after it had been cloned, it would only include the plugins that the application had offered during the initial clone/installation of the application.
 In case additional `self-imported` plugins were introduced in the upgraded version, these would not have been present when using the application.
 
 This especially caused issues when features of applications which were previously present as standard Angular modules were migrated to self-imported module federation plugins, as these features were missing until the plugin was manually installed to the application.

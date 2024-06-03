@@ -4,7 +4,7 @@ title: REST APIs for Edge
 layout: bundle
 ---
 
-For information about the REST APIs for Edge, see the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/10.18.0/).
+For information about the REST APIs for Edge, see the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/).
 
 {{< c8y-admon-important >}}
 

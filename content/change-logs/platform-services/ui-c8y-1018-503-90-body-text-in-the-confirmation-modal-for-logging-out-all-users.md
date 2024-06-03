@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Confirmation modal for logging out all users now translated correctly
+title: Confirmation message on logging out all users now translated correctly
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

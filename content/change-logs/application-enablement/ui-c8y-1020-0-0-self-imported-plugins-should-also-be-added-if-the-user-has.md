@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Allow self-imported plugins to be added even if user already has plugins
+title: Allow self-imported plugins to be added even if a user already has plugins
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

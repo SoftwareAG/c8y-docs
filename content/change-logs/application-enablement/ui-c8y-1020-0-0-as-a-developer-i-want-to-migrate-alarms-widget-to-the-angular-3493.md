@@ -22,7 +22,7 @@ A redesign of the alarms feature was introduced with both visual and functional 
 
 **Functional improvements**:
 
-* The "Alarms" view now only shows one single list of alarms, in which filters can be applied.
+* The alarms view now only shows one single list of alarms, in which filters can be applied.
 * A details section has been introduced which contains all information related to the alarm.
 * The functionalities of the "Alarm list", "All critical alarms", and "Recent alarms" widgets have been merged into a single, comprehensive widget called "Alarm list".
 * The "Alarm list" widget has been migrated to Angular.

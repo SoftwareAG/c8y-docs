@@ -50,7 +50,7 @@ Sending the acknowledgement tells the server that the consumer has successfully 
 allowing the server to forget the message.
 Each acknowledgement is unique to a particular notification and consumer. Batch and cumulative acknowledgements are _not_ supported.
 
-If too many of a consumer's notifications (1000  by default) remain unacknowledged, 
+If too many of a consumer's notifications (1000 by default) remain unacknowledged, 
 the flow of notification messages to that consumer will stop until some of its unacknowledged messages are acknowledged.
 It is therefore best practise to process and acknowledge them quickly, to minimise the potential for a connection interruption causing a need to redeliver them.
 An acknowledgement should not be sent until its notification has been successfully processed.
@@ -74,7 +74,7 @@ If the notification is binary data or includes binary data then it will be [Base
 The header lines for a notification are as follows (separated by `\n` newlines):
 
 * Required message identifier for message acknowledgement. This opaque value is an encoded binary 64 bit value. 
-  After the consumer has finished processing a notification, it _must_ be send this header back to the server to [acknowledge the notification](../notifications/#notification-acknowledgements).
+  After the consumer has finished processing a notification, it _must_ send this header back to the server to [acknowledge the notification](../notifications/#notification-acknowledgements).
 
 * The [notification description](../notifications/#notification-description-header) on the second header line. This is a string describing what type of notification this is and its source. Measurements ("measurements"), events ("events") and alarms ("alarms") are examples of notifications, as are inventory creates, updates and deletes ("managedObjects"). There is a direct correspondence with realtime notifications which features similar notification descriptions. These are not enumerated here and are expected to increase in number in the future. For REST API notifications, they follow a 3 part format, separated by "/". More details on notification descriptions is given below.
 

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Missing german translation in successmessage in bulk device upload (#6325) [GRAFT][release/cd] (#6455)
+title: Added missing German translation in success message for bulk device upload
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

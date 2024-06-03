@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-06-03
 title: Removal of deprecated JWT login mode
 product_area: Platform services
 change_type:

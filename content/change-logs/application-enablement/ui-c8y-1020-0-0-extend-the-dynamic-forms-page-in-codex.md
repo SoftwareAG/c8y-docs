@@ -4,7 +4,7 @@ title: Extended information on dynamic forms in Codex
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
-    label: Feature
+    label: Improvement
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK

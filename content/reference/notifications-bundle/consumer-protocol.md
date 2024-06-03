@@ -102,9 +102,8 @@ Some examples are provided in [Traces](#traces) and backwards compatibility to r
 ### Dealing with notification duplication
 When a WebSocket connection is lost, whether that is due to deliberate connection closure or connection failure,
 messages that were received but not successfully acknowledged before the connection loss are sent to the consumer again when it reconnects.
-This can result in duplicate messages being received by the consumer.
-Additionally, message acknowledgement is handled in batches by the server - this means any messages in the current (partially acknowledged) batch
-will also be resent, even though they may have been successfully acknowledged.
+This can result in duplicate messages being received by the consumer. 
+Those duplicates can sometimes include acknowledged messages as these may be on-the-wire from the consumer to the server when the connection is lost.
 
 Notification messages do not contain any specific unique identifiers to aid in de-duplication. 
 Therefore, any de-duplication of messages must be done by the consumer based upon the [notification description header](../notifications/#notification-description-header) and payload. 

@@ -18,7 +18,7 @@ A redesign of the alarms feature was introduced with both visual and functional 
 
 **Visual and UX enhancements**:
 
-* The way alarms are displayed in the "Alarms" view and widgets has been redesigned.
+* The way alarms are displayed in the alarms view and widgets has been redesigned.
 
 **Functional improvements**:
 

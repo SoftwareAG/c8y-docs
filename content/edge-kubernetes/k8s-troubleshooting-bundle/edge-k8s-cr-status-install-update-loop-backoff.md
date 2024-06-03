@@ -21,8 +21,8 @@ API Version: edge.cumulocity.com/v1
 Kind: CumulocityIoTEdge
 
 Status:
-	Deploying Generation: x
-	State: InstallLoopBackOff
+  Deploying Generation: x
+  State: InstallLoopBackOff
 
 Events:
  Type    Reason               Age    From               Message

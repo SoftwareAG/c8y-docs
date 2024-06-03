@@ -8,7 +8,8 @@ When {{< product-c8y-iot >}} Edge is deployed behind a proxy, it must be configu
 To configure Edge to use a proxy, you must create or update a ConfigMap named `custom-environment-variables` in the c8yedge namespace (or the one you deployed Edge into) with the required proxy settings. The keys `http_proxy`, `https_proxy` and `socks_proxy` must be set to the URLs of the HTTP, HTTPS and Socks proxies, respectively. The key `no_proxy` must be set to specify a comma-separated list of domain suffixes, IP addresses, or CIDR ranges that Edge should bypass the proxy server for.
 
 Here is an example of a ConfigMap with proxy settings:
-`
+
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -18,7 +19,7 @@ data:
   https_proxy: http://proxy-server-ip:port
   socks_proxy: socks5://proxy-server-ip:port
   no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain name, for example, myown.iot.com>,<Kubernetes cluster IP range, for example, 10.43.0.0/16>
-`
+```
 
 By configuring Edge with the appropriate proxy settings, you ensure that it can seamlessly communicate with external endpoints through the proxy server, allowing it to function effectively in environments where proxy usage is mandated.
 

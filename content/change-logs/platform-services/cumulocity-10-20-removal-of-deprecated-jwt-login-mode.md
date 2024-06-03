@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-53448
 version: 10.20.0
 ---
-JWT authentication with {{< product-c8y-iot >}} is deprecated since release 10.6 and will be removed in Q3 2024 for the SaaS instances and in 2025 for the yearly releases.
+JWT authentication with {{< product-c8y-iot >}} has been deprecated since release 10.6 and will be removed in Q3 2024 for the SaaS instances and in 2025 for the yearly releases.
 This authentication method is not to be confused with SSO (single sign-on) or OAI-Secure authentication, which are both recommended and still supported.
 This change will only impact you if your organization used an early version of SSO on {{< product-c8y-iot >}}.
 For customers on the public cloud instances we will get in touch with you if you are using this type of authentication.

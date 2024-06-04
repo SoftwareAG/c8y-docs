@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59044
 version: 1020.0.11
 ---
-Update report icon in navigator (#6411) [GRAFT][release/cd] (#6474)
+To improve the user experience and make the reports feature more discoverable, the icon for the reports menu item in the navigator has been updated. The new icon aligns better with the overall design and is more intuitive for users to recognize.

@@ -39,6 +39,6 @@ If you delete a device type dashboard, it gets deleted from all devices that hav
 ### To edit type dashboard {#to-edit-type-dashboard}
 
 Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> on the corresponding row to open list with all devices that has access to the dashboard.
-Click the  open instance icon <i class="dlt-c8y-icon-file-create text-primary icon-20"></i> to navigate to dashboard view in context of the device. Then, see [To edit a dashboard](/cockpit/working-with-dashboards/#to-edit-a-dashboard) for more.
+In the **Select dashboard instance to edit** dialog window, select the desired device and click the open instance icon <i class="dlt-c8y-icon-file-create text-primary icon-20"></i> on the right to navigate to dashboard assigned to this device. Now you can edit the dashboard settings or widgets. See [To edit a dashboard](/cockpit/working-with-dashboards/#to-edit-a-dashboard) for more detailed information.
 
 <img src="/images/users-guide/cockpit/dashboard-manager-edit.png" name="Dashboard manager edit"/>

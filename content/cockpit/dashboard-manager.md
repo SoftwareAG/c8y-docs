@@ -19,6 +19,8 @@ Dashboards can be removed via the list. Moreover you can view all devices that h
 Dashboard manager shows a list of device type dashboards by aggregating all dashboards that have a device type assigned.
 It also provides information about the number of devices that have access to a particular dashboard, date of creation and last modification date.
 
+To open Dashboard manager, click **Dashboard manager** in the **Configuration** menu of the navigator.
+
 <img src="/images/users-guide/cockpit/dashboard-manager.png" name="Dashboard manager"/>
 
 

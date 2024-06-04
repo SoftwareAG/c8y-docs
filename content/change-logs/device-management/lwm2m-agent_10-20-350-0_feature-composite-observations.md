@@ -1,6 +1,6 @@
 ---
 date:
-title: LWM2M composite observations are now fully supported
+title: LWM2M agent can cancel observations using both cancel methods 
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2936
 version: 10.20.350.0
 ---
-LWM2M agent is now able to establish and cancel observations in composite mode. 
+LWM2M agent is now able to establish observations in single or composite mode and cancel them using "reset" or "GET with observe" methods.  

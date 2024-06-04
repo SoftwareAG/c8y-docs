@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2948
 version: 10.20.350.0
 ---
-LWM2M agent is now able to send POST operations to the device.
+The LWM2M agent is now able to send POST operations to the device.

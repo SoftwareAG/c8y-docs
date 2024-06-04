@@ -116,8 +116,7 @@ Once all required asset models are created, you can start creating [assets](/dtm
 4. Click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> next to the checkbox to remove the child asset model from the selected asset model.
 
 {{< c8y-admon-info>}}
-If you do not select and check a child asset model, then the asset cannot have any subassets. <br>
-The selected child asset models are not listed in the dropdown menu.
+If you do not select and check a child asset model, then the asset cannot have any subassets.
 {{< /c8y-admon-info>}}
 
 If one or more child asset models are checked as required, an asset created with this asset model can have only subassets belonging to the selected child asset models.
@@ -139,8 +138,7 @@ If the asset model is "Rotor" and you select "Blade" as an allowed child asset m
 
 {{< c8y-admon-info>}}
 To assign a location to an asset, add the default property Location to the asset model. For more info on default properties, see [Default properties](#default-properties).<br>
-If there are any validation errors for a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**. <br>
-The selected asset properties are not listed in the dropdown.
+If there are any validation errors for a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
 {{< /c8y-admon-info>}}
 
 If there is no asset property meeting your requirements when you search, click **New asset property**. For more details on how to create a new asset property see [To create an asset property](#to-create-an-asset-property).

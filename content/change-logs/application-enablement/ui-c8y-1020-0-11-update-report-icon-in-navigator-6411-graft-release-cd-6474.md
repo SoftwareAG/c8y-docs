@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59044
 version: 1020.0.11
 ---
-Previously, when report with 'Show in navigator' feature enabled has icon changed, icon was not updated in navigator. Currently, icon is updated in navigator as soon as changes are saved.
+Previously, when a report with the **Show in navigator** option enabled had its icon changed, the icon was not updated in the navigator. With this fix, the icon is updated in the navigator as soon as changes are saved.

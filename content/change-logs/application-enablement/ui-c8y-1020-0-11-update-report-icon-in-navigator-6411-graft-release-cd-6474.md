@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Update report icon in navigator
+title: Update report icon in navigator issue fix
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59044
 version: 1020.0.11
 ---
-To improve the user experience and make the reports feature more discoverable, the icon for the reports menu item in the navigator has been updated. The new icon aligns better with the overall design and is more intuitive for users to recognize.
+Previously, when report with 'Show in navigator' feature enabled has icon changed, icon was not updated in navigator. Currently, icon is updated in navigator as soon as changes are saved.

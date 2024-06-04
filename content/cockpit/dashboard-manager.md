@@ -13,7 +13,7 @@ helpcontent:
     content: "This dashboard manager shows a list of device type dashboards by aggregating all dashboards that have a device type assigned. 
     
 
-Dashboards can be removed via the list. Moreover you can view all devices that have access to a particular dashboard. Dashboards can be edited by navigating to the device view."
+Dashboards can be deleted via the list. Moreover you can view all devices that have access to a particular dashboard. Dashboards can be edited by navigating to the device view."
 ---
 
 Dashboard manager shows a list of device type dashboards by aggregating all dashboards that have a device type assigned.
@@ -28,9 +28,9 @@ To open Dashboard manager, click **Dashboard manager** in the **Configuration** 
 
 To add a new dashboard for a device type select the device from the device list in the **Groups** menu, refer to [To create a dashboard](/cockpit/working-with-dashboards/#to-create-a-dashboard) and [Dashboard template](/cockpit/working-with-dashboards/#dashboard-template) for more information. 
 
-### To remove type dashboard {#to-remove-type-dashboard}
+### To delete type dashboard {#to-delete-type-dashboard}
 
-To remove a device type dashboard, navigate to the device list in the **Groups** menu or the **Dashboard manager** in the **Configuration menu**. In the row of the selected dashboard, click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> on the right.
+To delete a device type dashboard, navigate to the device list in the **Groups** menu or the **Dashboard manager** in the **Configuration menu**. In the row of the selected dashboard, click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> on the right.
 
 {{< c8y-admon-info >}}
 If you delete a device type dashboard, it gets deleted from all devices that have access to it. It is not possible to delete a device type dashboard from a single device.

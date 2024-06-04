@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Update report icon in navigator issue fix
+title: Report icon correctly updated in navigator
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

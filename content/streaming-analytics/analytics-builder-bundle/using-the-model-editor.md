@@ -192,7 +192,7 @@ You can also view the block reference directly in this documentation. See [Analy
 ##### To view the documentation for a block {#to-view-the-documentation-for-a-block}
 
 1.  In the model editor, click the block for which you want to view the documentation. You can do this in the palette or on the canvas.
-2.  If the documentation pane is currently not shown, click the area that contains the document icon <img src="/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png" alt="Document icon" style="display:inline-block; margin:0"> \(shown at the right of the canvas\) to display the documentation pane. Clicking that area again hides the documentation pane.
+2.  If the documentation pane is currently not shown, click the area that contains the document icon <i class="c8y-icon c8y-icon-book text-primary icon-20"></i>  \(shown at the right of the canvas\) to display the documentation pane. Clicking that area again hides the documentation pane.
 3.  If you want to resize the documentation pane \(for example, to make it larger\), move the mouse pointer over the area that contains the document icon. Click and hold down the mouse button and drag the mouse to the left or right \(to make the documentation pane wider or smaller\).
 
 #### Selecting blocks and wires {#selecting-blocks-and-wires}

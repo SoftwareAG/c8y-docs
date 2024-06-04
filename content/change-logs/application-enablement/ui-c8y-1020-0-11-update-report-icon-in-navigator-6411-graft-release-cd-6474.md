@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Update report icon in navigator (#6411) [GRAFT][release/cd] (#6474)
+title: Update report icon in navigator
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

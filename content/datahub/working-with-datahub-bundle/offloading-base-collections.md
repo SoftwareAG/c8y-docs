@@ -186,6 +186,10 @@ Try to ensure that the data you feed into the measurements base collection is co
 
 ##### Offloading measurements with the TrendMiner target table layout {#offloading-measurements-with-the-trendminer-target-table-layout}
 
+{{< c8y-admon-important >}}
+The integration with TrendMiner will be discontinued. The offloading mode specifically designed for the interaction with TrendMiner is deprecated and will be removed in a future release.
+{{< /c8y-admon-important >}}
+
 When using the TrendMiner layout, all measurements are offloaded into one table **c8y_cdh_tm_measurements**. Their corresponding type is stored in column **type**. The column **unit** defines the unit, while the column **value** defines the value of the measurement. The column **tagname** is used by TrendMiner to search for specific series. It is composed of the source, the fragment, and the series as stored in the measurements collection.
 
 The resulting schema is defined as follows:

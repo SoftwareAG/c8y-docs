@@ -44,11 +44,11 @@ Headers occur first in the message and are separated by new line characters. The
 separated from the last header by 2 new line characters (one blank line occurs between the last header and the payload).
 The first header in the message is always the acknowledgement header. 
 
-When the client has _finished_ processing a notification message,
-it _must_ send that message's acknowledgement header back to the server on the same connection the message was received on. 
-Sending the acknowledgement tells the server that the consumer has successfully received _and processed_ that message, 
+When the client has finished processing a notification message,
+it must send that message's acknowledgement header back to the server on the same connection the message was received on. 
+Sending the acknowledgement tells the server that the consumer has successfully received and processed that message, 
 allowing the server to forget the message.
-Each acknowledgement is unique to a particular notification and consumer. Batch and cumulative acknowledgements are _not_ supported.
+Each acknowledgement is unique to a particular notification and consumer. Note that batch and cumulative acknowledgements are not supported.
 
 If too many of a consumer's notifications (1000 by default) remain unacknowledged, 
 the flow of notification messages to that consumer will stop until some of its unacknowledged messages are acknowledged.
@@ -57,7 +57,7 @@ An acknowledgement should not be sent until its notification has been successful
 Otherwise, for example, if the client crashed during or before such processing,
 the message may be lost as acknowledged messages are not (usually) resent by the server.
 
-The *hello-world-notification-microservice* example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice)
+The hello-world-notification-microservice example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice)
 shows an example of how to send the acknowledgement back to the server in a self-contained WebSocket text message. 
 It should be sent without quotation marks (it is not a JSON message) and without any trailing new-line characters.
 
@@ -74,9 +74,9 @@ If the notification is binary data or includes binary data then it will be [Base
 The header lines for a notification are as follows (separated by `\n` newlines):
 
 * Required message identifier for message acknowledgement. This opaque value is an encoded binary 64 bit value. 
-  After the consumer has finished processing a notification, it _must_ send this header back to the server to [acknowledge the notification](../notifications/#notification-acknowledgements).
+  After the consumer has finished processing a notification, it must send this header back to the server to [acknowledge the notification](../notifications/#notification-acknowledgements).
 
-* The [notification description](../notifications/#notification-description-header) on the second header line. This is a string describing what type of notification this is and its source. Measurements ("measurements"), events ("events") and alarms ("alarms") are examples of notifications, as are inventory creates, updates and deletes ("managedObjects"). There is a direct correspondence with realtime notifications which features similar notification descriptions. These are not enumerated here and are expected to increase in number in the future. For REST API notifications, they follow a 3 part format, separated by "/". More details on notification descriptions is given below.
+* The [notification description](../notifications/#notification-description-header) on the second header line. This is a string describing what type of notification this is and its source. Measurements ("measurements"), events ("events") and alarms ("alarms") are examples of notifications, as are inventory creates, updates and deletes ("managedObjects"). There is a direct correspondence with realtime notifications which features similar notification descriptions. These are not enumerated here and are expected to increase in number in the future. For REST API notifications, they follow a three-part format, separated by "/". For more details on notification descriptions see [Notification description header](#notification-description-header) .
 
 * An action string is the third header. Examples are CREATE, UPDATE and DELETE. More actions may be added in the future. Together with the notification type they describe the logical event that generated the notification, such as a CREATE of an alarm or measurement.
 
@@ -107,16 +107,16 @@ Those duplicates can sometimes include acknowledged messages as these may be on-
 
 Notification messages do not contain any specific unique identifiers to aid in de-duplication. 
 Therefore, any de-duplication of messages must be done by the consumer based upon the [notification description header](../notifications/#notification-description-header) and payload. 
-Note: the acknowledgement header is _not_ guaranteed to be unique across consumer reconnections (and consumer reconnections may be involved when there is duplication).
+Note that the acknowledgement header is not guaranteed to be unique across consumer reconnections. Consumer reconnections can be involved when there are duplicates.
 
-Some events are easy to de-duplicate, such as inventory events where a unique source object is first CREATED and then DELETED. 
+Some events are easy to de-duplicate, such as inventory events where a unique source object is first created and then deleted. 
 It will often be possible to use the notification message headers to determine these cases.
-However, inventory UPDATES or logically sequenced events such as alarms and measurements will typically require application-specific understanding of the payload fields.
+However, inventory updates or logically sequenced events such as alarms and measurements will typically require application-specific understanding of the payload fields.
 Ideally the payload would include a field specifically for that purpose. If it is not possible to include such a field in the payload,
 then other existing fields will have to be used, maybe on a best effort basis.
 
 A specific field in the payload would typically be a [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) or increasing sequence number. 
 The latter may aid the efficiency of de-duplication by using ordering, 
-though the sequence numbers will be unrelated across publishers (typically IoT devices) when the messages are originated from more than one publisher. 
-Any messages received from the same publisher with a lower sequence number than the last one processed from that publisher can be quickly discarded 
-(assuming the sequence has not rolled over). It is also easier for a human to understand that the ordering is correct and all messages are present.  
+though the sequence numbers will be unrelated across publishers, typically IoT devices, when the messages are originated from more than one publisher. 
+Any messages received from the same publisher with a lower sequence number than the last one processed from that publisher can be quickly discarded, 
+assuming the sequence has not rolled over. It is also easier for a human to understand that the ordering is correct and all messages are present.  

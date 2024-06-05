@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-1307
 version: 1020.1.8
 ---
-In the **Import asset model** dialog, users can now see Child asset models and Asset properties columns in the preview step.
+In the **Import** dialog for asset models, users can now see **Child asset models** and **Asset properties** columns in the preview step.

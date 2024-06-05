@@ -1,6 +1,6 @@
 ---
 date: 2024-05-30
-title: Improved dropdown for Child Asset Models and Asset properties
+title: Improved dropdown for child asset models and asset properties
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-1217
 version: 1020.1.8
 ---
-When adding child asset models or asset properties to an asset model, those already added will no longer appear in the options.
+When adding child asset models or asset properties to an asset model, those already added will no longer appear in the dropdown list.

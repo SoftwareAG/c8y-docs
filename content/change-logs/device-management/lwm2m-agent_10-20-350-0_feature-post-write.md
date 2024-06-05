@@ -1,6 +1,6 @@
 ---
 date:
-title: LWM2M write operation using POST is now fully supported
+title: LWM2M write operation using "Partial Update" mode is now fully supported
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2948
 version: 10.20.350.0
 ---
-The LWM2M agent is now able to send POST operations to the device.
+Previous versions of the LWM2M agent supported "Write" operation only in "Replace" mode. This version introduces additional "Partial Update" mode by using "writep" command.

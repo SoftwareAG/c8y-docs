@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2936
 version: 10.20.350.0
 ---
-LWM2M agent is now able to establish observations in single or composite mode and cancel them using "reset" or "GET with observe" methods.  
+In the previous versions of LWM2M agent it was possible to cancel observations, but only by using the "reset" method. This version introduces possibility to use "GET with observe" cancellation method.  

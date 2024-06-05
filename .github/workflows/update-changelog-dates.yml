@@ -1,5 +1,19 @@
 name: Update changelog dates
 on:
+  workflow_call:
+    inputs:
+      date:
+        description: 'The date this component was deployed to the environment.'
+        required: true
+        type: string
+      version:
+        description: 'Version of the component that has been deployed to the environment.'
+        required: true
+        type: string
+      component:
+        description: 'The name of the component that has been deployed to the environment.'
+        required: true
+        type: string
   workflow_dispatch:
     inputs:
       date:

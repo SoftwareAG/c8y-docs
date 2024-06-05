@@ -22,10 +22,8 @@ console.log(component, version, date);
 processFiles();
 
 async function processFile(filePath: string): Promise<boolean> {
-  //   const fileContent = readFileSync(filePath, { encoding: "utf-8" });
   const matterResult = await matterRead(filePath);
   const { data, content, orig } = matterResult;
-  // const frontMatterResult = fm<{date?: Date | string, version?: string}>(content);
   if (!!data.date) {
     console.debug("Date already set for: ", filePath, "Skipping..");
     return false;

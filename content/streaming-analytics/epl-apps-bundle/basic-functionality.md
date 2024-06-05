@@ -56,9 +56,16 @@ From this page, you can:
 
 ##### Step 2 - Create an EPL app {#step-2---create-an-epl-app}
 
-Click **New EPL app** in the top menu bar. Give the app a unique name. If you add the app without specifying an app name, the default name "App#" will be used. You can also enter a description which will be shown on the card that is created for the new app.
+Click **New EPL app** in the top menu bar. In the resulting **Create app** dialog box, enter a unique app name.
+You can also enter a description which will be shown on the card that is created for the new app. Click **Done**.
 
-The EPL editor is shown next. The EPL code for the new app already contains the typical basic event definitions and utilities that are required for working with {{< product-c8y-iot >}}. You can adapt them as required for your app. Consult the documentation and samples for more details.
+The EPL editor appears. The EPL code for the new app already contains the typical basic event definitions and utilities that are required for working with {{< product-c8y-iot >}}. You can adapt them as required for your app. Consult the documentation and samples for more details.
+
+{{< c8y-admon-info>}}
+When you click **Cancel** without specifying an app name, the EPL editor also appears and the default name "App#" is then shown.
+You can edit the EPL code, but as long as you do not specify an app name, you will not be able to save the app.
+Click the default name "App#" and specify an app name in the resulting dialog box.
+{{< /c8y-admon-info>}}
 
 ![EPL editor](/images/streaming-analytics/epl-apps/epl-apps-editor.png)
 

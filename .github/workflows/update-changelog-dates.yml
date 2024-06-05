@@ -6,6 +6,7 @@ on:
         description: 'The date this component was deployed to the environment.'
         required: true
         type: string
+        default: '2024-06-05'
       version:
         description: 'Version of the component that has been deployed to the environment.'
         default: '1020.0.10'
@@ -44,7 +45,7 @@ jobs:
 
     - name: Generate branch name
       id: branch-name
-      run: echo "branch-name=update-changelog-dates/${{ inputs.component }}-${{ inputs.version }}-${{ inputs.date }}" >> $GITHUB_ENV
+      run: echo "branch-name=update-changelog-dates/${{ inputs.component }}-${{ inputs.version }}-${{ inputs.date }}" >> $GITHUB_OUTPUT
 
     - name: Checkout branch
       run: |

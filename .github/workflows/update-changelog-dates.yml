@@ -34,41 +34,41 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-			- name: Checking out
-				uses: actions/checkout@v3
+    - name: Checking out
+      uses: actions/checkout@v3
 
-			- name: Set git user
-				run: |
-					git config user.name "c8y-ui-build-descriptor[bot]"
-					git config user.email "c8y-ui-build-descriptor[bot]@users.noreply.github.softwareag.com"
+    - name: Set git user
+      run: |
+        git config user.name "c8y-ui-build-descriptor[bot]"
+        git config user.email "c8y-ui-build-descriptor[bot]@users.noreply.github.softwareag.com"
 
-			- name: Generate branch name
-				id: branch-name
-				run: echo "branch-name=update-changelog-dates/${{ inputs.component }}-${{ inputs.version }}-${{ inputs.date }}" >> $GITHUB_ENV
+    - name: Generate branch name
+      id: branch-name
+      run: echo "branch-name=update-changelog-dates/${{ inputs.component }}-${{ inputs.version }}-${{ inputs.date }}" >> $GITHUB_ENV
 
-			- name: Checkout branch
-				run: |
-					git checkout -b ${{ steps.branch-name.outputs.branch-name }}
+    - name: Checkout branch
+      run: |
+        git checkout -b ${{ steps.branch-name.outputs.branch-name }}
 
-			- name: Use Node.js
-				uses: actions/setup-node@v3
-				with:
-					node-version: 20
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
 
-			- name: Update changelog files
-				run: |
-					cd add-release-dates
-					npm ci
-					npm start ${{ inputs.component }} ${{ inputs.version }} ${{ inputs.date }}
+    - name: Update changelog files
+      run: |
+        cd add-release-dates
+        npm ci
+        npm start ${{ inputs.component }} ${{ inputs.version }} ${{ inputs.date }}
 
-			- name: Git add
-				run: |
-					git add content/change-logs
+    - name: Git add
+      run: |
+        git add content/change-logs
 
-			- name: Git commit
-				run: |
-					git commit -m "Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released"
+    - name: Git commit
+      run: |
+        git commit -m "Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released"
 
-			- name: Git push
-				run: |
-					git push -u origin ${{ steps.branch-name.outputs.branch-name }}
+    - name: Git push
+      run: |
+        git push -u origin ${{ steps.branch-name.outputs.branch-name }}

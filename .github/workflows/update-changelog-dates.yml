@@ -36,23 +36,23 @@ jobs:
     timeout-minutes: 15
     steps:
     - name: Checking out
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set git user
       run: |
-        git config user.name "c8y-ui-build-descriptor[bot]"
-        git config user.email "c8y-ui-build-descriptor[bot]@users.noreply.github.softwareag.com"
+        git config --global user.name "${GITHUB_ACTOR}"
+        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
     - name: Generate branch name
       id: branch-name
-      run: echo "branch-name=update-changelog-dates/${{ inputs.component }}-${{ inputs.version }}-${{ inputs.date }}" >> $GITHUB_OUTPUT
+      run: echo "branch-name=update-changelog-dates/${{ inputs.component }}_${{ inputs.version }}_${{ inputs.date }}" >> $GITHUB_OUTPUT
 
     - name: Checkout branch
       run: |
         git checkout -b ${{ steps.branch-name.outputs.branch-name }}
 
     - name: Use Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 20
 

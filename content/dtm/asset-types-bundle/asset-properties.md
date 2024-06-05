@@ -74,11 +74,6 @@ Note that the key is automatically generated based on the label. You can modify 
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>
-<td style="text-align:left"><b>Order</b></td>
-<td style="text-align:left">Used to define the order in which the key value pairs of a complex property must be shown.</td>
-<td style="text-align:left">Optional</td>
-</tr>
-<tr>
 <td style="text-align:left"><b>Type</b></td>
 <td style="text-align:left">Defines the type of the asset property. It can be any of the following categories – <a href="#text" class="no-ajaxy">Text</a>, <a href="#number" class="no-ajaxy">Number</a>, <a href="#date-picker" class="no-ajaxy">Date picker</a>, <a href="#enumeration" class="no-ajaxy">Enumeration</a>, <a href="#boolean" class="no-ajaxy">Boolean</a> or <a href="#file-upload" class="no-ajaxy">File upload</a>.</td>
 <td style="text-align:left">Mandatory</td>
@@ -92,8 +87,7 @@ Note that the key is automatically generated based on the label. You can modify 
 </table>
 
 {{< c8y-admon-info>}}
-The **Default value** field is only shown if the selected **Type** is either "Text" or "Number". <br>
-The **Order** field is shown only for complex properties with an exception for Default properties. See [Default properties](#default-properties) to view the list of properties available.
+The **Default value** field is only shown if the selected **Type** is either "Text" or "Number".
 {{< /c8y-admon-info>}}
 
 Once you have defined all necessary asset properties for your project, you must define the [asset models](/dtm/asset-types/#asset-models).
@@ -294,14 +288,14 @@ If the asset property is called "Gearbox specifications" with the key "gearbox_s
 
 Follow the steps below:
 
-1. On the **Asset properties** page, click **Export asset properties**. In the resulting dialog box, you see the list of asset properties along with their description and type.
+1. On the **Asset properties** page, click **Export**. In the resulting dialog box, you see the list of asset properties along with their description and type.
 2. Select one or more desired asset properties and click **Export**.
 3. The dialog closes and a JSON file named 'Export-asset-properties.json' downloads.
 
 Use the downloaded file to import the asset properties into a DTM application on another tenant.
 
 {{< c8y-admon-info>}}
-Default properties are not listed under **Export asset properties**. See [Default properties](#default-properties) to view the list of properties available.
+Default properties are not listed under **Export**. See [Default properties](#default-properties) to view the list of properties available.
 You can export a maximum of 500 asset properties at a time.
 {{< /c8y-admon-info>}}
 
@@ -311,7 +305,7 @@ You can export a maximum of 500 asset properties at a time.
 
 To import asset properties into the DTM application, follow the steps below:
 
-1. On the **Asset properties** page, click **Import asset properties**.
+1. On the **Asset properties** page, click **Import**.
 2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset properties from a DTM application on another tenant.
 3. Click **Next** to preview the asset properties before importing them.
 4. Click **Import** to import the asset properties.

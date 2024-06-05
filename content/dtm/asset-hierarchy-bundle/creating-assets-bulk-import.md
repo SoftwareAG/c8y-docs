@@ -45,9 +45,9 @@ By default, you have full access to assets created by you regardless of permissi
 
 Follow the steps below:
 
-1. Navigate to the **Assets** page and click **Import assets**.
+1. Navigate to the **Assets** page and click **Import**.
 
-2. The **Import assets** dialog has a dropdown **Select asset model**. If you have added the asset models, all the root asset models are listed in the dropdown.
+2. The **Import** dialog has a dropdown **Select asset model**. If you have added the asset models, all the root asset models are listed in the dropdown.
 
 3. Select the asset model for which you want to create the asset hierarchy.
 
@@ -162,9 +162,9 @@ It is recommended to import a maximum of 5000 assets at a time for a better user
 
 To upload the CSV template follow the steps below:
 
-1. Click **Import assets** in the **Assets** page.
+1. Click **Import** in the **Assets** page.
 
-2. Select the asset model in the **Import assets** dialog.
+2. Select the asset model in the **Import** dialog.
 
 3. Upload the previously filled and saved CSV template in the **Drop file here** section and click **Import**.
 
@@ -185,7 +185,7 @@ If the asset hierarchy already exists, and you want to import more assets, it ca
 
 To import subassets or the subasset hierarchy:
 
-1. Navigate to the **Asset tree** page of the subasset and download the template using **Import assets**.
+1. Navigate to the **Asset tree** page of the subasset and download the template using **Import**.
 
 2. Fill in the details for the subasset hierarchy in the CSV template. See [CSV template parameters](#csv-template-parameters) for more details.
 
@@ -194,9 +194,9 @@ From any hierarchy level, the template will be downloaded only for its child hie
 Assets must only be imported for the child hierarchy.
 	{{< /c8y-admon-info>}}
 
-4. Click **Import assets**.
+4. Click **Import**.
 
-5. Upload the CSV template in the **Drop file here** section in the **Import assets** dialog and click **Import**.
+5. Upload the CSV template in the **Drop file here** section in the **Import** dialog and click **Import**.
 
 If all details are mentioned correctly in the CSV template, the subasset hierarchy is created successfully.
 

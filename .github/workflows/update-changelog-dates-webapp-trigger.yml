@@ -1,6 +1,9 @@
 name: Update changelog dates for webapps trigger
 on:
   workflow_dispatch:
+  schedule:
+    # Every Thursday at 18:33
+    - cron: '33 18 * * 4'
 
 permissions:
   pull-requests: write

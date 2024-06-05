@@ -12,4 +12,4 @@ build_artifact:
   - value: tc-H-tuq-8Es
     label: cdh
 ---
-{{< product-c8y-iot >}} DataHub offers for the offloading of the measurements collection a TrendMiner mode, which is designed for the specific interaction with TrendMiner. This mode is deprecated and will be removed in a future release as the integration with TrendMiner will be discontinued.
+For the offloading of the measurements collection {{< product-c8y-iot >}} DataHub offers a TrendMiner mode, which is designed for the specific interaction with TrendMiner. This mode is deprecated and will be removed in a future release as the integration with TrendMiner will be discontinued.

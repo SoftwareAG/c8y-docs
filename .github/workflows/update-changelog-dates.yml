@@ -73,3 +73,9 @@ jobs:
     - name: Git push
       run: |
         git push -u origin ${{ steps.branch-name.outputs.branch-name }}
+
+    - name: Create pull request
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh pr create -B ${{ github.ref }} -H ${{ steps.branch-name.outputs.branch-name }} --title 'Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released' --body 'Created by [Github action](${{ github.server_url }}/${{ github.event.repository.owner }}/${{ github.event.repository.name }}/actions/workflows/${{ github.workflow_ref }})' --assignee ${{ github.actor }}

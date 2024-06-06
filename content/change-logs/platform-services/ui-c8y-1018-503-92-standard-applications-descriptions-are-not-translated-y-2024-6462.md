@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Standard application descriptions are not translated
+title: Standard application descriptions now properly translated
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

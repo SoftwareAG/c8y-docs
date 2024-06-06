@@ -4,6 +4,10 @@ title: Enhanced time series support
 layout: bundle
 section:
   - platform_administration
+helpcontent:
+  - label: timeseries-migration
+    title: Timeseries migration feture
+    content: "The **Timeseries migration** page shows tenants for which timeseries migration process can be triggered. There are 2 areas on the page for current tenant and for subtenants. Each section shows date of the oldest measurement available in database, date of migration startprogress, date of newest measurement in database, date of current progress state of migration in percentage."
 ---
 
 The {{< product-c8y-iot >}} Operational Store provides an enhanced time series support (so-called time series collections) for measurements data. The following section summarizes how to enable/disable this feature.

@@ -6,4 +6,4 @@ section:
   - edge_server
 ---
 
-See [Available applications](/get-familiar-with-the-ui/available-applications/).
+See [Available applications](/get-familiar-with-the-ui/available-applications/) for more information.

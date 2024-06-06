@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAB-2240
 version:
 ---
-Previously, icons that could not be used when a model was active (that is, in read-only mode) were shown as disabled in the model editor's toolbar. This has been changed so that icons that cannot be used in read-only mode (such as the save icon) are no longer displayed in the toolbar.
+Previously, icons that could not be used when a model was active (that is, in read-only mode) were shown as disabled in the model editor's toolbar. To improve usability when in read-only mode, icons that cannot be used (such as the save icon) are no longer displayed in the toolbar.

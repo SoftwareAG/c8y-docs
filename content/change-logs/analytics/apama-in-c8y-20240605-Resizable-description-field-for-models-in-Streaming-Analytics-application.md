@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAB-4324
 version:
 ---
-When adding a new model or when editing the name of a model in the Streaming Analytics application, you can now resize the **Description** field. This is helpful when editing or viewing a longer description, especially in the case of the samples that have very detailed descriptions.
+When adding a new model or when editing the name of a model in the Streaming Analytics application, you can now resize the **Description** field. This is helpful when editing or viewing a longer description, including the case of the samples that have very detailed descriptions.

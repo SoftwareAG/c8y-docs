@@ -15,10 +15,10 @@ Data broker and Edge connectivity are compatible only with the current version a
 
 You can share the following data with the tenant account:
 
-* devices (and more generically, managed objects)
-* events
-* alarms
-* measurements
+* Devices (and more generically, managed objects)
+* Events
+* Alarms
+* Measurements
 
 {{< c8y-admon-important >}}
 Data broker in Edge does not support synchronization of the [operations](/concepts/domain-model/#operations).
@@ -30,7 +30,7 @@ A data connector describes the subset of the data that you would like to send to
 
 To create a data connector and upload the data to the tenant account, perform the following steps:
 
-1. In your Edge, log in to the *edge* tenant.
+1. In your Edge, log in to the "edge" tenant.
 
 2. In your Edge, go to the Administration application. Click **Data broker** > **Data connectors**.
 

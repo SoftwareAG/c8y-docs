@@ -9,13 +9,22 @@ When subscribed, such a custom codec microservice automatically creates the requ
 
 To create a custom codec microservice using this library, do the following:
 
-1. Create a Spring Boot application and annotate its main class with:
+1. Add the following dependency to the pom.xml file:
+
+  <dependency>
+          <groupId>com.nsn.cumulocity.clients-java</groupId>
+          <artifactId>lpwan-custom-codec</artifactId>
+          <version>${c8y.version}</version>
+      </dependency>
+
+
+2. Create a Spring Boot application and annotate its main class with:
 
     ```java
     @CodecMicroserviceApplication `com.cumulocity.microservice.lpwan.codec.annotation.CodecMicroserviceApplication`
     ```
 
-2. Implement the following Java interfaces and annotate them with:
+3. Implement the following Java interfaces and annotate them with:
 
     ```java
     @Component `org.springframework.stereotype.Component`
@@ -65,7 +74,7 @@ To create a custom codec microservice using this library, do the following:
         }
         ```
 
-3. Add the following roles as `requiredRoles` in the microservice manifest file `cumulocity.json`:
+4. Add the following roles as `requiredRoles` in the microservice manifest file `cumulocity.json`:
 
     ```json
     "requiredRoles": [

@@ -117,7 +117,7 @@ Select the **Remember me** checkbox if you want the browser to remember your cre
 
 Finally, click **Login** to enter Edge. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application, if not configured differently. For further information about the {{< product-c8y-iot >}} standard applications see [Available applications](/get-familiar-with-the-ui/available-applications/).
 
-![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+![Cockpit home screen](/images/users-guide/cockpit/cockpit-home-screen.png)
 
 To explicitly log out, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 
@@ -127,7 +127,7 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 
 ### How to reset or change your password {#how-to-reset-your-password}
 
-To reset your password, you must first configure the "reset password" template and email server settings in Edge. For information about configuring the email server, see [Configuring the email server](/edge/edge-configuration/#configuring-email-server).  
+To reset your password, you must first configure the "reset password" template and email server settings in Edge. For information about configuring the email server, see [Configuring the email server](/edge-kubernetes/k8-edge-configuration/#configuring-email-server).  
 
 For information about changing the password, see [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password).
 

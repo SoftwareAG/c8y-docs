@@ -4,7 +4,7 @@ title: Monitoring the Edge metrics
 layout: redirect
 ---
 
-In your {{< product-c8y-iot >}} cloud tenant, you can monitor the measurements of the Edge appliance listed in the table below. To monitor the measurements from your cloud tenant, ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} cloud tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/edge-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant).
+In your {{< product-c8y-iot >}} cloud tenant, you can monitor the measurements of the Edge appliance listed in the table below. To monitor the measurements from your cloud tenant, ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} cloud tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/edge-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant) for more information.
 
 |<div style="width:150px">Measurement</div>|<div style="width:250px">Metrics</div>|Description
 |:---|:---|:---

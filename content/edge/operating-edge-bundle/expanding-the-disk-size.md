@@ -19,7 +19,7 @@ You can expand the disk size of the installation disk and the data disk using th
 	- Username: management/<*Edge admin username*>
 	- Password: password provided during the installation
 
-5. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+5. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 
 6. Click **Edge** > **Expand disk size** in the navigator.
 
@@ -27,4 +27,4 @@ You can expand the disk size of the installation disk and the data disk using th
 
 ### Expanding the disk size using the REST APIs {#expanding-the-disk-size-using-the-rest-apis}
 
-To expand the disk size using the REST APIs, see the `edge/expand-disk` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/10.18.0/#operation/expandDiskSize).
+To expand the disk size using the REST APIs, see the `edge/expand-disk` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/expandDiskSize).

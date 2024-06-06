@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-06'
 title: Services component extracted as separate plugin
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-06'
 title: Support for loading dynamic options from app-specific paths
 product_area: Application enablement & solutions
 change_type:

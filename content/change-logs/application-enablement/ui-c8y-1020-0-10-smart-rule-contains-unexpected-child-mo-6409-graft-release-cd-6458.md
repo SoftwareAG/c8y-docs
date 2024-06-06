@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57897
 version: 1020.0.10
 ---
-Smart Rule contains unexpected child MO (#6409) [GRAFT][release/cd] (#6458)
+When smart rule is created in context of parent device, during smart rule creation it is possible to select child device. When smart rule is saved it automatically becomes active for selected asset. Then on list of smart rules it is possible to see children column and that it is active for child device.

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Smart Rule contains unexpected child MO (#6409) [GRAFT][release/cd] (#6458)
+title: Smart Rule list contains children column when there is child assets or child devices assign to MO
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

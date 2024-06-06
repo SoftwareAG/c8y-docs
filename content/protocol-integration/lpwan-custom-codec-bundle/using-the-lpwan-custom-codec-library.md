@@ -11,12 +11,13 @@ To create a custom codec microservice using this library, do the following:
 
 1. Add the following dependency to the pom.xml file:
 
-  <dependency>
-          <groupId>com.nsn.cumulocity.clients-java</groupId>
-          <artifactId>lpwan-custom-codec</artifactId>
-          <version>${c8y.version}</version>
-      </dependency>
-
+        ```xml
+        <dependency>
+                <groupId>com.nsn.cumulocity.clients-java</groupId>
+                <artifactId>lpwan-custom-codec</artifactId>
+                <version>${c8y.version}</version>
+            </dependency>
+        ```
 
 2. Create a Spring Boot application and annotate its main class with:
 

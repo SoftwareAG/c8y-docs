@@ -1,6 +1,6 @@
 ---
 date: ""
-title: standard applications descriptions are not translated y2024 (#6462)
+title: Standard application descriptions are not translated
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Smart Rule list contains children column when there is child assets or child devices assign to MO
+title: Smart rules list now contains a children column if child assets are assigned to a managed object
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

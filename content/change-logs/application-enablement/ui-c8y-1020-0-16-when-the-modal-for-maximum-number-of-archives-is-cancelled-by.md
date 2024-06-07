@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Error message no longer shown when user cancels maximum number of archives modal
+title: Canceling the dialog on reaching the maximum number of archives no longer displays an error message
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

@@ -6,7 +6,7 @@ section:
   - platform_administration
 helpcontent:
   - label: timeseries-migration
-    title: Timeseries migration feture
+    title: Time series migration
     content: "The **Timeseries migration** page shows tenants for which timeseries migration process can be triggered. There are 2 areas on the page for current tenant and for subtenants. Each section shows date of the oldest measurement available in database, date of migration startprogress, date of newest measurement in database, date of current progress state of migration in percentage."
 ---
 

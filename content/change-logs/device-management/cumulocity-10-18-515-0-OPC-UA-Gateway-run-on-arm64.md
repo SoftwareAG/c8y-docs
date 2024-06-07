@@ -1,6 +1,6 @@
 ---
 date: 
-title: OPC UA gateway failed to start on ARM64
+title: OPC UA gateway no longer fails to start on ARM64 Docker images
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

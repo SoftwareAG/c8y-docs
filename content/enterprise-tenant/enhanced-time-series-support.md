@@ -7,7 +7,8 @@ section:
 helpcontent:
   - label: timeseries-migration
     title: Time series migration
-    content: "The **Timeseries migration** page shows tenants for which timeseries migration process can be triggered. There are 2 areas on the page for current tenant and for subtenants. Each section shows date of the oldest measurement available in database, date of migration startprogress, date of newest measurement in database, date of current progress state of migration in percentage."
+    content: "The **Time series migration** page displays migration status for current tenant and subtenants. It provides possibility of scheduling selected tenants for migration. Migrated tenants will require user approval and provide a possibility to remove legacy collection afterwards. 
+    Please note that there might be some difficulties while performing migration when DataHub application is subscribed. To learn more visit https://cumulocity.com/docs/datahub/datahub-overview/."
 ---
 
 The {{< product-c8y-iot >}} Operational Store provides an enhanced time series support (so-called time series collections) for measurements data. The following section summarizes how to enable/disable this feature.

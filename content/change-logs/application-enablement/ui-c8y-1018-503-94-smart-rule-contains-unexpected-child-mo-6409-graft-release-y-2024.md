@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57897
 version: 1018.503.94
 ---
-If a smart rule is created for a parent device, during smart rule creation you can select for which child devices the smart rule should become active. When the smart rule is saved it automatically becomes active for the selected assets. In the smart rules list,  a children column is displayed showing for which child device the smart rule is active.
+If a smart rule is created for a parent device, during smart rule creation you can select for which child devices the smart rule should become active. When the smart rule is saved it automatically becomes active for the selected assets. In the smart rules list, a children column is displayed showing for which child device the smart rule is active.

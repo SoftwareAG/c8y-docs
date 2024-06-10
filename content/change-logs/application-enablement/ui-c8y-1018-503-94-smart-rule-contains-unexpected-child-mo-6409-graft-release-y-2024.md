@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Smart Rule contains unexpected child MO (#6409) [GRAFT][release/y2024] (#6465)
+title: Smart rules list now contains a children column if child assets are assigned to a managed object
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

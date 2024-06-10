@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-06-06
 title: Asset property field in the subassets view now remains empty after the existing or default value is cleared
 product_area: Application enablement & solutions
 change_type:

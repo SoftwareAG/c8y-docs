@@ -7,7 +7,7 @@ section:
 helpcontent:
   - label: timeseries-migration
     title: Time series migration
-    content: "The **Time series migration** page displays migration status for current tenant and subtenants. It provides possibility of scheduling selected tenants for migration. Migrated tenants will require user approval and provide a possibility to remove legacy collection afterwards. 
+    content: "The **Time series migration** page displays the migration status for the current tenant and its subtenants. From this page, you can schedule the selected tenants for migration. Migrated tenants require user approval and provide the option to remove legacy collection afterwards. 
     Please note that there might be some difficulties while performing migration when DataHub application is subscribed. To learn more visit https://cumulocity.com/docs/datahub/datahub-overview/."
 ---
 

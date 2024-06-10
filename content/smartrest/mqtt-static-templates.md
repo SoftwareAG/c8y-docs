@@ -944,7 +944,7 @@ This may let the device send additional parameters that trigger further steps ba
 **Example**
 
 ```text
-506,c8y_Restart
+506,123
 ```
 
 ##### Set EXECUTING operations to FAILED (507) {#507}

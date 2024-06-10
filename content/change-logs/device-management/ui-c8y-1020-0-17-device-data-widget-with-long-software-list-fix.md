@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device data widget with long software list fix.
+title: Software list in Device data widget now paginated to show all entries properly
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

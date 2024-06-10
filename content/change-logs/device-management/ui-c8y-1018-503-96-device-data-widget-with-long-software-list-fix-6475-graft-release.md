@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3669
 version: 1018.503.96
 ---
-In the device data widget, the software list was not displayed correctly if it contained a large number of entries. This issue has now been resolved by restricting the initial software list by only 10 items and an option to load more if necessary.
+In the "Device data" widget, the software list was not displayed correctly if it contained a large number of entries. This issue has now been resolved by paginating the software list, that is, limiting the initial list to 10 items and an option to load more if needed.

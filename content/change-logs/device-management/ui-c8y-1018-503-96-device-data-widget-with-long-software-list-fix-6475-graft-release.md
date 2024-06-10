@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device data widget with long software list fix (#6475) [GRAFT][release/y2024] (#6500)
+title: The device data widget with a long software list is fixed by transforming the software list into a paginated one.
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

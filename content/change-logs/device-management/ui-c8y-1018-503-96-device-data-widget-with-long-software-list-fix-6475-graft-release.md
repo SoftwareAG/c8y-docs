@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The device data widget with a long software list is fixed by transforming the software list into a paginated one.
+title: Software list in Device data widget now paginated to show all entries properly
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

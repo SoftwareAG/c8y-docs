@@ -19,6 +19,10 @@ The following diagram illustrates the high-level concepts of the integration bet
 
 <img src="/images/datahub-guide/trendminer-highlevel-concept.png" alt="Integration of {{< product-c8y-iot >}} DataHub and TrendMiner" style="max-width: 100%">
 
+{{< c8y-admon-important >}}
+The integration with TrendMiner will be discontinued. The offloading mode specifically designed for the interaction with TrendMiner is deprecated and will be removed in a future release.
+{{< /c8y-admon-important >}}
+
 ### Design of a TrendMiner offloading pipeline {#design-of-a-trendminer-offloading-pipeline}
 
 Providing TrendMiner access to {{< product-c8y-iot >}} data requires you solely to define an offloading pipeline using the TrendMiner data layout. When the offloading pipeline is in place, {{< product-c8y-iot >}} data is regularly extracted from the Operational Store, flattened, and exported into a data lake. In addition, Dremio is configured to access recent data from the Operational Store, using the same schema as for the historical data.

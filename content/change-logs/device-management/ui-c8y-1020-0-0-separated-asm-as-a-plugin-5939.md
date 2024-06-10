@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-06'
 title: Separated Advanced Software Management functionality as a plugin
 product_area: Device management & connectivity
 change_type:

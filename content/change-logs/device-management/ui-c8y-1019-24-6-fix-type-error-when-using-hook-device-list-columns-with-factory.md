@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-06'
 title: Fixed type error when using hookDeviceListColumns with factory
 product_area: Device management & connectivity
 change_type:

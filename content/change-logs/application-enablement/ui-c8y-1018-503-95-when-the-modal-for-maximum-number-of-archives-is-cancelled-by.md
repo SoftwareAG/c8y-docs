@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58926
 version: 1018.503.95
 ---
-In the past, when a user cancelled the modal dialog that warned about reaching the maximum number of archives, an error message was incorrectly displayed even though no actual error had occurred. This unwanted error message has now been removed. Users can cancel the maximum number of archives warning modal without seeing an error message.
+In the past, when a user reached the maximum number of archives and the corresponding dialog was shown, canceling the dialog would incorrectly display an error message. This has been fixed. Now, when a user cancels the maximum number of archives dialog, no error message is shown any longer and the application behaves as expected. 

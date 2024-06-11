@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2948
 version: 10.20.350.0
 ---
-Previous versions of the LWM2M agent supported "Write" operation only in "Replace" mode. This version introduces additional "Partial Update" mode by using "writep" command.
+Previously, the LWM2M agent supported write operations in "Replace" mode only. With this change, write operations using the "Partial Update" mode are additionally supported,  using the "writep" command.

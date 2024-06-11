@@ -1,6 +1,6 @@
 ---
 date:
-title: LWM2M agent can cancel observations using both cancel methods 
+title: LWM2M agent can now cancel observations using the "GET with observe option" method
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP

@@ -667,4 +667,4 @@ When the grid is hidden, the icon looks as follows: <i class="dlt-c8y-icon-grid-
 
 When the grid is shown, the icon looks as follows: <i class="dlt-c8y-icon-grid-off icon-20"></i>.
 
-When the model is active \(read-only mode\), it is not possible to toggle the display of the grid and this icon is therefore disabled.
+When the model is active \(read-only mode\), it is not possible to toggle the display of the grid and this icon is therefore not shown.

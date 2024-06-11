@@ -5,7 +5,7 @@ layout: bundle
 section:
   - platform_administration
 helpcontent:
-  - label: timeseries-migration
+  - label: enhanced-time-series-support
     title: Time series migration
     content: "The **Time series migration** page displays the migration status for the current tenant and its subtenants. From this page, you can schedule the selected tenants for migration. Migrated tenants require user approval and provide the option to remove legacy collection afterwards.\nNote that you might observe difficulties during migration if the DataHub application is subscribed. To learn more refer to [Analytics > DataHub](https://cumulocity.com/docs/datahub/datahub-overview/)."
 ---

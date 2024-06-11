@@ -169,9 +169,9 @@ Select the **Trigger Device** option instead to send the output to the device wh
         If you want to add a new template parameter directly in the block parameter editor, type a name in the text box of the above drop-down list box. As soon as you start typing and if a template parameter with that name does not yet exist, the option **Add template parameter name** is shown below the text box. Click this option to add the new template parameter and thus make it available in the **Template Parameters** dialog box. The new template parameter will have the same type, optional and default values as the block parameter. If a template parameter with the name that you are specifying exists already, but with an incompatible type, the name and type is shown below the text box but cannot be selected.
 4.  Some blocks support multi-line input for certain block parameters. For example, the **Send Email** block supports this in the **Text** parameter and the **Alarm Output** block supports this in the **Message** parameter. Your input is automatically wrapped in the text box and you can press Enter to start text on a new line. When you add a new template parameter for such block parameter directly in the block parameter editor \(as described above\), the type of the new template parameter is automatically set to **Multi-line String**.
 5.  For some blocks \(such as the **Range Lookup** block\), the block parameter editor shows text boxes for specifying key-value pairs. If you want to specify more key-value pairs, click **Add row**. The key-value pair in the first row is processed first.
-You can drag a row to a different position using the move icon <img src="/images/streaming-analytics/analytics-builder/icon-move-row.png" alt="Move icon" style="display:inline-block; margin:0"> that is shown next to that row.
-You can remove a row that you do not need any more by clicking the remove icon <img src="/images/streaming-analytics/analytics-builder/icon-delete-row.png" alt="Remove icon" style="display:inline-block; margin:0"> next to that row.
-Empty rows are automatically removed when you leave the block parameter editor.
+You can drag a row to a different position using the move icon <i class="dlt-c8y-icon-sort text-primary icon-20"></i> that is shown next to that row.
+You can delete a row that you do not need any more by clicking the delete icon <i class="dlt-c8y-icon-delete icon-20"></i> next to that row.
+Empty rows are automatically deleted when you leave the block parameter editor.
 6.  Specify all required parameters.
     Detailed reference information for each block is available from the documentation pane. See also [Viewing the documentation for a block](/streaming-analytics/analytics-builder/#viewing-the-documentation-for-a-block).
 
@@ -192,7 +192,7 @@ You can also view the block reference directly in this documentation. See [Analy
 ##### To view the documentation for a block {#to-view-the-documentation-for-a-block}
 
 1.  In the model editor, click the block for which you want to view the documentation. You can do this in the palette or on the canvas.
-2.  If the documentation pane is currently not shown, click the area that contains the document icon <img src="/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png" alt="Document icon" style="display:inline-block; margin:0"> \(shown at the right of the canvas\) to display the documentation pane. Clicking that area again hides the documentation pane.
+2.  If the documentation pane is currently not shown, click the area that contains the document icon <i class="c8y-icon c8y-icon-book text-primary icon-20"></i>  \(shown at the right of the canvas\) to display the documentation pane. Clicking that area again hides the documentation pane.
 3.  If you want to resize the documentation pane \(for example, to make it larger\), move the mouse pointer over the area that contains the document icon. Click and hold down the mouse button and drag the mouse to the left or right \(to make the documentation pane wider or smaller\).
 
 #### Selecting blocks and wires {#selecting-blocks-and-wires}
@@ -400,7 +400,7 @@ If there is a block parameter for which a required value has not been specified,
 
 4.  You can update a template parameter at any time. This includes the name, whether it is optional or not, and the default value. All blocks in which the updated template parameter is defined are automatically adapted to use the new values. The only exception is the type. You can only change the type if the template parameter is not used in any block of the model.
 
-5.  When the model is inactive, you can reorder the template parameters. This affects the sequence in which they are shown in the instance editor. Drag a row to a different position using the move icon <img src="/images/streaming-analytics/analytics-builder/icon-move-row.png" alt="Move icon" style="display:inline-block; margin:0"> which is shown next to the row. See also [Filtering and sorting the instances](/streaming-analytics/analytics-builder/#filtering-and-sorting-the-instances).
+5.  When the model is inactive, you can reorder the template parameters. This affects the sequence in which they are shown in the instance editor. Drag a row to a different position using the move icon <i class="dlt-c8y-icon-sort text-primary icon-20"></i> which is shown next to the row. See also [Filtering and sorting the instances](/streaming-analytics/analytics-builder/#filtering-and-sorting-the-instances).
 
 6.  You can only delete a template parameter if it is not used in any block of the model. To delete a template parameter, click the delete icon <i class="dlt-c8y-icon-delete text-danger icon-20"></i> which is shown next to the row.
 
@@ -667,4 +667,4 @@ When the grid is hidden, the icon looks as follows: <i class="dlt-c8y-icon-grid-
 
 When the grid is shown, the icon looks as follows: <i class="dlt-c8y-icon-grid-off icon-20"></i>.
 
-When the model is active \(read-only mode\), it is not possible to toggle the display of the grid and this icon is therefore disabled.
+When the model is active \(read-only mode\), it is not possible to toggle the display of the grid and this icon is therefore not shown.

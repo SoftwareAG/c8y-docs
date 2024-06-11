@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-06'
 title: New dashboard manager with list of device type dashboards
 product_area: Application enablement & solutions
 change_type:

@@ -116,7 +116,7 @@ Click the default name "Model#" and specify a model name. See also [Changing the
 
 You can edit \(or view\) each model that is currently listed in the model manager.
 
-When a model is active, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything. The save icon <i class="dlt-c8y-icon-save icon-20"></i> in the model editor is therefore disabled.
+When a model is active, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything.
 
 #### To edit a model {#to-edit-a-model}
 

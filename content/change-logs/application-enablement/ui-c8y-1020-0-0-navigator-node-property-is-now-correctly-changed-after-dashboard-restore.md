@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-06'
 title: Navigator node property correctly changed after dashboard restore
 product_area: Application enablement & solutions
 change_type:

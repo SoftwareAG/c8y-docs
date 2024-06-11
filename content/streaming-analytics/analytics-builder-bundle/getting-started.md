@@ -70,7 +70,7 @@ By default, an input block is listening to all input sources, that is, the **All
 5. Select the **Ignore Timestamp** check box.
    This makes sure that the measurements are processed in the same order as they are received.
 
-If you need detailed information on the currently selected block, view the block reference in the documentation pane on the right. If the documentation pane is currently not shown, click the document icon <img src="/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png" alt="Document icon" style="display:inline-block; margin:0">.
+If you need detailed information on the currently selected block, view the block reference in the documentation pane on the right. If the documentation pane is currently not shown, click the document icon <i class="c8y-icon c8y-icon-book text-primary icon-20"></i>.
 
 #### Step 4: Add the block that calculates the mean of the measurement values {#step-4-add-the-block-that-calculates-the-mean-of-the-measurement-values}
 

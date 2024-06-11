@@ -126,7 +126,7 @@ Select the **Remember me** checkbox if you want the browser to remember your cre
 
 Finally, click **Login** to enter the Edge appliance. Initially, you will be taken to the [Cockpit](/users-guide/cockpit) application (if not configured differently).
 
-![Cockpit home screen](/images/users-guide/cockpit/cockpit-home-screen.png)
+![Cockpit home page](/images/users-guide/cockpit/cockpit-home-screen.png)
 
 To explicitly logout, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 

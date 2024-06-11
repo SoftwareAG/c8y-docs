@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2936
 version: 10.20.350.0
 ---
-In the previous versions of LWM2M agent it was possible to cancel observations, but only by using the "reset" method. This version introduces possibility to use "GET with observe" cancellation method.  
+Previously, the LWM2M agent could only cancel observations using the "reset" method. With this change, the LWM2M agent can now also use "GET with observe" method to cancel observations.  

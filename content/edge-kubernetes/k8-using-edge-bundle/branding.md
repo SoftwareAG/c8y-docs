@@ -4,7 +4,7 @@ title: Branding
 layout: redirect
 ---
 
-With the Branding feature, you can fully customize the look of your tenant to your own preferences. To access the branding feature:
+With the Branding feature, you can fully customize the look of your tenant to your own preferences. To access the Branding feature:
 
 Log into the {{< management-tenant >}} using the management domain (for example, `management.myown.iot.com`) and administrator credentials created during the installation. For more information on logging in to the {{< management-tenant >}}, see [To access Edge](/edge-kubernetes/installing-edge-on-k8/#to-access-cumulocity-iot-edge)
 

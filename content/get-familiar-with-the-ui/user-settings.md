@@ -8,7 +8,7 @@ section:
 
 Clicking the **User** button at the top right opens the right drawer which provides access to various actions and information.
 
-<img src="/images/users-guide/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
+![User account menu](/images/users-guide/getting-started/getting-started-user-account-menu.png)
 
 At the top you find the following items:
 
@@ -37,10 +37,10 @@ At the top you find the following items:
 <td style="text-align:left">Logs you out from your {{< product-c8y-iot >}} account. </td>
 </tr>
 <tr>
-<td style="text-align:left">Activate support</td>
+<td style="text-align:left">Activate support access</td>
 <td style="text-align:left">Allows support users to access your account.<br>
 <br>
-Note that this option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/enterprise-tenant/support-user-access/" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours by default) you can actively disable an active support user request here.</td>
+Note that this option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/enterprise-tenant/support-user-access/" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support access</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours by default) you can actively disable an active support user request here.</td>
 </tbody>
 </table>
 
@@ -52,7 +52,7 @@ If you want to find out the version numbers of the different components on your 
 
 The **Bookmarks** section provides links to the most common pages and processes in the platform.
 
-In the **Support** section, the request support item redirects you to the <a href="{{< link-sag-portal >}}" class="no-ajaxy">{{< company-sag >}} {{< sag-portal >}}</a> while the **Documentation** section provides links to the most relevant guides.
+To allow a support user from {{< company-c8y >}} help with an issue, click **Activate support access**. Meanwhile, the **Documentation** section provides links to the most relevant guides.
 
 
 ### To change user settings {#to-change-user-settings}

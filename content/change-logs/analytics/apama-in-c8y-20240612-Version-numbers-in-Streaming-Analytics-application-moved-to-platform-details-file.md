@@ -1,5 +1,5 @@
 ---
-date: 
+date:
 title: Version numbers in Streaming Analytics application moved to platform details file
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAB-4448
 version:
 ---
-The version numbers for the frontend and backend are no longer displayed in the right drawer of the Streaming Analytics application. Instead, details on all components can now be downloaded via the **Download platform details** button. This change was motivated by a component split resulting in many different components following different version number schemes.
+The version numbers for the frontend and backend are no longer displayed in the right drawer of the Streaming Analytics application. Instead, details on all components can now be downloaded via the **Download platform details** button. This change simplifies the UI for the majority of users.

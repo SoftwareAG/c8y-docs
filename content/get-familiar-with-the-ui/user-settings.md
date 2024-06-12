@@ -46,12 +46,9 @@ Note that this option is only available if support user access is not set global
 
 In the **UI settings** section change the language of the UI, see [To change the language of the UI](#to-change-the-language-of-the-ui).
 
-In the **Platform info** section, you find information on the infrastructure of your platform:
+You can find the tenant ID in the **Platform info** section of the right drawer.
 
-- The ID of your tenant, which might be required if you request support. Click the clipboard icon <i class="dlt-c8y-icon-paste1"></i> next to the tenant ID to copy it to the clipboard.
-- Version information for both the backend and the UI.
-
-Moreover you can click **Detailed info** to download more detailed platform information.
+If you want to find out the version numbers of the different components on your tenant, click the **Download platform details** button in the **Platform info** section and then open the downloaded JSON file.
 
 The **Bookmarks** section provides links to the most common pages and processes in the platform.
 

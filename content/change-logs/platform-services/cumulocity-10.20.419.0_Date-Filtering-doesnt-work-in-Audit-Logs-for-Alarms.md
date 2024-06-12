@@ -1,7 +1,7 @@
 ---
 
-date: 2024-04-26
-title: Create an audit log with the date of the last alarm update
+date:
+title: Audit logs for repeating alarms are created with the date of the last alarm update
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -16,7 +16,6 @@ ticket: MTM-58098
 version: 10.20.419.0
 ---
 
-To create an audit for a repeating alarm, the alarm creation date was used, which resulted in the audit logs having past dates.
-Currently, the date of the last alarm update is used to create an audit log.
+To create audit log for repeating alarms, the alarm creation date was used, which resulted in audit logs having past dates. This issue has been fixed and now audit logs for repeating alarms are created with the date of the last alarm update.
 
 

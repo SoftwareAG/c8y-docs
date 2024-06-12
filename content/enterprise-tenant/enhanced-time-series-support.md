@@ -2,6 +2,9 @@
 weight: 120
 title: Enhanced time series support
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - platform_administration
 helpcontent:

@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-06-12
 title: OPC UA gateway no longer fails to start on ARM64 Docker images
 product_area: Device management & connectivity
 change_type:

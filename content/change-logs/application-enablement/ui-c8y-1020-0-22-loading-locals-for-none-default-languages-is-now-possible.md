@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57551
 version: 1020.0.22
 ---
-loading locals for none default languages is now possible
+Previously, it was not possible to load locales for languages other than the default language configured in the system. This change enables the loading of locales for non-default languages. With this enhancement, users can now utilize locales for their preferred languages, even if they differ from the system's default language setting. This improves the user experience by allowing for language-specific formatting and translations across the application.

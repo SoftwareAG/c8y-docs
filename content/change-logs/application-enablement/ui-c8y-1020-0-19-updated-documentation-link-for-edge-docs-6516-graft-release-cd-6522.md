@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Updated documentation link for Edge docs (#6516) [GRAFT][release/cd] (#6522)
+title: Updated link to Edge documentation
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

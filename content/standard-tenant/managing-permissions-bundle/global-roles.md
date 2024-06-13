@@ -263,3 +263,7 @@ By default it is not possible to change roles of SSO users (created automaticall
 1. Click on the row of the respective user in the user list.
 2. In the user page, select or clear the checkboxes for the relevant global roles at the right.
 3. Click **Save** to save your settings.
+
+{{< c8y-admon-important >}}
+Users who are logged in via OAI-Secure will be force to logged out of the application after switching roles. Role changes require confirmation by an administration.
+{{< /c8y-admon-important >}}

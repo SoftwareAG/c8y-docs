@@ -1,6 +1,6 @@
 ---
 date: ""
-title: loading locals for none default languages is now possible
+title: Loading locales for non-default languages is now possible
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

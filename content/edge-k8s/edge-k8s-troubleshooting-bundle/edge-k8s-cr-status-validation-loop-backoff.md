@@ -16,15 +16,15 @@ Describe the Edge CR (c8yedge): `kubectl describe edge c8yedge -n c8yedge`.
 
 In the events section, you will find the reasons for the validation failure. For example:
 
-```shell
+```yaml
 Name: c8yedge
 Namespace: c8yedge
 API Version: edge.cumulocity.com/v1
 Kind: CumulocityIoTEdge
 
 Status:
-	Deploying Generation:  x
-	State: ValidationLoopBackOff
+  Deploying Generation:  x
+  State: ValidationLoopBackOff
 
 Events:
  Type      Reason                   Age     From               Message

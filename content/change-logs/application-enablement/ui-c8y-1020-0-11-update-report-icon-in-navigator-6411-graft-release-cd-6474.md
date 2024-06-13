@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-13'
 title: Report icon correctly updated in navigator
 product_area: Application enablement & solutions
 change_type:

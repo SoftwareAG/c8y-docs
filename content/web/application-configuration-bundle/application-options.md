@@ -55,3 +55,5 @@ export default {
 It is good practice to use the URL option in order to verify an option behavior, or to use the dynamic option
 in order to set the option platform wide (branding) and to use the private static option in order to set the default for your
 custom application.
+
+To see all available options, see the [`Styling with application options`](https://styleguide.cumulocity.com/apps/codex/#/getting-started/guides/theming/overview#styling-with-application-options) section in Codex.

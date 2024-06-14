@@ -265,5 +265,5 @@ By default it is not possible to change roles of SSO users (created automaticall
 3. Click **Save** to save your settings.
 
 {{< c8y-admon-important >}}
-Users who are logged in via OAI-Secure will be force to logged out of the application after switching roles. Role changes require confirmation by an administration.
+Users who are logged in via OAI-Secure will be forced to log out of the platform after switching roles. Role changes require confirmation by an administrator.
 {{< /c8y-admon-important >}}

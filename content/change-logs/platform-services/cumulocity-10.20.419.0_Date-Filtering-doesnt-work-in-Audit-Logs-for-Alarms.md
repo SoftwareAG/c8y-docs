@@ -16,6 +16,6 @@ ticket: MTM-58098
 version: 10.20.419.0
 ---
 
-To create audit log for repeating alarms, the alarm creation date was used, which resulted in audit logs having past dates. This issue has been fixed and now audit logs for repeating alarms are created with the date of the last alarm update.
+Audit logs for repeating alarms used the alarm creation date which resulted in audit logs having past dates. This issue has been fixed and now audit logs for repeating alarms are created with the date of the last alarm update.
 
 

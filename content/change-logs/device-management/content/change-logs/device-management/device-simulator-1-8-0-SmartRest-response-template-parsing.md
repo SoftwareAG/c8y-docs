@@ -1,6 +1,6 @@
 ---
 date:
-title: SmartRest template collection parsing no longer fails with response template   
+title: SmartREST template collection parsing no longer fails with response template   
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

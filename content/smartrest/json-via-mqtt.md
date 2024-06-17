@@ -88,7 +88,7 @@ The source device ID will automatically be resolved based on the MQTT client ID.
 
 #### Create new event {#create-new-event}
 
-Publish a message on topic <kbd>/event/events/create</kbd> with payload:
+Publish a message on topic <kbd>event/events/create</kbd> with payload:
 
 ```json
 {
@@ -100,7 +100,7 @@ Publish a message on topic <kbd>/event/events/create</kbd> with payload:
 
 #### Create many events {#create-many-events}
 
-Publish a message on topic <kbd>/event/events/createBulk</kbd> with payload:
+Publish a message on topic <kbd>event/events/createBulk</kbd> with payload:
 
 ```json
 {

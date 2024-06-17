@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3411
 version: 1.8.0
 ---
-Device simulators configured to use a SmartREST template collection containing response templates had internal issues that prevented data creation. This internal has been addressed by correctly parsing response templates so that processing is no longer interrupted.
+Device simulators configured to use a SmartREST template collection containing response templates had an internal issue that prevented data creation. This issue has been addressed by correctly parsing response templates so that processing is no longer interrupted.

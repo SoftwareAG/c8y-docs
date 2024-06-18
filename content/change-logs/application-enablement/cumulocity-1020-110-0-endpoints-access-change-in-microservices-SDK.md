@@ -1,6 +1,6 @@
 ---
 date: 
-title: Restricting access to Spring boot actuator endpoints
+title: Restricting access to Spring Boot actuator endpoints
 product_area: Application enablement & solutions
 change_type:
   - value: change-3BQrQ6adS

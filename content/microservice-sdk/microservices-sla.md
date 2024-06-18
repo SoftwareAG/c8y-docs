@@ -8,7 +8,7 @@ weight: 90
 
 <h3 style="margin-top: -1em; padding-top: 0">for Microservices deployment on the {{< product-c8y-iot >}} Microservices platform</h3>
 
-**This agreement** is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes {{< product-c8y-iot >}} Microservices ("Service", “Container-as-a-Service") for deploying Customer Microservices ("Microservices") on {{< product-c8y-iot >}} cloud instances.
+**This Agreement** is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes {{< product-c8y-iot >}} Microservices ("Service", “Container-as-a-Service") for deploying Customer Microservices ("Microservices") on {{< product-c8y-iot >}} cloud instances.
 
 ### Service description
 
@@ -24,8 +24,8 @@ The Provider hosts and manages a Container-as-a-Service cluster based on Kuberne
 * **Resource allocation:** {{< product-c8y-iot >}} Microservices ensures that the capacity [as declared by the Customer for each Microservice](/microservice-sdk/general-aspects/#settings) is consistently provided within the limits of this service-level agreement.
 * **Monitoring and health checks:** The Service includes monitoring capabilities that leverage [Kubernetes' system of liveness and readiness probes](https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-best-practices-setting-up-health-checks-with-readiness-and-liveness-probes) to maintain the health and performance of Microservices provided the probes are implemented (see below).
 * **Authentication**: The Service ensures that [only authenticated users](/microservice-sdk/general-aspects/#security) access Microservices.
-* **Security management**: The Service includes the security management of the {{< product-c8y-iot >}} Microservices infrastructure (excluding microservices themselves) including security monitoring, software upgrades, network isolation and potentially other measures.
-* **Subscription management**: {{< product-c8y-iot >}} Microservices lets you [subscribe your customers](https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#subscribing-applications) to microservices.
+* **Security management**: The Service includes the security management of the {{< product-c8y-iot >}} Microservices infrastructure (excluding Microservices themselves) including security monitoring, software upgrades, network isolation and potentially other measures.
+* **Subscription management**: {{< product-c8y-iot >}} Microservices lets you [subscribe your customers](https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#subscribing-applications) to Microservices.
 * **Metering and billing**: {{< product-c8y-iot >}} Microservices [meters the infrastructure resource usage](https://cumulocity.com/docs/enterprise-tenant/usage-and-billing/) of the Microservices.
 
 ### Customer responsibilities

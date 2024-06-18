@@ -6,6 +6,8 @@ section:
   - getting_started
 ---
 
+### Right drawer
+
 Clicking the **User** button at the top right opens the right drawer which provides access to various actions and information.
 
 ![User account menu](/images/users-guide/getting-started/getting-started-user-account-menu.png)
@@ -36,23 +38,37 @@ At the top you find the following items:
 <td style="text-align:left">Logout</td>
 <td style="text-align:left">Logs you out from your {{< product-c8y-iot >}} account. </td>
 </tr>
-<tr>
-<td style="text-align:left">Activate support access</td>
-<td style="text-align:left">Allows support users to access your account.<br>
-<br>
-Note that this option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/enterprise-tenant/support-user-access/" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support access</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours by default) you can actively disable an active support user request here.</td>
 </tbody>
 </table>
 
+#### UI Settings {#ui-settings}
+
 In the **UI settings** section change the language of the UI, see [To change the language of the UI](#to-change-the-language-of-the-ui).
 
-You can find the tenant ID in the **Platform info** section of the right drawer.
+#### Platform info {#platform-info}
 
-If you want to find out the version numbers of the different components on your tenant, click the **Download platform details** button in the **Platform info** section and then open the downloaded JSON file.
+In the **Platform info** section, you find information on the infrastructure of your platform:
 
-The **Bookmarks** section provides links to the most common pages and processes in the platform.
+- The ID of your tenant, which might be required if you request support. Click the clipboard icon  next to the tenant ID to copy it to the clipboard.
+- Version information for the deployed components. For information on the version numbers of the different components, click the **Download platform details** button and then open the downloaded JSON file.
 
-To allow a support user from {{< company-c8y >}} help with an issue, click **Activate support access**. Meanwhile, the **Documentation** section provides links to the most relevant guides.
+#### Bookmarks {#bookmarks}
+
+The **Bookmarks** section provides links to the most common pages and processes in the platform. Click **Add current page** to add a custom bookmark to the list.
+
+#### Support {#support}
+
+To allow a support user from {{< company-c8y >}} help with an issue, click **Activate support access**. This allows support users to access your account.
+
+{{< c8y-admon-info >}}
+Note that this option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/enterprise-tenant/support-user-access/" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support access</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours by default) you can actively disable an active support user request here.
+{{< /c8y-admon-info >}}
+
+Clicking **Request support** redirects you to the {{< company-sag >}} {{< sag-portal >}}.
+
+#### Documentation {#documentation}
+
+The **Documentation** section provides links to the most relevant sections of the user and developer documentation.
 
 
 ### To change user settings {#to-change-user-settings}

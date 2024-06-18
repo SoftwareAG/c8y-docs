@@ -3,8 +3,8 @@ date:
 title: Restricting access to Spring boot actuator endpoints
 product_area: Application enablement & solutions
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement 
+  - value: change-3BQrQ6adS
+    label: API Change 
 component:
   - value: component-Sv2buFZ5I
     label: Microservice SDK

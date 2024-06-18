@@ -26,7 +26,7 @@ To open Dashboard manager, click **Dashboard manager** in the **Configuration** 
 
 ### To add a type dashboard {#to-add-type-dashboard}
 
-To add a new dashboard for a device type select the device from the device list in the **Groups** menu, refer to [To create a dashboard](/cockpit/working-with-dashboards/#to-create-a-dashboard) and [Dashboard template](/cockpit/working-with-dashboards/#dashboard-template) for more information. 
+To add a new dashboard for a device type select the device from the device list in the **Groups** menu. Refer to [To create a dashboard](/cockpit/working-with-dashboards/#to-create-a-dashboard) and [Dashboard template](/cockpit/working-with-dashboards/#dashboard-template) for more information. 
 
 ### To delete type dashboard {#to-delete-type-dashboard}
 

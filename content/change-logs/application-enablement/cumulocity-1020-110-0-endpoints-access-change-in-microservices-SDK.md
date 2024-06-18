@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-58316
-version: 1020.110.0 
+version: 1020.111.0 
 ---
 
 Microservices SDK exposes certain spring boot actuator endpoints, including /loggers, and provides an initial security configuration regarding the exposed spring boot actuator endpoints. 

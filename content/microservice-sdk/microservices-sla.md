@@ -7,7 +7,6 @@ section:
 
 <h3 style="margin-top: -1em; padding-top: 0">for Microservices Deployment on Cumulocity IoT Microservices Platform</h3>
 
-
 **This Agreement** is made between Cumulocity ("Provider") and the Customer ("Customer") who utilizes Cumulocity IoT Microservices ("Service", “Container-as-a-Service") for deploying Customer microservices ("Microservices") on Cumulocity cloud instances.
 
 ## 1. Service Description
@@ -48,8 +47,6 @@ Customer acknowledges the following Customer Responsibilities. Customers are enc
 
 Customer acknowledges the following Limitations and Constraints in using Service.
 
-
-
 * **Storage:** No persistent storage is provided beyond Cumulocity IoT API services. Changes to files inside Microservices are not preserved across restarts.
 * **Port Restrictions:** Microservices are limited to one inbound REST API port. This restriction is crucial for maintaining the security and simplicity of the network architecture.
 * **Network restrictions**: To ensure network security, Microservices can only communicate with the Cumulocity IoT API and externally. Microservices cannot directly communicate among each other. Network connections may be automatically reset at any time and need to be reconnected by the Microservices. Provider reserves the right to stop or remove Microservices with excessive outbound networking traffic.
@@ -64,7 +61,7 @@ Customer acknowledges the following Limitations and Constraints in using Service
 
 ## 5. Service Availability
 
-Service availability of Cumulocity IoT Microservices follows the general service terms of Cumulocity IoT.
+Service availability of Cumulocity IoT Microservices follows the [general service terms](https://www.softwareag.cloud/site/sla/cumulocity-iot.html) of Cumulocity IoT.
 
 ## 6. Support and Maintenance
 

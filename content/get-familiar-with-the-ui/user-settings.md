@@ -49,7 +49,7 @@ In the **UI settings** section change the language of the UI, see [To change the
 
 In the **Platform info** section, you find information on the infrastructure of your platform:
 
-- The ID of your tenant, which might be required if you request support. Click the clipboard icon  next to the tenant ID to copy it to the clipboard.
+- The ID of your tenant, which might be required if you request support. Click the clipboard icon next to the tenant ID to copy it to the clipboard.
 - Version information for the deployed components. For information on the version numbers of the different components, click the **Download platform details** button and then open the downloaded JSON file.
 
 #### Bookmarks {#bookmarks}

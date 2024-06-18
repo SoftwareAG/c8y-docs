@@ -13,7 +13,7 @@ helpcontent:
     content: "This dashboard manager shows a list of device type dashboards by aggregating all dashboards that have a device type assigned. 
     
 
-Dashboards can be deleted via the list. Moreover you can view all devices that have access to a particular dashboard. Dashboards can be edited by navigating to the device view."
+Dashboards can be deleted via the list. Moreover, you can view all devices that have access to a particular dashboard. Dashboards can be edited by navigating to the device view."
 ---
 
 Dashboard manager shows a list of device type dashboards by aggregating all dashboards that have a device type assigned.

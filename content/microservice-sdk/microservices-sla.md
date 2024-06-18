@@ -6,7 +6,7 @@ section:
 weight: 90
 ---
 
-<h3 style="margin-top: -1em; padding-top: 0">for microservices deployment on the {{< product-c8y-iot >}} Microservices platform</h3>
+<h3 style="margin-top: -1em; padding-top: 0">for Microservices deployment on the {{< product-c8y-iot >}} Microservices platform</h3>
 
 **This agreement** is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes {{< product-c8y-iot >}} Microservices ("Service", “Container-as-a-Service") for deploying Customer Microservices ("Microservices") on {{< product-c8y-iot >}} cloud instances.
 

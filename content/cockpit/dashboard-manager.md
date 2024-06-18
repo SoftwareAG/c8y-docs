@@ -30,7 +30,7 @@ To add a new dashboard for a device type select the device from the device list 
 
 ### To delete type dashboard {#to-delete-type-dashboard}
 
-To delete a device type dashboard, navigate to the device list in the **Groups** menu or the **Dashboard manager** in the **Configuration menu**. In the row of the selected dashboard, click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> on the right.
+To delete a device type dashboard, navigate to the device list in the **Groups** menu or to the **Dashboard manager** in the **Configuration menu**. In the row of the selected dashboard, click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> on the right.
 
 {{< c8y-admon-info >}}
 If you delete a device type dashboard, it gets deleted from all devices that have access to it. It is not possible to delete a device type dashboard from a single device.

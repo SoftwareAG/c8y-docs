@@ -8,5 +8,8 @@ product_area: Platform services
 component:
   - value: component-rlV-4nEfO
     label: Microservice Hosting
+build_artifact:
+  - value: tc-QHwMfWtBk7
+    label: cumulocity
 ---
 The [Service-level agreement for Microservices deployment](/microservice-sdk/microservices-sla/) now provides a more precise definition on what is included in the Microservice Hosting functionality for your custom microservices. It also describes how you can benefit best from the service.

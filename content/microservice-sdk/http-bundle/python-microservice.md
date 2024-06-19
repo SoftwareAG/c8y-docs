@@ -90,7 +90,7 @@ ENTRYPOINT ["python"]
 CMD ["-u", "application.py"]
 ```
 
-The Dockerfile
+The Dockerfile:
 
 * Uses a very small Docker distribution based on Alpine Linux and Python.
 * Copies your _application.py_ file into the image.

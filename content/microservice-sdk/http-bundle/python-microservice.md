@@ -153,7 +153,7 @@ The resulting _hello-microservice.zip_ file contains your microservice and it is
 
 Uploading the _hello-microservice.zip_ into the platform can be done via the UI. In the Administration application, navigate to **Ecosystem** > **Microservices** and click **Add microservice**. Drop the ZIP file of the microservice and then click **Subscribe**. For more details about uploading a microservice ZIP file, refer to [Custom microservices](/standard-tenant/ecosystem/#custom-microservices).
 
-After the microservice has been successfully uploaded and subscribed by your tenant, it runs in a Docker container. Verify this by clicking on "Status" and "Logs" tabs of your microservice in the Administration application.
+After the microservice has been successfully uploaded and subscribed by your tenant, it runs in a Docker container. Verify this by checking the **Status** and **Logs** tabs of your microservice in the Administration application.
 
 To try out your microservice, use a command-line tool such as [curl](https://curl.se/). Your _tenantID_ can be found under "Platform info" in the Administration application by clicking on your user item on the top right.
 

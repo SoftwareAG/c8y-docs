@@ -60,6 +60,8 @@ def environment():
     return jsonify(environment_data)
 
 if __name__ == '__main__':
+    import logging
+    logging.basicConfig(level=logging.INFO)
     from waitress import serve
     serve(app, host="0.0.0.0", port=80)
 ```
@@ -71,6 +73,8 @@ The application exposes three endpoints:
 - <kbd>/environment</kbd> reads some standard variables provided to the environment by the platform during the microservice installation and returns their values in JSON format.
 
 It runs the HTTP server on port 80. This is required for all microservices.
+
+Logging is set to "INFO" level to show some logging information in the Administration application. You can remove the log level setting to get only warnings logged.
 
 ### Create a Dockerfile {#create-the-dockerfile}
 
@@ -99,7 +103,7 @@ Besides the Docker image, {{< product-c8y-iot >}} requires some additional infor
 
 ```json
 {
-    "apiVersion": "1",
+    "apiVersion": "2",
     "version": "1.0.0",
     "provider": {
         "name": "{{< company-c8y >}}"
@@ -164,6 +168,17 @@ $ curl -u '<tenantID>/<username>:<password>' https://<URL>/service/hello/environ
     "user": "servicebootstrap_hello-microservice"
 }
 ```
+
+Note that all requests to your microservice are automatically authenticated. Try running the curl command without the authentication.
+
+```
+$ curl -v https://<URL>/service/hello/environment
+…
+< HTTP/1.1 401 Unauthorized
+…
+{"error":"general/internalError","message":"No auth information found","info":"https://cumulocity.com/guides/reference/rest-implementation"}
+```
+
 
 ### Using the microservice utility tool {#using-the-microservice-utility-tool}
 

@@ -113,12 +113,14 @@ Besides the Docker image, {{< product-c8y-iot >}} requires some additional infor
     "livenessProbe": {
         "httpGet": {
             "path": "/health"
-        }
+        },
+        "initialDelaySeconds": 10
     },
     "readinessProbe": {
         "httpGet": {
             "path": "/health"
-       }
+        },
+        "initialDelaySeconds": 10
     },
     "requiredRoles": [ ],
     "roles": [ ]

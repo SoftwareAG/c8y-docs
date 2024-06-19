@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59255
 version: 1020.1.0
 ---
-Show assets and groups on list for edit type dashboard instance (#6351) [GRAFT][release/cd] (#6573)
+Dashboard manager is showing dashboards for both devices and groups/assets type dashboards (for the latter one they could be created when application options hideTypeDashboardForAssets=false), but when you click 'Edit', new modal was showing target assets only for devices dashboards, but not for groups/assets (for the groups/assets list was empty). Now, when you click Edit, list was always populated with devices and groups/assests.

@@ -155,7 +155,7 @@ Uploading the _hello-microservice.zip_ into the platform can be done via the UI.
 
 After the microservice has been successfully uploaded and subscribed by your tenant, it runs in a Docker container. Verify this by checking the **Status** and **Logs** tabs of your microservice in the Administration application.
 
-To try out your microservice, use a command-line tool such as [curl](https://curl.se/). Your _tenantID_ can be found under "Platform info" in the Administration application by clicking on your user item on the top right.
+To try out your microservice, use a command-line tool such as [curl](https://curl.se/). Your _tenantID_ can be found under **Platform info** in the right drawer which shows up if you click on the user icon <i class="dlt-c8y-icon-supplier text-muted icon-20"></i> at the top right.
 
 ```shell
 $ curl -u '<tenantID>/<username>:<password>' https://<URL>/service/hello/environment

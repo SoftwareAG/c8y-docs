@@ -106,8 +106,8 @@ This can result in duplicate messages being received by the consumer.
 Those duplicates can sometimes include acknowledged messages as these may be on-the-wire from the consumer to the server when the connection is lost.
 
 Notification messages do not contain any specific unique identifiers to aid in de-duplication. 
-Therefore, any de-duplication of messages must be done by the consumer based upon the [notification description header](../notifications/#notification-description-header) and payload. 
-Note that the acknowledgement header is not guaranteed to be unique across consumer reconnections. Consumer reconnections can be involved when there are duplicates.
+Therefore, any de-duplication of messages must be done by the consumer based upon the [notification description header](../notifications/#notification-description-header) and payload.
+Note that the acknowledgement header is not guaranteed to be unique across consumer reconnections, which is when duplicates are most likely.
 
 Some events are easy to de-duplicate, such as inventory events where a unique source object is first created and then deleted. 
 It will often be possible to use the notification message headers to determine these cases.

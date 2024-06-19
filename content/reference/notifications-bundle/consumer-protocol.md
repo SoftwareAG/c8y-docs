@@ -41,7 +41,7 @@ There is a timeout of 5 minutes set on idle WebSocket connections after which th
 The WebSocket service sends a sequence of UTF-8 encoded textual notification messages to the consumer.
 Each notification message includes headers and a data payload.
 Headers occur first in the message and are separated by new line characters. The data payload is last in the message,
-separated from the last header by 2 new line characters (one blank line occurs between the last header and the payload).
+separated from the last header by 2 new line characters, showing one blank line between the last header and the payload.
 The first header in the message is always the acknowledgement header. 
 
 When the client has finished processing a notification message,
@@ -59,7 +59,7 @@ the message may be lost as acknowledged messages are not (usually) resent by the
 
 The hello-world-notification-microservice example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice)
 shows an example of how to send the acknowledgement back to the server in a self-contained WebSocket text message. 
-It should be sent without quotation marks (it is not a JSON message) and without any trailing new-line characters.
+It should be sent without quotation marks, as it is not a JSON message, and without any trailing new-line characters.
 
 ### Notification message header and content
 

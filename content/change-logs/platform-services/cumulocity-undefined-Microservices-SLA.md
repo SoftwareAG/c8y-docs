@@ -4,7 +4,7 @@ title: Service-level agreement for Microservices deployment
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
-product_area: Application enablement & solutions
+product_area: Platform services
 component:
   - value: component-rlV-4nEfO
     label: Microservice Hosting

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Show assets and groups on list for edit type dashboard instance (#6351) [GRAFT][release/cd] (#6573)
+title: Assets and groups are now shown when editing dashboard instances
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

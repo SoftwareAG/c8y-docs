@@ -1,8 +1,7 @@
-
 ---
 title: Upgrading from Angular 16 to Angular 17  
 layout: redirect
-weight: 10
+weight: 450
 ---
 
 Angular 17 is supported from version `1020.0.0`. The following configuration changes are required before you can run the application:

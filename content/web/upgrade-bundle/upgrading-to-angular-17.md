@@ -14,3 +14,4 @@ Angular 17 is supported from version `1020.0.0`. The following configuration cha
 - Update `ngx-bootstrap` to version `12.0.0`.
 - Update `@angular/cdk` to version `17.x.x`.
 - Remove any reference of `loginOptions` in the *src/main.ts* file. The `loginOptions` function is now called under the hood as part of the `loadOptions` function.
+- Add the `@c8y/options` package as a devDependency in your *package.json*.

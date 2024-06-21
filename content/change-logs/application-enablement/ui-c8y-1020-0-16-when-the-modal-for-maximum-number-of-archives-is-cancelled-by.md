@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Canceling the dialog on reaching the maximum number of archives no longer displays an error message
+date: '2024-06-20'
+title: >-
+  Canceling the dialog on reaching the maximum number of archives no longer
+  displays an error message
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

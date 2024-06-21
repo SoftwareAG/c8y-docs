@@ -49,7 +49,7 @@ Here is an example manifest:
         "initialDelaySeconds": 20,
         "periodSeconds": 10
     },
-    "settingsCategory": "my-ms",
+    "settingsCategory": "myms",
     "settings": [
         {
             "key": "tracker-id",

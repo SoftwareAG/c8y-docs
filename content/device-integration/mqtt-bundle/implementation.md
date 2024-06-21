@@ -89,7 +89,7 @@ Every operation received will contain the template ID followed by the ID of the 
 The communication with {{< product-c8y-iot >}} employing MQTT supports authentication in two ways:
 
 *   Username and password. The MQTT username must include the tenant ID and username in the format &lt;tenantID/username>.
-*   Device certificates. The devices must contain the whole chain of certificates leading to the trusted root certificate. Also, they must contain the server certificate in their truststore.
+*   Device certificates. For secure communication, devices must contain the entire chain of certificates leading to the trusted root certificate, or if only the device certificate is provided, then the immediate issuer certificate must be uploaded to the platform's truststore. Also, they must contain the server certificate in their truststore.
 
 #### Troubleshooting {#troubleshooting}
 

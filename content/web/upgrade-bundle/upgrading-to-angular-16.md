@@ -1,7 +1,7 @@
 ---
 title: Upgrading from Angular 15 to Angular 16 and NG CLI
 layout: redirect
-weight: 10
+weight: 460
 ---
 
 Angular 16 is supported from version `1019.0.0`. With the latest release of version 1019.0.0, the Web SDK has transitioned to using ng-cli, marking

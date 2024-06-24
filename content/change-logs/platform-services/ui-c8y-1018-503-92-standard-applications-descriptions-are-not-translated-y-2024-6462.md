@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-06-14
 title: Standard application descriptions now properly translated
 product_area: Platform services
 change_type:

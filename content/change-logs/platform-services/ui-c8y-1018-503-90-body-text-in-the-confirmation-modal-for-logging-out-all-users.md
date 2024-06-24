@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-06-14
 title: Confirmation message on logging out all users now translated correctly
 product_area: Platform services
 change_type:

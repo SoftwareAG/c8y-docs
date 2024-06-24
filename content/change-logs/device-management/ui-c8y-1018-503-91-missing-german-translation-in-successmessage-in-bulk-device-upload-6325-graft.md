@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-06-14
 title: Added missing German translation in success message for bulk device upload
 product_area: Device management & connectivity
 change_type:
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57157
 version: 1018.503.91
 ---
-The success message displayed after uploading devices in bulk was not properly translated to German. This issue has been resolved and the success message now correctly appears in German for users with that language selected. 
+The success message displayed after uploading devices in bulk was not properly translated to German. This issue has been resolved and the success message now correctly appears in German for users with that language selected.

@@ -57,7 +57,7 @@ From this page, you can:
 ##### Step 2 - Create an EPL app {#step-2---create-an-epl-app}
 
 Click **New EPL app** in the top menu bar. In the resulting **Create app** dialog box, enter a unique app name.
-You can also enter a description which will be shown on the card that is created for the new app. Click **OK**.
+You can also enter a description which will be shown on the card that is created for the new app. Click **OK**. 
 
 The EPL editor appears. The EPL code for the new app already contains the typical basic event definitions and utilities that are required for working with {{< product-c8y-iot >}}. You can adapt them as required for your app. Consult the documentation and samples for more details.
 

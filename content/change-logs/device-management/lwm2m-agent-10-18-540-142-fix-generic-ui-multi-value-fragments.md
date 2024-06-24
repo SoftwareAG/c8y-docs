@@ -9,8 +9,8 @@ component:
   - value: component-1KLUzmqfe
     label: LWM2M
 build_artifact:
-  - value: tc-ggH2M4hf3
-    label: lwm2m-agent
+  - value: tc-QHwMfWtBk7
+    label: cumulocity
 ticket: DM-2770
 version: 10.18.540.141
 ---

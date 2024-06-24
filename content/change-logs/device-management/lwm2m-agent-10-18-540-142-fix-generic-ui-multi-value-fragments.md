@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-ggH2M4hf3
     label: lwm2m-agent
 ticket: DM-2770
-version: 10.18.540.142
+version: 10.18.540.141
 ---
 When a device sends values from multi-instance resources (via read, composite read, observe or composite observe), the LWM2M agent must decide whether it overwrites the previous data set or updates it (for example, by adding a new value to an existing array). Previously, in some edge cases the decision taken by the agent was not correct. This issue is now fixed and the agent always stores data from multi-instance resources correctly.  

@@ -4,7 +4,7 @@ title: Assets and groups are now shown when editing dashboard instances
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
-    label: Feature
+    label: Fix
 component:
   - value: component-YdSEScrEC
     label: Cockpit

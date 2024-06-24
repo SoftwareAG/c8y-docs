@@ -229,6 +229,6 @@ This may be useful if the operation is generally a success, but contains operati
 The completion percentage is determined by comparing the total number of initiated operations to the number of operations that have reached a final state (success or failure). The total count is established at operation creation and remains static thereafter. This static value may lead to inaccuracies in the completion percentage if the overall number of operations subsequently changes.
 
 * **Inaccuracy due to operation removal**: Operations can be implicitly removed when their associated devices are deleted. This deletion goes unaccounted for in the completion percentage calculation.
-* **Inaccuracy uue to operation addition**: Retrying failed operations can introduce new entries without modifying the original total count. This again results in a misrepresentation of the completion percentage.
+* **Inaccuracy due to operation addition**: Retrying failed operations can introduce new entries without modifying the original total count. This again results in a misrepresentation of the completion percentage.
 
 In conclusion, the current method of calculating completion percentage might not accurately reflect the actual progress due to the potential for uncaptured changes in the total number of operations.

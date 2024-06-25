@@ -3,7 +3,7 @@ date: ""
 title: Assets and groups are now shown when editing dashboard instances
 product_area: Application enablement & solutions
 change_type:
-  - value: change-QHu1GdukP
+  - value: change-VSkj2iV9m 
     label: Fix
 component:
   - value: component-YdSEScrEC

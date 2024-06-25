@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59543
 version: 1020.2.7
 ---
-asset-selector not emitting correctly the first selected item (#6511) [GRAFT][release/cd] (#6581)
+The asset selector component is used to allow users to select an asset from a list. Previously, the first item in the list was not automatically selected. This was changed, but the first selected item was not properly emitted to other components. This led in some cases to data points not showing in the data points selector. This has now been fixed so that the asset selector component will always emit the selected item. This change ensures that the selected asset is properly communicated and depending components can be used as expected.

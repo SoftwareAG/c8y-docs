@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3120
 version: 1020.2.10
 ---
-LWM2M Single Registration spelling error (#6460) [GRAFT] [release/cd] (#6600)
+In the LwM2M single registration feature, there was a spelling mistake in one of the log messages. This has now been fixed to improve the clarity and consistency of the logging. The change only affects the spelling in the log message and has no functional impact on the feature itself.

@@ -1,7 +1,7 @@
 ---
 title: Upgrading from Angular 12 to Angular 14
 layout: redirect
-weight: 30
+weight: 480
 ---
 
 Angular 14 is supported from version `1015.132.0`. The following configuration changes are required before you can run the application:

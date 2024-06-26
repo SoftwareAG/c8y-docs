@@ -112,7 +112,7 @@ The device is expected to perform the following actions:
 The 513 static response template is available to receive ```c8y_Configuration``` operations:
 
 1. Receive ```c8y_Configuration``` operation <br>
-  `511,DeviceSerial,"c8y.url.http=https://management.cumulocity.com\nc8y.url.mqtt=mqtt.cumulocity.com\n"`
+  `513,DeviceSerial,"c8y.url.http=https://management.cumulocity.com\nc8y.url.mqtt=mqtt.cumulocity.com\n"`
 2. Set operation status to EXECUTING <br>
   `501,c8y_Configuration`
 3. Install and apply configuration as included

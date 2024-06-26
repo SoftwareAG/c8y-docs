@@ -1,6 +1,6 @@
 ---
 date: ""
-title: LWM2M Single Registration spelling error (#6460) [GRAFT] [release/cd] (#6600)
+title: Fix spelling error in LwM2M single registration
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

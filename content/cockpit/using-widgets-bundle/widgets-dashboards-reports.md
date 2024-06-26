@@ -31,9 +31,10 @@ Some of the widget require additional permissions in order to visualize the data
 
 4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of a [dashboard](/cockpit/working-with-dashboards/#to-create-a-dashboard).
 
-    {{< c8y-admon-info >}}
+{{< c8y-admon-info >}}
 
-    The header styles "Regular" and "Border" can be used for all widgets while the header styles "Overlay" and "Hidden" remove the header and should only be used for widgets which benefit from a full-screen experience, for example "Image" or "Map". For other widgets, like "Alarms list" or "Data point table", these header styles should not be used.
-    {{< /c8y-admon-info >}}
+The header styles "Regular" and "Border" can be used for all widgets while the header styles "Overlay" and "Hidden" remove the header and should only be used for widgets which benefit from a full-screen experience, for example "Image" or "Map". For other widgets, like "Alarms list" or "Data point table", these header styles should not be used.
+
+{{< /c8y-admon-info >}}
 
 5.  Click **Save** to add the widget to the dashboard or report.

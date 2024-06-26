@@ -8,7 +8,7 @@ A {{< product-c8y-iot >}} web application can be a
 
 * a user interface application built on any web framework of your choice
 * a user interface application built using the {{< product-c8y-iot >}} Web SDK.
-* a user interface extension using the {{< product-c8y-iot >}} Web SDK and a {{< product-c8y-iot >}} default application
+* a user interface extension using the {{< product-c8y-iot >}} Web SDK and a {{< product-c8y-iot >}} default application.
 
 All subscribed web applications of a tenant appear in the application switcher on the top right of the{{< product-c8y-iot >}} UI, so that users can navigate between the applications. They are hosted by {{< product-c8y-iot >}} and the application will be made available through a URL &lt;tenant&gt;.{{< domain-c8y >}}/apps/&lt;application&gt;.
 

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix spelling error in LwM2M single registration
+title: Fixed spelling error in LWM2M single registration
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add permissions check for copy dashboard action
+title: Added a permission check for the copy dashboard action
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

@@ -8,7 +8,7 @@ section:
 
 {{< product-c8y-iot >}} is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality.
 
-There are three types of {{< product-c8y-iot >}} applications:
+{{< product-c8y-iot >}} includes the following application types:
 
  * [Web applications or extensions](#web-applications) - web-based user interface applications
  * [Microservices](#microservices) - server-side business logic

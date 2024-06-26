@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59454
 version: 1020.2.5
 ---
-Added a permissions check for the copy dashboard action. The system will now verify that the user has the necessary permissions before allowing them to copy a dashboard. If the user lacks the necessary permissions, the copy button will be disabled.
+A permission check for the copy dashboard action has been added. The platform now verifies that the user has the required permissions before allowing them to copy a dashboard. If the user lacks the required permissions the **Copy** button will be disabled.

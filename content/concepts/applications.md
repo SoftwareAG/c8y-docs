@@ -8,12 +8,12 @@ section:
 
 {{< product-c8y-iot >}} is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality.
 
-There are two types of {{< product-c8y-iot >}} applications:
+There are three types of {{< product-c8y-iot >}} applications:
 
- * [Web applications](#web-applications) -  web-based user interface applications
+ * [Web applications or extensions](#web-applications) - web-based user interface applications
  * [Microservices](#microservices) - server-side business logic
 
-Web applications are HTML5 single page applications, that appear in the {{< product-c8y-iot >}} application switcher and that are hosted in the {{< product-c8y-iot >}} platform.
+Web applications are HTML5 single page applications, that appear in the {{< product-c8y-iot >}} application switcher and that are hosted in the {{< product-c8y-iot >}} platform. You can either develop your own web application or extend existing applications with plugins.
 
 Microservices are Docker containers, hosted by {{< product-c8y-iot >}} and exposing a REST API.
 

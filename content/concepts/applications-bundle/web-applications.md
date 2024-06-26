@@ -7,13 +7,14 @@ layout: bundle
 A {{< product-c8y-iot >}} web application can be a
 
 * a user interface application built on any web framework of your choice
-* a user interface application built using the {{< product-c8y-iot >}} user interface framework as a set of user interface plugins.
+* a user interface application built using the {{< product-c8y-iot >}} Web SDK.
+* a user interface extension using the {{< product-c8y-iot >}} Web SDK and a {{< product-c8y-iot >}} default application
 
 All subscribed web applications of a tenant appear in the application switcher on the top right of the{{< product-c8y-iot >}} UI, so that users can navigate between the applications. They are hosted by {{< product-c8y-iot >}} and the application will be made available through a URL &lt;tenant&gt;.{{< domain-c8y >}}/apps/&lt;application&gt;.
 
 <img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
-The {{< product-c8y-iot >}} UI itself is built around a framework based on Angular, AngularJS and Bootstrap, the modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins so that developers can create their own configurations of the {{< product-c8y-iot >}} user interfaces. For more information on developing plugins, refer to [Web SDK for plugins](/web/introduction).
+The {{< product-c8y-iot >}} UI itself is built around a framework based on Angular, AngularJS and Bootstrap, the modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins so that developers can create their own configurations of the {{< product-c8y-iot >}} user interfaces. For more information on developing applications and plugins, refer to the [Web SDK introduction](/web/introduction). For the full Web SDK feature overview check out the [Web SDK Codex documentation](https://styleguide.cumulocity.com/apps/codex/#/).
 
 {{< c8y-admon-info >}}
 When designing a web application, data properties retrieved or persisted using the API don't have a limitation on the number of characters. Yet we recommend you to use no more than 1000 characters for persisted properties. From the perspective of validation constraints, stored objects are limited by the size of the JSON document, see [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#fragments).

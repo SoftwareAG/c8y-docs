@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-20'
 title: Software list in Device data widget now paginated to show all entries properly
 product_area: Device management & connectivity
 change_type:

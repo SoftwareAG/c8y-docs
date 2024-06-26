@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-20'
 title: Updated link to Edge documentation
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-27'
 title: Loading locales for non-default languages is now possible
 product_area: Application enablement & solutions
 change_type:

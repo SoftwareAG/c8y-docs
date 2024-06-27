@@ -12,4 +12,4 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ---
-SNMP functionality is considered deprecated (since which version?) and the respective documentation have been moved to GitHub repository: [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/snmp). This means that the feature is no longer actively supported by the product team.
+The documentation of the SNMP device protocol has been moved from the [user documentation](https://cumulocity.com/docs) to the public GitHub repository: [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/snmp). 

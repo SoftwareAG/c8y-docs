@@ -20,17 +20,17 @@ The **Device credentials** page lists all credentials that have been generated f
 
 The roles for the device will be updated accordingly.
 
-### To edit device credentials {#to-edit-device-credentials}
+### Optionally to edit device details {#to-edit-device-user}
 
 1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of a device credentials entry and then click **Edit** to open the device details.
 
-2. In the details page, you may disable/enable a device by clicking the **Active** toggle, change the password for a device, or assign or remove permissions by selecting/deselecting roles in the **Global roles** list.
+2. In the details page, you may disable/enable a device by clicking the **Active** toggle, or assign or remove permissions by selecting/deselecting roles in the **Global roles** list.
 
 	![Device credentials details](/images/users-guide/DeviceManagement/devmgmt-device-credentials-details.png)
 
 3. Click **Save**.
 
-The device credentials will be updated accordingly.
+The device will be updated accordingly.
 
 ### To disable device credentials {#to-disable-device-credentials}
 

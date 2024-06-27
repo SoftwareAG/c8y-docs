@@ -1,7 +1,7 @@
 ---
 date: 2024-06-26T00:00:00.000Z
 title: Moving SNMP documentation
-product_area: Device management
+product_area: Device Management
 change_type:
   - value: change-inv-3bw8e
     label: Announcement

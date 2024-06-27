@@ -4,7 +4,7 @@ title: Moving SNMP documentation
 product_area: Device Management
 change_type:
   - value: change-inv-3bw8e
-    label: Announcement
+    label: Improvement
 component:
   - value: component--KIsStyzM
     label: Device Management app

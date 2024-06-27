@@ -3,7 +3,7 @@ date: 2024-06-26T00:00:00.000Z
 title: Moving SNMP documentation
 product_area: Device Management
 change_type:
-  - value: change-inv-3bw8e
+  - value: change-2c7RdTdXo4
     label: Improvement
 component:
   - value: component--KIsStyzM

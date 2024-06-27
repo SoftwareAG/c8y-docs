@@ -1,6 +1,6 @@
 ---
 date: 2024-06-26T00:00:00.000Z
-title: Deprecation of SNMP
+title: Moving SNMP documentation
 product_area: Device management
 change_type:
   - value: change-inv-3bw8e

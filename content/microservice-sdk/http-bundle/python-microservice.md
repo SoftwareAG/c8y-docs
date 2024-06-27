@@ -69,7 +69,7 @@ if __name__ == '__main__':
 The application exposes three endpoints:
 
 - <kbd>/</kbd> returns a hello world message.
-- <kbd>/health</kbd> is the common endpoint to verify if a microservice is up and running.
+- <kbd>/health</kbd> is the common endpoint to verify if a microservice is up and running. It should be included into all production microservices to enable high availability.
 - <kbd>/environment</kbd> reads some standard variables provided to the environment by the platform during the microservice installation and returns their values in JSON format.
 
 It runs the HTTP server on port 80. This is required for all microservices.

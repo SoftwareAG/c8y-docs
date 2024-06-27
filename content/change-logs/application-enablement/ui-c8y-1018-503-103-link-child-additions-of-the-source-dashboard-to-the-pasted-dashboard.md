@@ -1,6 +1,6 @@
 ---
 date: ""
-title: link child additions of the source dashboard to the pasted dashboard (#6559) [GRAFT][release/y2024] (#6607)
+title: Pasted dashboards now include linked child additions from source dashboard
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

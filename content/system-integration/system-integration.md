@@ -1,5 +1,5 @@
 ---
-title: System integration
+title: System integration options
 layout: bundle
 section:
   - app_enablement
@@ -14,27 +14,24 @@ The choice of the system integration option depends on the organization's specif
 
 By carefully evaluating these options, organizations can select the integration solution that best aligns with their unique requirements, empowering them to unlock the full potential of {{< product-c8y-iot >}} and drive business transformation.
 
-Let's explore a few prominent options:
+Let's explore a few prominent options.
 
-### Microservices Approach: Developer-Friendly Integration
+### Microservices approach - Developer-friendly integration {#microservices-approach}
 
 For developers seeking a versatile and flexible integration solution, {{< product-c8y-iot >}}'s microservices approach offers a developer-friendly solution. This method involves creating microservices that connect {{< product-c8y-iot >}} to external systems, allowing for customized data exchange and automation. While requiring initial development effort, the microservices approach provides greater control and adaptability. The option is utilized by many customers for integrating with CRM, ERPs, and FSM tools.
 
 This article [https://tech.forums.softwareag.com/t/jump-start-your-next-cumulocity-microservice-project-in-java/257641](https://tech.forums.softwareag.com/t/jump-start-your-next-cumulocity-microservice-project-in-java/257641) provides a guide to setting up a {{< product-c8y-iot >}} microservice project in Java, and a corresponding webinar can be found on [YouTube](https://www.youtube.com/watch?v=2j21ULZbtlg).
 
-### Zapier
+### Workflow automation tools {#workflow-automation-tools}
 
-One of the workflow automation tools we explored is Zapier, which offers integrations for more than 6,500 applications, allowing you to easily move data between them and automate repetitive tasks.
+These tools provide a user-friendly interface and extensive integrations, suitable for basic to moderately complex workflows. Popular options include Zapier, n8n.io, and Make.com (formerly Integromat). While some tools cater to straightforward automation tasks, others offer high customizability, open-source access, and self-hosting capabilities, making them suitable for more technically proficient users.  
 
-This [TechForum article](https://tech.forums.softwareag.com/t/cumulocity-iot-google-spreadsheet-no-code-integration-guide/287731) provides an example in which a device is registered on {{< product-c8y-iot >}}, and it sends battery values every 5 seconds to {{< product-c8y-iot >}}. We created an automated way to export all new measurements to a spreadsheet stored on Google Workspace for further analysis.
+Here are some examples of what you can achieve with these tools:
 
-### n8n.io
+#### Zapier
 
-n8n.io is a free and source-available fair-code licensed workflow automation tool, allowing you to easily automate tasks across different services. n8n is an extendable workflow automation tool with a fair-code distribution model. It always has visible source code, is available for self-hosting, and enables you to add your custom functions, logic, and apps. The node-based approach of n8n makes it highly versatile, allowing you to connect anything to everything
+Integrate {{< product-c8y-iot >}} with Google Sheets to automatically export sensor data for further analysis. Refer to [https://tech.forums.softwareag.com/t/cumulocity-iot-google-spreadsheet-no-code-integration-guide/287731](https://tech.forums.softwareag.com/t/cumulocity-iot-google-spreadsheet-no-code-integration-guide/287731&).
 
-The article https://tech.forums.softwareag.com/t/data-integration-options-with-cumulocity-iot/263884 showcases a multi-step automation involving a device registered on Cumulocity IoT which generates alarms of varying severities based on specific conditions. The user intends to automate the creation of a Zendesk ticket for each alarm and, for alarms with CRITICAL severity, trigger an SMS notification to a designated mobile number using Twilio .
+#### n8n.io
 
-
-Make.com, formerly known as Integromat, is another automation software we explored. It allows anyone to design, build, and automate anything—from tasks and workflows to apps and systems—without the need for coding skills.
-
- 
+Create a multi-step automation for {{< product-c8y-iot >}} alarms, generating Zendesk tickets and SMS notifications based on severity. Refer to [https://tech.forums.softwareag.com/t/data-integration-options-with-cumulocity-iot/263884](https://tech.forums.softwareag.com/t/data-integration-options-with-cumulocity-iot/263884).

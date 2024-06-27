@@ -14,7 +14,6 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
 
    ```shell
    USER_NAME=$(whoami)
-   GROUP_NAME=$(id -gn)
    sudo sh -c '
    echo "vm.panic_on_oom=0\nvm.overcommit_memory=1\nkernel.panic=10\nkernel.panic_on_oops=1" >> /etc/sysctl.d/90-kubelet.conf && \
    sysctl -p /etc/sysctl.d/90-kubelet.conf && \
@@ -25,7 +24,7 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
       --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook && \
    mkdir -p '"$HOME"'/.kube && \
    cp /etc/rancher/k3s/k3s.yaml '"$HOME"'/.kube/config && \
-   chown '"$USER_NAME:$GROUP_NAME"' '"$HOME"'/.kube/config && \
+   chown '"$USER_NAME:"' '"$HOME"'/.kube/config && \
    chmod 600 '"$HOME"'/.kube/config && \
    echo -e "\e[32mSuccessfully installed k3s!\e[0m"
    '

@@ -20,7 +20,7 @@ The **Device credentials** page lists all credentials that have been generated f
 
 The roles for the device will be updated accordingly.
 
-### Optionally to edit device details {#to-edit-device-user}
+### To edit device details {#to-edit-device-details}
 
 1. Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of a device credentials entry and then click **Edit** to open the device details.
 

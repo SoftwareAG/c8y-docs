@@ -30,7 +30,7 @@ The roles for the device will be updated accordingly.
 
 3. Click **Save**.
 
-The device will be updated accordingly.
+The device details will be updated accordingly.
 
 ### To disable device credentials {#to-disable-device-credentials}
 

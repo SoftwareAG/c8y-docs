@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58710
 version: 1020.2.4
 ---
-The Angularjs-based modal dialog for creating a new group from the widgets has been replaced. Instead of the modal, when a user tries to add a new group from the widgets, they will now be redirected to the Groups view where the add group modal is shown.
+The AngularJS-based dialog for creating a new group from a widget has been replaced. Instead of this dialog, when users want to add a new group from a widget, they will now be redirected to the **Groups** page where the **Add group** dialog is shown.

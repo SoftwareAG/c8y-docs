@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Replace group creation modal in widgets with redirect to Groups view
+title: Replaced group creation dialog in widgets with redirect to Groups page
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

@@ -21,7 +21,7 @@ To apply the security configuration, follow the steps below:
    - Username: management/<*Edge admin username*>
    - Password: password provided during the installation
 
-2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 
 3. Click **Edge** > **Security** in the navigator.
 
@@ -60,4 +60,4 @@ Once enabled, you cannot disable the auditing system configuration.
 
 ### Configuring security using the REST APIs {#configuring-security-using-the-rest-apis}
 
-To configure security using the REST APIs, see the `/edge/configuration/security` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/10.18.0/#operation/postSecurityConfiguration).
+To configure security using the REST APIs, see the `/edge/configuration/security` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/postSecurityConfiguration).

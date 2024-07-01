@@ -20,7 +20,7 @@ To update Edge:
 
 1. Log in to the {{< management-tenant >}}.
 
-2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 
 3. Click **Edge** > **Update** in the navigator.
 

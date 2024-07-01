@@ -33,7 +33,7 @@ For information regarding any microservices related issues, see [Troubleshooting
 
 	- Username: management/<*Edge admin username*>
 	- Password: password provided during the installation
-2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 3. Click **Edge** > **Microservices** in the navigator.
 4. Use the toggle button to enable the microservice hosting feature.
 
@@ -61,7 +61,7 @@ Edge appliance will be temporarily non-operational during the operation.
 
 ### Enabling or disabling the microservice hosting feature using the REST APIs {#enabling-or-disabling-the-microservice-hosting-feature-using-the-rest-apis}
 
-To enable or disable the microservice hosting feature using the REST APIs, see the `/edge/configuration/microservices` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/10.18.0/#operation/enableMicroserviceHosting).
+To enable or disable the microservice hosting feature using the REST APIs, see the `/edge/configuration/microservices` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/enableMicroserviceHosting).
 
 ### Deploying microservices with a lower manifest version {#deploying-microservices-with-a-lower-manifest-version}
 

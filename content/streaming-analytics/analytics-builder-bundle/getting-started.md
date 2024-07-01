@@ -70,7 +70,7 @@ By default, an input block is listening to all input sources, that is, the **All
 5. Select the **Ignore Timestamp** check box.
    This makes sure that the measurements are processed in the same order as they are received.
 
-If you need detailed information on the currently selected block, view the block reference in the documentation pane on the right. If the documentation pane is currently not shown, click the document icon <img src="/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png" alt="Document icon" style="display:inline-block; margin:0">.
+If you need detailed information on the currently selected block, view the block reference in the documentation pane on the right. If the documentation pane is currently not shown, click the document icon <i class="c8y-icon c8y-icon-book text-primary icon-20"></i>.
 
 #### Step 4: Add the block that calculates the mean of the measurement values {#step-4-add-the-block-that-calculates-the-mean-of-the-measurement-values}
 
@@ -154,7 +154,7 @@ The **Samples** tab of the model manager lists all sample models that are provid
 1. Go to the **Samples** tab of the model manager.
 2. Click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the **On missing measurements create alarm** sample and then click **Create model from sample**.
    The new model is immediately shown in the model editor. It has the same name, description and tags as the sample.
-3. If you want to rename the model, click the model name which is shown at the left of the toolbar. You can then specify a new name in the resulting **Model Configuration** dialog box.
+3. If you want to rename the model, click the model name which is shown at the left of the toolbar. You can then specify a new name in the resulting dialog box.
 4. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the new model.
 5. In the toolbar of the model editor, click the close icon <i class="dlt-c8y-icon-clear icon-20"></i> to leave the model editor and thus to return to the model manager.
    {{< c8y-admon-info>}}

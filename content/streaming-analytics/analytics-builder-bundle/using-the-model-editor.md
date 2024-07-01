@@ -58,7 +58,7 @@ You can also add or remove tags. Tags are helpful in the model manager, to show 
 ##### To change the name, description, and tags of a model {#to-change-the-name-description-and-tags-of-a-model}
 
 1.  In the model editor, click on the model name which is shown at the left of the toolbar.
-2.  In the resulting **Model Configuration** dialog box, specify a new unique name for the model, change the description, and/or change the tags.
+2.  In the resulting **Edit model** dialog box, specify a new unique name for the model, change the description, and/or change the tags.
 
     To add a tag, you simply type its name and press Enter or the Tab key. The tag is then shown in a colored rectangle. To remove a tag, click on the X that is shown in the rectangle. The dialog prevents you from entering duplicate tags for a model; if you enter such a tag name, the duplicate tag is not added and the original tag blinks one time.
 
@@ -192,7 +192,7 @@ You can also view the block reference directly in this documentation. See [Analy
 ##### To view the documentation for a block {#to-view-the-documentation-for-a-block}
 
 1.  In the model editor, click the block for which you want to view the documentation. You can do this in the palette or on the canvas.
-2.  If the documentation pane is currently not shown, click the area that contains the document icon <img src="/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png" alt="Document icon" style="display:inline-block; margin:0"> \(shown at the right of the canvas\) to display the documentation pane. Clicking that area again hides the documentation pane.
+2.  If the documentation pane is currently not shown, click the area that contains the document icon <i class="c8y-icon c8y-icon-book text-primary icon-20"></i>  \(shown at the right of the canvas\) to display the documentation pane. Clicking that area again hides the documentation pane.
 3.  If you want to resize the documentation pane \(for example, to make it larger\), move the mouse pointer over the area that contains the document icon. Click and hold down the mouse button and drag the mouse to the left or right \(to make the documentation pane wider or smaller\).
 
 #### Selecting blocks and wires {#selecting-blocks-and-wires}
@@ -667,4 +667,4 @@ When the grid is hidden, the icon looks as follows: <i class="dlt-c8y-icon-grid-
 
 When the grid is shown, the icon looks as follows: <i class="dlt-c8y-icon-grid-off icon-20"></i>.
 
-When the model is active \(read-only mode\), it is not possible to toggle the display of the grid and this icon is therefore disabled.
+When the model is active \(read-only mode\), it is not possible to toggle the display of the grid and this icon is therefore not shown.

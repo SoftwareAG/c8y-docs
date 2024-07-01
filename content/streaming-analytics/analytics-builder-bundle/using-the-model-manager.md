@@ -74,7 +74,7 @@ Filtering also works in combination with a model or sample name that you specify
    -  **Data point**.
       You can show only the models that use specific data points, such as `c8y_TemperatureMeasurement`. This requires that at least one item has been selected in the **Filter by source or destination** drop-down list box. Open the **Filter by data points** drop-down list box, select one or more data points, and click **Apply**.
    -  **Tags**.
-      You can show only the models for which specific tags have been defined in the **Model Configuration** dialog box, which is shown when you add a new model or when you invoke that dialog box from the model editor \(see also [Adding a new model](/streaming-analytics/analytics-builder#adding-a-new-model) and [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model)\). Open the **Filter by tag** drop-down list box, select one or more tags, and click **Apply**.
+      You can show only the models for which specific tags have been defined in the **Create model** dialog box which is shown when you add a new model or when you invoke the **Edit model** dialog box from the model editor \(see also [Adding a new model](/streaming-analytics/analytics-builder#adding-a-new-model) and [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model)\). Open the **Filter by tag** drop-down list box, select one or more tags, and click **Apply**.
 
    You can combine several types of filters, for example, to show only active models in production mode that use a specific device.
 
@@ -99,18 +99,24 @@ You can also create a new model from a sample. See [Creating a model from a samp
 #### To add a new model {#to-add-a-new-model}
 
 1.  On the **Models** tab of the model manager, click **New model** in the toolbar.
-2.  In the resulting **Model Configuration** dialog box, enter a unique model name.
+2.  In the resulting **Create model** dialog box, enter a unique model name.
 
     You can optionally enter a description for the model and one or more tags.
     Tags are helpful for filtering the models in the model manager to show only the models for which a specific tag has been defined \(see also [Filtering the models and samples](/streaming-analytics/analytics-builder/#filtering-the-models-and-samples)\). To add a tag, you simply type its name and press Enter or the Tab key. The tag is then shown in a colored rectangle. To remove a tag, click the X that is shown in the rectangle. The dialog prevents you from entering duplicate tags for a model; if you enter such a tag name, the duplicate tag is not added and the original tag blinks one time.
 3.  Click **OK**.
     The model editor appears. See [Overview of steps for adding a model](/streaming-analytics/analytics-builder/#overview-of-steps-for-adding-a-model) for a brief overview of how to add blocks and wires to the new model.
 
+{{< c8y-admon-info>}}
+When you click **Cancel** without specifying a model name, the model editor also appears and the default name "Model#" is then shown.
+You can add blocks to the model, but as long as you do not specify a model name, you will not be able to save the model.
+Click the default name "Model#" and specify a model name. See also [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model).
+{{< /c8y-admon-info>}}
+
 ### Editing an existing model {#editing-an-existing-model}
 
 You can edit \(or view\) each model that is currently listed in the model manager.
 
-When a model is active, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything. The save icon <i class="dlt-c8y-icon-save icon-20"></i> in the model editor is therefore disabled.
+When a model is active, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything.
 
 #### To edit a model {#to-edit-a-model}
 

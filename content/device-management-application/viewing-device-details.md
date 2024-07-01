@@ -288,7 +288,7 @@ A tooltip on the status icon displays their actual value.
 
 ### Shell {#shell}
 
-The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, like AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms such as Tixi TiXML. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.
+The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, like AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms provided by many gateway makers. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.
 
 The **Shell** tab presents a command prompt to enter commands.
 

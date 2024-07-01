@@ -222,3 +222,13 @@ You may manually set a failed bulk operation to the status SUCCESSFUL.
 To do so, click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> to the right of the bulk operation, then click **Set operation to successful**.
 
 This may be useful if the operation is generally a success, but contains operation failures on devices that are not too important. These failures would otherwise still leave the bulk operation in status FAILED.
+
+{{< c8y-admon-info >}}
+**Calculation of completion percentage**
+
+The completion percentage is determined by comparing the total number of initiated operations to the number of operations that have reached a final state (success or failure). The total count is established at operation creation and remains static thereafter. This static value may lead to inaccuracies in the completion percentage if the overall number of operations subsequently changes.
+
+* **Operation removal**: Operations can be implicitly removed when their associated devices are deleted. This deletion goes unaccounted for in the completion percentage calculation.
+* **Operation addition**: Retrying failed operations can introduce new entries without modifying the original total count. This again results in a misrepresentation of the completion percentage.
+
+The completion percentage is calculated based on the information available at the time an operation is created and further changes are not applied.

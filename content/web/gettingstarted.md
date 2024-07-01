@@ -8,9 +8,8 @@ section:
 
 This guide will setup your first application. The first step is to install the `@angular/cli` in the right version.
 
-
 ```bash
-npx @angular/cli@v16-lts new --style=less --routing=true
+npx @angular/cli@v17-lts new --style=less --standalone=false
 ```
 
 Second, navigate to the folder and add the `@c8y/websdk` package to your Angular application:
@@ -65,6 +64,13 @@ application using the `-u` flag. For example:
 ```bash
 npm start -- -u http://mytenant.acme.iot
 ```
+
+or
+
+```
+ ng serve <appName> -u http://mytenant.acme.iot
+```
+
 
 When you start the command the application begins to compile. After it is compiled, you can navigate to
 `http://localhost:4200/apps/<<your-app-name>>/` and login to your tenant.

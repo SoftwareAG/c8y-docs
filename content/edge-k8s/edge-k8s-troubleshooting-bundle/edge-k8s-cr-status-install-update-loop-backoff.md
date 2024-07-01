@@ -46,11 +46,11 @@ kubectl logs -n c8yedge deployment.apps/c8yedge-operator-controller-manager -c m
 MongoDB logs:
 
 ```shell
-kubectl logs -n c8yedge logs stategulset.apps/edge-db-rs0 –all-containers --prefix
+kubectl logs -n c8yedge --all-containers --prefix statefulset.apps/edge-db-rs0
 ```
 
 Core logs:
 
 ```shell
-kubectl logs -n c8yedge logs stategulset.apps/c8ycore-sts –all-containers --prefix
+kubectl logs -n c8yedge --all-containers --prefix statefulset.apps/c8ycore-sts
 ```

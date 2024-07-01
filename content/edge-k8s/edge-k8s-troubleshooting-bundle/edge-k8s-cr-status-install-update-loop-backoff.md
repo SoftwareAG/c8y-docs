@@ -6,8 +6,8 @@ layout: redirect
 After deploying or updating Edge, if the Edge CR status is `InstallationLoopBackOff` or `UpdateLoopBackOff`, as part of the output of `kubectl get edge c8yedge -n c8yedge`:
 
 ```shell
-NAME         DOMAIN NAME     VERSION     STATUS
-c8yedge      myown.iot.com   1018.0.0    InstallLoopBackOff
+NAME         DOMAIN NAME     VERSION     STATUS     
+c8yedge      myown.iot.com   {{< c8y-edge-current-version >}}.0.0    InstallLoopBackOff
 ```
 
 Describe the Edge CR (cumulocity-iot-edge) with the command `kubectl describe edge c8yedge -n c8yedge`.

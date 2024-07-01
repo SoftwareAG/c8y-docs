@@ -17,8 +17,8 @@ API Version: edge.cumulocity.com/v1
 Kind: CumulocityIoTEdge
 
 Status:
-	Deployed Generation:  x
-	State: Ready
+  Deployed Generation:  x
+  State: Ready
 
 Events:
  Type      Reason                       Age    From               Message

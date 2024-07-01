@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 55
 title: Knowledge Hub
 layout: bundle
 section:

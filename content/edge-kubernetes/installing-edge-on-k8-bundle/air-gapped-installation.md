@@ -114,7 +114,7 @@ LOCAL_HARBOR_PORT=5001                      # Change harbor port if necessary
 LOCAL_HARBOR_USER="admin"                   # Change if you used different credentails while installing the Harbor registry
 LOCAL_HARBOR_PASSWORD="admin-pass"          # Change if you used different credentails while installing the Harbor registry
 
-c8yedge_repository_sync sync -v 1018.0.0 -sr registry.c8y.io -sru "${EDGE_REPO_USER}" -srp "${EDGE_REPO_PASSWORD}" -tr "${LOCAL_HARBOR_DOMAIN}:${LOCAL_HARBOR_PORT}" -tru "${LOCAL_HARBOR_USER}" -trp "${LOCAL_HARBOR_PASSWORD}" --dryrun False
+c8yedge_repository_sync sync -v {{< c8y-edge-current-version >}}.0.0 -sr registry.c8y.io -sru "${EDGE_REPO_USER}" -srp "${EDGE_REPO_PASSWORD}" -tr "${LOCAL_HARBOR_DOMAIN}:${LOCAL_HARBOR_PORT}" -tru "${LOCAL_HARBOR_USER}" -trp "${LOCAL_HARBOR_PASSWORD}" --dryrun False
 ```
 
 {{< c8y-admon-info >}}
@@ -144,7 +144,7 @@ kubectl patch configmap coredns -n kube-system --type merge -p "{\"data\":{\"Nod
 ```
 
 ### Installing the Edge Operator {#installing-the-edge-operator}
-To install the Edge Operator, run and enter the version (for example, 1018.0.0) you want to install, and the local Harbor registry credentials.
+To install the Edge Operator, run and enter the version (for example, {{< c8y-edge-current-version >}}.0.0) you want to install, and the local Harbor registry credentials.
 
 ```bash
 EDGE_NAMESPACE=c8yedge                    # Change namespace name if you want to deploy Edge operator and Edge in a different namespace

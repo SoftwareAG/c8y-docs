@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 45
 title: UI functionalities and features
 layout: bundle
 section:

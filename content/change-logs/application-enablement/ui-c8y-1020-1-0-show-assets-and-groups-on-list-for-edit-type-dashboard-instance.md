@@ -1,9 +1,9 @@
 ---
-date: ""
+date: '2024-06-27'
 title: Assets and groups are now shown when editing dashboard instances
 product_area: Application enablement & solutions
 change_type:
-  - value: change-VSkj2iV9m 
+  - value: change-VSkj2iV9m
     label: Fix
 component:
   - value: component-YdSEScrEC

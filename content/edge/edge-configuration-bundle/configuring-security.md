@@ -61,4 +61,4 @@ Once enabled, you cannot disable the auditing system configuration.
 
 ### Configuring security using the REST APIs {#configuring-security-using-the-rest-apis}
 
-To configure security using the REST APIs, see the `/edge/configuration/security` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/10.18.0/#operation/postSecurityConfiguration).
+To configure security using the REST APIs, see the `/edge/configuration/security` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/postSecurityConfiguration).

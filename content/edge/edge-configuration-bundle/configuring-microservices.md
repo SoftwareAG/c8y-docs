@@ -61,7 +61,7 @@ Edge appliance will be temporarily non-operational during the operation.
 
 ### Enabling or disabling the microservice hosting feature using the REST APIs {#enabling-or-disabling-the-microservice-hosting-feature-using-the-rest-apis}
 
-To enable or disable the microservice hosting feature using the REST APIs, see the `/edge/configuration/microservices` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/10.18.0/#operation/enableMicroserviceHosting).
+To enable or disable the microservice hosting feature using the REST APIs, see the `/edge/configuration/microservices` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/enableMicroserviceHosting).
 
 ### Deploying microservices with a lower manifest version {#deploying-microservices-with-a-lower-manifest-version}
 

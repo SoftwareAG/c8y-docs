@@ -8,7 +8,7 @@ This section defines the Edge deployment's configurations.
 
 |<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|
-|version|Yes|String| |Edge version to deploy.<br><br>For example, 1018.0.0 for 10.18 and 1018.0.1 for a fix-1 of 10.18.
+|version|Yes|String| |Edge version to deploy.<br><br>For example, {{< c8y-edge-current-version >}}.0.0 for {{< c8y-edge-current-version-alt >}} and {{< c8y-edge-current-version >}}.0.1 for a fix-1 of {{< c8y-edge-current-version-alt >}}.
 |licenseKey|Yes|String||Edge license key.
 |company|Yes|String||Name of the "edge" tenant, for example, the company's name.
 |domain|Yes|String||A fully qualified domain name. <p>For example, *myown.iot.com*. Here, you must have the Edge license for the domain name *iot.com* or *myown.iot.com*.

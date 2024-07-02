@@ -1,6 +1,6 @@
 ---
 date: ""
-title: adjust widget title and actions for overlay and hidden appearance (#6643) [GRAFT][release/cd] (#6656)
+title: Widget title and actions adjusted for overlay and hidden appearance
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 In this section, we will learn how to generate a JWT token using mTLS protocol with {{< product-c8y-iot >}}.
-For authentication with {{< product-c8y-iot >}} we use X.509 certificates. Device access token API is only accessible on port 2443.
+For authentication with {{< product-c8y-iot >}} we use X.509 certificates. Device access token API is only accessible on port 8443.
 
 ### Prerequisites {#prerequisites}
 
@@ -50,7 +50,7 @@ The following configuration is required before calling the device access token A
 * TRUSTSTORE_PASSWORD - The password to access the truststore.
 * TRUSTSTORE_FORMAT - Either "JKS" or "PKCS12" depending on the file format. The path is provided by TRUSTSTORE.
 * PLATFORM_URL - The URL of the platform.
-* PLATFORM_MTLS_PORT - Port 2443 is available for device access token API
+* PLATFORM_MTLS_PORT - Port 8443 is available for device access token API
 * DEVICE_ACCESS_TOKEN_PATH API - The endpoint responsible for the mTLS protocol.
 * LOCAL_DEVICE_CHAIN - The whole chain in PEM format.
 
@@ -66,7 +66,7 @@ To change the configuration in the REST Java client, copy the file *chain-with-p
             private static final String TRUSTSTORE_FORMAT = "jks";
             private static final String LOCAL_DEVICE_CHAIN = "-----BEGIN CERTIFICATE----- MIIcQhNJJ0F/lfjm -----END CERTIFICATE-----";
             private static final String PLATFORM_URL = "<URL of the platform>";
-            private static final String PLATFORM_MTLS_PORT = "2443";
+            private static final String PLATFORM_MTLS_PORT = "8443";
 
 The device can now generate a JWT token. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-integration/certificate/#device-certificates) process.
 

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Widget title and actions adjusted for overlay and hidden appearance
+title: Widget title and actions aligned with overlay and hidden appearance settings
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

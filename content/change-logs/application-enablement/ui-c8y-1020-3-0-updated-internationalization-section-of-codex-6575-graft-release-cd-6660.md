@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58724
 version: 1020.3.0
 ---
-Updated "Internationalization" section of Codex (#6575) [GRAFT][release/cd] (#6660)
+To improve the documentation around internationalization, the "Internationalization" section of the Cumulocity IoT Codex was updated. The changes provide more detailed information and guidance on how to handle translations and localization in applications. This impacts developers who want to make their applications available in multiple languages, giving them better resources to understand and implement internationalization best practices.

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Updated "Internationalization" section of Codex (#6575) [GRAFT][release/cd] (#6660)
+title: Updated the section on internationalization in the Cumulocity IoT Codex
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

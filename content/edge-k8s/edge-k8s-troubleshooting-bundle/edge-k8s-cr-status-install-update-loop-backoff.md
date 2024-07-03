@@ -7,7 +7,7 @@ After deploying or updating Edge, if the Edge CR status is `InstallationLoopBack
 
 ```shell
 NAME         DOMAIN NAME     VERSION     STATUS     
-c8yedge      myown.iot.com   1018.0.0    InstallLoopBackOff
+c8yedge      myown.iot.com   {{< c8y-edge-current-version >}}.0.0    InstallLoopBackOff
 ```
 
 Describe the Edge CR (cumulocity-iot-edge) with the command `kubectl describe edge c8yedge -n c8yedge`.
@@ -46,11 +46,11 @@ kubectl logs -n c8yedge deployment.apps/c8yedge-operator-controller-manager -c m
 MongoDB logs:
 
 ```shell
-kubectl logs -n c8yedge logs stategulset.apps/edge-db-rs0 –all-containers --prefix
+kubectl logs -n c8yedge --all-containers --prefix statefulset.apps/edge-db-rs0
 ```
 
 Core logs:
 
 ```shell
-kubectl logs -n c8yedge logs stategulset.apps/c8ycore-sts –all-containers --prefix
+kubectl logs -n c8yedge --all-containers --prefix statefulset.apps/c8ycore-sts
 ```

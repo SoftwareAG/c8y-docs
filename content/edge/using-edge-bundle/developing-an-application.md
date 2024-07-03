@@ -8,24 +8,24 @@ If you develop a {{< product-c8y-iot >}} web application using the [Web SDK](/we
 
 To add the Edge appliance's self-signed certificate to the Node.js trust store, set the environment variable `NODE_EXTRA_CA_CERTS` to the path of the certificate before executing the `npm` commands.
 
-For example:
+**Example:**
 
-On Windows Powershell
+On Windows Powershell:
 
 ```shell
 $env:NODE_EXTRA_CA_CERTS=<path-to-the-certificate>\certificate.pem
 ```
 
-On Windows command prompt
+On Windows command prompt:
 
 ```shell
 set NODE_EXTRA_CA_CERTS=<path-to-the-certificate>\certificate.pem
 ```
 
-On Linux platforms
+On Linux platforms:
 
 ```shell
 export NODE_EXTRA_CA_CERTS=<path-to-the-certificate>/certificate.pem
 ```
 
- For more information on the {{< product-c8y-iot >}} web application development, see the [Web SDK guide](/web/overview/).
+ For more information on the {{< product-c8y-iot >}} web application development, see the [Web SDK guide](/web/introduction/).

@@ -471,10 +471,12 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
-<td style="text-align: left">Firmware update URL</td>
+<td style="text-align: left">Firmware update URL (DEPRECATED)</td>
 <td style="text-align: left">fwUpdateURL</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Indicates the firmware update URL from where the LWM2M device can download the firmware package.</td>
+<td style="text-align: left"><b>DEPRECATED</b>: Please use the regular firmware repository to specify the firmware version that links to an external URL. This field will be removed in a future update. 
+
+Indicates the firmware update URL from where the LWM2M device can download the firmware package.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>

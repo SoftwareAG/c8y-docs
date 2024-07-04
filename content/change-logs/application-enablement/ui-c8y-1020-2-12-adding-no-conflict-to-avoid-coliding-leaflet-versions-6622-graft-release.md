@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-07-04'
 title: Avoid colliding Leaflet versions by adding noConflict
 product_area: Application enablement & solutions
 change_type:

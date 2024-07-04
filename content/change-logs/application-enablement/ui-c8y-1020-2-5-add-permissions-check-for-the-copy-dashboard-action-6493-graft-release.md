@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-07-04'
 title: Added a permission check for the copy dashboard action
 product_area: Application enablement & solutions
 change_type:

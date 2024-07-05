@@ -192,8 +192,63 @@ Note: The Average (Mean) block generates the mean for an individual device. If t
 `apama.analyticskit.blocks.core.Counter`
 
 <p>Gives a count of the total inputs and repeated inputs.</p>
-<p>If two consecutive input values have different types, they are not evaluated as repeat values. All other evaluations for if two values are equal to each other follow the same rules as EPL. For more information, refer <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaEplRef_types.html%23">Types</a>.</p>
+<p>If two consecutive input values have different types, they are not evaluated as repeat values. For example, a float value of 1.0 will not evaluate as a repeat of an integer value of 1. All other evaluations for whether two values are equal follow the same rules as EPL. For more information, refer to <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaEplRef_types.html%23">Types</a>.
+<p></p>
+You can specify a maximum value for each count independently. By default, each counter returns to one, counting the first input after the maximum has been reached. This is useful, for example, if you want to trigger an action on every n<sup>th</sup> input, or if the input has repeated more often than expected. You can also set each counter to stop once it reaches the maximum value. In this mode, a pulse on the Reset input port is required to reset the count, although this resets both counters at the same time. If this dual reset is an issue, you must use a separate Counter block to deal with each count independently.</p>
 
+
+#### Parameters {#counter-parameters}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 50%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+<col style="width: 10%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+<th scope="col">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Maximum Count</th>
+<td><span>The maximum value the Count output port can take. A negative or zero value is interpreted as <tt>float.MAX (~2e308)</tt>. This only affects the Count output port.</span>
+</td>
+<td><span>float</span>
+</td>
+<td><span>Default: 0.0</span></td>
+</tr>
+<tr>
+<th scope="row">Loop Count</th>
+<td><span>If selected, the Count output port is automatically reset to zero when the maximum value is reached. If not selected, the counter stops counting when the maximum value is reached and must be reset manually. This only affects the Count output port.</span>
+</td>
+<td><span>boolean</span>
+</td>
+<td><span>Default: True</span></td>
+</tr>
+<tr>
+<th scope="row">Maximum Number Same</th>
+<td><span>The maximum value the Number Same output port can take. A negative or zero value is interpreted as <tt>float.MAX (~2e308)</tt>. This only affects the Number Same output port.</span>
+</td>
+<td><span>float</span>
+</td>
+<td><span>Default: 0.0</span></td>
+</tr>
+<tr>
+<th scope="row">Loop Number Same</th>
+<td><span>If selected, the Number Same output port is automatically reset to zero when the maximum value is reached. If not selected, the counter stops counting when the maximum value is reached and must be reset manually. This only affects the Number Same output port.</span>
+</td>
+<td><span>boolean</span>
+</td>
+<td><span>Default: True</span></td>
+</tr>
+</tbody>
+</table>
 
 #### Input Port Details {#counter-inputs}
 
@@ -220,7 +275,7 @@ Note: The Average (Mean) block generates the mean for an individual device. If t
 </tr>
 <tr>
 <th scope="row">Reset</th>
-<td><span>Reset the counters.</span>
+<td><span>Resets both counters.</span>
 </td>
 <td><span>boolean</span>
 </td>

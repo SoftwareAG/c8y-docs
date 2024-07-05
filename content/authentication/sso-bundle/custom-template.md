@@ -31,7 +31,7 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 |Field|Description|
 |:---|:---|
 |Redirect URI|Redirect parameter. Can be used in request definitions as a ${redirectUri} placeholder
-|Redirect to the user interface application|The redirect URL is automatically set to the application used by the user.
+|Redirect to the user interface application|The redirect URL is automatically set to the application used by the user during login.
 |Client ID|OAuth connection client ID. Can be used in request definitions as a ${clientId} placeholder
 |Token issuer|OAuth token issuer
 |Button name|Name displayed on the button on the **Login** page

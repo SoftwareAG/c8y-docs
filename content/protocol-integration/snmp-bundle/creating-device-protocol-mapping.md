@@ -9,7 +9,7 @@ The device protocol mapping helps the agent to know how to deal with incoming da
 
 ### To create mapping from the UI {#to-create-mapping-from-the-ui}
 
-1. In the Device management application, click **Device protocols** in the **Device types** menu in the navigator.
+1. In the Device Management application, click **Device protocols** in the **Device types** menu in the navigator.
 2. Open the desired device protocol (for example snmp-device-protocol). It shows a list of components representing the OIDs.
 
 	![Device protocol details](/images/device-protocols/snmp/snmp-device-protocol-detail.png)

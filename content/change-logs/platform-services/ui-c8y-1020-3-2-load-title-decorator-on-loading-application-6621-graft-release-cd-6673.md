@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix loading of title decorator when loading application
+title: Fixed missing or incorrect titles when loading application
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

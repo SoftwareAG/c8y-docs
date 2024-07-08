@@ -6,7 +6,7 @@ layout: redirect
 
 Devices can authenticate to the {{< product-c8y-iot >}} platform using:
 * Device User credentials i.e., Using Device username and password
-* Certificate Authentication i.e., Using X509 certificates over a defined REST endpoint protocol to procure the JWT session token.
+* Certificate Authentication i.e., Using X509 certificates over a defined REST endpoint protocol to procure the JWT session token on port 8443.
 
 Mutual TLS (mTLS) is a security protocol that uses X.509 certificates for both client and server authentication in a communication session.
 
@@ -19,7 +19,7 @@ Retrieving device access tokens from the platform with certificates does not req
 The devices can authenticate using X.509 certificates against {{< product-c8y-iot >}} by using the below endpoint only. In response, a JWT session token is issued by {{< product-c8y-iot >}} after successful authentication which can later be used to make subsequent requests.
 
 
-	POST /devicecontrol/deviceAccessToken
+	POST :8443/devicecontrol/deviceAccessToken
     Accept: application/json
     X-Ssl-Cert-Chain: -----BEGIN CERTIFICATE----- MIIDTzCCAjegAwIB...TpaISZIs= -----END CERTIFICATE
 
@@ -29,7 +29,7 @@ The device access token API can be called by executing the following curl statem
        -H 'Accept: application/json' \
        -H 'X-Ssl-Cert-Chain:<device certificate chain>' \
        -X POST \
-       https://<{{< product-c8y-iot >}} tenant domain>/devicecontrol/deviceAccessToken
+       https://<{{< product-c8y-iot >}} tenant domain>:8443/devicecontrol/deviceAccessToken
 
 Replace `<device certificate chain>` with your valid certificate chain when registering with {{< product-c8y-iot >}}.
 
@@ -56,5 +56,5 @@ Here is the logout API. Refer to the [Users API](https://{{< domain-c8y >}}/api/
         Authorization: Bearer "JWT Session token"
 
 {{< c8y-admon-caution >}}
-Only devices that are registered to use certificate authentication can retrieve a JWT session token using this endpoint. Once the device successfully authenticates using certificates (that is, by using its private key and the certificate chain), the device retrieves the JWT session token. This mTLS over HTTP endpoint can be leveraged only over this endpoint.
+Only devices that are registered to use certificate authentication can retrieve a JWT session token using this endpoint. Once the device successfully authenticates using certificates (that is, by using its private key and the certificate chain), the device retrieves the JWT session token. This mTLS over HTTP endpoint can be leveraged only over this endpoint on port 8443.
 {{< /c8y-admon-caution >}}

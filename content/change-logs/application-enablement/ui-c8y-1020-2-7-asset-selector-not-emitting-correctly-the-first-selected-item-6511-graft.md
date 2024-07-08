@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-07-04'
 title: Asset selector now correctly emits the first selected item
 product_area: Application enablement & solutions
 change_type:

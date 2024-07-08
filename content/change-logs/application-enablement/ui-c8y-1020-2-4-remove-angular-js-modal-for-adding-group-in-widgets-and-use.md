@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-07-04'
 title: Replaced group creation dialog in widgets with redirect to Groups page
 product_area: Application enablement & solutions
 change_type:

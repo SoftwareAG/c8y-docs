@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed missing or incorrect titles when loading application
+title: Fixed missing or incorrect titles when loading applications
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

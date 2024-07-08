@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-ggH2M4hf3
     label: lwm2m-agent
 ticket: DM-3652
-version: 1020.362.0
+version: 10.18.0.445
 ---
 
 The Lwm2m Agent can now be configured to ignore packets from specific source ports. By default, several popular UDP protocols ports are blocked.

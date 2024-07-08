@@ -15,4 +15,4 @@ ticket: DM-3652
 version: 10.18.0.445
 ---
 
-The Lwm2m Agent can now be configured to ignore packets from specific source ports. By default, several popular UDP protocols ports are blocked.
+The LWM2M agent can now be configured to ignore packets from specific source ports. By default, several popular UDP protocol ports are blocked.

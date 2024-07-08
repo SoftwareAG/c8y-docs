@@ -1,6 +1,6 @@
 ---
 date:
-title: New Lwm2m Agent property to ignore packets from certain source ports
+title: New LWM2M agent property to ignore packets from certain source ports
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

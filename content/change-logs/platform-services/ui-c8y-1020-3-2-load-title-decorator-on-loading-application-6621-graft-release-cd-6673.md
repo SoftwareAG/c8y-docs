@@ -1,6 +1,6 @@
 ---
 date: ""
-title: load title.decorator on loading application (#6621) [GRAFT][release/cd] (#6673)
+title: Fix loading of title decorator when loading application
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

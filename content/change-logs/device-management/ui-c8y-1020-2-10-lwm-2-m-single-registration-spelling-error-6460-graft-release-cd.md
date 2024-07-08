@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-07-04'
 title: Fixed spelling error in LWM2M single registration
 product_area: Device management & connectivity
 change_type:

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Update AngularJS and angular-schema-form dependencies
+title: Updated AngularJS and angular-schema-form dependencies
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

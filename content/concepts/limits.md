@@ -6,7 +6,7 @@ section:
 weight: 100
 ---
 
-Your {{< product-c8y-iot >}} service has so-called ``quotas``. These quotas ensure that the service operates within the guarantees of the {{< product-c8y-iot >}} service-level agreements.
+Your {{< product-c8y-iot >}} service includes so-called ``quotas``. These quotas ensure that the service operates within the guarantees of the {{< product-c8y-iot >}} service-level agreements.
 
 There are three types of quotas in {{< product-c8y-iot >}}:
 

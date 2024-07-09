@@ -1,5 +1,5 @@
 ---
-title: Limits
+title: Quotas
 layout: bundle
 section:
   - getting_started

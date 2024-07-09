@@ -1,6 +1,6 @@
 ---
 date:
-title: Specify maximum values with the Counter block in Analytics Builder
+title: Specify maximum values for the Counter block in Analytics Builder
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

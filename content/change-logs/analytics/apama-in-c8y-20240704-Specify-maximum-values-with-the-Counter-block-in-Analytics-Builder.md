@@ -1,6 +1,6 @@
 ---
-date: 
-title: Define maximum values with the Counter block in Analytics Builder
+date:
+title: Specify maximum values with the Counter block in Analytics Builder
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
@@ -23,6 +23,6 @@ The following new parameters are available for this purpose:
 - **Loop Number Same** (check box)
 
 The counter in question can then loop. Depending on the setting of the corresponding check box, the counter either resets its corresponding output port (**Count** or **Number Same**) to one, counting the first input after reaching the maximum value, or it stops counting when reaching the maximum value and must then be reset manually.
-The existing behavior remains as the default.
+For compatibility, the previous behavior remains as the default.
 Note that the **Reset** input port resets both counters. If this is a problem, you must use a separate **Counter** block for each counter.
 See the description of the [Counter](https://cumulocity.com/docs/streaming-analytics/block-reference/#counter) block for detailed information on the new parameters.

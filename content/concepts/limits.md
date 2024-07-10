@@ -46,11 +46,20 @@ The quotas listed here reflect the maximum values for the standard cloud subscri
 
 ### REST API
 
-### Streaming APIs
+### Realtime APIs
 
 |Quota|Type|Value|
 |----|----|---:|
 |[MQTT message size](/device-integration/mqtt/)|Hard|16 KB|
+|[Notifications 2.0 message backlog](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)|Hard|25 MB|
+|[Notifications 2.0 time-to-live](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)|Hard|36 hours|
+|[Microservice-based data broker message backlog](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)|Hard|50 MB|
+|[Microservice-based data broker time-to-live](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)|Hard|36 hours|
+
+
+
+
+
 
 
 ### Applications and services
@@ -66,6 +75,5 @@ The quotas listed here reflect the maximum values for the standard cloud subscri
 
 |Quota|Type|Value|
 |----|----|---:|
-|[Size of MQTT message](/device-integration/mqtt/)|Hard|16 KB|
 |[File size for LWM2M bulk registration](/protocol-integration/lwm2m/#bulk-device-registration)|Hard|10 MB|
 |[Concurrent pending LWM2M operations](/protocol-integration/lwm2m/#device-operations-handling)|Hard|10|

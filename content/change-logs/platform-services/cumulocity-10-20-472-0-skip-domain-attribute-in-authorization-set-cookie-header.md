@@ -3,8 +3,8 @@ date: ""
 title: Skip domain attribute in authorization Set-Cookie header
 product_area: Platform services
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
   - value: q3kclF6pO
     label: Authentication

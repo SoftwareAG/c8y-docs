@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59297
 version: 10.20.472.0
 ---
-While setting a new authorization cookie, the 'domain' attribute by default will be omitted. Skipped this attribute allows the browser to apply cookies only for current document URLs, not including subdomains. Behavior can be changed via a core property: 'auth.cookies.skip.domain: false'
+While setting a new authorization cookie, the `domain` attribute will now be omitted by default. Skipping this attribute allows the browser to apply cookies only for current document URLs, not including subdomains. The behavior can be changed via a core property: `auth.cookies.skip.domain: false`.

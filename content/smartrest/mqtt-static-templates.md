@@ -1114,7 +1114,7 @@ Open or close the relays in the array.
 
 ##### Upload configuration file (520) {#520}
 
-The current configuration is uploaded from {{< product-c8y-iot >}} to the device.
+The current configuration is uploaded to {{< product-c8y-iot >}} from the device.
 
 **Example**
 

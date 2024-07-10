@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3758
 version: 1020.6.1
 ---
-Repository device tabs updated to only show unfinished operations in their views. [GRAFT][release/cd] (#6699)
+Previously, the repository device tabs showed already completed operations that may differ from the currently installed item. With this change, the repository device tabs have been updated to only display active operations in their views.```

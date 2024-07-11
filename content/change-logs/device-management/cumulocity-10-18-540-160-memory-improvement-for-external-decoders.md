@@ -1,5 +1,5 @@
 ---
-date: 2024-07-10
+date: 
 title: LWM2M agent memory improvement for the external decoder events processing
 product_area: Device management & connectivity
 change_type:

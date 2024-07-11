@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3758
 version: 1020.6.1
 ---
-Previously, the repository device tabs showed already completed operations that may differ from the currently installed item. With this change, the repository device tabs have been updated to only display active operations in their views.
+Previously, the repository device tabs in the device details showed already completed operations which could differ from the currently installed items. With this change, the repository device tabs have been updated to only display active operations in their views.

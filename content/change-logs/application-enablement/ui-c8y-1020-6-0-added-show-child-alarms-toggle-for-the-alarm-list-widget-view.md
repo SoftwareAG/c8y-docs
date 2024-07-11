@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Alarm list widget configuration now supports showing and hiding child alarms
+title: Alarm list widget configuration now supports showing or hiding child alarms
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

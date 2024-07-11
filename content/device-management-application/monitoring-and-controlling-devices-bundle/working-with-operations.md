@@ -232,3 +232,4 @@ The completion percentage is determined by comparing the total number of initiat
 * **Operation addition**: Retrying failed operations can introduce new entries without modifying the original total count. This again results in a misrepresentation of the completion percentage.
 
 The completion percentage is calculated based on the information available at the time an operation is created and further changes are not applied.
+{{< /c8y-admon-info >}}

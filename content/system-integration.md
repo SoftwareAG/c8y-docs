@@ -4,7 +4,7 @@ icon: "c8y-icon c8y-icon-wm-integration"
 type: root
 layout: redirect
 bundle: system-integration
-section:
+sector:
   - app_enablement
 weight: 110
 ---

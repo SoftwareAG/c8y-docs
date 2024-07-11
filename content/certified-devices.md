@@ -8,7 +8,7 @@ bundle: certified-devices
 audience:
   - Users
   - Developers
-section:
+sector:
   - device_management
 weight: 70
 ---

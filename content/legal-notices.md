@@ -4,7 +4,7 @@ bundle: legal-notices
 icon: "c8y-icon c8y-icon-notification"
 type: root
 layout: redirect
-section:
+sector:
   - about_website
 weight: 50
 ---

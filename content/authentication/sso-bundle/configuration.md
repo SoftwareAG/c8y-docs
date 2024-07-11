@@ -2,7 +2,7 @@
 weight: 20
 title: Configuration settings
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

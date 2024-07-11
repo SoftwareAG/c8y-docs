@@ -2,7 +2,7 @@
 weight: 25
 title: Monitoring
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

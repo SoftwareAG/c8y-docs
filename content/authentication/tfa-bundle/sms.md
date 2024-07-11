@@ -1,7 +1,7 @@
 ---
 title: SMS
 layout: redirect
-section:
+sector:
   - platform_administration
 weight: 20
 ---

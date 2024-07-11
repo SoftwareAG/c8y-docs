@@ -2,7 +2,7 @@
 weight: 100
 title: Connectivity
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

@@ -2,7 +2,7 @@
 weight: 10
 title: Quickstart
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

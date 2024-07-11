@@ -7,7 +7,7 @@ external: "https://thin-edge.io"
 audience:
   - Developers
 bundle: thin-edge
-section:
+sector:
   - device_management
 weight: 60
 ---

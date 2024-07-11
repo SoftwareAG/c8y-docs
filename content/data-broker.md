@@ -4,7 +4,7 @@ icon: "c8y-icon c8y-icon-data-broker"
 type: root
 layout: redirect
 bundle: data-broker
-section:
+sector:
   - platform_administration
 audience:
   - Users

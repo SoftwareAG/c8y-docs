@@ -4,7 +4,7 @@ icon: "dlt-c8y-icon-intelligence"
 type: root
 layout: redirect
 bundle: concepts
-section:
+sector:
   - getting_started
 audience:
   - Users

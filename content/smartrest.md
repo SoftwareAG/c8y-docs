@@ -4,7 +4,7 @@ icon: "c8y-icon c8y-icon-smart-rest"
 type: root
 layout: redirect
 bundle: smartrest
-section:
+sector:
   - device_management
 audience:
   - Developers

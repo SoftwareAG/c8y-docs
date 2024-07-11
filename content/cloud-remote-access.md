@@ -4,7 +4,7 @@ icon: "c8y-icon c8y-icon-cloud-container"
 type: root
 layout: redirect
 bundle: cloud-remote-access
-section:
+sector:
   - device_management  
 audience:
   - Users

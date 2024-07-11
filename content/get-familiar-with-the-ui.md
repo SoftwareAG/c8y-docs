@@ -4,7 +4,7 @@ icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
 bundle: get-familiar-with-the-ui
-section:
+sector:
   - getting_started
 audience:
   - Users

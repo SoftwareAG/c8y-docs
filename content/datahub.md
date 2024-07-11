@@ -4,7 +4,7 @@ icon: "c8y-icon c8y-icon-data-hub"
 type: root
 layout: redirect
 bundle: datahub
-section:
+sector:
   - data_analytics
 audience:
   - Users

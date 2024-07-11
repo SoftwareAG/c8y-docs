@@ -2,7 +2,7 @@
 weight: 180
 title: Tracking
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

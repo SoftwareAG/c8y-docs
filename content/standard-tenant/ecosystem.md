@@ -5,7 +5,7 @@ outputs:
   - html
   - json
 bundle: ecosystem
-section:
+sector:
   - platform_administration
 weight: 30
 ---

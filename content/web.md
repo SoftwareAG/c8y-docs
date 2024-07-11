@@ -3,7 +3,7 @@ title: Web SDK
 icon: "c8y-icon c8y-icon-tools"
 type: root
 layout: redirect
-section:
+sector:
   - app_enablement
 bundle: web
 audience:

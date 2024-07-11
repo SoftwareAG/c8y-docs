@@ -4,7 +4,7 @@ bundle: microservice-sdk
 icon: "c8y-icon c8y-icon-tools"
 type: root
 layout: redirect
-section:
+sector:
   - app_enablement
 audience:
   - Developers

@@ -4,7 +4,7 @@ icon: "dlt-c8y-icon-lock11"
 type: root
 layout: redirect
 bundle: authentication
-section:
+sector:
   - platform_administration
 audience:
   - Users

@@ -4,7 +4,7 @@ icon: "dlt-c8y-icon-programming"
 type: root
 layout: redirect
 bundle: welcome-developers
-section:
+sector:
   - getting_started
 audience:
   - Developers

@@ -5,7 +5,7 @@ type: root
 layout: redirect
 bundle: streaming-analytics
 weight: 10
-section:
+sector:
   - data_analytics
 audience:
   - Users

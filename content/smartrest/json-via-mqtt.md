@@ -2,7 +2,7 @@
 weight: 50
 title: JSON via MQTT
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

@@ -4,7 +4,7 @@ icon: "c8y-icon c8y-icon-device-management"
 type: root
 layout: redirect
 bundle: device-management-application
-section:
+sector:
   - device_management
 audience:
   - Users

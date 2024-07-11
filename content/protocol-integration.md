@@ -4,7 +4,7 @@ icon: "c8y-icon c8y-icon-device-profile"
 type: root
 layout: redirect
 bundle: protocol-integration
-section:
+sector:
   - device_management
 audience:
   - Users

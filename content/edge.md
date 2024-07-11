@@ -8,7 +8,7 @@ audience:
   - Users
   - Administrators
   - Developers
-section:
+sector:
   - edge_server
 weight: 10
 ---

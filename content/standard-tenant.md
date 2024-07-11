@@ -4,7 +4,7 @@ icon: "dlt-c8y-icon-manager"
 layout: redirect
 type: root
 bundle: standard-tenant
-section:
+sector:
   - platform_administration
 audience:
   - Users

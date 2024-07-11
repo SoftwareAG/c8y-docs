@@ -2,7 +2,7 @@
 weight: 10
 title: Global roles
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

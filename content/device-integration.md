@@ -6,7 +6,7 @@ layout: redirect
 bundle: device-integration
 audience:
   - Developers
-section:
+sector:
   - device_management
 weight: 50
 ---

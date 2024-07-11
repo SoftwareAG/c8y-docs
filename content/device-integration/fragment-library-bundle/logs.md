@@ -2,7 +2,7 @@
 weight: 120
 title: Logs
 layout: bundle
-section: 
+sector: 
   - device_management
 ---
 

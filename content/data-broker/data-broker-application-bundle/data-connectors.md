@@ -2,7 +2,7 @@
 weight: 20
 title: Data connectors
 layout: bundle
-section:
+sector:
   - platform_administration
 helpcontent:
   - label: data-connectors

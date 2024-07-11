@@ -1,7 +1,7 @@
 ---
 title: Limits
 layout: bundle
-section:
+sector:
   - getting_started
 weight: 100
 ---

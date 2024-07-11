@@ -9,7 +9,7 @@ audience:
   - Users
   - Developers
 weight: 50
-section:
+sector:
   - getting_started
 ---
 

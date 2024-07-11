@@ -2,7 +2,7 @@
 weight: 30
 title: SmartREST 1.0
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

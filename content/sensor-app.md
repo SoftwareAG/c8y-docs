@@ -7,7 +7,7 @@ bundle: sensor-app
 weight: 40
 audience:
   - Users
-section:
+sector:
   - getting_started
 ---
 

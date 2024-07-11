@@ -4,7 +4,7 @@ icon: "c8y-icon c8y-icon-oee"
 type: root
 layout: redirect
 bundle: oee
-section:
+sector:
   - app_enablement
 audience:
   - Users

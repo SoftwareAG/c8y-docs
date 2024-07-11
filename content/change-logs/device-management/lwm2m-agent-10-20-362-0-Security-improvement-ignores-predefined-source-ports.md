@@ -1,6 +1,6 @@
 ---
 date:
-title: New Lwm2m Agent property to ignore packets from certain source ports
+title: Security improvement to ignore packets from certain source ports
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
@@ -15,4 +15,4 @@ ticket: DM-3652
 version: 1020.362.0
 ---
 
-The Lwm2m Agent can now be configured to ignore packets from specific source ports. By default, several popular UDP protocols ports are blocked.
+Security improvement for the LWM2M Agent to ignore packets from predefined source ports.

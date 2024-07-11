@@ -4,7 +4,7 @@ layout: bundle
 outputs:
   - html
   - json
-bundle: ecosystem
+bundlefolder: ecosystem
 sector:
   - platform_administration
 weight: 30

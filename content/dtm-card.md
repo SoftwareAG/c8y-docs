@@ -3,7 +3,7 @@ title: Digital twin manager
 icon: "c8y-icon c8y-icon-enterprise"
 type: root
 layout: redirect
-bundle: dtm
+bundlefolder: dtm
 sector:
   - app_enablement
 audience:

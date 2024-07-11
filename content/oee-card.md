@@ -3,7 +3,7 @@ title: Cumulocity IoT OEE
 icon: "c8y-icon c8y-icon-oee"
 type: root
 layout: redirect
-bundle: oee
+bundlefolder: oee
 sector:
   - app_enablement
 audience:

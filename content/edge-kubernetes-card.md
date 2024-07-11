@@ -3,7 +3,7 @@ title: Edge on Kubernetes
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
-bundle: edge-kubernetes
+bundlefolder: edge-kubernetes
 audience:
   - Users
   - Administrators

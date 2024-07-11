@@ -3,7 +3,7 @@ title: Data broker
 icon: "c8y-icon c8y-icon-data-broker"
 type: root
 layout: redirect
-bundle: data-broker
+bundlefolder: data-broker
 sector:
   - platform_administration
 audience:

@@ -3,7 +3,7 @@ title: Enterprise tenant administration
 icon: "dlt-c8y-icon-management1"
 type: root
 layout: redirect
-bundle: enterprise-tenant
+bundlefolder: enterprise-tenant
 sector:
   - platform_administration
 audience:

@@ -3,7 +3,7 @@ title: Streaming Analytics
 icon: "c8y-icon c8y-icon-streaming-analytics"
 type: root
 layout: redirect
-bundle: streaming-analytics
+bundlefolder: streaming-analytics
 weight: 10
 sector:
   - data_analytics

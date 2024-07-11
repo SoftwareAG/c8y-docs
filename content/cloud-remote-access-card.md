@@ -3,7 +3,7 @@ title: Cloud Remote Access
 icon: "c8y-icon c8y-icon-cloud-container"
 type: root
 layout: redirect
-bundle: cloud-remote-access
+bundlefolder: cloud-remote-access
 sector:
   - device_management  
 audience:

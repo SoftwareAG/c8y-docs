@@ -1,6 +1,6 @@
 ---
 title: Legal notices
-bundle: legal-notices
+bundlefolder: legal-notices
 icon: "c8y-icon c8y-icon-notification"
 type: root
 layout: redirect

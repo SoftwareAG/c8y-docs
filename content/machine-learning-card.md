@@ -3,7 +3,7 @@ title: Machine Learning integration
 icon: "c8y-icon c8y-icon-data-hub"
 type: root
 layout: redirect
-bundle: machine-learning
+bundlefolder: machine-learning
 sector:
   - data_analytics
 audience:

@@ -3,7 +3,7 @@ title: Edge Appliance VM
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
-bundle: edge
+bundlefolder: edge
 audience:
   - Users
   - Administrators

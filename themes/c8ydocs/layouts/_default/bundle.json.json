@@ -1,6 +1,6 @@
 {
   {{- $url := .Permalink -}}
-  {{- $bundle := printf "/%s-%s" .File.BaseFileName "bundle" -}}
+  {{- $bundle := printf "%s-%s" .File.BaseFileName "bundle" -}}
   {{- $list:= newScratch -}}
   {{- $headless := .Site.GetPage $bundle -}}
   {{- if $headless -}}

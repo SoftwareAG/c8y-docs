@@ -3,7 +3,7 @@ title: DataHub
 icon: "c8y-icon c8y-icon-data-hub"
 type: root
 layout: redirect
-bundle: datahub
+bundlefolder: datahub
 sector:
   - data_analytics
 audience:

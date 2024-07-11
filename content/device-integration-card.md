@@ -3,7 +3,7 @@ title: Device integration
 icon: "c8y-icon c8y-icon-device"
 type: root
 layout: redirect
-bundle: device-integration
+bundlefolder: device-integration
 audience:
   - Developers
 sector:

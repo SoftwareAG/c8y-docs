@@ -3,7 +3,7 @@ title: Quick start tutorial
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
-bundle: quick-start
+bundlefolder: quick-start
 sector:
   - getting_started
 audience:

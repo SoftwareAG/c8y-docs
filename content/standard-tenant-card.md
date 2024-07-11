@@ -3,7 +3,7 @@ title: Standard tenant administration
 icon: "dlt-c8y-icon-manager"
 layout: redirect
 type: root
-bundle: standard-tenant
+bundlefolder: standard-tenant
 sector:
   - platform_administration
 audience:

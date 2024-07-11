@@ -5,7 +5,7 @@ type: root
 layout: redirect
 sector:
   - app_enablement
-bundle: web
+bundlefolder: web
 audience:
   - Developers
 weight: 20

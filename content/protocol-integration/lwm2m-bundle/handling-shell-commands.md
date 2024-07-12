@@ -47,7 +47,7 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 </tr>
 <tr>
 <td align="left">SER</td>
-<td align="left">The supported data formats are TLV, TEXT, JSON and OPAQUE.</td>
+<td align="left">The supported data formats are <code>TLV</code>, <code>JSON</code>, <code>CBOR</code>, <code>TEXT</code>, <code>OPAQUE</code>, <code>SENML_JSON</code> and <code>SENML_CBOR</code>. <code>DEFAULT</code>restores the standard behavior. </td>
 </tr>
 <tr>
 <td align="left">requestJson</td>

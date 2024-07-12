@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Pluginification of Cockpit
+title: Cockpit application split into plugins
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

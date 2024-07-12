@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59087
 version: 10.20.478.0    
 ---
-You can extend the Cumulocity IoT platform with customer-specific functionality by deploying microservices. The application manifest provides the necessary settings to manage microservice instances and the application deployment within the Cumulocity IoT platform. Some settings, such as httpGet, exec, and tcpSocket of type Probe, align with items in the Kubernetes PodSpec. For security reasons, there is now a check on upload to ensure these settings do not contain line feed characters.
+The {{< product-c8y-iot >}} platform can be extended with customer-specific functionality by deploying microservices. The application manifest provides the necessary settings to manage microservice instances and the application deployment within {{< product-c8y-iot >}}. Some settings, such as HttpGet, exec, and TCPSocket of type Probe, align with items in the Kubernetes PodSpec. For security reasons, there is now a check on upload to ensure these settings do not contain line feed characters.

@@ -2,7 +2,7 @@
 weight: 45
 title: UI functionalities and features
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

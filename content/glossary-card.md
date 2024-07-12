@@ -3,8 +3,8 @@ title: Glossary
 icon: "c8y-icon c8y-icon-book"
 type: root
 layout: redirect
-bundle: glossary
-section:
+bundlefolder: glossary
+sector:
   - getting_started
 weight: 60
 ---

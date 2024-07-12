@@ -2,7 +2,7 @@
 title: Configuring the Edge infrastructure
 weight: 20
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

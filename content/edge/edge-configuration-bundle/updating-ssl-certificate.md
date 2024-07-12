@@ -2,7 +2,7 @@
 weight: 40
 title: Updating the SSL certificate
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

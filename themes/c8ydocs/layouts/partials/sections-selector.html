@@ -1,10 +1,10 @@
 
 {{ $currentSection := "" }}
-{{ with .Params.section }}
+{{ with .Params.sector }}
   {{ $currentSection = index . 0 }}
 {{ end }}
 {{ $current_dataTerm := .Page.Data.Term}}
-{{ $sections := .Site.Taxonomies.section }}
+{{ $sections := .Site.Taxonomies.sector }}
 {{ $sortedsections := sort $sections ".Page.Params.weight" }}
 {{ range $sortedsections }}
 {{ $pages := where .Pages "Type" "!=" "page" }}

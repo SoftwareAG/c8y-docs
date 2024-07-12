@@ -2,9 +2,9 @@
 weight: 40
 title: UI functionalities and features
 layout: bundle
-section:
+sector:
   - getting_started
-section:
+sector:
   - getting_started
 
 ---

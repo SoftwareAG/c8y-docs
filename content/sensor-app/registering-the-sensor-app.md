@@ -2,7 +2,7 @@
 weight: 30
 title: Registering the Sensor App in the platform
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

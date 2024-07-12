@@ -2,7 +2,7 @@
 title: Installing Edge
 weight: 30
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

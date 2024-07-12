@@ -2,6 +2,6 @@
 weight: 80
 title: Sigfox
 layout: bundle
-section:
+sector:
   - device_management
 ---

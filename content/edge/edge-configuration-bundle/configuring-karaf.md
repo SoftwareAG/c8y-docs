@@ -2,7 +2,7 @@
 weight: 50
 title: Configuring Karaf
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

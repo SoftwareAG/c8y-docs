@@ -2,6 +2,6 @@
 weight: 72
 title: Single sign-on
 layout: bundle
-section:
+sector:
   - platform_administration
 ---

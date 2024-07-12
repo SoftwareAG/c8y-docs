@@ -3,8 +3,8 @@ title: Welcome developers
 icon: "dlt-c8y-icon-programming"
 type: root
 layout: redirect
-bundle: welcome-developers
-section:
+bundlefolder: welcome-developers
+sector:
   - getting_started
 audience:
   - Developers

@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{/*  redirect when there's no section defined  */}}
+{{/*  redirect when there's no sector defined  */}}
 {{ if not .Data.Term }}
 <meta http-equiv="refresh" content='0; URL={{.Site.BaseURL}}'/>
 {{end}}
@@ -17,12 +17,18 @@
     {{.Params.svg | safeHTML}}
   </div>
 <div class="home-grid">
+  {{$scratch := newScratch}}
   {{ range where .Pages "Type" "root" }}
+    {{ $subs := where .Site.Pages "Section" .Params.bundlefolder }}
+    {{/* grab the link from the first child page  */}}
+    {{ range $sub := first 1 $subs}}
+      {{ $scratch.Set "url" $sub.Permalink}}
+    {{end}}
   <a href='
       {{if (isset .Params "external") }}
         {{.Params.external}}
       {{else}}
-        {{.Permalink}}
+        {{$scratch.Get "url"}}
       {{end}}
     ' class="product-card">
       <div class="product-card__header">

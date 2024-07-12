@@ -2,7 +2,7 @@
 weight: 75
 title: Adjusting sensor properties
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

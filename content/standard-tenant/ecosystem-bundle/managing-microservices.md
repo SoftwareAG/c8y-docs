@@ -2,7 +2,7 @@
 weight: 70
 title: Managing microservices
 layout: bundle
-section:
+sector:
   - platform_administration
 helpcontent:
   - label: managing-microservices

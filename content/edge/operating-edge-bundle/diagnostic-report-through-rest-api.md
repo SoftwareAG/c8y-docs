@@ -2,7 +2,7 @@
 weight: 36
 title: Downloading diagnostics using the REST APIs
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

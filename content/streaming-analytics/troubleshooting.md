@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting and diagnostics
 layout: bundle
-section:
+sector:
   - data_analytics
 weight: 50
 ---

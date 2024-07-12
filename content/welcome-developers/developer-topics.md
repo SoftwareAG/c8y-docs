@@ -2,7 +2,7 @@
 weight: 30
 title: Developer topics
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

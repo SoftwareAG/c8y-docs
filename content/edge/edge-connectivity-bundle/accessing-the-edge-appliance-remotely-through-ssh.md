@@ -2,7 +2,7 @@
 weight: 35
 title: Accessing the Edge appliance remotely through SSH
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

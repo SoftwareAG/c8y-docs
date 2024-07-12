@@ -2,7 +2,7 @@
 weight: 30
 title: SMS provider
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

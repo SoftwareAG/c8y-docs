@@ -2,7 +2,7 @@
 weight: 50
 title: How does the platform support developing agents?
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

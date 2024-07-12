@@ -2,7 +2,7 @@
 title: Extensions
 layout: bundle
 weight: 50
-section:
+sector:
   - platform_administration
 helpcontent:
   - label: extensions

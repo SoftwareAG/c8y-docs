@@ -1,10 +1,10 @@
 ---
 title: Product documentation
-bundle: product-documentation
+bundlefolder: product-documentation
 icon: "c8y-icon c8y-icon-notification"
 type: root
 layout: redirect
-section:
+sector:
   - about_website
 weight: 10
 ---

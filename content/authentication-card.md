@@ -3,8 +3,8 @@ title: Authentication
 icon: "dlt-c8y-icon-lock11"
 type: root
 layout: redirect
-bundle: authentication
-section:
+bundlefolder: authentication
+sector:
   - platform_administration
 audience:
   - Users

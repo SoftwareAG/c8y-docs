@@ -2,7 +2,7 @@
 weight: 30
 title: Alarms
 layout: bundle
-section: 
+sector: 
   - device_management
 ---
 

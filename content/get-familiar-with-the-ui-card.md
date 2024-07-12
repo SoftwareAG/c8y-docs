@@ -3,8 +3,8 @@ title: Get familiar with the UI
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
-bundle: get-familiar-with-the-ui
-section:
+bundlefolder: get-familiar-with-the-ui
+sector:
   - getting_started
 audience:
   - Users

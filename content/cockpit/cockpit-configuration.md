@@ -2,7 +2,7 @@
 weight: 100
 title: Configuring Cockpit applications
 layout: bundle
-section:
+sector:
   - app_enablement
 ---
 

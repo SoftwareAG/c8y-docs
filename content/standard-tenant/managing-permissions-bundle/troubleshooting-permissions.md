@@ -2,7 +2,7 @@
 weight: 40
 title: Troubleshooting permissions
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

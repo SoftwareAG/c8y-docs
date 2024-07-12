@@ -2,7 +2,7 @@
 weight: 30
 title: Cumulocity IoT Edge versus other Cumulocity IoT deployments
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

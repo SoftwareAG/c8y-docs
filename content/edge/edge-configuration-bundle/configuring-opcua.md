@@ -2,7 +2,7 @@
 weight: 55
 title: Configuring OPCUA
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

@@ -2,7 +2,7 @@
 weight: 20
 title: Device integration using MQTT
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

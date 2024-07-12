@@ -2,7 +2,7 @@
 weight: 20
 title: Modifying widgets
 layout: bundle
-section:
+sector:
   - app_enablement
 ---
 

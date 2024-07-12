@@ -1,7 +1,7 @@
 ---
 title: Best practices
 layout: bundle
-section:
+sector:
   - app_enablement
 weight: 80
 ---

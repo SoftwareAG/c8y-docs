@@ -2,7 +2,7 @@
 title: Introduction
 weight: 10
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

@@ -2,7 +2,7 @@
 weight: 30
 title: Latest measurement values
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 {{< c8y-admon-preview >}}

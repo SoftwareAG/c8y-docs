@@ -2,7 +2,7 @@
 weight: 40
 title: Integration with Azure AD
 layout: bundle
-section:
+sector:
   - platform_administration
 ---
 

@@ -2,7 +2,7 @@
 weight: 30
 title: Selecting assets in widgets
 layout: bundle
-section:
+sector:
   - app_enablement
 ---
 

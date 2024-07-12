@@ -4,11 +4,11 @@ icon: "dlt-c8y-icon-certificate"
 type: root
 external: "https://devicepartnerportal.softwareag.com/devices"
 layout: redirect
-bundle: certified-devices
+bundlefolder: certified-devices
 audience:
   - Users
   - Developers
-section:
+sector:
   - device_management
 weight: 70
 ---

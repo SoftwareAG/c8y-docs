@@ -2,7 +2,7 @@
 weight: 20
 title: Configuring the time synchronization
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

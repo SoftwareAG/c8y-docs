@@ -2,7 +2,7 @@
 weight: 15
 title: Configuring the hostname
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

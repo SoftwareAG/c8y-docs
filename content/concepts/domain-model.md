@@ -2,7 +2,7 @@
 weight: 20
 title: Cumulocity IoT's domain model
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

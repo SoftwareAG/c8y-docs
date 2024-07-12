@@ -2,7 +2,7 @@
 weight: 30
 title: Custom template configuration
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

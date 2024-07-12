@@ -2,7 +2,7 @@
 weight: 10
 title: Introduction
 layout: bundle
-section:
+sector:
   - app_enablement
 ---
 

@@ -2,7 +2,7 @@
 weight: 70
 title: Configuring, disabling or removing devices
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

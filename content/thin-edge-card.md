@@ -6,8 +6,8 @@ layout: redirect
 external: "https://thin-edge.io"
 audience:
   - Developers
-bundle: thin-edge
-section:
+bundlefolder: thin-edge
+sector:
   - device_management
 weight: 60
 ---

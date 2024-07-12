@@ -2,7 +2,7 @@
 weight: 25
 title: Edge Custom Resource
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

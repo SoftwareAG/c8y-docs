@@ -2,7 +2,7 @@
 weight: 10
 title: Widgets in dashboards and reports
 layout: bundle
-section:
+sector:
   - app_enablement
 ---
 

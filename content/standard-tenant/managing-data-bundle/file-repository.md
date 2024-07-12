@@ -2,7 +2,7 @@
 weight: 20
 title: File repository
 layout: redirect
-section:
+sector:
   - platform_administration
 helpcontent:
 - label: file-repository

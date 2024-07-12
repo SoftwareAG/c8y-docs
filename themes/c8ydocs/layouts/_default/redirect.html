@@ -6,28 +6,28 @@
     <meta name="robots" content="noindex">
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 
-    
-    {{$current := . }}
-    {{ $currentBundle := newScratch}}
     {{$scratch := newScratch}}
-    {{ range where .Site.RegularPages "Type" "root" }}
-      {{ $subs := where .Site.Pages "Section" .Params.bundle }}
-      {{/* grab the link from the first child page  */}}
+    {{ if ne (substr .Params.target 0 1) "" }}
+        {{ $scratch.Set "url" (printf "%s%s" .Site.BaseURL .Params.target) }}
+    {{ else if .Params.bundlefolder}}
+      {{ $subs := where .Site.Pages "Section" .Params.bundlefolder }}
       {{ $sub := index $subs 0}}
       {{ $scratch.Set "url" $sub.Permalink}}
-      
-      {{/* Check the current page to highlight the right root section  */}}
-      {{ if eq .Params.bundle $current.Section }}
-        <meta http-equiv="refresh" content='0; URL={{ $scratch.Get "url"}}'/>
-      {{ end }}
-      
+    {{ else }}
+      {{ $subs := where .Site.Pages "Section" .Section }}
+      {{ $sub := index $subs 0}}
+      {{ $scratch.Set "url" $sub.Permalink}}
     {{ end }}
+    <meta http-equiv="refresh" content='0; URL={{ $scratch.Get "url"}}'/>
+    <style>
+      body{ 
+        padding: 1.5rem;
+        font-family: sans-serif;
+      }
+    </style>
   </head>
   <body>
-      {{/*  If there's no bundle, read the "target" value from the front matter  */}}
-      {{ if ne (substr .Params.target 0 1) "" }}
-        <meta http-equiv="refresh" content='0; URL={{ printf "%s%s" .Site.BaseURL .Params.target }}'/>
-      {{ end }}
-    Redirecting… {{.Params.type}}
+
+    Redirecting…
   </body>
 </html>

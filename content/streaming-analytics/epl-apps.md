@@ -1,7 +1,7 @@
 ---
 title: EPL Apps
 layout: bundle
-section:
+sector:
   - data_analytics
 weight: 40
 ---

@@ -1,7 +1,7 @@
 ---
 title: Security aspects
 layout: bundle
-section:
+sector:
   - getting_started
 weight: 90
 ---

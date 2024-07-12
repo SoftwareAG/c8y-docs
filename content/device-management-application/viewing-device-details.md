@@ -2,7 +2,7 @@
 weight: 31
 title: Viewing device details
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

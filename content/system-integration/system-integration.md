@@ -1,7 +1,7 @@
 ---
 title: System integration options
 layout: bundle
-section:
+sector:
   - app_enablement
 weight: 10
 aliases:

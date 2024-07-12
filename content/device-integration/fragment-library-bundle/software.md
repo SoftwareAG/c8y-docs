@@ -2,7 +2,7 @@
 weight: 170
 title: Software
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

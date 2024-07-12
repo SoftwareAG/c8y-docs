@@ -4,7 +4,7 @@ title: Introduction to our IoT platform
 layout: bundle
 aliases:
   - /concepts/introduction/
-section:
+sector:
   - getting_started
 ---
 

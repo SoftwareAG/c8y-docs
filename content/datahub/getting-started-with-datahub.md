@@ -2,7 +2,7 @@
 title: Getting started with Cumulocity IoT DataHub
 weight: 20
 layout: bundle
-section: 
+sector: 
   - data_analytics
 ---
 

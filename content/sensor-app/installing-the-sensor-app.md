@@ -2,7 +2,7 @@
 weight: 20
 title: Installing the Sensor App
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

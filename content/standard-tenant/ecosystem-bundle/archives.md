@@ -2,7 +2,7 @@
 title: Uploading archives
 layout: bundle
 weight: 60
-section:
+sector:
   - platform_administration
 ---
 

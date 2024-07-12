@@ -1,7 +1,7 @@
 ---
 title: TOTP
 layout: redirect
-section:
+sector:
   - platform_administration
 weight: 30
 ---

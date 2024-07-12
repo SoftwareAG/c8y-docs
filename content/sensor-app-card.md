@@ -3,11 +3,11 @@ title: Sensor App
 icon: "c8y-icon c8y-icon-saas"
 type: root
 layout: redirect
-bundle: sensor-app
+bundlefolder: sensor-app
 weight: 40
 audience:
   - Users
-section:
+sector:
   - getting_started
 ---
 

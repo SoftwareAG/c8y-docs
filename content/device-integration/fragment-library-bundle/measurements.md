@@ -2,7 +2,7 @@
 weight: 130
 title: Measurements
 layout: bundle
-section: 
+sector: 
   - device_management
 ---
 

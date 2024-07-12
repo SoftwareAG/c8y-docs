@@ -2,7 +2,7 @@
 title: Developing applications
 layout: bundle
 weight: 40
-section:
+sector:
   - getting_started
 ---
 

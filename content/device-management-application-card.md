@@ -3,8 +3,8 @@ title: Device management application
 icon: "c8y-icon c8y-icon-device-management"
 type: root
 layout: redirect
-bundle: device-management-application
-section:
+bundlefolder: device-management-application
+sector:
   - device_management
 audience:
   - Users

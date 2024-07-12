@@ -3,8 +3,8 @@ title: Protocol integration
 icon: "c8y-icon c8y-icon-device-profile"
 type: root
 layout: redirect
-bundle: protocol-integration
-section:
+bundlefolder: protocol-integration
+sector:
   - device_management
 audience:
   - Users

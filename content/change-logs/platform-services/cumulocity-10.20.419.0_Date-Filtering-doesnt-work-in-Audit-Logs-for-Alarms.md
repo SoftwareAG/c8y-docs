@@ -1,5 +1,4 @@
 ---
-
 date: 2024-06-27
 title: Audit logs for repeating alarms are created with the date of the last alarm update
 product_area: Platform services

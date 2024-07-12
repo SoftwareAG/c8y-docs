@@ -2,7 +2,7 @@
 weight: 10
 title: Overview
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

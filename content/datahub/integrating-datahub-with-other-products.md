@@ -5,6 +5,6 @@ layout: bundle
 outputs:
   - html
   - json
-section: 
+sector: 
   - data_analytics
 ---

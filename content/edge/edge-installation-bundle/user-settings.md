@@ -2,7 +2,7 @@
 weight: 50
 title: User options and settings
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

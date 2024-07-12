@@ -5,7 +5,7 @@ layout: bundle
 outputs:
   - html
   - json
-section:
+sector:
   - platform_administration
 weight: 11
 ---

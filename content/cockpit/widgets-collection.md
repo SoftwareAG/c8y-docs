@@ -2,7 +2,7 @@
 weight: 55
 title: Widgets collection
 layout: bundle
-section:
+sector:
   - app_enablement
 ---
 

@@ -2,7 +2,7 @@
 weight: 50
 title: Uninstalling the Messaging Service and the microservice-based data broker
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

@@ -4,7 +4,7 @@ layout: bundle
 outputs:
   - html
   - json
-section: 
+sector: 
   - app_enablement
 weight: 40
 helpcontent:

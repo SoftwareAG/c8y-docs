@@ -2,7 +2,7 @@
 weight: 35
 title: Downloading diagnostics using the UI
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

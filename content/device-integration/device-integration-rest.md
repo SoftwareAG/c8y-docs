@@ -2,7 +2,7 @@
 weight: 35
 title: Device integration using REST
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

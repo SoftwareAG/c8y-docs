@@ -1,7 +1,7 @@
 ---
 title: Administration
 layout: bundle
-section:
+sector:
   - app_enablement
 weight: 50
 ---

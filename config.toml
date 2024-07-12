@@ -16,7 +16,7 @@ buildFuture = true
 relativeURLs = true
 
 [taxonomies]
-  sections = "section"
+  sectors = "sector"
 
 [markup]
   [markup.goldmark]
@@ -25,7 +25,7 @@ relativeURLs = true
     [markup.highlight]
       style = "solarized-dark256"
 
-[author]
+[[params.author]]
   name = "Carlos Ceia @ Cumulocity"
 
 

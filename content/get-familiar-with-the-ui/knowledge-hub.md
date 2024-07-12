@@ -2,7 +2,7 @@
 weight: 60
 title: Knowledge Hub
 layout: bundle
-section: 
+sector: 
   - getting_started
 ---
 

@@ -2,7 +2,7 @@
 weight: 80
 title: Monitoring microservices
 layout: bundle
-section:
+sector:
   - platform_administration
 ---
 

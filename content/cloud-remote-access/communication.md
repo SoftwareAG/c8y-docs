@@ -2,6 +2,6 @@
 title: Communication
 weight: 20
 layout: bundle
-section:
+sector:
   - device_management
 ---

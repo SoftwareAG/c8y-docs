@@ -2,7 +2,7 @@
 title: Application configuration
 layout: bundle
 weight: 40
-section: 
+sector: 
   - app_enablement
 ---
 

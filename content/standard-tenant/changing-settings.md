@@ -2,7 +2,7 @@
 weight: 70
 title: Changing settings
 layout: bundle
-section:
+sector:
   - platform_administration
 ---
 

@@ -2,7 +2,7 @@
 weight: 26
 title: Security harden the Edge appliance
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

@@ -2,7 +2,7 @@
 weight: 130
 title: Manual status update
 layout: bundle
-section: 
+sector: 
   - device_management
 ---
 

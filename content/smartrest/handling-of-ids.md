@@ -1,7 +1,7 @@
 ---
 title: Handling of IDs
 layout: bundle
-section:
+sector:
   - device_management
 weight: 40
 ---

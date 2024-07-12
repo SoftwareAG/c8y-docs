@@ -2,7 +2,7 @@
 weight: 10
 title: Installing the Messaging Service and the microservice-based data broker
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

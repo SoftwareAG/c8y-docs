@@ -5,7 +5,7 @@ outputs:
   - html
   - json
 weight: 20
-section:
+sector:
   - platform_administration
 
 ---

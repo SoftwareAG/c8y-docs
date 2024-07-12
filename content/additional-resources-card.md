@@ -3,13 +3,13 @@
 title: Additional resources
 icon: "dlt-c8y-icon-box-settings"
 type: root
-bundle: additional-resources
+bundlefolder: additional-resources
 layout: redirect
 audience:
   - Users
   - Developers
 weight: 50
-section:
+sector:
   - getting_started
 ---
 

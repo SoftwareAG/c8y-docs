@@ -1,7 +1,7 @@
 ---
 title: Tenant hierarchy
 layout: bundle
-section:
+sector:
   - getting_started
 weight: 60
 ---

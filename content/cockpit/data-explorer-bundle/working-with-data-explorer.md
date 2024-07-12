@@ -2,7 +2,7 @@
 weight: 10
 title: Working with data explorer
 layout: bundle
-section:
+sector:
   - app_enablement
 helpcontent:
   - label: data-explorer

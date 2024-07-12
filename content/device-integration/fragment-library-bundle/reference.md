@@ -2,7 +2,7 @@
 weight: 160
 title: Shell
 layout: bundle
-section: 
+sector: 
   - device_management
 ---
 

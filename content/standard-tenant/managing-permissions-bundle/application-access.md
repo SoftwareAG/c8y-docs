@@ -2,7 +2,7 @@
 weight: 30
 title: Granting application access
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

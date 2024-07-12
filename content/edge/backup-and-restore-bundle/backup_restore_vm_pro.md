@@ -2,7 +2,7 @@
 weight: 50
 title: Backup and restore in VMware Workstation Pro
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

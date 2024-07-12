@@ -2,7 +2,7 @@
 weight: 40
 title: Domain name
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

@@ -3,8 +3,8 @@ title: Technical concepts
 icon: "dlt-c8y-icon-intelligence"
 type: root
 layout: redirect
-bundle: concepts
-section:
+bundlefolder: concepts
+sector:
   - getting_started
 audience:
   - Users

@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59297
 version: 10.20.472.0
 ---
-A security improvement has been made in managing authorization cookies, while setting a new authorization cookie, the `domain` attribute will now be omitted by default. Skipping this attribute allows the browser to apply cookies only for current document URLs, not including subdomains.
+A security improvement in the way the platform manages the session cookies. The `domain` attribute in the cookie is made applicable strictly to the tenant accessed.

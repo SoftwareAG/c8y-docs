@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Security improvement in authorization cookie management
+title: Security improvement in session cookie management
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

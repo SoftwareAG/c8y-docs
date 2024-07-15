@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Skip domain attribute in authorization Set-Cookie header
+title: Security improvement in session cookie management
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59297
 version: 10.20.472.0
 ---
-While setting a new authorization cookie, the `domain` attribute will now be omitted by default. Skipping this attribute allows the browser to apply cookies only for current document URLs, not including subdomains. The behavior can be changed via a core property: `auth.cookies.skip.domain: false`.
+Security has been improved by ensuring the `domain` attribute in a cookie is made applicable strictly to the tenant accessed.

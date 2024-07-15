@@ -4,8 +4,7 @@ title: SmartREST Inventory GET templates issue fixed
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
-product_area:
-  - label: Device Management
+product_area: Device management & connectivity
 component:
   - value: component--KIsStyzM
     label: Device Management app

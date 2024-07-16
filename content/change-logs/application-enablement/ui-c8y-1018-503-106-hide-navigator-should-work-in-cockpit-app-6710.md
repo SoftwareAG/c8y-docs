@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60045
 version: 1018.503.106
 ---
-The cockpit app did not properly support the hideNavigator configuration option which allows hiding the navigator menu on the left side. This has been fixed so that setting hideNavigator to true in the app descriptor now properly hides the navigator menu in the cockpit app as expected. This change improves consistency of the hideNavigator option across different app types and makes it easier to control the visibility of the navigator menu in cockpit apps.
+The Cockpit application did not properly support the `hideNavigator` configuration option which allows hiding the navigator menu on the left side. This issue has been fixed so that setting `hideNavigator` to true in the app descriptor now properly hides the navigator menu in the Cockpit application as expected. This change improves the consistency of the hideNavigator option across different applications.

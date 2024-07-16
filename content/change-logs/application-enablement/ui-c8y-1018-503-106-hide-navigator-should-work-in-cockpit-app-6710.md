@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Cockpit app now supports the hideNavigator configuration option
+title: Hide navigator option now works properly in the Cockpit application
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

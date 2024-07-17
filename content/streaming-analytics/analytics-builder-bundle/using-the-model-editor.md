@@ -135,7 +135,7 @@ For the input and output blocks, you can globally replace the input sources and 
     The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
     By default, 10 items are shown within each node, sorted alphabetically. With a large inventory, you will have to click **Load more** to display any items that are not shown initially.
 
-    Using the check boxes at the top of the dialog, you can filter the entries that are to be shown. By default, all defined devices, device groups, smart groups and assets are displayed in the dialog. If you also want to display any other managed objects in the dialog, select the "Other" check box.
+    Using the checkboxes at the top of the dialog, you can filter the entries that are to be shown. By default, all defined devices, device groups, smart groups and assets are displayed in the dialog. If you also want to display any other managed objects in the dialog, select the "Other" checkbox.
 
     The search box can be used to show any managed objects in the {{< product-c8y-iot >}} inventory which match your search and filter criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you will have to click **Load more** to display any managed objects that are initially not shown.
 
@@ -383,10 +383,10 @@ Models with no template parameters can be directly activated in the model manage
 
         An input block specifies a device or a range of devices, while an output block specifies a device, a trigger device or an asset. For template parameters, the same template parameter and thus value can be used for both input and output blocks. If a template parameter is set to refer to a range of devices, then using it in an output block will be treated as the trigger device. Typically, a single template parameter would be used for all input and output blocks, and may be a single device or a range of devices, in which case the block output goes to the device within the range that triggered a model evaluation \(so a model calculating an average of a measurement and outputting to a measurement would generate a new measurement for each device independently\). Even if a different template parameter whose value refers to a different range was used, the model output would only be sent to the device that triggered a model's evaluation.
 
-    -   **Optional**. An optional value can remain blank or can be set later by the instance maintainer. When you select this check box, it is not possible to specify a default value.
-    -   **Default Value**. You can only specify a default value when the **Optional** check box is not selected.
+    -   **Optional**. An optional value can remain blank or can be set later by the instance maintainer. When you select this checkbox, it is not possible to specify a default value.
+    -   **Default Value**. You can only specify a default value when the **Optional** checkbox is not selected.
 
-        **Exception**: Boolean types always have a value and cannot be optional. They are “false” by default \(that is, the check box for the default value is not selected\).
+        **Exception**: Boolean types always have a value and cannot be optional. They are “false” by default \(that is, the checkbox for the default value is not selected\).
 
         If you specify a default value, this default value will be provided in the instance editor when the instance maintainer creates a new instance. The instance maintainer can then either leave this default value unmodified or change it as required for that instance.
 

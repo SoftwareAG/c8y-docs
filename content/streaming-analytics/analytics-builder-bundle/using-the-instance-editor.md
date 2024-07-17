@@ -30,7 +30,7 @@ You can control the list of instances by filtering and sorting. See [Filtering a
 
 If the error icon <i class="dlt-c8y-icon-warning text-danger icon-20"></i> is shown near the end of a row, the corresponding instance is no longer processing events. Click that icon to get more information.
 
-When you open the instance editor, it may happen that template parameters have been changed since you last edited the instances and that they no longer use the same values types as before. If the values specified in the instance editor are still compatible, they are converted to the new value types. Incompatible values \(including check boxes for boolean types and values that are shown in drop-down list boxes\) are automatically removed. Each field from which the value has been removed shows an error underline and a corresponding error message.
+When you open the instance editor, it may happen that template parameters have been changed since you last edited the instances and that they no longer use the same values types as before. If the values specified in the instance editor are still compatible, they are converted to the new value types. Incompatible values \(including checkboxes for boolean types and values that are shown in drop-down list boxes\) are automatically removed. Each field from which the value has been removed shows an error underline and a corresponding error message.
 
 ### Adding an instance {#adding-an-instance}
 
@@ -50,7 +50,7 @@ You provide the parameter values for instances in the same way as you provide va
 The instance editor table provides different types of input controls, depending on the type of template parameter:
 
 -   Text boxes are provided in which you can enter values, depending on the setting of the template parameter \(for example, a string or a float or a multi-line string\). Your input is validated as you type. For example, it is not possible to enter a string value in a text box that expects a float value.
--   Check boxes are provided for boolean values. Selecting a check box corresponds to setting the value to `true`.
+-   Checkboxes are provided for boolean values. Selecting a checkbox corresponds to setting the value to `true`.
 -   Drop-down list boxes are provided when you can select a different value \(for example, to select a different rule for rounding\).
 -   When you edit an input source or output destination, an additional dialog box appears. The dialog box is the same as when selecting a different input source or output destination in the block parameter editor \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) for more information on this dialog box\). Click the button which is shown when you hover over an entry to select the input source or output destination that you want to use.
 

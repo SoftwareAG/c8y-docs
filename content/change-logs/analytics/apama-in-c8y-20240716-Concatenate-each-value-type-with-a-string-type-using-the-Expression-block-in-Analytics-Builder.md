@@ -1,5 +1,5 @@
 ---
-date: 
+date:
 title: Concatenate each value type with a string type using the Expression block in Analytics Builder
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAB-4265
 version:
 ---
-The [Expression](https://cumulocity.com/docs/streaming-analytics/block-reference/#expression) block in the Analytics Builder model editor has been updated to allow you to concatenate string and non-string values, similar to EPL. This is useful, for example, if you want to specify an expression like the following: <tt>"The current temperature is " + input1 + " degrees Celsius"</tt>.
+The [Expression](https://cumulocity.com/docs/streaming-analytics/block-reference/#expression) block in Analytics Builder has been updated to allow you to concatenate string and non-string values, similar to EPL. This is useful, for example, if you want to specify an expression like the following: <tt>"The current temperature is " + input1 + " degrees Celsius"</tt>.

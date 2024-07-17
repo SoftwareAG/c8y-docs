@@ -1,6 +1,6 @@
 ---
 date: 
-title: LWM2M agent memory improvement for the external decoder events processing
+title: LWM2M agent memory improvement for external decoder events processing
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

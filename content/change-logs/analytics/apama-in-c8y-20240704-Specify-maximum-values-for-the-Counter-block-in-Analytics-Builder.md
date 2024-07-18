@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-4093
-version:
+version: 25.192.0
 ---
 The **Counter** block in Analytics Builder has been updated to allow you to set a maximum value for each counter independently. This change was made because it was difficult and cumbersome to create periodic behavior in Analytics Builder, and it gives more control over counting in general.
 The following new parameters are available for this purpose:

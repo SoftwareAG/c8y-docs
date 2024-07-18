@@ -1,6 +1,6 @@
 ---
 date:
-title: Security improvement to ignore packets from certain source ports
+title: LWM2M service security improvement to ignore packets from certain source ports
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

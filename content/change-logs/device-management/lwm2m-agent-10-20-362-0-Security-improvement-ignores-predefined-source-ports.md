@@ -15,4 +15,4 @@ ticket: DM-3652
 version: 10.20.362.0
 ---
 
-To improve security, the LWM2M agent can now ignore packets from predefined source ports.
+To improve security, the LWM2M service can now ignore packets from predefined source ports.

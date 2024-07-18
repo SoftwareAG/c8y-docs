@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-07-18'
 title: Updated the section on internationalization in the Cumulocity IoT Codex
 product_area: Application enablement & solutions
 change_type:

@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3848
 version: 10.18.540.170
 ---
-The issue with LWM2M firmware updates via the PULL HTTP(s) method in a clustered agent environment has been resolved. Previously, the process would fail when a download request was directed to a different agent instance than the one that had prepared the download resource. 
+The issue with LWM2M firmware updates via the PULL HTTP(s) method in a clustered agent environment has been resolved. Previous version used to have a data serialization problem that prevented HTTP(s) endpoint to start and blocked the update process.    

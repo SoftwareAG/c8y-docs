@@ -53,15 +53,15 @@ var main = (function ($) {
         }
 
         if (true) {
-          offset = 45;
+          offset = 64;
           $('<div/>', {
             id: 'cd-banner',
-            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: #ff9301; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
+            style: 'position: sticky; top: 0; left: 0; width: 100%; background-color: #ffbc60; padding: 10px 5px; z-index: 50;'
           }).prependTo('body');
 
           cdURL = "https://cumulocity.com/docs";
 
-          $('<p style="text-align: center; vertical-align: center;">This website holds the Cumulocity IoT product documentation for the releases 10.18 and 10.17. The latest Cumulocity IoT product documentation is available <a href="' + cdURL + '">here</a>. For older releases, see <a href="https://cumulocity.com/docs/previous-versions/documentation-repository/">Previous documentation versions</a>. </p>').appendTo('#cd-banner');
+          $('<p style="text-align: center; vertical-align: center; max-width: 100ch; margin: 0 auto;">This website holds the Cumulocity IoT product documentation for the releases 10.18 and 10.17.<br> The latest Cumulocity IoT product documentation is available <a href="' + cdURL + '">here</a>. For older releases, see <a href="https://cumulocity.com/docs/previous-versions/documentation-repository/">Previous documentation versions</a>. </p>').appendTo('#cd-banner');
 
           $('.main-top-bar').css('top', offset);
           $('.main-nav.navbar').css('top', offset);

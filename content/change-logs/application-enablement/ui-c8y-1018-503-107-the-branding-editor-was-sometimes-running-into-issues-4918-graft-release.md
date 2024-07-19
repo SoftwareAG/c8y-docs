@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed an issue with the branding editor sometimes not working correctly
+title: Branding editor works reliably again
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

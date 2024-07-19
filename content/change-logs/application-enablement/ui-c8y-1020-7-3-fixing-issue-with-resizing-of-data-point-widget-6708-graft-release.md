@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fixing issue with resizing of data point widget (#6708) [GRAFT][release/cd] (#6734)
+title: Fixed resizing of data point widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59814
 version: 1020.7.3
 ---
-fixing issue with resizing of data point widget (#6708) [GRAFT][release/cd] (#6734)
+In the past, resizing the data point widget in dashboards sometimes led to unexpected behavior and layout issues. This change fixes the resizing of data point widgets to ensure they maintain their correct size and position within the dashboard layout. With this improvement, users can now reliably resize data point widgets without encountering layout problems, enabling them to create and customize their dashboards more effectively.

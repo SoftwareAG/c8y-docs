@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed resizing of data point widget
+title: Fixed resizing of "Data point" widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

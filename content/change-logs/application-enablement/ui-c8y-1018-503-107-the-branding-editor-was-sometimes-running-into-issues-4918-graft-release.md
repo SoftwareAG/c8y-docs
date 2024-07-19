@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-56446
 version: 1018.503.107
 ---
-In some cases, the branding editor in the Cumulocity IoT platform was not working as expected and users experienced problems when trying to edit the branding. This issue has now been resolved. With this fix, users can reliably use the branding editor again to customize the look and feel of their Cumulocity IoT experience without running into any problems.
+In some cases, the Branding editor in the {{< product-c8y-iot >}} platform was not working as expected and users experienced problems when trying to edit the branding. This issue has now been resolved and users can reliably use the Branding editor again to customize the look and feel of their {{< product-c8y-iot >}} experience.

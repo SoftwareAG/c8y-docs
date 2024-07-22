@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-3652
-version: 10.18.0.445
+version: 10.18.540.156
 ---
 
 Security improvement for the LWM2M Agent to ignore packets from predefined source ports.

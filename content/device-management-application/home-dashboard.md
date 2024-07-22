@@ -2,7 +2,7 @@
 weight: 10
 title: Home dashboard
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

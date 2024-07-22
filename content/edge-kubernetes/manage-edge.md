@@ -2,6 +2,6 @@
 weight: 30
 title: Managing Edge
 layout: bundle
-section:
+sector:
   - edge_server
 ---

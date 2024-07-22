@@ -2,7 +2,7 @@
 weight: 77
 title: Simulating peaks and sending alarms and events
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

@@ -2,6 +2,6 @@
 title: Using widgets in dashboards and reports
 layout: bundle
 weight: 50
-section:
+sector:
   - app_enablement
 ---

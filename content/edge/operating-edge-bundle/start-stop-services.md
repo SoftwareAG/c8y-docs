@@ -2,7 +2,7 @@
 weight: 10
 title: Starting and stopping services
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

@@ -2,7 +2,7 @@
 weight: 140
 title: R
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

@@ -2,7 +2,7 @@
 weight: 20
 title: Device certificates
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

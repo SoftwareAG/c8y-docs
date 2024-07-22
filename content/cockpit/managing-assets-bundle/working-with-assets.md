@@ -2,7 +2,7 @@
 weight: 20
 title: Working with assets
 layout: bundle
-section:
+sector:
   - app_enablement
 ---
 

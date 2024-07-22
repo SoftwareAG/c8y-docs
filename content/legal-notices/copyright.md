@@ -2,7 +2,7 @@
 weight: 10
 title: Copyright
 layout: bundle
-section:
+sector:
   - about_website
 ---
 

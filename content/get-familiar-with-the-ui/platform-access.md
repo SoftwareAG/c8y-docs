@@ -2,7 +2,7 @@
 weight: 25
 title: Accessing and logging into the platform
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

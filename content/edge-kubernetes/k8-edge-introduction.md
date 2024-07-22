@@ -2,7 +2,7 @@
 weight: 5
 title: Edge on Kubernetes
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

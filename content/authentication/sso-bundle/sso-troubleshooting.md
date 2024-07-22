@@ -2,7 +2,7 @@
 weight: 70
 title: Troubleshooting
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

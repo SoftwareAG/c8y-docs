@@ -2,7 +2,7 @@
 weight: 30
 title: Custom applications
 layout: bundle
-section:
+sector:
   - platform_administration
 ---
 

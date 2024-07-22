@@ -2,7 +2,7 @@
 title: Configuring Edge
 weight: 55
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

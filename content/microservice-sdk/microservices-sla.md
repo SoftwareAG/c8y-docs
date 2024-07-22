@@ -1,7 +1,7 @@
 ---
 title: Service-level agreement
 layout: bundle
-section:
+sector:
   - app_enablement
 weight: 90
 ---

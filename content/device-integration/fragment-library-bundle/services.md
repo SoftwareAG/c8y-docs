@@ -2,7 +2,7 @@
 weight: 180
 title: Services
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

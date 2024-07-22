@@ -66,9 +66,9 @@ Filtering also works in combination with a model or sample name that you specify
 2. In the resulting dialog, select one or more filters for the models. For samples, it is only possible to filter by tag.
    On the **Models** tab, you can filter the models according to the following criteria:    
    -  **Mode**.
-      You can show only the models that are in a specific mode. For example, if you only want to see the models that are in simulation and test mode, select the corresponding check boxes.
+      You can show only the models that are in a specific mode. For example, if you only want to see the models that are in simulation and test mode, select the corresponding checkboxes.
    -  **Status**.
-      You can show only the models that are either active or inactive. For example, if you only want to see active models, select the corresponding check box.
+      You can show only the models that are either active or inactive. For example, if you only want to see active models, select the corresponding checkbox.
    -  **Source or destination**.
       You can show only the models that use specific input sources or output destinations. Open the **Filter by source or destination** drop-down list box, select one or more items and click **Apply**.
    -  **Data point**.
@@ -80,7 +80,7 @@ Filtering also works in combination with a model or sample name that you specify
 
    On the **Samples** tab, you can filter the samples by tag only. Open the **Filter by tag** drop-down list box, select one or more tags, and click **Apply**.
 
-   All of the above-mentioned drop-down list boxes include a **Filter** search box that you can use to reduce the number of items that are offered for selection. You can enter a name or part of a name. For example, enter the word "test" to show only the items that have this word in their names. The characters that you type in may be contained at any position within the name. These filter criteria are not case-sensitive. Clicking the **All** check box selects all items that are currently shown in the drop-down list box, depending on the contents of the **Filter** search box.
+   All of the above-mentioned drop-down list boxes include a **Filter** search box that you can use to reduce the number of items that are offered for selection. You can enter a name or part of a name. For example, enter the word "test" to show only the items that have this word in their names. The characters that you type in may be contained at any position within the name. These filter criteria are not case-sensitive. Clicking the **All** checkbox selects all items that are currently shown in the drop-down list box, depending on the contents of the **Filter** search box.
 3. Click **Apply filters**.
    The toolbar of the **Models** or **Samples** tab now shows the filters that are currently applied. This is an example of the **Models** tab:
    ![Toolbar showing the current filters](/images/streaming-analytics/analytics-builder/filters.png)

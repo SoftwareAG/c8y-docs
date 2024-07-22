@@ -2,6 +2,6 @@
 weight: 70
 title: Upgrade
 layout: bundle
-section: 
+sector: 
   - app_enablement
 ---

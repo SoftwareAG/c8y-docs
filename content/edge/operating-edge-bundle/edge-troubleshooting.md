@@ -2,7 +2,7 @@
 weight: 50
 title: Troubleshooting the system
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

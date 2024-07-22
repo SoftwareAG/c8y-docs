@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add accept service terms checbox in the microservice upload dialog (#6639) [GRAFT][release/cd] (#6744)
+title: Add acknowledgement of service terms to microservice upload dialog
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59694
 version: 1020.8.0
 ---
-Add accept service terms checbox in the microservice upload dialog (#6639) [GRAFT][release/cd] (#6744)
+To ensure users agree to the service terms when uploading a microservice, a new text acknowledgment has been added to the microservice upload dialog. 

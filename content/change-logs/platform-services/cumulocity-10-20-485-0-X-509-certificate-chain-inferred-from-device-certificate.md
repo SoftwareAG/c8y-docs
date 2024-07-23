@@ -14,4 +14,3 @@ build_artifact:
 ticket: MTM-54838
 version: 10.20.485.0
 ---
-Support has been added for certificate authentication and retrieving JWT session token from device certificate only via REST API and MQTT. For details, refer to the [Device authentication](https://cumulocity.com/docs/device-integration/device-integration-rest/#device-authentication) user documentation.

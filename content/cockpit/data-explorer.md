@@ -5,6 +5,6 @@ outputs:
   - html
   - json
 weight: 30
-section:
+sector:
   - app_enablement
 ---

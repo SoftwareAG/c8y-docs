@@ -2,7 +2,7 @@
 weight: 20
 title: Health check
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

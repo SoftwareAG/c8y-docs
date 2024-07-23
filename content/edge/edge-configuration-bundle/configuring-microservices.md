@@ -2,7 +2,7 @@
 weight: 25
 title: Configuring the microservice hosting feature
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

@@ -2,6 +2,6 @@
 weight: 100
 title: Fragment library
 layout: bundle
-section:
+sector:
   - device_management
 ---

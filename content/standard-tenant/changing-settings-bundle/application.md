@@ -2,7 +2,7 @@
 weight: 10
 title: Application
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

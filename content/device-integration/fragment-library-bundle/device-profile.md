@@ -2,7 +2,7 @@
 weight: 90
 title: Device profile
 layout: bundle
-section: 
+sector: 
   - device_management
 ---
 

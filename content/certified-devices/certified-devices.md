@@ -3,7 +3,7 @@ weight: 10
 title: Certified devices
 layout: bundle
 slug: certified-devices
-section:
+sector:
   - device_management
 ---
 

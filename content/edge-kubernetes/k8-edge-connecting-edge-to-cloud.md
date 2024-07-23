@@ -2,7 +2,7 @@
 weight: 27
 title: Connecting Edge to the cloud
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

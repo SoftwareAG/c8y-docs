@@ -2,7 +2,7 @@
 title: More documentation
 layout: bundle
 weight: 10
-section:
+sector:
   - getting_started
 ---
 

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-07-18'
 title: Fixed missing or incorrect titles when loading applications
 product_area: Platform services
 change_type:

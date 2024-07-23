@@ -2,7 +2,7 @@
 weight: 110
 title: Identity
 layout: bundle
-section: 
+sector: 
   - device_management
 ---
 

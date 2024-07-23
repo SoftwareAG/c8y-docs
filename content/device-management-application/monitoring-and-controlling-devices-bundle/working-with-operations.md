@@ -227,6 +227,7 @@ This may be useful if the operation is generally a success, but contains operati
 **Calculation of completion percentage**
 
 The completion percentage is determined by comparing the total number of initiated operations to the number of operations that have reached a final state (success or failure). The total count is established at operation creation and remains static thereafter. This static value may lead to inaccuracies in the completion percentage if the overall number of operations subsequently changes.
+{{< /c8y-admon-info >}}
 
 * **Operation removal**: Operations can be implicitly removed when their associated devices are deleted. This deletion goes unaccounted for in the completion percentage calculation.
 * **Operation addition**: Retrying failed operations can introduce new entries without modifying the original total count. This again results in a misrepresentation of the completion percentage.

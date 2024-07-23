@@ -5,7 +5,7 @@ layout: bundle
 outputs:
   - html
   - json
-section:
+sector:
   - device_management
 helpcontent:
   - label: viewing-all-devices

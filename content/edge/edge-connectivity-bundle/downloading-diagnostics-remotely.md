@@ -2,7 +2,7 @@
 weight: 46
 title: Downloading diagnostics remotely
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

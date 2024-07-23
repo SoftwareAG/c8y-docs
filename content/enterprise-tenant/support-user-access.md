@@ -2,7 +2,7 @@
 weight: 50
 title: Support user access
 layout: bundle
-section:
+sector:
   - platform_administration
 ---
 

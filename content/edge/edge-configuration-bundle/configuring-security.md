@@ -2,7 +2,7 @@
 weight: 30
 title: Configuring security
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

@@ -2,7 +2,7 @@
 weight: 60
 title: Backup and restore in Hyper-V
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

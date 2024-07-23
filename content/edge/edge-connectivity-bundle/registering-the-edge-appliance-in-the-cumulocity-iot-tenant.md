@@ -2,7 +2,7 @@
 weight: 20
 title: Registering the Edge appliance in the Cumulocity IoT tenant
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

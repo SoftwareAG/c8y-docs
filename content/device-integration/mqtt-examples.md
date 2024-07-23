@@ -2,7 +2,7 @@
 weight: 30
 title: MQTT client examples
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

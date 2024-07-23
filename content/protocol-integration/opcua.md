@@ -2,6 +2,6 @@
 weight: 10
 title: OPC UA
 layout: bundle
-section:
+sector:
   - device_management
 ---

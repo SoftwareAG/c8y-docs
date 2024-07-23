@@ -2,7 +2,7 @@
 weight: 40
 title: Sending sensor data to the platform
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

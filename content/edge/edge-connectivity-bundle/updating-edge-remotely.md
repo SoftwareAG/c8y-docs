@@ -2,7 +2,7 @@
 weight: 45
 title: Updating Edge remotely
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

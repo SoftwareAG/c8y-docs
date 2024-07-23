@@ -2,7 +2,7 @@
 weight: 35
 title: Changing the domain name
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

@@ -2,7 +2,7 @@
 weight: 45
 title: Configuring remote connectivity
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

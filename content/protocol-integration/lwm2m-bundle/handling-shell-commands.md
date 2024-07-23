@@ -127,6 +127,11 @@ In the next table you will see all available commands and a brief description of
 <td align="left">Composite writes of one or more values to a resource on the device. The data will be written to the listed resource paths in a single request</td>
 </tr>
 <tr>
+<td align="left">writep /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;</td>
+<td align="center">1.1</td>
+<td align="left">Writes value to a resource on the device using COAP POST method.</td>
+</tr>
+<tr>
 <td align="left">writeb /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;hexadecimal-string&gt; <br>
 <b>OR</b> <br>
 writeb /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; binary:&lt;binary-file-id&gt;</td>
@@ -137,10 +142,21 @@ Writes binary data to a resource on the device from a file uploaded to the {{< p
 Adding the prefix 'binary:' lets the agent read the file's data and write it to the device.
 For example: writeb /3442/0/150 binary:12345.
 </td>
+</tr>
 <tr>
 <td align="left">cancelobservation /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [/&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;]</td>
 <td align="center">1.0, 1.1</td>
-<td align="left">Cancels either a single or a composite observation functionality from the desired resource. To cancel a composite observation the same list of paths must be mentioned as the composite observation was created. The list of paths is not required to be in the same order as the composite observation that was created.</td>
+<td align="left">Cancels either a single or a composite observation of the desired resources using a "reset" message. To cancel a composite observation the same list of paths must be mentioned as the composite observation was created. The list of paths is not required to be in the same order as the composite observation that was created.</td>
+</tr>
+<tr>
+<td align="left">cancelobserve /&lt;objectID&gt;[/&lt;instanceID&gt;/&lt;resourceID&gt;]</td>
+<td align="center">1.1</td>
+<td align="left">Cancels a single observation of the desired path using "GET with observe option" method.</td>
+</tr>
+<tr>
+<td align="left">cancelCompositeObserve /&lt;objectID&gt;[/&lt;instanceID&gt;/&lt;resourceID&gt;] [/&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;]</td>
+<td align="center">1.1</td>
+<td align="left">Cancels a composite observation of the desired paths using "GET with observe option" method.</td>
 </tr>
 <tr>
 <td align="left">delete /&lt;objectID&gt;/&lt;instanceID&gt;[/&lt;resourceID&gt;]</td>

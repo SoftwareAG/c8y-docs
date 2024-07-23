@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59716
 version: 1020.3.2
 ---
-In certain scenarios, the title decorator was not properly loaded when an application was loaded, leading to missing or incorrect application titles. This issue has been resolved by ensuring the title decorator is consistently loaded whenever an application is loaded. Users will now see the correct application title displayed at all times.
+In some situations the application titles in the UI were not correctly displayed. This issue has now been resolved and users now always see the correct application title.

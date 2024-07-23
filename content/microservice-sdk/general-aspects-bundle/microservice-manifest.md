@@ -94,7 +94,7 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">contextPath</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">Microservice contextPath is used to define extension points. The accepted letters are lowercase (a-z) and uppercase (A-Z) characters, digits, hyphens (-), dots (.), underscores (_), or tildes (~)<br>Default: Microservice name </td>
+<td style="text-align:left">Microservice contextPath is used to define extension points. The accepted letters are lowercase (a-z) and uppercase (A-Z) characters, digits, hyphens (-), dots (.), underscores (_), or tildes (~).<br>Default: Microservice name </td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>

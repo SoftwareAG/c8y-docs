@@ -1,6 +1,6 @@
 ---
 date:
-title: Added support for certificate authentication and retrieving JWT session token from device certificate only
+title: Added support for certificate authentication and for retrieving the JWT session token from the device only
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP

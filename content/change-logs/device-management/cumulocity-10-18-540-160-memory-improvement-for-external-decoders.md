@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3825
 version: 10.18.540.161
 ---
-A memory improvement was made for the external decoder events processing in the LWM2M agent service.
+The memory usage for processing external decoder events in the LWM2M agent has been improved.

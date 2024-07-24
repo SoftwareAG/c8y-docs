@@ -2,7 +2,7 @@
 weight: 10
 title: Using the microservice-based data broker
 layout: bundle
-section:
+sector:
   - platform_administration
 ---
 

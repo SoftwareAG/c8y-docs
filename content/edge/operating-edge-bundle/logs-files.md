@@ -2,7 +2,7 @@
 weight: 40
 title: Logging
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

@@ -2,7 +2,7 @@
 weight: 40
 title: Customizing your platform
 layout: bundle
-section:
+sector:
   - platform_administration
 ---
 

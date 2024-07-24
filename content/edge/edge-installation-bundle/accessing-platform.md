@@ -2,7 +2,7 @@
 weight: 25
 title: Accessing the Edge appliance
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

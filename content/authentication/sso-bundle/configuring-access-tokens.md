@@ -2,7 +2,7 @@
 weight: 50
 title: Using access tokens from the authorization server
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

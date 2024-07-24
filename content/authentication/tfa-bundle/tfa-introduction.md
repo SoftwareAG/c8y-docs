@@ -1,7 +1,7 @@
 ---
 title: Introduction
 layout: redirect
-section:
+sector:
   - platform_administration
 weight: 10
 ---

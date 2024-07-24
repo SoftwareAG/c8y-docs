@@ -2,7 +2,7 @@
 weight: 10
 title: Analytical querying with DataHub Edge
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

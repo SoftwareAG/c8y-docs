@@ -67,7 +67,7 @@ By default, an input block is listening to all input sources, that is, the **All
    {{< /c8y-admon-info>}}
 4. From the **Fragment and Series** drop-down list box, select the fragment and series for which the input block is to listen.
    If the device has previously sent data, the drop-down list box offers one or more values for selection. An example for the {{< sensor-app >}} would be **c8y\_Gyroscope =\> gyroscopeY**.
-5. Select the **Ignore Timestamp** check box.
+5. Select the **Ignore Timestamp** checkbox.
    This makes sure that the measurements are processed in the same order as they are received.
 
 If you need detailed information on the currently selected block, view the block reference in the documentation pane on the right. If the documentation pane is currently not shown, click the document icon <i class="c8y-icon c8y-icon-book text-primary icon-20"></i>.

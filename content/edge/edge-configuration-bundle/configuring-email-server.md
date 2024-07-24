@@ -2,7 +2,7 @@
 weight: 65
 title: Configuring the email server
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

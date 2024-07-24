@@ -2,7 +2,7 @@
 weight: 10
 title: Retention rules
 layout: redirect
-section:
+sector:
   - platform_administration
 helpcontent:
 - label: retention-rules

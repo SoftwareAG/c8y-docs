@@ -2,7 +2,7 @@
 weight: 40
 title: Available applications
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

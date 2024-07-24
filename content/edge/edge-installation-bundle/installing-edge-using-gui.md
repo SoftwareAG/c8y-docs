@@ -2,7 +2,7 @@
 weight: 15
 title: Installing Edge using the UI
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

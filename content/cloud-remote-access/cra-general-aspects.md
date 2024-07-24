@@ -2,7 +2,7 @@
 title: General aspects
 weight: 10
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

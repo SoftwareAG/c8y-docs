@@ -1,7 +1,7 @@
 ---
 title: OEE theory
 layout: bundle
-section: 
+sector: 
   - app_enablement
 weight: 20
 ---

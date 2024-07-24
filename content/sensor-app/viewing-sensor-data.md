@@ -2,7 +2,7 @@
 weight: 50
 title: Viewing sensor data
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

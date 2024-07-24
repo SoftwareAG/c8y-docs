@@ -2,7 +2,7 @@
 weight: 25
 title: Data exchange using data broker
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

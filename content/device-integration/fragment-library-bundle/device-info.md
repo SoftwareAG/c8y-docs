@@ -2,7 +2,7 @@
 weight: 80
 title: Device information
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

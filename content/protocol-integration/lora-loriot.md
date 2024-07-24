@@ -2,6 +2,6 @@
 weight: 30
 title: Loriot LoRa
 layout: bundle
-section:
+sector:
   - device_management
 ---

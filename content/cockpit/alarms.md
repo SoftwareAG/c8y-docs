@@ -2,7 +2,7 @@
 weight: 25
 title: Alarms
 layout: bundle
-section:
+sector:
   - app_enablement
 ---
 

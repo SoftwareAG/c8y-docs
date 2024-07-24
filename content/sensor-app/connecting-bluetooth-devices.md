@@ -2,7 +2,7 @@
 weight: 60
 title: Connecting new Bluetooth devices to the Sensor App
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

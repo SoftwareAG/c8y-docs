@@ -1,7 +1,7 @@
 ---
 title: AI/ML integration
 layout: bundle
-section:
+sector:
   - data_analytics
 weight: 20
 ---

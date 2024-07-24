@@ -2,6 +2,6 @@
 weight: 30
 title: Analytics Builder block reference
 layout: bundle
-section:
+sector:
   - data_analytics
 ---

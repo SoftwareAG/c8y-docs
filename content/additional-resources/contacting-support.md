@@ -2,7 +2,7 @@
 title: Product support
 layout: bundle
 weight: 30
-section:
+sector:
   - getting_started
 ---
 

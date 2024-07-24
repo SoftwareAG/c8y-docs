@@ -2,7 +2,7 @@
 weight: 20
 title: What is an agent?
 layout: bundle
-section: 
+sector: 
   - device_management
 ---
 

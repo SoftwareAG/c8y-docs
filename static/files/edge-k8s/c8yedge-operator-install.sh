@@ -127,15 +127,11 @@ set -e
 
 echo -e "\n\nInstalling Cumulocity IoT Edge Operator, version ${C8YEDGE_OPERATOR_VERSION} from ${C8YEDGE_REPO_URI}\n\n"
 
-# Add Edge Operator chart repository to Helm
-echo "$C8YEDGE_REPO_PASSWORD" | helm repo add --username "${C8YEDGE_REPO_USERNAME}" --password-stdin --force-update c8yedge-repo "https://${C8YEDGE_REPO_URI}/chartrepo/edge"
-helm repo update
-
 # Install or upgrade Edge Operator 
-helm upgrade --install c8yedge-operator c8yedge-repo/cumulocity-iot-edge-operator \
+helm upgrade --install c8yedge-operator oci://${C8YEDGE_REPO_URI}/edge/helm-charts/cumulocity-iot-edge-operator \
+    --version="${C8YEDGE_OPERATOR_VERSION}" \
     --namespace "${C8YEDGE_OPERATOR_NAMESPACE}" \
     --create-namespace \
-    --version="${C8YEDGE_OPERATOR_VERSION}" \
     --set image.repository="${C8YEDGE_REPO_URI}/edge/cumulocity-iot-edge-operator" \
     --set image.pullPolicy="${C8YEDGE_IMAGE_PULL_POLICY}" \
     --set imageCredentials.registry="${C8YEDGE_REPO_URI}" \

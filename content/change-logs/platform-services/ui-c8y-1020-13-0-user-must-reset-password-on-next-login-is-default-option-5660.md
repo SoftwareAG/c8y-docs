@@ -1,6 +1,6 @@
 ---
 date: ""
-title: user must reset password on next login is default option (#5660) [GRAFT][release/cd] (#6777)
+title: The application suggests that a new user set a password during the first login.
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58077
 version: 1020.13.0
 ---
-user must reset password on next login is default option (#5660) [GRAFT][release/cd] (#6777)
+By default, a new user receives an email with a link to set their password. If this option is unchecked, the application suggests that the new user change their password during the first login.

@@ -1,10 +1,15 @@
 ---
-weight: 35
+weight: 17
 title: Installing Edge in an air-gapped environment
 layout: redirect
 ---
 
-Edge on Kubernetes supports extended offline operations with intermittent or no internet connection. This capability enables seamless operation in environments where continuous internet access is not guaranteed. In order to achieve seamless operation of Edge in offline environments, it is essential to ensure that all required artifacts, including Helm Charts and Docker images, are readily available. This can be accomplished by hosting these artifacts in a local Harbor registry.
+This section presents instructions on deploying Edge in a single-node Kubernetes cluster that has no Internet connectivity. This type of configuration, called an air-gap or offline deployment, provides enhanced security by isolating itself from outside Internet or network access.
+
+The air-gap installation is similar to that of the single-node Kubernetes cluster deployment with Internet connectivity, except that all the artifacts required for the Edge installation, including Helm Charts and Docker images must be published to an OCI compliant container registry, which is accessible to the machine on which you intend to install Edge.
+
+
+
 
 Harbor is an open-source container image registry which can be installed and configured to host the Edge artifacts. This guide will walk you through the process of installing and configuring Harbor version 2.5, providing step-by-step instructions to help you set up the registry for Edge deployment. For more information on Harbor, refer to [Harbor 2.5 Documentation](https://goharbor.io/docs/2.5.0/)
 
@@ -99,7 +104,7 @@ Refer to [Python Setup and Usage](https://docs.python.org/3/using/index.html) fo
 {{< /c8y-admon-info >}}
 
 ```bash
-pip install --force-reinstall {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge_repository_sync-1018.0.0-py3-none-any.whl
+pip install --force-reinstall {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge_repository_sync-1018.0.1-py3-none-any.whl
 ```
 
 #### Run repository sync script {#run-repository-sync-script}

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: hasExternalOrigin resolved in (#6724) [GRAFT][release/cd] (#6776)
+title: The page with the application access for the user loads correctly.
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60085
 version: 1020.13.0
 ---
-hasExternalOrigin resolved in (#6724) [GRAFT][release/cd] (#6776)
+During the loading of the page with application access settings for the user, an error occurred when verifying whether the user was created by an external authorization server. The error has been resolved.

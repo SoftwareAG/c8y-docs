@@ -51,6 +51,122 @@ These warnings serve as reminders to adjust these settings for optimal storage m
 
 Kubernetes provides a variety of persistent volume types, but two specific types enable Pod containers to access either a Network File System (NFS) or the cluster node's local filesystem (often set up as a NFS drive mapped to a local folder). This configuration is especially prevalent in on-premises deployments.
 
+### Configuring the Required StorageClasses and PersistentVolumes
+
+To configure the required StorageClasses and PersistentVolumes (PVs) for Kubernetes, follow these steps:
+
+#### 1. Create StorageClasses
+StorageClasses are used to define the storage types and configurations for dynamic provisioning of PVs. Below is an example of how to create a StorageClass with the necessary settings.
+
+Create a YAML file for the StorageClass, for example, `storage-class.yaml` and apply the StorageClass using `kubectl apply -f storage-class.yaml`:
+
+```YAML
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: standard
+provisioner: k8s.io/minikube-hostpath
+reclaimPolicy: Retain
+allowVolumeExpansion: true
+volumeBindingMode: Immediate
+```
+
+#### 2. Create PersistentVolumes (PVs)
+PVs need to be defined if you are using static provisioning. Below is an example of how to create PVs with specific sizes and configurations.
+
+Create a YAML file for the PVs, for example, `persistent-volumes.yaml` and apply the PVs using `kubectl apply -f persistent-volumes.yaml`:
+
+```YAML
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-mongod-data-edge-db-rs0-0
+spec:
+  capacity:
+    storage: 75Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  hostPath:
+    path: "/mnt/data/mongod"
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-microservices-registry-data
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  hostPath:
+    path: "/mnt/data/registry"
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-edge-logs
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  hostPath:
+    path: "/mnt/data/logs"
+```
+
+#### 3. Create PersistentVolumeClaims (PVCs)
+PVCs request storage resources from Kubernetes. Below is an example of how to create PVCs to claim the storage defined in the PVs.
+
+Create a YAML file for the PVCs, for example, `persistent-volume-claims.yaml` and apply the PVCs using `kubectl apply -f persistent-volume-claims.yaml`:
+
+```YAML
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongod-data-edge-db-rs0-0
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 75Gi
+  storageClassName: standard
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: microservices-registry-data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: standard
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: edge-logs
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: standard
+```
+
 ### Static provisioning of PVs
 
 {{< c8y-admon-info >}}

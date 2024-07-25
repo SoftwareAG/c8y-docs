@@ -1,6 +1,6 @@
 ---
 date: ""
-title: application for access mapping are getting from application… (#6740) [GRAFT][release/cd] (#6775)
+title: The list of applications that can be configured for SSO has been narrowed down to applications available to the tenant.
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60033
 version: 1020.13.1
 ---
-application for access mapping are getting from application… (#6740) [GRAFT][release/cd] (#6775)
+The list of applications that can be configured for access by users logging in through SSO has been narrowed down to only include applications available to the tenant.

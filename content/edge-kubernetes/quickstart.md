@@ -36,7 +36,7 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
    curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
    ```
 
-4. Run the command below to install the Edge Operator and provide the repository credentials when prompted.
+4. Run the command below to install the Edge Operator and provide the registry credentials when prompted.
 
    ```shell
    curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh

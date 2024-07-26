@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-07-25'
 title: Pan map to ensure marker popup is always visible
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-07-25'
 title: Repository device tabs only show active operations
 product_area: Device management & connectivity
 change_type:

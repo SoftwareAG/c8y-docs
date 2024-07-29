@@ -9,8 +9,8 @@ component:
   - value: component-REmGxwkF2
     label: LPWAN
 build_artifact:
-  - value: tc-ycWx1InI9
-    label: loriot-agent
+  - value: tc-QHwMfWtBk7
+    label: cumulocity
 ticket: DM-3411
 version: 10.18.540.104
 ---

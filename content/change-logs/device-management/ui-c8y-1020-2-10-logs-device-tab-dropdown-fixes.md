@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Logs device tab dropdown fixes
+title: Fixed layout issues in the Logs tab in the device details
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3831
 version: 1020.2.10
 ---
-Several visual issues found on Device management Logs device tab. These issues were fixed by properly aligning labels, adjusting date and time pickers width and adding proper visual background separation when "type of log" dropdown is open.
+The **Logs** tab in the device details had several layout issues. These issues have been fixed by properly aligning labels, adjusting the date and time pickers width, and adding a proper background separation when the **Type of log** dropdown is open.

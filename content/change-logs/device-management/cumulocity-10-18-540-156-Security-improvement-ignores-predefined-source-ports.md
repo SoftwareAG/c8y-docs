@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-07-24
 title: LWM2M agent security improvement to ignore packets from certain source ports
 change_type:
   - value: change-2c7RdTdXo4

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-ticket: DM-3411
+ticket:
 version: 10.18.540.104
 ---
 Device simulators configured to use a SmartREST template collection containing response templates had an internal issue that prevented data creation. This issue has been addressed by correctly parsing response templates so that processing is no longer interrupted.

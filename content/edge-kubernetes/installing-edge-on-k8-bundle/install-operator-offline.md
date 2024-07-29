@@ -63,7 +63,7 @@ fi
 '
 ```
 {{< c8y-admon-important >}}
-You should restart the Docker, container runtime and Kubernetes cluster after running the above commands for the changes to take effect. For example, you can restart k3s using `sudo systemctl restart k3s` or `sudo service k3s restart` commands.
+You should restart the container runtime and Kubernetes cluster after running the above commands for the changes to take effect. For example, you can restart k3s using `sudo systemctl restart k3s` or `sudo service k3s restart` commands and docker using `sudo systemctl restart docker` or `sudo service docker restart` commands.
 {{< /c8y-admon-important >}}
 
 ### Download and publish required software to the private registry

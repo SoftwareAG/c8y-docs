@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-07-24
 title: Branding editor works reliably again
 product_area: Application enablement & solutions
 change_type:

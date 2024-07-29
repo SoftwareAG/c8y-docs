@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-07-24
 title: Hide navigator option now works in the Cockpit application
 product_area: Application enablement & solutions
 change_type:

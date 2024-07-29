@@ -112,10 +112,6 @@ To request the Edge registry credentials, contact the {{< company-sag >}} logist
 * All Other Regions: LogisticsServiceCenterGER@softwareag.com
 {{< /c8y-admon-info >}}
 
-{{< c8y-admon-info >}}
-If your private registry is Harbor registry, you need to pass an extra option to the 
-{{< /c8y-admon-info >}}
-
 ### Update custom-environment-variables ConfigMap
 Run the below commands to create or update the custom-environment-variables ConfigMap with key "ca.crt" for the Edge Operator to trust the private regsitry's certificate (if it is configured with a self-signed certificate):
 
@@ -134,4 +130,4 @@ kubectl create configmap custom-environment-variables -n "${EDGE_NAMESPACE}" --f
 ```
 
 ### Installing the Edge Operator
-Continue with installing the Edge operator by following the instructions in [Installing the Edge Operator](/edge-kubernetes/installing-edge-on-k8/#install-operator) section passing the private registry's host (`-r` option) as <private-registry-hostname>:<private-registry-port> and the respective credentials when prompted.
+Continue with installing the Edge operator by following the instructions in [Installing the Edge Operator](/edge-kubernetes/installing-edge-on-k8/#install-operator) section passing the private registry's host (`-r` option) as &lt;private-registry-hostname&gt;:&lt;private-registry-port&gt; and the respective registry credentials when prompted.

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-07-25'
 title: Cockpit application split into plugins
 product_area: Application enablement & solutions
 change_type:

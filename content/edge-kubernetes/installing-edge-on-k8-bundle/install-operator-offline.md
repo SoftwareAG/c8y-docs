@@ -1,6 +1,6 @@
 ---
 weight: 17
-title: Installing the Edge Operator (Offline)
+title: Installing the Edge Operator (offline)
 layout: redirect
 ---
 

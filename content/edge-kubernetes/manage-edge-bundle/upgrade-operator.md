@@ -1,7 +1,7 @@
 ---
 weight: 20
-title: Upgrading the Edge Operator
+title: Upgrading the Edge operator
 layout: redirect
 ---
 
-The Edge Operator, once installed, will automatically upgrade when you upgrade Edge to a new version.
+The Edge operator, once installed, will automatically upgrade when you upgrade Edge to a new version.

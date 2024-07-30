@@ -35,9 +35,9 @@ Events:
  Normal  InstallLoopBackOff   1m00s  cumulocityiotedge  waiting for mongo server to be ready
 ```
 
-Check the logs of the Edge Operator, MongoDB and core pods to get more insights.
+Check the logs of the Edge operator, MongoDB and core pods to get more insights.
 
-The Edge Operator logs:
+The Edge operator logs:
 
 ```shell
 kubectl logs -n c8yedge deployment.apps/c8yedge-operator-controller-manager -c manager

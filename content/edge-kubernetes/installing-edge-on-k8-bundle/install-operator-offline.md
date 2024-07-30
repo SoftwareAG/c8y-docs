@@ -1,6 +1,6 @@
 ---
 weight: 17
-title: Installing the Edge Operator (offline)
+title: Installing the Edge operator (offline)
 layout: redirect
 ---
 
@@ -113,7 +113,7 @@ To request the Edge registry credentials, contact the {{< company-sag >}} logist
 {{< /c8y-admon-info >}}
 
 ### Update custom-environment-variables ConfigMap
-Run the below commands to create or update the custom-environment-variables ConfigMap with key "ca.crt" for the Edge Operator to trust the private regsitry's certificate (if it is configured with a self-signed certificate):
+Run the below commands to create or update the custom-environment-variables ConfigMap with key "ca.crt" for the Edge operator to trust the private regsitry's certificate (if it is configured with a self-signed certificate):
 
 ```bash
 EDGE_NAMESPACE=c8yedge                    									 # Change namespace name if you want to deploy Edge operator and Edge in a different namespace
@@ -129,5 +129,5 @@ kubectl create namespace "${EDGE_NAMESPACE}" --dry-run=client -o yaml | kubectl 
 kubectl create configmap custom-environment-variables -n "${EDGE_NAMESPACE}" --from-file=ca.crt="/tmp/private-registry-ca.crt" --dry-run=client -o yaml | kubectl apply -f -
 ```
 
-### Installing the Edge Operator
-Continue with installing the Edge operator by following the instructions in [Installing the Edge Operator](/edge-kubernetes/installing-edge-on-k8/#install-operator) section passing the private registry's host (`-r` option) as &lt;private-registry-hostname&gt;:&lt;private-registry-port&gt; and the respective registry credentials when prompted.
+### Installing the Edge operator
+Continue with installing the Edge operator by following the instructions in [Installing the Edge operator](/edge-kubernetes/installing-edge-on-k8/#install-operator) section passing the private registry's host (`-r` option) as &lt;private-registry-hostname&gt;:&lt;private-registry-port&gt; and the respective registry credentials when prompted.

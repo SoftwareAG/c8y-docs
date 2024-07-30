@@ -32,6 +32,7 @@ The "Alarm list" widget shows a list of alarms, filtered by objects, alarm sever
 |Severities|Only show alarms of the selected alarm severity.
 |Order|Alarms may be ordered by the active status (followed by severity and time, the default), by date (followed by time, either in descending or ascending order), or by severity (followed by time).
 |Auto refresh|Enables you to automatically refresh the alarm list at the frequency you select.
+|Show alarms from child devices|Show or hide the alarms of child devices.
 
 ### Applications {#applications}
 

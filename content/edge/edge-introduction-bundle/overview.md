@@ -1,10 +1,12 @@
 ---
 weight: 10
 title: Overview
-layout: redirect
+layout: bundle
+sector:
+  - edge_server
 ---
 
-Edge is delivered as a software appliance designed to run on industrial PC's or local servers and on a single node Kubernetes cluster.
+Edge is delivered as a software appliance designed to run on industrial PC's or local servers.
 
 In contrast to {{< product-c8y-iot >}} platform, which is available in the cloud (for example, using AWS, Azure or other data centers), Edge is installed in factories, that is, in the same site ("onsite") in which the IoT assets are located.    
 
@@ -22,11 +24,10 @@ Features of Edge include:
 * Ready-to-use Cockpit and Device Management applications.
 * Native protocol support for MQTT and REST.
 * Edge database for operational data storage.
-* Cloud Fieldbus with web-based UI to create local Modbus and OPC UA connections.
+* [OPC UA](/protocol-integration/opcua/) with web-based UI for efficient connection management and seamless integration of industrial automation systems.
 * Easy installation, upgrades and backup/restore.
 * Microservice hosting, which allows to run server-side applications which may be used to extend the {{< product-c8y-iot >}} platform with customer-specific functionality (optional component).
 * [DataHub Edge](/datahub/running-datahub-on-the-edge/) for historical data storage and analytics (optional component).
-* [Machine Learning](/machine-learning/introduction/) to train and deploy your machine learning models (optional component).
 
 
 <img src="/images/edge/cumulocity-edge-overview.png" name="Edge overview" style="width:75%;"/>

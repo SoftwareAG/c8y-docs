@@ -1,6 +1,6 @@
 ---
 date:
-title: Composite write (cwrite) doesn't write the data to the device in the exact order specified
+title: Composite write (cwrite) doesn't transmit the data to the device in the exact order specified
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

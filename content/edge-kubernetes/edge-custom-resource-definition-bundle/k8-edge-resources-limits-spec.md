@@ -4,7 +4,7 @@ title: Resource limits specification
 layout: redirect
 ---
 
-Structure for specifying the resource limits for the containers deployed by the Edge Operator.
+Structure for specifying the resource limits for the containers deployed by the Edge operator.
 
 |<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|

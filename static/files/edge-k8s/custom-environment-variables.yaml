@@ -3,4 +3,4 @@ apiVersion: v1
 metadata:
   name: custom-environment-variables 
 data:
-  OPERATOR_REGISTRY_INSECURE_SKIP_TLS_VERIFY: "true" # Instructs the Edge Operator to skip the TLS certificate verification when connecting to local Harbor registry configured with self-signed certificates.
+  OPERATOR_REGISTRY_INSECURE_SKIP_TLS_VERIFY: "true" # Instructs the Edge operator to skip the TLS certificate verification when connecting to local Harbor registry configured with self-signed certificates.

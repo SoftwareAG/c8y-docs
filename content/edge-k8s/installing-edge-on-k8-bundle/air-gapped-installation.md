@@ -20,7 +20,7 @@ Make sure that your target host meets the following prerequisites.
 |Docker CLI|Install `docker-ce` and `docker-ce-cli` packages. Refer to [Installing Docker](https://docs.docker.com/engine/install/) for installation instructions.|
 |Helm version 3.x|Refer to [Installing Helm](https://helm.sh/docs/intro/install/) for the installation instructions.|
 |Helm cm-push plugin|Helm plugin to push chart package to ChartMuseum. Refer to [Installing cm-push plugin](https://github.com/chartmuseum/helm-push?tab=readme-ov-file#install) for the installation instructions.|
-|ORAS CLI version 1.0.0|OCI Registry As Storage (ORAS) CLI is used to publish non-container artifacts to the Harbor registry. Refer to [Installing ORAS CLI](https://oras.land/docs/installation) for installation instructions.|  
+|ORAS CLI version 1.0.1|OCI Registry As Storage (ORAS) CLI is used to publish non-container artifacts to the Harbor registry. Refer to [Installing ORAS CLI](https://oras.land/docs/installation) for installation instructions.|  
 |Disk space|Four static Persistent Volumes (PV) or a StorageClass configured with dynamic provisioning to bind.<br>- 5 GB each for the Persistent Volume Claims (PVC) made for the registry (storing container images) and the chartmuseum (storing Helm Charts).<br>- 1 GB each for the Persistent Volume Claims (PVC) made for the harbor database and the jobservice.|
 |TLS/SSL key and TLS/SSL certificate|Optional. Use your internal or an external CA (Certification Authority) to generate these files. Ensure that the TLS/SSL certificate has the complete certificate chain in the right order.<p><p>{{< c8y-admon-info>}} The .crt and .key files must be in the PEM format and the .key file must not be encrypted.{{< /c8y-admon-info>}}|
 
@@ -99,7 +99,7 @@ Refer to [Python Setup and Usage](https://docs.python.org/3/using/index.html) fo
 {{< /c8y-admon-info >}}
 
 ```bash
-pip install --force-reinstall {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge_repository_sync-1018.0.0-py3-none-any.whl
+pip install --force-reinstall {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge_repository_sync-1018.0.1-py3-none-any.whl
 ```
 
 #### Run repository sync script
@@ -114,7 +114,7 @@ LOCAL_HARBOR_PORT=5001                      # Change harbor port if necessary
 LOCAL_HARBOR_USER="admin"                   # Change if you used different credentails while installing the Harbor registry
 LOCAL_HARBOR_PASSWORD="admin-pass"          # Change if you used different credentails while installing the Harbor registry
 
-c8yedge_repository_sync sync -v {{< c8y-edge-current-version >}}.0.0 -sr registry.c8y.io -sru "${EDGE_REPO_USER}" -srp "${EDGE_REPO_PASSWORD}" -tr "${LOCAL_HARBOR_DOMAIN}:${LOCAL_HARBOR_PORT}" -tru "${LOCAL_HARBOR_USER}" -trp "${LOCAL_HARBOR_PASSWORD}" --dryrun False
+c8yedge_repository_sync sync -v {{< c8y-edge-current-version >}}.0.1 -sr registry.c8y.io -sru "${EDGE_REPO_USER}" -srp "${EDGE_REPO_PASSWORD}" -tr "${LOCAL_HARBOR_DOMAIN}:${LOCAL_HARBOR_PORT}" -tru "${LOCAL_HARBOR_USER}" -trp "${LOCAL_HARBOR_PASSWORD}" --dryrun False
 ```
 
 {{< c8y-admon-info >}}
@@ -143,8 +143,8 @@ UPDATED_NODEHOSTS=$(echo "${EXISTING_NODEHOSTS}\\n${LOCAL_HARBOR_IP} ${LOCAL_HAR
 kubectl patch configmap coredns -n kube-system --type merge -p "{\"data\":{\"NodeHosts\":\"${UPDATED_NODEHOSTS}\"}}"
 ```
 
-### Installing the Edge Operator
-To install the Edge Operator, run and enter the version (for example, {{< c8y-edge-current-version >}}.0.0) you want to install, and the local Harbor registry credentials.
+### Installing the Edge operator
+To install the Edge operator, run and enter the version (for example, {{< c8y-edge-current-version >}}.0.1) you want to install, and the local Harbor registry credentials.
 
 ```bash
 EDGE_NAMESPACE=c8yedge                    # Change namespace name if you want to deploy Edge operator and Edge in a different namespace
@@ -158,10 +158,10 @@ curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-operator-install.s
 Provide the local Harbor registry credentials in the prompt:
 
 ```text
-Enter username to access Edge Operator repository:  
-Enter password to access Edge Operator repository:
+Enter username to access Edge operator repository:  
+Enter password to access Edge operator repository:
 ```
-Run the following command to follow the logs for the Edge Operator pod:
+Run the following command to follow the logs for the Edge operator pod:
 ```bash
 EDGE_NAMESPACE=c8yedge   # Change namespace name if you deployed Edge operator in a different namespace
 

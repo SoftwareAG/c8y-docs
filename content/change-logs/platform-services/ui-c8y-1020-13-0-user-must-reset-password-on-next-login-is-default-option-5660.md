@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Reset password on next login" option now default if "Password reset link as email" is deselected
+title: Reset password on next login option now default if Password reset link as email is deselected
 product_area: Platform services
 change_type:
   - value: change-2c7RdTdXo4

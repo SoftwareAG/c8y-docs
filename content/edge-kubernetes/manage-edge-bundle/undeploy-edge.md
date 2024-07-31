@@ -22,14 +22,14 @@ You can uninstall Edge either by:
    Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR.
    {{< /c8y-admon-info >}}
 
-### Uninstalling the Edge Operator {#uninstalling-the-edge-operator}
+### Uninstalling the Edge operator {#uninstalling-the-edge-operator}
 
-   Run this command for removing the Edge Operator from your Kubernetes cluster.
+   Run this command for removing the Edge operator from your Kubernetes cluster.
 
    ```bash
    helm uninstall c8yedge-operator -n c8yedge
    ```
 
    {{< c8y-admon-info >}}
-   Substitute the namespace name *c8yedge* in the command above with the namespace name where you have installed the Edge Operator.
+   Substitute the namespace name *c8yedge* in the command above with the namespace name where you have installed the Edge operator.
    {{< /c8y-admon-info >}}

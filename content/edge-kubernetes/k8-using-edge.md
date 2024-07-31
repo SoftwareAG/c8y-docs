@@ -1,5 +1,5 @@
 ---
 weight: 65
-title: Using Edge features
+title: Using Edge
 layout: bundle
 ---

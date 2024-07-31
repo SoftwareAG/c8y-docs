@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-07-12
 title: SmartREST template collection parsing no longer fails with response template   
 product_area: Device management & connectivity
 change_type:
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-ticket:
-version: 10.18.540.104
+ticket: DM-3677
+version: 10.18.540.145
 ---
 Device simulators configured to use a SmartREST template collection containing response templates had an internal issue that prevented data creation. This issue has been addressed by correctly parsing response templates so that processing is no longer interrupted.

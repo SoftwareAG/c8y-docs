@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Block paste dashboard action when user wants to copy device dashboard into group (#6716) [GRAFT][release/y2024] (#6795)
+title: Disabled paste action when user attempts to paste device dashboards into groups or group dashboards into devices
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60085
 version: 1020.13.0
 ---
-During the loading of the page with application access settings for the user, an error occurred when verifying whether the user was created by an external authorization server. The error has been resolved.
+During the loading of the page with the application access settings for the user, an error occurred when verifying whether the user was created by an external authorization server. The error has been resolved.

@@ -23,7 +23,7 @@ To enable port 2883 please contact [Product support](/additional-resources/conta
 
 ### Topic {#topic}
 
-MQTT Service topics are mapped to the Messaging Service subscriptions of the same name.
+MQTT Service topics are mapped to the Messaging Service subscriptions with identical names, including additional URL encoding.
 The Messaging Service subscriptions reliably store the topic messages for asynchronous processing.
 The messages stored on these subscriptions can be consumed using a dedicated [Java Client](/device-integration/mqtt-service#java-client).
 
@@ -37,9 +37,7 @@ MQTT Service does not impose any topic structure. There are just a few topic nam
 Other than that you are free to use any topic name which is compatible with the [MQTT specification](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718106).
 
 {{< c8y-admon-info >}}
-Wildcard topics are not supported.
-
-Only alphanumeric characters and slash (`/`) can be used in the topic name.
+Wildcard topics (`+`, `#`) and system topics starting with `$` are not supported.
 {{< /c8y-admon-info >}}
 
 ### Payload {#payload}

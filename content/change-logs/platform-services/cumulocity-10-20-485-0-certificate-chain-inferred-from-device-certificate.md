@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-54838
 version: 10.20.485.0
 ---
-{{< product-c8y-iot >}} now supports the ability to infer the full certificate chain from an intermediate certificate, enabling devices that are only able to send the device certificate to connect to {{< product-c8y-iot >}}. For full details refer to [Device authentication](https://cumulocity.com/docs/device-integration/device-integration-rest/#device-authentication).
+{{< product-c8y-iot >}} now supports the ability to infer the full certificate chain from an intermediate certificate, enabling devices that are only able to send the device certificate to connect to {{< product-c8y-iot >}}. For full details refer to [Device authentication](/device-integration/device-integration-rest/#device-authentication).

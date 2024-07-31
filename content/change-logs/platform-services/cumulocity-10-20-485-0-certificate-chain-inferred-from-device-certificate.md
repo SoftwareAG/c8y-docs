@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-07-30
 title: Added support for device certificate authentication
 product_area: Platform services
 change_type:

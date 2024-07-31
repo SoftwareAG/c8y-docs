@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Prevented pasting device dashboards into groups and group dashboards into devices
+title: Disabled paste action when user attempts to paste device dashboards into groups or group dashboards into devices
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

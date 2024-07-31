@@ -8,7 +8,7 @@ Specifies the Kubernetes secret containing the admin credentials with which the 
 
 This secret should contain the fields described in the table below:
 
-|<div style="width:150px">Field</div>|Required|<div style="width:70px">Type</div>|Default|Description|
+|<div style="width:155px">Field</div>|Required|<div style="width:70px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|
 |MONGODB_DATABASE_ADMIN_USER|Yes|String||Database admin username with which the MongoDB managed by the Edge operator or the username of the externally hosted MongoDB server is configured.
 |MONGODB_DATABASE_ADMIN_PASSWORD|Yes|String||Database admin password with which MongoDB managed by the Edge operator or the password for the externally hosted MongoDB server is configured.

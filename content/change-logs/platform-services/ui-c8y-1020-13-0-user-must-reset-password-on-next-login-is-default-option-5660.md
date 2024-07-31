@@ -3,8 +3,8 @@ date: ""
 title: The application suggests that a new user set a password during the first login.
 product_area: Platform services
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+  - value: change-2c7RdTdXo4
+    label: Improvement
 component:
   - value: q3kclF6pO
     label: Authentication

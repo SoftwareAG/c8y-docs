@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The page with the application access for the user loads correctly.
+title: Page with application access settings for the user loads correctly
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

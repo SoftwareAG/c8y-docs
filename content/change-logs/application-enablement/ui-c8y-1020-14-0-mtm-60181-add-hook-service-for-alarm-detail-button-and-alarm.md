@@ -1,6 +1,6 @@
 ---
 date: ""
-title: [MTM-60181] add hookService for alarm detail button and alarm list indicator (#6812)
+title: Add hook service for alarm detail button and alarm list indicator
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

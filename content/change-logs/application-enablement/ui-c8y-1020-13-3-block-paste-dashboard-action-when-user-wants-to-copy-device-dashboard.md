@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Prevent pasting device dashboards into groups and groups dashboard into devices enhancement
+title: Prevented pasting device dashboards into groups and group dashboards into devices
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

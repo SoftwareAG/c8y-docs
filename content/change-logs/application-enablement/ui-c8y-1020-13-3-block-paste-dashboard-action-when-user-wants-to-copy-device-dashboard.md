@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59834
 version: 1020.13.3
 ---
-Block paste dashboard action when user wants to copy device dashboard into group (#6716) [GRAFT][release/cd] (#6796)
+Previously it was possible to click paste button when copying device dashboard and pasting to group (and other way too), but dashboard was not pasted and error was shown. Now paste button is disabled and title with reason for it is added.

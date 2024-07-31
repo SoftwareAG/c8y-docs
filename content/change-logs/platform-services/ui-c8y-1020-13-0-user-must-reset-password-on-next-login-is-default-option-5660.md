@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58077
 version: 1020.13.0
 ---
-Previously, a new user would receive an email with a link to set their password. However, now when "Send password reset link as email" is unchecked, the "User must reset password on next login" option is selected by default. This means the new user must change their password during their first login.
+Previously, a new user received an email with a link to set their password. Now when the checkbox **Send password reset link as email** is cleared, the **User must reset password on next login** option is selected by default. This means the new user must change their password during their first login.

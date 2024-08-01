@@ -86,25 +86,27 @@
       {{ $currentDate.Set "date" $listDate}}
        {{/*  pick the CSS class names from the entries sharing the same date  */}}
       {{ range $reusablePages }}
-      {{ $recordDate := .Date.Format "January 2, 2006" }}
-      {{ if eq $recordDate $listDate }}
-      {{$changeTypeClass := print "change-type-" (index .Params.change_type 0).label | urlize}}
-      {{$productAreaClass := print "productarea-" .Params.product_area | urlize}}
-      {{$componentClass := print "component-" (index .Params.component 0).label | urlize}}
-      {{$technicalComponentClass := print "technicalcomponent-" (index .Params.build_artifact 0).label | urlize}}
-      {{ if not (in $classes $changeTypeClass) }}
-      {{$classes = $classes | append $changeTypeClass}}
-      {{end}}
-      {{ if not (in $classes $productAreaClass) }}
-      {{$classes = $classes | append $productAreaClass}}
-      {{end}}
-      {{ if not (in $classes $componentClass) }}
-      {{$classes = $classes | append $componentClass}}
-      {{end}}
-      {{ if not (in $classes $technicalComponentClass) }}
-      {{$classes = $classes | append $technicalComponentClass}}
-      {{end}}
-      {{end}}
+        {{ if ne (index .Params.change_type 0).label ($currentDate.Get "out")}}
+          {{ $recordDate := .Date.Format "January 2, 2006" }}
+          {{ if eq $recordDate $listDate }}
+            {{$changeTypeClass := print "change-type-" (index .Params.change_type 0).label | urlize}}
+            {{$productAreaClass := print "productarea-" .Params.product_area | urlize}}
+            {{$componentClass := print "component-" (index .Params.component 0).label | urlize}}
+            {{$technicalComponentClass := print "technicalcomponent-" (index .Params.build_artifact 0).label | urlize}}
+            {{ if not (in $classes $changeTypeClass) }}
+            {{$classes = $classes | append $changeTypeClass}}
+            {{end}}
+            {{ if not (in $classes $productAreaClass) }}
+            {{$classes = $classes | append $productAreaClass}}
+            {{end}}
+            {{ if not (in $classes $componentClass) }}
+            {{$classes = $classes | append $componentClass}}
+            {{end}}
+            {{ if not (in $classes $technicalComponentClass) }}
+            {{$classes = $classes | append $technicalComponentClass}}
+            {{end}}
+          {{end}}
+        {{end}}
       {{end}}
 
         {{ if not site.Data.date_settings.yearly_release}}

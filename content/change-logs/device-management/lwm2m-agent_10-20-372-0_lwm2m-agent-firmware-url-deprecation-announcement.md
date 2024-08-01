@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3080
 version: 10.20.372.0
 ---
-Custom firmware update URL has been replaced with standard firmware definition that points to an external URL. Right now this parameter is still available, and it takes precedence before anything else as it used to, but it will be removed in future LWM2M agent versions.
+The custom firmware update URL has been replaced with a standard firmware definition that points to an external URL. Right now this parameter is still available and takes precedence over any other option, but it will be removed in future LWM2M agent versions.

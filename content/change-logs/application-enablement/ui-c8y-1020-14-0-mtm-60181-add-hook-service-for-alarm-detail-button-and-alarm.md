@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add hook service for alarm detail button and alarm list indicator
+title: Added hook service for alarm details button and alarm list indicator
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

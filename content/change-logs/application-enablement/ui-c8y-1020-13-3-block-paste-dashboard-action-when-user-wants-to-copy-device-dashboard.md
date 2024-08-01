@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59834
 version: 1020.13.3
 ---
-Previously users were able to copy a device dashboard and paste it into a group (or copy a group dashboard and paste it into a device), which resulted in an error. With this change, the paste button is now disabled and information for the reason is provided.
+Previously users were able to copy a device dashboard and paste it into a group (or copy a group dashboard and paste it into a device), which resulted in an error. To prevent this, pasting between device and group dashboards is now restricted and users will see an info message when attempting that.

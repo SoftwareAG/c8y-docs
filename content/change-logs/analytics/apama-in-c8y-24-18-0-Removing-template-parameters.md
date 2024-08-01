@@ -14,4 +14,4 @@ build_artifact:
 version: 24.18.0
 ---
 In Analytics Builder, an icon is now provided for removing a template parameter from the **Template Parameter** dialog box.
-The actions menu (the three vertical dots at the end of a row) has therefore been removed. See also [Managing template parameters](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#managing-template-parameters) in the user documentation.
+The actions menu (the three vertical dots at the end of a row) has therefore been removed. See also [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters).

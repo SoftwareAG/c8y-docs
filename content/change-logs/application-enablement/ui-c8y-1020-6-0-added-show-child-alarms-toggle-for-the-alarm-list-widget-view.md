@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-07-25'
 title: Alarm list widget configuration now supports showing or hiding child alarms
 product_area: Application enablement & solutions
 change_type:

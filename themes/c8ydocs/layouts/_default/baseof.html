@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   {{- partial "head.html" . -}}
-  <body data-spy="scroll" data-target="#main-nav" {{if .IsHome }} class="isHome" {{end}}>
+  <body data-spy="scroll" data-target="#main-nav" data-offset="400" {{if .IsHome }} class="isHome" {{end}}>
     <script type="text/javascript">
       const docsPreview = {{.Site.Params.docsPreview}};
     </script>

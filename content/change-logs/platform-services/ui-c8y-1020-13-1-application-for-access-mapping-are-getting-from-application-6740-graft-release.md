@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The list of applications that can be configured for SSO has been narrowed down to applications available to the tenant.
+title: List of applications available in SSO configuration now limited to applications available to the tenant
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

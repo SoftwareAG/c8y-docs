@@ -2,7 +2,7 @@
 weight: 10
 title: Introduction
 layout: bundle
-section:
+sector:
   - getting_started
 aliases:
   - /sensor-app/overview/

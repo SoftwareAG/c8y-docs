@@ -2,7 +2,7 @@
 weight: 30
 title: Branding
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

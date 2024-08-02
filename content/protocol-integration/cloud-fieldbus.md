@@ -2,6 +2,6 @@
 weight: 70
 title: Cloud Fieldbus
 layout: bundle
-section:
+sector:
   - device_management
 ---

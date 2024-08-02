@@ -3,7 +3,7 @@ weight: 10
 title: Introduction
 layout: bundle
 slug: introduction
-section:
+sector:
   - device_management
 ---
 

@@ -2,7 +2,7 @@
 weight: 80
 title: Controlling devices
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

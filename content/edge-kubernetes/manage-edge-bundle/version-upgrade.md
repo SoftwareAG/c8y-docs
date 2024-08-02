@@ -4,9 +4,9 @@ title: Upgrading Edge
 layout: redirect
 ---
 
-The Edge Operator follows the recreate update strategy to upgrade the Edge deployment.
+The Edge operator follows the recreate update strategy to upgrade the Edge deployment.
 
-Recreating update strategy is an all-or-nothing process that updates all aspects of the system at once with a brief downtime period. The Edge Operator selects all the outdated pods and deactivates them at once. Once all old pods are deactivated, the Edge Operator creates updated pods for the entire system. Edge is not operational while the old pods are deactivating and until the final updated pod is created.
+Recreating update strategy is an all-or-nothing process that updates all aspects of the system at once with a brief downtime period. The Edge operator selects all the outdated pods and deactivates them at once. Once all old pods are deactivated, the Edge operator creates updated pods for the entire system. Edge is not operational while the old pods are deactivating and until the final updated pod is created.
 
 For this example, assume that Edge is deployed using the [c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml).
 

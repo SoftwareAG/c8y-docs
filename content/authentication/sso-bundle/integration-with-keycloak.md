@@ -2,7 +2,7 @@
 weight: 60
 title: Integration with Keycloak
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

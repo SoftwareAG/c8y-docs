@@ -2,7 +2,7 @@
 weight: 25
 title: Configuring the microservice hosting feature
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 
@@ -69,7 +69,7 @@ A microservice specifies an API version in the microservice manifest. Depending 
 
 By default, only the {{< management-tenant >}} can upload and subscribe to the microservices with API version 1. To improve the security of the Edge appliance, the minimum API version has been configured to API version 2. Due to the minimum API version configuration, you cannot upload and subscribe to a microservice with API version 1 in the "edge" tenant.
 
-{{< c8y-admon-important >}}The MLW and the Messaging Service microservices use API version 1. To install the MLW and the Messaging Service on Edge version 10.15, you must subscribe the "edge" tenant to the **Feature-privileged-microservice-hosting** application before uploading the MLW and the Messaging Service microservices with API version 1.{{< /c8y-admon-important >}}
+{{< c8y-admon-important >}}The MLW and the Messaging Service microservices use API version 1. To install the MLW and the Messaging Service on Edge version 10.15 and later, you must subscribe the "edge" tenant to the **Feature-privileged-microservice-hosting** application before uploading the MLW and the Messaging Service microservices with API version 1.{{< /c8y-admon-important >}}
 
 To upload and subscribe to a microservice with API version 1 in the "edge" tenant:
 

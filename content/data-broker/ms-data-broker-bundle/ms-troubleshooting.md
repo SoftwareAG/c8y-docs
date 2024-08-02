@@ -2,7 +2,7 @@
 weight: 20
 title: Troubleshooting
 layout: bundle
-section:
+sector:
   - platform_administration
 ---
 

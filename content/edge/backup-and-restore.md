@@ -2,7 +2,7 @@
 title: Backup and restore
 weight: 65
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

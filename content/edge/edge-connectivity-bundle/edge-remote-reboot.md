@@ -2,7 +2,7 @@
 weight: 40
 title: Restarting Edge remotely
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

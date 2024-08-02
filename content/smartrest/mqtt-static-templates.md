@@ -1,7 +1,7 @@
 ---
 title: MQTT Static templates
 layout: bundle
-section:
+sector:
   - device_management
 weight: 60
 ---
@@ -1099,7 +1099,7 @@ Open or close the relays in the array.
 
 ##### Upload configuration file (520) {#520}
 
-The current configuration is uploaded from {{< product-c8y-iot >}} to the device.
+Upload the current configuration to {{< product-c8y-iot >}}.
 
 **Example**
 

@@ -2,7 +2,7 @@
 weight: 75
 title: Port forwarding on a VMware platform
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

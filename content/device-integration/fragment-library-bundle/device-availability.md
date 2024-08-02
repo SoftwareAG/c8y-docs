@@ -2,7 +2,7 @@
 weight: 70
 title: Device availability
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

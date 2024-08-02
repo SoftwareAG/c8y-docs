@@ -2,7 +2,7 @@
 weight: 10
 title: Configuring the network
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

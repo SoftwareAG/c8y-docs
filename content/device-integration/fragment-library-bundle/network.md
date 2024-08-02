@@ -2,7 +2,7 @@
 weight: 140
 title: Network
 layout: bundle
-section: 
+sector: 
   - device_management
 ---
 

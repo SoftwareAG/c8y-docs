@@ -4,7 +4,7 @@ icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
 target: "/change-logs"
-section:
+sector:
   - change-logs
 weight: 10
 ---

@@ -14,6 +14,7 @@ build_artifact:
 ticket: MTM-50975
 version: 10.20.499.0
 ---
-SSO configuration has been extended with the optional: `Redirect to the user interface application`.
-If enabled: when login using SSO fails for whatever reason, the error information will be displayed on a proper error page.
+Previously, when an error occurred on logging in via SSO, the plain HTML error text was displayed in the browser.
+With this change, optional `Redirect to the user interface application` configuration has been added which allows displaying the error text as a standard UI error message.
+The new configuration option is optional and does not affect current SSO configurations.
 Using this option requires updating the "Valid Redirect URIs" in the authorization server with the value "<tenant_domain>/apps/*".

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-08-01'
 title: Add acknowledgement of service terms to microservice upload dialog
 product_area: Platform services
 change_type:

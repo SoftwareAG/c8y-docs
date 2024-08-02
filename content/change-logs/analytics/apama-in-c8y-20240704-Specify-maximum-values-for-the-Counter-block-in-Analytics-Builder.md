@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-08-01
 title: Specify maximum values for the Counter block in Analytics Builder
 change_type:
   - value: change-2c7RdTdXo4

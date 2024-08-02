@@ -97,6 +97,9 @@ var main = (function ($) {
       window.dispatchEvent(new CustomEvent('scroll'));
     }, 100);
 
+    setTimeout(function () {
+      $('[autocomplete="off"][name="search"]').attr('placeholder', 'Search...');
+    }, 500);
 
   }
   return {
@@ -240,10 +243,6 @@ function findVisibleElement(id) {
   }
   return elem ? elem.id : null;
 }
-
-
-// Call the buildToc function to generate and insert TOCs for all articles
-// buildToc();
 
 
 // Adds the section to the breadcrumbs

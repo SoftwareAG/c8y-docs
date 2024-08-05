@@ -13,6 +13,6 @@ build_artifact:
     label: apama-in-c8y
 version: 24.18.0
 ---
-The [Constant Value](https://cumulocity.com/docs/streaming-analytics/block-reference/#constant-value) block in Analytics Builder now supports `float` and `boolean` value types
+The [Constant Value](/streaming-analytics/block-reference/#constant-value) block in Analytics Builder now supports `float` and `boolean` value types
 and can produce output of these types. This enables the block's output to be consumed by other blocks that take input of type `float` or `boolean` like the blocks in
 the **Logic** and **Aggregate** categories. The **Type** parameter is also now optional. If a type is not selected, the type of the output value is inferred from the **Value** parameter.

@@ -116,6 +116,8 @@
   .toc{
     position: sticky;
     top: 74px;
+    max-height: calc(100vh - 74px);
+    overflow: auto;
     // min-height: calc(100vh - 74px);
   }
   .article-list h3{

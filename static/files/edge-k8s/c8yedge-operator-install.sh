@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 
-# Install Cumulocity IoT Edge Operator
+# Install Cumulocity IoT Edge operator
 # Usage:
 #   ./c8yedge-operator-install.sh [-v C8YEDGE_OPERATOR_VERSION] [-n C8YEDGE_OPERATOR_NAMESPACE] [-i C8YEDGE_IMAGE_PULL_POLICY] [-r C8YEDGE_REGISTRY_HOST] -u C8YEDGE_REGISTRY_USERNAME -p C8YEDGE_REGISTRY_PASSWORD
 #       or
@@ -15,22 +15,22 @@
 #
 # Environment variables:
 #   - C8YEDGE_OPERATOR_VERSION
-#     Version of C8y Edge Operator to install. Will install latest version if not specificed.
+#     Version of C8y Edge operator to install. Will install latest version if not specificed.
 #
 #   - C8YEDGE_OPERATOR_NAMESPACE
 #     Namespace in which to install. Will install in 'c8yedge' namespace if not specified.
 #
 #   - C8YEDGE_REGISTRY_HOST
-#     Edge Operator registry URI. Points to production registry 'registry.c8y.io' if not specified.
+#     Edge operator registry URI. Points to production registry 'registry.c8y.io' if not specified.
 #    
 #   - C8YEDGE_IMAGE_PULL_POLICY
-#     Configures the ImagePullPolicy for the Edge Operator. Can be set to 'Always' or 'IfNotPresent', defaults to 'IfNotPresent'.
+#     Configures the ImagePullPolicy for the Edge operator. Can be set to 'Always' or 'IfNotPresent', defaults to 'IfNotPresent'.
 #
 #   - C8YEDGE_REGISTRY_USERNAME
-#     Username to access Edge Operator registry. Prompted if not specified.
+#     Username to access Edge operator registry. Prompted if not specified.
 #
 #   - C8YEDGE_REGISTRY_PASSWORD
-#     Password to access Edge Operator registry. Prompted if not specified.
+#     Password to access Edge operator registry. Prompted if not specified.
 #
 
 display_usage() {
@@ -48,22 +48,22 @@ display_usage() {
     echo ""
     echo "Environment variables:"
     echo "  - C8YEDGE_OPERATOR_VERSION"
-    echo "    Version of C8y Edge Operator to install. Will install latest version if not specificed."
+    echo "    Version of C8y Edge operator to install. Will install latest version if not specificed."
     echo ""
     echo "  - C8YEDGE_OPERATOR_NAMESPACE"
     echo "    Namespace in which to install. Will install in 'c8yedge' namespace if not specified."
     echo ""
     echo "  - C8YEDGE_REGISTRY_HOST"
-    echo "    Edge Operator registry URI. Points to production registry 'registry.c8y.io' if not specified."
+    echo "    Edge operator registry URI. Points to production registry 'registry.c8y.io' if not specified."
     echo ""
     echo "  - C8YEDGE_IMAGE_PULL_POLICY"
-    echo "    Configures the ImagePullPolicy for the Edge Operator. Can be set to 'Always' or 'IfNotPresent', defaults to 'IfNotPresent'."
+    echo "    Configures the ImagePullPolicy for the Edge operator. Can be set to 'Always' or 'IfNotPresent', defaults to 'IfNotPresent'."
     echo ""
     echo "  - C8YEDGE_REGISTRY_USERNAME"
-    echo "    Username to access Edge Operator registry. Prompted if not specified."
+    echo "    Username to access Edge operator registry. Prompted if not specified."
     echo ""
     echo "  - C8YEDGE_REGISTRY_PASSWORD"
-    echo "    Password to access Edge Operator registry. Prompted if not specified."
+    echo "    Password to access Edge operator registry. Prompted if not specified."
     echo ""
     exit 1
 }
@@ -100,11 +100,11 @@ if [ -z "$C8YEDGE_IMAGE_PULL_POLICY" ]; then
 fi
 
 if [ -z "$C8YEDGE_REGISTRY_USERNAME" ]; then
-    read -p "Enter username to access Edge Operator registry: " C8YEDGE_REGISTRY_USERNAME
+    read -p "Enter username to access Edge operator registry: " C8YEDGE_REGISTRY_USERNAME
 fi
 
 if [ -z "$C8YEDGE_REGISTRY_PASSWORD" ]; then
-    read -s -p "Enter password to access Edge Operator registry: " C8YEDGE_REGISTRY_PASSWORD
+    read -s -p "Enter password to access Edge operator registry: " C8YEDGE_REGISTRY_PASSWORD
 fi
 
 # Attempt to login to the registry using provided credentials
@@ -114,10 +114,10 @@ login_output=$(echo "$C8YEDGE_REGISTRY_PASSWORD" | helm registry login -u "$C8YE
 if ! echo "$login_output" | grep -qi "Login Succeeded"; then
 	echo -e "\n\n$login_output\n"
 	if echo "$login_output" | grep -qi "unauthorized"; then
-		echo -e "Error: Invalid credentials provided for the Edge Operator registry \"${C8YEDGE_REGISTRY_HOST}\"."
+		echo -e "Error: Invalid credentials provided for the Edge operator registry \"${C8YEDGE_REGISTRY_HOST}\"."
 		exit 1
 	else
-		echo -e "Error: Unable to establish a connection with the Edge Operator registry \"${C8YEDGE_REGISTRY_HOST}\"."
+		echo -e "Error: Unable to establish a connection with the Edge operator registry \"${C8YEDGE_REGISTRY_HOST}\"."
 		exit 1
 	fi
 fi
@@ -125,9 +125,9 @@ fi
 # Stop on errors
 set -e
 
-echo -e "\n\nInstalling Cumulocity IoT Edge Operator, version ${C8YEDGE_OPERATOR_VERSION} from ${C8YEDGE_REGISTRY_HOST}\n\n"
+echo -e "\n\nInstalling Cumulocity IoT Edge operator, version ${C8YEDGE_OPERATOR_VERSION} from ${C8YEDGE_REGISTRY_HOST}\n\n"
 
-# Install or upgrade Edge Operator 
+# Install or upgrade Edge operator 
 helm upgrade --install c8yedge-operator oci://${C8YEDGE_REGISTRY_HOST}/edge/helm-charts/cumulocity-iot-edge-operator \
     --version="${C8YEDGE_OPERATOR_VERSION}" \
     --namespace "${C8YEDGE_OPERATOR_NAMESPACE}" \

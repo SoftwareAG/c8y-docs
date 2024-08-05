@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Repository configuration saves now correctly configurationType. [GRAFT][release/cd]
+title: Repository configuration now correctly saves the configuration type
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

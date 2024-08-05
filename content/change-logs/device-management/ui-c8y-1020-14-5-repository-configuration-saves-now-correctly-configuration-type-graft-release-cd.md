@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3791
 version: 1020.14.5
 ---
-In the repository configuration, the configuration type was not saved correctly when adding a new entry, leading to unexpected behavior. With this change, the configuration type is now properly persisted when saving the repository configuration. 
+In the configuration repository, the configuration type was not saved correctly when adding a new configuration snapshot, leading to unexpected behavior. With this change, the configuration type is now properly persisted when saving the configuration snapshot. 

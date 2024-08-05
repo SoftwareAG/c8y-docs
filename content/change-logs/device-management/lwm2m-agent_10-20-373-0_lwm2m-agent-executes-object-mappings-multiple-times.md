@@ -1,6 +1,6 @@
 ---
 date:
-title: Composite write (cwrite) transmits the data to the device in the exact order specified
+title: Composite Write transmits data to the device in the specified order
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

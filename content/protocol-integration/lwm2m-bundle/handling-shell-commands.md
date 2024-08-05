@@ -124,7 +124,7 @@ In the next table you will see all available commands and a brief description of
 <tr>
 <td align="left">cwrite /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt; [/&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;]</td>
 <td align="center">1.1</td>
-<td align="left">Composite writes facilitate the transmission of one or more values to LWM2M Resources or Resource Instances on the device. The data will be written to the specified resource paths within a single request, adhering to the specified order.<br><br>
+<td align="left">Composite writes facilitate the transmission of one or more values to LWM2M resources or resource instances on the device. The data will be written to the specified resource paths within a single request, adhering to the specified order.<br><br>
 Writing multiple Resource Instance values directly to the corresponding Resource ID is not permitted; each Resource Instance ID must be defined with its respective value. For example, when writing multiple resource instance values, the resource instances will be transmitted exactly as defined in the operation, without aggregation or sorting by Resource Instance ID.</td>
 </tr>
 <tr>

@@ -31,7 +31,7 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 | Field                                      |Description|
 |:-------------------------------------------|:---|
 | Redirect URI                               |Redirect parameter. Can be used in request definitions as a ${redirectUri} placeholder. If `Redirect to the user interface application` is enabled then the redirect URI is not required. The redirect URI will be set automatically to the currently used application.
-| Redirect to the user interface application |The redirect URL is automatically set to the application used by the user during login. If enabled remember to set valid redirect URIs in authorization server e.g. "https:&#47;/cumulocity.com/apps/*". The advantage of enabling this option is that any errors that occur during e.g. SSO configuration are displayed properrly in UI application.
+| Redirect to the user interface application |The redirect URL is automatically set to the application used by the user during login. If enabled remember to set valid redirect URIs in the authorization server, for example, "https:&#47;/cumulocity.com/apps/*". The advantage of enabling this option is that any errors that occur during the SSO configuration are displayed properly in the UI application.
 | Client ID                                  |OAuth connection client ID. Can be used in request definitions as a ${clientId} placeholder
 | Token issuer                               |OAuth token issuer
 | Button name                                |Name displayed on the button on the **Login** page

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Preserve white spaces and new lines in shell component
+title: Shell component preserves whitespace and new lines
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

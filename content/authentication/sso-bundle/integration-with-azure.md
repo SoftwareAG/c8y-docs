@@ -22,7 +22,7 @@ To connect {{< product-c8y-iot >}} to Azure AD, you must create an App registrat
 1. Select **App Registrations** under **Manage** on the left and at the top click **New Registration**.
 3. In the resulting window, provide a name for the new App registration.
 4. As **Redirect URI type** select "Web" and enter the URL to your tenant OAuth endpoint, for example "https:&#47;/documentation.cumulocity.com/tenant/oauth". You can derive this value from your {{< product-c8y-iot >}} tenant. Navigate to **Administration** > **Settings** > **Authentication** > **Single sign-on**. The redirect URL is prefilled by the platform. 
-Optionally set e.g. "https:&#47;/documentation.cumulocity.com/apps/*" if in {{< product-c8y-iot >}} SSO configuration `Redirect to the user interface application` is enabled.
+Optionally, set for example, "https:&#47;/documentation.cumulocity.com/apps/*" if in the {{< product-c8y-iot >}} SSO configuration `Redirect to the user interface application` is enabled.
 5. Click **Register** to create the App registration.
 
 The overview in the details page of your App registration contains several IDs and endpoints that you need later on, like the Application (client) ID and the Directory (tenant) ID (for your tenant in {{< product-c8y-iot >}}).

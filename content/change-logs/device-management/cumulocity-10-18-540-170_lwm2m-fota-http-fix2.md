@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-08-05
 title: LWM2M firmware update via PULL HTTP(s) method works in a clustered agent environment
 product_area: Device management & connectivity
 change_type:

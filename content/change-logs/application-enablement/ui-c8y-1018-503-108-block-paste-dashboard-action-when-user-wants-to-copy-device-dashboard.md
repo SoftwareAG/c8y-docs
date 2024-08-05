@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-08-05
 title: Restricted paste action when user attempts to paste device dashboards into groups or group dashboards into devices
 product_area: Application enablement & solutions
 change_type:

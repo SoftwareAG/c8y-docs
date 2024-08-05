@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3622
 version: 10.20.373.0
 ---
-The Composite Write (cwrite) operation transmits resource-values data in the exact order specified in the operation.
+The Composite Write (cwrite) operation transmits resource-values data to the device in the exact order specified in the operation.

@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3806
 version: 1020.14.6
 ---
-In Device management, when attempting to change the device owner on the device "Info" tab and then canceling the action, the toggle control previously remained in an incorrect state and appeared as if the change had been applied. With this fix, canceling the device owner change now correctly reverts the toggle control back to the original state, avoiding confusion about the current device owner assignment.
+When attempting to change the device owner on the **Info** tab in the device details and then canceling the action, the toggle control previously remained in an incorrect state and appeared as if the change had been applied. With this fix, canceling the device owner change now correctly reverts the toggle control back to the original state, avoiding confusion about the current device owner assignment.

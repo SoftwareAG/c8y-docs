@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3840
 version: 1020.14.7
 ---
-The shell component is commonly used to display code snippets or command line output. Previously, the shell component stripped out whitespace and new lines which could lead to incorrectly formatted or hard to read content. With this change, the shell component now preserves all whitespace and new line characters allowing code snippets and command line output to be properly formatted. This improves the readability of content displayed in the shell component for end users.
+The shell component is commonly used to display code snippets or command line output. Previously, the shell component stripped out whitespaces and new lines which could lead to incorrectly formatted or hard to read content. With this change, the shell component now preserves all whitespaces and new line characters allowing code snippets and command line output to be properly formatted. This improves the readability of content displayed in the shell component for users.

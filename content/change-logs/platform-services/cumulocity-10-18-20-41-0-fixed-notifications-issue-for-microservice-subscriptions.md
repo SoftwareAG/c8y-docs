@@ -7,7 +7,7 @@ change_type:
     label: Fix
 component:
   - value: component-JlFdtOPva
-    label: Rest API
+    label: REST API
 build_artifact:
   - value: tc-2QVkzf0Er
     label: pulsar

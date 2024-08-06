@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59331
 version: 1020.501.0
 ---
-There was an issue where data broker connectors stopped forwarding messages due to the platform network reconfiguration. This was fixed along with some robustness changes to ensure message forwarding is more consistent e.g. during platform maintenance.  
+Due to an issue, data broker connectors stopped forwarding messages after platform network reconfiguration. This issue has been fixed along with some robustness changes to ensure message forwarding is more consistent, for example, during platform maintenance.  

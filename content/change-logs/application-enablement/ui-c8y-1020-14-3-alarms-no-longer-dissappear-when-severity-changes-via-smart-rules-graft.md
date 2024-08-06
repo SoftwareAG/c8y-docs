@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Alarms no longer dissappear when severity changes via smart rules [GRAFT][release/cd] (#6804)
+title: Alarms remain visible when the severity changes via smart rules
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59695
 version: 1020.14.3
 ---
-Alarms no longer dissappear when severity changes via smart rules [GRAFT][release/cd] (#6804)
+In some cases, alarms disappeared from the UI when their severity was changed via a smart rule. This has been fixed so that alarms now remain properly visible in the UI when their severity changes. This ensures that users can always see all active or cleared alarms, regardless of any alarm updates triggered by smart rules.

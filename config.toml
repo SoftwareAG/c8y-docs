@@ -68,8 +68,8 @@ relativeURLs = true
     link = "https://empower.softwareag.com/"
 
   [[params.additionalResources]]
-    name = "Device Partner Portal"
-    link = "https://devicepartnerportal.softwareag.com/"
+    name = "Device Partner Ecosystem"
+    link = "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes"
 
   [[params.additionalResources]]
     name = "Solutions Portal"

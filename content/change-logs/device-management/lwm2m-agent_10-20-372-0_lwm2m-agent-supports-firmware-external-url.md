@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-ggH2M4hf3
     label: lwm2m-agent
 ticket: DM-3080
-version: 10.20.372.0
+version: 10.20.371.0
 ---
 In previous versions, defining external firmware images was limited to per-device configuration changes. Now, it is possible to use a standard firmware definition that points to an external URL instead of containing a binary.

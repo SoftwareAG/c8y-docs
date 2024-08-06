@@ -1,5 +1,5 @@
 ---
-date: 2024-07-23
+date: 
 title: "Data broker message forwarding no longer stops after platform network reconfiguration"
 product_area: Platform services
 change_type:

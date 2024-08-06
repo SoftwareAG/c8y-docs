@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Alarms remain visible when the severity changes via smart rules
+title: Alarms remain visible when the severity changes via a smart rule
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

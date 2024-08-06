@@ -1,6 +1,6 @@
 ---
 date: 
-title: The OPC UA gateway no longer fails when running in a Docker container that lacks specific 64-bit system functions
+title: OPC UA gateway no longer fails when attempting to call a missing 64-bit system function
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

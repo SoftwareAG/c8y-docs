@@ -25,8 +25,8 @@ The Provider hosts and manages a Container-as-a-Service cluster based on Kuberne
 * **Monitoring and health checks:** The Service includes monitoring capabilities that leverage [Kubernetes' system of liveness and readiness probes](https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-best-practices-setting-up-health-checks-with-readiness-and-liveness-probes) to maintain the health and performance of Microservices provided the probes are implemented (see below).
 * **Authentication**: The Service ensures that [only authenticated users](/microservice-sdk/general-aspects/#security) access Microservices.
 * **Security management**: The Service includes the security management of the {{< product-c8y-iot >}} Microservices infrastructure (excluding Microservices themselves) including security monitoring, software upgrades, network isolation and potentially other measures.
-* **Subscription management**: {{< product-c8y-iot >}} Microservices lets you [subscribe your customers](https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#subscribing-applications) to Microservices.
-* **Metering and billing**: {{< product-c8y-iot >}} Microservices [meters the infrastructure resource usage](https://cumulocity.com/docs/enterprise-tenant/usage-and-billing/) of the Microservices.
+* **Subscription management**: {{< product-c8y-iot >}} Microservices lets you [subscribe your customers](/enterprise-tenant/managing-tenants/#subscribing-applications) to Microservices.
+* **Metering and billing**: {{< product-c8y-iot >}} Microservices [meters the infrastructure resource usage](/enterprise-tenant/usage-and-billing/) of the Microservices.
 
 ### Customer responsibilities
 

@@ -128,7 +128,7 @@ The REST API can be reached at https://[server]/service/oee-bundle/mes/productio
 
 * PUT: Add or update the list of production plans for the device defined in the body. If a production plan exists for the given tenant and device, the new production plans will be merged internally and obsolete instances will be removed. The resulting production plans will then be sent to the Apama service.
 
-For details, see the [Rest API documentation](https://{{< domain-c8y >}}/api/oee/10.10.0/#tag/Productionplan).
+For details, see the [REST API documentation](https://{{< domain-c8y >}}/api/oee/10.10.0/#tag/Productionplan).
 
 
 ### Resolution {#resolution}

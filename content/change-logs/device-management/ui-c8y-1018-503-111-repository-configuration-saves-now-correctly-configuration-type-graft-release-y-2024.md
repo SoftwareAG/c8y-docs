@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Repository configuration saves now correctly configurationType. [GRAFT][release/y2024] (#6828)
+title: Configuration repository now correctly saves the configuration type
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

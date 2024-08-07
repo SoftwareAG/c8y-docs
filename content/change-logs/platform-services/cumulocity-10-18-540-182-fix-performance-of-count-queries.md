@@ -1,6 +1,6 @@
 ---
 date: 2024-08-06
-title: Fix performance regression for count queries and inventory roles 
+title: Fixed performance regression for count queries and inventory roles 
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

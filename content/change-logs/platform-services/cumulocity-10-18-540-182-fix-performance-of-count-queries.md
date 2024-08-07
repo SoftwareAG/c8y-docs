@@ -16,4 +16,3 @@ version: 10.18.540.182
 ---
 Since release y2024 platform have faced performance regression which can be observed
 only on higher number of concurrent requests using inventory roles based access control
-or performing count via query parameters like `withTotalPages` or `withTotalElements`. 

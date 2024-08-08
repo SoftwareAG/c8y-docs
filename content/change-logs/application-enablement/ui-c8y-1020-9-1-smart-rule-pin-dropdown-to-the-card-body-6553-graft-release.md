@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Smart rule pin dropdown moved to the card body
+title: Smart rule pin dropdown moved from the header to the card body
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

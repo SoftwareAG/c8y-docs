@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3867
 version: 10.20.77.0
 ---
-In certain ARM64-based environments, the OPC UA gateway may fail when attempting to call a specific 64-bit system function that might be missing in some base Docker images. This issue has now been resolved. If this function is missing, the service will attempt to call a default system function before failing.
+In certain ARM64-based environments, the OPC UA gateway may have failed when attempting to call a specific 64-bit system function that might be missing in some base Docker images. This issue has now been resolved. If this function is missing, the service will attempt to call a default system function instead.

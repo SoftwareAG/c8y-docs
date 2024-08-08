@@ -1,6 +1,6 @@
 ---
 date: ""
-title: SmartRule_pin_dropdown_to_the_card_body (#6553) [GRAFT][release/cd] (#6759)
+title: Smart rule pin dropdown moved to the card body
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

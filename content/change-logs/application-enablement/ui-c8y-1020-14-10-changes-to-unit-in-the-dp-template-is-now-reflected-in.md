@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Changes to unit in the dp template is now reflected in the info gauge widget view. (#6823) [GRAFT][release/cd] (#6838)
+title: Changes to the unit in the data point template is now reflected in the info gauge widget view.
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60261
 version: 1020.14.10
 ---
-Changes to unit in the dp template is now reflected in the info gauge widget view. (#6823) [GRAFT][release/cd] (#6838)
+In the past, when changing the unit of a data point template, the change was not reflected in the info gauge widget which was using this data point. This inconsistent behavior has now been fixed. Now, whenever the unit is updated in a data point template, this change will also be immediately visible in the info gauge widget view.

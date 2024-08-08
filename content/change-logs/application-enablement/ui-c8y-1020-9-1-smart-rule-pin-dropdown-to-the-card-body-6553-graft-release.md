@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58122
 version: 1020.9.1
 ---
-To improve the user experience when configuring smart rules, the pin dropdown has been moved from the smart rule header to the card body. This change makes it easier for users to find and interact with the pin dropdown, as it is now located in a more prominent and intuitive position within the smart rule configuration interface. The new placement of the pin dropdown is expected to enhance usability and reduce confusion for users when setting up and managing their smart rules.
+To improve the user experience when configuring smart rules, the pin dropdown has been moved from the smart rule header to the card body. This change makes it easier for users to find and interact with the pin dropdown, as it is now located in a more prominent and intuitive position within the smart rule configuration. 

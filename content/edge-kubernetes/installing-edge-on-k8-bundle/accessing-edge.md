@@ -4,7 +4,7 @@ title: Accessing Edge
 layout: redirect
 ---
 
-Before you can access Edge, you must first get the external IP address. The Edge Operator creates a load balancer service named **cumulocity-core**, which receives an external IP. Clients outside of the cluster can access the Edge through this external IP.
+Before you can access Edge, you must first get the external IP address. The Edge operator creates a load balancer service named **cumulocity-core**, which receives an external IP. Clients outside of the cluster can access the Edge through this external IP.
 
 ### Assigning an external IP {#assigning-an-external-ip}
 

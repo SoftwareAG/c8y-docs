@@ -10,7 +10,7 @@ sector:
 helpcontent:
   - label: smartrest-templates
     title: SmartREST templates
-    content: "SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity IoT Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time. To add a new template, you may either import an existing template or create a new one.
+    content: "SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity IoT REST API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time. To add a new template, you may either import an existing template or create a new one.
 
 
     To import a template, click **Import template** at the top right, select a file to be uploaded and provide a name and unique ID.
@@ -19,7 +19,7 @@ helpcontent:
     To create a new template, click **Create template** at the top right, provide a name and unique ID and add the required messages or responses as described in the user documentation."
 ---
 
-SmartREST templates are a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
+SmartREST templates are a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} REST API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
 
 To ease the device integration, {{< product-c8y-iot >}} supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [MQTT static templates](/smartrest/mqtt-static-templates).
 
@@ -60,7 +60,7 @@ There are two ways to add a SmartRest template:
 
 #### To add a message {#to-add-a-message}
 
-The message template contains all necessary information to convert the SmartRest request into a corresponding Rest API call which is then sent to the platform.
+The message template contains all necessary information to convert the SmartRest request into a corresponding REST API call which is then sent to the platform.
 
 1. To add a new message, navigate to the **Messages** tab in your desired SmartREST template and click **Add message**.
 

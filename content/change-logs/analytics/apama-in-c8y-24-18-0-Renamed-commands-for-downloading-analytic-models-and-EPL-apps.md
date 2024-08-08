@@ -13,4 +13,4 @@ build_artifact:
     label: apama-in-c8y
 version: 24.18.0
 ---
-The commands for downloading analytic models and EPL apps have been renamed from **Export** to **Download**. See also [Downloading a model](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#downloading-a-model) and [Developing apps with the Streaming Analytics application](https://cumulocity.com/docs/streaming-analytics/epl-apps/#dev-apps-with-sa).
+The commands for downloading analytic models and EPL apps have been renamed from **Export** to **Download**. See also [Downloading a model](/streaming-analytics/analytics-builder/#downloading-a-model) and [Developing apps with the Streaming Analytics application](/streaming-analytics/epl-apps/#dev-apps-with-sa).

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-07-25'
 title: Updated AngularJS and angular-schema-form dependencies
 product_area: Application enablement & solutions
 change_type:

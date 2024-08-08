@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-08-08'
 title: Smart rule pin dropdown moved from the header to the card body
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-08-08'
 title: Shell component preserves whitespaces and new lines
 product_area: Device management & connectivity
 change_type:

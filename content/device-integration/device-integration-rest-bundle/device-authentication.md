@@ -13,7 +13,7 @@ Mutual TLS (mTLS) is a security protocol that uses X.509 certificates for both c
 The mTLS protocol is commonly used to secure connections in web services, APIs, and other networked applications. When generating tokens using mTLS, the process involves the authentication of both the client and the server using X.509 certificates.
 
 Retrieving device access tokens from the platform with certificates does not require the tenant ID, username and password. Authentication information will be obtained from the certificates.
-An immediate issuer of the client certificate must be provided in the platform's truststore. If this is not the case, then the whole certificate chain must send in the header and root or any intermediate certificate must be available in the platform's truststore.
+The device Access token can be retrieved by sending only the device leaf certificate if an immediate issuer of the device certificate is uploaded to the trusted certificates list. If the uploaded trusted certificate is not an immediate issuer of the device certificate but belongs to the device's chain of trust, then the device must send the entire certificate chain in the X-Ssl-Cert-Chain to be authenticated successfully and retrieve the device Access token.
 
 ### JWT session token retrieval {#jwt-session-token-retrieval}
 
@@ -27,7 +27,7 @@ The device access token API can be called by executing the following curl statem
        -X POST \
        https://<{{< product-c8y-iot >}} tenant domain>:8443/devicecontrol/deviceAccessToken
 
-Replace `<device certificate chain>` with your valid certificate chain when registering with {{< product-c8y-iot >}}. The header `<device certificate chain>` is not mandatory if you have an immediate issuer of the device certificate in {{< product-c8y-iot >}}.
+Replace `<device certificate chain>` with your valid certificate chain when registering with {{< product-c8y-iot >}}. Header `X-Ssl-Cert-Chain` is not mandatory if you have an immediate issuer of the device certificate in {{< product-c8y-iot >}}.
 
     curl -v -cert domain-cert.pem -key domain-private-key.pem \
        -H 'Accept: application/json' \

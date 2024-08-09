@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Changes to unit in the dp template is now reflected in view backport (#6853)
+title: Changing the unit in a data point template is now correctly reflected in related "Info gauge" widgets
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

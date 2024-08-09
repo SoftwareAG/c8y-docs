@@ -13,7 +13,7 @@ Mutual TLS (mTLS) is a security protocol that uses X.509 certificates for both c
 The mTLS protocol is commonly used to secure connections in web services, APIs, and other networked applications. When generating tokens using mTLS, the process involves the authentication of both the client and the server using X.509 certificates.
 
 Retrieving device access tokens from the platform with certificates does not require the tenant ID, username and password. Authentication information will be obtained from the certificates.
-Immediate issuer of client certificate must present in Platform's truststore, if not then whole certificate chain needs to send in header and root or any intermediate certificate must be present in the Platform's truststore.
+An immediate issuer of the client certificate must be provided in the platform's truststore. If this is not the case, then the whole certificate chain must send in the header and root or any intermediate certificate must be available in the platform's truststore.
 
 ### JWT session token retrieval {#jwt-session-token-retrieval}
 

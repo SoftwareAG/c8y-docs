@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed map widget popup links not working
+title: Links in Map widget popups now work properly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

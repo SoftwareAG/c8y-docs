@@ -27,7 +27,7 @@ The device access token API can be called by executing the following curl statem
        -X POST \
        https://<{{< product-c8y-iot >}} tenant domain>:8443/devicecontrol/deviceAccessToken
 
-Replace `<device certificate chain>` with your valid certificate chain when registering with {{< product-c8y-iot >}}. Header `X-Ssl-Cert-Chain` is not mandatory if you have an immediate issuer of the device certificate in {{< product-c8y-iot >}}.
+Replace `<device certificate chain>` with your valid certificate chain when registering with {{< product-c8y-iot >}}. The header `X-Ssl-Cert-Chain` is not mandatory if you have an immediate issuer of the device certificate in {{< product-c8y-iot >}}.
 
     curl -v -cert domain-cert.pem -key domain-private-key.pem \
        -H 'Accept: application/json' \

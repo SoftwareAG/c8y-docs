@@ -52,7 +52,7 @@ The following configuration is required before calling the device access token A
 * PLATFORM_URL - The URL of the platform.
 * PLATFORM_MTLS_PORT - Port 8443 is available for device access token API
 * DEVICE_ACCESS_TOKEN_PATH API - The endpoint responsible for the mTLS protocol.
-* LOCAL_DEVICE_CHAIN - The whole chain in PEM format.
+* LOCAL_DEVICE_CHAIN - The whole chain in PEM format. This header is not mandatory, if you have uploaded the immediate issuer of the device certificate as trusted certificate in {{< product-c8y-iot >}}.
 
 ### To change the configuration {#to-change-the-configuration}
 

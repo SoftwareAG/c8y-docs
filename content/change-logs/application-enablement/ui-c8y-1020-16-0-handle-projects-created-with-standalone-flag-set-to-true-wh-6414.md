@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-56831
 version: 1020.16.0
 ---
-Previously, adding {{< product-c8y-iot >}} schematics to Angular standalone projects initialized with the standalone flag set to true failed. This issue has been resolved, allowing successful integration of {{< product-c8y-iot >}}schematics into standalone Angular projects.
+Previously, adding {{< product-c8y-iot >}} schematics to Angular projects initialized with the standalone flag set to true failed. This issue has been resolved, allowing successful integration of {{< product-c8y-iot >}}schematics into standalone Angular projects.

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-08-08'
 title: Fixed layout issues in the Logs tab in the device details
 product_area: Device management & connectivity
 change_type:

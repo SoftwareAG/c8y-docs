@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Device owner toggle no longer remains in incorrect state after canceling the change
+date: '2024-08-08'
+title: >-
+  Device owner toggle no longer remains in incorrect state after canceling the
+  change
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

@@ -380,6 +380,20 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
+<td style="text-align: left">Enable/Disable automatic management of availability required interval</td>
+<td style="text-align: left">autoManageAvailabilityRequiredInterval</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">When true (default), LWM2M agent will automatically set required interval to registration lifetime plus 2 minutes.</td>
+<td style="text-align: left">Optional, default = true</td>
+</tr>
+<tr>
+<td style="text-align: left">Availability required interval value</td>
+<td style="text-align: left">availabilityRequiredInterval</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">If not empty, this value will be used as initial required interval in created device.</td>
+<td style="text-align: left">Optional, default = empty</td>
+</tr>
+<tr>
 <td style="text-align: left">Binary delivery encoding</td>
 <td style="text-align: left">binaryDeliveryEncoding</td>
 <td style="text-align: left">String</td>

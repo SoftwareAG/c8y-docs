@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60353
 version: 1020.14.8
 ---
-Map widgets allow displaying geographic information in dashboards. However, links included in the popup of a map widget were not working when clicked, preventing users from accessing additional information or navigating to other relevant pages. This issue has been resolved. Links in map widget popups now work as expected when clicked. This change improves the usability and navigation possibilities in dashboards containing map widgets with additional link information in their popups.
+"Map" widgets allow displaying geographic information in dashboards. However, links included in the popup of a "Map" widget were not working when clicked, preventing users from accessing additional information or navigating to other relevant pages. This issue has been resolved. Links in "Map" widget popups now work as expected when clicked. 

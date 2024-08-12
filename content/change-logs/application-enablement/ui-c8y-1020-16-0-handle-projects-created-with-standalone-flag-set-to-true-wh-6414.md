@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Handle newly created Angular projects created with standalone flag set to true, when adding Cumulocity IoT schematics
+title: Cumulocity IoT schematics now handle Angular standalone projects by disabling standalone mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

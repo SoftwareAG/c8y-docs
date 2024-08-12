@@ -1,6 +1,6 @@
 ---
 date: ""
-title: QR code for TOTP is now shown correctly 
+title: QR code for two-factor authentication provided during TOTP setup now shows up correctly 
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

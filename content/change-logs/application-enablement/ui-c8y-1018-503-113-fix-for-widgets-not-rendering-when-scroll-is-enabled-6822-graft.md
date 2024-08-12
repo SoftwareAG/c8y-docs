@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-08-12
 title: New widgets render properly when scroll is enabled
 product_area: Application enablement & solutions
 change_type:

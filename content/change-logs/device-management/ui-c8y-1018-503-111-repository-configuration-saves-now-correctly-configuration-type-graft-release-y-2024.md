@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-08-12
 title: Configuration repository now correctly saves the configuration type
 product_area: Device management & connectivity
 change_type:
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3791
 version: 1018.503.111
 ---
-In the configuration repository, the configuration type was not saved correctly when adding a new configuration snapshot, leading to unexpected behavior. With this change, the configuration type is now properly persisted when saving the configuration snapshot. 
+In the configuration repository, the configuration type was not saved correctly when adding a new configuration snapshot, leading to unexpected behavior. With this change, the configuration type is now properly persisted when saving the configuration snapshot.

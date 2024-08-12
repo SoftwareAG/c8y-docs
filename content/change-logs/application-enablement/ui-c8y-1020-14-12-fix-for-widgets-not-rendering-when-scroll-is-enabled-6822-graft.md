@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed new widgets not rendering when scroll is enabled
+title: New widgets render properly when scroll is enabled
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

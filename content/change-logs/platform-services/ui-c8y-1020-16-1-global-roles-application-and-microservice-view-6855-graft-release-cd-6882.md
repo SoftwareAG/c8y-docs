@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57710
 version: 1020.16.1
 ---
-global roles application and microservice view (#6855) [GRAFT][release/cd] (#6882)
+Previously, the **Application access** list of a global role showed both applications and microservices. This has been changed to only show applications in the *Application access** list.

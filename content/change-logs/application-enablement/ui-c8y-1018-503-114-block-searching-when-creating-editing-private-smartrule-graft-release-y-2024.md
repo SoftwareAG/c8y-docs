@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Block searching when creating or editing private smart rules
+title: Block device search when creating or editing private smart rules
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

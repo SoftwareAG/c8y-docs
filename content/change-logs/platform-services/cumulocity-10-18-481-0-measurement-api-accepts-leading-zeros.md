@@ -7,7 +7,7 @@ change_type:
     label: Fix
 component:
   - value: component-JlFdtOPva
-    label: Rest API
+    label: REST API
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity

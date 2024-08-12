@@ -1,6 +1,6 @@
 ---
 date: ""
-title: block searching when creating editing private smartrule graft release y2024 (#6819)
+title: Block searching when creating or editing private smart rules
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

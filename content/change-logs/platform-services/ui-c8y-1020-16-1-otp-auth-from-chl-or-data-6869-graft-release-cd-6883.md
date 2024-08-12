@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60355
 version: 1020.16.1
 ---
-otpAuth from chl or data (#6869) [GRAFT][release/cd] (#6883)
+The QR code for the TOTP two-factor authentication was not displayed correctly. This issue has been fixed and now the QR code for TOTP shows up correctly.

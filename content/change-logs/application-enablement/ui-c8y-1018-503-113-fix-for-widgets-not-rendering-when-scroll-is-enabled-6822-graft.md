@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60003
 version: 1018.503.113
 ---
-Fix for widgets not rendering when scroll is enabled (#6822) [GRAFT][release/y2024] (#6874)
+In some cases, new widgets were not properly rendering when scrolling was enabled on a page. This issue has been resolved and widgets now consistently render as expected when scroll is turned on.

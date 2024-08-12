@@ -1,6 +1,6 @@
 ---
 date: ""
-title: otpAuth from chl or data (#6869) [GRAFT][release/cd] (#6883)
+title: QR code for TOTP is now shown correctly 
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

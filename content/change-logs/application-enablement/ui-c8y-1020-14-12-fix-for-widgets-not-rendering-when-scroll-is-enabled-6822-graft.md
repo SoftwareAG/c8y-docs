@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60003
 version: 1020.14.12
 ---
-In some cases, new widgets were not properly rendering when scrolling was enabled on a page. This issue has been resolved and widgets will now consistently render as expected, even when scroll is turned on.
+In some cases, new widgets were not properly rendering when scrolling was enabled on a page. This issue has been resolved and widgets will now consistently render as expected when scroll is turned on.

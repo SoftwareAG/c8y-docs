@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60355
 version: 1020.16.1
 ---
-The QR code for the TOTP two-factor authentication was not displayed correctly. This issue has been fixed and now the QR code for TOTP shows up correctly.
+The QR code for the two-factor authentication provided during the TOTP setup was not displayed correctly. This issue has been fixed. The QR code is now properly visible and users can scan it with their authentication application.

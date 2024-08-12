@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55913
 version: 1018.503.114
 ---
-In the past, it was possible to search for devices when creating or editing private smart rules, which could potentially lead to incorrect device assignments. With this change, searching for devices is now blocked when creating or editing private smart rules. This ensures that only explicitly selected devices are assigned to the smart rule, preventing unintended device assignments and improving the accuracy and reliability of private smart rules in the system.
+In the past, it was possible to search for devices when creating or editing private smart rules, which could potentially lead to incorrect device assignments. With this change, searching for devices is now blocked when creating or editing private smart rules. This ensures that only explicitly selected devices are assigned to the smart rule, preventing unintended device assignments and improving the accuracy and reliability of private smart rules in the platform.

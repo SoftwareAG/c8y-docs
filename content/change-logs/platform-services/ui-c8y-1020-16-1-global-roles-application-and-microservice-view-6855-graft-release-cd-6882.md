@@ -1,6 +1,6 @@
 ---
 date: ""
-title: global roles application and microservice view (#6855) [GRAFT][release/cd] (#6882)
+title: Application access list of global roles only shows applications
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

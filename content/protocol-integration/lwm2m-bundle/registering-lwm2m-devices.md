@@ -380,10 +380,10 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
-<td style="text-align: left">Enable/Disable automatic management of availability required interval</td>
+<td style="text-align: left">Automatic setting of required interval</td>
 <td style="text-align: left">autoManageAvailabilityRequiredInterval</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">When true (default), LWM2M agent will automatically set required interval to registration lifetime plus 2 minutes.</td>
+<td style="text-align: left">When true (default), the LWM2M agent automatically sets the interval to registration lifetime plus 2 minutes.</td>
 <td style="text-align: left">Optional, default = true</td>
 </tr>
 <tr>

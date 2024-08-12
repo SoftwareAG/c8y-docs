@@ -1,6 +1,6 @@
 ---
 date:
-title: It's now possible to disable automatic management of availability required interval by LWM2M agent
+title: Disabling automatic management of availability required interval of LWM2M agent
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

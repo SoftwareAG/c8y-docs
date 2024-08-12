@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60283
 version: 10.18.540.182
 ---
-The {{< product-c8y-iot >}} platform faced performance regression which could only be observed on a higher number of concurrent requests using inventory role based access control or on performing counts via query parameters like `withTotalPages` or `withTotalElements`. This issue has been fixed and the performance has returned to normal.
+The {{< product-c8y-iot >}} platform faced performance regression which could only be observed on a higher number of concurrent requests using inventory role-based access control or on performing counts via query parameters like `withTotalPages` or `withTotalElements`. This issue has been fixed and the performance has returned to normal.

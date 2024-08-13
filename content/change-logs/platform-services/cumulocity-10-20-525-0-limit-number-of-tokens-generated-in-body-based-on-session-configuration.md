@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Limited number of tokens generated in the body based on the session configuration
+title: Number of tokens generated in the body is now limited in the session configuration
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

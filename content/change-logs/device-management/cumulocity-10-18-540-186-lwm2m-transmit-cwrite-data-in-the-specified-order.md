@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-3622
-version: 10.18.change.me
+version: 10.18.540.186
 ---
 The Composite Write (cwrite) operation transmits resource-values data to the device in the exact order specified in the operation.

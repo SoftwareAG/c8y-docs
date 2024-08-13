@@ -7,11 +7,11 @@ change_type:
     label: Fix
 component:
   - value: component-JlFdtOPva
-    label: Rest API
+    label: REST API
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-51072
 version: 10.18.30.0
 ---
-Fixed an issue where the Cumulocity IoT Rest API returned a 500 HTTP error code in case of an invalid <code>pageSize</code> or <code>currentPage</code> parameter. The API now returns a 422 HTTP error code in such cases.
+Fixed an issue where the Cumulocity IoT REST API returned a 500 HTTP error code in case of an invalid <code>pageSize</code> or <code>currentPage</code> parameter. The API now returns a 422 HTTP error code in such cases.

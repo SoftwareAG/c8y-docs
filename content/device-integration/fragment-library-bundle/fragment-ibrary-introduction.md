@@ -10,7 +10,7 @@ The device integrator library defines the data structures that are used in {{< p
 
 In the following section you will find descriptions of the most important functionalities of a device, its managed objects and all its corresponding fragments to them. We will explain the relationship between the {{< product-c8y-iot >}} UI, the device object managed in our databases and what is being communicated to and from the device itself.
 
-If you are interested in details on exposing the {{< product-c8y-iot >}}´s functionalities through our Rest API, see the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/) for further information.
+If you are interested in details on exposing the {{< product-c8y-iot >}}´s functionalities through our REST API, see the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/) for further information.
 
 Moreover, see [SmartREST](/smartrest/smartrest-two) for more information on SmartREST and a complete list of all SmartREST templates mentioned throughout the following sections.
 

@@ -6,6 +6,17 @@ sector:
   - platform_administration
 ---
 
+{{< c8y-admon-important >}}
+##### Notice of reduced storage limits for Notifications 2.0 and microservice-based data broker
+
+**Effective Date:** July 1st, 2024
+
+Please be aware that the storage limits for microservice-based data broker will be significantly reduced. For detailed information about these changes and how they may impact your usage, please refer to [this announcement](https://cumulocity.com/docs/change-logs/?component=.component-messaging-service#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker).
+
+If you have any questions or concerns, please contact [product support](https://cumulocity.com/docs/additional-resources/contacting-support/).
+
+{{< /c8y-admon-important >}}
+
 The microservice-based data broker is powered by the {{< product-c8y-iot >}} Messaging Service that enables reliable, scalable and high-performance movement of IoT data. The microservice-based data broker is similar to the existing data broker in its functionality, except that a microservice, the `databroker-agent-server`, must be enabled to make use of it.
 
 {{< c8y-admon-req >}}

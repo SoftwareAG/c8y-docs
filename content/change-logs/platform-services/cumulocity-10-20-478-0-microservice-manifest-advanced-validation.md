@@ -14,4 +14,5 @@ build_artifact:
 ticket: MTM-59087
 version: 10.20.478.0    
 ---
-Making {{< product-c8y-iot >}} more secure we have added a check on upload to ensure misroservice settings do not contain any line feed characters such as HttpGet, exec, and TCPSocket of type Probe, aligned with items in the Kubernetes PodSpec.
+
+Making {{< product-c8y-iot >}} more secure we have added a check on upload to ensure microservice settings do not contain any line feed characters such as HttpGet, exec, and TCPSocket of type Probe, aligned with items in the Kubernetes PodSpec.

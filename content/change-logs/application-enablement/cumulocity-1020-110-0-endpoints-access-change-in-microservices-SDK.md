@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58316
 version: 1020.111.0
 ---
-Improving security for Microservice SDK we have decided to restrict initial configuration of the Spring Boot actuator endpoints (POST access to the `/loggers` endpoint) to the admin related roles only.
+Improving the security for the Microservice SDK we have decided to restrict the initial configuration of the Spring Boot actuator endpoints (POST access to the `/loggers` endpoint) to the administrator roles only.

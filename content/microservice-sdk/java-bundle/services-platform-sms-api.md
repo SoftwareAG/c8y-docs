@@ -65,7 +65,7 @@ smsMessagingApi.getMessage(Address.phoneNumber("<phone number>"), "<message id>"
 
 ### SMS management endpoints {#sms-management-endpoints}
 
-The Rest API can be used to send and receive SMS messages.
+The REST API can be used to send and receive SMS messages.
 
 Sending a message:
 

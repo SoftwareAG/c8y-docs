@@ -21,7 +21,8 @@ To connect {{< product-c8y-iot >}} to Azure AD, you must create an App registrat
 
 1. Select **App Registrations** under **Manage** on the left and at the top click **New Registration**.
 3. In the resulting window, provide a name for the new App registration.
-4. As **Redirect URI type** select "Web" and enter the URL to your tenant OAuth endpoint, for example "https:&#47;/documentation.cumulocity.com/tenant/oauth"*". You can derive this value from your {{< product-c8y-iot >}} tenant. Navigate to **Administration** > **Settings** > **Authentication** > **Single sign-on**. The redirect URL is prefilled by the platform.
+4. As **Redirect URI type** select "Web" and enter the URL to your tenant OAuth endpoint, for example "https:&#47;/documentation.cumulocity.com/tenant/oauth". You can derive this value from your {{< product-c8y-iot >}} tenant. Navigate to **Administration** > **Settings** > **Authentication** > **Single sign-on**. The redirect URL is prefilled by the platform. 
+Optionally, set for example, "https:&#47;/<tenant_domain>/apps/*" if in the {{< product-c8y-iot >}} SSO configuration `Redirect to the user interface application` is enabled.
 5. Click **Register** to create the App registration.
 
 The overview in the details page of your App registration contains several IDs and endpoints that you need later on, like the Application (client) ID and the Directory (tenant) ID (for your tenant in {{< product-c8y-iot >}}).
@@ -128,7 +129,7 @@ Now enter the following values in the configuration:
 |Home > Overview > Primary Domain| Tenant| &lt;directoryName&gt;.onmicrosoft.com, for example "admtest.onmicrosoft.com"
 |OpenID config “issuer”| Token issuer| Token issuer value in form of a HTTP address: "https:&#47;/sts.windows.net/&lt;Directory tenant ID&gt;/". Note that this won´t work without the tailing slash.
 |App registration > &lt;app&gt; > Application (client) ID| Application ID| for example "7fd1ed48-f4b6-4362-b0af-2b753bb1af2b"
-|Redirect URI| Address of your {{< product-c8y-iot >}} tenant followed by /tenant/oauth
+|Redirect URI| |Address of your {{< product-c8y-iot >}} tenant followed by "/tenant/oauth", or optionally followed by "/apps/*" when `Redirect to the user interface application` is enabled.
 |App registration - &lt;app&gt; > Certificates & secrets > Value | Client secret| Azure AD client secret, for example "hE68Q~uC1.BlSzGJSDC3_UEFvvyIZvRcCxbvV345"
 |From OpenID config | Public key discovery URL|"https:&#47;/login.microsoftonline.com/common/discovery/keys" or "https:&#47;/login.microsoftonline.com/<Directory tenant ID>/discovery/keys"
 

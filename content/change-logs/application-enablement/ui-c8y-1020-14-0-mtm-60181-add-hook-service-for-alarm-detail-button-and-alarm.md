@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-08-08'
 title: Added hook service for alarm details button and alarm list indicator
 product_area: Application enablement & solutions
 change_type:

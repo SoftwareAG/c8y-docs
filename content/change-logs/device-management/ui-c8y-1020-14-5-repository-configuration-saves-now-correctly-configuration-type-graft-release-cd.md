@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-08-08'
 title: Configuration repository now correctly saves the configuration type
 product_area: Device management & connectivity
 change_type:

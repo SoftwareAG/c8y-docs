@@ -1,6 +1,8 @@
 ---
-date: ""
-title: List of applications available in SSO configuration now limited to applications available to the tenant
+date: '2024-08-15'
+title: >-
+  List of applications available in SSO configuration now limited to
+  applications available to the tenant
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

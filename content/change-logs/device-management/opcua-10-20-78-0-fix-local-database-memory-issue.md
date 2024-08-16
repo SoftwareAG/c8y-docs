@@ -14,5 +14,5 @@ build_artifact:
 ticket: DM-3800
 version: 10.20.78.0
 ---
-The OPC UA gateway creates a local database namely 'cumulocity-opcua-gateway.db' to store essential data, including a list of executed operation IDs.
+The OPC UA gateway creates a local database `cumulocity-opcua-gateway.db` to store essential data, including a list of executed operation IDs.
 As this list expands, the database file consumes more disk space. This issue has been resolved with the latest update, which now includes a cleanup process during the gateway startup to reduce the size of the database file.

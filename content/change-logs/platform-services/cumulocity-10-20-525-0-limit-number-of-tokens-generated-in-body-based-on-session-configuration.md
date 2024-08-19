@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60271
 version: 10.20.525.0
 ---
-The maximum number of OAI-Secure tokens generated in the body by the `/tenant/oauth/token` API is now limited according to the `Maximum parallel sessions per user` parameter in the session configuration.
+To enhance OAI-Secure token management, the number of tokens generated in the JSON body will be limited to the maximum configured in the sessionConfiguration.

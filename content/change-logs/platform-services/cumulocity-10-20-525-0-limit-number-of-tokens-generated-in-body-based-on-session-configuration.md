@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Number of tokens generated in the body is now limited in the session configuration
+title: Number of tokens generated in the JSON body is now limited
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

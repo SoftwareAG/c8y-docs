@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60271
 version: 10.20.525.0
 ---
-To enhance OAI-Secure token management, the number of tokens generated in the JSON body will be limited to the maximum configured in the sessionConfiguration.
+To enhance the OAI-Secure token management, the number of tokens generated in the JSON body will be limited to the maximum configured in the session configuration.

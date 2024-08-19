@@ -14,5 +14,5 @@ build_artifact:
 ticket: DM-2145
 version: 10.20.79.0
 ---
-A new validation for the device type API (CREATE and UPDATE operations) has been implemented to prevent duplicate 'browsePath' entries in the mappings. 
-Additionally, if a device type matching fails, a MAJOR alarm will be triggered on the server.
+A new validation for the Device Type API of OPC UA service (CREATE and UPDATE operations) has been implemented to prevent duplicate 'browsePath' entries in the mappings. 
+Additionally, if an error occurs during the device type matching in the OPC UA device gateway, a MAJOR alarm will be triggered on the server object.

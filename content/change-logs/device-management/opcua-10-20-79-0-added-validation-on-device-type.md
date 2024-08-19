@@ -1,6 +1,6 @@
 ---
 date:
-title: Added validation for device type API and alarm creation on device type matching failure
+title: Added validation for device type resources API and alarm creation on device type matching failure
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,5 +14,5 @@ build_artifact:
 ticket: DM-2145
 version: 10.20.79.0
 ---
-A new validation for the Device Type API of OPC UA service (CREATE and UPDATE operations) has been implemented to prevent duplicate 'browsePath' entries in the mappings. 
+A new validation for the device type resources API of OPC UA service (CREATE and UPDATE operations) has been implemented to prevent duplicate `browsePath` entries in the mappings. 
 Additionally, if an error occurs during the device type matching in the OPC UA device gateway, a MAJOR alarm will be triggered on the server object.

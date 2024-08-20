@@ -27,10 +27,10 @@ jobs:
       - name: Get token
         id: token
         run: |
-          githubAppID="${{ env.APP_ID }}"
-          githubAppPrivateKey="${{ env.APP_PRIVATE_KEY }}"
-          githubAppInstallationId="${{ env.APP_INSTALL_ID }}"
-          githubApiUrl="${{ env.GH_SERVER_API_URL }}"
+          githubAppID="${{ vars.APP_ID }}"
+          githubAppPrivateKey="${{ secrets.APP_PRIVATE_KEY }}"
+          githubAppInstallationId="${{ vars.APP_INSTALL_ID }}"
+          githubApiUrl="${{ vars.GH_SERVER_API_URL }}"
           
           iat=$(date +%s)
           # Expire 9 minutes in the future. 10 minutes is the max for GitHub

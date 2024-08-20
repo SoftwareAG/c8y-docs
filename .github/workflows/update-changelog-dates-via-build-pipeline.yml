@@ -26,13 +26,30 @@ jobs:
 
       - name: Get token
         id: token
-        uses: 'tibdex/github-app-token@v1'
-        with:
-          app_id: ${{ vars.APP_ID }}
-          installation_id: ${{ vars.APP_INSTALL_ID }}
-          private_key: ${{ secrets.APP_PRIVATE_KEY }}
-          github_api_url: ${{ vars.GH_SERVER_API_URL }}
-          repository: ${{ vars.REPOSITORY }}
+        run: |
+          githubAppID="${{ env.APP_ID }}"
+          githubAppPrivateKey="${{ env.APP_PRIVATE_KEY }}"
+          githubAppInstallationId="${{ env.APP_INSTALL_ID }}"
+          githubApiUrl="${{ env.GH_SERVER_API_URL }}"
+          
+          iat=$(date +%s)
+          # Expire 9 minutes in the future. 10 minutes is the max for GitHub
+          exp=$((iat + 540))
+
+          # Generate encoded JWT header
+          jwtHeaderRaw='{"alg":"RS256"}'
+          jwtHeader=$( echo -n "${jwtHeaderRaw}" | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
+
+          # Generate encoded JWT payload
+          jwtPayloadRaw='{"iat":'"${iat}"',"exp":'"${exp}"',"iss":'"${githubAppID}"'}'
+          jwtPayload=$( echo -n "${jwtPayloadRaw}" | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
+
+          # Generate encoded JWT signature
+          jwtSignature=$( openssl dgst -sha256 -sign <(echo -n "${githubAppPrivateKey}") <(echo -n "${jwtHeader}.${jwtPayload}") | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
+          jwtToken=${jwtHeader}.${jwtPayload}.${jwtSignature}
+          echo "jwt=${jwtToken}" >> "${GITHUB_OUTPUT}"
+          token=$(curl --fail --silent -X POST -H "Authorization: Bearer ${jwtToken}" -H "Accept: application/vnd.github.v3+json" "${githubApiUrl}/app/installations/${githubAppInstallationId}/access_tokens" | jq -r .token)
+          echo "token=${token}" >> "${GITHUB_OUTPUT}"
 
       - name: Checkout build pipeline repo
         uses: actions/checkout@v4

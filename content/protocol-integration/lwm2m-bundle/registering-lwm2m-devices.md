@@ -495,7 +495,7 @@ Firmware updates are also supported for the registration of unsecured devices as
 
 #### Registering LWM2M devices using the REST API {#registering-lwm2m-devices-using-restapi}
 
-LWM2M internally relies internally uses our [Extensible Device Registration](/concepts/applications/#extensible-device-registration) feature. It provides an API based on JSON Schema and REST to extend {{< company-c8y >}} with arbitrary wizards for device registration.
+LWM2M internally uses our [Extensible Device Registration](/concepts/applications/#extensible-device-registration) feature. It provides an API based on JSON Schema and REST to extend {{< company-c8y >}} with arbitrary wizards for device registration.
 
 Before the actual registration a LWM2M device, it first is important to understand the set of available device properties. This set can be obtained using the *metadata* endpoint of LWM2M:
 

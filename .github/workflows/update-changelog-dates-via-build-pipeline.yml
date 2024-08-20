@@ -30,18 +30,18 @@ jobs:
         with:
           app_id: ${{ vars.APP_ID }}
           installation_retrieval_mode: repository
-          installation_retrieval_payload: ${{ vars.repository }}
+          installation_retrieval_payload: ${{ vars.REPOSITORY }}
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
-          github_api_url: ${{ vars.gh_server_url }}
+          github_api_url: ${{ vars.GH_SERVER_API_URL }}
 
       - name: Checkout build pipeline repo
         uses: actions/checkout@v4
         with:
-          repository: ${{ vars.repository }}
+          repository: ${{ vars.REPOSITORY }}
           fetch-depth: 1
-          ref: ${{ vars.branch }}
+          ref: ${{ vars.BRANCH }}
           token: ${{ steps.token.outputs.token }}
-          github-server-url: ${{ vars.gh_server_url }}
+          github-server-url: ${{ vars.GH_SERVER_URL }}
           path: pipeline
 
       - name: Get versions of components

@@ -87,6 +87,7 @@ jobs:
     uses: ./.github/workflows/update-changelog-dates.yml
     needs: [get-currently-deployed-versions]
     strategy:
+      fail-fast: false
       matrix:
         include: ${{ fromJson(needs.get-currently-deployed-versions.outputs.matrix) }}
     with:

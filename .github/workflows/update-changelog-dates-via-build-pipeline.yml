@@ -32,6 +32,7 @@ jobs:
           installation_id: ${{ vars.APP_INSTALL_ID }}
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
           github_api_url: ${{ vars.GH_SERVER_API_URL }}
+          repository: ${{ vars.REPOSITORY }}
 
       - name: Checkout build pipeline repo
         uses: actions/checkout@v4

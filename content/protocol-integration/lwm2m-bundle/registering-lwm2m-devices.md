@@ -493,7 +493,7 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 Firmware updates are also supported for the registration of unsecured devices as well as secured devices. For more information, see [Managing firmware](/device-management-application/managing-device-data/#managing-firmware).
 {{< /c8y-admon-info >}}
 
-#### Registering LWM2M devices using the REST API
+#### Registering LWM2M devices using the REST API {#registering-lwm2m-devices-using-restapi}
 
 LWM2M internally relies internally uses our [Extensible Device Registration](/concepts/applications/#extensible-device-registration) feature. It provides an API based on JSON Schema and REST to extend {{< company-c8y >}} with arbitrary wizards for device registration.
 

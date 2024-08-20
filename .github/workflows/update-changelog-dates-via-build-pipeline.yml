@@ -84,7 +84,7 @@ jobs:
               fi
               
           done
-          echo "matrix=${cat output.json}" >> $GITHUB_OUTPUT
+          echo "matrix=$(cat output.json | jq -c .)" >> $GITHUB_OUTPUT
 
   update-changelog:
     uses: ./.github/workflows/update-changelog-dates.yml

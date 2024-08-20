@@ -553,7 +553,7 @@ To remove a LWM2M device, delete it through the [All devices](/device-management
 Alternatively, you can delete a LWM2M device using a REST call. With the managed object ID (device ID) of the device to be deleted, this can be accomplished using the following DELETE request:
 
 
-#### Device deletion using the REST API
+#### Device deletion using the REST API {#device-deletion-using-restapi}
 
 `
 DELETE /service/lwm2m-agent/deviceRegistration/{device ID}

@@ -503,7 +503,7 @@ Before the actual registration of a LWM2M device, it first is important to under
 GET /service/lwm2m-agent/deviceRegistration/metadata
 `
 
-The registration of a new device then can be accomplished by posting a set of these values to the correspoding registration endpoint:
+The registration of a new device then can be accomplished by posting a set of these values to the corresponding registration endpoint:
 
 `
 POST  /service/lwm2m-agent/deviceRegistration/

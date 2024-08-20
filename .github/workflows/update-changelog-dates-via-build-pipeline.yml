@@ -64,9 +64,6 @@ jobs:
       - name: Get versions of components
         id: save-prod-version
         run: |
-          ls -la docs/data/buildartifact.json
-          ls -la pipeline/clusters/helm_charts_data.json
-          cat pipeline/clusters/helm_charts_data.json
           buildartifacts=$(cat docs/data/buildartifact.json | jq '.options[].option' | xargs)
           echo "[]" > output.json
           for artifact in $buildartifacts ;
@@ -90,7 +87,8 @@ jobs:
     uses: ./.github/workflows/update-changelog-dates.yml
     needs: [get-currently-deployed-versions]
     strategy:
-      matrix: ${{ fromJson(needs.get-currently-deployed-versions.outputs.matrix) }}
+      matrix:
+        include: ${{ fromJson(needs.get-currently-deployed-versions.outputs.matrix) }}
     with:
       version: ${{ matrix.version }}
       component: ${{ matrix.artifact }}

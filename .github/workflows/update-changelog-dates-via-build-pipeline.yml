@@ -1,0 +1,78 @@
+name: Update changelog dates via build pipeline
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '33 18 * * *'
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  get-currently-deployed-versions:
+    name: Get currently deployed versions
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: build-pipeline
+    outputs:
+      matrix: ${{ steps.save-prod-version.outputs.matrix }}
+    steps:
+      - name: Checkout docs repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          path: docs
+
+      - name: Get token
+        id: token
+        uses: 'tibdex/github-app-token@v2'
+        with:
+          app_id: ${{ vars.APP_ID }}
+          installation_retrieval_mode: repository
+          installation_retrieval_payload: ${{ vars.repository }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+          github_api_url: ${{ vars.gh_server_url }}
+
+      - name: Checkout build pipeline repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.repository }}
+          fetch-depth: 1
+          ref: ${{ vars.branch }}
+          token: ${{ steps.token.outputs.token }}
+          github-server-url: ${{ vars.gh_server_url }}
+          path: pipeline
+
+      - name: Get versions of components
+        id: save-prod-version
+        run: |
+          buildartifacts=$(cat docs/data/buildartifact.json | jq '.options[].option' | xargs)
+          echo "[]" > output.json
+          for artifact in $buildartifacts ;
+          do
+              cat pipeline/clusters/helm_charts_data.json | jq --arg artifact "$artifact" '[to_entries[] | select(.value.component_name==$artifact)][0].value.zones.["c8y-ops-zone-1"].clusters.["eu-latest-cumulocity-com"]' > details.json
+              versionOfArtifact=$(cat details.json | jq '.version' | xargs)
+              timestamp=$(cat details.json | jq '.updated_at' | xargs)
+              rm details.json
+              if [[ $versionOfArtifact == 'null' ]]; then
+                  echo "$artifact is currently not deployed"
+              else
+                  echo "$artifact is currently deployed in version: $versionOfArtifact and was deployed at $timestamp"
+                  cat output.json | jq --arg artifact "$artifact" --arg version "$versionOfArtifact" --arg timestamp "$timestamp" '. += [{"artifact": $artifact, "version": $version, "timestamp": $timestamp}]' > output.tmp
+                  mv output.tmp output.json
+              fi
+              
+          done
+          echo "matrix=${cat output.json}" >> $GITHUB_OUTPUT
+
+  update-changelog:
+    uses: ./.github/workflows/update-changelog-dates.yml
+    needs: [get-currently-deployed-versions]
+    strategy:
+      matrix: ${{ fromJson(needs.get-currently-deployed-versions.outputs.matrix) }}
+    with:
+      version: ${{ matrix.version }}
+      component: ${{ matrix.artifact }}
+      date: ${{ matrix.timestamp }}
+    secrets: inherit

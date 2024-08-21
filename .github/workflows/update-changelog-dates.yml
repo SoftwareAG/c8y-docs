@@ -75,7 +75,7 @@ jobs:
       run: |
         cd add-release-dates
         npm ci
-        npm start ${{ inputs.component }} ${{ inputs.version }} ${{ inputs.date }}
+        npm start "${{ inputs.component }}" "${{ inputs.version }}" "${{ inputs.date }}"
 
     - name: Git add
       id: git-add

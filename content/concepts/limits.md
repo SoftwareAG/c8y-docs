@@ -22,7 +22,7 @@ The quotas listed here reflect the maximum values for the standard cloud subscri
 
 |Quota|Type|Value|
 |----|----|---:|
-|Tenant number|Soft|2000|
+|Tenant amount|Soft|2000|
 
 #### Microservices
 
@@ -46,6 +46,10 @@ The quotas listed here reflect the maximum values for the standard cloud subscri
 
 ### REST API
 
+|Quota|Type|Value|
+|----|----|---:|
+|Maximum API request duration|Hard|5 minutes|
+
 ### Realtime APIs
 
 |Quota|Type|Value|
@@ -56,20 +60,12 @@ The quotas listed here reflect the maximum values for the standard cloud subscri
 |[Microservice-based data broker message backlog](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)|Hard|50 MB|
 |[Microservice-based data broker time-to-live](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)|Hard|36 hours|
 
-
-
-
-
-
-
 ### Applications and services
 
 |Quota|Type|Value|
 |----|----|---:|
 |[Devices shown on the Cockpit home page map](/cockpit/home-dashboard/)|Hard|100|
 |[Data points in a graph](/device-management-application/viewing-device-details/#measurements)|Hard|5000|
-
-
 
 ### Protocols
 

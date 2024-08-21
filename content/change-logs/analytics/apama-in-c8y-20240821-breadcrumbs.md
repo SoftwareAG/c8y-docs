@@ -1,0 +1,17 @@
+---
+date: 
+title: Added breadcrumbs to Streaming Analytics application
+change_type:
+  - value: change-2c7RdTdXo4
+    label: Improvement
+product_area: Analytics
+component:
+  - value: component-M5-cepIIS
+    label: Streaming Analytics
+build_artifact:
+  - value: tc-KXXmo2SUR
+    label: apama-in-c8y
+ticket: PAB-4573
+version:
+---
+To maintain consistency across all {{< product-c8y-iot >}} applications, breadcrumbs have been added to the Streaming Analytics application. You can use the breadcrumbs to easily navigate up the hierarchy.

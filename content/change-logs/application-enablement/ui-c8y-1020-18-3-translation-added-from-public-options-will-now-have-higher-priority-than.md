@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Translation added from public options will now have higher priority than plugin po files (#6932)
+title: Public option translations now have higher priority than plugin po files
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60268
 version: 1020.18.3
 ---
-Translation added from public options will now have higher priority than plugin po files (#6932)
+Previously, translations from plugin po files took precedence over translations added via public options, which could lead to inconsistencies. With this change, translations added via public options will now have a higher priority than translations from plugin po files. This ensures that custom translations specified in the public options are always used, providing a more consistent and predictable translation behavior for users. Existing translations in plugin po files that conflict with public option translations will be overridden.

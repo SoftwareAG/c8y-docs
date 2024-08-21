@@ -53,6 +53,9 @@ export default {
 ```
 
 The options in the `cumulocity.config.ts` file can also be set dynamically at build time by e.g. accessing environment variables:
+```suggestion
+The options in the `cumulocity.config.ts` file can also be set dynamically at build time, for example, by accessing the environment variables:
+
 ```ts
 [...]
 export default {
@@ -64,12 +67,14 @@ export default {
 [...]
 ```
 
-By setting the environment variable `C8Y_HIDE_NAVIGATOR` to `true` before building the application via `ng build` you could adjust the behavior of the application. On linux systems you could run the build command with that environment option just set like this:
+By setting the environment variable `C8Y_HIDE_NAVIGATOR` to `true` before building the application via `ng build` you can adjust the behavior of the application. On Linux systems you can run the build command with that environment option just set like this:
+
 ```sh
 C8Y_HIDE_NAVIGATOR=true ng build
 ```
 
-In case you have for example different "flavors" of your application, you could also switch between the different flavors via an environment variable in your `cumulocity.config.ts`:
+If you have, for example, different "flavors" of your application, you can also switch between the different flavors via an environment variable in your `cumulocity.config.ts`:
+
 ```ts
 const flavor = process.env.C8Y_APP_FLAVOR || 'default';
 let standardOptions: ConfigurationOptions = {

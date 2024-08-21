@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAB-4573
 version:
 ---
-To maintain consistency across all {{< product-c8y-iot >}} applications, breadcrumbs have been added to the Streaming Analytics application. You can use the breadcrumbs to easily navigate up the hierarchy.
+To maintain consistency with default {{< product-c8y-iot >}} applications like cockpit, breadcrumbs have been added to the Streaming Analytics application. You can use the breadcrumbs to easily navigate up the hierarchy.

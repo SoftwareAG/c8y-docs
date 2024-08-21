@@ -81,7 +81,7 @@ jobs:
       id: git-add
       run: |
         git add content/change-logs
-        echo "stagedFiles=$(git diff --cached --numstat | wc -l)" >> $GITHUB_OUTPUT"
+        echo "stagedFiles=$(git diff --cached --numstat | wc -l)" >> $GITHUB_OUTPUT
 
     - name: Git commit
       if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}

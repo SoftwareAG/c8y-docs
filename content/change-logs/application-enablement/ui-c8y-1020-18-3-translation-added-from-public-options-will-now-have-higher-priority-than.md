@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Public option translations now have higher priority than plugin po files
+title: Public option translations now have higher priority than translations from plugin PO files
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

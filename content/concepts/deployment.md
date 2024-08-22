@@ -8,18 +8,16 @@ weight: 110
 
 ### Introduction
 
-* Cumulocity IoT is a cloud service and continuously maintained and upgraded according to the [SLA](...).
-* This maintenance process is designed to be seamless and generally invisible to customers. The timing and content of upgrades are at the discretion of Cumulocity.
-* As soon as new features and improvements have passed Cumulocity quality assurance, they are gradually made available to customers inside their tenants.
-* Benefit is quick availability of new functionality and up to date security and bug fixes.
-* New or changed functionality is communicated through the [change logs](https://cumulocity.com/docs/change-logs/). Upgrade time slots can be seen on the [status pages](https://status.cumulocity.com).
+Cumulocity IoT operates as a cloud service that is continuously maintained and upgraded in accordance with its Service Level Agreement (SLA). The maintenance process is designed to be seamless and generally unnoticed by customers, with the timing and content of upgrades managed by Cumulocity. Once new features and improvements have successfully passed Cumulocity's quality assurance, they are gradually rolled out to customers within their tenants.
 
-* To ensure that connected devices and customer functionality developed on top of Cumulocity continues to work, strict [API compatiblity](https://cumulocity.com/docs/concepts/compatibility-policy/) is maintained and extensively tested.
-* This informational document is provided as a courtesy to Cumulocity IoT customers. Cumulocity acknowledges that
-  * IoT hardware devices and legacy industry protocols may be very sensitive to compatible changes and may need to be tested. For example, security stacks in IoT devices are often not upgraded with respect to recent secure communication cyphers that need to be supported by Cumulocity IoT for security reasons.
-  * Customers may not be used to cloud release models or may be in regulated domains may need to follow changes up more closely and report on them.
-* For that reason, we communicate upgrade models and frequently asked questions here.
+This approach ensures that customers benefit from quick access to new functionality, as well as up-to-date security and bug fixes. Any new or updated functionality is communicated through the [change logs](https://cumulocity.com/docs/change-logs/), and the timing of upgrades can be tracked via the [status pages](https://status.cumulocity.com). To ensure that connected devices and customer-developed functionality on Cumulocity remain operational, strict [API compatibility](https://cumulocity.com/docs/concepts/compatibility-policy/) is maintained and rigorously tested.
 
+This document is provided as a courtesy to Cumulocity IoT customers, acknowledging that:
+
+* IoT hardware devices and legacy industry protocols can be highly sensitive to even compatible changes and may require thorough testing. For instance, IoT device security stacks often lag in adopting recent secure communication ciphers, which Cumulocity IoT must support for security reasons.
+* Customers who are not accustomed to cloud release models, or those operating in regulated industries, may need to closely monitor and report on changes.
+
+To address these considerations, this document outlines the various upgrade models available and answers frequently asked questions. It begins with an overview of the standard Cumulocity IoT continuous deployment model, explains how customers can integrate this model into their own continuous deployment processes, and describes the alternative annual deployment model. Additionally, it discusses how customers can opt to gain early access to Cumulocity IoT's new features through private and public previews.
 
 ### Continuous deployment
 

@@ -46,6 +46,36 @@ weight: 110
 * Longer upgrade duration (due to larger size).
 * Image from Rumi
 
+### Private and public feature previews
+
+Cumulocity IoT offers a preview program allowing customers early access to new features before they become Generally Available (GA). This program is divided into two stages: **Private Preview** and **Public Preview**.
+
+#### Private Preview
+
+* **Participation**: A limited group of selected customers is invited to participate. Activation of features is managed by the Cumulocity team.
+* **Stability & Testing**: Features in this stage have been tested in development, but they are still experimental. Functional changes are expected, and there is no guarantee of stability or backwards compatibility.
+* **Support**: Limited support is provided on a best-effort basis, and standard service level agreements (SLAs) do not apply.
+* **Feedback**: Feedback is actively collected by the R\&D team working on the feature.
+
+#### Public Preview
+
+* **Participation**: Any customer can opt into the public preview via the changelog.
+* **Stability & Testing**: Additional testing has been done beyond the private preview stage, but the same limitations regarding stability and backwards compatibility apply.
+* **Support**: Similar to private preview, limited support is provided, and SLAs do not apply.
+* **Feedback**: Customers are encouraged to provide feedback through the Aha\! platform.
+
+#### Considerations for Customers
+
+1. **Purpose of the Preview Program**: The main goal is to gather customer feedback to refine features before their official release. This feedback helps identify bugs, evaluate usability, and ensure the features meet customer needs.
+2. **Using Preview Features**: Customers are advised to use preview features only in development or testing environments due to potential instability and the possibility of breaking changes.
+3. **Documentation**:
+   * **Private Preview**: Documentation is available only to participating customers and is restricted to a dedicated section.
+   * **Public Preview**: Documentation is publicly accessible, clearly marked as relevant to preview features, and will be integrated into the main documentation once the feature reaches GA.
+4. **Communication & Awareness**:
+   * **Private Preview**: Participation is by invitation only, and customers are selected based on their suitability to provide valuable feedback.
+   * **Public Preview**: Customers can find information about available public previews in the changelog and other communication channels.
+5. **Transition to GA**: Once a feature successfully passes through the preview stages, it will be made generally available to all customers, at which point it will receive full support and be included in the main product documentation.
+
 
 ### FAQ
 

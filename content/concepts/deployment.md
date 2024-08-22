@@ -49,13 +49,28 @@ weight: 110
 
 ### FAQ
 
-* Can I check when a particular change is deployed? (change-log, but not everything)
-* Can I get notification when something is deployed? (to be checked, maybe )
-* Can I cherry pick?
-* Can I roll back?
-* How can I handle cockpit upgrades?
-* Who is eligible for annual deployment?
+#### Can I check when a particular change is available in my tenant?
 
+Proposal: Can we link change log updates with eu-latest deployments? E.g., have some soft statement here like "Generally, after a change is published in the change log, it is part of the next eu-latest upgrade/it was part of the last eu-latest upgrade."
+
+#### Can I get notification when something is deployed?
+
+Proposal: You can subscribe to notifications from the [status page](https://status.cumulocity.com) for your region.
+
+TBD: Can we make the status page subscriptions more granular, at least for the shared instances? (Requires likely the next better status page plan.)
+
+#### Can I cherry pick changes?
+
+Changes are published to all instances unless you are on the annual upgrade plan for regulated environments.
+
+#### Can I roll back changes?
+
+Changes are transparently rolled back by Cumulocity should a problem in production occurr. If you encounter a problem, please contact support.
+
+
+#### Who is eligible for annual deployment?
+
+Annual deployment is a premium service for regulated customers. Please contact your Cumulocity representative for more information.
 
 TBD: Does anyone know what the exact regulatory requirements are where we need to support our customers?
 

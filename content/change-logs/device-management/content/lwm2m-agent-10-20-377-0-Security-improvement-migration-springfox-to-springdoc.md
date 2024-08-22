@@ -15,4 +15,4 @@ ticket: DM-3165
 version: 10.20.377.0
 ---
 
-The deprecated Swagger/OpenApi Library used by LWM2M service was updated to improve security.
+The deprecated Swagger/OpenApi Library used by LWM2M service was replaced by a new supported library to improve security.

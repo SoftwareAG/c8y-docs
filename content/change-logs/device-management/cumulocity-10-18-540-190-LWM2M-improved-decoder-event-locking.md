@@ -1,6 +1,6 @@
 ---
 date:
-title: Enhancement on LWM2M decoder event execution
+title: Enhancement of LWM2M decoder event execution
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added a fix for official plugins ribbon not being shown. (#6839) [GRAFT][release/cd] (#6927)
+title: Official plugins now have the correct ribbon displayed.
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,5 @@ build_artifact:
 ticket: MTM-60252
 version: 1020.18.4
 ---
-Added a fix for official plugins ribbon not being shown. (#6839) [GRAFT][release/cd] (#6927)
+
+``` In the extensions page a ribbon is used to highlight official plugins. Due to a bug, this ribbon was not shown for certain plugins, even though they were official. This issue has now been fixed.

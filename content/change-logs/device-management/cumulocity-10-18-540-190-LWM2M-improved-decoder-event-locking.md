@@ -1,6 +1,6 @@
 ---
 date:
-title: Enhancement of LWM2M decoder event execution
+title: Improved LWM2M decoder event execution
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3891
 version: 10.18.540.190
 ---
-Improves the synchronization mechanism to prevent duplicate external decoder events processing by the LWM2M agent.
+The synchronization mechanism has been improved to prevent duplicate external decoder events processing by the LWM2M agent.

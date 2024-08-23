@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Real-time updates to changes made to Asset models"
+title: "Improved real-time behavior for changes to asset models"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1546"
 version: "1.0.1"
 ---
-Improved real-time updates to ensure changes made by concurrent users to Asset models are immediately reflected.
+Real-time updates have been improved to ensure that changes made by concurrent users to asset models are immediately reflected.

@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Cumulocity IoT schematics now handle Angular standalone projects by disabling standalone mode
+date: '2024-08-22'
+title: >-
+  Cumulocity IoT schematics now handle Angular standalone projects by disabling
+  standalone mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

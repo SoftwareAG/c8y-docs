@@ -1,6 +1,6 @@
 ---
 date:
-title: Fixed OPC-UA address space scanning failures in known edge cases 
+title: Fixed issue with OPC UA address space scanning
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

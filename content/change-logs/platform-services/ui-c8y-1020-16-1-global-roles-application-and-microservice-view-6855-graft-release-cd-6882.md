@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-08-22'
 title: Application access list of global roles only shows applications
 product_area: Platform services
 change_type:

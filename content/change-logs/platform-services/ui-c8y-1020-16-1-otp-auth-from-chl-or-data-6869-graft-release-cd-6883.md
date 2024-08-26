@@ -1,6 +1,8 @@
 ---
-date: ""
-title: QR code for two-factor authentication provided during TOTP setup now shows up correctly 
+date: '2024-08-22'
+title: >-
+  QR code for two-factor authentication provided during TOTP setup now shows up
+  correctly
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

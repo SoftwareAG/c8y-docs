@@ -1,6 +1,6 @@
 ---
 date:
-title: Added validation for device type resources API and alarm creation on device type matching failure
+title: Added validation and alarming for device type resources API
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

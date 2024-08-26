@@ -1,6 +1,6 @@
 ---
 date:
-title: Fixed OPC-UA reverse address space scanner NullPointerException when last processed node was not root 
+title: Fixed OPC-UA address space scanning failures in known edge cases 
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,6 @@ build_artifact:
 ticket: DM-3594
 version: 10.20.82.0
 ---
-In previous OPC-UA Gateway versions it was possible to get a NullPointerException during reverse address space scan in rare cases when the last processed node was not a root node.
+In earlier versions of the OPC-UA Gateway, there was a rare issue where a reverse address space scan could unexpectedly 
+fail if the last node processed wasn't a root node. We've now fixed this problem. Also, if a scan encounters an issue 
+with a single node, it will now log the error and move on to the next node, rather than stopping the entire scan.

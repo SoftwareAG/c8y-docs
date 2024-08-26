@@ -497,6 +497,8 @@ Firmware updates are also supported for the registration of unsecured devices as
 
 LWM2M internally uses our [Extensible Device Registration](/concepts/applications/#extensible-device-registration) feature. It provides an API based on JSON Schema and REST to extend {{< company-c8y >}} with arbitrary wizards for device registration.
 
+#### REST-based single LWM2M device registration {#rest-lwm2m-single-registration}
+
 Before the actual registration of a LWM2M device, it first is important to understand the set of available device properties. This set can be obtained using the `metadata` endpoint of LWM2M:
 
 `
@@ -537,13 +539,29 @@ Example request payload:
 }
 ```
 
+#### REST-based bulk Registration for LWM2M Devices {#rest-lwm2m-bulk-registration}
+
+Alternatively, LWM2M devices can be registered in bulk using the API by posting a CSV file to the LWM2M. The API endpoint and request format are as follows:
+
+
+```
+POST /service/lwm2m-agent/deviceRegistration/bulk`
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="<input csv file>"
+Content-Type: text/csv
+
+--boundary--
+```
+
+For more details on the CSV format being used, please refer to the section on [bulk device registration](#bulk-device-registration).
 
 ### Duplicate LWM2M devices {#duplicate-lwm2m-devices}
 
 If a LWM2M device has been registered with the same endpoint ID before, the device registration will not register the device, neither for single nor for bulk device registrations.
 For single device registrations, the duplication error message will be displayed after clicking register.
 For bulk device registrations, the information about duplicate LWM2M devices will be displayed under the [LWM2M connector device](#connector-device)'s bulk upload operation result.
-
 
 
 ### Device deletion {#device-deletion}
@@ -553,7 +571,7 @@ To remove a LWM2M device, delete it through the [All devices](/device-management
 Alternatively, you can delete a LWM2M device using a REST call. With the managed object ID (device ID) of the device to be deleted, this can be accomplished using the following DELETE request.
 
 
-#### Device deletion using the REST API {#device-deletion-using-restapi}
+#### Rest-based single LWM2M device deletion  {#single-device-deletion-using-restapi}
 
 `
 DELETE /service/lwm2m-agent/deviceRegistration/{device ID}
@@ -562,3 +580,20 @@ DELETE /service/lwm2m-agent/deviceRegistration/{device ID}
 {{< c8y-admon-important >}}
 It is not recommended to use the inventory API for directly deleting LWM2M devices. This action may result in issues when attempting to register a device with the same endpoint name at a later time.
 {{< /c8y-admon-info >}}
+
+#### Rest-based bulk LWM2M device deletion  {#single-device-deletion-using-restapi}
+
+Multiple LWM2M devices can be deleted in bulk by posting a CSV file to LWM2M.
+
+```
+DELETE /service/lwm2m-agent/deviceRegistration/bulk`
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="<input csv file>"
+Content-Type: text/csv
+
+--boundary--
+```
+
+This endpoint uses the same CSV format which is also used to [register](#rest-lwm2m-bulk-registration) LWM2M devices in bulk.

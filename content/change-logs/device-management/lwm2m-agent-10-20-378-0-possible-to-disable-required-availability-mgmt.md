@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-ggH2M4hf3
     label: lwm2m-agent
-ticket: DM-3652
+ticket: DM-2111
 version: 10.20.378.0
 ---
 LWM2M agent manages required interval of LWM2M device automatically based on LWM2M registration lifetime. It's now possible to disable this behavior globally or for specific devices. 

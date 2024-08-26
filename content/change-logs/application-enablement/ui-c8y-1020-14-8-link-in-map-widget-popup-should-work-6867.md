@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-08-15'
 title: Links in Map widget popups now work properly
 product_area: Application enablement & solutions
 change_type:

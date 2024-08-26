@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59087
 version: 10.20.478.0    
 ---
-The {{< product-c8y-iot >}} platform can be extended with customer-specific functionality by deploying microservices. The application manifest provides the necessary settings to manage microservice instances and the application deployment within {{< product-c8y-iot >}}. Some settings, such as HttpGet, exec, and TCPSocket of type Probe, align with items in the Kubernetes PodSpec. For security reasons, there is now a check on upload to ensure these settings do not contain line feed characters.
+Making {{< product-c8y-iot >}} more secure we have added a check on upload to ensure microservice settings do not contain any line feed characters such as HttpGet, exec, and TCPSocket of type Probe, aligned with items in the Kubernetes PodSpec.

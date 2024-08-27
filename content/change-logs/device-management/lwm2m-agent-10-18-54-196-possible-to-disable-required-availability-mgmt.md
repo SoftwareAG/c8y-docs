@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2111
 version: 10.18.540.195
 ---
-LWM2M agent manages required interval of LWM2M device automatically based on LWM2M registration lifetime. It's now possible to disable this behavior globally or for specific devices. 
+The LWM2M agent automatically manages the required interval of a LWM2M device based on the LWM2M registration lifetime. It is now possible to disable this behavior globally or for specific devices. 

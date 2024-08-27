@@ -581,7 +581,7 @@ DELETE /service/lwm2m-agent/deviceRegistration/{device ID}
 It is not recommended to use the inventory API for directly deleting LWM2M devices. This action may result in issues when attempting to register a device with the same endpoint name at a later time.
 {{< /c8y-admon-info >}}
 
-#### Rest-based bulk LWM2M device deletion  {#single-device-deletion-using-restapi}
+#### Rest-based bulk LWM2M device deletion  {#lwm2m-bulk-device-deletion-using-restapi}
 
 Multiple LWM2M devices can be deleted in bulk by posting a CSV file to the LWM2M REST API.
 

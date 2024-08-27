@@ -14,5 +14,5 @@ build_artifact:
 ticket: DM-3837
 version: 1.9.0
 ---
-The Advanced Software Management microservice used to crash due to an Out of Memory error while reading the softwares of a device. This fix optimises the process 
+The Advanced Software Management microservice used to run out of memory while reading the software items of a device. This issue has been fixed.
 of reading the softwares of a device without causing the microservice to crash and improves stability when we have devices with a large number of softwares. 

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: 2024-03-26
 title: Bookmarks in right drawer
 product_area: Application enablement & solutions
 change_type:

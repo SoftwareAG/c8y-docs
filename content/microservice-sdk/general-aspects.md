@@ -2,6 +2,6 @@
 weight: 20
 title: General aspects
 layout: bundle
-section:
+sector:
   - app_enablement
 ---

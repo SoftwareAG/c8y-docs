@@ -2,6 +2,6 @@
 weight: 60
 title: SNMP
 layout: bundle
-section:
+sector:
   - device_management
 ---

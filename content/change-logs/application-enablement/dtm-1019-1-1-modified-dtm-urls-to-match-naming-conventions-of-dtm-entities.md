@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: 2024-03-26
 title: Modified DTM URLs to match naming conventions of DTM entities
 product_area: Application enablement & solutions
 change_type:

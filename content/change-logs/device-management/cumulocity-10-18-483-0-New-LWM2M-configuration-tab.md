@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T12:55:41.157Z
+date: 2024-03-26T12:55:41.157Z
 title: New LWM2M configuration tab
 change_type:
   - value: change-QHu1GdukP

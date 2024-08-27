@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T12:59:36.209Z
+date: 2024-03-26T12:59:36.209Z
 title: New shell commands
 change_type:
   - value: change-2c7RdTdXo4

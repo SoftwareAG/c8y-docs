@@ -2,7 +2,7 @@
 weight: 10
 title: Device protocols
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

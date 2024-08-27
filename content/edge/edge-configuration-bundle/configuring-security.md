@@ -2,15 +2,16 @@
 weight: 30
 title: Configuring security
 layout: bundle
-section:
+sector:
   - edge_server
 ---
+### Configuring security using the UI {#configuring-security-using-the-ui}
 
 The Edge appliance is security hardened by default.
 Furthermore, you can apply specific security configurations to enhance the security of your Edge appliance.
 
 {{< c8y-admon-important >}}
-For information about deployment security best practices and tenant administration security configuration guidelines, see [Security Hardening Guidelines]({{< link-sag-portal >}}sl24sec/SecuredServices/document/java/cumulocity_iot_platform/iot10-15-0/10-15-0_Security_Hardening_Guidelines_guide.pdf).
+For information about deployment security best practices and tenant administration security configuration guidelines, see [Security Hardening Guidelines](/files/edge/Security_Hardening_Guidelines_guide_1018.pdf).
 {{< /c8y-admon-important >}}
 
 To apply the security configuration, follow the steps below:
@@ -20,7 +21,7 @@ To apply the security configuration, follow the steps below:
    - Username: management/<*Edge admin username*>
    - Password: password provided during the installation
 
-2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 
 3. Click **Edge** > **Security** in the navigator.
 
@@ -56,3 +57,7 @@ Once enabled, you cannot disable the auditing system configuration.
       |||**Maximum size (megabytes)**|The maximum size in megabytes of the Kubernetes audit log file before it gets rotated. A high value has more impact on the disk space.<br><br>Default value: 100 MB<br>Minimum value: 0<br>
 
 7. Click **Save**.
+
+### Configuring security using the REST APIs {#configuring-security-using-the-rest-apis}
+
+To configure security using the REST APIs, see the `/edge/configuration/security` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/postSecurityConfiguration).

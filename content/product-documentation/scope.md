@@ -2,7 +2,7 @@
 weight: 10
 title: Scope
 layout: bundle
-section:
+sector:
   - about_website
 ---
 

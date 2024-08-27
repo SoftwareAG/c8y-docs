@@ -1,7 +1,7 @@
 ---
 title: Dashboards
 layout: bundle
-section: 
+sector: 
   - app_enablement
 weight: 30
 ---

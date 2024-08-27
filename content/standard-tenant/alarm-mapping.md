@@ -5,7 +5,7 @@ layout: bundle
 outputs:
   - html
   - json
-section:
+sector:
   - platform_administration
 helpcontent:
 - label: alarm-mapping
@@ -62,4 +62,4 @@ Refresh the list to discard any changes without saving.
 
 ### To delete an alarm mapping {#to-delete-an-alarm-mapping}
 
-To delete an alarm mapping, hover over it and click the delete icon which appears on hovering over the row.
+To delete an alarm mapping, hover over it and click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> which appears on hovering over the row.

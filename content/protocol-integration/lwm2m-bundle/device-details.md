@@ -18,7 +18,7 @@ In the **Objects** tab of a LWM2M device, you can view all objects, resources an
 In order to see resources in the **Objects** tab, the resources first must be added in the **Device Protocols** page.
 {{< /c8y-admon-info >}}
 
-The following operations may be available in each instance after clicking the menu icon ( ⋮ ) at the end of each object row:
+The following operations may be available in each instance after clicking the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the end of each object row:
 
 - Read Object: Reads all instances for the selected object and lists all available resources for each instance.
 - Read Instance: Reads the current instance of the given object and lists all available resources.
@@ -31,7 +31,7 @@ Some instances do not have all of the listed operations.
 
 Some object cards show additional operations which can be performed. These operations become available after reading the object/instance. The possible options are **Write**, **Execute** and **Execute with parameters**. For example, after reading device **Firmware update** in order to perform the operation **Execute** without parameters, find the **Update** section on the object card and click **Execute**. To perform an operation with parameters click **Execute with parameters** and enter a value.
 
-More information can be acquired for each resource by hovering over the tooltip icon (<img src="/images/device-protocols/lwm2m/lwm2m-tooltip-help-icon.png" alt="Tooltip icon" style="display: inline; width: 20px; margin-bottom: 3px;">) present on the right of the field name.
+More information can be acquired for each resource by hovering over the help icon <i class="dlt-c8y-icon-help-outline text-info icon-20"></i> present on the right of the field name.
 
 Additional information on recent operations can be viewed by clicking the operations button located at the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there are two.
 

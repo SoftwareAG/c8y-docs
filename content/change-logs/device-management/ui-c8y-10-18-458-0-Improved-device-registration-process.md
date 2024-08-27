@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T14:01:04.460Z
+date: 2024-03-26T14:01:04.460Z
 title: Improved device registration process
 change_type:
   - value: change-2c7RdTdXo4

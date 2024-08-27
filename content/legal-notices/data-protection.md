@@ -2,7 +2,7 @@
 weight: 20
 title: Data protection
 layout: bundle
-section:
+sector:
   - about_website
 ---
 

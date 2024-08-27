@@ -2,11 +2,9 @@
 weight: 20
 title: SmartREST 2.0
 layout: bundle
-section:
+sector:
   - device_management
 ---
-
-### Overview {#overview}
 
 This section describes the SmartREST 2.0 payload format that can be used with the {{< product-c8y-iot >}} MQTT implementation.
 

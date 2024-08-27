@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T16:09:33.066Z
+date: 2024-03-26T16:09:33.066Z
 title: Fixed default global rules issue
 change_type:
   - value: change-VSkj2iV9m

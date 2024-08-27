@@ -22,7 +22,7 @@ The blocks are implemented in the Event Processing Language (EPL) of Apama. At r
 
 This topic gives a brief overview of how to add and design a new model, and how to view its output. It is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that at least one device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. These first steps assume that you are using a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/overview/) for details.
+The steps below require that at least one device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. These first steps assume that you are using a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/sensorapp-introduction/) for details.
 
 The model that you add will contain three blocks:
 
@@ -129,7 +129,7 @@ This topic gives a brief overview of how to create a model from a sample. It is 
 
 This topic is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that at least one device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. These first steps assume that you are using a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/overview/) for details.
+The steps below require that at least one device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. These first steps assume that you are using a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/sensorapp-introduction/) for details.
 
 The following image shows the blocks that are defined in the **On missing measurements create alarm** sample.
 

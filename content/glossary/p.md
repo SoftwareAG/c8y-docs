@@ -2,7 +2,7 @@
 weight: 130
 title: P
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 
@@ -20,6 +20,12 @@ See also [Global roles](/glossary/g/#global-roles) and [Inventory roles](/glossa
 In the [Continuous Deployment](/glossary/c/#continuous_deployment) model, the Private Preview mode refers to a feature which is only made available to selected customers.
 
 See also [General Availability](/glossary/g/#ga) and [Public Preview](/glossary/p/#public-preview).
+
+### Product area {#product-area}
+
+In the change logs (or release notes for yearly releases respectively) changes can be filtered for various parameters one of which is the product area. The product area is a high-level functional area, for example, "Device Management & connectivity". 
+
+See also [Components](/glossary/c/#components).
 
 ### Public Preview mode {#public-preview}
 

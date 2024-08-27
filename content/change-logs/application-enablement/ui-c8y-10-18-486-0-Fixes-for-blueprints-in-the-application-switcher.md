@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T14:09:48.937Z
+date: 2024-03-26
 title: Fixes for blueprints in the application switcher
 change_type:
   - value: change-VSkj2iV9m

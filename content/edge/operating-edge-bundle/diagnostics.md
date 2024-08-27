@@ -2,7 +2,7 @@
 weight: 30
 title: Diagnostic utility
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

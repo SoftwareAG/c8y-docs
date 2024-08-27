@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:40:16.616Z
+date: 2024-03-26T10:40:16.616Z
 title: Issues with SmartREST template editor fixed
 change_type:
   - value: change-VSkj2iV9m

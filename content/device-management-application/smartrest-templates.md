@@ -5,7 +5,7 @@ layout: bundle
 outputs:
   - html
   - json
-section:
+sector:
   - device_management
 helpcontent:
   - label: smartrest-templates
@@ -18,8 +18,6 @@ helpcontent:
 
     To create a new template, click **Create template** at the top right, provide a name and unique ID and add the required messages or responses as described in the user documentation."
 ---
-
-### Introduction {#introduction}
 
 SmartREST templates are a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
 
@@ -143,18 +141,18 @@ To remove a response, open it and click **Remove** at the bottom.
 
 ### To edit a SmartREST template {#to-edit-a-smartrest-template}
 
-Either click the desired template or click the menu icon at the top right of the respective template card and then click **Edit**.
+Either click the desired template or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of the respective template card and then click **Edit**.
 
 After editing the template, click **Save** to save your settings.
 
 ### To delete a SmartREST template {#to-delete-a-smartrest-template}
 
-Click the menu icon at the top right of the respective template card and then click **Remove**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of the respective template card and then click **Remove**.
 
 
 ### To export a SmartREST template {#to-export-a-smartrest-template}
 
-Click the menu icon at the top right of the respective template card and then click **Export**.
+Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of the respective template card and then click **Export**.
 
 The template will automatically be downloaded to your file system.
 

@@ -21,7 +21,7 @@ Click **Groups** in the navigator to see all groups in a list format.
 
 For each group, various information is provided, for example the type and name. Click **Configure columns** at the right, to add or remove columns and customize the view to your preference. See also [Configuring columns](/device-management-application/viewing-all-devices/#configuring-columns).
 
-To filter the groups for certain criteria, hover over the column headers and click the respective filter icon.
+To filter the groups for certain criteria, hover over the column headers and click the respective filter icon <i class="dlt-c8y-icon-filter icon-20"></i>.
 
 See also [To filter devices](/device-management-application/viewing-all-devices/#to-filter-devices).
 
@@ -63,4 +63,4 @@ For further information on permissions, see [Managing permissions](/standard-ten
 
 ### To delete a group {#to-delete-a-group}
 
-Hover over the respective entry you want to delete and click the delete icon at the right.
+Hover over the respective entry you want to delete and click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> at the right.

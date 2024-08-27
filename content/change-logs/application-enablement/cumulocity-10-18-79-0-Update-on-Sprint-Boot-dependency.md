@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:06:20.542Z
+date: 2024-03-26
 title: Update on Sprint Boot dependency
 change_type:
   - value: change-2c7RdTdXo4

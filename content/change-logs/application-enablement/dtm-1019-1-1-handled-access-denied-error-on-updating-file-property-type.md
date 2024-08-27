@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: 2024-03-26
 title: Handled access denied error on updating file property type
 product_area: Application enablement & solutions
 change_type:

@@ -2,7 +2,7 @@
 weight: 40
 title: Edge functionalities
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

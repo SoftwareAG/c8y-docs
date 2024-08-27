@@ -2,7 +2,7 @@
 weight: 70
 title: G
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

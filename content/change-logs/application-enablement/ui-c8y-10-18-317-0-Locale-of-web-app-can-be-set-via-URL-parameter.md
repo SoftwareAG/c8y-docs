@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T14:23:44.260Z
+date: 2024-03-26
 title: Locale of web app can be set via URL parameter
 change_type:
   - value: change-VSkj2iV9m

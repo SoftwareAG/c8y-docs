@@ -2,7 +2,7 @@
 weight: 60
 title: Example setup for VMware ESXi
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

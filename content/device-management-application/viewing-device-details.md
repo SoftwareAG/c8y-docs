@@ -2,7 +2,7 @@
 weight: 31
 title: Viewing device details
 layout: bundle
-section:
+sector:
   - device_management
 ---
 
@@ -16,7 +16,7 @@ To view detailed information on the device, click a device in the device list.
 
 ![Device info](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
 
-The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, that means, tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [fragment library](/device-integration/fragment-library/#overview).
+The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, that means, tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [fragment library](/device-integration/fragment-library/).
 
 Initially the **Info** tab is shown, which offers general information on a device and is available for each device.
 
@@ -182,11 +182,11 @@ Click on the entry in the list to show the entire log information.
 
 #### To download a log {#to-download-a-log}
 
-Hover over a row and click the download icon, to download the log excerpt to your file system.
+Hover over a row and click the download icon <i class="dlt-c8y-icon-download text-primary icon-20"></i>, to download the log excerpt to your file system.
 
 #### To delete a log {#to-delete-a-log}
 
-Hover over a row and click the delete icon, to delete the log information.
+Hover over a row and click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i>, to delete the log information.
 
 ### Measurements {#measurements}
 
@@ -288,7 +288,7 @@ A tooltip on the status icon displays their actual value.
 
 ### Shell {#shell}
 
-The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, like AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms such as Tixi TiXML. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.
+The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, like AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms provided by many gateway makers. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.
 
 The **Shell** tab presents a command prompt to enter commands.
 

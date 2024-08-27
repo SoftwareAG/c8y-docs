@@ -2,7 +2,7 @@
 weight: 10
 title: Configuring the network
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 
@@ -24,7 +24,7 @@ Do not use the IP addresses from the below blocks in your network configuration.
 	- Username: management/<*Edge admin username*>
 	- Password: password provided during the installation
 
-2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 
 3. Click **Edge** > **Network** in the navigator.
 
@@ -51,6 +51,10 @@ Do not use the IP addresses from the below blocks in your network configuration.
   	{{< c8y-admon-info >}}
 If the IP address of the Edge appliance overlaps with the Edge appliance's address range, then you must update the **Address range CIDR**.
 		{{< /c8y-admon-info >}}
+
+### Configuring the network using the REST APIs {#configuring-the-hostname-using-the-rest-apis}
+
+To configure the network using the REST APIs, see the `/edge/configuration/network` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/edgeNetworkConfig).
 
 ### Troubleshooting the network CIDR {#troubleshooting-the-network-cidr}
 

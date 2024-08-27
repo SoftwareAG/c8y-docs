@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:33:05.138Z
+date: 2024-03-26T10:33:05.138Z
 title: MongoDB Java driver version upgrade
 change_type:
   - value: change-2c7RdTdXo4

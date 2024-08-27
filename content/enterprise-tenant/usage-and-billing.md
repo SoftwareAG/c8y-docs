@@ -5,7 +5,7 @@ layout: bundle
 outputs:
   - html
   - json
-section:
+sector:
   - platform_administration
 helpcontent:
   - label: usage-and-billing
@@ -75,7 +75,7 @@ The following information is provided for each subtenant (not completely visible
     </tr>
     <tr>
       <td align="left">Root devices</td>
-      <td align="left">Number of root devices, excluding child devices</td>
+      <td align="left">Number of root devices excluding child devices, see also <a href="#devices-count">Devices count details</a> </td>
     </tr>
     <tr>
       <td align="left">Peak root devices</td>
@@ -162,7 +162,7 @@ You can filter the usage statistics list for a time period by adding the start a
 If a tenant was created after the selected time period, it will show up but the numbers are "0".
 {{< /c8y-admon-info >}}
 
-You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Filtering](/get-familiar-with-the-ui/gui-features/#filtering).
+You can also filter and sort the list on any column by clicking the filter icon <i class="dlt-c8y-icon-filter icon-20"></i> next to the column name and providing the filtering criteria. See also [Filtering](/get-familiar-with-the-ui/gui-features/#filtering).
 
 {{< c8y-admon-important >}}
 The date/time range used here might differ from your server time due to different time zones.
@@ -175,6 +175,15 @@ The date/time range used here might differ from your server time due to differen
 3. Click **Download** to start the export.
 
 The CSV file will be downloaded to your file system.
+
+#### Devices count details {#devices-count}
+The device count calculations assume that only top-level devices are marked with the [device marker](/device-integration/fragment-library/#device-marker) fragment `c8y_IsDevice`.
+Accordingly, the following formulas are used in the calculations:
+* root devices - all devices with the `c8y_IsDevice` fragment
+* all devices - all devices with the `c8y_IsDevice` fragment and their children from the whole device hierarchy
+* leaf devices - only leafs of the device hierarchies starting from devices with the `c8y_IsDevice` fragment
+
+If child devices are also marked with the `c8y_IsDevice` fragment, the calculation results may look different than expected.
 
 
 ### Microservice usage {#microservice-usage}

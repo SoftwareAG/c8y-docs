@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: 2024-03-26
 title: Consistent behaviour of Enter key
 product_area: Device management & connectivity
 change_type:
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2622
 version: 10.18.484.0
 ---
-In the Device management application, pressing the "Enter" key now consistently submits forms in dialogs and windows. Prior to this change users had to click the \*\*Submit\*\* button.
+In the Device management application, pressing the "Enter" key now consistently submits forms in dialogs and windows. Prior to this change users had to click the **Submit** button.

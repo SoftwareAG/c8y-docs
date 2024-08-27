@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T14:22:04.466Z
+date: 2024-03-26
 title: Missing dependency added for widget plugin development
 change_type:
   - value: change-VSkj2iV9m

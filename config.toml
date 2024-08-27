@@ -16,7 +16,7 @@ buildFuture = true
 relativeURLs = true
 
 [taxonomies]
-  sections = "section"
+  sectors = "sector"
 
 [markup]
   [markup.goldmark]
@@ -25,7 +25,7 @@ relativeURLs = true
     [markup.highlight]
       style = "solarized-dark256"
 
-[author]
+[[params.author]]
   name = "Carlos Ceia @ Cumulocity"
 
 
@@ -39,7 +39,7 @@ relativeURLs = true
 
   oldguides = "//cumulocity.com/guides/welcome/intro-documentation/"
 
-  docsPreview = "2024"
+  docsPreview = false
 
   # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
   thumbnailImage = true
@@ -68,8 +68,8 @@ relativeURLs = true
     link = "https://empower.softwareag.com/"
 
   [[params.additionalResources]]
-    name = "Device Partner Portal"
-    link = "https://devicepartnerportal.softwareag.com/"
+    name = "Device Partner Ecosystem"
+    link = "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes"
 
   [[params.additionalResources]]
     name = "Solutions Portal"

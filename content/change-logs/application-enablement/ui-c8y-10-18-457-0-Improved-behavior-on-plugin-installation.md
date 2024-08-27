@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T13:21:59.263Z
+date: 2024-03-26
 title: Improved behavior on plugin installation
 change_type:
   - value: change-2c7RdTdXo4

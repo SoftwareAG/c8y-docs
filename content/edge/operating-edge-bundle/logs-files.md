@@ -2,7 +2,7 @@
 weight: 40
 title: Logging
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 
@@ -20,7 +20,9 @@ The solution stores log files at the following locations for the different nodes
 
 To access the apama-ctrl log files, run the command:
 
-	[admin@iot-edge-server ~]$ sudo docker logs apama-ctrl-edge
+```shell
+sudo docker logs apama-ctrl-edge
+```
 
 ### MongoDB log file locations {#mongodb-log-file-locations}
 

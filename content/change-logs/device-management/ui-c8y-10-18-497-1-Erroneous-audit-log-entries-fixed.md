@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:17:22.731Z
+date: 2024-03-26T10:17:22.731Z
 title: Erroneous audit log entries fixed
 change_type:
   - value: change-VSkj2iV9m

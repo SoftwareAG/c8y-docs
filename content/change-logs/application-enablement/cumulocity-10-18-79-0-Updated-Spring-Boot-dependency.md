@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:40:47.036Z
+date: 2024-03-26
 title: Updated Spring Boot dependency
 change_type:
   - value: change-VSkj2iV9m

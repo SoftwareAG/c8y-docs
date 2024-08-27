@@ -2,7 +2,7 @@
 weight: 40
 title: Integrating of other data sources
 layout: bundle
-section: 
+sector: 
   - device_management
 ---
 

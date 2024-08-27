@@ -2,7 +2,7 @@
 weight: 40
 title: C
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 
@@ -11,6 +11,12 @@ section:
 The Cockpit application is one of the default applications of {{< product-c8y-iot >}}. It provides options to manage and monitor IoT assets and data from a business perspective, like managing assets, visualizing data, working with dashboards and managing reports.
 
 For details see [Application enablement & solutions > Cockpit](/cockpit/).
+
+### Component {#component}
+
+In the change logs (or release notes for yearly releases respectively) changes can be filtered for various parameters one of which is the component. Components reflect functional subcategories from a user perspective, for example, "Administration" or "Authentication".
+
+See also [Product area](/glossary/c/#product-area).
 
 
 ### Continuous Deployment model {#continuous-deplyoment-model}
@@ -36,7 +42,7 @@ For details see [Analytics > DataHub](/datahub/datahub-overview/).
 
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
-For details see the [Edge](/edge/edge-introduction/).
+For details see [Edge](https://cumulocity.com/guides/edge/edge-introduction/).
 
 
 ### {{< product-c8y-iot >}} operational store {#operational-store}
@@ -48,7 +54,7 @@ Internal datastore of {{< product-c8y-iot >}} where all data (such as [alarms](/
 
 The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones. The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into {{< product-c8y-iot >}}.
 
-For details see [{{< sensor-app >}}](/sensor-app/overview/).
+For details see [{{< sensor-app >}}](/sensor-app/sensorapp-introduction/).
 
 
 ### {{< product-c8y-iot >}} Streaming Analytics {#streaming-analytics}
@@ -57,4 +63,4 @@ Using the Streaming Analytics application, you can add your own logic to your Io
 
 See also [Analytics Builder](/glossary/a/#analytics-builder) and [EPL Apps](/glossary/e/#epl-apps).
 
-For details see [Analytics > Streaming Analytics](/streaming-analytics/overview-analytics/).
+For details see [Analytics > Streaming Analytics](/streaming-analytics/introduction-analytics/).

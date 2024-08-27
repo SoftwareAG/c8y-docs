@@ -2,7 +2,7 @@
 weight: 50
 title: Improving the performance
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

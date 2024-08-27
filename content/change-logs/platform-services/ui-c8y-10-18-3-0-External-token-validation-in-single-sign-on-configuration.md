@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:49:50.218Z
+date: 2024-03-26T15:49:50.218Z
 title: External token validation in single sign-on configuration
 change_type:
   - value: change-2c7RdTdXo4

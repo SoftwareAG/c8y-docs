@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:47:57.702Z
+date: 2024-03-26
 title: Fixed issue with group and device names translations
 change_type:
   - value: change-VSkj2iV9m

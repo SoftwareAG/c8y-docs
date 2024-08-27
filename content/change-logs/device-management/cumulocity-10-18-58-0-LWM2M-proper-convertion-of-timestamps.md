@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T16:06:20.103Z
+date: 2024-03-26T16:06:20.103Z
 title: LWM2M proper convertion of timestamps
 change_type:
   - value: change-VSkj2iV9m

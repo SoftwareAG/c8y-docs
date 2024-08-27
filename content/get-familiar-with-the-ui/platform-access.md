@@ -2,7 +2,7 @@
 weight: 25
 title: Accessing and logging into the platform
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 
@@ -31,7 +31,7 @@ The limitations could be the following:
 * The usage may be constrained by the memory and the processing power available on the devices. <br>  
 For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 * Using the private mode on browsers may not work.
-* The [Streaming Analytics application](/streaming-analytics/overview-analytics/) does not support mobile or touch devices.
+* The [Streaming Analytics application](/streaming-analytics/introduction-analytics/) does not support mobile or touch devices.
 {{< /c8y-admon-info >}}
 
 
@@ -89,7 +89,7 @@ Finally, click **Login** to enter the {{< product-c8y-iot >}} platform. Initiall
 To explicitly logout, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 
 {{< c8y-admon-info >}}
-The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level. The default value is 100.
+The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level. Contact your Operations team for further support. The default value is 100.
 {{< /c8y-admon-info >}}
 
 

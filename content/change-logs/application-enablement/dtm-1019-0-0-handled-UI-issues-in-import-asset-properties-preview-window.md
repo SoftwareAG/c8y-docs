@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: 2024-03-26
 title: Handled UI issues in import asset properties preview
 product_area: Application enablement & solutions
 change_type:

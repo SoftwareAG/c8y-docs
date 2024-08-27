@@ -2,7 +2,7 @@
 weight: 10
 title: Using the data broker
 layout: bundle
-section:
+sector:
   - platform_administration
 helpcontent:
   - label: data-broker

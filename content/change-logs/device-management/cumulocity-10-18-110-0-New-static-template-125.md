@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T13:05:56.760Z
+date: 2024-03-26T13:05:56.760Z
 title: New static template 125
 change_type:
   - value: change-2c7RdTdXo4

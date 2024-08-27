@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: 2024-03-26
 title: Improved tooltip usability in Proof of possession
 product_area: Platform services
 change_type:

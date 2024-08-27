@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: 2024-03-26
 title: Improved error handling when publishing operations
 product_area: Device management & connectivity
 change_type:

@@ -2,13 +2,13 @@
 weight: 35
 title: Accessing the Edge appliance remotely through SSH
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 
 You can access the Edge appliance from the {{< product-c8y-iot >}} tenant through SSH.
 
-**Info:** Ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/edge-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant).
+{{< c8y-admon-info >}} Ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/edge-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant). {{< /c8y-admon-info >}}
 
 To access and connect to the Edge appliance:
 

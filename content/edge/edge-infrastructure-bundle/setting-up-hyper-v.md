@@ -2,7 +2,7 @@
 weight: 80
 title: Example setup for Hyper-V
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

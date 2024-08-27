@@ -1,7 +1,7 @@
 ---
 title: Real-time processing
 layout: bundle
-section:
+sector:
   - getting_started
 weight: 50
 ---

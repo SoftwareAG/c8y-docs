@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:31:24.698Z
+date: 2024-03-26
 title: "Fixed value of asset property of type Boolean "
 change_type:
   - value: change-VSkj2iV9m

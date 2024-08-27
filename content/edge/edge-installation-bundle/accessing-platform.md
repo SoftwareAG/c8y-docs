@@ -2,7 +2,7 @@
 weight: 25
 title: Accessing the Edge appliance
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 
@@ -32,7 +32,7 @@ The limitations could be the following:
 * The usage may be constrained by the memory and the processing power available on the devices. <br>  
 For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 * Using the private mode on browsers may not work.
-* The [Streaming Analytics application](/streaming-analytics/overview-analytics/) does not support mobile or touch devices.
+* The [Streaming Analytics application](/streaming-analytics/introduction-analytics/) does not support mobile or touch devices.
 {{< /c8y-admon-info >}}
 
 <a name="domain"></a>
@@ -67,7 +67,7 @@ On Windows machines, add the same entry to *C:\Windows\System32\drivers\etc\host
 Ping the &#60;domain_name> to verify it.
 
 ```shell
-[admin@iot-edge-server ~]$ ping <domain_name>
+ping <domain_name>
 ```
 
 If the ping is successful, the DNS resolution is working properly.
@@ -123,7 +123,7 @@ Select the **Remember me** checkbox if you want the browser to remember your cre
 
 Finally, click **Login** to enter the Edge appliance. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application (if not configured differently).
 
-![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+![Cockpit home page](/images/users-guide/cockpit/cockpit-home-screen.png)
 
 To explicitly logout, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 

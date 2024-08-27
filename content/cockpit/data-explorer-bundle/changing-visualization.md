@@ -2,7 +2,7 @@
 weight: 20
 title: Changing visualization
 layout: bundle
-section:
+sector:
   - app_enablement
 ---
 

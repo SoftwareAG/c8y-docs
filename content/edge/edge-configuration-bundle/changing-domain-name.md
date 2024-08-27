@@ -2,7 +2,7 @@
 weight: 35
 title: Changing the domain name
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 
@@ -20,7 +20,7 @@ Before you change the domain name, see [Domain name validation for Edge license 
 	- Username: management/<*Edge admin username*>
 	- Password: password provided during the installation
 
-2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 
 3. Click **Edge** > **Domain/Certificate** in the navigator.
 
@@ -43,6 +43,10 @@ Before you change the domain name, see [Domain name validation for Edge license 
    If the existing certificate is compatible with the new domain name, you do not have to upload the SSL certificate and key files.
 
 8. Click **Save**.
+
+### Changing the domain name using the REST APIs {#changing-the-domain-name-using-the-rest-apis}
+
+To change the domain name using the REST APIs, see the `/edge/configuration/domain` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/postDomainName).
 
 ### License and certificate compatibility {#license-and-certificate-compatibility}
 

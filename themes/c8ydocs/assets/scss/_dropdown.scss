@@ -34,7 +34,6 @@
   left: 0;
   z-index: 1000;
   display: none; // none by default, but block on "open" of the menu
-  float: left;
   margin: 2px 0 0; // override default ul
   padding: 0;
   min-width: 160px;
@@ -145,8 +144,7 @@
 // Add extra class to `.dropdown-menu` to flip the alignment of the dropdown
 // menu with the parent.
 .dropdown-menu-right {
-  right: 0;
-  left: auto; // Reset the default from `.dropdown-menu`
+  left: auto!important; // Reset the default from `.dropdown-menu`
 }
 // With v3, we enabled auto-flipping if you have a dropdown within a right
 // aligned nav component. To enable the undoing of that, we provide an override

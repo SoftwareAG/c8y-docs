@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: 2024-03-26
 title: Fixed HTTP status 500 response
 product_area: Platform services
 change_type:

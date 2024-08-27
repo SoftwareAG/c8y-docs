@@ -60,7 +60,7 @@ The target table name refers to the target table in Dremio, with which the data 
 
 
 
-The offloading status is empty if the offloading has not been executed yet. For running and completed executions, the start time is shown and either a calendar icon for a scheduled execution or a user icon for a manually triggered execution. For a running execution, the elapsed time is additionally shown. For a completed execution, the failure/success status, the number of offloaded records and the runtime are shown as well. For running and completed executions, click the offloading status to navigate to the detail view for that execution in the job history.
+The offloading status is empty if the offloading has not been executed yet. For running and completed executions, the start time is shown and either a calendar icon <i class="dlt-c8y-icon-schedule1 text-muted icon-20"></i> for a scheduled execution or a user icon <i class="dlt-c8y-icon-supplier text-muted icon-20"></i> for a manually triggered execution. For a running execution, the elapsed time is additionally shown. For a completed execution, the failure/success status, the number of offloaded records and the runtime are shown as well. For running and completed executions, click the offloading status to navigate to the detail view for that execution in the job history.
 
 The sort control allows you to sort by successful/failed jobs. The filter control allows you to filter by execution status.
 

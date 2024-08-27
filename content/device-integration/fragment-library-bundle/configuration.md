@@ -2,7 +2,7 @@
 weight: 50
 title: Configuration
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

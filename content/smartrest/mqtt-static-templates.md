@@ -1,12 +1,10 @@
 ---
 title: MQTT Static templates
 layout: bundle
-section:
+sector:
   - device_management
 weight: 60
 ---
-
-### Overview {#overview}
 
 To ease device integration {{< product-c8y-iot >}} already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
 
@@ -931,7 +929,7 @@ This may let the device send additional parameters that trigger further steps ba
 **Example**
 
 ```text
-506,c8y_Restart
+506,123
 ```
 
 ##### Set EXECUTING operations to FAILED (507) {#507}
@@ -1101,7 +1099,7 @@ Open or close the relays in the array.
 
 ##### Upload configuration file (520) {#520}
 
-The current configuration is uploaded from {{< product-c8y-iot >}} to the device.
+Upload the current configuration to {{< product-c8y-iot >}}.
 
 **Example**
 
@@ -1269,9 +1267,9 @@ Update the software installed on the device.
 | 1...     | List of 5 values per software | (n/a)  |
 | 1.1      | name                          | String |
 | 1.2      | version                       | String |
-| 1.2      | type                          | String |
-| 1.3      | URL                           | String |
-| 1.4      | action to be performed        | String |
+| 1.3      | type                          | String |
+| 1.4      | URL                           | String |
+| 1.5      | action to be performed        | String |
 
 **Example**
 

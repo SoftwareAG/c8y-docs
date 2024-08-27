@@ -541,7 +541,7 @@ Example request payload:
 
 #### REST-based bulk Registration for LWM2M Devices {#rest-lwm2m-bulk-registration}
 
-Alternatively, LWM2M devices can be registered in bulk using the API by posting a CSV file to the LWM2M. The API endpoint and request format are as follows:
+Alternatively, LWM2M devices can be registered in bulk using the API by posting a CSV file to the LWM2M service. The API endpoint and request format are as follows:
 
 
 ```
@@ -583,7 +583,7 @@ It is not recommended to use the inventory API for directly deleting LWM2M devic
 
 #### Rest-based bulk LWM2M device deletion  {#single-device-deletion-using-restapi}
 
-Multiple LWM2M devices can be deleted in bulk by posting a CSV file to LWM2M.
+Multiple LWM2M devices can be deleted in bulk by posting a CSV file to the LWM2M REST API.
 
 ```
 DELETE /service/lwm2m-agent/deviceRegistration/bulk`

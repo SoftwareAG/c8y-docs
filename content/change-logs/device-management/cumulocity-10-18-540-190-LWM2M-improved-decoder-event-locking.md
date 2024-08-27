@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3891
 version: 10.18.540.190
 ---
-The synchronization mechanism has been improved to prevent duplicate external decoder events processing by the LWM2M agent.
+The synchronization mechanism has been improved to prevent the LwM2M Agent from processing duplicate external decoder events.

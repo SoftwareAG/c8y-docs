@@ -129,7 +129,6 @@ echo -e "\n\nInstalling Cumulocity IoT Edge operator, version ${C8YEDGE_OPERATOR
 
 # Install or upgrade Edge operator 
 helm upgrade --install c8yedge-operator oci://${C8YEDGE_REGISTRY_HOST}/edge/helm-charts/cumulocity-iot-edge-operator \
-    # --wait --timeout 10m \
     --version="${C8YEDGE_OPERATOR_VERSION}" \
     --namespace "${C8YEDGE_OPERATOR_NAMESPACE}" \
     --create-namespace \

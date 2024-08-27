@@ -1,6 +1,6 @@
 ---
 date:
-title: Documentation for REST-based LWM2M device registration
+title: Added documentation for REST-based LWM2M device registration
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

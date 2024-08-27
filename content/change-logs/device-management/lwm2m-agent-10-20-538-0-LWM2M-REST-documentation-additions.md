@@ -2,8 +2,8 @@
 date:
 title: Documentation for REST-based LWMM2M device registration
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+  - value: change-2c7RdTdXo4
+    label: Improvement
 product_area: Device Management & Connectivity
 component:
   - value: component-1KLUzmqfe

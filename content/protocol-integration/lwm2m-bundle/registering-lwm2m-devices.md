@@ -390,7 +390,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Availability required interval value</td>
 <td style="text-align: left">availabilityRequiredInterval</td>
 <td style="text-align: left">Integer</td>
-<td style="text-align: left">If not empty, this value will be used as initial required interval in created device.</td>
+<td style="text-align: left">If not empty, this value will be used as the initial required interval in the created device.</td>
 <td style="text-align: left">Optional, default = empty</td>
 </tr>
 <tr>

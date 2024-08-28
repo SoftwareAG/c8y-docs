@@ -1,6 +1,6 @@
 ---
 date:
-title: LWM2M service security improvement by replacing deprecated library 
+title: Replaced deprecated library to improve LWM2M service security
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Firmware list to grid view migration.
+title: Firmware list migrated to grid view
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP

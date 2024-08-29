@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3746
 version: 1020.21.0
 ---
-Firmware list to grid view migration.
+To improve the user experience and to ensure consistency, the firmware list has been migrated from a simple list view to a grid view.

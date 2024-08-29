@@ -1,8 +1,13 @@
 name: Get component details
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 00 19 * * *
+    inputs:
+      date:
+        description: 'Test Date.'
+        required: true
+        type: string
+  #schedule:
+  #  - cron: 00 19 * * *
 
 permissions:
   pull-requests: write

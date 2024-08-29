@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2111
 version: 10.18.540.195
 ---
-The LWM2M agent automatically manages the required interval of a LWM2M device based on the LWM2M registration lifetime. It is now possible to disable this behavior globally or for specific devices. 
+The LWM2M agent automatically manages the required interval of a LWM2M device based on the LWM2M registration lifetime. It is now possible to disable this behavior globally or for specific devices which will result in a standard Cumulocity connection monitoring as described [in the documentation](https://cumulocity.com/docs/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-of-a-particular-device). 

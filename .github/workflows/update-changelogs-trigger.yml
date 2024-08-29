@@ -1,0 +1,51 @@
+name: Update Changelogs Trigger
+on:
+  workflow_dispatch:
+    inputs:
+      component:
+        description: "Component name deployed to zone 1"
+        required: true
+        type: string
+      version:
+        description: "Component Version deployed to zone 1"
+        required: true
+        type: string
+  workflow_call:
+    inputs:
+      component:
+        description: "Component name deployed to zone 1"
+        required: true
+        type: string
+      version:
+        description: "Component Version deployed to zone 1"
+        required: true
+        type: string
+permissions:
+  pull-requests: write
+  contents: write
+
+#concurrency:
+#  group: ${{github.workflow}}-${{inputs.components}}
+#  cancel-in-progress: false
+#
+#jobs:
+#  checkVersion:
+#    name: Check Component Version
+#    runs-on: ubuntu-latest
+#    timeout-minutes: 15
+#    steps:
+## If recieved component version is newer than previous one, set new date and trigger change
+#  setDate:
+#    name: Sets current Date
+#    steps:
+## sets current date, triggered my checkVersion, outputs current
+#  triggerChangeLog:
+#      uses: ./.github/workflows/update-changelog-dates.yml
+#      needs: # component name, version and date and succesful version check
+#      with:
+#        component: ${{ inputs.component }}
+#        version: ${{ inputs.version }}
+#        date: ${{ #setdate's Output }}
+#      secrets: inherit
+
+

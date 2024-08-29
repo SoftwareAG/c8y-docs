@@ -1,0 +1,82 @@
+name: Get component details
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 00 19 * * *
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  get-component-details:
+    name: Get component details
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: build-pipeline
+    steps:
+      - name: checking out pipeline repo
+        uses: actions/checkout@v4
+        with:
+          path: docs
+
+      - name: echo git branch
+        id: echo-git-branch
+        run: |
+          echo ${{ github.repository }} 
+
+      - name: Get token
+        id: token
+        run: |
+          githubAppID="${{ vars.APP_ID }}"
+          githubAppPrivateKey="${{ secrets.APP_PRIVATE_KEY }}"
+          githubAppInstallationId="${{ vars.APP_INSTALL_ID }}"
+          githubApiUrl="${{ vars.GH_SERVER_API_URL }}"
+          
+          echo "Success: initialisied variables"
+
+          iat=$(date +%s)
+          # Expire 9 minutes in the future. 10 minutes is the max for GitHub
+          exp=$((iat + 540))
+          
+          # Generate encoded JWT header
+          jwtHeaderRaw='{"alg":"RS256"}'
+          jwtHeader=$( echo -n "${jwtHeaderRaw}" | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
+          # Generate encoded JWT payload
+          jwtPayloadRaw='{"iat":'"${iat}"',"exp":'"${exp}"',"iss":'"${githubAppID}"'}'
+          jwtPayload=$( echo -n "${jwtPayloadRaw}" | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
+          
+          # Generate encoded JWT signature
+          
+          jwtSignature=$( openssl dgst -sha256 -sign <(echo -n "${githubAppPrivateKey}") <(echo -n "${jwtHeader}.${jwtPayload}") | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
+    
+          
+          jwtToken=${jwtHeader}.${jwtPayload}.${jwtSignature}
+          echo "jwt=${jwtToken}" >> "${GITHUB_OUTPUT}"
+          
+          
+          token=$(curl --fail --silent -X POST -H "Authorization: Bearer ${jwtToken}" -H "Accept: application/vnd.github.v3+json" "${githubApiUrl}/app/installations/${githubAppInstallationId}/access_tokens" | jq -r .token)
+          echo "token=${token}" >> "${GITHUB_OUTPUT}"
+          
+
+      - name: Checkout build pipeline repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.REPOSITORY }}
+          fetch-depth: 1
+          ref: ${{ vars.BRANCH }}
+          token: ${{ steps.token.outputs.token }}
+          github-server-url: ${{ vars.GH_SERVER_URL }}
+          path: pipeline
+
+
+#      - name: checking out pipeline repo
+#        uses: actions/checkout@v4
+#        with:
+#          repository: ${{ github.repository_owner }}/cumulocity-dynamic-mapper
+#          token: ${{ github.token }}
+#          path: pipe-line
+#
+      - name: echo git branch
+        run: echo ${{ github.repository }}
+

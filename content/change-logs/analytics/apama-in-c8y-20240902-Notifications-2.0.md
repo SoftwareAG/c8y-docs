@@ -1,0 +1,17 @@
+---
+date:
+title: Streaming Analytics and Notifications 2.0
+change_type:
+  - value: change-QHu1GdukP
+    label: Feature
+product_area: Analytics
+component:
+  - value: component-M5-cepIIS
+    label: Streaming Analytics
+build_artifact:
+  - value: tc-KXXmo2SUR
+    label: apama-in-c8y
+ticket: PAB-4250
+version:
+---
+Streaming Analytics can now use the {{< product-c8y-iot >}} Notifications 2.0 reliable data forwarding capability to receive update notifications on new measurements, events, alarms, managed objects and operations that are processed by the {{< product-c8y-iot >}} platform. This feature is currently in private preview, so to take advantage of it, you must contact {{< product-c8y-iot >}} Operations to set the `notification2.streaming-analytics` feature flag. In addition, users of any of the variants of the Apama-ctrl microservice also need to toggle the `streaming-analytics.messaging` feature flag. All users of both Apama-ctrl and custom microservices must also add the `ROLE_NOTIFICATION_2_ADMIN` permission to the microservice manifest. Users of external Apama deployments must add the new **Cumulocity Notifications 2.0** bundle to their Apama projects. For more information, including how to toggle the feature flags, see [Configuration requirements for Notifications 2.0](/streaming-analytics/analytics-customization/#notifications).

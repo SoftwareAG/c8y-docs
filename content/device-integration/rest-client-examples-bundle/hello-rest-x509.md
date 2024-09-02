@@ -72,6 +72,7 @@ The device can now generate a JWT token. Note that before the first connect no o
 
 {{< c8y-admon-info >}}
 You do not need to set a password, user or tenant for the REST java client using certificates. {{< product-c8y-iot >}} will recognize the tenant and the user by the provided certificate.
+If some other tenant uploaded a same certificate. In this case the device will always try to authorize itself with certificates but will fail in tenant identification.
 {{< /c8y-admon-info >}}
 
 After filling in this data, the example client uses the provided data to retrieve the device access token to the specified platform using certificates.

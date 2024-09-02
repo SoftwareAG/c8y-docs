@@ -18,10 +18,12 @@ The availability of this feature is governed by two feature flags:
 If you are using either a custom microservice or an Apama project, it is not necessary to use the `streaming-analytics.messaging` feature flag. Using this flag does not change anything for a custom microservice or Apama project. See also the description of the **Cumulocity Notifications 2.0** bundle in [Step 3 - Add Apama bundles to the project](/streaming-analytics/epl-apps/#step-3---add-apama-bundles-to-the-project).
 {{< /c8y-admon-info>}}
 
-Once the required feature flags have been activated, whatever microservice you are using, you must also add the `ROLE_NOTIFICATION_2_ADMIN` permission to the microservice manifest. For more information, see [Modifying microservice permissions and resource usage](/streaming-analytics/analytics-customization/#microservice-permissions) for the Apama-ctrl microservices and [Required settings in the microservice manifest](/streaming-analytics/epl-apps/#required-settings-in-the-microservice-manifest) for custom microservices.
+If you are using a custom microservice, you must also add the `ROLE_NOTIFICATION_2_ADMIN` permission to the microservice manifest once the `notification2.streaming-analytics` feature flag has been activated; see also [Required settings in the microservice manifest](/streaming-analytics/epl-apps/#required-settings-in-the-microservice-manifest).
+For the Apama-ctrl microservices, it is not required to add this permission manually as it is set as the default; see also [Modifying microservice permissions and resource usage](/streaming-analytics/analytics-customization/#microservice-permissions).
 
 ### Toggling the streaming-analytics.messaging feature flag using the REST API
 
+ <!-- TODO: once the feature flag documentation has been written, remove most of this section and replace with a link to the feature flag documentation. -->
 If you are using one of the standard Apama-ctrl microservices, you must also set the `streaming-analytics.messaging` flag to activate how the microservice receives notifications. You do this using the REST API as shown below.
 
 To find all existing feature toggles for the current tenant, together with their values, make a `GET` request to this endpoint:

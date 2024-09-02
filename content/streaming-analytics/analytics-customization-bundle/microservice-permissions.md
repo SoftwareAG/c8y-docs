@@ -37,11 +37,6 @@ The manifest also specifies the permissions with which the microservice runs. Th
 - ROLE_TENANT_MANAGEMENT_READ
 - ROLE_BULK_OPERATION_ADMIN
 - ROLE_BULK_OPERATION_READ
-
-{{< c8y-admon-info>}}
-To take advantage of the {{< product-c8y-iot >}} Notifications 2.0 reliable data forwarding capability to receive update notifications, you must also add the following permission to the manifest of the Apama-ctrl microservice and contact {{< product-c8y-iot >}} Operations to set the the `notification2.streaming-analytics` feature flag.
-
 - ROLE_NOTIFICATION_2_ADMIN
-{{< /c8y-admon-info>}}
 
 You can add other roles to this list (or remove them from it) to grant (or remove) permissions to EPL code.

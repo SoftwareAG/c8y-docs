@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-09-03
 title: Disabling automatic setting of required interval of LWM2M agent
 change_type:
   - value: change-2c7RdTdXo4

@@ -3,12 +3,12 @@ weight: 40
 title: Configuration requirements for Notifications 2.0
 layout: redirect
 ---
-Streaming Analytics can use the {{< product-c8y-iot >}} Notifications 2.0 reliable data forwarding capability to receive update notifications on new measurements, events, alarms, managed objects and operations that are processed by the {{< product-c8y-iot >}} platform. For more information, see [About Notifications 2.0](https://www.cumulocity.com/api/core/#tag/About-notifications-2.0) in the {{< openapi >}}.
+Streaming Analytics can use the {{< product-c8y-iot >}} Notifications 2.0 reliable data forwarding capability to receive update notifications on new measurements, events, alarms, managed objects and operations that are processed by the {{< product-c8y-iot >}} platform. For more information, see [About Notifications 2.0](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0) in the {{< openapi >}}.
 
 The availability of this feature is governed by two feature flags:
 
 - `notification2.streaming-analytics` <br>
-    The {{< product-c8y-iot >}} Notifications 2.0 feature is currently in private preview. If you want to have it enabled for your tenant, you must contact {{< product-c8y-iot >}} Operations to set this feature flag.
+    The {{< product-c8y-iot >}} Notifications 2.0 feature is currently in private preview. If you want to have it enabled for your tenant, you must contact [product support](/additional-resources/contacting-support/) to set this feature flag.
 
 - `streaming-analytics.messaging` <br>
     In addition to this, if you are using one of the variants of the Apama-ctrl microservice, you must also set this feature flag. You then need to resubscribe the Apama-ctrl microservice to pick up changes to the feature flag.

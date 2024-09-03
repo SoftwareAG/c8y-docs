@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Ribbon correctly highlights all official plugins in Extensions page
+title: Plugins now shown with correct type "official" on the Extensions page
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

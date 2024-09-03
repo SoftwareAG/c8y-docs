@@ -15,4 +15,4 @@ ticket: MTM-60252
 version: 1020.18.4
 ---
 
-In the **Extensions** page in the **Ecosystem** a ribbon is used to highlight official plugins. This ribbon was not shown for certain plugins, even though they were official. This issue has now been fixed. The ribbon is displayed for all official plugins in the **Extensions** page.
+On the **Extensions** page in the **Ecosystem** menu a ribbon is used to highlight official plugins. This ribbon was not shown for certain plugins, even though they were official. This issue has now been fixed. The ribbon is displayed for all official plugins on the **Extensions** page.

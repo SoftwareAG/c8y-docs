@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-09-03
 title: Number of tokens generated in the JSON body is now limited
 product_area: Platform services
 change_type:

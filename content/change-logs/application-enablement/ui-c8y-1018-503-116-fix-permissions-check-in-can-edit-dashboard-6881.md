@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-09-03
 title: Dashboards can only be deleted by users with appropriate permissions
 product_area: Application enablement & solutions
 change_type:

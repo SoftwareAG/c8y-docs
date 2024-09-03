@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-09-03
 title: Changing the unit in a data point template is now correctly reflected in related "Info gauge" widgets
 product_area: Application enablement & solutions
 change_type:

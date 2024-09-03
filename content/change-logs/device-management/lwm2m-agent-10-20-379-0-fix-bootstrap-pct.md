@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3850
 version: 10.20.379.0
 ---
-LWM2M agent used to ignore preferred content type requested by the device during a LWM2M bootstrap session. This problem is now fixed and LWM2M agent uses the requested content type when it's provided by the device.
+The LWM2M agent used to ignore the preferred content type requested by the device during a LWM2M bootstrap session. This issue has been fixed and the LWM2M agent now uses the requested content type if it is provided by the device.

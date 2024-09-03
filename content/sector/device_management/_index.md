@@ -1,5 +1,5 @@
 ---
-title: "Device management & connectivity"
+title: "Device Management & Connectivity"
 icon: "c8y-icon c8y-icon-device-management"
 weight: 30
 svg: '<svg

@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2024-09-02
 title: OPC UA gateway no longer fails when attempting to call a missing 64-bit system function
 change_type:
   - value: change-VSkj2iV9m

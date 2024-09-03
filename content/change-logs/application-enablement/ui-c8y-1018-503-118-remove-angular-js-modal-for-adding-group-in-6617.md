@@ -1,6 +1,6 @@
 ---
 date: ""
-title: remove AngularJS modal for adding group in … (#6617)
+title: Replaced group creation dialog in widgets with redirect to Groups page
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58710
 version: 1018.503.118
 ---
-remove AngularJS modal for adding group in … (#6617)
+The AngularJS-based dialog for creating a new group from a widget has been replaced. Instead of this dialog, when users want to add a new group from a widget, they will now be redirected to the **Groups** page where the **Add group** dialog is shown.

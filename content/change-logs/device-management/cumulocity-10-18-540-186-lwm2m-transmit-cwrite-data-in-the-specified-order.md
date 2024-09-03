@@ -1,5 +1,5 @@
 ---
-date: "change_me"
+date: 2024-09-03
 title: Composite Write transmits data to the device in the specified order
 product_area: Device management & connectivity
 change_type:

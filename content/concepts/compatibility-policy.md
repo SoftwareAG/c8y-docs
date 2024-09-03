@@ -1,6 +1,11 @@
 ---
 title: Compatibility policy
-weight: 75
+layout: bundle
+sector:
+  - getting_started
+aliases:
+  - /concepts-introduction/
+weight: 95
 ---
 
 {{< product-c8y-iot >}} provides the highest possible level of compatibility to make sure that your investments into developing solutions with {{< product-c8y-iot >}} are maintained.

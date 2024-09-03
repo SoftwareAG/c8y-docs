@@ -1,6 +1,6 @@
 ---
-date: 2024-07-24
-title: LWM2M agent memory improvement for external decoder events processing
+date:
+title: Improved LWM2M decoder event execution
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-ticket: DM-3825
-version: 10.18.540.161
+ticket: DM-3891
+version: 10.18.540.190
 ---
-The memory usage for processing external decoder events in the LWM2M agent has been improved.
+The synchronization mechanism has been improved to prevent the LWM2M agent from processing duplicate external decoder events.

@@ -4,7 +4,7 @@ title: Replaced group creation dialog in widgets with redirect to Groups page
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
-    label: Fix
+    label: Improvement
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK

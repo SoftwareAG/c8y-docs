@@ -40,6 +40,13 @@ Other than that you are free to use any topic name which is compatible with the 
 Wildcard topics (`+`, `#`) and system topics starting with `$` are not supported.
 {{< /c8y-admon-info >}}
 
+#### Topic cleanup {#topic-cleanup}
+
+MQTT Service will automatically remove topics which are no longer in use, topics are recognized as inactive when there are no subscriptions and
+internal publisher to the topic is closed. The publisher is responsible for publishing modified MQTT Service messages to the correct topic and these
+live within a cache, where the publisher expires after one hour. Due to this it can take up to an hour after removing all subscriptions from a topic
+for it to be automatically deleted.
+
 ### Payload {#payload}
 
 The original MQTT messages are re-packed into MQTT Service message format which includes the original payload and additional metadata fields.

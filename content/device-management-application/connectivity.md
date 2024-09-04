@@ -7,7 +7,7 @@ sector:
 ---
 
 {{< c8y-admon-related >}}
-* [Device Management > Device integration > Fragment library > Connectivity](/device-integration/fragment-library/#connectivity) for details on the `c8y_Mobile` fragment used in managed objects.
+* [Device management & connectivity > Device integration > Fragment library > Connectivity](/device-integration/fragment-library/#connectivity) for details on the `c8y_Mobile` fragment used in managed objects.
 * [Platform administration > {{< standard-tenant >}} administration > Changing settings > Connectivity](/standard-tenant/changing-settings/#connectivity) for information on how to change the connectivity settings via the UI.
 {{< /c8y-admon-related >}}
 

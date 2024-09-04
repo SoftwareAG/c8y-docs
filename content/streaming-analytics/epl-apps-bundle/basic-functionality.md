@@ -247,7 +247,7 @@ The following permissions are required by the microservice in order to start up 
 - ROLE_SMS_ADMIN
 
 {{< c8y-admon-info>}}
-To take advantage of the {{< product-c8y-iot >}} Notifications 2.0 reliable data forwarding capability to receive notifications, you must also add the following permission to the manifest of the custom microservice and contact {{< product-c8y-iot >}} Operations to set the the `notification2.streaming-analytics` feature flag.
+To take advantage of the {{< product-c8y-iot >}} Notifications 2.0 reliable data forwarding capability to receive notifications, you must also add the following permission to the manifest of the custom microservice and contact [product support](/additional-resources/contacting-support/) to set the the `notification2.streaming-analytics` feature flag.
 
 - ROLE_NOTIFICATION_2_ADMIN
 {{< /c8y-admon-info>}}

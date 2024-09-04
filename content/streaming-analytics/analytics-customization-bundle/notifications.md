@@ -3,7 +3,7 @@ weight: 40
 title: Configuration requirements for Notifications 2.0
 layout: redirect
 ---
-Streaming Analytics can use the {{< product-c8y-iot >}} Notifications 2.0 reliable data forwarding capability to receive update notifications on new measurements, events, alarms, managed objects and operations that are processed by the {{< product-c8y-iot >}} platform. For more information, see [About Notifications 2.0](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0) in the {{< openapi >}}.
+Streaming Analytics can use the {{< product-c8y-iot >}} Notifications 2.0 reliable data forwarding capability to receive notifications for measurements, events, alarms, managed objects and operations that are processed by the {{< product-c8y-iot >}} platform. For more information, see [About Notifications 2.0](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0) in the {{< openapi >}}.
 
 The availability of this feature is governed by two feature flags:
 

@@ -113,7 +113,7 @@ A card for the newly added model is shown on the **Models** tab of the model man
 1. Click the drop-down menu on the card which currently shows **Draft** and select **Production**.
 2. Click the toggle button on the card which currently shows **Inactive**. This changes the state to **Active**.
 
-#### Step 9: Go to the Device Management and view the measurements {#step-9-go-to-the-device-management-and-view-the-measurements}
+#### Step 9: Go to the Device Management application and view the measurements {#step-9-go-to-the-device-management-and-view-the-measurements}
 
 To view the measurements that are sent from your active model, you must switch to the Device Management application. See [Device Management application](/device-management-application/) for detailed information.
 

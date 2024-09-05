@@ -1,5 +1,5 @@
 ---
-title: Device Management
+title: Device management
 weight: 40
 ---
 

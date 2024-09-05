@@ -113,15 +113,15 @@ collections:
       - { label: "Body", name: "body", widget: "markdown"}
         
   - name: "device_management"
-    label: "Device Management & Connectivity"
+    label: "Device management & connectivity"
     folder: "content/change-logs/device-management"
-    description: "Change log entries for the Device Management & Connectivity product area"
+    description: "Change log entries for the Device management & connectivity product area"
     create: true
     slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
       - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", default: "", required: false}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Product area", name: "product_area", widget: "hidden", default: "Device Management & Connectivity"}
+      - {label: "Product area", name: "product_area", widget: "hidden", default: "Device management & connectivity"}
       - label: Change type
         name: change_type
         widget: ncw-file-relation

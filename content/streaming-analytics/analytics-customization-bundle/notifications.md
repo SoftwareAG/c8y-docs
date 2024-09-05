@@ -14,10 +14,6 @@ The availability of this feature is governed by two feature flags:
     In addition to this, if you are using one of the variants of the Apama-ctrl microservice, you must also set this feature flag. You then need to resubscribe the Apama-ctrl microservice to pick up changes to the feature flag.
     <!-- For further information on these feature flags and on feature flags in general, see (TODO: this doc has not yet been written). -->
 
-{{< c8y-admon-info>}}
-If you are using either a custom microservice or an Apama project, it is not necessary to use the `streaming-analytics.messaging` feature flag. Using this flag does not change anything for a custom microservice or Apama project. See also the description of the **Cumulocity Notifications 2.0** bundle in [Step 3 - Add Apama bundles to the project](/streaming-analytics/epl-apps/#step-3---add-apama-bundles-to-the-project).
-{{< /c8y-admon-info>}}
-
 If you are using a custom microservice, you must also add the `ROLE_NOTIFICATION_2_ADMIN` permission to the microservice manifest once the `notification2.streaming-analytics` feature flag has been activated; see also [Required settings in the microservice manifest](/streaming-analytics/epl-apps/#required-settings-in-the-microservice-manifest).
 For the Apama-ctrl microservices, it is not required to add this permission manually as it is set as the default; see also [Modifying microservice permissions and resource usage](/streaming-analytics/analytics-customization/#microservice-permissions).
 

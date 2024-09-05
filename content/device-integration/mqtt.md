@@ -11,7 +11,7 @@ The MQTT implementation of {{< product-c8y-iot >}} provides the following benefi
 * Multi-tenancy support: A single endpoint serves multiple tenants.
 * Device identity management: Devices authenticate using device-specific credentials.
 * Device registration: Non-personalized devices can be deployed by pairing them with {{< product-c8y-iot >}} tenants.
-* Device Management: Rich, pre-defined device management payload formats to enable out-of-the-box management of millions of devices.
+* Device management: Rich, pre-defined device management payload formats to enable out-of-the-box management of millions of devices.
 * Standard IoT payload formats: Pre-defined payload formats to support IoT sensor readings, alarm management, remote control and device hierarchies.
 * Custom payload formats: Additional payload formats can be added.
 * Minimum traffic overhead.

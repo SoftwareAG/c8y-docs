@@ -13,7 +13,7 @@ sector:
 {{< product-c8y-iot >}} provides
 
 * Certified software libraries you can use to bring your remote assets into the cloud.
-* Device Management, data visualization and remote control functionality through the web.
+* Device management, data visualization and remote control functionality through the web.
 * Rapid customization of these functionalities through [real-time processing](/concepts/realtime) and [applications](/concepts/applications).
 * APIs for extending the existing functionality or interfacing {{< product-c8y-iot >}} with your other IT services such as ERP or CRM systems. {{< product-c8y-iot >}} can also host your HTML5 applications.
 

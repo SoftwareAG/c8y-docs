@@ -1,6 +1,6 @@
 ---
 date: 2024-08-29
-title: Improved performance of Measurements API
+title: Improved performance of Measurement API
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -15,4 +15,4 @@ ticket: MTM-60142
 version: 10.20.541.0
 ---
 
-Improved performance of `GET /measurement/measurements` endpoint when filtering by both `valueFragmentType` and `valueFragmentSeries`.
+The performance of the `GET /measurement/measurements` endpoint when filtering by both `valueFragmentType` and `valueFragmentSeries` has been improved.

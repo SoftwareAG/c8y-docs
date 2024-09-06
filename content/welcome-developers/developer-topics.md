@@ -35,7 +35,7 @@ A complete OpenAPI Specification for the {{< product-c8y-iot >}} REST API is ava
 
 ### {{< product-c8y-iot >}} CLI {#cumulocity-iot-cli}
 
-To simplify the interaction with the platform for developers, the Cumulocity IoT CLI tool provides a powerful command-line interface. This tool allows you to manage devices, applications, and other platform services efficiently through terminal commands, streamlining development and automation tasks. To get started, visit the [CLI tool documentation](https://goc8ycli.netlify.app/docs/introduction/) for detailed instructions and examples.
+To simplify the interaction with the platform for developers, the {{< product-c8y-iot >}} CLI tool provides a powerful command-line interface. This tool allows you to manage devices, applications, and other platform services efficiently through terminal commands, streamlining development and automation tasks. To get started, visit the [CLI tool documentation](https://goc8ycli.netlify.app/docs/introduction/) for detailed instructions and examples.
 
 
 

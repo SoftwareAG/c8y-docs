@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2111
 version: 10.20.378.0
 ---
-The LWM2M agent automatically manages the required interval of a LWM2M device based on the LWM2M registration lifetime. It is now possible to disable this behavior globally or for specific devices which results in a standard {{< product-c8y-iot >}} connection monitoring as described in [Monitoring and controlling devices](https://cumulocity.com/docs/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-of-a-particular-device). 
+Cumulocity provides [connectivity monitoring](https://cumulocity.com/docs/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-of-a-particular-device) capabilities for which a required interval needs to be defined. For LwM2M device, this is automatically set by the LWM2M agent based on the registration lifetime. However, if the value is set manually, it will be overwritten by the LWM2M agent after each registration or registration update. This behavior can now be disabled both globally or for specific devices, allowing users to define the required interval independent of the registration lifetime.

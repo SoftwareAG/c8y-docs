@@ -19,9 +19,9 @@ The branding editor allows users to create a unique and consistent branding acro
 The branding editor has been enhanced. It now supports:
 * maintaining multiple branding variants
 * easy switching between branding variants
-* brand apps differently
+* branding apps differently
 * adding custom CSS
 * editing the branding JSON object directly from the UI
-* import/export of branding variants
+* importing/exporting branding variants
 * invalidating cookie consents when a new privacy policy is provided
 * dark theme

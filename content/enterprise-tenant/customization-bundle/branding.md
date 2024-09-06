@@ -52,35 +52,35 @@ Saving the settings will also apply them to the places your branding variant app
 
 To revert back to the default settings, you can click **Delete all variants** in the in the top menu bar. With this action all branding variants will be lost. We therefore recommend to **export** your existing variants beforehand.
 
-#### Editing parameters {#editing-parameters}
+### Editing parameters {#editing-parameters}
 
 Editing a branding variant is divided into multiple tabs. The different tabs are described in the subsequent sections.
 
-##### Generic tab {#generic-tab}
+### Generic tab {#generic-tab}
 
 Under the **Generic** tab, you can edit the generic settings of your branding variant that will apply to all of your branding themes.
 
 <img src="/images/users-guide/enterprise-tenant/et-branding-generic-tab.png" alt="Generic branding tab">
 
-###### Title & favicon {#title-favicon}
+##### Title & favicon {#title-favicon}
 
 Under **Title & favicon**, specify the following items:
 
 * The title - will be displayed in the browser's address bar.
 * The favicon - will be displayed in the browser's address bar. Click **Select** to select a file from your file system. The supported favicon format is "ico".
 
-###### Dark theme {#dark-theme-support}
+##### Dark theme {#dark-theme-support}
 
 Allows to enable the dark theme support on this branding variant.
 If enabled the [Dark theme tab](#light-dark-theme-tab) will be available.
 
-###### Typography {#typography}
+##### Typography {#typography}
 
 In the **Typography** section you specify the font settings for your brand variant.
 
 You can select your base and headings font stack, and select an option for the navigator font stack (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
-###### Cookie banner {#cookie-banner}
+##### Cookie banner {#cookie-banner}
 
 In the **Cookie banner** section you specify the settings for the banner with the cookie usage information. If not disabled here, the banner is shown for all users of the current tenant and all subtenants until a user clicks **Agree and proceed**.
 
@@ -93,7 +93,7 @@ The following parameters can be specified:
 * Link to privacy policy - a link to the page with the privacy policy
 * Version of privacy policy - a version of the privacy policy. Could be for example a date. In case the version changes, the consent of all existing users is invalidated.
 
-##### Light/Dark theme tab {#light-dark-theme-tab}
+### Light/Dark theme tab {#light-dark-theme-tab}
 
 The same set of parameters is available for both the light and the dark theme and can be changed in the corresponding tabs.
 
@@ -103,7 +103,7 @@ The theme switcher in the right drawer will allow you to switch between the ligh
 
 <img src="/images/users-guide/enterprise-tenant/et-branding-dark-theme-tab.png" alt="Dark theme branding tab">
 
-###### Logos {#logos}
+##### Logos {#logos}
 
 Under **Logos**, specify the following items:
 
@@ -112,7 +112,7 @@ Under **Logos**, specify the following items:
 * Your navigator logo - will be located on top of the navigator panel. Click **Select** to select a file from your file system. The supported formats are "png", "svg" and "jpg".
 * The navigator logo height.
 
-###### Brand colors {#brand-colors}
+##### Brand colors {#brand-colors}
 
 In the **Brand colors** section you specify the colors to be used in your branding variant.
 
@@ -123,13 +123,13 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 * Brand dark - mainly used for two-color icons.
 * A set of 8 shades that can be generated based on your **Brand primary** color by clicking **Reset shades**. The shades are used in various locations in the different apps.
 
-###### Status colors {#status-colors}
+##### Status colors {#status-colors}
 
 In the **Status colors** section you specify the colors used to display the different statuses.
 
 For each status (**Info**, **Warning**, **Danger** and **Success**) you can provide three colors (**default**, **light** and **dark**).
 
-###### Generic {#generic}
+##### Generic {#generic}
 
 In the **Generic** section you specify the colors used in generic places.
 
@@ -143,7 +143,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In addition to that you can also specify the **Button border-radius**.
 
-###### Action bar {#action-bar}
+##### Action bar {#action-bar}
 
 In the **Action bar** section you specify the parameters for the action bar.
 
@@ -155,7 +155,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 * Button color
 * Button hover color
 
-###### Main header {#main-header}
+##### Main header {#main-header}
 
 In the **Main header** section you specify the parameters for the main header.
 
@@ -165,7 +165,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 * Text color
 * Button hover color
 
-###### Navigator {#navigator}
+##### Navigator {#navigator}
 
 In the **Navigator** section you specify the parameters for the navigator.
 
@@ -180,7 +180,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 * Active border color - border color of the current item in the navigator
 * Active text color - text color of the current item in the navigator
 
-###### Right drawer {#right-drawer}
+##### Right drawer {#right-drawer}
 
 In the **Right drawer** section you specify the parameters for the right drawer.
 
@@ -193,7 +193,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 * Link color
 * Link hover color
 
-##### Custom CSS {#custom-css-tab}
+### Custom CSS {#custom-css-tab}
 
 The **Custom CSS** tab allows to customize the looks of your applications even more by providing your own Cascading Style Sheets (this requires knowledge of CSS and HTML).
 
@@ -201,7 +201,7 @@ You can utilize this to change colors for locations that have not been covered b
 
 <img src="/images/users-guide/enterprise-tenant/et-branding-custom-css-tab.png" alt="Custom CSS branding tab">
 
-##### Advanced branding {#advanced-branding-tab}
+### Advanced branding {#advanced-branding-tab}
 
 The **Advanced branding** tab allows to make direct changes to the branding JSON object (which is usually filled by the other tabs behind the scenes) via a text editor. This can be useful to set some of the [ApplicationOptions the Web SDK provides](https://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) which are not immediately supported by the forms the branding editor includes.
 

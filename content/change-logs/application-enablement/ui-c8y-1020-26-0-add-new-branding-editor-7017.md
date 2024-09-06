@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add new branding editor (#7017)
+title: Enhanced branding editor
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,14 @@ build_artifact:
 ticket: MTM-53766
 version: 1020.26.0
 ---
-add new branding editor (#7017)
+The branding editor allows users to create a unique and consistent branding across their applications, improving the overall user experience and making it easier to align the application's appearance with corporate design guidelines.
+
+The branding editor has been enhanced. It now supports:
+* maintaining multiple branding variants
+* easy switching between branding variants
+* brand apps differently
+* adding custom CSS
+* editing the branding JSON object directly from the UI
+* import/export of branding variants
+* invalidating cookie consents when a new privacy policy is provided
+* dark theme

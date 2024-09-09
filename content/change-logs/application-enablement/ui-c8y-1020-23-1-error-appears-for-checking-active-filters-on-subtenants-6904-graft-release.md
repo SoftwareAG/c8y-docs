@@ -1,6 +1,6 @@
 ---
 date: ""
-title: error appears for checking active filters on subtenants (#6904) [GRAFT][release/cd] (#6981)
+title: Fix error when checking active filters on subtenants
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

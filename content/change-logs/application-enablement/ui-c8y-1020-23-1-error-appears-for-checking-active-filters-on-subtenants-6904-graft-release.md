@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59337
 version: 1020.23.1
 ---
-error appears for checking active filters on subtenants (#6904) [GRAFT][release/cd] (#6981)
+In some situations, an error occurred when checking active filters on subtenants, preventing users from properly viewing and managing the filters. This issue has been resolved. Subtenants can now reliably check their active filters without encountering an error. This change ensures that the filtering functionality works as expected for all subtenants.

@@ -7,7 +7,7 @@ change_type:
     label: Fix
 component:
   - value: component-0UgqXH1Ys
-    label: Web SDK
+    label: Administration
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Subtenants can now reliably check their active filters
+title: Users can now reliably check active filters for subtenants
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

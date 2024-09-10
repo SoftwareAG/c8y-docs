@@ -1,6 +1,6 @@
 ---
 date: ""
-title: List remotes from manifest in plugin list
+title: Available plugins correctly displayed in plugin list
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

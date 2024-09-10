@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix error when checking active filters on subtenants
+title: Subtenants can now reliably check their active filters
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

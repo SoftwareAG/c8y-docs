@@ -22,6 +22,6 @@ The branding editor has been enhanced. It now supports:
 * Branding apps differently
 * Adding custom CSS
 * Editing the branding JSON object directly from the UI
-*Importing/exporting branding variants
+* Importing/exporting branding variants
 * Invalidating cookie consents when a new privacy policy is provided
 * Dark theme

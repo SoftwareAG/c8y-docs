@@ -16,12 +16,17 @@ version: 1020.26.0
 ---
 The branding editor allows users to create a unique and consistent branding across their applications, improving the overall user experience and making it easier to align the application's appearance with corporate design guidelines.
 
-The branding editor has been enhanced. It now supports:
-* Maintaining multiple branding variants
-* Easy switching between branding variants
-* Branding apps differently
-* Adding custom CSS
-* Editing the branding JSON object directly from the UI
-* Importing/exporting branding variants
-* Invalidating cookie consents when a new privacy policy is provided
-* Dark theme
+We have made significant improvements to our Branding Editor, offering a more robust and user-friendly experience for managing brand identity across multiple applications.
+
+**New functionalities:**
+- Configure unique branding for individual applications
+- Create, maintain, and easily switch between different branding configurations
+- Edit branding JSON objects directly from the UI and add custom CSS
+- Import/export branding variants
+- Automatically invalidate cookie consents when updating privacy policies
+- Implement light and dark theme choices
+- Generate color shades based on primary brand color with fine-tuning options
+
+**Functional improvements:**
+- More intuitive interface for managing brand identity
+- Enhanced flexibility in customizing and applying branding elements

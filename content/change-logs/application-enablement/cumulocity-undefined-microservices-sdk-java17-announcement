@@ -1,0 +1,17 @@
+---
+date: 2024-02-13T14:53:24.832Z
+title: Update to Java 17 
+change_type:
+  - value: change-inv-3bw8e
+    label: Announcement
+product_area: Application enablement & solutions
+component:
+  - value: component-Sv2buFZ5l
+    label: Microservice SDK
+build_artifact:
+  - value: tc-QHwMfWtBk7
+    label: cumulocity
+---
+Cumulocity IoT Microservices SDK will be updated to use Java 17. This update might lead to the need of adjustments on the microservices side.  
+
+When using the Cumulocity IoT Microservice SDK for developing microservices, ensure to use the proper Java version and to implement the necessary adjustments, in case of any. For more information, refer to the documentation of the provider.

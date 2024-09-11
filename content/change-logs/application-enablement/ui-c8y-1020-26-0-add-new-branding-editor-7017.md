@@ -16,7 +16,7 @@ version: 1020.26.0
 ---
 The branding editor allows users to create a unique and consistent branding across their applications, improving the overall user experience and making it easier to align the application's appearance with corporate design guidelines.
 
-We have made significant improvements to our Branding Editor, offering a more robust and user-friendly experience for managing brand identity across multiple applications.
+We have made significant improvements to our branding editor, offering a more robust and user-friendly experience for managing brand identity across multiple applications.
 
 **New functionalities:**
 - Configure unique branding for individual applications

@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60808
 version: 1020.24.3
 ---
-Previously, remotes defined in the manifest were not displayed in the plugin list in the Cumulocity UI. This change ensures that all remotes from the manifest are now properly listed in the plugin list, providing a complete overview of available plugins. This improvement enhances transparency and makes it easier for users to manage and access the remotes defined in their manifest.
+Previously, application plugins were not displayed on the **Plugin** tab in the application details. This change ensures that all application plugins are now properly listed on the **Plugin** tab, providing a complete overview of available plugins.

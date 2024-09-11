@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60479
 version: 10.20.552.0
 ---
-Data broker operations created on the destination tenant during network interruptions were not reliably forwarded to the source tenant. With the new fix, we have introduced a robust retry mechanism that ensures operations are delivered reliably, regardless of network stability. Users can now expect consistent data synchronization and improved reliability in data broker operations.
+Data broker operations created on the destination tenant were not reliably forwarded to the source tenant during network interruptions. With this change, a robust retry mechanism has been introduced that ensures operations are delivered reliably, regardless of network stability. Users can now expect consistent data synchronization and improved reliability in data broker operations.

@@ -281,7 +281,9 @@ spec:
 
 ---
 ##
-## An optional ConfigMap used when accessing external endpoints through a Proxy.
+## An optional ConfigMap to configure the Edge operator with
+##    - Proxy details when accessing external endpoints through a Proxy
+##    - TLS/SSL certificates to trust
 ##
 ## http_proxy, https_proxy and optionally socks_proxy must be configured with the relevant URLs.
 ## no_proxy must be configured with a comma-separated list of addresses or domains for which the proxy should be bypassed.
@@ -290,6 +292,7 @@ spec:
 # apiVersion: v1
 # kind: ConfigMap
 # metadata:
+  ## The name is fixed and cannot be changed.
   # name: custom-environment-variables
   ## Namespace name into which you installed the Edge operator.
   # namespace: c8yedge
@@ -303,3 +306,7 @@ spec:
   ## Kubernetes Service CIDR (Cluster Service IP Address Range) and any other domains, hosts or IPs 
   ## you want to bypass the proxy when accessed.
   # no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain name, for example, myown.iot.com>,<kubernetes cluster IP range, for example, 10.43.0.0/16>
+
+  ## TLS/SSL certificates in PEM format that the Edge operator can trust, in addition to those included in the default system trust store.
+  ## You can provide multiple TLS/SSL certificates for trust by combining them into a single string.
+  # ca.crt: <CA-CERTIFICATES TO TRUST>

@@ -1,6 +1,6 @@
 ---
 date: 2024-09-05
-title: Fixed alarm count getting out of sync
+title: Alarms counts in managed objects in sync with alarm counts in the database
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -15,4 +15,4 @@ ticket: MTM-54655
 version: 10.20.536.0
 ---
 
-Fixed an issue with the alarm count in managed object getting out of sync with the actual count of alarms in the database.
+The alarm count in managed objects could get out of sync with the actual count of alarms in the database. This issue has been fixed and alarms counts in managed objects are now in sync with alarm counts in the database.

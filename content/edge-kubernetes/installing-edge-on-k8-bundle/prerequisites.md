@@ -34,8 +34,8 @@ sudo sh -c '
     curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.25.13+k3s1 sh -s - \
         --write-kubeconfig-mode 644 \
         --disable=traefik \
-        --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook \
-        --protect-kernel-defaults true && \
+        --protect-kernel-defaults true \
+        --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook && \
     
     mkdir -p '"$USER_HOME"'/.kube && \
     cp /etc/rancher/k3s/k3s.yaml '"$USER_HOME"'/.kube/config && \

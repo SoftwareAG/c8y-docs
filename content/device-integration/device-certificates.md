@@ -357,6 +357,14 @@ Then new certificate will be added to the trusted certificates list:
     	"certInPemFormat" : "<CERT_PEM_VALUE>"
     }
 ```
+
+{{< c8y-admon-info >}}
+Now we have capability to upload same certificate across multiple tenants in {{< product-c8y-iot >}}. It will be achieved by enabling instance level system option `system.ssl.shared-truststore.enabled=true`. Once its enable it affects all tenants. Allowing the same certificate across multiple tenants will lead to tenant conflicts, especially for existing MQTT devices that do not explicitly send tenant information while authenticating using certificates.
+In scenarios where multiple tenants have the same trusted certificate, the platform will not be able to correctly identify the tenant, leading to Denial of service. Same case over REST using HTTPS (device access token API).
+
+Existing tenants who rely on the unique trusted certificate requirement for tenant identification should not set on this system option.
+{{< /c8y-admon-info >}}
+
 ### Perform a proof of possession {#perform-a-proof-of-possession}
 
 {{< product-c8y-iot >}} platform uses X.509 certificates to authenticate end devices.

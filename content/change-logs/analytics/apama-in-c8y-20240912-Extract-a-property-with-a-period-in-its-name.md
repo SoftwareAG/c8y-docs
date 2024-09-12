@@ -1,5 +1,5 @@
 ---
-date: ´
+date: 
 title: Extract a property with a period in its name
 change_type:
   - value: change-2c7RdTdXo4

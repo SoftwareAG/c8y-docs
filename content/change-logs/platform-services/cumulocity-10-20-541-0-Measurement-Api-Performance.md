@@ -1,5 +1,5 @@
 ---
-date: 2024-08-29
+date: 2024-09-11
 title: Improved performance of Measurement API
 product_area: Platform services
 change_type:

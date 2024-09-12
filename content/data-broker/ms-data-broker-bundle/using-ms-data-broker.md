@@ -9,7 +9,7 @@ sector:
 {{< c8y-admon-important >}}
 ##### Notice of current storage limits and message TTL for the microservice-based data broker
 
-The **microservice-based data broker** stores messages persistently until they are successfully delivered to the destination tenant. To optimize resource usage, the storage limits for the microservice-based data broker have been adjusted as follows:
+The microservice-based data broker stores messages persistently until they are successfully delivered to the destination tenant. To optimize resource usage, the storage limits for the microservice-based data broker have been adjusted as follows:
 
 **Message backlog quota**:
 - Each data broker connector can store a maximum of **50 MiB** of unacknowledged messages in its backlog. This is equivalent to approximately 260,000 messages, assuming an average message size of 200 bytes.

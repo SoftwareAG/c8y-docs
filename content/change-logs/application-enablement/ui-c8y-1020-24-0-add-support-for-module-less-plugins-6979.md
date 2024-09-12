@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-09-12'
 title: Plugins without modules are now supported
 product_area: Application enablement & solutions
 change_type:

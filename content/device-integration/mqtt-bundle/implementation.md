@@ -103,7 +103,7 @@ If that is not possible, to make the connection work, check the following:
 * The platform's trust store cannot be empty. At least one trusted certificate must be uploaded to the platform.
 * The device's MQTT client must be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it's not working with the MQTT client and Java 11. However, it works with Java 8.
 * In order to support this situation, the platform must be configured accordingly. In case you experience issues please contact [product support](/additional-resources/contacting-support/).
-* Probably some other tenant uploaded a same certificate. In this case the device will always try to authorize itself with certificates but will fail in tenant identification.
+* If some other tenant uploaded a same certificate the device will always try to authorize itself with certificates but will fail in tenant identification.
 * If all the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.
 
 #### MQTT ClientId {#mqtt-clientid}

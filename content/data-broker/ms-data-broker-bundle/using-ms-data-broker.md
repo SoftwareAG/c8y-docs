@@ -7,13 +7,17 @@ sector:
 ---
 
 {{< c8y-admon-important >}}
-##### Notice of reduced storage limits for Notifications 2.0 and microservice-based data broker
+##### Notice of current storage limits and message TTL for the microservice-based data broker
 
-**Effective Date:** July 1st, 2024
+The **microservice-based data broker** stores messages persistently until they are successfully delivered to the destination tenant. To optimize resource usage, the storage limits for the microservice-based data broker have been adjusted as follows:
 
-Please be aware that the storage limits for microservice-based data broker will be significantly reduced. For detailed information about these changes and how they may impact your usage, please refer to [this announcement](https://cumulocity.com/docs/change-logs/?component=.component-messaging-service#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker).
+**Message backlog quota**:
+- Each data broker connector can store a maximum of **50 MiB** of unacknowledged messages in its backlog. This is equivalent to approximately 260,000 messages, assuming an average message size of 200 bytes.
 
-If you have any questions or concerns, please contact [product support](https://cumulocity.com/docs/additional-resources/contacting-support/).
+**Message time-to-live (TTL)**:
+- A default message TTL of **36 hours** has been introduced. Any unacknowledged messages remaining in the backlog for more than 36 hours will be automatically deleted.
+
+These limits are configurable on a per-tenant basis. If your use case requires a different configuration, or if you have any concerns, please contact [product support](https://cumulocity.com/docs/additional-resources/contacting-support/).
 
 {{< /c8y-admon-important >}}
 

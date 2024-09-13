@@ -31,7 +31,7 @@ spec:
   ##    - All Other Regions: LogisticsServiceCenterGER@softwareag.com
   ## In the email, you must include
   ##    - Your company name, under which the license has been bought
-  ##    - The domain name (for example, myedge.domain.com), where Edge will be reachable
+  ##    - The domain name (for example, myown.iot.com), where Edge will be reachable
   licenseKey:  <LICENSE-KEY>
 
   ## Name of the “edge” tenant, for example, the company’s name.

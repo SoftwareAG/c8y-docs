@@ -1,6 +1,6 @@
 ---
 date: 
-title: Extract a property with a period in its name
+title: Extract a property with a period in its name using the Extract Property block
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

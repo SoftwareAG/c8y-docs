@@ -1,12 +1,12 @@
 ---
-date: ""
+date: '2024-09-12'
 title: Users can now reliably check active filters for subtenants
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
-  - value: component-0UgqXH1Ys 
+  - value: component-0UgqXH1Ys
     label: Administration
 build_artifact:
   - value: tc-pjJiURv9Y

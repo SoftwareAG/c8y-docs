@@ -14,4 +14,4 @@ build_artifact:
 ---
 The {{< product-c8y-iot >}} Microservice SDK will be updated to use Java 17. This update might require adjustments on the microservices side.  
 
-When using the Cumulocity IoT Microservice SDK for developing microservices, ensure to use the proper Java version and to implement the necessary adjustments, in case of any. For more information, refer to the documentation of the provider.
+When using the {{< product-c8y-iot >}} Microservice SDK for developing microservices, ensure to use the proper Java version and to implement the necessary adjustments, in case of any. For more information, refer to the documentation of the provider.

@@ -43,11 +43,14 @@ spec:
   ## Name of the Kubernetes secret containing the TLS/SSL private key and certificates for the domain name specified in the 'spec.domain' field.
   ## This secret must contain two keys:
   ##  - tls.key: TLS/SSL private key in the PEM format.
-  ##             Use your internal or an external Certificate Authority (CA) to generate the TLS/SSL key and certificates.
-  ##             When ordering the TLS/SSL certificate, there is a Subject Alternative Name field that lets you specify additional host names (ie. sites, IP addresses, common names, etc.)
-  ##             to be protected by a single TLS/SSL certificate, such as a Multi-Domain (SAN) certificate. You should include the “edge” tenant and Management tenant domain names in SAN.
-  ##             If you plan to install Cumulocity IoT DataHub, also include its domain name in the SAN.
-  ##             For example, if your domain name is myown.iot.com, include myown.iot.com, management.myown.iot.com and datahub.myown.iot.com domains in SAN field.
+  ##             Generate a TLS/SSL key pair and a Certificate Signing Request (CSR) according to your company policies, 
+  ##             and submit it to your internal or external Certificate Authority (CA). When creating the CSR, in addition 
+  ##             to providing the Common Name (CN), Organization (O), and other required details, you must specify the 
+  ##             Subject Alternative Name (SAN) to request a multi-domain certificate. Ensure that the SAN includes the 
+  ##             domain names for the "edge" tenant and {{< management-tenant >}}. If you plan to install 
+  ##             Cumulocity IoT DataHub, include its domain name as well. 
+  ##             For instance, if your Edge domain is myown.iot.com, make sure myown.iot.com, management.myown.iot.com, 
+  ##             and datahub.myown.iot.com are listed in the SAN field.
   ##
   ##  - tls.crt: The TLS/SSL certificate chain associated with the private key in PEM format.
   ##             It’s essential to ensure the certificates are arranged in the correct sequence for TLS/SSL validation to succeed.

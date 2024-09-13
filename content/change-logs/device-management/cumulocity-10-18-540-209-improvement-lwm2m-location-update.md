@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-3915
-version: 10.18.540.210
+version: 10.18.540.209
 ---
 
 In earlier LWM2M agent versions, device location updates occurred only when the device provided complete "Location" object data. 

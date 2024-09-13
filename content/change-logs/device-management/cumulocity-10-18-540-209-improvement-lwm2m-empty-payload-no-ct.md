@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-3989
-version: 10.18.540.210
+version: 10.18.540.209
 ---
 
 The LWM2M specification permits devices to send an empty payload when there's no data to report. 

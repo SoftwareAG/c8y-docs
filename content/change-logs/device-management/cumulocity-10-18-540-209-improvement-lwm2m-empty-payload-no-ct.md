@@ -1,6 +1,6 @@
 ---
 date:
-title: LWM2M agent can now handle an empty payload without content-type data
+title: Allowing LWM2M device to send empty payload without content-type data
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

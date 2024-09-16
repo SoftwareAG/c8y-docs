@@ -1,6 +1,6 @@
 ---
 date: ""
-title: use new object-mapping component for OPC-UA (#6834) [GRAFT][release/cd] (#7049)
+title: The character limit is removed in OPC-UA object-mapping functionality
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

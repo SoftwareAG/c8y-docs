@@ -15,5 +15,5 @@ ticket: DM-3915
 version: 10.20.386.0
 ---
 
-In earlier LWM2M agent versions, device location updates occurred only when the device provided complete "Location" object data. 
+In earlier LWM2M agent versions, device location updates occurred only when the device provided complete location object data. 
 Now, updates happen whenever both latitude and longitude resources are reported together.

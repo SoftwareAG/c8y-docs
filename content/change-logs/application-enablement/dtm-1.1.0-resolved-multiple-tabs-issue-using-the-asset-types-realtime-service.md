@@ -12,6 +12,6 @@ build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
 ticket: "CTM-1546"
-version: "1.0.1"
+version: "1.1.0"
 ---
 Real-time updates have been improved to ensure that changes made by concurrent users to asset models are immediately reflected.

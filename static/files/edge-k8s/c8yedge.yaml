@@ -27,7 +27,7 @@ spec:
   domain: <DOMAIN-NAME>
 
   ## Edge license key you received for the domain.
-  ## To request the license file for Edge, please contact the logistics team for your region:
+  ## To request the license file for Edge, contact the logistics team for your region:
   ##    - North and South America: LogisSrvus@softwareagusa.com
   ##    - All Other Regions: LogisticsServiceCenterGER@softwareag.com
   ## In the email, you must include

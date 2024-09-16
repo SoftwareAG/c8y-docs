@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3561
 version: 1020.26.4
 ---
-use new object-mapping component for OPC-UA (#6834) [GRAFT][release/cd] (#7049)
+We have removed the 100-character limit for text fields in the 'Send Measurement,' 'Create Alarm,' and 'Send Event' functionalities, allowing you to enter longer text without restrictions.

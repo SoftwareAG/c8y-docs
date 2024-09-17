@@ -22,7 +22,7 @@ If your tenant is subscribed to the Apama-ctrl-starter microservice, then the fo
 - The **EPL Apps** page is not available in the Streaming Analytics application.
 - Smart rules are supported.
 
-If your tenant is subscribed to the Apama-ctrl-250mc-1g  microservice (or one of its larger variants), then the following applies:
+If your tenant is subscribed to the Apama-ctrl-250mc-1g microservice (or one of its larger variants), then the following applies:
 - Analytic models, EPL apps and smart rules are supported.
 - Custom blocks written with the Analytics Builder Block SDK can be used.
 

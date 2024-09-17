@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1485"
 version: "1.1.0"
 ---
-A new **Subassets** view module has been added to the DTM Plugins component. This component includes official DTM plugins, enabling integration with both default and custom web applications. This module enables users to view and manage subassets efficiently. In future releases, it will replace the existing subasset view in other {{< product-c8y >}} applications.
+A new **Subassets** view module has been added to the DTM Plugins component, which includes official DTM plugins and enables integration with both default and custom web applications. This module allows users to efficiently view and manage subassets. In future releases, it will replace the existing subasset view in other {{< product-c8y >}} applications.

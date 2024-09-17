@@ -2,8 +2,8 @@
 date:
 title: Alarm Input and Event Input blocks no longer use incorrect source time for alarm and event updates
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+  - value: change-2c7RdTdXo4
+    label: Improvement
 product_area: Analytics
 component:
   - value: component-M5-cepIIS

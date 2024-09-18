@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-09-11
 title: Tenant API security improvement
 product_area: Platform services
 change_type:

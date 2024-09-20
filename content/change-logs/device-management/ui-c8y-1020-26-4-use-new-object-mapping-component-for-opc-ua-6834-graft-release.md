@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The character limit is removed in OPC-UA object-mapping functionality
+title: Character limit removed in OPC UA object-mapping functionalities
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

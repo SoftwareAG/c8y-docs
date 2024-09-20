@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3561
 version: 1020.26.4
 ---
-We have removed the 100-character limit for text fields in the 'Send Measurement,' 'Create Alarm,' and 'Send Event' functionalities, allowing you to enter longer text without restrictions.
+The text fields in the "Send measurement", "Create alarm", and "Send event" functionalities used to be limited to 100 characters. This limitation has been removed, allowing you to enter longer text without restrictions.

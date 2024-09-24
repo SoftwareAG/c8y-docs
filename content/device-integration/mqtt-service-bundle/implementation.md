@@ -50,7 +50,7 @@ In the case of MQTT 5 clients have access to reason code and reason string descr
 reason code being QUOTA_EXCEEDED: 0x97.
 In the case of MQTT 3.1 and 3.1.1 clients only have access to reason code describing the failure when using QoS 1 via acknowledgements and only
 for SUBSCRIBE packets, where the reason code is 0x80.
-In the case of PUBLISH client will be disconnected with no further information
+For PUBLISH packets, client will be disconnected with no further information as per the MQTT specification.
 
 {{< c8y-admon-info >}}
 Work to enable an error topic so that information regarding topic limit failures can be accessible to MQTT 3 client is underway.

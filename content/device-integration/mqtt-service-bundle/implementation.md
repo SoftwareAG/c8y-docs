@@ -40,6 +40,22 @@ Other than that you are free to use any topic name which is compatible with the 
 Wildcard topics (`+`, `#`) and system topics starting with `$` are not supported.
 {{< /c8y-admon-info >}}
 
+#### Topic limit {#topic-limit}
+
+MQTT Service has the ability to limit the total number of topics that a single tenant can create, current default is no limit.
+When creation of new topic, via implicit creation via client publishing message or subscribing to non-existent topic, would breach the topic limit
+the delivery of the packet is prevented.
+
+In the case of MQTT 5 clients have access to reason code and reason string describing the failure when using QoS 1 via acknowledgements,
+reason code being QUOTA_EXCEEDED: 0x97.
+In the case of MQTT 3.1 and 3.1.1 clients only have access to reason code describing the failure when using QoS 1 via acknowledgements and only
+for SUBSCRIBE packets, where the reason code is 0x80.
+In the case of PUBLISH client will be disconnected with no further information
+
+{{< c8y-admon-info >}}
+Work to enable an error topic so that information regarding topic limit failures can be accessible to MQTT 3 client is underway.
+{{< /c8y-admon-info >}}
+
 #### Topic cleanup {#topic-cleanup}
 
 MQTT Service will automatically remove topics which are no longer in use, topics are recognized as inactive when there are no subscriptions and

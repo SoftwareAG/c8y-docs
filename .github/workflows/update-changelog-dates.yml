@@ -49,8 +49,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+    - name: logging-inputs
+      run: echo ${{inputs.component}} ${{inputs.version}} ${{inputs.date}}
+
     - name: Checking out
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Set git user
       run: |
@@ -77,18 +82,34 @@ jobs:
         npm start ${{ inputs.component }} ${{ inputs.version }} ${{ inputs.date }}
 
     - name: Git add
+      id: git-add
       run: |
-        git add content/change-logs
+          git add content/change-logs
+          echo "stagedFiles=$(git diff --cached --numstat | wc -l)" >> $GITHUB_OUTPUT
+
+
+    - name: printing updated files
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
+      run: |
+        echo "::notice :: Updated ${{ steps.git-add.outputs.stagedFiles }} changelog entries for ${{ inputs.component }}@${{ inputs.version }}"
+
+    - name: print warning if 0 files changed
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) == 0 }}
+      run: |
+        echo "::warning :: No new changelog entries found for ${{ inputs.component }}@${{ inputs.version }}"
 
     - name: Git commit
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
       run: |
         git commit -m "Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released"
 
     - name: Git push
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
       run: |
-        git push -u origin ${{ steps.branch-name.outputs.branch-name }}
+        git push -u origin "${{ steps.branch-name.outputs.branch-name }}"
 
     - name: Create pull request
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |

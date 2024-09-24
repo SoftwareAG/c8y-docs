@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-09-19
 title: Enhanced serialization formats for LWM2M operation responses
 product_area: Device management & connectivity
 change_type:

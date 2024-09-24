@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-09-19
 title: Disabling the automatic configuration of the required interval
 change_type:
   - value: change-2c7RdTdXo4

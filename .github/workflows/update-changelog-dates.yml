@@ -30,10 +30,7 @@ on:
         description: 'The name of the component that has been deployed to the environment.'
         required: true
         default: 'ui-c8y'
-        type: choice
-        options:
-          - 'ui-c8y'
-          - 'cumulocity'
+        type: string
 
 permissions:
   pull-requests: write

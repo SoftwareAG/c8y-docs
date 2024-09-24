@@ -2,6 +2,7 @@ import json
 from _datetime import datetime
 
 components_to_update = []
+# docs (c8y-docs repo) and pipeline (c8y-iot-build-pipeline repo) are directories created by daily-changelogs-dates-trigger-yml
 buildartifact_path = "docs/data/buildartifact.json"
 helmcharts_path = "pipeline/clusters/helm_charts_data.json"
 

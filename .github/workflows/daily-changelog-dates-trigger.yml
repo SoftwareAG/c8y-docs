@@ -1,4 +1,4 @@
-name: app-tester
+name: daily-changelogs-dates-trigger
 on:
   workflow_dispatch:
   schedule:
@@ -46,10 +46,6 @@ jobs:
           echo "jwt=${jwtToken}" >> "${GITHUB_OUTPUT}"
           echo "token=${token}" >> "${GITHUB_OUTPUT}"
 
-
-
-
-
       - name: Checkout c8y-iot-build-pipeline repository
         uses: actions/checkout@v4
         with:
@@ -63,25 +59,13 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-            python-version: '3.10'
+          python-version: '3.10'
 
       - name: Get component details from helm charts
         id: component-details
         run: |
           python docs/scripts/get-component-details-from-chart.py
           echo "matrix=$(cat components_to_update.json | jq -c .)" >> $GITHUB_OUTPUT
-
-#  test-component-details-output:
-#    uses: ./.github/workflows/output-test.yml
-#    needs: [ get-component-details ]
-#    strategy:
-#      matrix:
-#        include: ${{ fromJson(needs.get-component-details.outputs.matrix) }}
-#    with:
-#      version: ${{ matrix.component_version }}
-#      component: ${{ matrix.component_name }}
-#      date: ${{ matrix.component_update_date }}
-
 
   trigger-update-changelog:
     uses: ./.github/workflows/update-changelog-dates.yml

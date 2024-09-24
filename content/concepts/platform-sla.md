@@ -20,7 +20,7 @@ weight: 90
 * **Extended platform capabilities:** The platform's functionality can be further enhanced with additional features, which may require separate agreements:
     * **Additional connectivity options:** This includes extended connectivity support such as LPWAN and LWM2M.
     * **Enhanced applications:** Users can leverage value-added Cumulocity applications from the Cumulocity product catalog, e.g., for advanced analytics and digital twin management.
-    * **Custom application development:** The platform supports the creation of custom applications using {{< product-c8y-iot >}} Microservices and {{< product-c8y-iot >}} Web SDK.
+    * **Custom application development:** The platform supports the creation of custom applications using {{< product-c8y-iot >}} Microservices and {{< product-c8y-iot >}} Web SDK. Services for Microservice Hosting are outlined in a [separate service-level agreement](/microservice-sdk/microservices-sla/).
     * **Enterprise-grade services:** Users can provide derived services to their own customers, utilizing Enterprise Functions and Multi-Tenancy features.
 
 This service-level agreement applies solely to {{< product-c8y-iot >}} Basic, {{< product-c8y-iot >}} Advanced and {{< product-c8y-iot >}} Enterprise Dedicated operated by {{< company-c8y >}}, excluding optional features. {{< product-c8y-iot >}} Software-Operated-as-a-Service and {{< product-c8y-iot >}} Edge are outside the scope of this agreement.

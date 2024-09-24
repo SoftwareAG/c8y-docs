@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-06'
 title: Missing properties in cumulocity.config.ts file automatically added
 product_area: Application enablement & solutions
 change_type:

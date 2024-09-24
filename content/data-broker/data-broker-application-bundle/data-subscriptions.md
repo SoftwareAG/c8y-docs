@@ -2,7 +2,7 @@
 weight: 30
 title: Data subscriptions
 layout: bundle
-section:
+sector:
   - platform_administration
 helpcontent:
   - label: data-subscriptions

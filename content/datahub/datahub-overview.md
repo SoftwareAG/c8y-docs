@@ -2,7 +2,7 @@
 title: Cumulocity IoT DataHub overview
 weight: 10
 layout: bundle
-section:
+sector:
   - data_analytics
 ---
 

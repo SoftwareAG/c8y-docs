@@ -1,7 +1,7 @@
 ---
 title: Two-factor authentication
 layout: bundle
-section:
+sector:
   - platform_administration
 weight: 71
 ---

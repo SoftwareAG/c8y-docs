@@ -211,7 +211,7 @@ Your microservice application must be packed as a Docker image in a ZIP file inc
             </executions>
         </plugin>
     </plugins>
-</build>   
+</build>
 ```
 
 The name of the generated ZIP file is specified in the image element as `<image>${microservice.name}</image>`. It takes the name from the previously defined property `microservice.name`, which in this case is *hello-microservice-java*.
@@ -269,14 +269,26 @@ Create the directory _src/main/configuration_ to contain a _cumulocity.json_ fil
 
 ```json
 {
-  "apiVersion": "1",
+  "apiVersion": "2",
   "version": "@project.version@",
   "provider": {
     "name": "{{< company-c8y >}}"
   },
-    "isolation": "MULTI_TENANT",
-    "requiredRoles": [
-    ]
+  "isolation": "MULTI_TENANT",
+  "replicas": 2,
+  "livenessProbe": {
+    "httpGet": {
+      "path": "/health"
+    },
+    "initialDelaySeconds": 60
+  },
+  "readinessProbe": {
+    "httpGet": {
+      "path": "/health"
+    },
+    "initialDelaySeconds": 60
+  },
+  "requiredRoles": [ ]
 }
 ```
 

@@ -2,7 +2,7 @@
 weight: 70
 title: Example setup for VMware Workstation Player
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

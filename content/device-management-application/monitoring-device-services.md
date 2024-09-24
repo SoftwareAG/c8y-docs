@@ -2,7 +2,7 @@
 weight: 45
 title: Monitoring device services
 layout: bundle
-section:
+sector:
   - device_management
 ---
 
@@ -21,7 +21,7 @@ There you can see detailed information about measurements, events and alarms sen
 
 ![Service details](/images/users-guide/DeviceManagement/devmgmt-service-details.png)
 
-The following tabs make up the service details view, each described in detail in a separate section:
+The following tabs make up the service details view, each described in detail in a separate sector:
 <table>
 <thead>
 <colgroup>

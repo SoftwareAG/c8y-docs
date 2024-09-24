@@ -2,7 +2,7 @@
 title: RBAC versus multi-tenancy approach
 layout: bundle
 weight: 100
-section:
+sector:
   - platform_administration
 ---
 

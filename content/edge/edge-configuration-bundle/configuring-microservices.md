@@ -2,7 +2,7 @@
 weight: 25
 title: Configuring the microservice hosting feature
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 
@@ -61,7 +61,7 @@ Edge appliance will be temporarily non-operational during the operation.
 
 ### Enabling or disabling the microservice hosting feature using the REST APIs {#enabling-or-disabling-the-microservice-hosting-feature-using-the-rest-apis}
 
-To enable or disable the microservice hosting feature using the REST APIs, see the `/edge/configuration/microservices` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/10.18.0/#operation/enableMicroserviceHosting).
+To enable or disable the microservice hosting feature using the REST APIs, see the `/edge/configuration/microservices` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/enableMicroserviceHosting).
 
 ### Deploying microservices with a lower manifest version {#deploying-microservices-with-a-lower-manifest-version}
 
@@ -69,7 +69,7 @@ A microservice specifies an API version in the microservice manifest. Depending 
 
 By default, only the {{< management-tenant >}} can upload and subscribe to the microservices with API version 1. To improve the security of the Edge appliance, the minimum API version has been configured to API version 2. Due to the minimum API version configuration, you cannot upload and subscribe to a microservice with API version 1 in the "edge" tenant.
 
-{{< c8y-admon-important >}}The MLW and the Messaging Service microservices use API version 1. To install the MLW and the Messaging Service on Edge version 10.15, you must subscribe the "edge" tenant to the **Feature-privileged-microservice-hosting** application before uploading the MLW and the Messaging Service microservices with API version 1.{{< /c8y-admon-important >}}
+{{< c8y-admon-important >}}The MLW and the Messaging Service microservices use API version 1. To install the MLW and the Messaging Service on Edge version 10.15 and later, you must subscribe the "edge" tenant to the **Feature-privileged-microservice-hosting** application before uploading the MLW and the Messaging Service microservices with API version 1.{{< /c8y-admon-important >}}
 
 To upload and subscribe to a microservice with API version 1 in the "edge" tenant:
 

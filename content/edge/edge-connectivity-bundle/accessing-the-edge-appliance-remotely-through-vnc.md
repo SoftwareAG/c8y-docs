@@ -2,7 +2,7 @@
 weight: 30
 title: Accessing the Edge appliance remotely through VNC
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

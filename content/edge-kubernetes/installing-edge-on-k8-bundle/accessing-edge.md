@@ -4,7 +4,7 @@ title: Accessing Edge
 layout: redirect
 ---
 
-Before you can access Edge, you must first get the external IP address. The Edge Operator creates a load balancer service named **cumulocity-core**, which receives an external IP. Clients outside of the cluster can access the Edge through this external IP.
+Before you can access Edge, you must first get the external IP address. The Edge operator creates a load balancer service named **cumulocity-core**, which receives an external IP. Clients outside of the cluster can access the Edge through this external IP.
 
 ### Assigning an external IP {#assigning-an-external-ip}
 
@@ -78,7 +78,7 @@ To access Edge, enter one of the following URLs in the browser:
 
 This will bring up the below login screen. Enter the default credentials username "admin" and password "admin-pass" to log in in to both the "edge" tenant and the {{< management-tenant >}}.
 
-![Login prompt](/files/edge-k8s/edge-k8s-login-banner.png)
+![Login prompt](/images/edge-k8s/edge-k8s-login-banner.png)
 
 On the first login, you see the dialog window below, forcing you to change the password. The email address to change the password is the one you specified in the {{< product-c8y-iot >}} Edge CR (or myown@iot.com if you followed the Quickstart installation steps). Alternatively, run the following command to retrieve the email address:
 
@@ -88,7 +88,7 @@ On the first login, you see the dialog window below, forcing you to change the p
 Substitute the Edge name and namespace name, which is currently **c8yedge** in the command, with the specific Edge name and namespace name you have specified in your Edge CR.
 {{< /c8y-admon-info >}}
 
-![Reset password](/files/edge-k8s/edge-k8s-reset-password.png)
+![Reset password](/images/edge-k8s/edge-k8s-reset-password.png)
 
 {{< c8y-admon-important >}}
 After a successful deployment, it is crucial to access both the {{< management-tenant >}} and the "edge" tenant and change their respective admin credentials.
@@ -96,10 +96,10 @@ After a successful deployment, it is crucial to access both the {{< management-t
 
 If you are logging in for the first time, you will see a cookie banner at the bottom of the login screen:
 
-![Cookie Banner](/files/edge-k8s/edge-k8s-cookie-banner.png)
+![Cookie Banner](/images/edge-k8s/edge-k8s-cookie-banner.png)
 
 {{< c8y-admon-info >}}
-The cookie banner is turned on by default. This feature can be configured. For more information see [Branding](/edge/using-edge/#branding).
+The cookie banner is turned on by default. This feature can be configured. For more information, see [Branding](/edge/using-edge/#branding).
 {{< /c8y-admon-info >}}
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
@@ -127,7 +127,7 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 
 ### How to reset or change your password {#how-to-reset-your-password}
 
-To reset your password, you must first configure the "reset password" template and email server settings in Edge. For information about configuring the email server, see [Configuring the email server](/edge/edge-configuration/#configuring-email-server).  
+To reset your password, you must first configure the "reset password" template and email server settings in Edge. For information about configuring the email server, see [Configuring the email server](/edge-kubernetes/k8-edge-configuration/#configuring-email-server).  
 
 For information about changing the password, see [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password).
 

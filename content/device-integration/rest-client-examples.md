@@ -1,7 +1,7 @@
 ---
 weight: 40
-title: Rest client examples
+title: REST client examples
 layout: bundle
-section:
+sector:
   - device_management
 ---

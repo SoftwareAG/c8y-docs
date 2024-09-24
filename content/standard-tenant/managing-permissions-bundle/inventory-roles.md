@@ -2,7 +2,7 @@
 weight: 20
 title: Inventory roles
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

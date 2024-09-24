@@ -2,7 +2,7 @@
 weight: 20
 title: Managing user hierarchies
 layout: bundle
-section:
+sector:
   - platform_administration
 ---
 

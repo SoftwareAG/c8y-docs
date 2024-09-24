@@ -2,7 +2,7 @@
 weight: 20
 title: More resources
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

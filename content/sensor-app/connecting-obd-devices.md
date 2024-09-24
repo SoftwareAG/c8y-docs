@@ -2,7 +2,7 @@
 weight: 65
 title: Connecting new OBD devices to the Sensor App
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 

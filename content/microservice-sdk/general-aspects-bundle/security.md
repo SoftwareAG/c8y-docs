@@ -136,7 +136,7 @@ There are three types of users:
 
 The following role types are defined for users:
 
-* Required roles: The roles that are predefined to allow access to {{< product-c8y-iot >}} Rest APIs.
+* Required roles: The roles that are predefined to allow access to {{< product-c8y-iot >}} REST APIs.
 For instance, if a microservice creates measurements using the service user, measurement admin role must be added as a required role of the application.
 Required roles are added to the service users.
 * Roles: The custom roles provided to tenant platform users by the microservice developer.

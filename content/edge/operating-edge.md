@@ -2,7 +2,7 @@
 title: Edge operations
 weight: 60
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

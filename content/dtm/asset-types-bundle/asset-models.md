@@ -194,7 +194,7 @@ To sort columns, hover over the respective column header and click the sort icon
 
 To export asset models to add in another tenant, follow the steps below:
 
-1. On the **Asset models** page, click **Export asset models**.
+1. On the **Asset models** page, click **Export**.
 2. In the resulting dialog, you see the list of asset models. Initially, all the asset models are collapsed. Click the expand icon <i class="dlt-c8y-icon-forward text-primary icon-20"></i> to the left of each asset model to view the next level of child asset models.
 3. Select one or more desired asset models.
 4. Click **Export** to export the selection.
@@ -218,7 +218,7 @@ You can select a child asset asset model to export without selecting its parent.
 
 To import asset models, follow the steps below:
 
-1. On the **Asset models** page, click **Import asset models**.
+1. On the **Asset models** page, click **Import**.
 2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset models from a DTM application on another tenant.
 3. Click **Next** to preview the asset models. Initially, all the asset models are collapsed. Click the expand icon <i class="dlt-c8y-icon-forward text-primary icon-20"></i> to the left of each asset model to view the next level of child asset models.
 4. Click **Import** to import the asset models.

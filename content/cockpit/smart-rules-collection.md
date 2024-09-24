@@ -2,7 +2,7 @@
 weight: 90
 title: Smart rules collection
 layout: bundle
-section:
+sector:
   - app_enablement
 ---
 

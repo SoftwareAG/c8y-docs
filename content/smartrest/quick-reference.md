@@ -1,7 +1,7 @@
 ---
 title: MQTT quick reference
 layout: bundle
-section:
+sector:
   - device_management
 weight: 70
 ---

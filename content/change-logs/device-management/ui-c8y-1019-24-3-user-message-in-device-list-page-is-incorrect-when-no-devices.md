@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-06'
 title: Improved layout and content of empty state messages
 product_area: Device management & connectivity
 change_type:

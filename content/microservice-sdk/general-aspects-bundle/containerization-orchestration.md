@@ -7,7 +7,7 @@ layout: redirect
 
 ### Images and containers {#images-and-containers}
 
-Docker is a platform to develop, deploy and run applications with containers. An image is an executable package that includes everything needed to run an application (that is, the code, a runtime, libraries, environment variables and configuration files). A container is a runtime instance of an image (that is, what the image becomes in memory when executed). Refer to the [Docker documentation](https://docs.Docker.com/get-started/) for more information about Docker.
+Docker is a platform to develop, deploy and run applications with containers. An image is an executable package that includes everything needed to run an application (that is, the code, a runtime, libraries and configuration files). A container is a runtime instance of an image (that is, what the image becomes in memory when executed). Refer to the [Docker documentation](https://docs.Docker.com/get-started/) for more information about Docker.
 
 {{< product-c8y-iot >}} microservices are based on Docker. Hence, a microservice must be packaged as a Docker image in order to run on the {{< product-c8y-iot >}} platform. A microservice is executed in a Docker container during runtime. The Docker container ensures that a microservice does not harm other microservices running in {{< product-c8y-iot >}}.
 

@@ -2,7 +2,7 @@
 weight: 20
 title: Properties library
 layout: redirect
-section:
+sector:
   - platform_administration
 ---
 

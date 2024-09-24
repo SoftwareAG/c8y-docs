@@ -1,12 +1,12 @@
 {{$current := . }}
 
 {{$currentSection := ""}}
-{{ with .Params.section}}
+{{ with .Params.sector}}
   {{$currentSection =  index . 0}}
 {{end}}
 <nav class="main-nav navbar">
   <header class="nav-header">
-    {{ $term := .Site.Taxonomies.section.Get $currentSection }}
+    {{ $term := .Site.Taxonomies.sector.Get $currentSection }}
     {{ with $term }}
       <a href="{{.Page.Permalink}}" class="text-center d-block p-t-8 p-b-8" >
         <i style="font-size:46px;" class="c8y-icon-duocolor {{ .Page.Params.icon }}"></i>
@@ -25,12 +25,13 @@
       <div class="dropdown-menu"
         aria-labelledby="dropdownMenuButton">
         <div class="navsections-dropdown-menu">
-
           {{ $currentBundle := newScratch}}
           {{$scratch := newScratch}}
-          {{ with $.Site.GetPage (printf "/%s" $currentSection) }}
-            {{ range where .Pages "Type" "root" }}
-              {{ $subs := where .Site.Pages "Section" .Params.bundle }}
+          {{ $pages := where (index .Site.Taxonomies.sector $currentSection) ".Params.type" "root" }}
+          {{ $pages := sort $pages ".Params.weight" }}
+            {{ range $pages }}
+             
+              {{ $subs := where .Site.Pages "Section" .Params.bundlefolder }}
 
               {{$rootclass := newScratch}}
               {{/* grab the link from the first child page  */}}
@@ -40,10 +41,10 @@
 
               {{/* Check the current page to highlight the right root section  */}}
               {{$rootclass.Set "active" "" }}
-              {{ if eq .Params.bundle $current.Section }}
+              {{ if eq .Params.bundlefolder $current.Section }}
                 {{$rootclass.Set "active" "active" }}
                 <span class="current-app"><i class="{{.Params.icon}}"></i> {{.Title}}</span>
-                {{ $currentBundle.Set "bundle" (printf "/%s-%s" .Params.bundle "bundle") }}
+                {{ $currentBundle.Set "bundle" (printf "/%s-%s" .Params.bundlefolder "bundle") }}
               {{ else}}
                 {{ if and (eq .Params.layout "single") (eq .Title $current.Title) }}
                   {{$rootclass.Set "active" "active" }}
@@ -53,11 +54,16 @@
                 {{ end }}
               {{ end }}
               
-              {{$url := $scratch.Get "url"}}
+              {{ $url := $scratch.Get "url" }}
               <a class='dropdown-menu-item text-truncate {{ $rootclass.Get "active"}}'
-                href='{{ $url }}' title="{{.Title}}"><i class="{{.Params.icon}}"></i>{{.Title}}</a>
+                href='
+                  {{if (isset .Params "external") }}
+                    {{.Params.external}}
+                  {{else}}
+                    {{$url}}
+                  {{end}}'
+                title="{{.Title}}"><i class="{{.Params.icon}}"></i>{{.Title}}</a>
             {{ end }}
-          {{ end }}
         </div>
       </div>
     </div>
@@ -71,8 +77,9 @@
     {{ if .IsPage }}
     <div class="{{if eq $current.Permalink .Permalink }} slot-active {{ end}}">
       {{ $parentUrl := .Permalink }}
-      {{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle"  }}
+      {{ $bundle := printf "%s-%s" .File.BaseFileName "bundle"  }}
       {{ $headless := .Site.GetPage $bundle }}
+      
       {{ if $headless }}
         <a href="javascript:void(0);"
           data-toggle="collapse"

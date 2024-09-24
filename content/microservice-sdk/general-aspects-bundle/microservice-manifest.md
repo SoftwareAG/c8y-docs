@@ -49,7 +49,7 @@ Here is an example manifest:
         "initialDelaySeconds": 20,
         "periodSeconds": 10
     },
-    "settingsCategory": "my-ms",
+    "settingsCategory": "myms",
     "settings": [
         {
             "key": "tracker-id",
@@ -88,13 +88,13 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">name</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">Application name</td>
+<td style="text-align:left">Application name. The accepted letters are lowercase characters (a-z), digits (0-9), or hyphens (-). The maximum length for the name is 23 characters.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">contextPath</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">Microservice contextPath is used to define extension points. <br>Default: Microservice name </td>
+<td style="text-align:left">Microservice contextPath is used to define extension points. The accepted letters are lowercase (a-z) and uppercase (A-Z) characters, digits, hyphens (-), dots (.), underscores (_), or tildes (~).<br>Default: Microservice name </td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
@@ -241,7 +241,7 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 |exec | ExecAction | Commands to be executed on a container to probe the service | No
 |tcpSocket | TCPSocketAction | TCP socket connection attempt as a probe | No
 |httpGet | HTTPGetAction | HTTP request to be executed as a probe | No
-|initialDelaySeconds |Number| Tells the platform for how long it should wait before performing <br>the first probe <br/>Default: 200 | No
+|initialDelaySeconds |Number| Tells the platform for how long it should wait before performing <br>the first probe <br/>Default: 0 | No
 |periodSeconds|Number| Defines in which interval the probe should be executed<br/>Default: 10 | No
 |successThreshold|Number| Minimum consecutive successes for the probe to be considered <br>successful after having failed<br/> Default: 1 | No
 |timeoutSeconds|Number| Number of seconds after which the probe times out<br/> Default: 1 | No

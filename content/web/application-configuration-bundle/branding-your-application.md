@@ -77,8 +77,9 @@ To override variables, `Custom CSS Properties`â€”also known as `CSS Variables`â€
 1. Ensure that your project is based on the Angular CLI (whether upgraded or created from scratch).
 2. Make sure you have installed the `@c8y/style` package. If not, you can install the base styles from npm using the following command.
 
-```less
+```javascript
 @import '~@c8y/style/main.less';
+
 ```
 
 The example is based on this file structure:
@@ -113,7 +114,7 @@ Let us change for example the most important color of your branding, the main co
 
 This is done by setting the respective CSS variables to a new color.
 
-```less
+```css
 :root {
   --brand-primary: red;
 }
@@ -124,7 +125,7 @@ hover-states of buttons are red now.
 
 To change the brand logo you can use this:
 
-```less
+```css
 :root {
   --brand-logo-img: url('/apps/<applicationContextPath>/assets/logo.jpg');
   --brand-logo-img-height: 48%;

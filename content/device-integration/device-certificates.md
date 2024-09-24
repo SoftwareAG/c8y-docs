@@ -2,11 +2,11 @@
 weight: 20
 title: Device certificates
 layout: bundle
-section:
+sector:
   - device_management
 ---
 
-Devices can authenticate to {{< product-c8y-iot >}} using X.509 certificates over REST (port 443) using mTLS.
+Devices can authenticate to {{< product-c8y-iot >}} using X.509 certificates over REST (port 8443) using mTLS.
 
 Devices can also generate JWT session tokens by using X.509 certificates for authentication over a defined REST endpoint - device access token API. This session token can be used in subsequent requests to authenticate to {{< product-c8y-iot >}}.
 

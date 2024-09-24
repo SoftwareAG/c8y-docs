@@ -80,11 +80,11 @@ An S3 bucket with default settings works. If specific security policies are appl
 
 **Server-side encryption** is supported while client-side encryption is not. S3 offers three key management mechanisms:
 
-**SSE-S3**: An AES256 key is generated in S3 and saved alongside the data. Enabling SSE-S3 requires to add the following key-value pair to the **Additional Properties** section:\
+**SSE-S3**: An AES256 key is generated in S3 and saved alongside the data. Enabling SSE-S3 requires to add the following key-value pair to the **Additional Properties** sector:\
 Name: `fs.s3a.server-side-encryption-algorithm`\
 Value: `AES256`
 
-**SSE-KMS**: An AES256 key is generated in S3, and encrypted with a secret key provided by Amazon’s Key Management Service (KMS). The key must be referenced by name by {{< product-c8y-iot >}} DataHub. Enabling SSE-KMS requires to add the following key-value pairs to the **Additional Properties** section:\
+**SSE-KMS**: An AES256 key is generated in S3, and encrypted with a secret key provided by Amazon’s Key Management Service (KMS). The key must be referenced by name by {{< product-c8y-iot >}} DataHub. Enabling SSE-KMS requires to add the following key-value pairs to the **Additional Properties** sector:\
 Name: `fs.s3a.server-side-encryption-algorithm`\
 Value: `SSE-KMS`
 

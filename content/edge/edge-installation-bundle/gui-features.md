@@ -2,8 +2,8 @@
 weight: 40
 title: UI functionalities and features
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 
-See [UI functionalities and features](/get-familiar-with-the-ui/gui-features/).
+See [UI functionalities and features](/get-familiar-with-the-ui/gui-features/) for more information.

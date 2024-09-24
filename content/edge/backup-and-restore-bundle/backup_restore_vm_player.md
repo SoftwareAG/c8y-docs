@@ -2,7 +2,7 @@
 weight: 40
 title: Backup and restore in VMware Workstation Player
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

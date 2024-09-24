@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-06'
 title: Adjusted styling of branded dashboards
 product_area: Application enablement & solutions
 change_type:

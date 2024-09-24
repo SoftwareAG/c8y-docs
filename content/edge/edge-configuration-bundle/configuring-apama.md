@@ -2,7 +2,7 @@
 weight: 60
 title: Configuring Apama
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 

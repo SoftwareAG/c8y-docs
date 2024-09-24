@@ -2,7 +2,7 @@
 weight: 25
 title: Accessing and logging into the platform
 layout: bundle
-section:
+sector:
   - getting_started
 ---
 
@@ -84,7 +84,7 @@ Select the **Remember me** checkbox if you want the browser to remember your cre
 
 Finally, click **Login** to enter the {{< product-c8y-iot >}} platform. Initially, you will be taken to the [Cockpit](/cockpit/) application (if not configured differently).
 
-![Cockpit home screen](/images/users-guide/cockpit/cockpit-home-screen.png)
+![Cockpit home page](/images/users-guide/cockpit/cockpit-home-screen.png)
 
 To explicitly logout, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 

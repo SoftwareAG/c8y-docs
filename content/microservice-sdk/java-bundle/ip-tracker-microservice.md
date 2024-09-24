@@ -66,7 +66,7 @@ Your manifest file should look similar to this:
 
 ```json
 {
-    "apiVersion": "1",
+    "apiVersion": "2",
     "version": "@project.version@",
     "provider": {
         "name": "{{< company-c8y >}}"

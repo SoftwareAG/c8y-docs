@@ -2,6 +2,6 @@
 weight: 75
 title: Working with DataHub
 layout: bundle
-section:
+sector:
   - edge_server
 ---

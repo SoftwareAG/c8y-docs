@@ -380,6 +380,20 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
+<td style="text-align: left">Automatic setting of required interval</td>
+<td style="text-align: left">autoManageAvailabilityRequiredInterval</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">When true (default), the LWM2M agent automatically sets the interval to registration lifetime plus 2 minutes.</td>
+<td style="text-align: left">Optional, default = true</td>
+</tr>
+<tr>
+<td style="text-align: left">Availability required interval value</td>
+<td style="text-align: left">availabilityRequiredInterval</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">If not empty, this value will be used as the initial required interval in the created device.</td>
+<td style="text-align: left">Optional, default = empty</td>
+</tr>
+<tr>
 <td style="text-align: left">Binary delivery encoding</td>
 <td style="text-align: left">binaryDeliveryEncoding</td>
 <td style="text-align: left">String</td>
@@ -493,6 +507,70 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 Firmware updates are also supported for the registration of unsecured devices as well as secured devices. For more information, see [Managing firmware](/device-management-application/managing-device-data/#managing-firmware).
 {{< /c8y-admon-info >}}
 
+#### Registering LWM2M devices using the REST API {#registering-lwm2m-devices-using-restapi}
+
+LWM2M internally uses our [Extensible Device Registration](/concepts/applications/#extensible-device-registration) feature. It provides an API based on JSON Schema and REST to extend {{< company-c8y >}} with arbitrary wizards for device registration.
+
+#### REST-based single LWM2M device registration {#rest-lwm2m-single-registration}
+
+Before the actual registration of a LWM2M device, it first is important to understand the set of available device properties. This set can be obtained using the `metadata` endpoint of LWM2M:
+
+`
+GET /service/lwm2m-agent/deviceRegistration/metadata
+`
+
+The registration of a new device then can be accomplished by posting a set of these values to the corresponding registration endpoint:
+
+`
+POST  /service/lwm2m-agent/deviceRegistration/
+`
+
+Example request payload:
+
+```
+{
+  "bootstrapSecurity": {
+    "bootstrapSecurityMode": "PSK",
+    "bootstrapId": "98ABCD32",
+    "bootstrapKey": "AABB3104D212"
+  },
+  "serverSecurity": {
+    "securityMode": "X.509"
+  },
+  "bootstrapShortServerId": 0,
+  "lwm2mShortServerId": 1,
+  "securityInstanceOffset": 0,
+  "bindingMode": "UQ",
+  "enableResourceLevelTimestamp": false,
+  "genericUIRetainOldValuesIfError": true,
+  "binaryDeliveryEncoding": "OPAQUE",
+  "disableObjectInstanceActions": false,
+  "disableFirmwareStateMachine": false,
+  "stateMachineResetBeforeFirmwareUpdate": true,
+  "endpointId": "urn:my:example:device",
+  "lwm2mServerUri": "coaps://lwm2m.cumulocity.com:5784",
+  "registrationLifetime": 12000
+}
+```
+
+#### REST-based bulk Registration for LWM2M Devices {#rest-lwm2m-bulk-registration}
+
+Alternatively, LWM2M devices can be registered in bulk using the API by posting a CSV file to the LWM2M service. The API endpoint and request format are as follows:
+
+
+```
+POST /service/lwm2m-agent/deviceRegistration/bulk`
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="<input csv file>"
+Content-Type: text/csv
+
+--boundary--
+```
+
+For more details on the CSV format being used, please refer to the section on [bulk device registration](#bulk-device-registration).
+
 ### Duplicate LWM2M devices {#duplicate-lwm2m-devices}
 
 If a LWM2M device has been registered with the same endpoint ID before, the device registration will not register the device, neither for single nor for bulk device registrations.
@@ -502,5 +580,34 @@ For bulk device registrations, the information about duplicate LWM2M devices wil
 
 ### Device deletion {#device-deletion}
 
-During LWM2M device registration the tenant route information is also stored in the cluster tenant.
-To remove the device, delete it from the [All devices](/device-management-application/viewing-all-devices/#to-delete-devices) list.
+To remove a LWM2M device, delete it through the [All devices](/device-management-application/viewing-all-devices/#to-delete-devices) list in the Device Management application.
+
+Alternatively, you can delete a LWM2M device using a REST call. With the managed object ID (device ID) of the device to be deleted, this can be accomplished using the following DELETE request.
+
+
+#### Rest-based single LWM2M device deletion  {#lwm2m-single-device-deletion-using-restapi}
+
+`
+DELETE /service/lwm2m-agent/deviceRegistration/{device ID}
+`
+
+{{< c8y-admon-important >}}
+It is not recommended to use the inventory API for directly deleting LWM2M devices. This action may result in issues when attempting to register a device with the same endpoint name at a later time.
+{{< /c8y-admon-info >}}
+
+#### Rest-based bulk LWM2M device deletion  {#lwm2m-bulk-device-deletion-using-restapi}
+
+Multiple LWM2M devices can be deleted in bulk by posting a CSV file to the LWM2M REST API.
+
+```
+DELETE /service/lwm2m-agent/deviceRegistration/bulk`
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="<input csv file>"
+Content-Type: text/csv
+
+--boundary--
+```
+
+This endpoint uses the same CSV format which is also used to [register](#rest-lwm2m-bulk-registration) LWM2M devices in bulk.

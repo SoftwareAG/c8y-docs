@@ -2,7 +2,7 @@
 weight: 40
 title: Edge functionalities
 layout: bundle
-section:
+sector:
   - edge_server
 ---
 
@@ -28,7 +28,7 @@ The following functionalities are available in Edge and described in detail in t
 |[Managing device services](/device-management-application/monitoring-device-services/)|How to monitor the data that your devices send about the services they are running. See detailed information about [measurements](/device-management-application/monitoring-device-services/#measurements), [events](/device-management-application/monitoring-device-services/#events) and [alarms](/device-management-application/monitoring-device-services/#alarms) sent for every service.
 |[Managing device types](/device-management-application/managing-device-types/)|How to process data from various device types by using device protocols.
 |[Managing device data](/device-management-application/managing-device-data/)|How to retrieve and manage [firmware](/device-management-application/managing-device-data/#managing-firmware) and [software](/device-management-application/managing-device-data/#managing-software) for devices; how to retrieve configuration data and store and manage it in a [configuration repository](/device-management-application/managing-device-data/#managing-configurations) as configuration snapshots.
-|[SmartREST templates](/device-management-application/smartrest-templates/)|How to work with [SmartREST  templates](/device-management-application/smartrest-templates/), a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} Rest API calls.
+|[SmartREST templates](/device-management-application/smartrest-templates/)|How to work with [SmartREST  templates](/device-management-application/smartrest-templates/), a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} REST API calls.
 |[Working with simulators](/device-management-application/working-with-simulators/)|[Create](/device-management-application/working-with-simulators/#to-create-a-simulator) a [simulator](/device-management-application/working-with-simulators/#about-simulators) with the same level of functionality as connected hardware devices and simulate messages (measurements, alarms, events and inventory) that the device sends to the {{< product-c8y-iot >}} platform with series of [instructions](/device-management-application/working-with-simulators/#instructions) that the simulator executes one after the other.
 |[Connectivity](/device-management-application/connectivity/)|How to [set up your Jasper Control Center account](/device-management-application/connectivity/#setting-up-your-jasper-control-center-account), configure the [connectivity for the SIM provider](/device-management-application/connectivity/#configuring-the-connectivity-for-the-sim-provider) in your {{< product-c8y-iot >}} tenant, [link SIMs and mobile devices](/device-management-application/connectivity/#linking-sims-and-mobile-devices), and [checking connectivity](/device-management-application/connectivity/#checking-connectivity).
 

@@ -56,9 +56,16 @@ From this page, you can:
 
 ##### Step 2 - Create an EPL app {#step-2---create-an-epl-app}
 
-Click **New EPL app** in the top menu bar. Give the app a unique name. You can also enter a description which will be shown on the card that is created for the new app.
+Click **New EPL app** in the top menu bar. In the resulting **Create app** dialog box, enter a unique app name.
+You can also enter a description which will be shown on the card that is created for the new app. Click **OK**.
 
-The EPL editor is shown next. The EPL code for the new app already contains the typical basic event definitions and utilities that are required for working with {{< product-c8y-iot >}}. You can adapt them as required for your app. Consult the documentation and samples for more details.
+The EPL editor appears. The EPL code for the new app already contains the typical basic event definitions and utilities that are required for working with {{< product-c8y-iot >}}. You can adapt them as required for your app. Consult the documentation and samples for more details.
+
+{{< c8y-admon-info>}}
+When you click **Cancel** without specifying an app name, the EPL editor also appears and the default name "New" is then shown in the breadcrumb.
+You can edit the EPL code, but as long as you do not specify an app name, you will not be able to save the app.
+Click **App settings** and specify an app name in the resulting dialog box.
+{{< /c8y-admon-info>}}
 
 ![EPL editor](/images/streaming-analytics/epl-apps/epl-apps-editor.png)
 
@@ -90,11 +97,11 @@ See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
 ##### Step 1 - Install Apama {#step-1---install-apama}
 
-If you have licensed Apama, install it using {{< sag-installer >}}.
+Download the `apama-c8y-dev` package of Apama from [https://www.apamacommunity.com/downloads/](https://www.apamacommunity.com/downloads/) and extract it to install Apama. This installs the freemium Apama Community Edition with reduced capabilities and several restrictions. To unlock all features you need a license.
 
-You can also use a freemium version of Apama which runs with reduced capabilities and several restrictions. If you want to use this, download the Apama Community Edition from [https://www.apamacommunity.com/downloads/](https://www.apamacommunity.com/downloads/) and install it.
+If you have a license, copy the license file into the Apama work directory (*APAMA_WORK/license*).
 
-Both versions, the licensed version and the freemium version, include {{< sag-designer >}}.
+The `apama-c8y-dev` package includes {{< sag-designer >}} which is available for both the Apama Community Edition and licensed editions of Apama.
 
 ##### Step 2 - Create a project {#step-2---create-a-project}
 

@@ -21,7 +21,8 @@ This opens the right drawer which contains a **Diagnostics** section with the fo
 - An **Enhanced diagnostics (ZIP)** link for downloading enhanced, more resource-intensive diagnostics information.
 
 It may be useful to capture this diagnostics information when experiencing problems, or for debugging EPL apps. It is also useful to provide to [product support](/additional-resources/contacting-support/) if you are filing a support ticket.
-You can find the tenant ID and version information in the **Platform info** section of the right drawer.
+You can find the tenant ID in the **Platform info** section of the right drawer.
+If you want to find out the version numbers of the different components on your tenant, click the **Download platform details** button in the **Platform info** section and then open the downloaded JSON file.
 See [User options and settings](/get-familiar-with-the-ui/user-settings/) for more details.
 
 Basic diagnostics information is provided in a ZIP file named *diagnostic-overview&lt;timestamp&gt;.zip* and includes the following information:

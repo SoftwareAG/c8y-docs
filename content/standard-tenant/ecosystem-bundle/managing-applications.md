@@ -2,7 +2,7 @@
 weight: 10
 title: Managing applications
 layout: bundle
-section:
+sector:
   - platform_administration
 helpcontent:
   - label: managing-applications

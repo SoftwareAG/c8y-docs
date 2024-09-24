@@ -2,7 +2,7 @@
 weight: 150
 title: Remote access
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

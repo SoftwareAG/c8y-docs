@@ -2,7 +2,7 @@
 weight: 20
 title: General concepts
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

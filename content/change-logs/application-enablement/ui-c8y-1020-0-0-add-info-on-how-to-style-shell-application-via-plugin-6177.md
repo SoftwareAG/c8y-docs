@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-06-06'
 title: Documented shell application styling via plugins
 product_area: Application enablement & solutions
 change_type:

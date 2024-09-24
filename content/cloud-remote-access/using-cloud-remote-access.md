@@ -2,7 +2,7 @@
 title: Using Cloud Remote Access
 weight: 30
 layout: bundle
-section:
+sector:
   - device_management
 ---
 

@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-09-19
 title: LWM2M agent can now cancel observations using the "GET with observe option" method
 product_area: Device management & connectivity
 change_type:

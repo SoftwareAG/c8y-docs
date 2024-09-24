@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-09-19
 title: Custom firmware update URL in LWM2M device configuration is now deprecated
 product_area: Device management & connectivity
 change_type:

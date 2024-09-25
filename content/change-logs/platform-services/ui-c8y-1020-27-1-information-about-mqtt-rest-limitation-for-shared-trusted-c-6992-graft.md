@@ -1,6 +1,6 @@
 ---
 date: ""
-title: information about MQTT/REST limitation for shared trusted c… (#6992) [GRAFT][release/cd] (#7060)
+title: An alert has been added indicating that the connection via MQTT REST may not be possible when using shared trusted certificates.
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60465
 version: 1020.27.1
 ---
-information about MQTT/REST limitation for shared trusted c… (#6992) [GRAFT][release/cd] (#7060)
+The message "Shared trusted certificates are enabled on this instance. Devices may not able to connect over MQTT/REST using certificates." on trusted certificate page appears when "ssl shared truststore" is enabled.

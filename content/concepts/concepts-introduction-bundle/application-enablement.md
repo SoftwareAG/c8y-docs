@@ -5,25 +5,25 @@ title: Application Enablement
 
 {{< product-c8y-iot >}} provides a comprehensive suite of tools and applications to make it easy for our customers to use the connected equipment to drive business outcomes.
 
-At the core of this offering is the [Cockpit application](cockpit/cockpit-introduction/) that offers a range of features that allow users to visualize fleet and equipment KPIs through flexible [dashboarding](cockpit/working-with-dashboards/), [create and manage reports](cockpit/working-with-reports/) for data analysis and business insights and efficiently [manage alarms](cockpit/alarms/) to ensure prompt response to critical events.
+At the core of this offering is the [Cockpit application](/cockpit/cockpit-introduction/) that offers a range of features that allow users to visualize fleet and equipment KPIs through flexible [dashboarding](/cockpit/working-with-dashboards/), [create and manage reports](/cockpit/working-with-reports/) for data analysis and business insights and efficiently [manage alarms](/cockpit/alarms/) to ensure prompt response to critical events.
 
 One of {{< product-c8y-iot >}}'s core design principles is to allow for customization and extension.
 
 For this, {{< product-c8y-iot >}} provides many self-service customization options such as
 
-1. White-labeling: All applications can be easily branded using the [Branding Manager](enterprise-tenant/customization/#branding), allowing organizations to maintain their visual identity.
+1. White-labeling: All applications can be easily branded using the [Branding Manager](/enterprise-tenant/customization/#branding), allowing organizations to maintain their visual identity.
     
-2. Custom Dashboards: Users can create tailored visualizations for their equipment and key performance indicators using the [dashboarding feature](cockpit/working-with-dashboards/).
+2. Custom Dashboards: Users can create tailored visualizations for their equipment and key performance indicators using the [dashboarding feature](/cockpit/working-with-dashboards/).
     
-3. Real-time Analytics: The Analytics Builder Application enables users to define visual [real-time rules](streaming-analytics/analytics-builder/#using-the-model-editor) for data processing and decision-making.
+3. Real-time Analytics: The Analytics Builder Application enables users to define visual [real-time rules](/streaming-analytics/analytics-builder/#using-the-model-editor) for data processing and decision-making.
     
-4. Plug-ins and Extensions: A wide array of [plug-ins and extensions](standard-tenant/ecosystem/#extensions) is available to enhance platform functionality.
+4. Plug-ins and Extensions: A wide array of [plug-ins and extensions](/standard-tenant/ecosystem/#extensions) is available to enhance platform functionality.
     
 
-{{< product-c8y-iot >}} has also been designed with easy extensibility by developers in mind. This is enabled through well-documented open [APIs](https://cumulocity.com/api/core) exposing the complete platform functionality along with a [Command Line Interface (CLI)](https://goc8ycli.netlify.app/docs/introduction/) for efficient development workflows and an active [developer community](https://tech.forums.softwareag.com/tag/Cumulocity-IoT) providing a platform for knowledge sharing and problem-solving. All aspects of the platform are extensible:
+{{< product-c8y-iot >}} has also been designed with easy extensibility by developers in mind. This is enabled through well-documented open [APIs](https://{{< domain-c8y >}}/api/core) exposing the complete platform functionality along with a [Command Line Interface (CLI)](https://goc8ycli.netlify.app/docs/introduction/) for efficient development workflows and an active [developer community](https://tech.forums.softwareag.com/tag/Cumulocity-IoT) providing a platform for knowledge sharing and problem-solving. All aspects of the platform are extensible:
 
-1. Device-side logic: Developers can use the [thin-edge.io](welcome-developers/developer-topics/#:~:text=Device%20integration%20using%20thin%2Dedge.io) framework for integrating device side logic.
+1. Device-side logic: Developers can use the [thin-edge.io](/welcome-developers/developer-topics/#:~:text=Device%20integration%20using%20thin%2Dedge.io) framework for integrating device side logic.
     
-2. UI Applications: The [WebSDK](web/) allows developers to seamlessly extend any UI Application with new functionality or leverage our IoT components for your entirely own UI Application.
+2. UI Applications: The [WebSDK](/web/) allows developers to seamlessly extend any UI Application with new functionality or leverage our IoT components for your entirely own UI Application.
     
-3. Backend Services: The [managed microservices hosting](standard-tenant/ecosystem/#custom-microservices) together with the [Microservice SDK](welcome-developers/developer-topics/#:~:text=your%20use%20case.-,Microservice%20SDK,-%2D%20Develop%20and%20deploy) makes it easy to develop, deploy and operate custom backend services.
+3. Backend Services: The [managed microservices hosting](/standard-tenant/ecosystem/#custom-microservices) together with the [Microservice SDK](/microservice-sdk/microservice-sdk-introduction) makes it easy to develop, deploy and operate custom backend services.

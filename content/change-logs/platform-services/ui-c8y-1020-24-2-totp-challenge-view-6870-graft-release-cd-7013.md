@@ -1,6 +1,6 @@
 ---
 date: ""
-title: totp challenge view (#6870) [GRAFT][release/cd] (#7013)
+title: The appearance for the TFA settings has been improved.
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57801
 version: 1020.24.2
 ---
-totp challenge view (#6870) [GRAFT][release/cd] (#7013)
+Buttons and control sizes have been adjusted to fit the login screen and the TFA settings screen available in the user settings.

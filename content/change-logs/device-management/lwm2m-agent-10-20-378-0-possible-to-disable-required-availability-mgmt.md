@@ -1,6 +1,6 @@
 ---
-date:
-title: Disabling the automatic configuration of the required interval
+date: 2024-09-19
+title: Disabling the automatic configuration of the required interval for LWM2M devices
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

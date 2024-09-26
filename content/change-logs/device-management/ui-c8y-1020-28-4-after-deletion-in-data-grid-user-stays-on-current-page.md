@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3901
 version: 1020.28.4
 ---
-After deletion in data grid user stays on current page.
+Previously, when deleting an entry in a data grid that was not on the first page, users were unexpectedly redirected back to the first page of the grid. This behavior has now been changed. After deleting an entry, users will remain on the same page they were on before the deletion. This change affects all data grids throughout the application where deletion is possible.

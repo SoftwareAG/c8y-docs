@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2024-09-26"
 title: "Improved real-time behavior for changes to asset models"
 product_area: "Application enablement & solutions"
 change_type:

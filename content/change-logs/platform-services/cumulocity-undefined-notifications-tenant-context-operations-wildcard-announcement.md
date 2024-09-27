@@ -13,14 +13,16 @@ build_artifact:
     label: cumulocity
 ---
 
-Subscriptions to realtime updates from Notifications 2.0 may specify the Cumulocity IoT APIs to subscribe to, for example `alarms` or `measurements`.
-Subscriptions in the tenant context may use a wildcard value - that is, `*` - for the API selector, meaning that the subscription should include all available APIs.
-A missing API selector in a tenant context subscription request is equivalent to using the wildcard value.
+Notifications 2.0 subscriptions may specify the Cumulocity IoT APIs to subscribe to, for example `alarms` or `measurements`.
+Subscriptions may use a wildcard value (`*`) for the API selector, indicating that the subscription should include all available APIs.
+If the API selector is omitted from a subscription request, it is treated as equivalent to using the wildcard value.
 
-Currently, a tenant context subscription using the wildcard API selector will deliver updates from the `alarms`, `events`, and `managedobjects` APIs.
+Currently, a tenant context subscription using the wildcard API selector will deliver updates from a subset of the available APIs.
+See the Notifications 2.0 subscription [REST API documentation](https://cumulocity.com/api/core/#operation/postNotificationSubscriptionResource) for details of the current tenant context subscription behaviour.
+
 In future, such subscriptions will also deliver updates from the `operations` API.
-
-For example, after this change is enabled, an application that `POST`s this request to the `/notification2/subscriptions` endpoint:
+This applies to subscriptions that were created before the change is enabled, as well as new subscriptions.
+For example, after this change is enabled, an application that `POST`s the following request to the `/notification2/subscriptions` endpoint may receive `operations` updates, regardless of when the subscription was created:
 
 ```
 {
@@ -34,9 +36,9 @@ For example, after this change is enabled, an application that `POST`s this requ
 }
 ```
 
-should expect to receive `operations` updates in addition to any updates it was previously receiving.
-
-Applications that create tenant context subscriptions using the wildcard API selector should ensure that they are able to process `operations` updates before this change is enabled.
+Applications using the wildcard API selector in tenant context subscriptions should be prepared to receive `operations` updates in addition to the updates they were previously receiving.
+To avoid disruption, application developers should ensure that their applications can handle `operations` updates _before_ this change is enabled.
 
 The change will be enabled in the Cumulocity IoT CD release line no earlier than 15 January, 2025.
-It will also be included in the 2025 yearly release. A further announcement will be published when the change is enabled.
+It will also be included in the 2025 yearly release.
+A further announcement will be published when the change is enabled.

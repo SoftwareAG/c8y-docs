@@ -6,7 +6,7 @@ sector:
 weight: 90
 ---
 
-<h3 style="margin-top: -1em; padding-top: 0">for {{< product-c8y-iot >}} platforms</h3>
+<h3 style="margin-top: -1em; padding-top: 0">for {{< product-c8y-iot >}} base platform</h3>
 
 **This Agreement** is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes {{< product-c8y-iot >}} Platform ("Service") for managing Internet of Things ("IoT") devices ("IoT devices", "devices") on Provider's cloud instances ("software-as-a-service", "SaaS").
 

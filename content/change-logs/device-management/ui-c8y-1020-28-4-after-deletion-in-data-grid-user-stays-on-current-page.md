@@ -1,6 +1,6 @@
 ---
 date: ""
-title: After deletion in data grid user stays on current page.
+title: Data grid deletion no longer redirects to first page
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

@@ -13,7 +13,7 @@ build_artifact:
     label: cumulocity
 ---
 
-Notifications 2.0 subscriptions may specify the Cumulocity IoT APIs to subscribe to, for example `alarms` or `measurements`.
+Notifications 2.0 subscriptions may specify the {{< product-c8y-iot >}}  APIs to subscribe to, for example `alarms` or `measurements`.
 Subscriptions may use a wildcard value (`*`) for the API selector, indicating that the subscription should include all available APIs.
 If the API selector is omitted from a subscription request, it is treated as equivalent to using the wildcard value.
 
@@ -46,6 +46,6 @@ To avoid disruption, application developers should either:
 before this change is enabled.
 
 
-The change will be enabled in the Cumulocity IoT CD release line no earlier than 15 January, 2025.
+The change will be enabled in the {{< product-c8y-iot >}}  CD release line no earlier than January 15, 2025.
 It will also be included in the 2025 yearly release.
 A further announcement will be published when the change is enabled.

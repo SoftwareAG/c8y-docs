@@ -158,7 +158,7 @@ If an alarm is created, sends email or SMS.
 
 {{< c8y-admon-req >}}
 This rule is available when your tenant has: 
-- configured SMS provider
+- Configured a SMS provider
 - READ permission for the permission type "Option management"
 {{< /c8y-admon-req >}}
 

@@ -37,7 +37,14 @@ For example, after this change is enabled, an application that `POST`s the follo
 ```
 
 Applications using the wildcard API selector in tenant context subscriptions should be prepared to receive `operations` updates in addition to the updates they were previously receiving.
-To avoid disruption, application developers should ensure that their applications can handle `operations` updates _before_ this change is enabled.
+To avoid disruption, application developers should either:
+
+- ensure that their applications can handle `operations` updates, or
+
+- include an API selector
+
+before this change is enabled.
+
 
 The change will be enabled in the Cumulocity IoT CD release line no earlier than 15 January, 2025.
 It will also be included in the 2025 yearly release.

@@ -9,12 +9,12 @@ sector:
   - app_enablement
 ---
 
-The **Export** feature allows you to save **Data Points** information to external files. You can export data in formats such as:
+The **Export** feature allows you to save **Data points** information to external files. You can export data in formats such as:
 
 - **CSV** (Comma-Separated Values)
 - **Microsoft Excel** spreadsheets
 
-While **Export** is a standalone feature, it works in conjunction with other features that allow you to select **Data Points**. For example, you can use Export with the **Data points table** widget, but first it must be **integrated** with such feature.
+While **Export** is a standalone feature, it works in conjunction with other features that allow you to select **Data points**. For example, you can use Export with the **Data points table** widget, but first it must be **integrated** with such feature.
 
 TODO: add a list where it is integrated already?
 
@@ -74,4 +74,4 @@ See next section for all differences.
 
 When using **Full** export mode, if the total number of data records for **all** selected **Data points** exceeds one million (our processing limit), the download will be disabled until you narrow the time range. In this case, the following message will be shown:
 <br>![Export exceeded one million records](/images/users-guide/cockpit/cockpit-exports-one-million-for-single-data-point.png)<br>
-If only some **Data points** exceed the limit, those specific **Data points** will be **excluded** from the export until the time range is narrowed.
+If only some **Data points** exceed the limit, those specific **Data points** will be **excluded** from the export until the time range is narrowed, all other data are exportable.

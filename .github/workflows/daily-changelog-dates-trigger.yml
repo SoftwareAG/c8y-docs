@@ -64,7 +64,7 @@ jobs:
       - name: Get component details from helm charts
         id: component-details
         run: | # testing error handling by python script
-          mv docs/data/buildartifact.json docs/data/buildartifact-new.json 
+          sed -i '' 's/c8y-ops-zone-1/ERROR-CAUSING-KEY/g' "pipeline/clusters/helm_charts_data.json"
           python docs/scripts/get-component-details-from-chart.py
           echo "matrix=$(cat components_to_update.json | jq -c .)" >> $GITHUB_OUTPUT
 

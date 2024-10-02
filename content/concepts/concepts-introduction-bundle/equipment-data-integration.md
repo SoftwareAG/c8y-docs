@@ -7,4 +7,4 @@ Many equipment integrations use gateway devices to collect data. These gateways 
 
 To facilitate the data integration, {{< product-c8y-iot >}} comes with an [OPC UA](/protocol-integration/opcua/) integration and the [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/) technology. These provide configuration-driven ways to easily integrate OPC UA-enabled equipment and prominent fieldbus protocols.
 
-In addition to this, many of our [partners' gateways](https://ecosystem.cumulocity.com/device-ecosystem/) bring their own software stack with support for many other protocols.
+In addition to this, many of our [partners' gateways](https://ecosystem.{{< domain-c8y >}}/device-ecosystem/) bring their own software stack with support for many other protocols.

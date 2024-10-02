@@ -21,6 +21,6 @@ sector:
 5. Control, automate and optimise equipment operations remotely
     
 
-![Platform Overview](/images/concepts-guide/platform_overview.png)
+![Platform overview](/images/concepts-guide/platform_overview.png)
 
-This guide introduces the core concepts and capabilities of Cumulocity IoT, catering to IoT Architects, Automation Engineers, Industrial Engineers, and Developers.
+This guide introduces the core concepts and capabilities of {{< product-c8y-iot >}}, catering to IoT architects, automation engineers, industrial engineers, and developers.

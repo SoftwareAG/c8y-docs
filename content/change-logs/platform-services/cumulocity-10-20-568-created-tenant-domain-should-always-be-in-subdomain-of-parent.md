@@ -14,4 +14,5 @@ build_artifact:
 ticket: MTM-59299
 version: 10.20.568.0
 ---
-The domain of a tenant, created under either management or Enterprise tenant, is now required to be a subdomain of the parent tenant
+The domain of a tenant, created under either the {{< management-tenant >}} or {{< enterprise-tenant >}}, is now required to be a subdomain of the parent tenant.
+Previously domain of a tenant, created under {{< management-tenant >}} could have custom domain not related to parent tenant.

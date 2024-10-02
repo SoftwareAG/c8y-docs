@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ---
-**Update Overview** the Spring Boot version used in the Microservice SDK has been upgraded to 3.3.3. This update also necessitated upgrading several third-party libraries and frameworks. The mandatory updates include: 
+The Spring Boot version used in the Microservice SDK has been upgraded to 3.3.3. This update also necessitated upgrading several third-party libraries and frameworks. The mandatory updates include: 
 
 * Minimum required Java version: **17** (currently Java 8)  
  

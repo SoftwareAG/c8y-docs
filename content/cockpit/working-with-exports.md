@@ -36,22 +36,22 @@ Note that in the example below, **Export** is integrated with the **Data points 
    <br>![Export configuration](/images/users-guide/cockpit/cockpit-exports-configuration.png)<br>
    Here you can set:
 
-- **Time range** - Select the time range for your export. By default, it's the same time range as configured in the widget's settings.
-- **Data scope**
-  - **Export mode** - Two options are available (see [**Differences between export modes**](#differences-between-export-modes) section below for details):
-    - Compact (selected by default)
-    - Full
-  - **Aggregation** - Only available when **Compact** mode is selected. The default value is the same as in the widget's configuration. Four options are available:
-    - None
-    - Minutely
-    - Hourly
-    - Daily
-- **File types** - Choose the file format for exporting data. **Microsoft Excel** is selected by default, with **CSV** as another option. You can select both types simultaneously.
+   - **Time range** - Select the time range for your export. By default, it's the same time range as configured in the widget's settings.
+   - **Data scope**
+   - **Export mode** - Two options are available (see [**Differences between export modes**](#differences-between-export-modes) section below for details):
+     - Compact (selected by default)
+     - Full
+   - **Aggregation** - Only available when **Compact** mode is selected. The default value is the same as in the widget's configuration. Four options are available:
+     - None
+     - Minutely
+     - Hourly
+     - Daily
+   - **File types** - Choose the file format for exporting data. **Microsoft Excel** is selected by default, with **CSV** as another option. You can select both types simultaneously.
 
 3. Click the **Download** button. The result depends on your chosen export mode:
 
-- If you selected **Compact** mode, all data will be exported to one file and downloaded directly by your browser.
-- If you selected **Full** mode, depending on the number of records to process, data will either be available in a single ZIP file (containing one file per **Data point**) or sent via email.
+   - If you selected **Compact**, all data will be exported to one file and downloaded directly by your browser.
+   - If you selected **Full**, depending on the number of records to process, data will either be available in a single ZIP file (containing one file per **Data point**) or sent via email.
 
 See next section for all differences.
 

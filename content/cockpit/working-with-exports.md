@@ -27,10 +27,10 @@ ROLES & PERMISSIONS:
 ### To create an export {#to-create-an-export}
 
 {{< c8y-admon-info >}}
-Note that in the example below, **Exports** is integrated with the **Data points table** widget.
+Note that in the example below, **Export** is integrated with the **Data points table** widget.
 {{< /c8y-admon-info >}}
 
-1. Click on the exports button:
+1. Click on the export button:
    <br>![Add export](/images/users-guide/cockpit/cockpit-exports-button.png)<br>
 2. You will see the following modal with export configuration:
    <br>![Export configuration](/images/users-guide/cockpit/cockpit-exports-configuration.png)<br>
@@ -38,14 +38,14 @@ Note that in the example below, **Exports** is integrated with the **Data points
 
 - **Time range** - Select the time range for your export. By default, it's the same time range as configured in the widget's settings.
 - **Data scope**
-    - **Export mode** - Two options are available (see [**Differences between export modes**](#differences-between-export-modes) section below for details):
-        - Compact (selected by default)
-        - Full
-    - **Aggregation** - Only available when **Compact** mode is selected. The default value is the same as in the widget's configuration. Four options are available:
-        - None
-        - Minutely
-        - Hourly
-        - Daily
+  - **Export mode** - Two options are available (see [**Differences between export modes**](#differences-between-export-modes) section below for details):
+    - Compact (selected by default)
+    - Full
+  - **Aggregation** - Only available when **Compact** mode is selected. The default value is the same as in the widget's configuration. Four options are available:
+    - None
+    - Minutely
+    - Hourly
+    - Daily
 - **File types** - Choose the file format for exporting data. **Microsoft Excel** is selected by default, with **CSV** as another option. You can select both types simultaneously.
 
 3. Click the **Download** button. The result depends on your chosen export mode:

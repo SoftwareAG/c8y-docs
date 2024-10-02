@@ -24,7 +24,7 @@ build_artifact:
 
 * HTTP Client: **5.3.1**  
 
-**Impact** Each of these updates may impact your microservices, potentially requiring code changes. 
+**Impact**: Each of these updates may impact your microservices, potentially requiring code changes. 
 
 **Rollout**: The update will be available in Continuous Deployment (CD) versions higher than 1020.128.0 and in versions of the next annual release 2025.
 

@@ -63,7 +63,8 @@ jobs:
 
       - name: Get component details from helm charts
         id: component-details
-        run: |
+        run: | # testing error handling by python script
+          mv docs/data/buildartifact.json docs/data/buildartifact-test.json 
           python docs/scripts/get-component-details-from-chart.py
           echo "matrix=$(cat components_to_update.json | jq -c .)" >> $GITHUB_OUTPUT
 

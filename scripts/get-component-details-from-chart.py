@@ -18,7 +18,7 @@ except FileNotFoundError:
     raise FileNotFoundError("Could not open helm charts and/or build artifacts")
 except json.JSONDecodeError:
     subprocess.run(["echo", "::Error :: Could not decode helm charts and/or build artifacts"])
-    raise FileNotFoundError("Could not decode helm charts and/or build artifacts")
+    raise json.JSONDecodeError("Could not decode helm charts and/or build artifacts")
 
 
 try:

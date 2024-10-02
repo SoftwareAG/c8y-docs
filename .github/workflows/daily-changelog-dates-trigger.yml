@@ -63,8 +63,7 @@ jobs:
 
       - name: Get component details from helm charts
         id: component-details
-        run: | # testing error handling by python script
-          echo "}" >> pipeline/clusters/helm_charts_data.json
+        run: |
           python docs/scripts/get-component-details-from-chart.py
           echo "matrix=$(cat components_to_update.json | jq -c .)" >> $GITHUB_OUTPUT
 

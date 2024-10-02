@@ -16,6 +16,10 @@ try:
 except FileNotFoundError:
     subprocess.run(["echo", "::Error :: Could not open helm charts and/or build artifacts"])
     raise FileNotFoundError("Could not open helm charts and/or build artifacts")
+except json.JSONDecodeError:
+    subprocess.run(["echo", "::Error :: Could not decode helm charts and/or build artifacts"])
+    raise FileNotFoundError("Could not decode helm charts and/or build artifacts")
+
 
 try:
     for component in components_list:
@@ -31,6 +35,6 @@ try:
 
     with open('components_to_update.json', 'w') as output_file:
         json.dump(components_to_update, output_file)
-except json.JSONDecodeError:
+except:
     subprocess.run(["echo", "::Error :: Could not parse helm charts and build artifacts"])
-    raise json.JSONDecodeError("Could not parse helm charts and/or build artifacts")
+    raise AttributeError("Could not parse helm charts and/or build artifacts")

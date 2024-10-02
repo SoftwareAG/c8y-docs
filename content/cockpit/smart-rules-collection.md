@@ -27,7 +27,7 @@ If an alarm is created, an SMS is sent.
 {{< c8y-admon-req >}}
 This smart rule is only available if:
 - Your tenant has configured an SMS provider.
-- your user has a READ permission for the permission type "Option management"
+- Your user has a READ permission for the permission type "Option management".
 {{< /c8y-admon-req >}}
 
 **Parameters**

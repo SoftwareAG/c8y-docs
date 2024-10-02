@@ -46,7 +46,7 @@ jobs:
           echo "jwt=${jwtToken}" >> "${GITHUB_OUTPUT}"
           echo "token=${token}" >> "${GITHUB_OUTPUT}"
 
-      - name: Checkout c8y-iot-build-pipeline repository
+      - name: Checkout c8y-iot-build-pipeline repository #TODO: CHANGE REPO
         uses: actions/checkout@v4
         with:
           repository: ${{ vars.FORKED_REPO }}

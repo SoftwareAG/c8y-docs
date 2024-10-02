@@ -23,37 +23,24 @@ jobs:
           path: docs
           fetch-depth: 1
 
-      - name: Creating github access token #TODO: use our github app instead
-        id: token
-        run: |
-          githubAppID="${{ vars.APP_ID }}"
-          githubAppPrivateKey="${{ secrets.APP_PRIVATE_KEY }}" 
-          githubAppInstallationId="${{ vars.APP_INSTALL_ID }}"
-          githubApiUrl="${{ vars.GH_SERVER_API_URL }}"
-          iat=$(date +%s)
-          # Expire 9 minutes in the future. 10 minutes is the max for GitHub
-          exp=$((iat + 540))
-          # Generate encoded JWT header
-          jwtHeaderRaw='{"alg":"RS256"}'
-          jwtHeader=$( echo -n "${jwtHeaderRaw}" | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
-          # Generate encoded JWT payload
-          jwtPayloadRaw='{"iat":'"${iat}"',"exp":'"${exp}"',"iss":'"${githubAppID}"'}'
-          jwtPayload=$( echo -n "${jwtPayloadRaw}" | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
-          # Generate encoded JWT signature
-          jwtSignature=$( openssl dgst -sha256 -sign <(echo -n "${githubAppPrivateKey}") <(echo -n "${jwtHeader}.${jwtPayload}") | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
-          jwtToken=${jwtHeader}.${jwtPayload}.${jwtSignature}                              
-          token=$(curl --fail --silent -X POST -H "Authorization: Bearer ${jwtToken}" -H "Accept: application/vnd.github.v3+json" "${githubApiUrl}/app/installations/${githubAppInstallationId}/access_tokens" | jq -r .token)
-          echo "jwt=${jwtToken}" >> "${GITHUB_OUTPUT}"
-          echo "token=${token}" >> "${GITHUB_OUTPUT}"
+      - name: Get-token
+        uses: Cumulocity-IoT/github-app-token@v1
+        id: app-token
+        with:
+          app_id: ${{ vars.APP_ID }}
+          installation_id: ${{ vars.APP_INSTALL_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
-      - name: Checkout c8y-iot-build-pipeline repository #TODO: CHANGE REPO
+      - name: Test Token
+        run: echo {{ steps.app-token.outputs.token }}
+
+      - name: Checkout c8y-iot-build-pipeline repository
         uses: actions/checkout@v4
         with:
           repository: ${{ vars.FORKED_REPO }}
           fetch-depth: 1
           ref: ${{ vars.BRANCH }}
-          token: ${{ steps.token.outputs.token }}
-          github-server-url: ${{ vars.GH_SERVER_URL }}
+          token: ${{ steps.app-token.outputs.token }}
           path: pipeline
 
       - name: Setup Python

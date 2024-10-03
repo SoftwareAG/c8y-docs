@@ -94,3 +94,32 @@ An example response if the configuration is enabled:
 ```
 
 If the configuration is not set for the tenant at all, you will get a 404 response code for the request above.
+
+### To trigger time series migration {#to-trigger-time-series-migration}
+
+The admin user can trigger time series measurements migration via user interface using the plugin. The plugin should be installed on management tenant or on enterprise tenant.
+The plugin provides opportunity to migrate time series collection for current tenant (management or enterprise tenant) and for the list of subtenants, where user can select specific tenant for migration.
+
+To start tenant migration follow these steps:
+
+1. Navigate to **Migration > Time series** in application.
+2. Select the tenant you want to trigger migration for from the list of available tenants.
+3. Hover over on the row of tenant in the tenant list, then click appeared button **Add to queue** and confirm operation. Tenant migration status should be updated to *Queued*.
+4. When migration process will be triggered its status for the tenant should be changed from *Queued* to *In progress*.
+After the data will be processed, verified and migrated to the new collection the user can confirm progress by clicking **Approve and finish migration**.
+5. Confirmation pop-up will appear to inform the user that the new format for time series measurements is going to be used after confirming the migration.
+6. Accepting confirmation pop-up changes status of the migration to *Approved*.
+7. After 7 days migration will be fully finished and its status for selected tenant will be changed to *Completed*, afterwards old time series collection will be removed.
+
+{{< c8y-admon-info >}}
+Migration of measurements can be cancelled when tenant has *Queued* status. After status changed to *In progress* the process can no longer be stopped. However if the user will not approve migration manually then migration stays in status *Verified*.
+{{< /c8y-admon-info >}}
+
+### Progress monitoring {#progress-monitoring}
+
+Once migration is initiated the user can monitor the progress in status bar in the section **Current time series migration**. Where in percentage scale is presented the progression of already migrated data into the new collection regarding the left one.
+In the section **Current time series migration** should be shown information indicating the user who have started the migration and full migration time range (when the migration was started and is going to be finished)
+
+{{< c8y-admon-important >}}
+The user can add more than one tenant into migration queue, but migration will be done only for one tenant at a time. It means if there is a tenant migration with the status *Verified* until user approval, the migration will not update the status to *Complete*, hence the migration for other queued tenant will not be started
+{{< /c8y-admon-important >}}

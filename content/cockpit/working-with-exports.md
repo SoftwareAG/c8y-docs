@@ -14,7 +14,7 @@ The **Export** feature allows you to save **Data points** information to externa
 - **CSV** (Comma-Separated Values)
 - **Microsoft Excel** spreadsheets
 
-While **Export** is a standalone feature, it works in conjunction with other features that allow you to select **Data points**. For example, you can use Export with the [**Data points table**](/widgets-collection/#data-point-table) widget, but first it must be **integrated** with such feature.
+While **Export** is a standalone feature, it works in conjunction with other features that allow you to select **Data points**. For example, you can use Export with the [**Data points table**](/cockpit/widgets-collection/#data-point-table) widget, but first it must be **integrated** with such feature.
 
 TODO: add a list where it is integrated already?
 

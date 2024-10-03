@@ -39,14 +39,14 @@ Note that in the example below, **Export** is integrated with the **Data points 
 
    - **Time range** - Select the time range for your export. By default, it's the same time range as configured in the widget's settings.
    - **Data scope**
-   - **Export mode** - Two options are available (see [**Differences between export modes**](#differences-between-export-modes) section below for details):
-     - Compact (selected by default)
-     - Full
-   - **Aggregation** - Only available when **Compact** mode is selected. The default value is the same as in the widget's configuration. Four options are available:
-     - None
-     - Minutely
-     - Hourly
-     - Daily
+     - **Export mode** - Two options are available (see [**Differences between export modes**](#differences-between-export-modes) section below for details):
+       - Compact (selected by default)
+       - Full
+     - **Aggregation** - Only available when **Compact** mode is selected. The default value is the same as in the widget's configuration. Four options are available:
+       - None
+       - Minutely
+       - Hourly
+       - Daily
    - **File types** - Choose the file format for exporting data. **Microsoft Excel** is selected by default, with **CSV** as another option. You can select both types simultaneously.
 
 3. Click the **Download** button. The result depends on your chosen export mode:
@@ -83,6 +83,6 @@ When selecting multiple **Data points** for export in **Full** mode, if any indi
 - All other **Data points** within the limit remain exportable.
 - To include the excluded **Data points**, you need to narrow the time range.
 
-In this situation, you will see a more detailed informational message explaining how many **Data points** are affected and why:
+In this case, you will see a more detailed informational message explaining how many **Data points** are affected and why:
 
 <br>![Export exceeded one million records](/images/users-guide/cockpit/cockpit-exports-one-million-for-single-data-point-with-other-data-points.png)<br>

@@ -16,8 +16,6 @@ The **Export** feature allows you to save **Data points** information to externa
 
 While **Export** is a standalone feature, it works in conjunction with other features that allow you to select **Data points**. For example, you can use Export with the [**Data points table**](/cockpit/widgets-collection/#data-point-table) widget, but first it must be **integrated** with such feature.
 
-TODO: add a list where it is integrated already?
-
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
@@ -31,8 +29,11 @@ Note that in the example below, **Export** is integrated with the **Data points 
 {{< /c8y-admon-info >}}
 
 1. Click on the export button:
+
    <br>![Add export](/images/users-guide/cockpit/cockpit-exports-button.png)<br>
+
 2. You will see the following modal with export configuration:
+
    <br>![Export configuration](/images/users-guide/cockpit/cockpit-exports-configuration.png)<br>
    Here you can set:
 
@@ -73,5 +74,9 @@ See next section for all differences.
 ### Handling data points with over one million records {#data-points-with-over-one-million-records-to-process}
 
 When using **Full** export mode, if the total number of data records for **all** selected **Data points** exceeds one million (our processing limit), the download will be disabled until you narrow the time range. In this case, the following message will be shown:
+
 <br>![Export exceeded one million records](/images/users-guide/cockpit/cockpit-exports-one-million-for-single-data-point.png)<br>
 If only some **Data points** exceed the limit, those specific **Data points** will be **excluded** from the export until the time range is narrowed, all other data are exportable.
+In this case you will see more detailed info message:
+
+<br>![Export exceeded one million records](/images/users-guide/cockpit/cockpit-exports-one-million-for-single-data-point-with-other-data-points.png)<br>

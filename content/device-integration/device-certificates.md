@@ -359,7 +359,8 @@ Then new certificate will be added to the trusted certificates list:
 ```
 
 {{< c8y-admon-info >}}
-Now we have capability to upload same certificate across multiple tenants in {{< product-c8y-iot >}}. It will be achieved by enabling instance level system option `system.ssl.shared-truststore.enabled=true`. Once its enable it affects all tenants. Allowing the same certificate across multiple tenants will lead to tenant conflicts, especially for existing MQTT devices that do not explicitly send tenant information while authenticating using certificates.
+Now we have capability to upload same certificate across multiple tenants in {{< product-c8y-iot >}}. It will be achieved by enabling instance level system option `system.ssl.shared-truststore.enabled=true`. Once its enable it affects all tenants on particular instance and this message shown on UI "Shared trusted certificates are enabled on this instance. Devices may not able to connect over MQTT/REST using certificates." on trusted certificate page appears when "ssl shared truststore" is enabled.
+Allowing the same certificate across multiple tenants will lead to tenant conflicts, especially for existing MQTT devices that do not explicitly send tenant information while authenticating using certificates.
 In scenarios where multiple tenants have the same trusted certificate, the platform will not be able to correctly identify the tenant, leading to Denial of service. Same case over REST using HTTPS (device access token API).
 
 Existing tenants who rely on the unique trusted certificate requirement for tenant identification should not set on this system option.

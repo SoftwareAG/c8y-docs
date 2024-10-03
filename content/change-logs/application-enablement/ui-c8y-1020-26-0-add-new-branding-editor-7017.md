@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-09-12'
 title: Enhanced branding editor
 product_area: Application enablement & solutions
 change_type:

@@ -73,10 +73,16 @@ See next section for all differences.
 
 ### Handling data points with over one million records {#data-points-with-over-one-million-records-to-process}
 
-When using **Full** export mode, if the total number of data records for **all** selected **Data points** exceeds one million (our processing limit), the download will be disabled until you narrow the time range. In this case, the following message will be shown:
+When using **Full** export mode, if you select a single **Data point** that contains more than one million records (our processing limit), the download option will be disabled. To proceed with the export, you'll need to reduce the number of records by narrowing the time range. In this situation, until then, you'll see the following message:
 
 <br>![Export exceeded one million records](/images/users-guide/cockpit/cockpit-exports-one-million-for-single-data-point.png)<br>
-If only some **Data points** exceed the limit, those specific **Data points** will be **excluded** from the export until the time range is narrowed, all other data are exportable.
-In this case you will see more detailed info message:
+
+When selecting multiple **Data points** for export in **Full** mode, if any individual **Data point** exceeds the one million record limit:
+
+- The **Data points** exceeding the limit will be **excluded** from the export.
+- All other **Data points** within the limit remain exportable.
+- To include the excluded **Data points**, you need to narrow the time range.
+
+In this situation, you will see a more detailed informational message explaining how many **Data points** are affected and why:
 
 <br>![Export exceeded one million records](/images/users-guide/cockpit/cockpit-exports-one-million-for-single-data-point-with-other-data-points.png)<br>

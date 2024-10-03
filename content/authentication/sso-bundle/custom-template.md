@@ -39,7 +39,22 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 | Audience                                   |Expected aud parameter of JWT
 | Visible on Login screen                    |Indicates whether the login option is enabled or not
 
-Each time a user logs in, the content of the access token is verified and is a base for user access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
+Each time a user logs in, the content of the access token and id token is verified and serves as the basis for the user's access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
+The administrator can define **Source of dynamic access mapping**. The JWT claims can be retrieved from both the access token and the ID token.
+
+ ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-source-principle.png)
+
+The user access mapping configuration also provides the following **Dynamic access mapping principle** as options:
+
+* **Use dynamic access mapping only on user creation** - when selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overwritten nor updated.
+
+* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged** - when selected, dynamic access mapping is used on every login, but the roles not listed in the access mapping configuration are not updated. Only the global roles, default applications and device groups that are listed in the defined access mapping rules are overwritten.
+
+* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared** -The default. Dynamic access mapping assigns user roles, based on the token, on every user login. It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login. To change this behavior, select one of the remaining options.
+
+Selecting one of the two options mentioned above will also enable admins to edit roles of SSO users in the user management. For details, refer to [Managing permissions](/standard-tenant/managing-permissions/#assign-global-roles).
+
+The dynamic access mapping configuration allows defining the rules for assigning roles to users based on JWT claims. The rule that matches the token's value is used to assign the appropriate set of roles to the user.
 
  ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping.png)
 
@@ -55,7 +70,7 @@ Each time a user logs in, the content of the access token is verified and is a b
 
 The user will be granted access to the global role "business", the default application "cockpit" and the inventory roles "Manager" and "Reader" for the device group named "region north".
 
-If no access mapping matches the user access token, the user will get an "access denied" message when trying to log in. This will also happen if there is no access mapping defined causing all users to be unable to log in using SSO.
+If no access mapping matches the user token, the user will get an "access denied" message when trying to log in. This will also happen if there is no access mapping defined causing all users to be unable to log in using SSO.
 
 New rules can be added by clicking **Add access mapping** or **Add inventory roles** at the bottom. An access mapping statement can consist of multiple checks like in the image below. You can add a rule to an existing statement by clicking **and**. Click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> to remove a rule.
 
@@ -83,36 +98,23 @@ In this case the following claim will match the condition:
  }
  ```
 
-There is an option to verify that a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
+On user login, user data like first name, last name, email and phone number can also be derived from JWT claims. Using the **Source of user data mapping** radio button, the administrator can decide whether the values should be retrieved from the access token or the ID token.
 
-The user access mapping configuration provides the following options:
-
-* **Use dynamic access mapping only on user creation** - when selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overwritten nor updated.
-
-* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged** - when selected, dynamic access mapping is used on every login, but the roles not listed in the access mapping configuration are not updated. Only the global roles, default applications and device groups that are listed in the defined access mapping rules are overwritten.
-
-* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared** -The default. Dynamic access mapping assigns user roles, based on the access token, on every user login. It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login. To change this behavior, select one of the remaining options.
-
-![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
-
-Selecting one of the two options mentioned above will also enable admins to edit roles of SSO users in the user management. For details, refer to [Managing permissions](/standard-tenant/managing-permissions/#assign-global-roles).
-
-When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
-The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#troubleshooting)).
-
-![User ID configuration](/images/users-guide/Administration/sso-custom-userid-config.png)
-
- If the **Use constant value** checkbox is selected, a constant user ID is used for all users who log in to the {{< product-c8y-iot >}} platform via SSO. This means that all users who log in via SSO share the same user account in the {{< product-c8y-iot >}} platform. Usage of this option is not recommended.
-
-Next, the **User data mappings** can be configured:
+Based on that, the **User data mappings** can be configured:
 
 ![User data mappings](/images/users-guide/Administration/sso-custom-userdata-mapping.png)
 
-On user login, user data like first name, last name, email and phone number can also be derived from JWT claims. Each field represents the claim name that is used to retrieve the data from JWT. The user data mapping configuration is optional and as admin manager you can only use the required fields. If the configuration is empty or the claim name cannot be found in the JWT token then the values in the user data are set as empty.
+Each field represents the claim name that is used to retrieve the data from JWT. The user data mapping configuration is optional and as admin manager you can only use the required fields. If the configuration is empty or the claim name cannot be found in the JWT token then the values in the user data are set as empty.
 
 Mapping for alias is not available because it is not used in the context of SSO login.
 
-Each access token is signed by a signing certificate. The following options are available to configure the signing certificates.
+The username claim name can be configured in the **User ID** configuration window.
+The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#troubleshooting)).
+
+If the **Use constant value** checkbox is selected, a constant user ID is used for all users who log in to the {{< product-c8y-iot >}} platform via SSO. This means that all users who log in via SSO share the same user account in the {{< product-c8y-iot >}} platform. Usage of this option is not recommended.
+
+
+Each token is signed by a signing certificate. The following options are available to configure the signing certificates.
 
 1. By specifying the Azure AD certificate discovery address.
 

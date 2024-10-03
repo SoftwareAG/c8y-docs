@@ -14,7 +14,7 @@ The **Export** feature allows you to save **Data points** information to externa
 - **CSV** (Comma-Separated Values)
 - **Microsoft Excel** spreadsheets
 
-While **Export** is a standalone feature, it works in conjunction with other features that allow you to select **Data points**. For example, you can use Export with the **Data points table** widget, but first it must be **integrated** with such feature.
+While **Export** is a standalone feature, it works in conjunction with other features that allow you to select **Data points**. For example, you can use Export with the [**Data points table**](/widgets-collection/#data-point-table) widget, but first it must be **integrated** with such feature.
 
 TODO: add a list where it is integrated already?
 
@@ -50,20 +50,20 @@ Note that in the example below, **Export** is integrated with the **Data points 
 
 3. Click the **Download** button. The result depends on your chosen export mode:
 
-   - If you selected **Compact**, all data will be exported to one file and downloaded directly by your browser.
-   - If you selected **Full**, depending on the number of records to process, data will either be available in a single ZIP file (containing one file per **Data point**) or sent via email.
+   - If you selected **Compact** mode, all data will be exported to one file and downloaded directly by your browser.
+   - If you selected **Full** mode, depending on the number of records to process, data will either be available in a single ZIP file (containing one file per **Data point**) or sent via email.
 
 See next section for all differences.
 
 ### Differences between export modes {#differences-between-export-modes}
 
-- **Compact** mode:
+- **Compact**:
   - Processes up to 5,000 records per data point, or up to the data retention limit
   - Creates a single merged file containing all the data
   - Provides minimum and maximum values
   - Preview is not available
   - Supports optional data aggregation
-- **Full** mode:
+- **Full**:
   - Processes up to 1,000,000 records per data point, or up to the data retention limit
   - For exports exceeding 50,000 records, data will be sent via email
   - Creates a compressed ZIP file containing separate data files for each selected data point

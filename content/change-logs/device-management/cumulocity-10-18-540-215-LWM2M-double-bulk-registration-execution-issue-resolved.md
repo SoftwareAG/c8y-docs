@@ -1,6 +1,6 @@
 ---
 date: 
-title: Double Bulk Registration Execution Issue Resolved
+title: Double LWM2M Bulk Registration Execution Issue Resolved
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-MLn0oFRX-
     label: opcua
-ticket: DM-24422
+ticket: DM-2442
 version: 10.20.88.0
 ---
 When OPC-UA device type was created with special characters in any of the fields, the gateway was not reading it correctly which caused an error while creating mappings. This problem is now fixed - gateway encodes and decodes special characters as expected.  

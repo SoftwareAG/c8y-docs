@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3951
 version: 1020.28.8
 ---
-No possibility to delete devices in Child devices grid
+In Device Management, the action to delete child devices from the "Child devices" tab was removed, requiring users to navigate to the device details page for deletion. With this change, child devices can now be directly deleted from the "Child devices" grid view.

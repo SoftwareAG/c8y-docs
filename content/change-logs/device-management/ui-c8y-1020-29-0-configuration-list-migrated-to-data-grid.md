@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Configuration list migrated to data-grid
+title: Configuration repository migrated to data grid
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3765
 version: 1020.29.0
 ---
-Configuration list migrated to data-grid
+Configuration repository has been migrated to a data grid. The data grid provides a more modern and user-friendly way to view and manage configuration items compared to the previous list view. The data grid offers enhanced features such as sorting, filtering, and pagination, making it easier to find and work with specific configuration items.

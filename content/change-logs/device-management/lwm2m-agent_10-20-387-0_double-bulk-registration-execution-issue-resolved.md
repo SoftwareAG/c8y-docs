@@ -1,5 +1,5 @@
 ---
-date: 2024-10-01
+date: 
 title: Double Bulk Registration Execution Issue Resolved
 product_area: Device management & connectivity
 change_type:

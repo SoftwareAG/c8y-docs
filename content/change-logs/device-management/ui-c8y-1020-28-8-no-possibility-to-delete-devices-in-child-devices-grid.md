@@ -1,6 +1,6 @@
 ---
 date: ""
-title: No possibility to delete devices in Child devices grid
+title: Enable deletion of child devices in Device Management
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

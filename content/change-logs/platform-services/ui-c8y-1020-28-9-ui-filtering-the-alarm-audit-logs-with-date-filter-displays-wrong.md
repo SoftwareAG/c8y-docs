@@ -1,6 +1,6 @@
 ---
 date: ""
-title: UI Filtering the Alarm Audit Logs with Date filter displays wrong results (#7025) [GRAFT][release/cd] (#7186)
+title: Alarm audit log date filter shows incorrect results
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

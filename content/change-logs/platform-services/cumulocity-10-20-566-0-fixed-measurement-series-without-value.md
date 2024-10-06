@@ -1,6 +1,6 @@
 ---
 date: 2024-09-23
-title: Fixed the capability to create measurement series without value
+title: Measurement series without value can no longer be created
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

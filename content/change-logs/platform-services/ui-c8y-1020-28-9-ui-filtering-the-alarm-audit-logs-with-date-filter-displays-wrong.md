@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Alarm audit log date filter shows incorrect results
+title: Improved information on time filtering in Audit logs page
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

@@ -103,7 +103,7 @@ The plugin provides opportunity to migrate the time series collection for the cu
 To start the tenant migration follow the steps below:
 
 1. Navigate to **Migration > Time series** in application.
-2. Select the tenant you want to trigger migration for from the list of available tenants.
+2. Select the tenant you want to trigger the migration for from the list of available tenants.
 3. Hover over on the row of tenant in the tenant list, then click appeared button **Add to queue** and confirm operation. Tenant migration status should be updated to *Queued*.
 4. When migration process will be triggered its status for the tenant should be changed from *Queued* to *In progress*.
 After the data will be processed, verified and migrated to the new collection the user can confirm progress by clicking **Approve and finish migration**.

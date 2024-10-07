@@ -1,6 +1,6 @@
 ---
-date: 2024-10-07
-title: Enabling time series support on management tenant is no longer possible
+date: 
+title: Enabling time series support on the {{< management-tenant >}} is no longer possible
 product_area: Platform services
 change_type:
   - value: change-3BQrQ6adS
@@ -15,4 +15,4 @@ ticket: MTM-61027
 version: 10.20.584.0
 ---
 
-Enabling [time series support](https://cumulocity.com/docs/enterprise-tenant/enhanced-time-series-support/) on `management` tenant is no longer possible to prevent time series from being enabled on sub-tenants by tenant option inheritance.
+Enabling [time series support](https://cumulocity.com/docs/enterprise-tenant/enhanced-time-series-support/) on the {{< management-tenant >}} is no longer possible to prevent time series from being enabled on subtenants by tenant option inheritance.

@@ -1,6 +1,6 @@
 ---
 date: 
-title: Special character encoding in OPC-UA device types is now available
+title: Special character encoding in OPC UA device types is now available
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

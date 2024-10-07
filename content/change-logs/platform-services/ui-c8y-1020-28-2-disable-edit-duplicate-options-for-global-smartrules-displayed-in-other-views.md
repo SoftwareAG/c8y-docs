@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55915
 version: 1020.28.2
 ---
-Previously, it was possible to edit global smart rules from any context (device, group or application). With this change to use edit and duplicate actions for global smart rules is only possible from **Global smart rule** page.
+Previously, it was possible to edit global smart rules from any context (device, group or application). With this change editing or duplicating global smart rules is only possible from the **Global smart rule** page.

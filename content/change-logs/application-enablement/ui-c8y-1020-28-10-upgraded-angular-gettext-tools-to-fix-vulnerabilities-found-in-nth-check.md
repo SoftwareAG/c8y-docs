@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58403
 version: 1020.28.10
 ---
-Upgraded `angular-gettext-tools` to fix vulnerabilities found in `nth-check` and `cheerio` (#7214)
+The angular-gettext-tools library is used to extract translatable strings from source code in the Cumulocity UI. Security vulnerabilities were discovered in the nth-check and cheerio dependencies of angular-gettext-tools. To address these vulnerabilities, angular-gettext-tools has been upgraded to a newer version that includes fixed versions of the affected dependencies. This change is not expected to have any impact on the functionality of the Cumulocity UI.

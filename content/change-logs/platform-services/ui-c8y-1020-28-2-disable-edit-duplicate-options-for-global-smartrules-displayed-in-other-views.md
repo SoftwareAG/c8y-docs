@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Disable edit and duplicate options for global smart rules displayed outside the global smart rules view
+title: Edit and duplicate options for global smart rules disabled outside the Global smart rules page
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

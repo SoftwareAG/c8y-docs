@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60595
 version: 1020.28.9
 ---
-Time filtering in Audit logs list view shows different times on left column and inside audit log card. There was done update of popup with information, to make user aware that audit logs cards are filtered by device time and it could be different from server time. 
+In the **Audit logs** page, time information is provided in the "Times" column on the left (server time) and inside the audit log card (device time). The information popup has been improved, to make users aware that audit logs cards are filtered by device time which can be different from the server time. 

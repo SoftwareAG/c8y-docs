@@ -1,5 +1,5 @@
 ---
-date: 2024-09-19
+date:
 title: Subtenant creation request with subdomain different than parent is not allowed
 product_area: Platform services
 change_type:

@@ -6,8 +6,9 @@ sector:
   - platform_administration
 ---
 
+### Notice of current storage limits and message TTL for the microservice-based data broker
+
 {{< c8y-admon-important >}}
-##### Notice of current storage limits and message TTL for the microservice-based data broker
 
 The microservice-based data broker stores messages persistently until they are successfully delivered to the destination tenant. To optimize resource usage, the storage limits for the microservice-based data broker have been adjusted as follows:
 

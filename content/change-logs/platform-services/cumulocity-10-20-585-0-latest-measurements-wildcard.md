@@ -1,5 +1,5 @@
 ---
-date: 2024-10-07
+date:
 title: Fixed latest measurement values tenant option with wildcard key
 product_area: Platform services
 change_type:
@@ -15,7 +15,7 @@ ticket: MTM-60761
 version: 10.20.585.0
 ---
 
-Fixed tenant option used to enable [latest measurement values](https://cumulocity.com/docs/standard-tenant/managing-data/#latest-value) not working with the wildcard (`*`) key. After the fix the wildcard character can be used to enable latest measurements for all series:
+Previously, the tenant option which is used to enable [latest measurement values](https://cumulocity.com/docs/standard-tenant/managing-data/#latest-value) was not not working with the wildcard (`*`) character. With this change, the wildcard character can be used to enable latest measurements for all series:
 
 `PUT /tenant/options/measurement.series.latestvalue`
 ```json

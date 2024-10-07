@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Configuration repository migrated to data grid
+title: Configuration repository migrated to a data grid
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP

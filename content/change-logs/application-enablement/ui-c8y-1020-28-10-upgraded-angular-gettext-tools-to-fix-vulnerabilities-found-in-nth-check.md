@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Upgraded `angular-gettext-tools` to fix vulnerabilities found in `nth-check` and `cheerio` (#7214)
+title: Upgrade angular-gettext-tools to fix vulnerabilities
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

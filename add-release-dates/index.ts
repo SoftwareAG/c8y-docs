@@ -38,11 +38,10 @@ async function processFile(filePath: string): Promise<boolean> {
   if (!valid(data.version) && data.version.split('.').length==4){
     const parts = data.version.split('.');
     const normalizedVersion = `${parts[0]}${parts[1]}.${parts[2]}.${parts[3]}`;
-    console.log("normalized version=",normalizedVersion);
     data.version=normalizedVersion ;
-     }
+    }
 
-  if(!valid(data.version){
+  if(!valid(data.version)){
     console.debug("Version in file: ",filePath,"is not a valid semver. Skipping..");
     return false;
     }

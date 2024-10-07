@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Enable deletion of child devices in Device Management
+title: Enabled deletion of child devices from the Child devices tab
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

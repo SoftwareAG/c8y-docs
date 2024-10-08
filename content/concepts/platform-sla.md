@@ -39,7 +39,7 @@ The {{< product-c8y-iot >}} platform offers a comprehensive set of features desi
 * **Business continuity and resilience:**
     * {{< product-c8y-iot >}} adheres to ISO 22301 standards for business continuity management (BCM), ensuring resilience against zone outages with zone redundancy.
     * Regular backups are maintained with a 30-day retention period, a Recovery Time Objective (RTO) of 12 hours, and a Recovery Point Objective (RPO) of 24 hours.
-    * Cumulocity conducts regular drills to validate its disaster recovery procedures.
+    * {{< company-c8y >}} conducts regular drills to validate its disaster recovery procedures.
 * **API compatibility management:** The platform maintains compatibility of APIs as outlined in its[ Compatibility Policy](/concepts/compatibility-policy/). Transport protocols are managed in accordance with this policy, ensuring consistent and reliable API interactions.
 * **Data ownership and portability:** As the data processor, {{< product-c8y-iot >}} ensures that customers retain full ownership of their data. Customers can export their data at any time using the provided APIs, ensuring control and flexibility over their information.
 * **Continuous maintenance and upgrades:** The platform undergoes regular maintenance and upgrades to ensure optimal performance and security. These upgrades happen transparently and without involving Customers.
@@ -52,10 +52,10 @@ As a customer of the {{< product-c8y-iot >}} platform, we request your acknowled
 
 ##### **Security Management**
 
-* **Device security:** While the {{< product-c8y-iot >}} platform provides robust security measures, the customer is responsible for the security of devices and device credentials. Cumulocity cannot be held liable for any leaked credentials from devices. The customer acknowledges that communication protocols and ciphers may require periodic updates to address evolving security threats. This may necessitate updates to the devices themselves.
-* **End user access security:** To protect the integrity of the cloud platform, customers are encouraged to educate their users on secure usage practices, such as implementing multi-factor authentication. The customer is responsible for managing user credentials, and Cumulocity cannot be held responsible for any compromised credentials.
+* **Device security:** While the {{< product-c8y-iot >}} platform provides robust security measures, the customer is responsible for the security of devices and device credentials. {{< company-c8y >}} cannot be held liable for any leaked credentials from devices. The customer acknowledges that communication protocols and ciphers may require periodic updates to address evolving security threats. This may necessitate updates to the devices themselves.
+* **End user access security:** To protect the integrity of the cloud platform, customers are encouraged to educate their users on secure usage practices, such as implementing multi-factor authentication. The customer is responsible for managing user credentials, and {{< company-c8y >}} cannot be held responsible for any compromised credentials.
 * **Certificate management:** The customer is responsible for monitoring the expiration of their certificates. Expired certificates can result in service unavailability for the associated clients, and the customer expressly acknowledges this responsibility.
-* **Library updates:** Customers utilizing Cumulocity-provided libraries to build their own applications are responsible for ensuring these libraries are kept up to date with respect to security. In the event of a security vulnerability or other critical update, it is the customer's responsibility to implement the necessary updates in their applications to maintain the integrity and security of their systems. Cumulocity cannot be held liable for any security issues arising from outdated libraries in customer applications.
+* **Library updates:** Customers utilizing {{< company-c8y >}}-provided libraries to build their own applications are responsible for ensuring these libraries are kept up to date with respect to security. In the event of a security vulnerability or other critical update, it is the customer's responsibility to implement the necessary updates in their applications to maintain the integrity and security of their systems. {{< company-c8y >}} cannot be held liable for any security issues arising from outdated libraries in customer applications.
 
 ##### **Capacity management**
 
@@ -70,16 +70,16 @@ For details on non-permitted uses of {{< product-c8y-iot >}}, please refer to th
 In the interest of transparency and to ensure a mutual understanding of the service capabilities, we kindly ask customers to acknowledge the following limitations and constraints of the {{< product-c8y-iot >}} platform:
 
 * **Hard quotas:** The customer acknowledges the existence of hard quotas as detailed in the {{< product-c8y-iot >}} documentation [here](/concepts/limits/). These quotas define maximum thresholds that the platform can support and are essential for maintaining overall system stability.
-* **Shared environment considerations:** Customers not utilizing {{< product-c8y-iot >}} Dedicated plans should be aware that their tenant is hosted within a shared environment. As a result, response times may occasionally vary due to shared resource usage, and the customer acknowledges this potential inconsistency. Furthermore, infrastructure-level information such as HTTP or MQTT access logs cannot be shared with Customers.
+* **Shared environment considerations:** Customers not utilizing {{< product-c8y-iot >}} Dedicated plans should be aware that their tenant is hosted within a shared environment. As a result, response times may occasionally vary due to shared resource usage, and the customer acknowledges such variations. Furthermore, infrastructure-level information such as HTTP or MQTT access logs cannot be shared with Customers.
 * **Data retention and storage costs:** The customer acknowledges that reducing data retention periods does not immediately lead to the reclamation of storage space or a reduction in storage costs due to technical processing requirements.
 * **Distributed IoT system:** The customer acknowledges that IoT systems, by nature, are distributed and Internet-based:
-    * **Connectivity reliability:** Connectivity may occasionally fail. To ensure reliable communication, customer devices and clients should implement appropriate reconnect or retry strategies. Singular connection drops or temporary failures are considered normal and do not constitute a service failure. Cumulocity is committed to working with the customer to troubleshoot and resolve consistent and repeating communication issues.
-    * **Third-party connectivity services:** Connectivity may involve third-party services such as LPWAN or mobile network operators. The customer acknowledges that while Cumulocity facilitates the transfer of data through these services, it does not operate, monitor, or troubleshoot these third-party networks. Connectivity between the customer's devices and {{< product-c8y-iot >}} cloud service is in the sole responsibility of the customer.
-* **Data recovery**: While Cumulocity maintains backups of data for its own business continuity management, disaster recovery on behalf of Customers (e.g., after accidental data deletion by Customers) is a separate service. Customer expressly acknowledges the backup retention period and RPO outline above.
+    * **Connectivity reliability:** Connectivity may occasionally fail. To ensure reliable communication, customer devices and clients should implement appropriate reconnect or retry strategies. Singular connection drops or temporary failures are considered normal and do not constitute a service failure. {{< company-c8y >}} is committed to working with the customer to troubleshoot and resolve consistent and repeating communication issues.
+    * **Third-party connectivity services:** Connectivity may involve third-party services such as LPWAN or mobile network operators. The customer acknowledges that while {{< product-c8y-iot >}} facilitates the transfer of data through these services, it does not operate, monitor, or troubleshoot these third-party networks. Connectivity between the customer's devices and {{< product-c8y-iot >}} cloud service is in the sole responsibility of the customer.
+* **Data recovery**: While {{< company-c8y >}} maintains backups of data for its own business continuity management, disaster recovery on behalf of Customers (e.g., after accidental data deletion by Customers) is a separate service. Customer expressly acknowledges the backup retention period and RPO outline above.
 
 ### Service availability
 
-Cumulocity is committed to providing reliable service. The specific service availability targets are as follows:
+{{< company-c8y >}} is committed to providing reliable service. The specific service availability targets are as follows:
 
 * **Production environments:** 99.90% availability
 * **Preproduction environments:** 95.00% availability
@@ -117,11 +117,20 @@ Planned and unplanned downtimes for the Cloud Services are communicated via the 
 
 If the service is available for less than the availability outlined above during any full calendar month during the cloud services term, Customer will be eligible for a service credit for the particular service in accordance with the formula below (a “Service Credit”).
 
+For services with 99.90% availability target:
+
 | Monthly availability | Percentage of the pro-rata monthly Cloud Service Fee for the covered cloud service |
 | -------------------- | ---------------------------------------------------------------------------------- |
 | 99.50% to < 99.90%   | 10%                                                                                |
 | 99.50% to < 99.00%   | 15%                                                                                |
 | < 99.00%             | 25%                                                                                |
+
+For services with 95.00% availability target:
+
+| Monthly availability | Percentage of the pro-rata monthly Cloud Service Fee for the covered cloud service |
+| -------------------- | ---------------------------------------------------------------------------------- |
+| < 95.00%             | 10%                                                                                |
+
 
 #### Credit Request
 
@@ -166,10 +175,10 @@ Service Availability requirements are set forth in this Service Credit Commitmen
 #### **Maintenance**
 
 * **Ongoing maintenance and upgrades:** The {{< product-c8y-iot >}} platform is continuously maintained and upgraded to ensure optimal performance and security.
-* **Seamless upgrades:** This maintenance process is designed to be seamless and generally invisible to customers. The timing and content of upgrades are at the discretion of Cumulocity.
+* **Seamless upgrades:** This maintenance process is designed to be seamless and generally invisible to customers. The timing and content of upgrades are at the discretion of {{< company-c8y >}}.
 * **Upgrade information:** Details about scheduled upgrade times are available on the platform’s status pages as outlined above, while information about the specific changes included in each upgrade can be found in the [change logs](/change-logs/) within the customer documentation.
 * **Regulated environments:** For customers operating in regulated environments, an optional annual maintenance schedule is available to meet specific compliance requirements.
 
 ### Acceptance
 
-By using the Services provided by Cumulocity, the Customer agrees to adhere to the terms outlined in this SLA.
+By using the Services provided by {{< company-c8y >}}, the Customer agrees to adhere to the terms outlined in this SLA.

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issues in the asset properties widget on device info page.
+title: Asset properties widget on device info page fixed
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

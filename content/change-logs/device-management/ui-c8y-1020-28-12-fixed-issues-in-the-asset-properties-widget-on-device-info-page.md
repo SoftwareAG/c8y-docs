@@ -1,6 +1,9 @@
 ---
 date: ""
-title: Asset properties widget on device info page fixed
+title: Asset properties widget in device details correctly displays all relevant properties
+
+
+
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

@@ -40,7 +40,7 @@ The {{< product-c8y-iot >}} platform offers a comprehensive set of features desi
     * {{< product-c8y-iot >}} adheres to ISO 22301 standards for business continuity management (BCM), ensuring resilience against zone outages with zone redundancy.
     * Regular backups are maintained with a 30-day retention period, a Recovery Time Objective (RTO) of 12 hours, and a Recovery Point Objective (RPO) of 24 hours.
     * {{< company-c8y >}} conducts regular drills to validate its disaster recovery procedures.
-* **API compatibility management:** The platform maintains compatibility of APIs as outlined in its[ Compatibility Policy](/concepts/compatibility-policy/). Transport protocols are managed in accordance with this policy, ensuring consistent and reliable API interactions.
+* **API compatibility management:** The platform maintains compatibility of APIs as outlined in its[ Compatibility policy](/concepts/compatibility-policy/). Transport protocols are managed in accordance with this policy, ensuring consistent and reliable API interactions.
 * **Data ownership and portability:** As the data processor, {{< product-c8y-iot >}} ensures that customers retain full ownership of their data. Customers can export their data at any time using the provided APIs, ensuring control and flexibility over their information.
 * **Continuous maintenance and upgrades:** The platform undergoes regular maintenance and upgrades to ensure optimal performance and security. These upgrades happen transparently and without involving Customers.
 
@@ -59,7 +59,7 @@ As a customer of the {{< product-c8y-iot >}} platform, we request your acknowled
 
 ##### **Capacity management**
 
-* **Scalability considerations:** While the {{< product-c8y-iot >}} platform is designed to be scalable, it may not be able to accommodate sudden, extreme capacity demands (e.g., all devices attempting to connect simultaneously after a connectivity outage, or all devices being upgraded at the same time). The customer acknowledges that such requests may be delayed or declined by the platform to maintain overall service stability. The customer is advised to implement an [exponential backoff strategy](https://en.wikipedia.org/wiki/Exponential_backoff).
+* **Scalability considerations:** While the {{< product-c8y-iot >}} platform is designed to be scalable, it may not be able to accommodate sudden, extreme capacity demands (for example, all devices attempting to connect simultaneously after a connectivity outage, or all devices being upgraded at the same time). The customer acknowledges that such requests may be delayed or declined by the platform to maintain overall service stability. The customer is advised to implement an [exponential backoff strategy](https://en.wikipedia.org/wiki/Exponential_backoff).
 * **Soft limits:** The customer acknowledges the existence of "soft limits" as documented in the {{< product-c8y-iot >}} documentation [here](/concepts/limits/). These limits are not strictly enforced but exceeding them may lead to a reduced service level, and the customer is advised to operate within these guidelines.
 * **Data retention management:** Data storage is included as part of the customer’s subscription. The customer is responsible for configuring appropriate data retention rules within the {{< product-c8y-iot >}} Administration application, balancing their specific use case requirements with budgetary considerations.
 
@@ -75,7 +75,7 @@ In the interest of transparency and to ensure a mutual understanding of the serv
 * **Distributed IoT system:** The customer acknowledges that IoT systems, by nature, are distributed and Internet-based:
     * **Connectivity reliability:** Connectivity may occasionally fail. To ensure reliable communication, customer devices and clients should implement appropriate reconnect or retry strategies. Singular connection drops or temporary failures are considered normal and do not constitute a service failure. {{< company-c8y >}} is committed to working with the customer to troubleshoot and resolve consistent and repeating communication issues.
     * **Third-party connectivity services:** Connectivity may involve third-party services such as LPWAN or mobile network operators. The customer acknowledges that while {{< product-c8y-iot >}} facilitates the transfer of data through these services, it does not operate, monitor, or troubleshoot these third-party networks. Connectivity between the customer's devices and {{< product-c8y-iot >}} cloud service is in the sole responsibility of the customer.
-* **Data recovery**: While {{< company-c8y >}} maintains backups of data for its own business continuity management, disaster recovery on behalf of Customers (e.g., after accidental data deletion by Customers) is a separate service. Customer expressly acknowledges the backup retention period and RPO outline above.
+* **Data recovery**: While {{< company-c8y >}} maintains backups of data for its own business continuity management, disaster recovery on behalf of Customers (for example, after accidental data deletion by Customers) is a separate service. Customer expressly acknowledges the backup retention period and RPO outline above.
 
 ### Service availability
 
@@ -97,9 +97,9 @@ For non-production instances, the following are also excluded from the availabil
 
 * Installation and upgrades of the entire platform.
 * Deployment of new components.
-* Upgrades to underlying third-party components (e.g., Kubernetes, Database systems).
+* Upgrades to underlying third-party components (for example, Kubernetes, Database systems).
 
-(b) **Third-party platform issues:** Any issues with the underlying computing platforms (e.g., Azure, AWS) that result in service unavailability are excluded from the availability calculations.
+(b) **Third-party platform issues:** Any issues with the underlying computing platforms (for example, Azure, AWS) that result in service unavailability are excluded from the availability calculations.
 
 (c) **Events of force majeure**.
 
@@ -132,7 +132,7 @@ For services with 95.00% availability target:
 | < 95.00%             | 10%                                                                                |
 
 
-#### Credit Request
+#### Credit request
 
 Customer must submit all requests for Service Credits by filing a request ("Service Credit Request") to support, including the necessary information to evaluate the request, including:
 
@@ -144,7 +144,7 @@ the issue;
 
 Supplier must receive the Service Credit Request within fourteen (14) days from the occurrence of the Incident. Supplier will evaluate the Service Credit Request as soon as all information necessary to review the Service Credit Request is received. Supplier will use commercially reasonable efforts to process complete Service Credit Requests during the subsequent calendar month and within thirty (30) days of receipt. If the Incident is confirmed by Supplier and gives rise to a Service Credit, Supplier shall provide Customer with a refund within thirty (30) days of Suppliers determination. The total amount credited to customer in a particular year under this SLA shall not exceed 5% of the annual fee (exclusive of any taxes) paid by the Customer for the affected services.
 
-#### Requirements and Exceptions
+#### Requirements and exceptions
 
 Customer must be current on any payment obligations owed to Supplier and in compliance with the terms of the Agreement and the Order Form in order to be eligible to receive Service Credits. The Service Availability commitments do not apply to any performance or availability issues:
 
@@ -159,7 +159,7 @@ with, the terms of the Agreement and the Order Form or Customer’s use of the C
 Services after we advised you to modify your use of the Service, if you did not modify your
 use as advised.
 
-#### Exclusive Remedy
+#### Exclusive remedy
 
 Except as expressly set out in the Agreement, Customer acknowledges and agrees that
 Supplier’s sole obligation and Customer’s exclusive remedy for Supplier’s failure to meet the

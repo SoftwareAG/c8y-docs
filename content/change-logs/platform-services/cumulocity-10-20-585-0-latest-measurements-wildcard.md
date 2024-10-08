@@ -1,6 +1,6 @@
 ---
 date:
-title: Fixed latest measurement values tenant option with wildcard key
+title: Latest measurement values tenant option now works with wildcard character
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

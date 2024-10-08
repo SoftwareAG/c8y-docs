@@ -74,7 +74,7 @@ In the interest of transparency and to ensure a mutual understanding of the serv
 * **Data retention and storage costs:** Customer acknowledges that reducing data retention periods does not immediately lead to the reclamation of storage space or a reduction in storage costs due to technical processing requirements.
 * **Distributed IoT system:** Customer acknowledges that IoT systems, by nature, are distributed and Internet-based:
     * **Connectivity reliability:** Connectivity may occasionally fail. To ensure reliable communication, Customer devices and clients should implement appropriate reconnect or retry strategies. Singular connection drops or temporary failures are considered normal and do not constitute a service failure. {{< company-c8y >}} is committed to working with Customer to troubleshoot and resolve consistent and repeating communication issues.
-    * **Third-party connectivity services:** Connectivity may involve third-party services such as LPWAN or mobile network operators. Customer acknowledges that while {{< product-c8y-iot >}} facilitates the transfer of data through these services, it does not operate, monitor, or troubleshoot these third-party networks. Connectivity between Customer's devices and {{< product-c8y-iot >}} cloud service is in the sole responsibility of Customer.
+    * **Third-party connectivity services:** Connectivity may involve third-party services such as LPWAN or mobile network operators. Customer acknowledges that while {{< product-c8y-iot >}} facilitates the transfer of data through these services, it does not operate, monitor, or troubleshoot these third-party networks. Connectivity between Customer's devices and {{< product-c8y-iot >}} service is in the sole responsibility of Customer.
 * **Data recovery**: While {{< company-c8y >}} maintains backups of data for its own business continuity management, disaster recovery on behalf of Customer (for example, after accidental data deletion by Customer) is a separate service. Customer expressly acknowledges the backup retention period and RPO outline above.
 
 ### Service availability
@@ -109,9 +109,9 @@ The status pages showing the service availability results are at
 * [cumulocity-apj.statuspage.io](http://cumulocity-apj.statuspage.io) for APJ instances.
 * a dedicated location for {{< product-c8y-iot >}} Dedicated instances.
 
-Planned and unplanned downtimes for the Cloud Services are communicated via the {{< product-c8y-iot >}} status page, which will also provide an expected time for the system’s return to availability. Please note that the availability of the status page itself is not included in the Cloud Service availability calculations.
+Planned and unplanned downtimes for the services are communicated via the {{< product-c8y-iot >}} status page, which will also provide an expected time for the system’s return to availability. Please note that the availability of the status page itself is not included in the services availability calculations.
 
-### Cloud service credit commitment
+### Service credit commitment
 
 #### Credit calculation
 
@@ -119,51 +119,49 @@ If the service is available for less than the availability outlined above during
 
 For services with 99.90% availability target:
 
-| Monthly availability | Percentage of the pro-rata monthly Cloud Service Fee for the covered cloud service |
-| -------------------- | ---------------------------------------------------------------------------------- |
-| 99.50% to < 99.90%   | 10%                                                                                |
-| 99.50% to < 99.00%   | 15%                                                                                |
-| < 99.00%             | 25%                                                                                |
+| Monthly availability | Percentage of the pro-rata monthly service fee for the covered service |
+| -------------------- | ---------------------------------------------------------------------- |
+| 99.50% to < 99.90%   | 10%                                                                    |
+| 99.50% to < 99.00%   | 15%                                                                    |
+| < 99.00%             | 25%                                                                    |
 
 For services with 95.00% availability target:
 
-| Monthly availability | Percentage of the pro-rata monthly Cloud Service Fee for the covered cloud service |
-| -------------------- | ---------------------------------------------------------------------------------- |
-| < 95.00%             | 10%                                                                                |
+| Monthly availability | Percentage of the pro-rata monthly service Fee for the covered service |
+| -------------------- | ---------------------------------------------------------------------- |
+| < 95.00%             | 10%                                                                    |
 
 
 #### Credit request
 
 Customer must submit all requests for Service Credits by filing a request ("Service Credit Request") to support, including the necessary information to evaluate the request, including:
 
-1. the date, time and duration of the incident giving rise to the Service Credit request (the “Incident”);
-2. a detailed description of the Incident, including any measures taken by Customer to resolve
+1. the date, time and duration of the incident giving rise to the Service Credit Request (the “Incident”);
+2. a detailed description of the incident, including any measures taken by Customer to resolve
 the issue;
 3. the tenant, number of Customer users and location(s) of Customer users affected by the incident (if applicable); and
-4. any additional information reasonably requested by Supplier necessary to validate the Incident.
+4. any additional information reasonably requested by Provider necessary to validate the incident.
 
-Supplier must receive the Service Credit Request within fourteen (14) days from the occurrence of the Incident. Supplier will evaluate the Service Credit Request as soon as all information necessary to review the Service Credit Request is received. Supplier will use commercially reasonable efforts to process complete Service Credit Requests during the subsequent calendar month and within thirty (30) days of receipt. If the Incident is confirmed by Supplier and gives rise to a Service Credit, Supplier shall provide Customer with a refund within thirty (30) days of Suppliers determination. The total amount credited to customer in a particular year under this SLA shall not exceed 5% of the annual fee (exclusive of any taxes) paid by the Customer for the affected services.
+Provider must receive the Service Credit Request within fourteen (14) days from the occurrence of the incident. Provider will evaluate the Service Credit Request as soon as all information necessary to review the Service Credit Request is received. Provider will use commercially reasonable efforts to process complete Service Credit Requests during the subsequent calendar month and within thirty (30) days of receipt. If the incident is confirmed by Provider and gives rise to a Service Credit, Provider shall provide Customer with a refund within thirty (30) days of Providers determination. The total amount credited to customer in a particular year under this SLA shall not exceed 5% of the annual fee (exclusive of any taxes) paid by the Customer for the affected services.
 
 #### Requirements and exceptions
 
-Customer must be current on any payment obligations owed to Supplier and in compliance with the terms of the Agreement and the Order Form in order to be eligible to receive Service Credits. The Service Availability commitments do not apply to any performance or availability issues:
+Customer must be current on any payment obligations owed to Provider and in compliance with the terms of the Agreement and the Order Form in order to be eligible to receive Service Credits. The service availability commitments do not apply to any performance or availability issues:
 
-1. Due to acts or conditions outside of Supplier’s reasonable control, including, but not limited
+1. Due to acts or conditions outside of Provider’s reasonable control, including, but not limited
 to, a Force Majeure event as defined in the agreement above;
-2. Initiated by Supplier to protect the Cloud Services or Customer Data from unauthorized
+2. Initiated by Provider to protect the services or Customer data from unauthorized
 access or loss;
-3. Caused by Customer’s use of services, hardware, or software not provided by Supplier
-which affect the availability of the Cloud Service; or
-4. Caused by your use of Cloud Services other than expressly authorized by, and in accordance
-with, the terms of the Agreement and the Order Form or Customer’s use of the Cloud
-Services after we advised you to modify your use of the Service, if you did not modify your
-use as advised.
+3. Caused by Customer’s use of services, hardware, or software not provided by Provider
+which affect the availability of the service; or
+4. Caused by your use of services other than expressly authorized by, and in accordance
+with, the terms of the Agreement and the Order Form or Customer’s use of the services after we advised you to modify your use of the service, if you did not modify your use as advised.
 
 #### Exclusive remedy
 
 Except as expressly set out in the Agreement, Customer acknowledges and agrees that
-Supplier’s sole obligation and Customer’s exclusive remedy for Supplier’s failure to meet the
-Service Availability requirements are set forth in this Service Credit Commitment.
+Provider’s sole obligation and Customer’s exclusive remedy for Provider’s failure to meet the
+service availability requirements are set forth in this service credit commitment.
 
 ### Support and maintenance
 

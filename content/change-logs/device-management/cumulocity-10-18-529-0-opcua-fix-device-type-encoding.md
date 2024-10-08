@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2442
 version: 10.18.529.0
 ---
-When OPC-UA device type was created with special characters in any of the fields, the gateway was not reading it correctly which caused an error while creating mappings. This problem is now fixed - gateway encodes and decodes special characters as expected.  
+Previously, when creating an OPC UA device type with special characters in any of the fields, the gateway was not reading it correctly which caused an error while creating mappings. This issue is now fixed, the gateway encodes and decodes special characters as expected.  

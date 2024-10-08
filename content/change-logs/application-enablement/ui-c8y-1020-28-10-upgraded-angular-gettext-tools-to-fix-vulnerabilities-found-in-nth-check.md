@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Upgrade angular-gettext-tools to fix vulnerabilities
+title: Upgraded angular-gettext-tools library to fix vulnerabilities
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

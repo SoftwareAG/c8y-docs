@@ -146,7 +146,7 @@ Provider must receive the Service Credit Request within fourteen (14) days from 
 
 #### Requirements and exceptions
 
-Customer must be current on any payment obligations owed to Provider and in compliance with the terms of the Agreement and the Order Form in order to be eligible to receive Service Credits. The service availability commitments do not apply to any performance or availability issues:
+Customer must be current on any payment obligations owed to Provider and in compliance with the terms of the Agreement and the order form in order to be eligible to receive Service Credits. The service availability commitments do not apply to any performance or availability issues:
 
 1. Due to acts or conditions outside of Provider’s reasonable control, including, but not limited
 to, a Force Majeure event as defined in the agreement above;
@@ -155,7 +155,7 @@ access or loss;
 3. Caused by Customer’s use of services, hardware, or software not provided by Provider
 which affect the availability of the service; or
 4. Caused by your use of services other than expressly authorized by, and in accordance
-with, the terms of the Agreement and the Order Form or Customer’s use of the services after we advised you to modify your use of the service, if you did not modify your use as advised.
+with, the terms of the Agreement and the order form or Customer’s use of the services after we advised you to modify your use of the service, if you did not modify your use as advised.
 
 #### Exclusive remedy
 
@@ -174,7 +174,7 @@ service availability requirements are set forth in this service credit commitmen
 
 * **Ongoing maintenance and upgrades:** The {{< product-c8y-iot >}} platform is continuously maintained and upgraded to ensure optimal performance and security.
 * **Seamless upgrades:** This maintenance process is designed to be seamless and generally invisible to Customer. The timing and content of upgrades are at the discretion of {{< company-c8y >}}.
-* **Upgrade information:** Details about scheduled upgrade times are available on the platform’s status pages as outlined above, while information about the specific changes included in each upgrade can be found in the [change logs](/change-logs/) within the customer documentation.
+* **Upgrade information:** Details about scheduled upgrade times are available on the platform’s status pages as outlined above, while information about the specific changes included in each upgrade can be found in the [change logs](/change-logs/) within the user documentation.
 * **Regulated environments:** For customers operating in regulated environments, an optional annual maintenance schedule is available to meet specific compliance requirements.
 
 ### Acceptance

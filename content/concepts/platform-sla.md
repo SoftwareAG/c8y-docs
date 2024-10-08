@@ -24,11 +24,11 @@ The {{< product-c8y-iot >}} platform offers a comprehensive set of features desi
 
 * **Device connectivity and management:** The platform facilitates the connection, data collection, and remote control of IoT devices. These functionalities can be accessed through the {{< product-c8y-iot >}} Device Management application or via application programming interfaces (APIs; REST/MQTT).
 * **Data visualization:** Users can visualize their connected devices and corresponding data within the {{< product-c8y-iot >}} Cockpit, offering an intuitive interface for monitoring and managing IoT deployments.
-* **Real-time and batch data processing and storage:** {{< product-c8y-iot >}} supports both real-time and batch processing of IoT data, enabling users to efficiently manage and analyze large volumes of data as it is generated. Data storage is customer-configurable, allowing you to define retention periods according to your specific requirements.
+* **Real-time and batch data processing and storage:** {{< product-c8y-iot >}} supports both real-time and batch processing of IoT data, enabling users to efficiently manage and analyze large volumes of data as it is generated. Data storage is Customer-configurable, allowing you to define retention periods according to your specific requirements.
 * **Flexible deployment options:**
     * The platform is deployed using shared ("{{< product-c8y-iot >}}") or dedicated cloud instances ("{{< product-c8y-iot >}} Enterprise Dedicated"), tailored to meet the needs of your organization.
     * Optionally, separate environments for pre-production (non-production) activities can be purchased to ensure smooth development and testing processes.
-    * {{< product-c8y-iot >}} is hosted in customer-selected regions (EMEA, APAC, Japan, and the US).
+    * {{< product-c8y-iot >}} is hosted in Customer-selected regions (EMEA, APAC, Japan, and the US).
 * **Support services:**
     * The platform offers tiered product support to meet varying operational needs, including 8x5 support ("Starter Support"), 24x7 support ("Standard Support"), and comprehensive 24x7 support with enhanced SLAs ("Enterprise Active Support").
 * **Proactive monitoring and management:**
@@ -41,41 +41,41 @@ The {{< product-c8y-iot >}} platform offers a comprehensive set of features desi
     * Regular backups are maintained with a 30-day retention period, a Recovery Time Objective (RTO) of 12 hours, and a Recovery Point Objective (RPO) of 24 hours.
     * {{< company-c8y >}} conducts regular drills to validate its disaster recovery procedures.
 * **API compatibility management:** The platform maintains compatibility of APIs as outlined in its[ Compatibility policy](/concepts/compatibility-policy/). Transport protocols are managed in accordance with this policy, ensuring consistent and reliable API interactions.
-* **Data ownership and portability:** As the data processor, {{< product-c8y-iot >}} ensures that customers retain full ownership of their data. Customers can export their data at any time using the provided APIs, ensuring control and flexibility over their information.
-* **Continuous maintenance and upgrades:** The platform undergoes regular maintenance and upgrades to ensure optimal performance and security. These upgrades happen transparently and without involving Customers.
+* **Data ownership and portability:** As the data processor, {{< product-c8y-iot >}} ensures that Customer retains full ownership of their data. Customer can export their data at any time using the provided APIs, ensuring control and flexibility over their information.
+* **Continuous maintenance and upgrades:** The platform undergoes regular maintenance and upgrades to ensure optimal performance and security. These upgrades happen transparently and without involving Customer.
 
-For some customers with legacy service agreements, these features may differ in accordance with the terms of their original agreements.
+For customers with legacy service agreements, these features may differ in accordance with the terms of their original agreements.
 
 ### Customer responsibilities
 
-As a customer of the {{< product-c8y-iot >}} platform, we request your acknowledgment of the following responsibilities to ensure the continued security, performance, and efficiency of the service:
+As a Customer of the {{< product-c8y-iot >}} platform, we request your acknowledgment of the following responsibilities to ensure the continued security, performance, and efficiency of the service:
 
-##### **Security Management**
+##### **Security management**
 
-* **Device security:** While the {{< product-c8y-iot >}} platform provides robust security measures, the customer is responsible for the security of devices and device credentials. {{< company-c8y >}} cannot be held liable for any leaked credentials from devices. The customer acknowledges that communication protocols and ciphers may require periodic updates to address evolving security threats. This may necessitate updates to the devices themselves.
-* **End user access security:** To protect the integrity of the cloud platform, customers are encouraged to educate their users on secure usage practices, such as implementing multi-factor authentication. The customer is responsible for managing user credentials, and {{< company-c8y >}} cannot be held responsible for any compromised credentials.
-* **Certificate management:** The customer is responsible for monitoring the expiration of their certificates. Expired certificates can result in service unavailability for the associated clients, and the customer expressly acknowledges this responsibility.
-* **Library updates:** Customers utilizing {{< company-c8y >}}-provided libraries to build their own applications are responsible for ensuring these libraries are kept up to date with respect to security. In the event of a security vulnerability or other critical update, it is the customer's responsibility to implement the necessary updates in their applications to maintain the integrity and security of their systems. {{< company-c8y >}} cannot be held liable for any security issues arising from outdated libraries in customer applications.
+* **Device security:** While the {{< product-c8y-iot >}} platform provides robust security measures, Customer is responsible for the security of devices and device credentials. {{< company-c8y >}} cannot be held liable for any leaked credentials from devices. Customer acknowledges that communication protocols and ciphers may require periodic updates to address evolving security threats. This may necessitate updates to the devices themselves.
+* **End user access security:** To protect the integrity of the cloud platform, Customer is encouraged to educate users on secure usage practices, such as implementing multi-factor authentication. Customer is responsible for managing user credentials, and {{< company-c8y >}} cannot be held responsible for any compromised credentials.
+* **Certificate management:** Customer is responsible for monitoring the expiration of their certificates. Expired certificates can result in service unavailability for the associated clients, and Customer expressly acknowledges this responsibility.
+* **Library updates:** Customers utilizing {{< company-c8y >}}-provided libraries to build their own applications are responsible for ensuring these libraries are kept up to date with respect to security. In the event of a security vulnerability or other critical update, it is Customer's responsibility to implement the necessary updates in their applications to maintain the integrity and security of their systems. {{< company-c8y >}} cannot be held liable for any security issues arising from outdated libraries in Customer applications.
 
 ##### **Capacity management**
 
-* **Scalability considerations:** While the {{< product-c8y-iot >}} platform is designed to be scalable, it may not be able to accommodate sudden, extreme capacity demands (for example, all devices attempting to connect simultaneously after a connectivity outage, or all devices being upgraded at the same time). The customer acknowledges that such requests may be delayed or declined by the platform to maintain overall service stability. The customer is advised to implement an [exponential backoff strategy](https://en.wikipedia.org/wiki/Exponential_backoff).
-* **Soft limits:** The customer acknowledges the existence of "soft limits" as documented in the {{< product-c8y-iot >}} documentation [here](/concepts/limits/). These limits are not strictly enforced but exceeding them may lead to a reduced service level, and the customer is advised to operate within these guidelines.
-* **Data retention management:** Data storage is included as part of the customer’s subscription. The customer is responsible for configuring appropriate data retention rules within the {{< product-c8y-iot >}} Administration application, balancing their specific use case requirements with budgetary considerations.
+* **Scalability considerations:** While the {{< product-c8y-iot >}} platform is designed to be scalable, it may not be able to accommodate sudden, extreme capacity demands (for example, all devices attempting to connect simultaneously after a connectivity outage, or all devices being upgraded at the same time). Customer acknowledges that such requests may be delayed or declined by the platform to maintain overall service stability. Customer is advised to implement an [exponential backoff strategy](https://en.wikipedia.org/wiki/Exponential_backoff).
+* **Soft limits:** Customer acknowledges the existence of "soft limits" as documented in the {{< product-c8y-iot >}} documentation [here](/concepts/limits/). These limits are not strictly enforced but exceeding them may lead to a reduced service level, and Customer is advised to operate within these guidelines.
+* **Data retention management:** Data storage is included as part of Customer’s subscription. Customer is responsible for configuring appropriate data retention rules within the {{< product-c8y-iot >}} Administration application, balancing their specific use case requirements with budgetary considerations.
 
 For details on non-permitted uses of {{< product-c8y-iot >}}, please refer to the {{< product-c8y-iot >}} Terms of Service.
 
 ### Limitations and constraints
 
-In the interest of transparency and to ensure a mutual understanding of the service capabilities, we kindly ask customers to acknowledge the following limitations and constraints of the {{< product-c8y-iot >}} platform:
+In the interest of transparency and to ensure a mutual understanding of the service capabilities, we kindly ask Customer to acknowledge the following limitations and constraints of the {{< product-c8y-iot >}} platform:
 
-* **Hard quotas:** The customer acknowledges the existence of hard quotas as detailed in the {{< product-c8y-iot >}} documentation [here](/concepts/limits/). These quotas define maximum thresholds that the platform can support and are essential for maintaining overall system stability.
-* **Shared environment considerations:** Customers not utilizing {{< product-c8y-iot >}} Dedicated plans should be aware that their tenant is hosted within a shared environment. As a result, response times may occasionally vary due to shared resource usage, and the customer acknowledges such variations. Furthermore, infrastructure-level information such as HTTP or MQTT access logs cannot be shared with Customers.
-* **Data retention and storage costs:** The customer acknowledges that reducing data retention periods does not immediately lead to the reclamation of storage space or a reduction in storage costs due to technical processing requirements.
-* **Distributed IoT system:** The customer acknowledges that IoT systems, by nature, are distributed and Internet-based:
-    * **Connectivity reliability:** Connectivity may occasionally fail. To ensure reliable communication, customer devices and clients should implement appropriate reconnect or retry strategies. Singular connection drops or temporary failures are considered normal and do not constitute a service failure. {{< company-c8y >}} is committed to working with the customer to troubleshoot and resolve consistent and repeating communication issues.
-    * **Third-party connectivity services:** Connectivity may involve third-party services such as LPWAN or mobile network operators. The customer acknowledges that while {{< product-c8y-iot >}} facilitates the transfer of data through these services, it does not operate, monitor, or troubleshoot these third-party networks. Connectivity between the customer's devices and {{< product-c8y-iot >}} cloud service is in the sole responsibility of the customer.
-* **Data recovery**: While {{< company-c8y >}} maintains backups of data for its own business continuity management, disaster recovery on behalf of Customers (for example, after accidental data deletion by Customers) is a separate service. Customer expressly acknowledges the backup retention period and RPO outline above.
+* **Hard quotas:** Customer acknowledges the existence of hard quotas as detailed in the {{< product-c8y-iot >}} documentation [here](/concepts/limits/). These quotas define maximum thresholds that the platform can support and are essential for maintaining overall system stability.
+* **Shared environment considerations:** Customers not utilizing {{< product-c8y-iot >}} Dedicated plans should be aware that their tenant is hosted within a shared environment. As a result, response times may occasionally vary due to shared resource usage, and Customer acknowledges such variations. Furthermore, infrastructure-level information such as HTTP or MQTT access logs cannot be shared with Customer.
+* **Data retention and storage costs:** Customer acknowledges that reducing data retention periods does not immediately lead to the reclamation of storage space or a reduction in storage costs due to technical processing requirements.
+* **Distributed IoT system:** Customer acknowledges that IoT systems, by nature, are distributed and Internet-based:
+    * **Connectivity reliability:** Connectivity may occasionally fail. To ensure reliable communication, Customer devices and clients should implement appropriate reconnect or retry strategies. Singular connection drops or temporary failures are considered normal and do not constitute a service failure. {{< company-c8y >}} is committed to working with Customer to troubleshoot and resolve consistent and repeating communication issues.
+    * **Third-party connectivity services:** Connectivity may involve third-party services such as LPWAN or mobile network operators. Customer acknowledges that while {{< product-c8y-iot >}} facilitates the transfer of data through these services, it does not operate, monitor, or troubleshoot these third-party networks. Connectivity between Customer's devices and {{< product-c8y-iot >}} cloud service is in the sole responsibility of Customer.
+* **Data recovery**: While {{< company-c8y >}} maintains backups of data for its own business continuity management, disaster recovery on behalf of Customer (for example, after accidental data deletion by Customer) is a separate service. Customer expressly acknowledges the backup retention period and RPO outline above.
 
 ### Service availability
 
@@ -169,16 +169,16 @@ Service Availability requirements are set forth in this Service Credit Commitmen
 
 #### **Support**
 
-* **Customer support:** Support is provided in accordance with the customer’s selected support plan (Starter, Standard, or Enterprise Active Support), as detailed in a separate support agreement.
+* **Customer support:** Support is provided in accordance with Customer’s selected support plan (Starter, Standard, or Enterprise Active Support), as detailed in a separate support agreement.
 * **Pre-production environments:** For pre-production environments, Starter-level support is generally provided, with support tickets handled at standard priority.
 
 #### **Maintenance**
 
 * **Ongoing maintenance and upgrades:** The {{< product-c8y-iot >}} platform is continuously maintained and upgraded to ensure optimal performance and security.
-* **Seamless upgrades:** This maintenance process is designed to be seamless and generally invisible to customers. The timing and content of upgrades are at the discretion of {{< company-c8y >}}.
+* **Seamless upgrades:** This maintenance process is designed to be seamless and generally invisible to Customer. The timing and content of upgrades are at the discretion of {{< company-c8y >}}.
 * **Upgrade information:** Details about scheduled upgrade times are available on the platform’s status pages as outlined above, while information about the specific changes included in each upgrade can be found in the [change logs](/change-logs/) within the customer documentation.
 * **Regulated environments:** For customers operating in regulated environments, an optional annual maintenance schedule is available to meet specific compliance requirements.
 
 ### Acceptance
 
-By using the Services provided by {{< company-c8y >}}, the Customer agrees to adhere to the terms outlined in this SLA.
+By using the Services provided by {{< company-c8y >}}, Customer agrees to adhere to the terms outlined in this SLA.

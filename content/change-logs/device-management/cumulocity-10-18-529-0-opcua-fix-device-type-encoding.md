@@ -1,6 +1,6 @@
 ---
 date: 
-title: Fixed special characters encoding in OPC-UA device types
+title: Fixed special characters encoding in OPC UA device types
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

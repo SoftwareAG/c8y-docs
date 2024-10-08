@@ -1,6 +1,6 @@
 ---
 date:
-title: Subtenant creation request with subdomain different than parent is not allowed
+title: Subtenant creation request requires domain being a subdomain of the parent tenant
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

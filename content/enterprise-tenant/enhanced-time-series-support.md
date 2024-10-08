@@ -121,5 +121,5 @@ Once the migration is initiated, you can monitor the progress in status bar in t
 In the section **Ongoing migration** you can find information indicating who has started the migration as well as the full migration time range, that is when the migration was started and is going to be finished.
 
 {{< c8y-admon-important >}}
-You can add more than one tenant into migration queue, but migration will be done only for one tenant at a time. It means that if there is a tenant migration with the status **Verified** until you approve, the migration will not update the status to **Complete**, hence the migration for other queued tenant will not be started
+You can add more than one tenant into the migration queue, but migration will be executed only for one tenant at a time. It means that we won't start the migration of the next tenant in the queue, until you approve the previously migrated tenant to transition from **Verified** to **Complete** status.
 {{< /c8y-admon-important >}}

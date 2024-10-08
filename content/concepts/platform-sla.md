@@ -111,6 +111,51 @@ The status pages showing the service availability results are at
 
 Planned and unplanned downtimes for the Cloud Services are communicated via the {{< product-c8y-iot >}} status page, which will also provide an expected time for the system’s return to availability. Please note that the availability of the status page itself is not included in the Cloud Service availability calculations.
 
+### Cloud service credit commitment
+
+#### Credit calculation
+
+If the service is available for less than the availability outlined above during any full calendar month during the cloud services term, Customer will be eligible for a service credit for the particular service in accordance with the formula below (a “Service Credit”).
+
+| Monthly availability | Percentage of the pro-rata monthly Cloud Service Fee for the covered cloud service |
+| -------------------- | ---------------------------------------------------------------------------------- |
+| 99.50% to < 99.90%   | 10%                                                                                |
+| 99.50% to < 99.00%   | 15%                                                                                |
+| < 99.00%             | 25%                                                                                |
+
+#### Credit Request
+
+Customer must submit all requests for Service Credits by filing a request ("Service Credit Request") to support, including the necessary information to evaluate the request, including:
+
+1. the date, time and duration of the incident giving rise to the Service Credit request (the “Incident”);
+2. a detailed description of the Incident, including any measures taken by Customer to resolve
+the issue;
+3. the tenant, number of Customer users and location(s) of Customer users affected by the incident (if applicable); and
+4. any additional information reasonably requested by Supplier necessary to validate the Incident.
+
+Supplier must receive the Service Credit Request within fourteen (14) days from the occurrence of the Incident. Supplier will evaluate the Service Credit Request as soon as all information necessary to review the Service Credit Request is received. Supplier will use commercially reasonable efforts to process complete Service Credit Requests during the subsequent calendar month and within thirty (30) days of receipt. If the Incident is confirmed by Supplier and gives rise to a Service Credit, Supplier shall provide Customer with a refund within thirty (30) days of Suppliers determination. The total amount credited to customer in a particular year under this SLA shall not exceed 5% of the annual fee (exclusive of any taxes) paid by the Customer for the affected services.
+
+#### Requirements and Exceptions
+
+Customer must be current on any payment obligations owed to Supplier and in compliance with the terms of the Agreement and the Order Form in order to be eligible to receive Service Credits. The Service Availability commitments do not apply to any performance or availability issues:
+
+1. Due to acts or conditions outside of Supplier’s reasonable control, including, but not limited
+to, a Force Majeure event as defined in the agreement above;
+2. Initiated by Supplier to protect the Cloud Services or Customer Data from unauthorized
+access or loss;
+3. Caused by Customer’s use of services, hardware, or software not provided by Supplier
+which affect the availability of the Cloud Service; or
+4. Caused by your use of Cloud Services other than expressly authorized by, and in accordance
+with, the terms of the Agreement and the Order Form or Customer’s use of the Cloud
+Services after we advised you to modify your use of the Service, if you did not modify your
+use as advised.
+
+#### Exclusive Remedy
+
+Except as expressly set out in the Agreement, Customer acknowledges and agrees that
+Supplier’s sole obligation and Customer’s exclusive remedy for Supplier’s failure to meet the
+Service Availability requirements are set forth in this Service Credit Commitment.
+
 ### Support and maintenance
 
 #### **Support**

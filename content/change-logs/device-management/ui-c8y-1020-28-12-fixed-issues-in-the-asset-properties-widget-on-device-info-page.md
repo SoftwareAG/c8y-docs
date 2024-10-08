@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3868
 version: 1020.28.12
 ---
-Fixed issues in the asset properties widget on device info page.
+The asset properties widget on the device info page was not working as expected and showed incorrect or missing information in some cases. This issue has been resolved and the asset properties widget now correctly displays all relevant properties for a device asset. The updated asset properties widget in the device info page now contains 5 default properties - ID, name, type, last updated and creation time.

@@ -4,6 +4,8 @@ layout: bundle
 sector:
   - getting_started
 weight: 90
+aliases:
+  - /platform-sla
 ---
 
 <h3 style="margin-top: -1em; padding-top: 0">for {{< product-c8y-iot >}} base platform</h3>
@@ -12,25 +14,17 @@ weight: 90
 
 ### Service description
 
-{{< product-c8y-iot >}} is a comprehensive Internet of Things (IoT) platform designed to enable seamless connectivity, management, and control of IoT devices. The platform provides a range of capabilities including:
+{{< product-c8y-iot >}} is a comprehensive Internet of Things (IoT) platform designed to enable seamless connectivity, management, analysis and control of IoT devices. This agreement defines the service level of {{< product-c8y-iot >}} Software-as-a-Service operated by {{< company-c8y >}}. {{< product-c8y-iot >}} Software-Operated-as-a-Service and {{< product-c8y-iot >}} Edge are outside the scope of this agreement.
 
-* **Device connectivity and management:** The platform facilitates the connection, data collection, and remote control of IoT devices. These functionalities can be accessed through the {{< product-c8y-iot >}} Device Management application or via application programming interfaces (APIs; REST/MQTT).
-* **Data visualization:** Users can visualize their connected devices and corresponding data within the {{< product-c8y-iot >}} Cockpit, offering an intuitive interface for monitoring and managing IoT deployments.
-* **Real-time and batch data processing:** {{< product-c8y-iot >}} supports both real-time and batch processing of IoT data, enabling users to efficiently manage and analyze large volumes of data as it is generated.
-* **Extended platform capabilities:** The platform's functionality can be further enhanced with additional features, which may require separate agreements:
-    * **Additional connectivity options:** This includes extended connectivity support such as LPWAN and LWM2M.
-    * **Enhanced applications:** Users can leverage value-added Cumulocity applications from the Cumulocity product catalog, e.g., for advanced analytics and digital twin management.
-    * **Custom application development:** The platform supports the creation of custom applications using {{< product-c8y-iot >}} Microservices and {{< product-c8y-iot >}} Web SDK. Services for Microservice Hosting are outlined in a [separate service-level agreement](/microservice-sdk/microservices-sla/).
-    * **Enterprise-grade services:** Users can provide derived services to their own customers, utilizing Enterprise Functions and Multi-Tenancy features.
-
-This service-level agreement applies solely to {{< product-c8y-iot >}} Basic, {{< product-c8y-iot >}} Advanced and {{< product-c8y-iot >}} Enterprise Dedicated operated by {{< company-c8y >}}, excluding optional features. {{< product-c8y-iot >}} Software-Operated-as-a-Service and {{< product-c8y-iot >}} Edge are outside the scope of this agreement.
+The agreement applies solely to the base platform. Optional features outside the base platform may require a separate service-level agreement. For custom applications developed using the Microservice Hosting functionality, please refer to the [Microservices hosting service-level agreement](/microservice-sdk/microservices-sla/).
 
 ### Service features
 
 The {{< product-c8y-iot >}} platform offers a comprehensive set of features designed to support the needs of enterprise IoT deployments, ensuring robust performance, security, and flexibility. Key service features include:
 
-* **Real-time data processing and storage:** The platform supports real-time data processing, enabling instant insights and actions based on IoT data. Data storage is customer-configurable, allowing you to define retention periods according to your specific requirements.
-* **Enterprise-grade user and permission management:** {{< product-c8y-iot >}} includes advanced user and permission management features, allowing organizations to maintain strict control over access and operations within the platform.
+* **Device connectivity and management:** The platform facilitates the connection, data collection, and remote control of IoT devices. These functionalities can be accessed through the {{< product-c8y-iot >}} Device Management application or via application programming interfaces (APIs; REST/MQTT).
+* **Data visualization:** Users can visualize their connected devices and corresponding data within the {{< product-c8y-iot >}} Cockpit, offering an intuitive interface for monitoring and managing IoT deployments.
+* **Real-time and batch data processing and storage:** {{< product-c8y-iot >}} supports both real-time and batch processing of IoT data, enabling users to efficiently manage and analyze large volumes of data as it is generated. Data storage is customer-configurable, allowing you to define retention periods according to your specific requirements.
 * **Flexible deployment options:**
     * The platform is deployed using shared ("{{< product-c8y-iot >}}") or dedicated cloud instances ("{{< product-c8y-iot >}} Enterprise Dedicated"), tailored to meet the needs of your organization.
     * Optionally, separate environments for pre-production (non-production) activities can be purchased to ensure smooth development and testing processes.
@@ -54,7 +48,7 @@ For some customers with legacy service agreements, these features may differ in 
 
 ### Customer responsibilities
 
-As a valued customer of the {{< product-c8y-iot >}} platform, we request your acknowledgment of the following responsibilities to ensure the continued security, performance, and efficiency of the service:
+As a customer of the {{< product-c8y-iot >}} platform, we request your acknowledgment of the following responsibilities to ensure the continued security, performance, and efficiency of the service:
 
 ##### **Security Management**
 

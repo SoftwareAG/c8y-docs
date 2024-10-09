@@ -1,7 +1,7 @@
 ---
 date: ""
 title: 'showIf' function of bulk action controls receives an array of selected items' IDs
-product_area: Device management & connectivity
+product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
     label: Feature

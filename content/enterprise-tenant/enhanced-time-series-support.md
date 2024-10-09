@@ -98,7 +98,7 @@ If the configuration is not set for the tenant at all, you will get a 404 respon
 ### To trigger time series migration {#to-trigger-time-series-migration}
 
 The administrator user can trigger the migration to time series collection via user interface of a plugin <provide the name of the plugin>, which is installed in the Administration application by default. Optionally, the plugin can be installed in other applications on {{< management-tenant >}} or {{< enterprise-tenant >}}.
-The plugin provides an opportunity to migrate to time series collection for the current tenant ({{< management-tenant >}} or {{< enterprise-tenant >}}) and for the list of subtenants, where you can select a specific tenant for the migration.
+The plugin provides an opportunity to migrate to time series collection for the current ({{< management-tenant >}} or {{< enterprise-tenant >}}) and for the list of subtenants, where you can select a specific tenant for the migration.
 
 To start the tenant migration follow the steps below:
 

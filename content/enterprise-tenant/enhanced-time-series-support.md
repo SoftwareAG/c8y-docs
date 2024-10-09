@@ -108,7 +108,7 @@ To start the tenant migration follow the steps below:
 4. When the migration process is triggered its status for the tenant should changed from **Queued** to **In progress**.
 After the data will be processed, verified and migrated to the new collection the user can confirm progress by clicking **Approve and finish migration**.
 5. Confirmation pop-up will appear to inform the user that the new format for time series measurements is going to be used after confirming the migration.
-6. Accepting confirmation pop-up changes status of the migration to *Approved*.
+6. Accepting the confirmation pop-up changes the status of the migration to **Approved**.
 7. After seven days, the legacy measurements collection will be deleted and the migration status will be changed to **Completed**.
 
 {{< c8y-admon-info >}}

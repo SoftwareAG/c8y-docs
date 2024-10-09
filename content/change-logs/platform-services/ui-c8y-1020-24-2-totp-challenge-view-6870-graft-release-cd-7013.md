@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57801
 version: 1020.24.2
 ---
-Buttons and control sizes have been adjusted to fit the login screen and the TFA settings screen available in the user settings.
+Buttons and control sizes have been adjusted to fit the Login screen and the TFA settings screen available in the user settings.

@@ -71,7 +71,7 @@ Under **Title & favicon**, specify the following items:
 ##### Dark theme {#dark-theme-support}
 
 Here you can enable the dark theme support on this branding variant.
-If enabled, the [Dark theme tab](#light-dark-theme-tab) is available.
+If enabled, the [**Dark theme** tab](#light-dark-theme-tab) is available.
 
 ##### Typography {#typography}
 

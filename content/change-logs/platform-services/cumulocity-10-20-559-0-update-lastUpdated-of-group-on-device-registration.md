@@ -14,5 +14,5 @@ build_artifact:
 ticket: MTM-55525
 version: 10.20.559.0
 ---
-The device registration request contains the group, that the device will be assigned to once the registration is successful.
+Each device registration request includes information on the group that the device will be assigned to once the registration is successful.
 The group's "lastUpdated" fragment is now updated to show the current date when device is added successfully.

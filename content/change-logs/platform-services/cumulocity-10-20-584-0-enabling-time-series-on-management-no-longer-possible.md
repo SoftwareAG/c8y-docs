@@ -3,8 +3,8 @@ date:
 title: Enabling time series support on the {{< management-tenant >}} is no longer possible
 product_area: Platform services
 change_type:
-  - value: change-3BQrQ6adS
-    label: API change
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
   - value: component-OG_650_b2
     label: Core platform

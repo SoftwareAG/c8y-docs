@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61069
 version: 1020.29.1
 ---
-info gauge widget should support device type dashboards (#7241)
+Previously, the "Info gauge" widget did not support device type dashboards, limiting its usability for users who rely on these dashboards. With this change, the "Info gauge" widget has been updated to fully support device type dashboards. This enhancement allows users to effectively utilize the "Info gauge" widget within their device type dashboard setups, providing them with a more comprehensive and flexible monitoring experience.

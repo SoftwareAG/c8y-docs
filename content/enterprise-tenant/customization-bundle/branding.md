@@ -45,7 +45,7 @@ To edit a branding variant you can configure the following tabs:
 - **Custom CSS**: Allows you to customize the looks of your applications even more by providing your own Cascading Style Sheets.
 - **Advanced branding**: Allows you to make direct changes to the branding JSON object via a text editor. This can be useful to set some of the [ApplicationOptions the Web SDK provides](https://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) which are not immediately supported by the branding editor.
 
-For a more detailed preview of your settings, click **Open preview** to check the look and feel of your branding settings in the overall platform. You may interact and even switch applications in the preview. Every change that you make in the **Branding** tab is immediately applied to the **Preview** page after you click **Save**.
+For a more detailed preview of your settings, click **Open preview** to check the look and feel of your branding settings in the overall platform. You may interact and even switch applications in the preview. Every change that you make in the **Branding** page is immediately applied to the **Preview** page after you click **Save**.
 
 Click **Save** at the bottom to save your final branding settings to your tenant. This applies them to the places your branding variant applies to.
 

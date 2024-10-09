@@ -42,25 +42,32 @@ Wildcard topics (`+`, `#`) and system topics starting with `$` are not supported
 
 #### Topic limit {#topic-limit}
 
-MQTT Service has the ability to limit the total number of topics that a single tenant can create, current default is no limit.
-When creation of new topic, via implicit creation via client publishing message or subscribing to non-existent topic, would breach the topic limit
+MQTT Service has the ability to limit the total number of topics that a single tenant can create. The current default is no limit.
+When the creation of a new topic, either by creating it via the client publishing a message or subscribing to a non-existent topic, would breach the topic limit
 the delivery of the packet is prevented.
 
-In the case of MQTT 5 clients have access to reason code and reason string describing the failure when using QoS 1 via acknowledgements,
-reason code being QUOTA_EXCEEDED: 0x97.
-In the case of MQTT 3.1 and 3.1.1 clients only have access to reason code describing the failure when using QoS 1 via acknowledgements and only
-for SUBSCRIBE packets, where the reason code is 0x80.
-For PUBLISH packets, client will be disconnected with no further information as per the MQTT specification.
+The different MQTT protocols provide the following feedback.
+
+MQTT 5 clients:
+
+* Have access to the reason code and reason string describing the failure when using QoS 1 with acknowledgements,
+reason code being `QUOTA_EXCEEDED: 0x97`.
+
+MQTT 3.1 and 3.1.1 clients:
+
+* Clients only have access to the reason code describing the failure when using QoS 1 with acknowledgements and only
+for the SUBSCRIBE packets, where the reason code is `0x80`.
+* For the PUBLISH packets, the client will be disconnected with no further information as per the MQTT specification.
 
 {{< c8y-admon-info >}}
-Work to enable an error topic so that information regarding topic limit failures can be accessible to MQTT 3 client is underway.
+Work to enable an error topic so that information regarding topic limit failures can be accessible to MQTT 3 clients is underway.
 {{< /c8y-admon-info >}}
 
 #### Topic cleanup {#topic-cleanup}
 
-MQTT Service will automatically remove topics which are no longer in use, topics are recognized as inactive when there are no subscriptions and
-internal publisher to the topic is closed. The publisher is responsible for publishing modified MQTT Service messages to the correct topic and these
-live within a cache, where the publisher expires after one hour. Due to this it can take up to an hour after removing all subscriptions from a topic
+The MQTT service will automatically remove topics which are no longer active. Topics are recognized as inactive when there are no subscriptions and
+the internal publisher to the topic is closed. The publisher is responsible for publishing the modified MQTT service messages to the correct topic.
+The publishers live within a cache, where the publisher expires after one hour. Due to this it can take up to an hour after removing all subscriptions from a topic
 for it to be automatically deleted.
 
 ### Payload {#payload}

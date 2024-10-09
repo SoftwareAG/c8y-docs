@@ -1,6 +1,6 @@
 ---
 date: ""
-title: info gauge widget should support device type dashboards (#7241)
+title: Info gauge widget now supports device type dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

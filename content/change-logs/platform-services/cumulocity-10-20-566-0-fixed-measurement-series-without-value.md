@@ -1,6 +1,6 @@
 ---
 date: 
-title: Measurement series without value can no longer be created
+title: Measurement series can no longer be created without value
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -15,4 +15,4 @@ ticket: MTM-60356
 version: 10.20.566.0
 ---
 
-Fixed a regression in time series measurements that allowed to create a measurement series without value.
+Previously, it was possible to create a measurement series without value. This issue has been fixed as the value is mandatory. Now a value must be provided on measurement creation. 

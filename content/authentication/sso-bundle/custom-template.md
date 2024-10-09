@@ -100,7 +100,7 @@ In this case the following claim will match the condition:
 
 On user login, user data like first name, last name, email and phone number can also be derived from JWT claims. Using the **Source of user data mapping** radio button, the administrator can decide whether the values should be retrieved from the access token or the ID token.
 
-Based on that, the **User data mappings** can be configured:
+Based on that, the user data mappings can be configured:
 
 ![User data mappings](/images/users-guide/Administration/sso-custom-userdata-mapping.png)
 

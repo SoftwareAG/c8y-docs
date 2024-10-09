@@ -40,8 +40,8 @@ Note that in the example below, **Export** is integrated with the **Data points 
    - **Time range** - Select the time range for your export. By default, it's the same time range as configured in the widget's settings.
    - **Data scope**
      - **Export mode** - Two options are available (see [**Differences between export modes**](#differences-between-export-modes) section below for details):
-       - Compact (selected by default)
-       - Full
+       - Compact (selected by default) - all data will be exported to one file and downloaded directly by your browser.
+       - Full - depending on the number of records to be processed, the data will either be available in a single ZIP file (containing one file per **Data point**), sent by email or not exportable at all.
      - **Aggregation** - Only available when **Compact** mode is selected. The default value is the same as in the widget's configuration. Four options are available:
        - None
        - Minutely
@@ -49,12 +49,7 @@ Note that in the example below, **Export** is integrated with the **Data points 
        - Daily
    - **File types** - Choose the file format for exporting data. **Microsoft Excel** is selected by default, with **CSV** as another option. You can select both types simultaneously.
 
-3. Click the **Download** button. The result depends on your chosen export mode:
-
-   - If you selected **Compact** mode, all data will be exported to one file and downloaded directly by your browser.
-   - If you selected **Full** mode, depending on the number of records to process, data will either be available in a single ZIP file (containing one file per **Data point**) or sent via email.
-
-See next section for all differences.
+3. Click the **Download** button. The result depends on your chosen export mode.
 
 ### Differences between export modes {#differences-between-export-modes}
 
@@ -77,7 +72,7 @@ When using **Full** export mode, if you select a single **Data point** that cont
 
 <br>![Export exceeded one million records](/images/users-guide/cockpit/cockpit-exports-one-million-for-single-data-point.png)<br>
 
-When selecting multiple **Data points** for export in **Full** mode, if any individual **Data point** exceeds the one million record limit:
+When selecting multiple **Data points** for export in **Full** mode, if any individual **Data point** exceeds the one million record limit **per Data point**:
 
 - The **Data points** exceeding the limit will be **excluded** from the export.
 - All other **Data points** within the limit remain exportable.

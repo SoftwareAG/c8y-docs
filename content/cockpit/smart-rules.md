@@ -84,7 +84,7 @@ Smart rules can be seen in three places:
 
 
   The microservice page shows the global and local smart rules (considering the permissions of the user). From this page it is possible to configure a limited number of smart rules, mainly related to alarms that might be created by the microservice while transitioning via different deployment states.
-  From context of microservice it is possible to modify only local smart rules. Editing global smart rules allowed only from global smart rules view.
+  From the microservice page it is also possible to modify only local smart rules. To edit global smart rules navigate to the **Global smart rules** page.
 
 {{< c8y-admon-related >}}
 - [Platform administration > {{< standard-tenant >}} administration > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.

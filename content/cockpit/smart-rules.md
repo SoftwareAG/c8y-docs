@@ -49,9 +49,9 @@ ROLES & PERMISSIONS for global smart rules:
 - To delete a global smart rule: ADMIN permission for permission type "Global smart rules" or "CEP management" and ADMIN permission for permission type "Inventory"
 {{< /c8y-admon-req >}}
 
-Depending on the initial configuration provided when creating a global smart rule there are two types possible:
-- Global smart rules by default enabled for all assets: When no asset is selected with the configuration. Such smart rule is automatically applied to any asset available in the system including those assets that are added later in time.
-- Global smart rules by default disabled for all assets: When at least one asset is selected with the configuration. Such smart rule is automatically disabled to any other asset except those provided initially with the configuration. You can manually enable it for newly added assets.
+Depending on the initial configuration of a global smart rule, there are two types possible:
+- Global smart rules enabled for all assets by default: When no asset is selected in the initial configuration. Such a smart rule is automatically applied to any asset available in the system, including assets added later in time.
+- Global smart rules disabled for all assets by default: When at least one asset is selected in the initial configuration. Such a smart rule is automatically disabled for any other assets except the ones selected during creation. You can manually enable it for other existing or newly added assets.
 
 **Local smart rules**
 
@@ -83,7 +83,7 @@ Smart rules can be seen in three places:
   From the context of a group or device, or in the **Status** tab of the owned microservice, you can only modify local smart rules. Editing global smart rules is only possible on the **Global smart rules** page. 
 
 
-  The microservice details show the global and local smart rules (considering the permissions of the user). From this page it is possible to configure a limited number of smart rules, mainly related to alarms that might be created by the microservice while transitioning via different deployment states.
+  The microservice details show the global and local smart rules (considering the permissions of the user). Here it is possible to configure a limited number of smart rules, mainly related to alarms that might be created by the microservice while transitioning through different deployment states.
   
 {{< c8y-admon-related >}}
 - [Platform administration > {{< standard-tenant >}} administration > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.

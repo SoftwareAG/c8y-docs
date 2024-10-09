@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Introduction to our IoT platform
+title: Introduction to the Cumulocity IoT platform
 layout: bundle
 aliases:
   - /concepts/introduction/
@@ -10,16 +10,17 @@ sector:
 
 {{< product-c8y-iot >}} is a robust, secure and scalable Internet of Things (IoT) platform designed to empower business to:
 
-1. Connect, monitor, and manage any remotely connected equipment
+1. **Device Integration**: Connect any type of device, from simple sensors to complex machinery, ensuring reliable and secure data transmission.
+
+2. **Device Management**: Monitor, control, and manage all remotely connected equipment throughout its entire lifecycle, from deployment to retirement.
     
-2. Prepare, normalize, organize and enrich the real-time and master data from the connected equipment
+3. **IoT Data Management**: Prepare, normalize, and enrich real-time and historical data, creating a unified view of your equipment.
     
-3. Visualise, analyse and integrate IoT data with existing business systems
+4. **Application Enablement**: Visualize and analyze IoT data, integrate it with existing business systems, and rapidly build custom IoT applications and solutions to meet your business needs.
     
-4. Rapidly build and deploy tailored IoT applications and solutions
-    
-5. Control, automate and optimise equipment operations remotely
-    
+5. **Analytics**: Automate, optimize, and remotely control equipment operations using intelligent analytics and real-time decision-making.
+
+6. **Platform Management**: Manage configurations, security settings, and tenant structures in the cloud, or deploy the platform on your premises for full control. 
 
 ![Platform overview](/images/concepts-guide/platform_overview.png)
 

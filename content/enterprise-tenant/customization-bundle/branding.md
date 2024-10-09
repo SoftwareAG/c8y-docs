@@ -120,7 +120,7 @@ You can configure the following parameters by providing a HEX, RGB or RGBA value
 * Brand primary.
 * Brand light: Mainly used for two-color icons.
 * Brand dark: Mainly used for two-color icons.
-* A set of 8 shades that you can generate based on your **Brand primary** color. To generate the shades click **Reset shades**. The shades are used in various locations in the different applications.
+* A set of 8 shades that you can generate based on your brand primary color. To generate the shades click **Reset shades**. The shades are used in various locations in the different applications.
 
 ##### Status colors {#status-colors}
 

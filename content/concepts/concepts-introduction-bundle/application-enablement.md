@@ -3,7 +3,7 @@ weight: 50
 title: Application Enablement
 ---
 
-{{< product-c8y-iot >}} provides a comprehensive suite of tools and applications to make it easy for our customers to use the connected equipment to drive business outcomes.
+{{< product-c8y-iot >}} provides a comprehensive suite of tools and applications to make it easy to use the connected equipment to drive business outcomes.
 
 At the core of this offering is the [Cockpit application](/cockpit/cockpit-introduction/) that offers a range of features that allow users to visualize fleet and equipment Key Performance Indicators (KPIs) through flexible [dashboarding](/cockpit/working-with-dashboards/), [create and manage reports](/cockpit/working-with-reports/) for data analysis and business insights and efficiently [manage alarms](/cockpit/alarms/) to ensure prompt response to critical events.
 
@@ -24,6 +24,6 @@ For this, {{< product-c8y-iot >}} provides many self-service customization optio
 
 1. Device-side logic: Developers can use the [thin-edge.io](/welcome-developers/developer-topics/#:~:text=Device%20integration%20using%20thin%2Dedge.io) framework for integrating device side logic.
     
-2. UI applications: The [WebSDK](/web/) allows developers to seamlessly extend any UI Application with new functionality or leverage our IoT components for your entirely own UI Application.
+2. UI applications: The [WebSDK](/web/) allows developers to seamlessly extend any UI Application with new functionality or leverage any Cumulocity IoT UI component for your entirely own UI Application.
     
 3. Backend services: The [managed microservices hosting](/standard-tenant/ecosystem/#custom-microservices) together with the [Microservice SDK](/microservice-sdk/microservice-sdk-introduction) makes it easy to develop, deploy and operate custom backend services.

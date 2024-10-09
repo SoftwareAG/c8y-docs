@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61183
 version: 1020.30.0
 ---
-Enable edit mode when freshly created dashboard is opened. (#7151) (#7248)
+Previously, when creating a new dashboard, it would open in view mode which required an extra click on the **Edit** button to start editing the dashboard. With this change, newly created dashboards now directly open in edit mode. This allows users to immediately start editing and configuring the new dashboard, saving them a click and making the user experience more intuitive.

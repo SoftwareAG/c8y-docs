@@ -34,7 +34,7 @@ In the **Branding** page, you can maintain multiple branding variants. One of th
 In addition to the global branding, there can also be branding variants that apply only to specific applications. This allows to brand applications differently.
 
 For each branding variant, you can configure various parameters like logos, colors and font types used throughout the platform.
-The [parameters](#editing-parameters) can be configured through the multiple tabs available on the branding page. Most of the parameters are immediately applied to your current window as a preview.
+The [parameters](#editing-parameters) can be configured through the multiple tabs available on the **Branding** page. Most of the parameters are immediately applied to your current window as a preview.
 
 If you want to make changes to one of your branding variants, we recommend you to duplicate the corresponding branding variant first and to make your changes on the duplicated variant as any saved changes would immediately be applied. This way you can review and edit the preview of your branding variant first across all applications before it is set as global branding and/or applied to your target applications.
 

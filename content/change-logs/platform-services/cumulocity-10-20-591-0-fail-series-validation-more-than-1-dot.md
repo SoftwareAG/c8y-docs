@@ -1,0 +1,19 @@
+---
+date: 
+title: Measurement series endpoint returns error if series contains more than one dot
+product_area: Platform services
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+component:
+  - value: component-OG_650_b2
+    label: Core platform
+build_artifact:
+  - value: tc-QHwMfWtBk7
+    label: cumulocity
+ticket: MTM-59277
+version: 10.20.591.0
+---
+Property names used for fragment and series must not contain whitespaces nor the special characters (https://cumulocity.com/api/core/#operation/postMeasurementCollectionResource)
+Previously, `/measurement/measurements/series` endpoint accepted `series` query parameter which contains more than one dot, althought it returns empty response.
+With this change the endpoint returns `422` error if `series` query parameter contains more than one dot.

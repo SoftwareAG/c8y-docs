@@ -20,7 +20,7 @@ The first part of the **Single sign-on** page consists of the request configurat
 Be aware that the body field of each request, after filling placeholders with values, is sent in the request 'as is'. This means it is not encoded by {{< product-c8y-iot >}}. Many authorization servers require values inside the body to be URL-encoded (x-form-urlencoded). This can be achieved by entering already encoded values in a body field.
 {{< /c8y-admon-info >}}
 
-Specifying a logout request is optional. It performs [front-channel single logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). If configured, the user is redirected to the defined authorization server logout URL after logging out from {{< product-c8y-iot >}}.
+Specifying a logout request is optional. It performs [front-channel single logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). If configured as request parameter, the user is redirected to the defined authorization server logout URL after logging out from {{< product-c8y-iot >}}. If the OpenID Connect standard is used for the integration with the authorization server, the ID token should be passed as the `id_token_hint` parameter in the logout request.
 
 ![Custom logout request](/images/users-guide/Administration/sso-custom-logout-request.png)
 

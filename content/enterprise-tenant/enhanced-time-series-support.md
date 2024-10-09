@@ -106,7 +106,7 @@ To start the tenant migration follow the steps below:
 2. Select the tenant you want to trigger the migration for from the list of available tenants.
 3. Hover over the row of the tenant in the tenant list, then click **Add to queue** and confirm the operation. The tenant migration status should be updated to **Queued**.
 4. When the migration process is triggered its status for the tenant should changed from **Queued** to **In progress**.
-After the data will be processed, verified and migrated to the new collection the user can confirm progress by clicking **Approve and finish migration**.
+After the data is processed, verified and migrated to the new collection, confirm progress and click **Approve and finish migration**.
 5. Confirmation pop-up will appear to inform the user that the new format for time series measurements is going to be used after confirming the migration.
 6. Accepting the confirmation pop-up changes the status of the migration to **Approved**.
 7. After seven days, the legacy measurements collection will be deleted and the migration status will be changed to **Completed**.

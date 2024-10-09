@@ -39,7 +39,7 @@ The [parameters](#editing-parameters) can be configured through the multiple tab
 If you want to make changes to one of your branding variants, we recommend you to duplicate the corresponding branding variant first and to make your changes on the duplicated variant as any saved changes would immediately be applied. This way you can review and edit the preview of your branding variant first across all applications before it is set as global branding and/or applied to your target applications.
 
 To edit a branding variant you can configure the following tabs:
-- **Generic**: Allows you to change generic parameters of your branding that is the same across all themes.
+- **Generic**: Allows you to change generic parameters of your branding that are the same across all themes.
 - **Light theme**: Allows you to edit the branding parameters for the light theme.
 - **Dark theme**: Allows you to edit the branding parameters for the dark theme. The dark theme support needs to be enabled first in the **Generic** tab.
 - **Custom CSS**: Allows you to customize the looks of your applications even more by providing your own Cascading Style Sheets.

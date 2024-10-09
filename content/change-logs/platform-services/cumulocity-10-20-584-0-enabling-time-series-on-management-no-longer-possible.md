@@ -1,6 +1,6 @@
 ---
 date: 
-title: Enabling time series support on the {{< management-tenant >}} is no longer possible
+title: Enabling time series support on the Management tenant is no longer possible
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

@@ -196,7 +196,7 @@ The following parameters can be specified by providing a HEX, RGB or RGBA value:
 
 The **Custom CSS** tab allows to customize the looks of your applications even more by providing your own Cascading Style Sheets.
 
-You can utilize this to change colors for locations that have not been covered by the dialog window provided in the [Light/Dark theme tab](#light-dark-theme-tab).
+You can utilize this to change colors for locations that have not been covered by the dialog window provided in the [**Light/Dark theme** tab](#light-dark-theme-tab).
 
 <img src="/images/users-guide/enterprise-tenant/et-branding-custom-css-tab.png" alt="Custom CSS branding tab">
 

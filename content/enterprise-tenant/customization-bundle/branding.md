@@ -96,7 +96,7 @@ The following parameters can be specified:
 
 The same set of parameters is available for both the light and the dark theme and can be changed in the corresponding tabs.
 
-The theme switcher in the right drawer will allow you to switch between the light and dark theme, once you enable the dark theme on your branding variant.
+The theme switcher in the right drawer allows you to switch between the light and dark theme, once you enable the dark theme on your branding variant.
 
 <img src="/images/users-guide/enterprise-tenant/et-branding-light-theme-tab.png" alt="Light theme branding tab">
 

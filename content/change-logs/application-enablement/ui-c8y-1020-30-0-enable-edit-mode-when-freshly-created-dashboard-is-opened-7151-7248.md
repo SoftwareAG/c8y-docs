@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Enable edit mode when freshly created dashboard is opened. (#7151) (#7248)
+title: Enable edit mode when opening a newly created dashboard
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

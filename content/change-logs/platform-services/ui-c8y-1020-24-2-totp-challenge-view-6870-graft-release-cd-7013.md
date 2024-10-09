@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The appearance for the TFA settings has been improved.
+title: Adjusted buttons in the Login screen and TFA settings screen
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

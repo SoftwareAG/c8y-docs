@@ -1,6 +1,6 @@
 ---
 date: 2024-09-12
-title: Update "lastUpdated" fragment of a group when device is added upon registration
+title: "lastUpdated" fragment of a group is updated correctly when a device is added upon registration
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

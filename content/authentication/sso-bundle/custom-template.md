@@ -39,7 +39,7 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 | Audience                                   |Expected aud parameter of JWT
 | Visible on Login screen                    |Indicates whether the login option is enabled or not
 
-Each time a user logs in, the content of the access token and id token is verified and serves as the basis for the user's access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
+Each time a user logs in, the content of the access token and ID token is verified and serves as the basis for the user's access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
 The administrator can define **Source of dynamic access mapping**. The JWT claims can be retrieved from both the access token and the ID token.
 
  ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-source-principle.png)

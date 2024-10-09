@@ -105,7 +105,7 @@ To start the tenant migration follow the steps below:
 1. Navigate to **Migration > Time series** in the application where the plugin is installed (Administration by default).
 2. Select the tenant you want to trigger the migration for from the list of available tenants.
 3. Hover over the row of the tenant in the tenant list, then click **Add to queue** and confirm the operation. The tenant migration status should be updated to **Queued**.
-4. When migration process will be triggered its status for the tenant should be changed from *Queued* to *In progress*.
+4. When the migration process is triggered its status for the tenant should changed from **Queued** to **In progress**.
 After the data will be processed, verified and migrated to the new collection the user can confirm progress by clicking **Approve and finish migration**.
 5. Confirmation pop-up will appear to inform the user that the new format for time series measurements is going to be used after confirming the migration.
 6. Accepting confirmation pop-up changes status of the migration to *Approved*.

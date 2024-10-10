@@ -28,7 +28,7 @@ ROLES & PERMISSIONS:
 Note that in the example below, **Export** is integrated with the **Data points table** widget.
 {{< /c8y-admon-info >}}
 
-1. Click on the export button:
+1. Click the **Export** button:
 
    <br>![Add export](/images/users-guide/cockpit/cockpit-exports-button.png)<br>
 

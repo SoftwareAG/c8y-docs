@@ -47,7 +47,7 @@ Note that in the example below, **Export** is integrated with the **Data points 
        - Minutely
        - Hourly
        - Daily
-   - **File types** - Choose the file format for exporting data. **Microsoft Excel** is selected by default, with **CSV** as another option. You can select both types simultaneously.
+   - **File types**: Select the file format for exporting data. **Microsoft Excel** is selected by default, with **CSV** as another option. You can select both types simultaneously.
 
 3. Click the **Download** button. The result depends on your chosen export mode.
 

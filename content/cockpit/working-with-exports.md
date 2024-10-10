@@ -32,7 +32,7 @@ Note that in the example below, **Export** is integrated with the **Data points 
 
    <br>![Add export](/images/users-guide/cockpit/cockpit-exports-button.png)<br>
 
-2. You will see the following modal with export configuration:
+2. You see the **Generate export** dialog window, which allows you to configure the export further. 
 
    <br>![Export configuration](/images/users-guide/cockpit/cockpit-exports-configuration.png)<br>
    Here you can set:

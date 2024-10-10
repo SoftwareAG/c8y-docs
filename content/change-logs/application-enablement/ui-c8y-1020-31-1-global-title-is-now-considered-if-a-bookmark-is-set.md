@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58925
 version: 1020.31.1
 ---
-globalTitle is now considered if a bookmark is set
+In the past, bookmarks did not consider the globalTitle property when generating the title for a bookmark. With this change, if a globalTitle is specified, it will be used as the bookmark title instead of the default behavior. This improves the user experience by allowing more control over how bookmarks are named, ensuring bookmark titles can be set according to specific needs.

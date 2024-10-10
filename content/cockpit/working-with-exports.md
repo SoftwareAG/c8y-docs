@@ -39,7 +39,7 @@ Note that in the example below, **Export** is integrated with the **Data points 
 
    - **Time range**: Select the time range for your export. By default, it uses the same time range as configured in the widget's settings.
    - **Data scope**
-     - **Export mode** - Two options are available (see [**Differences between export modes**](#differences-between-export-modes) section below for details):
+     - **Export mode**: The following two options are available:
        - Compact (selected by default) - all data will be exported to one file and downloaded directly by your browser.
        - Full - depending on the number of records to be processed, the data will either be available in a single ZIP file (containing one file per **Data point**), sent by email or not exportable at all.
      - **Aggregation** - Only available when **Compact** mode is selected. The default value is the same as in the widget's configuration. Four options are available:

@@ -37,7 +37,7 @@ Note that in the example below, **Export** is integrated with the **Data points 
    <br>![Export configuration](/images/users-guide/cockpit/cockpit-exports-configuration.png)<br>
    In this dialog window you can configure the following options:
 
-   - **Time range** - Select the time range for your export. By default, it's the same time range as configured in the widget's settings.
+   - **Time range**: Select the time range for your export. By default, it uses the same time range as configured in the widget's settings.
    - **Data scope**
      - **Export mode** - Two options are available (see [**Differences between export modes**](#differences-between-export-modes) section below for details):
        - Compact (selected by default) - all data will be exported to one file and downloaded directly by your browser.

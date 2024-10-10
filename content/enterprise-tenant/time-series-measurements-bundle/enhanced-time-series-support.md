@@ -1,12 +1,7 @@
 ---
-weight: 120
+weight: 10
 title: Enhanced time series support
-layout: bundle
-outputs:
-  - html
-  - json
-sector:
-  - platform_administration
+layout: redirect
 helpcontent:
   - label: enhanced-time-series-support
     title: Time series migration

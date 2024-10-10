@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 20
 title: Time series migration
 layout: redirect
 ---

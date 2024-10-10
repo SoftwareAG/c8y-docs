@@ -1,6 +1,6 @@
 ---
 date: 
-title: Skip null entries in Content Format
+title: Skip null entries in Supported Content Format reported by LWM2M devices
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

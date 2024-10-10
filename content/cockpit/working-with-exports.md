@@ -20,7 +20,7 @@ While **Export** is a standalone feature, it works in conjunction with other fea
 ROLES & PERMISSIONS:
 
 - To generate exports: READ permission permission type "Measurement"
-  {{< /c8y-admon-req >}}
+{{< /c8y-admon-req >}}
 
 ### To create an export {#to-create-an-export}
 

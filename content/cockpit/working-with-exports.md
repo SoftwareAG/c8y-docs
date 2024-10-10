@@ -53,6 +53,7 @@ Note that in the example below, **Export** is integrated with the **Data points 
 
 ### Differences between export modes {#differences-between-export-modes}
 
+See below for the details of each export mode available to you. 
 - **Compact**:
   - Processes up to 5,000 records per data point, or up to the data retention limit
   - Creates a single merged file containing all the data

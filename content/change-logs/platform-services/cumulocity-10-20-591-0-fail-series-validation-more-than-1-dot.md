@@ -16,4 +16,4 @@ version: 10.20.591.0
 ---
 Property names used for fragment and series must not contain whitespaces nor the special characters (https://cumulocity.com/api/core/#operation/postMeasurementCollectionResource)
 Previously, the `/measurement/measurements/series` endpoint accepted a `series` query parameter which contained more than one dot, although it returned an empty response.
-With this change the endpoint returns `422` error if `series` query parameter contains more than one dot.
+With this change the endpoint returns a `422` error if the `series` query parameter contains more than one dot.

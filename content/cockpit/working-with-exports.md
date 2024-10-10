@@ -35,7 +35,7 @@ Note that in the example below, **Export** is integrated with the **Data points 
 2. You see the **Generate export** dialog window, which allows you to configure the export further. 
 
    <br>![Export configuration](/images/users-guide/cockpit/cockpit-exports-configuration.png)<br>
-   Here you can set:
+   In this dialog window you can configure the following options:
 
    - **Time range** - Select the time range for your export. By default, it's the same time range as configured in the widget's settings.
    - **Data scope**

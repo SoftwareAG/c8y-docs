@@ -40,11 +40,11 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 | Visible on Login screen                    |Indicates whether the login option is enabled or not
 
 Each time a user logs in, the content of the access token and ID token is verified and serves as the basis for the user's access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
-The administrator can define **Source of dynamic access mapping**. The JWT claims can be retrieved from both the access token and the ID token.
+Under Source of dynamic access mapping, the administrator can specify the source from which the JWT claims are retrieved, either access token or ID token.
 
  ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-source-principle.png)
 
-The user access mapping configuration also provides the following **Dynamic access mapping principle** as options:
+Under Dynamic access mapping principle you can select one of the following options:
 
 * **Use dynamic access mapping only on user creation**: When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overwritten nor updated.
 
@@ -52,7 +52,7 @@ The user access mapping configuration also provides the following **Dynamic acce
 
 * **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared**: This is the default. Dynamic access mapping assigns user roles, based on the token, on every user login. It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login. To change this behavior, select one of the remaining options.
 
-Selecting one of the two options mentioned above will also enable admins to edit roles of SSO users in the user management. For details, refer to [Managing permissions](/standard-tenant/managing-permissions/#assign-global-roles).
+Selecting either of the first two options mentioned above will also allow admins to edit the roles of SSO users in user management. For details, refer to [Managing permissions](/standard-tenant/managing-permissions/#assign-global-roles).
 
 The dynamic access mapping configuration allows defining the rules for assigning roles to users based on JWT claims. The rule that matches the token's value is used to assign the appropriate set of roles to the user.
 

@@ -1,6 +1,6 @@
 ---
 date: 
-title: Measurement series endpoint returns error if series contains more than one dot
+title: Measurement series endpoint returns an error if the series contains more than one dot
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

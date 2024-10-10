@@ -42,6 +42,7 @@ Note that in the example below, **Export** is integrated with the **Data points 
      - **Export mode**: The following two options are available:
        - Compact (selected by default) - all data will be exported to one file and downloaded directly by your browser.
        - Full - depending on the number of records to be processed, the data will either be available in a single ZIP file (containing one file per **Data point**), sent by email or not exportable at all.
+       Refer to [**Differences between export modes**](#differences-between-export-modes) for further details.
      - **Aggregation**: Only available when you select the **Compact** mode. The default value is the same as in the widget's configuration. The following four options are available:
        - None
        - Minutely
@@ -49,7 +50,7 @@ Note that in the example below, **Export** is integrated with the **Data points 
        - Daily
    - **File types**: Select the file format for exporting data. **Microsoft Excel** is selected by default, with **CSV** as another option. You can select both types simultaneously.
 
-3. Click the **Download** button. The result depends on your chosen export mode.
+3. Click the **Download** button. Note that the download result depends on your chosen export mode.
 
 ### Differences between export modes {#differences-between-export-modes}
 

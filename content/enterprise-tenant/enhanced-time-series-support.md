@@ -1,5 +1,5 @@
 ---
-title: Enhanced Time series support
+title: Enhanced time series support
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 layout: bundle
 outputs:

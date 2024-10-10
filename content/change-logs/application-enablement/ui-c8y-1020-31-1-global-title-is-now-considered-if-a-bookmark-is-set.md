@@ -1,6 +1,6 @@
 ---
 date: ""
-title: globalTitle is now considered if a bookmark is set
+title: Bookmark title now uses globalTitle if set
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

@@ -1,6 +1,6 @@
 ---
 date: 
-title: Skip null entries in Content Format
+title: Skip null entries in Supported Content Format reported by LWM2M devices
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4048
 version: 10.18.540.218
 ---
-The LwM2M agent previously didn't process requests when a faulty device sent a content format list containing null values. This issue has now been resolved - the agent skips the null values and continues with the device communication.
+The LwM2M agent previously didn't process requests when a faulty device sent a supported content format list containing null values. This issue has now been resolved - the agent skips the null values and continues with the device communication.

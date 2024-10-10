@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4048
 version: 10.20.392.0
 ---
-The LwM2M agent previously didn't process requests when a faulty device sent a content format list containing null values. This issue has now been resolved - the agent skips the null values and continues with the device communication.
+The LwM2M agent previously didn't process requests when a faulty device sent a supported content format list containing null values. This issue has now been resolved - the agent skips the null values and continues with the device communication.

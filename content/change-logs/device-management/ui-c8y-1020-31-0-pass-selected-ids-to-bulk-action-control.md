@@ -1,6 +1,6 @@
 ---
 date: ""
-title: 'showIf' function of bulk action controls receives an array of selected items' IDs
+title: Selected item IDs are now passed to the bulk action control
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP

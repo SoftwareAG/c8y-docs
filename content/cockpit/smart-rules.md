@@ -37,7 +37,7 @@ There are two different types of smart rules:
 
 **Global smart rules**
 
-  Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, and so on). The rule that created as global monitors whole inventory (any asset type, eg: groups, devices, configurations, applications, etc).
+  Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, and so on). Rules created as global monitor the whole inventory (any asset type such as groups, devices, configurations, applications).
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS for global smart rules:
@@ -55,7 +55,7 @@ Depending on the initial configuration of a global smart rule, there are two typ
 
 **Local smart rules**
 
-  Local smart rules are created in either a group or a device. They are visible to everyone with access to the group/device.
+  Local smart rules are created in either a group or a device. A local rule only affects the asset in which it was created and may affect all child assets depending on the configuration.
   Those rules affecting current asset in context of which are created and may affect any child asset depending on configuration provided. 
 
 {{< c8y-admon-req >}}
@@ -81,11 +81,14 @@ Smart rules can be seen in three places:
 
   In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.
 
-  From the context of a group or device, or in the **Status** tab of the owned microservice, you can only modify local smart rules. Editing global smart rules is only possible on the **Global smart rules** page. 
-
+- In the **Status** tab of the owned microservice
 
   The microservice details show the global and local smart rules (considering the permissions of the user). Here it is possible to configure a limited number of smart rules, mainly related to alarms that might be created by the microservice while transitioning through different deployment states.
-  
+
+{{< c8y-admon-info >}}
+From the context of a group or device, or in the **Status** tab of the owned microservice, you can only modify local smart rules. Editing global smart rules is only possible on the **Global smart rules** page.
+{{< /c8y-admin-info >}}
+
 {{< c8y-admon-related >}}
 - [Platform administration > {{< standard-tenant >}} administration > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.
 {{< /c8y-admon-related >}}

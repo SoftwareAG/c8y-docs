@@ -37,7 +37,7 @@ There are two different types of smart rules:
 
 **Global smart rules**
 
-  Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, and so on).
+  Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, and so on). The rule that created as global monitors whole inventory (any asset type, eg: groups, devices, configurations, applications, etc).
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS for global smart rules:
@@ -56,6 +56,7 @@ Depending on the initial configuration of a global smart rule, there are two typ
 **Local smart rules**
 
   Local smart rules are created in either a group or a device. They are visible to everyone with access to the group/device.
+  Those rules affecting current asset in context of which are created and may affect any child asset depending on configuration provided. 
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS for local smart rules:

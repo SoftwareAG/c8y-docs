@@ -81,7 +81,7 @@ Smart rules can be seen in three places:
 
   In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.
 
-- In the **Status** tab of the owned microservice
+- In the **Status** tab of the owned microservice.
 
   The microservice details show the global and local smart rules (considering the permissions of the user). Here it is possible to configure a limited number of smart rules, mainly related to alarms that might be created by the microservice while transitioning through different deployment states.
 

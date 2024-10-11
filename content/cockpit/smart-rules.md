@@ -87,7 +87,7 @@ Smart rules can be seen in three places:
 
 {{< c8y-admon-info >}}
 From the context of a group or device, or in the **Status** tab of the owned microservice, you can only modify local smart rules. Editing global smart rules is only possible on the **Global smart rules** page.
-{{< /c8y-admin-info >}}
+{{< /c8y-admon-info >}}
 
 {{< c8y-admon-related >}}
 - [Platform administration > {{< standard-tenant >}} administration > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.

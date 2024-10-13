@@ -1,6 +1,6 @@
 ---
-date: 2024-10-08
-title: Removed Self link from inventory parents fragment in API response
+date:
+title: Removed self link from parents fragments in Inventory API responses
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60938
 version: 10.20.589.0
 ---
-The <code>self</code> field has been removed from inventory API from deviceParents, assetParents and additionParents response fragments, it was not required and always had a generated link to a non-existent endpoint.
+In the Inventory API, the `self` field has been removed from `deviceParents`, `assetParents` and `additionParents` response fragments. It was not required and always had a generated link to a non-existent endpoint.

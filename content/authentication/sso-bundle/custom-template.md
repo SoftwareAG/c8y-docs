@@ -45,7 +45,7 @@ Under **Source of dynamic access mapping**, the administrator can specify the so
 
  ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-source-principle.png)
 
-Under Dynamic access mapping principle you can select one of the following options:
+Under **Dynamic access mapping principle** you can select one of the following options:
 
 * **Use dynamic access mapping only on user creation**: When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overwritten nor updated.
 

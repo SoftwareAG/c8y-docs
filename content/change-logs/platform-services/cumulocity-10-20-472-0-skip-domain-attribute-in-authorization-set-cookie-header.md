@@ -1,5 +1,5 @@
 ---
-date: 2024-06-10
+date: ""
 title: Security improvement in session cookie management
 product_area: Platform services
 change_type:

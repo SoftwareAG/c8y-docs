@@ -1,5 +1,5 @@
 ---
-date: 2024-10-14
+date: ""
 title: Allowing LWM2M device to send empty payload without content-type data
 change_type:
   - value: change-2c7RdTdXo4

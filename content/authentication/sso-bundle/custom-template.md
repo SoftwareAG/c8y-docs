@@ -40,7 +40,8 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 | Visible on Login screen                    |Indicates whether the login option is enabled or not
 
 Each time a user logs in, the content of the access token and ID token is verified and serves as the basis for the user's access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
-Under Source of dynamic access mapping, the administrator can specify the source from which the JWT claims are retrieved, either access token or ID token.
+
+Under **Source of dynamic access mapping**, the administrator can specify the source from which the JWT claims are retrieved, either access token or ID token.
 
  ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-source-principle.png)
 

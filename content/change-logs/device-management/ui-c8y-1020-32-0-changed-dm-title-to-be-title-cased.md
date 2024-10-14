@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3890
 version: 1020.32.0
 ---
-Changed DM title to be title cased.
+To improve readability and consistency, the titles of device management entities now use title case instead of sentence case. This change applies to all existing and new device management entities. The functionality of the entities remains the same, only the casing of the titles has been modified.

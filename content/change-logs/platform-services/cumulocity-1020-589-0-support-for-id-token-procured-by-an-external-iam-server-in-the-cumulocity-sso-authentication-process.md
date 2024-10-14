@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Support for ID token procured by an external IAM server in the Cumulocity SSO authentication process
+title: Support for ID tokens provided by external IAM servers in the SSO authentication process
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP

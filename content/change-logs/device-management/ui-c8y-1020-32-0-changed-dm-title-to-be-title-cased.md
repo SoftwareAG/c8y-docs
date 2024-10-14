@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Changed DM title to be title cased.
+title: Device management titles now use title case
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP

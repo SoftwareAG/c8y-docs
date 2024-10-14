@@ -1,6 +1,6 @@
 ---
 date: ""
-title: OPC-UA device protocol: Radio button selection lost when expanding another variable
+title: Radio button selection in OPC UA device protocol configuration maintained when expanding another variable
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: OPCUA Device protocol Radio buttons go unselect when we expand another variable (#7216)
+title: OPC-UA device protocol: Radio button selection lost when expanding another variable
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

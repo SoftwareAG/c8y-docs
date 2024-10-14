@@ -17,4 +17,5 @@ version: 10.20.385.0
 
 The LWM2M specification allows devices to send an empty payload when there is no data to report. 
 In case of an empty payload, no content-type is required.
-Previously, LWM2M agents would reject messages with an empty payload and no content-type.
+Previously, LWM2M agents would reject messages with an empty payload and no content-type. 
+Now, these messages will be accepted and processed as intended.

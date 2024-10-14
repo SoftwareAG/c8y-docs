@@ -2,6 +2,8 @@
 weight: 10
 title: Enhanced time series support
 layout: redirect
+# sector:
+#   - platform_administration
 helpcontent:
   - label: enhanced-time-series-support
     title: Time series migration

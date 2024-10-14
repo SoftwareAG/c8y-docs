@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-10-14
 title: Enhanced select component with advanced features
 product_area: Application enablement & solutions
 change_type:

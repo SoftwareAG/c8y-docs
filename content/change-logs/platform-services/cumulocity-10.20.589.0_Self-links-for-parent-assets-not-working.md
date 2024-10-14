@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60938
 version: 10.20.589.0
 ---
-In the Inventory API, the `self` field has been removed from `deviceParents`, `assetParents` and `additionParents` response fragments. It was not required and always had a generated link to a non-existent endpoint.
+In order to simplify the Inventory API the redundant `self` field has been removed from `deviceParents`, `assetParents` and `additionParents` response fragments. It was not required and always had a generated link to a non-existent endpoint.

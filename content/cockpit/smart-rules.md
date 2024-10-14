@@ -56,7 +56,6 @@ Depending on the initial configuration of a global smart rule, there are two typ
 **Local smart rules**
 
   Local smart rules are created in either a group or a device. A local rule only affects the asset in which it was created and may affect all child assets depending on the configuration.
-  Those rules affecting current asset in context of which are created and may affect any child asset depending on configuration provided. 
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS for local smart rules:
@@ -83,7 +82,7 @@ Smart rules can be seen in three places:
 
 - In the **Status** tab of the owned microservice.
 
-  The microservice details show the global and local smart rules (considering the permissions of the user). Here it is possible to configure a limited number of smart rules, mainly related to alarms that might be created by the microservice while transitioning through different deployment states.
+  The microservice details show the global and local smart rules (considering the permissions of the user). Here it is possible to configure a limited number of types of smart rules. Rules selection here is mainly focused on alarms that might be created by the microservice while transitioning through different deployment states.
 
 {{< c8y-admon-info >}}
 From the context of a group or device, or in the **Status** tab of the owned microservice, you can only modify local smart rules. Editing global smart rules is only possible on the **Global smart rules** page.

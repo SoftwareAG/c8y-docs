@@ -38,8 +38,8 @@ For more details on how to correctly set up property names and series names see 
 
 ### Where do I find the calculated OEE measurements of a profile in the platform? {#where-do-i-find-the-calculated-oee-measurements-of-a-profile-in-the-platform}
 
-1. Go to the parent machine in the Device management application and open the child devices of the machine.
+1. Go to the parent machine in the Device Management application and open the child devices of the machine.
 2. The profile is a child device of the machine. You can identify it via the profile name. If the profile name is "XYZ" for example, then the child device will be called "XYZ[OEE calculation profile]".
 3. Navigate to the **Measurements tab** of the child device. You should see the OEE measurements.
 
-Alternatively, you can also use the built-in search in the Device management application to search for the name of the profile.
+Alternatively, you can also use the built-in search in the Device Management application to search for the name of the profile.

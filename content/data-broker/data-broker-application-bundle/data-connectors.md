@@ -39,12 +39,13 @@ If the source tenant has been suspended all its data broker connectors will be s
 1. Click **Add data connector** in the top menu bar.
 2. In the **Settings** tab, provide the following information to create a new data connector:
 
-| Field                        | Description                                                                                       |
-|:-----------------------------|:--------------------------------------------------------------------------------------------------|
-|   Title                       | The name of the data connector.                                                                   |
-|   Target URL for data connector   | The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore. |
-|   Description                 | A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription. |
-|   Data filters                | A set of filters that define what is copied to the destination. You must configure at least one filter. |
+| Field                                | Description                                                                                       |
+|:-------------------------------------|:--------------------------------------------------------------------------------------------------|
+|   1. Title                              | The name of the data connector.                                                                   |
+|   2. Target URL for data connector      | The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore. |
+|   3. Description                        | A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription. |
+|  4.  Data filters                       | A set of filters that define what is copied to the destination. You must configure at least one filter. |
+
 
 
 3. Click **Add filter** to configure a new filter.

@@ -39,12 +39,36 @@ If the source tenant has been suspended all its data broker connectors will be s
 1. Click **Add data connector** in the top menu bar.
 2. In the **Settings** tab, provide the following information to create a new data connector:
 
-| Field                                | Description                                                                                       |
-|:-------------------------------------|:--------------------------------------------------------------------------------------------------|
-|   1. Title                              | The name of the data connector.                                                                   |
-|   2. Target URL for data connector      | The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore. |
-|   3. Description                        | A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription. |
-|  4.  Data filters                       | A set of filters that define what is copied to the destination. You must configure at least one filter. |
+<div style="padding-left: 40px;">
+<table>
+<col width = 150>
+  <thead>
+    <tr>
+      <th style="text-align:left">Field</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Title</td>
+      <td style="text-align:left">The name of the data connector.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Target URL for data connector</td>
+      <td style="text-align:left">The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Description</td>
+      <td style="text-align:left">A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Data filters</td>
+      <td style="text-align:left">A set of filters that define what is copied to the destination. You must configure at least one filter.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 
 

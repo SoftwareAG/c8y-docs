@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The display of errors returned by the server during the removal of a global role has been corrected.
+title: Error message on removal of an inventory access mapping in SSO configuration provides correct information
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

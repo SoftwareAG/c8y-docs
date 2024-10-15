@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAB-3201
 version:
 ---
-To improve the user experience in Analytics Builder, the **On value change** option of the **Mode** parameter in the [Pulse](https://cumulocity.com/docs/streaming-analytics/block-reference/#pulse) block has been renamed to **On value change (excluding false)**. In addition, the block reference has been updated to clarify that for a boolean input, a pulse is only sent when the input changes to `true` (not `false`).
+To improve the user experience in Analytics Builder, the **On value change** option of the **Mode** parameter in the [Pulse](https://cumulocity.com/docs/streaming-analytics/block-reference/#pulse) block has been renamed to **On value change (excluding to false)**. In addition, the block reference has been updated to clarify that for a boolean input, a pulse is only sent when the input changes to `true` (not `false`).

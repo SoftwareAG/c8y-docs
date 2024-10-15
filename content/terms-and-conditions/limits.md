@@ -2,8 +2,10 @@
 title: Limits
 layout: bundle
 sector:
-  - getting_started
+  - about_website
 weight: 100
+aliases:
+  - /concepts/limits/
 ---
 
 The following limits apply to {{< product-c8y-iot >}}.

@@ -26,7 +26,7 @@ The Spring Boot version used in the Microservice SDK has been upgraded to 3.3.3.
 
 **Impact**: Each of these updates may impact your microservices, potentially requiring code changes.
 
-**Rollout**: The update will be available in Continuous Deployment (CD) versions higher than 1020.128.0 and in versions of the next annual release 2025.
+**Rollout**: The update will be available in Continuous Deployment (CD) versions starting in Q4 2024 and in versions of the next annual release 2025. A separate announcement will be made to confirm the CD version containing the change.
 
 **Migration Resources**: Refer to the following guides for assistance with the changes:
 

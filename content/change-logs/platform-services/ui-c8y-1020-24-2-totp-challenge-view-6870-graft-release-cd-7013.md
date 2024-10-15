@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-10-10'
 title: Adjusted buttons in the Login screen and TFA settings screen
 product_area: Platform services
 change_type:

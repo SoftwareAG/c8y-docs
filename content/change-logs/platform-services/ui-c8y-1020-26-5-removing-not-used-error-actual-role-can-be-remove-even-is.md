@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-53701
 version: 1020.26.5
 ---
-If the server returned an "unprocessable content" error while removing a global role, the application always indicated that the issue was due to the role being assigned to a user. Now, the application will display the correct error.
+If the server returned an "unprocessable content" error while removing a global role, the error message always indicated that the issue occurred because the global role was assigned to a user. Now, the error message will display the correct information, for example "Role is used in inventory access mapping in SSO configuration".

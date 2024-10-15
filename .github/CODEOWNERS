@@ -18,6 +18,8 @@
 /content/dtm/ @pavanshivajirao @lra-sag @BeateRixen @MWindel
 content/authentication @BeateRixen
 
+
+
 /content/streaming-analytics/ @kailol-sag @BeateRixen @MWindel @skom-c8y
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
 /content/streaming-analytics/block-reference-bundle/ @kailol-sag @skom-c8y

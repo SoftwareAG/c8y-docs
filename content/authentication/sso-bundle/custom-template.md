@@ -20,7 +20,7 @@ The first part of the **Single sign-on** page consists of the request configurat
 Be aware that the body field of each request, after filling placeholders with values, is sent in the request 'as is'. This means it is not encoded by {{< product-c8y-iot >}}. Many authorization servers require values inside the body to be URL-encoded (x-form-urlencoded). This can be achieved by entering already encoded values in a body field.
 {{< /c8y-admon-info >}}
 
-Specifying a logout request is optional. It performs [front-channel single logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). If configured as request parameter, the user is redirected to the defined authorization server logout URL after logging out from {{< product-c8y-iot >}}. If the OpenID Connect standard is used for the integration with the authorization server, the ID token should be passed as the `id_token_hint` parameter in the logout request.
+Specifying a logout request is optional. It performs a [front-channel single logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). If configured as a request parameter, you are redirected to the defined authorization server logout URL after logging out from {{< product-c8y-iot >}}. If you use the OpenID Connect standard for the integration with the authorization server, the ID token should be passed as the `id_token_hint` parameter in the logout request.
 
 ![Custom logout request](/images/users-guide/Administration/sso-custom-logout-request.png)
 
@@ -39,7 +39,7 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 | Audience                                   |Expected aud parameter of JWT
 | Visible on Login screen                    |Indicates whether the login option is enabled or not
 
-Each time a user logs in, the content of the access token and ID token is verified and serves as the basis for the user's access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
+Each time you log in, the content of the access token and ID token is verified and serves as the basis for your access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
 
 Under **Source of dynamic access mapping**, the administrator can specify the source from which the JWT claims are retrieved, either access token or ID token.
 
@@ -53,9 +53,9 @@ Under **Dynamic access mapping principle** you can select one of the following o
 
 * **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared**: This is the default. Dynamic access mapping assigns user roles, based on the token, on every user login. It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login. To change this behavior, select one of the remaining options.
 
-Selecting either of the first two options mentioned above will also allow admins to edit the roles of SSO users in user management. For details, refer to [Managing permissions](/standard-tenant/managing-permissions/#assign-global-roles).
+If you select either of the first two options mentioned above, this will also allow administrators to edit the roles of SSO users in the user management. For details, refer to [Managing permissions](/standard-tenant/managing-permissions/#assign-global-roles).
 
-The dynamic access mapping configuration allows defining the rules for assigning roles to users based on JWT claims. The rule that matches the token's value is used to assign the appropriate set of roles to the user.
+The dynamic access mapping configuration allows you to define the rules for assigning roles to users based on JWT claims. The rule that matches the token's value is used to assign the appropriate set of roles to the user.
 
  ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping.png)
 
@@ -71,7 +71,7 @@ The dynamic access mapping configuration allows defining the rules for assigning
 
 The user will be granted access to the global role "business", the default application "cockpit" and the inventory roles "Manager" and "Reader" for the device group named "region north".
 
-If no access mapping matches the user token, the user will get an "access denied" message when trying to log in. This will also happen if there is no access mapping defined causing all users to be unable to log in using SSO.
+If no access mapping matches the user token, you will get an "access denied" message when trying to log in. This will also happen if there is no access mapping defined causing all users to be unable to log in using SSO.
 
 New rules can be added by clicking **Add access mapping** or **Add inventory roles** at the bottom. An access mapping statement can consist of multiple checks like in the image below. You can add a rule to an existing statement by clicking **and**. Click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> to remove a rule.
 
@@ -112,7 +112,7 @@ Mapping for alias is not available because it is not used in the context of SSO 
 The username claim name can be configured in the **User ID** configuration window.
 The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#troubleshooting)).
 
-If the **Use constant value** checkbox is selected, a constant user ID is used for all users who log in to the {{< product-c8y-iot >}} platform via SSO. This means that all users who log in via SSO share the same user account in the {{< product-c8y-iot >}} platform. Usage of this option is not recommended.
+If you check the **Use constant value** checkbox, a constant user ID is used for all users who log in to the {{< product-c8y-iot >}} platform via SSO. This means that all users who log in via SSO share the same user account in the {{< product-c8y-iot >}} platform. We do not recommend you to use this option.
 
 
 Each token is signed by a signing certificate. The following options are available to configure the signing certificates.

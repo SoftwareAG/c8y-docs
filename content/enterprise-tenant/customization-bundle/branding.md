@@ -55,9 +55,9 @@ To revert back to the default settings, click **Delete all variants** in the in 
 
 Each branding parameter can be configured in multiple ways.
 
-### Generic tab {#generic-tab}
+#### Generic tab {#generic-tab}
 
-Under the **Generic** tab, you can edit the generic settings of your branding variant that will apply to all of your branding themes.
+In the **Generic** tab, you can edit the generic settings of your branding variant that will apply to all of your branding themes.
 
 <img src="/images/users-guide/enterprise-tenant/et-branding-generic-tab.png" alt="Generic branding tab">
 
@@ -75,13 +75,13 @@ If enabled, the [**Dark theme** tab](#light-dark-theme-tab) is available.
 
 ##### Typography {#typography}
 
-In the **Typography** tab you specify the font settings for your brand variant.
+under **Typography** you specify the font settings for your brand variant.
 
 You can select your base and headings font stack, and select an option for the navigator font stack. This is either same as base or same as headings font. You can also add a link to existing remote fonts to be used.
 
 ##### Cookie banner {#cookie-banner}
 
-In the **Cookie banner** tab you specify the settings for the banner with the cookie usage information. If not disabled here, the banner is shown for all users of the current tenant and all subtenants until a user clicks **Agree and proceed**.
+Under **Cookie banner** you specify the settings for the banner with the cookie usage information. If not disabled here, the banner is shown for all users of the current tenant and all subtenants until a user clicks **Agree and proceed**.
 
 If you disable the cookie banner, this also disables the product experience tracking by Gainsight for the current tenant and all subtenants.
 
@@ -92,7 +92,7 @@ The following parameters can be specified:
 * Link to privacy policy: A link to the page with the privacy policy.
 * Version of privacy policy: A version of the privacy policy (for example, a date). In case the version changes, the consent of all existing users is invalidated.
 
-### Light/Dark theme tab {#light-dark-theme-tab}
+#### Light theme tab {#light-theme-tab}
 
 The same set of parameters is available for both the light and the dark theme and can be changed in the corresponding tabs.
 
@@ -113,7 +113,7 @@ Under **Logos**, specify the following items:
 
 ##### Brand colors {#brand-colors}
 
-In the **Brand colors** tab specify the colors you like to use in the branding variant.
+In the **Brand colors** section you specify the colors you like to use in the branding variant.
 
 You can configure the following parameters by providing a HEX, RGB or RGBA value:
 
@@ -124,13 +124,13 @@ You can configure the following parameters by providing a HEX, RGB or RGBA value
 
 ##### Status colors {#status-colors}
 
-In the **Status colors** tab you specify the colors used to display the different statuses.
+In ther **Status colors** section you specify the colors used to display the different statuses.
 
 For each status (**Info**, **Warning**, **Danger** and **Success**) you can provide three colors ("default, "light" and "dark").
 
 ##### Generic {#generic}
 
-In the **Generic** tab you specify the colors used in generic places.
+In the **Generic** section you specify the colors used in generic places.
 
 The following parameters can be specified by providing a HEX, RGB or RGBA value:
 
@@ -144,7 +144,7 @@ In addition, you can also specify the **Button border-radius**.
 
 ##### Action bar {#action-bar}
 
-In the **Action bar** tab you specify the parameters for the action bar.
+In the **Action bar** section you specify the parameters for the action bar.
 
 The following parameters can be specified by providing a HEX, RGB or RGBA value:
 
@@ -156,7 +156,7 @@ The following parameters can be specified by providing a HEX, RGB or RGBA value:
 
 ##### Main header {#main-header}
 
-In the **Main header** tab you specify the parameters for the main header.
+In the **Main header** section you specify the parameters for the main header.
 
 The following parameters can be specified by providing a HEX, RGB, or RGBA value:
 
@@ -166,7 +166,7 @@ The following parameters can be specified by providing a HEX, RGB, or RGBA value
 
 ##### Navigator {#navigator}
 
-In the **Navigator** tab you specify the parameters for the navigator.
+In the **Navigator**section you specify the parameters for the navigator.
 
 The following parameters can be specified by providing a HEX, RGB, or RGBA value:
 
@@ -181,7 +181,7 @@ The following parameters can be specified by providing a HEX, RGB, or RGBA value
 
 ##### Right drawer {#right-drawer}
 
-In the **Right drawer** tab you specify the parameters for the right drawer.
+In the **Right drawer** section you specify the parameters for the right drawer.
 
 The following parameters can be specified by providing a HEX, RGB or RGBA value:
 
@@ -192,7 +192,7 @@ The following parameters can be specified by providing a HEX, RGB or RGBA value:
 * Link color
 * Link hover color
 
-### Custom CSS {#custom-css-tab}
+#### Custom CSS {#custom-css-tab}
 
 The **Custom CSS** tab allows to customize the looks of your applications even more by providing your own Cascading Style Sheets.
 
@@ -200,7 +200,7 @@ You can utilize this to change colors for locations that have not been covered b
 
 <img src="/images/users-guide/enterprise-tenant/et-branding-custom-css-tab.png" alt="Custom CSS branding tab">
 
-### Advanced branding {#advanced-branding-tab}
+#### Advanced branding {#advanced-branding-tab}
 
 The **Advanced branding** tab allows to make direct changes to the branding JSON object, which is usually filled by the other tabs behind the scenes, via a text editor. This can be useful to set some of the [ApplicationOptions the Web SDK provides](https://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) which are not immediately supported by the forms the branding editor includes.
 

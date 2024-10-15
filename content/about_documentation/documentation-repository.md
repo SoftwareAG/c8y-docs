@@ -1,9 +1,9 @@
 ---
 weight: 20
 title: Documentation versions
-layout: bundle
+layout: redirect
 sector:
-  - about_website
+  - terms_conditions
 ---
 
 This {{< product-c8y-iot >}} documentation website provides the documentation for the SaaS cloud offering and for the yearly releases under maintenance. Documentation for previous releases is accessible as described below.

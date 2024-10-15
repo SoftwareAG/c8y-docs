@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix running Karma tests against @c8y/ngx-components library
+title: Fixed issue with Karma tests against @c8y/ngx-components library
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

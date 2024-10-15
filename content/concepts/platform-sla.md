@@ -38,7 +38,7 @@ The {{< product-c8y-iot >}} platform offers a comprehensive set of features desi
     * We operate the platform in compliance with SOC II and ISO 27001 standards, encompassing a wide range of security measures, including vulnerability management, security incident management, DDoS protection, intrusion detection, and encryption of data both in transit and at rest.
 * **Business continuity and resilience:**
     * {{< product-c8y-iot >}} adheres to ISO 22301 standards for business continuity management (BCM), ensuring resilience against zone outages with zone redundancy.
-    * Regular backups are maintained with a 30-day retention period, a Recovery Time Objective (RTO) of 12 hours, and a Recovery Point Objective (RPO) of 24 hours.
+    * Regular backups are maintained with a 30-day retention period, a Recovery Time Objective (RTO) of 12 hours, and a Recovery Point Objective (RPO) of 24 hours. Backups are stored in the same region where the service is hosted.
     * {{< company-c8y >}} conducts regular drills to validate its disaster recovery procedures.
 * **API compatibility management:** The platform maintains compatibility of APIs as outlined in its[ Compatibility policy](/concepts/compatibility-policy/). Transport protocols are managed in accordance with this policy, ensuring consistent and reliable API interactions.
 * **Data ownership and portability:** As the data processor, {{< product-c8y-iot >}} ensures that Customer retains full ownership of their data. Customer can export their data at any time using the provided APIs, ensuring control and flexibility over their information.
@@ -60,7 +60,7 @@ As a Customer of the {{< product-c8y-iot >}} platform, we request your acknowled
 ##### **Capacity management**
 
 * **Scalability considerations:** While the {{< product-c8y-iot >}} platform is designed to be scalable, it may not be able to accommodate sudden, extreme capacity demands (for example, all devices attempting to connect simultaneously after a connectivity outage, or all devices being upgraded at the same time). Customer acknowledges that such requests may be delayed or declined by the platform to maintain overall service stability. Customer is advised to implement an [exponential backoff strategy](https://en.wikipedia.org/wiki/Exponential_backoff).
-* **Soft limits:** Customer acknowledges the existence of "soft limits" as documented in the {{< product-c8y-iot >}} documentation [here](/concepts/limits/). These limits are not strictly enforced but exceeding them may lead to a reduced service level, and Customer is advised to operate within these guidelines.
+* **Soft quotas:** Customer acknowledges the existence of "soft quotas" as documented in the {{< product-c8y-iot >}} documentation [here](/concepts/limits/). These quotas are not strictly enforced but exceeding them may lead to a reduced service level, and Customer is advised to operate within these guidelines.
 * **Data retention management:** Data storage is included as part of Customer’s subscription. Customer is responsible for configuring appropriate data retention rules within the {{< product-c8y-iot >}} Administration application, balancing their specific use case requirements with budgetary considerations.
 
 For details on non-permitted uses of {{< product-c8y-iot >}}, please refer to the {{< product-c8y-iot >}} Terms of Service.

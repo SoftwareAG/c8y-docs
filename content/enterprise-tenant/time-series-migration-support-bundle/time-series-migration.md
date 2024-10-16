@@ -21,7 +21,7 @@ The user must have following permissions "Tenant management":
 
 To start the tenant migration follow the steps below:
 
-1. Navigate to **Migration > Time series** in the application where the plugin is installed (Administration by default).
+1. Navigate to **Migration > Time series** in the application where the plugin is installed. By default this is the Administration application.
 2. Select the tenant you want to trigger the migration for from the list of available tenants.
 3. Hover over the row of the tenant in the tenant list, then click **Add to queue** and confirm the operation. The tenant migration status should be updated to **Queued**.
 4. When the migration process is triggered its status for the tenant should changed from **Queued** to **In progress**.

@@ -92,9 +92,10 @@ The following parameters can be specified:
 * Link to privacy policy: A link to the page with the privacy policy.
 * Version of privacy policy: A version of the privacy policy (for example, a date). In case the version changes, the consent of all existing users is invalidated.
 
-#### Light theme tab {#light-theme-tab}
+#### Light & dark theme tab {#light-dark-theme-tab}
 
 The same set of parameters is available for both the light and the dark theme and can be changed in the corresponding tabs.
+Further details regarding these parameters can be found in the [**Branding**](https://styleguide.cumulocity.com/apps/codex/#/ui-guidelines/foundations/design-tokens/branding/overview) and [**Color palette**](https://styleguide.cumulocity.com/apps/codex/#/ui-guidelines/foundations/design-tokens/color-palette/overview) sections of the Codex.
 
 The theme switcher in the right drawer allows you to switch between the light and dark theme, once you enable the dark theme on your branding variant.
 
@@ -202,6 +203,6 @@ You can utilize this to change colors for locations that have not been covered b
 
 #### Advanced branding {#advanced-branding-tab}
 
-The **Advanced branding** tab allows to make direct changes to the branding JSON object, which is usually filled by the other tabs behind the scenes, via a text editor. This can be useful to set some of the [ApplicationOptions the Web SDK provides](https://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) which are not immediately supported by the forms the branding editor includes.
+The **Advanced branding** tab allows to make direct changes to the branding JSON object, which is usually filled by the other tabs behind the scenes, via a text editor. This can be useful to set some of the [ApplicationOptions the Web SDK provides](https://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) which are not immediately supported by the forms the branding editor includes. More details regarding these options can also be found within [Codex](https://styleguide.cumulocity.com/apps/codex/#/develop/services/OptionsService/overview).
 
 <img src="/images/users-guide/enterprise-tenant/et-branding-advanced-branding-tab.png" alt="Advanced branding tab">

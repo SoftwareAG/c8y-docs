@@ -1,6 +1,6 @@
 ---
 date: 2024-10-04
-title: Upcoming Spring Boot Version Update for Microservice SDK  
+title: Upcoming Spring Boot version update for Microservice SDK  
 change_type:
   - value: change-inv-3bw8e
     label: Announcement

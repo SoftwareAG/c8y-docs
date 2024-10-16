@@ -44,5 +44,5 @@ When a migration is being executed, you can monitor its progress in the **Ongoin
 On the right side, you can see the percentage indicator showing how much data has already been migrated to the new collection.
 
 {{< c8y-admon-important >}}
-You can add more than one tenant into the migration queue, but migration will be executed only for one tenant at a time. It means that we won't start the migration of the next tenant in the queue, until you approve the previously migrated tenant to transition from **Verified** to **Complete** status.
+You can add more than one tenant into the migration queue, but migration is executed only for one tenant at a time. It means that the migration of the next tenant in the queue will not start until you approve the previously migrated tenant to transition from **Verified** to **Complete** status.
 {{< /c8y-admon-important >}}

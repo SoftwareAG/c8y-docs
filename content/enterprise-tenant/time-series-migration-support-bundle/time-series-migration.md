@@ -31,7 +31,7 @@ After the data is processed, verified and migrated to the new collection, confir
 7. After seven days, the legacy measurements collection is deleted and the migration status is changed to **Completed**.
 
 {{< c8y-admon-info >}}
-Migration of measurements can be cancelled when a tenant has the status **Queued**. After the status changed to **In progress**, the process can no longer be stopped. However, if you will not approve the migration manually, the migration stays in the status **Verified**.
+The migration of measurements can be cancelled when a tenant has the status **Queued**. After the status changed to **In progress**, the process can no longer be stopped. However, if you do not approve the migration manually, the migration stays in the status **Verified**.
 {{< /c8y-admon-info >}}
 
 ### Progress monitoring {#progress-monitoring}

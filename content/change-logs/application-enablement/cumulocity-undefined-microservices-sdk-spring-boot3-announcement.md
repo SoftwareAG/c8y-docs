@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ---
-We are pleased to announce an upcoming update to the Spring Boot version used in the Microservice SDK. The new version will be Spring Boot 3.3, which will also bring updates to several third-party libraries and frameworks. These mandatory changes will include:
+We are pleased to announce an upcoming update to the Spring Boot version used in the Microservice SDK. The new version will be Spring Boot 3.3.3, which will also bring updates to several third-party libraries and frameworks. These mandatory changes will include:
 
 * Minimum required Java version: **17** (currently Java 8)
 

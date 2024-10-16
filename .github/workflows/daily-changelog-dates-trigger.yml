@@ -25,7 +25,7 @@ jobs:
 
       - name: Get GitHub App token
         id: app-token
-        uses: SAG/github-app-token@v1
+        uses: Cumulocity-IoT/github-app-token@v1
         with:
           app_id: ${{ vars.APP_ID }}
           installation_id: ${{ secrets.APP_INSTALL_ID }}
@@ -45,7 +45,7 @@ jobs:
           then
             echo "matched, something wrong"
           else
-            echo "didnt match, we good"
+            echo "didn't match, we good"
           fi
           echo "jwt=${jwtToken}" >> "${GITHUB_OUTPUT}"
           echo "token=${token}" >> "${GITHUB_OUTPUT}"

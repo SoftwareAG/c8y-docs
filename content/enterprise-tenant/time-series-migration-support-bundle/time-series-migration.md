@@ -5,8 +5,17 @@ layout: redirect
 ---
 
 
-The administrator user can trigger the migration to time series collection via user interface of a plugin <provide the name of the plugin>, which is installed in the Administration application by default. Optionally, the plugin can be installed in other applications on {{< management-tenant >}} or {{< enterprise-tenant >}}.
-The plugin provides an opportunity to migrate to time series collection for the current ({{< management-tenant >}} or {{< enterprise-tenant >}}) and for the list of subtenants, where you can select a specific tenant for the migration.
+Tenant administrator user can schedule his tenant or any subtenant for migration to time series collection.  The controls for doing so available in **Administration** application and subscribed by default.
+
+{{<c8y-admon-req>}}
+Application access:
+* Users must have access to the Administration application.
+* Users must have timeseries-microservice subscribed to tenant
+
+The user must have following permissions "Tenant management":
+* To view all tenants: READ permission.
+* To create tenants and perform activity permitted by UPDATE permission: ADMIN permission.
+{{</c8y-admon-req>}}
 
 ### To trigger time series migration {#to-trigger-time-series-migration}
 

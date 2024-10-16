@@ -14,9 +14,9 @@ Below we explain what personal data we process about you, with whom we share it 
 
 This Privacy Notice applies to the processing of your personal data in the following cases:
 
-* Use of the Online Services  
-* Performance of the business relationship   
-* Marketing and communication   
+* Use of the Online Services
+* Performance of the business relationship
+* Marketing and communication
 * Application for a job
 
 This Privacy Notice does not apply when we process personal data as a processor (see Section 9).
@@ -29,21 +29,21 @@ We may change this Privacy Notice at any time. Previous versions will be archive
 
 Cumulocity’s Data Protection Officer can be reached by email at [dataprotection@cumulocity.com](mailto:dataprotection@cumulocity.com) or by post at the following address:
 
-Data Protection Officer  
-Cumulocity GmbH  
+Data Protection Officer
+Cumulocity GmbH
 Toulouser Allee 25
-D-40211 Düsseldorf  
+D-40211 Düsseldorf
 Germany
 
 ### 2\. What personal data do we process?
 
 Below you find a list of the categories of personal data we are processing:
 
-* **Contact details**: Name, email address, phone number, address;   
-* **Business data**: Company, job title, business address, billing-related data (for example,  remuneration);   
-* **Metadata**: IP address, operating system, internet browser, URL of the website from which the Online Service was accessed, accessed pages of the Online Service, duration of use (including date and time);   
-* **Login data**: User name, password;  
-* **Marketing data**: Use of information and advertising material, data in the context of participation in events or webinars (e.g. registration, photos, videos), information about Online Services and products used (e.g. user behavior);   
+* **Contact details**: Name, email address, phone number, address;
+* **Business data**: Company, job title, business address, billing-related data (for example,  remuneration);
+* **Metadata**: IP address, operating system, internet browser, URL of the website from which the Online Service was accessed, accessed pages of the Online Service, duration of use (including date and time);
+* **Login data**: User name, password;
+* **Marketing data**: Use of information and advertising material, data in the context of participation in events or webinars (e.g. registration, photos, videos), information about Online Services and products used (e.g. user behavior);
 * **Job application data**: Resumes, cover letters, passports or other identification documents, date of birth and other data processed in connection with a job application.
 
 Special categories of personal data, such as health data, trade union membership, religious affiliation, are only processed if required by law or if you have consented to this**.** We generally collect personal data directly from you, but may also obtain such data from your contacts, from your employer or from public sources.
@@ -66,9 +66,9 @@ In order to carry out the business relationship and manage our customers, busine
 
 To inform you about our products, services, events, technical and commercial news, forums, other networking opportunities and to respond to your requests to us, contact, marketing, business, login and metadata are processed.
 
-In the context of participation in marketing campaigns, events and webinars, the use of marketing information may be analyzed for the continuous improvement of products and services. Such analyses may include, but are not limited to, opening or clicking links in emails and the duration of participation in webinars. Contact, meta and marketing data are processed for this purpose.  
+In the context of participation in marketing campaigns, events and webinars, the use of marketing information may be analyzed for the continuous improvement of products and services. Such analyses may include, but are not limited to, opening or clicking links in emails and the duration of participation in webinars. Contact, meta and marketing data are processed for this purpose.
 
-To communicate with us, for example by email or chat, and to respond to your inquiries, contact and business data are processed.  
+To communicate with us, for example by email or chat, and to respond to your inquiries, contact and business data are processed.
 
 To enable the use of our forums and portals, contact, meta and login data are processed.
 
@@ -86,29 +86,29 @@ Through the use of cookies and similar technologies, we process data which may a
 
 We use the following types of cookies on our websites and online services:
 
-* essential cookies  
-* functional cookies, and   
+* essential cookies
+* functional cookies, and
 * advertising cookies.
 
 
 **Essential cookies** are necessary for the use of the website and enable, for example, navigation on the website. **Functional cookies** enhance your personal experience on the website and **advertising cookies** collect information about your online activities to enable personalized advertising. Functional and advertising cookies are only used if you consent to it.
 
-You can choose how we use functional and advertising cookies by changing the cookie settings. To do so, please go to "Cookie preferences" at the bottom of this page. In the cookie settings, you will also find an overview of the third parties that place cookies on our websites. In addition, you can control and restrict the placement of cookies via the browser settings. In this context, you can also delete existing cookies. However, deselecting functional and advertising cookies may lead to a restriction of the functionalities of our websites. Essential cookies are set automatically and cannot be deselected, otherwise the websites would not work properly.  
+You can choose how we use functional and advertising cookies by changing the cookie settings. To do so, please go to "Cookie preferences" at the bottom of this page. In the cookie settings, you will also find an overview of the third parties that place cookies on our websites. In addition, you can control and restrict the placement of cookies via the browser settings. In this context, you can also delete existing cookies. However, deselecting functional and advertising cookies may lead to a restriction of the functionalities of our websites. Essential cookies are set automatically and cannot be deselected, otherwise the websites would not work properly.
 
 
 ### 5\. How do we share your data and how is it transferred to third countries?
 
 We only share your personal data with recipients if this is necessary for fulfillment of the respective purpose. Your personal data may be transferred to and processed by:
 
-* our subsidiaries to fulfill the purposes stated in this Privacy Notice;   
-* service providers, to provide IT and system administration, hosting, analytics, marketing, and customer purchase management services in accordance with the purposes stated above;   
-* our customers, if they provide you with access our Online Services or if the transfer is necessary to resolve suspicious account activity or contract terms;   
-* third parties who operate forums, portals, marketing activities, or host events. In some countries, your prior consent is required and will be requested at the appropriate place. Details will be available there;   
-* consultants, to pursue our legitimate interests or to comply with legal requirements;   
-* users of our forums and portals, as far as posts and comments submitted by you are concerned;   
-* third parties in cases where we are legally obligated or have a final judgement, and when we are enforcing our rights or defending against claims.   
+* our subsidiaries to fulfill the purposes stated in this Privacy Notice;
+* service providers, to provide IT and system administration, hosting, analytics, marketing, and customer purchase management services in accordance with the purposes stated above;
+* our customers, if they provide you with access our Online Services or if the transfer is necessary to resolve suspicious account activity or contract terms;
+* third parties who operate forums, portals, marketing activities, or host events. In some countries, your prior consent is required and will be requested at the appropriate place. Details will be available there;
+* consultants, to pursue our legitimate interests or to comply with legal requirements;
+* users of our forums and portals, as far as posts and comments submitted by you are concerned;
+* third parties in cases where we are legally obligated or have a final judgement, and when we are enforcing our rights or defending against claims.
 
-  All service providers who work for us as so-called data processors are contractually obligated to process personal data exclusively according to our instructions. These service providers do not use your personal data for their own purposes.  
+  All service providers who work for us as so-called data processors are contractually obligated to process personal data exclusively according to our instructions. These service providers do not use your personal data for their own purposes.
 
   The transfer of personal data to recipients located in a country outside the EEA for which the EU Commission has not issued an adequacy decision is based on the EU Standard Contractual Clauses.
 
@@ -123,12 +123,12 @@ If you have applied for a job or provided your data for future job postings, we 
 
 You may contact us at any time and free of charge to exercise your following rights:
 
-* Information about your processed personal data;   
-* Correction of inaccurate or incomplete personal data;   
-* Deletion of your personal data;   
-* Restriction of the processing of your personal data if you dispute the accuracy of the data;  
-* Obtaining your personal data provided to us in a structured, common and machine-readable format or transferring it to another controller;   
-* Revocation of your consent;    
+* Information about your processed personal data;
+* Correction of inaccurate or incomplete personal data;
+* Deletion of your personal data;
+* Restriction of the processing of your personal data if you dispute the accuracy of the data;
+* Obtaining your personal data provided to us in a structured, common and machine-readable format or transferring it to another controller;
+* Revocation of your consent;
 * Objection to the processing of your personal data.
 
 
@@ -157,8 +157,8 @@ For residents of the United States of America the respective local privacy notic
 
 You have a right of appeal to the data protection supervisory authorities pursuant to Art. 77 GDPR. The competent supervisory authority for Cumulocity is:
 
-Landesbeauftragter für Datenschutz und Informationsfreiheit Nordrhein-Westfalen,   
-Kavalleriestrasse 2-4,   
-D-40213 Düsseldorf,   
-tel. \+49211-384240,   
+Landesbeauftragter für Datenschutz und Informationsfreiheit Nordrhein-Westfalen,
+Kavalleriestrasse 2-4,
+D-40213 Düsseldorf,
+tel. \+49211-384240,
 email [poststelle@ldi.nrw.de](https://www.duesseldorf.de/int/infonav/general-privacy-policy-subject-to-the-general-data-protection-regulation-gdpr#).

@@ -1,7 +1,7 @@
 ---
 weight: 20
 title: Documentation versions
-layout: redirect
+layout: bundle
 sector:
   - terms_conditions
 ---

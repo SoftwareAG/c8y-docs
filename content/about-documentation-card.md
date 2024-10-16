@@ -1,6 +1,6 @@
 ---
 title: About this documentation
-bundlefolder: about-documentation
+bundlefolder: about_documentation
 icon: "c8y-icon c8y-icon-notification"
 type: root
 layout: redirect

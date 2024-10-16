@@ -1,7 +1,7 @@
 ---
 weight: 10
 title: Scope
-layout: redirect
+layout: bundle
 sector:
   - terms_conditions
 ---

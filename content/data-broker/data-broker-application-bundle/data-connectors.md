@@ -39,35 +39,34 @@ If the source tenant has been suspended all its data broker connectors will be s
 1. Click **Add data connector** in the top menu bar.
 2. In the **Settings** tab, provide the following information to create a new data connector:
 
-<div style="padding-left: 40px;">
-<table>
-<col width = 150>
-  <thead>
-    <tr>
-      <th style="text-align:left">Field</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Title</td>
-      <td style="text-align:left">The name of the data connector.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Target URL for data connector</td>
-      <td style="text-align:left">The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Description</td>
-      <td style="text-align:left">A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Data filters</td>
-      <td style="text-align:left">A set of filters that define what is copied to the destination. You must configure at least one filter.</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+   <table>
+   <col width = 150>
+   <thead>
+   <tr>
+   <th style="text-align:left">Field</th>
+   <th style="text-align:left">Description</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr>
+   <td style="text-align:left">Title</td>
+   <td style="text-align:left">The name of the data connector.</td>
+   </tr>
+   <tr>
+   <td style="text-align:left">Target URL for data connector</td>
+   <td style="text-align:left">The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore.</td>
+   </tr>
+   <tr>
+   <td style="text-align:left">Description</td>
+   <td style="text-align:left">A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.</td>
+   </tr>
+   <tr>
+   <td style="text-align:left">Data filters</td>
+   <td style="text-align:left">A set of filters that define what is copied to the destination. You must configure at least one filter.</td>
+   </tr>
+   </tbody>
+   </table>
+
 
 
 
@@ -78,37 +77,37 @@ If the source tenant has been suspended all its data broker connectors will be s
 
 4. Each data filter contains the following information:
 
-	<table>
-	<col width = 150>
-	<thead>
-	<tr>
-	<th style="text-align:left">Field</th>
-	<th style="text-align:left">Description</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-	<td style="text-align:left">Group or device</td>
-	<td style="text-align:left">The group or device that is forwarded. If you select a group here all subgroups and subdevices of this group will be forwarded. <b>See the warning below on the usage of All objects.</b> </td>
-	</tr>
-	<tr>
-	<td style="text-align:left">API</td>
-	<td style="text-align:left">The type of data being forwarded (alarms, events, measurements, managed objects) or being received (operations).</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Fragments to filter</td>
-	<td style="text-align:left">The fragments that must be present in a device to be forwarded.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Fragments to copy</td>
-	<td style="text-align:left">The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select <strong>Copy all fragments</strong> to forward the entire object.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Type filter</td>
-	<td style="text-align:left">Forwarded data must have this value in its "type" property.</td>
-	</tr>
-	</tbody>
-	</table>
+   <table>
+	 <col width = 150>
+	 <thead>
+	 <tr>
+	 <th style="text-align:left">Field</th>
+	 <th style="text-align:left">Description</th>
+	 </tr>
+	 </thead>
+	 <tbody>
+	 <tr>
+	 <td style="text-align:left">Group or device</td>
+	 <td style="text-align:left">The group or device that is forwarded. If you select a group here all subgroups and subdevices of this group will be forwarded. <b>See the warning below on the usage of All objects.</b> </td>
+	 </tr>
+	 <tr>
+	 <td style="text-align:left">API</td>
+	 <td style="text-align:left">The type of data being forwarded (alarms, events, measurements, managed objects) or being received (operations).</td>
+	 </tr>
+	 <tr>
+	 <td style="text-align:left">Fragments to filter</td>
+	 <td style="text-align:left">The fragments that must be present in a device to be forwarded.</td>
+	 </tr>
+	 <tr>
+	 <td style="text-align:left">Fragments to copy</td>
+	 <td style="text-align:left">The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select <strong>Copy all fragments</strong> to forward the entire object.</td>
+	 </tr>
+	 <tr>
+	 <td style="text-align:left">Type filter</td>
+	 <td style="text-align:left">Forwarded data must have this value in its "type" property.</td>
+	 </tr>
+	 </tbody>
+	 </table>
 
 5. Click **Save** to save the configuration.
 

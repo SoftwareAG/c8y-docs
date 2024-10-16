@@ -36,7 +36,12 @@ The migration of measurements can be cancelled when a tenant has the status **Qu
 
 ### Progress monitoring {#progress-monitoring}
 
-When a migration is being executed, you can monitor its progress in the **Ongoing migration** section. Here, you can see: what tenant is being migrated, what time range of data will be migrated, who started the migration. On the right side, you can see the percentage indicator showing how much data has already been migrated to the new collection.
+When a migration is being executed, you can monitor its progress in the **Ongoing migration** section. Here, you can see: 
+* What tenant is being migrated, 
+* What time range of data will be migrated, and
+* Who started the migration. 
+
+On the right side, you can see the percentage indicator showing how much data has already been migrated to the new collection.
 
 {{< c8y-admon-important >}}
 You can add more than one tenant into the migration queue, but migration will be executed only for one tenant at a time. It means that we won't start the migration of the next tenant in the queue, until you approve the previously migrated tenant to transition from **Verified** to **Complete** status.

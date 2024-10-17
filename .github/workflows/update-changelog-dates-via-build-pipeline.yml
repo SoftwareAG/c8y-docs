@@ -1,0 +1,97 @@
+name: Update changelog dates via build pipeline
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '33 18 * * *'
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  get-currently-deployed-versions:
+    name: Get currently deployed versions
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment:
+      name: build-pipeline
+    outputs:
+      matrix: ${{ steps.save-prod-version.outputs.matrix }}
+    steps:
+      - name: Checkout docs repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          path: docs
+
+      - name: Get token
+        id: token
+        run: |
+          githubAppID="${{ vars.APP_ID }}"
+          githubAppPrivateKey="${{ secrets.APP_PRIVATE_KEY }}"
+          githubAppInstallationId="${{ vars.APP_INSTALL_ID }}"
+          githubApiUrl="${{ vars.GH_SERVER_API_URL }}"
+          
+          iat=$(date +%s)
+          # Expire 9 minutes in the future. 10 minutes is the max for GitHub
+          exp=$((iat + 540))
+
+          # Generate encoded JWT header
+          jwtHeaderRaw='{"alg":"RS256"}'
+          jwtHeader=$( echo -n "${jwtHeaderRaw}" | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
+
+          # Generate encoded JWT payload
+          jwtPayloadRaw='{"iat":'"${iat}"',"exp":'"${exp}"',"iss":'"${githubAppID}"'}'
+          jwtPayload=$( echo -n "${jwtPayloadRaw}" | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
+
+          # Generate encoded JWT signature
+          jwtSignature=$( openssl dgst -sha256 -sign <(echo -n "${githubAppPrivateKey}") <(echo -n "${jwtHeader}.${jwtPayload}") | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
+          jwtToken=${jwtHeader}.${jwtPayload}.${jwtSignature}
+          echo "jwt=${jwtToken}" >> "${GITHUB_OUTPUT}"
+          token=$(curl --fail --silent -X POST -H "Authorization: Bearer ${jwtToken}" -H "Accept: application/vnd.github.v3+json" "${githubApiUrl}/app/installations/${githubAppInstallationId}/access_tokens" | jq -r .token)
+          echo "token=${token}" >> "${GITHUB_OUTPUT}"
+
+      - name: Checkout build pipeline repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.REPOSITORY }}
+          fetch-depth: 1
+          ref: ${{ vars.BRANCH }}
+          token: ${{ steps.token.outputs.token }}
+          github-server-url: ${{ vars.GH_SERVER_URL }}
+          path: pipeline
+
+      - name: Get versions of components
+        id: save-prod-version
+        run: |
+          buildartifacts=$(cat docs/data/buildartifact.json | jq '.options[].option' | xargs)
+          echo "[]" > output.json
+          for artifact in $buildartifacts ;
+          do
+              cat pipeline/clusters/helm_charts_data.json | jq --arg artifact "$artifact" '[to_entries[] | select(.value.component_name==$artifact)][0].value.zones.["c8y-ops-zone-1"].clusters.["eu-latest-cumulocity-com"]' > details.json
+              versionOfArtifact=$(cat details.json | jq '.version' | xargs)
+              timestamp=$(cat details.json | jq '.updated_at' | xargs)
+              rm details.json
+              if [[ $versionOfArtifact == 'null' ]]; then
+                  echo "$artifact is currently not deployed"
+              else
+                  echo "$artifact is currently deployed in version: $versionOfArtifact and was deployed at $timestamp"
+                  cat output.json | jq --arg artifact "$artifact" --arg version "$versionOfArtifact" --arg timestamp "$timestamp" '. += [{"artifact": $artifact, "version": $version, "timestamp": $timestamp}]' > output.tmp
+                  mv output.tmp output.json
+              fi
+              
+          done
+          echo "matrix=$(cat output.json | jq -c .)" >> $GITHUB_OUTPUT
+
+  update-changelog:
+    uses: ./.github/workflows/update-changelog-dates.yml
+    needs: [get-currently-deployed-versions]
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJson(needs.get-currently-deployed-versions.outputs.matrix) }}
+    with:
+      version: ${{ matrix.version }}
+      component: ${{ matrix.artifact }}
+      date: ${{ matrix.timestamp }}
+    secrets: inherit

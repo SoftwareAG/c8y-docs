@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Error message on removal of an inventory access mapping in SSO configuration provides correct information
+title: Correct error message when deleting an inventory role and a global role.
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

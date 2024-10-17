@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Correct error message when deleting an inventory role and a global role.
+title: Correct error message when deleting an inventory role or a global role
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

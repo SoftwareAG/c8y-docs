@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-53701
 version: 1020.26.5
 ---
-In the event of an error while deleting a global role or an inventory role, the message always stated that the role couldn't be deleted because it was assigned to a user. This fix ensures that the error message will now reflect the actual cause of the problem.
+In the event of an error while deleting an inventory role or a global role, the message always stated that the role couldn't be deleted because it was assigned to a user. This fix ensures that the error message will now reflect the actual cause of the problem.

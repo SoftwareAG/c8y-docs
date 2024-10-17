@@ -97,7 +97,7 @@ The management assistance process will be halted once Customer is provided a pot
 
 #### Additional Silver support processing
 
-* Critical Incidents will be reported daily unless otherwise agreed with Global Support on a case-by-case basis. Other incidents will be reported as agreed between Global Support and Customer on a case-by-case basis.                      |
+* Critical Incidents will be reported daily unless otherwise agreed with Global Support on a case-by-case basis. Other incidents will be reported as agreed between Global Support and Customer on a case-by-case basis.
 * Customer is provided with a timeline for Error Correction.
 
 #### Additional Gold support processing

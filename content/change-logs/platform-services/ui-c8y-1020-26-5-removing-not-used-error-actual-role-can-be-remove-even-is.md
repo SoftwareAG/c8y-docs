@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-53701
 version: 1020.26.5
 ---
-If the server returned an "unprocessable content" error while removing a global role, the error message always indicated that the issue occurred because the global role was assigned to a user. Now, the error message will display the correct information, for example "Role is used in inventory access mapping in SSO configuration".
+In the event of an error while deleting a global role or an inventory role, the message always stated that the role couldn't be deleted because it was assigned to a user. This fix ensures that the error message will now reflect the actual cause of the problem.

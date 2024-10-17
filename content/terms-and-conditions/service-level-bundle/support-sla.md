@@ -39,97 +39,87 @@ Global Support will classify incidents into three levels of severity according t
 * **Critical Incidents**: Customer’s problem has a significant business impact; however, operations can continue in a restricted fashion. The Cloud Services are usable but severely limited. There is no acceptable workaround available. Customer is experiencing a significant loss of service.
 * **Standard Incidents**: Customer’s problem has some business impact. The Cloud Services are usable and cause only minor inconvenience. It may be a minor Error, documentation Error, or incorrect operation of the Cloud Services, which does not significantly impede the operation of the Cloud Service.
 
+### Support services
+
+The services provided vary by support level as highlighted in the following table:
+
+| **Service**                              | **Bronze**      | **Silver**                 | **Gold**            |
+| ---------------------------------------- | --------------- | -------------------------- | ------------------- |
+| **Support Portal access for ATCs**       | 24/7            | 24/7                       | 24/7                |
+| **Phone support for Crisis Incidents**   | 9x5*            | 24/7                       | 24/7                |
+| **Phone support for Critical Incidents** | 9x5*            | 9x5*                       | 24/7                |
+| **Phone support for Standard Incidents** | 9x5*            | 9x5*                       | 24/7                |
+| **Initial response times**               | 1 Business Day* | Crisis: 1 hour             | Crisis: 30 minutes  |
+|                                          |                 | Critical: 4 Business Hours | Critical: 2 hours   |
+|                                          |                 | Standard: 1 Business Day   | Standard: 1 day     |
+| **Authorized Technical Contacts (ATCs)** | 7 ATCs          | 7 ATCs                     | Unlimited ATCs      |
+| **Support region**                       | One             | One                        | Per ATC             |
+| **Prioritized queuing**                  | No              | No                         | Yes                 |
+| **Management assistance process**        | No              | No                         | Yes                 |
+| **Web-based consulting sessions**        | No              | No                         | 4 sessions per year |
+
+\* During Business Hours.
+
+* Phone support: The support telephone number is available in Support Portal. If not provided in local language, telephone support is provided in English. Telephone support is provided during after-Business Hours and on non-Business Days in English only.
+* Initial response times: Customer will receive an initial response within the defined initial response times.
+* Authorized Technical Contacts (ATCs): Resstrictions to the number of ATC apply per Customer, not per contract. Customer may contract for additional ATCs.
+* Support region: The region of a customer is the region where that customer is located or has opted to define that region as their region. For example the region for an EMEA customer is EMEA, however an EMEA customer may opt for another region, say APJ, to be their default region. For Gold level, the region can be chosen per ATC.
+* Prioritized queuing: Incidents are prioritized ahead of other support incidents of the same severity level but lower support level.
+* Management assistance process: To ensure timely resolution, Crisis or Critical Incidents that remain unresolved for a defined period are escalated to progressively higher levels of management to expedite the resolution.
+* Web-based consulting sessions: One-on-one web-based consulting sessions on a variety of topics limited to up to 4 consultations per year plus others upon request and subject to availability. A list of sessions is available on Support Portal and is subject to change from time to time.
+
+### Management assistance process
+
+The following escalation times are defined for unresolved Crisis Incidents:
+* After 1 Day: Regional Director Support
+* After 2 Days: Global Vice President Support
+* After 3 Days: Global Senior Vice President Support
+* After 5 Days: Chief Operating Officer
+
+The following escalation times are defined for unresolved Critical Incidents:
+* After 5 Business Days: Regional Director Support
+* After 7 Business Days: Global Vice President Support
+* After 9 Business Days: Global Senior Vice President Support
+* After 11 Business Days: Chief Operating Officer
+
+The management assistance process will be halted once Customer is provided a potential resolution and until Customer has tested the solution. If Customer informs Global Support that the resolution hasn't resolved the problem, the management assistance process will resume.
+
+### Processing customer requests
+
+#### General
+
+* Customer requests will be received by Global Support and will be documented in Support Portal for further processing. The Customer will be given a reference processing number for future reference.
+* All crisis incidents must be submitted to Global Support by telephone. When submitting Security Incidents to Global Support, Customer must indicate this aspect to the support representative or set the security flag in the support ticket if reported via customer support portal.
+* When reaching Global Support by telephone, Customer is to provide the incident/ticket number so that work on the incident can commence.
+* Global Support has no obligation to solve the Customer’s issue within the reaction or any other time frame.
+
+#### Additional Silver support processing
+
+* Reporting: Critical Incidents will be reported daily unless otherwise agreed with Global Support on a case-by-case basis. Other incidents will be reported as agreed between Global Support and Customer on a case-by-case basis.                      |
+* Reaction measure: Customer is provided with a timeline for Error Correction.
+
+#### Additioanl Gold support processing
+
+* Global Support will respond within the defined reaction time. For critical and standard severity incidents, the active support region will initiate work on the solution. When the ATC's default support region comes online, it will take over the ownership of the incident.
+* After the default region takes ownership of the incident, critical and standard incidents will be progressed only during the business hours of the ATC's default region.
+* On non-Business Days Customer must always report critical and standard incidents through Support Portal and must follow up with Global Support service provider via telephone in order to receive an initial response from Global Support based on the agreed upon reaction time. The reaction time is measured from the time the Customer gets in contact with a Support Engineer.
+* Reporting: As agreed between Global Support and Customer.
+* Reaction measure for Crisis Incidents: A resolution plan provided within first four (4) hours after receipt of Crisis incident to include - in Provider's sole discretion - either:
+  * a definition of the intended solution to the problem, or
+  * a definition of a work-around while Provider develops or defines a solution, or
+  * a documented action plan that will include:
+    * current status of the resolution
+    * target timeline for next feedback
+    * responsible Provider resource(s)
+    * Customer obligations (e.g., provisioning of log files)
+* Reaction measure for other incidents: Customer is provided with a timeline for Error Correction.
+* Required effort for Crisis incidents: Economically justifiable effort within standard scope of resources.
+* Requited effort for other incidents: Reasonable effort within standard scope of resources.
+
+
 ### Customer responsibilities
 
 * Customer assigns Authorized Technical Contacts (ATCs) and communicates any changes to the list of ATCs to Provider.
 * Customer's ATC is responsible for cooperating with Provider's Global Support and providing necessary information to reproduce, troubleshoot and resolve the experienced error.
 * When an incident is submitted by an ATC to Provider's Support Portal, Customer authorizes Provider, for the purposes of troubleshooting and resolving such incident, to access Customer’s cloud environment for the duration of the submitted incident.
-
-### Bronze support
-
-#### Support services
-
-The following support services are included with Bronze support:
-
-* Twenty-four (24) hour access to Support Portal for ATCs.
-* 9x5 (9 hours a day; 5 days a week) telephone support for incidents according to this agreement during Business Hours. Customer will receive initial response within one Business Day during Business Hours only. The respective telephone number is available in Support Portal. If not provided in local language, telephone support is provided in English.
-* Seven (7) authorized technical contacts (ATC) of the Customer entitled to access Support Portal. This restriction applies per Customer and not per contract. Customer may contract for additional authorized contacts.
-* Information on new features, events, and Customer application articles.
-
-#### Processing customer requests
-
-* Customer requests will be received by Global Support and will be documented in Support Portal for further processing. The Customer will be given a reference processing number for future reference.
-* The region of a customer is the region where that customer is located or has opted to define that region as their region. For example the region for an EMEA customer is EMEA, however an EMEA customer may opt for another region, say APJ, to be their default region.
-* When reaching  Global Support by telephone, Customer is to provide the incident/ticket number so that work on the incident can commence.
-* Global Support has no obligation to solve the Customer’s issue within the reaction or any other time frame.
-
-### Silver support
-
-#### Support services
-
-* Twenty-four (24) hour access to Support Portal for ATCs.
-* 24x7 support service for crisis incidents. Telephone support according to this agreement is available 24x7 (24 hours a day; 7 days a week) for crisis requests and is provided during after-Business Hours and on non-Business Days in English only.
-* 9x5 (9 hours a day; 5 days a week) telephone support for critical and standard incidents according to this agreement during Business Hours. Customer will receive initial response within the defined reaction times during Business Hours only. The respective telephone number is available in Support Portal. If not provided in local language, telephone support is provided in English.
-* Seven (7) authorized technical contacts (ATC) of the Customer entitled to access Support Portal. This restriction applies per Customer and not per contract.
-* Information on new features, events, and Customer application articles.
-
-#### Processing customer requests
-
-* Customer requests will be received by Global Support and will be documented in Support Portal for further processing.The Customer will be given a reference processing number for future reference.
-* All crisis incidents must be submitted to Global Support by telephone. When submitting Security Incidents to Global Support, Customer must indicate this aspect to the support representative or set the security flag in the support ticket if reported via customer support portal.
-* The region of a customer is the region where that customer is located or has opted to define that region as their region. For example the region for an EMEA customer is EMEA, however an EMEA customer may opt for another region, say APJ, to be their default region.
-* During after-Business-Hours and non-Business Days, all communication will be in English only.
-* When reaching Global Support by telephone, Customer is to provide the incident/ticket number so that work on the incident can commence.
-* Global Support has no obligation to solve the Customer's issue within the reaction or any other time frame.
-
-#### Service expectations
-
-Global Support will determine the appropriate service according to the following table:
-
-| Severity Level        | Crisis                                                                                 | Critical                                                               | Standard                                                                                    |
-| --------------------- | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| ReactionTime          | 1 Hour: call-back or electronic reply.                                                 | 4 Business Hours: call-back or electronic reply.                       | 1 Business Day: call-back or electronic reply.                                              |
-| Reporting (timeframe) | Daily reporting (unless otherwise agreed with Global Support on a case-by-case basis). | As agreed between Global Support and Customer on a case-by-case basis. | As agreed between Global Support and Customer on a case-by-case basis.                      |
-| Reaction Measure      | Customer is provided with a timeline for Error Correction.                             | Customer is provided with a timeline for Error Correction.             | Information about publication date of the Cloud Services release that will solve the issue. |
-
-### Gold support
-
-#### Service description
-
-* Twenty-four (24) hour access to Support Portal for ATCs.
-* 24x7 support service for all incidents with initial response from Global Support within the defined reaction time. The respective telephone number is available in Support Portal. If not provided in local language, telephone support is provided in English. Telephone support is provided during after-Business Hours and on non-Business Days in English only.
-* Information on new features, events, and Customer application articles.
-* Resolution plan within first four hours after receipt of Crisis incident.
-* Prioritized queuing of support incidents (identical severity levels only).
-* Multi-region support-see "Processing Customer Requests" clause below.
-* Unlimited authorized technical contacts (ATC) of the Customer entitled to access Support Portal.
-* One-on-one web-based consulting sessions on a variety of topics limited to up to 4 consultations per year plus others upon request and subject to availability. A list of sessions is available on Support Portal and is subject to change from time to time.
-* Documentation on updates to the Cloud Services. Information regarding availability of Cloud Services and Documentation updates are published by Provider and available in Support Portal.
-
-#### Processing customer requests
-
-* Customer requests will be received by Global Support and will be documented in Support Portal for further processing.The Customer will be given a reference processing number for future reference.
-* All crisis incidents must be submitted to Global Support by telephone. When submitting Security Incidents to Global Support, Customer must indicate this aspect to the support representative or set the security flag in the support ticket if reported via customer support portal.
-* Global Support will respond within the defined reaction time. For critical and standard severity incidents, the active support region will initiate work on the solution. When the ATC's default support region comes online, it will take over the ownership of the incident.
-* After the default region takes ownership of the incident, critical and standard incidents will be progressed only during the business hours of the ATC's default region.
-* Default region of an ATC is the region where that ATC is located or has opted to define that region as their default region. For example the default region of an EMEA customer is EMEA, however an EMEA ATC may opt another region, say APJ, as their default region
-* On non-Business Days Customer must always report critical and standard incidents through Support Portal and must follow up with Global Support service provider via telephone in order to receive an initial response from Global Support based on the agreed upon reaction time. The reaction time is measured from the time the Customer gets in contact with a Support Engineer.
-* During after-Business-Hours and non-Business Days, all communication will be in English only.
-* When reaching Global Support by telephone, Customer is to provide the incident/ticket number so that work on the incident can commence.
-* Global Support has no obligation to solve the Customer's issue within the reaction or any other time frame.
-* Management Assistance Process will be halted once Customer is provided a potential resolution and until Customer has tested the solution. If Customer informs Global Support that the resolution hasn't resolved the problem, Management Assistance Process will resume.
-
-#### Service expectations
-
-Global Support will determine the appropriate service according to the following table:
-
-
-| Severity Level                | Crisis                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Critical                                                                                                                                                                                                          | Standard                                                                                   |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| ReactionTime                  | 30 minutes: call-back or electronic reply                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | 2 Hours: call-back or electronic reply                                                                                                                                                                            | 1 Day: call-back or electronic reply                                                       |
-| Prioritized Queuing           | Incidents are prioritized ahead of Standard Support incidents of the same severity level                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Management Assistance Process | After 1 Day: Regional Director Support After 2 Days: Global Vice President Support After 3 Days: Global Senior Vice President Support After 5 Days: Chief Operating Officer                                                                                                                                                                                                                                                                                                                                        | After 5 Business Days: Regional Director Support After 7 Business Days: Global Vice President Support After 9 Business Days: Global Senior Vice President Support After 11 Business Days: Chief Operating Officer | None                                                                                       |
-| Reporting (timeframe)         | As agreed between Global Support and Customer                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Daily or as agreed between Global Support and Customer                                                                                                                                                            | As agreed with Global Support and Customer on a case-by-case basis                         |
-| Reaction Measure              | Resolution plan provided within first four(4) hours after receipt of Crisis incident to include - in Provider's sole discretion- EITHER: (i) a definition of the intended solution to the problem, OR (ii) a definition of a work-around while Provider develops or defines a solution, OR (iii) a documented action plan that will include:- current status of the resolution - target timeline for next feedback - responsible Provider resource(s) - Customer obligations (e.g.,provisioning of log files,etc.) | Customer is provided with a timeline for Error Correction                                                                                                                                                         | Information about publication date of the Cloud Services release that will solve the issue |
-| Required Effort               | Economically justifiable effort within standard scope of resources                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Reasonable effort within standard scope of resources                                                                                                                                                              | Reasonable effort within standard scope of resources                                       |
 

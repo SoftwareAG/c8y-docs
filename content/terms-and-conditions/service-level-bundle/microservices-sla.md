@@ -1,12 +1,11 @@
 ---
-title: Service-level agreement
+title: Microservice hosting service-level agreement
 layout: bundle
-sector:
-  - app_enablement
-weight: 90
+weight: 20
+aliases:
+  - /microservice-sdk/microservices-sla/
+  - /microservices-sla/
 ---
-
-<h3 style="margin-top: -1em; padding-top: 0">for Microservices hosting on the {{< product-c8y-iot >}} Microservices platform</h3>
 
 **This Agreement** is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes {{< product-c8y-iot >}} Microservices ("Service", “Container-as-a-Service") for deploying Customer Microservices ("Microservices") on {{< product-c8y-iot >}} cloud instances.
 

@@ -8,7 +8,7 @@ sector:
   - getting_started
 ---
 
-{{< product-c8y-iot >}} is a robust, secure and scalable Internet of Things (IoT) platform designed to empower business to:
+{{< product-c8y-iot >}} is a robust, secure and scalable Internet of Things (IoT) platform designed to empower businesses in the following aspects:
 
 - **[Device integration](/concepts/concepts-introduction/#device-integration)**: Connect any type of device, from simple sensors to complex machinery, ensuring reliable and secure data transmission.
 
@@ -20,7 +20,7 @@ sector:
 
 - **[Analytics](/concepts/concepts-introduction/#analytics)**: Automate, optimize, and remotely control equipment operations using intelligent analytics and real-time decision-making.
 
-- **[Platform management](/concepts/concepts-introduction/#platform-management)**: Manage configurations, security settings, and tenant structures in the cloud, or deploy the platform on your premises for full control. 
+- **[Platform management](/concepts/concepts-introduction/#platform-management)**: Manage configurations, security settings, and tenant structures in the cloud, or deploy the platform on your premises for full control.
 
 ![Platform overview](/images/concepts-guide/platform_overview.png)
 

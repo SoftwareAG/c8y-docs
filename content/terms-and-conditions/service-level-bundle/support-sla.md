@@ -113,7 +113,7 @@ The management assistance process will be halted once Customer is provided a pot
     * current status of the resolution
     * target timeline for next feedback
     * responsible Provider resource(s)
-    * Customer obligations (e.g., provisioning of log files)
+    * Customer obligations (for example, provisioning of log files)
 * For other incidents, Customer is provided with a timeline for Error Correction.
 * For Crisis Incidents, economically justifiable effort within standard scope of resources is applied.
 * For other incidents, reasonable effort within standard scope of resources is applied.

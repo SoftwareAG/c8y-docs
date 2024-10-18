@@ -50,12 +50,12 @@ ROLES & PERMISSIONS for global smart rules:
 {{< /c8y-admon-req >}}
 
 Depending on the initial configuration of a global smart rule, there are two types possible:
-- Global smart rules enabled for all assets by default: When no asset is selected in the initial configuration. Such a smart rule is automatically applied to any asset available in the system, including assets added later in time.
+- Global smart rules enabled for all assets by default: When no asset is selected in the initial configuration. Such a smart rule is automatically applied to each asset available in the system, including assets added later in time.
 - Global smart rules disabled for all assets by default: When at least one asset is selected in the initial configuration. Such a smart rule is automatically disabled for any other assets except the ones selected during creation. You can manually enable it for other existing or newly added assets.
 
 **Local smart rules**
 
-  Local smart rules are created in either a group or a device. A local rule only affects the asset in which it was created and may affect all child assets depending on the configuration.
+  Local smart rules are created from a group or a device. A local rule only affects the asset in which it was created and may affect all child assets depending on the configuration.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS for local smart rules:

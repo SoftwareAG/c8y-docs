@@ -21,7 +21,7 @@ The following terms apply across all support levels unless otherwise specified:
   * EMEA: Central European Time (CET).
   * APJ: Malaysia Time (MYT).
   * US: Mountain Time (MT).
-* **Cloud Services**: Provider's cloud services as specified in the Cloud Services order form.
+* **Cloud Services**: Provider's Cloud Services as specified in the Cloud Services order form.
 * **Error**: Any verifiable and reproducible failure of the Cloud Services to substantially conform to the specifications for such Cloud Services. Notwithstanding the foregoing, ”Error” shall not include any such failure that is caused by:
   1. the use or operation of the Cloud Services with any other software or code or in an environment other than that intended or recommended in this documentation,
   2. modifications to the Cloud Services not made or approved by the Provider in writing, or

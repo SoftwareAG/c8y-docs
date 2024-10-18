@@ -65,12 +65,16 @@ Under the **Ongoing migration** section is located **Tenants** list, second part
 This area displays a list of subtenants in the table grid with more detail information about each subtenant and it's current migration status.
 In this section user can select the tenant to enable migration for.
 
-Here, you can see: 
-* **Tenant** field with tenant name.
-* **ID** field shows the tenant ID. 
-* **Domain** field shows tenant domain.
-* **Parent tenant ID** field shows tenant ID of the parent of the tenant. 
-* **Status** field shows current state for each tenant from the list.
+For each tenant following information is displayed: 
+* **Tenant** - value of tenant id.
+* **ID** - value of tenant id. 
+* **Domain** - value of tenant domain.
+* **Parent tenant ID** - value of parent tenant id. 
+* **Status** - current state of migration for given tenant.
+* **RequestedDate** - date when tenant being added to queue for migration.
+* **RequestedBy** - tenant id and tenant user which requested migration
+* **ApprovedDate** - date when migration being approved by administrator.
+* **ApprovedBy** - tenant id and tenant name of the user which approved the migration.
 
 After hoverover on the tenant row user can see one of three buttons according to migration state to controll the flow:
 * **Add to queue** if tenant has **Legacy measurement** state.

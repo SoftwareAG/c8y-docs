@@ -1,6 +1,6 @@
 ---
 date: ""
-title: UI Filtering the Alarm Audit Logs with Date filter displays wrong results (#7025) [GRAFT][release/y2024]
+title: Improved information on time filtering in Audit logs page
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

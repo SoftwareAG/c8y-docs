@@ -1,5 +1,5 @@
 ---
-date: 2024-09-11
+date: 2024-10-17
 title: "Data broker operations delivery improvements"
 product_area: Platform services
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2024-10-17
 title: Resolved issue with double LWM2M bulk registration execution
 product_area: Device management & connectivity
 change_type:

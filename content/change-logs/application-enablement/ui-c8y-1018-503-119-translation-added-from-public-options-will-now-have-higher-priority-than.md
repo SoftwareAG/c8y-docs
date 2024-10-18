@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-10-17
 title: Public option translations now have higher priority than translations from plugin PO files
 product_area: Application enablement & solutions
 change_type:

@@ -35,7 +35,7 @@ The following terms apply across all support levels unless otherwise specified:
 
 Global Support will classify incidents into three levels of severity according to the following table:
 
-* **Crisis Incidents**: Customer’s problem has a severe business impact, e.g. production down. Customer is unable to use the Cloud Services, resulting in a major impact on Customer’s operations. Work cannot reasonably continue.
+* **Crisis Incidents**: Customer’s problem has a severe business impact, such as production down. Customer is unable to use the Cloud Services, resulting in a major impact on Customer’s operations. Work cannot reasonably continue.
 * **Critical Incidents**: Customer’s problem has a significant business impact; however, operations can continue in a restricted fashion. The Cloud Services are usable but severely limited. There is no acceptable workaround available. Customer is experiencing a significant loss of service.
 * **Standard Incidents**: Customer’s problem has some business impact. The Cloud Services are usable and cause only minor inconvenience. It may be a minor Error, documentation Error, or incorrect operation of the Cloud Services, which does not significantly impede the operation of the Cloud Service.
 

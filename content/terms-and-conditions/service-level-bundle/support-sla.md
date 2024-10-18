@@ -62,7 +62,7 @@ The services provided vary by support level as highlighted in the following tabl
 
 The services are defined as follows:
 
-* **Phone support**: The support telephone number is available in Support Portal. If not provided in local language, telephone support is provided in English. Telephone support is provided during after-Business Hours and on non-Business Days in English only.
+* **Phone support**: The support telephone number is available in Support Portal. Telephone support is provided in English only.
 * **Initial response times**: Customer will receive an initial response within the defined initial response times.
 * **Number of ATCs**: Restrictions to the number of ATCs apply per Customer, not per contract. Customer may contract for additional ATCs.
 * **Support region**: The region of a customer is the region where that customer is located or has opted to define that region as their region. For example the region for an EMEA customer is EMEA, however an EMEA customer may opt for another region, say APJ, to be their default region. For Gold support, the region can be chosen per ATC.

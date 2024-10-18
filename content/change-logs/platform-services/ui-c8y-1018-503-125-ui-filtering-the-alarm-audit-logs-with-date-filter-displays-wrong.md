@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60595
 version: 1018.503.125
 ---
-UI Filtering the Alarm Audit Logs with Date filter displays wrong results (#7025) [GRAFT][release/y2024]
+In the **Audit logs** page, time information is provided in the "Times" column on the left (server time) and inside the audit log card (device time). The information popup has been improved, to make users aware that audit logs cards are filtered by device time which can be different from the server time.

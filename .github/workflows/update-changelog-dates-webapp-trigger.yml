@@ -1,23 +1,82 @@
-name: Update changelog dates for webapps trigger
+name: daily-changelogs-dates-trigger
 on:
   workflow_dispatch:
   schedule:
-    # Every Thursday at 18:33
-    - cron: '33 18 * * 4'
+    - cron: 00 19 * * *
 
 permissions:
   pull-requests: write
   contents: write
 
 jobs:
-  trigger-update-changelog-dates-webapp:
-    uses: ./.github/workflows/update-changelog-dates-webapp.yml
+  get-component-details:
+    name: Get component details from helm charts
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: pipeline-read
+    outputs:
+      matrix: ${{ steps.component-details.outputs.matrix }}
+    steps:
+      - name: checkout docs repository
+        uses: actions/checkout@v4
+        with:
+          path: docs
+          fetch-depth: 1
+
+      - name: Creating github access token #TODO: use our github app instead
+        id: token
+        run: |
+          githubAppID="${{ vars.APP_ID }}"
+          githubAppPrivateKey="${{ secrets.APP_SECRET_KEY_PM }}" 
+          githubAppInstallationId="${{ vars.APP_INSTALL_ID }}"
+          githubApiUrl="${{ vars.GH_SERVER_API_URL }}"
+          iat=$(date +%s)
+          # Expire 9 minutes in the future. 10 minutes is the max for GitHub
+          exp=$((iat + 540))
+          # Generate encoded JWT header
+          jwtHeaderRaw='{"alg":"RS256"}'
+          jwtHeader=$( echo -n "${jwtHeaderRaw}" | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
+          # Generate encoded JWT payload
+          jwtPayloadRaw='{"iat":'"${iat}"',"exp":'"${exp}"',"iss":'"${githubAppID}"'}'
+          jwtPayload=$( echo -n "${jwtPayloadRaw}" | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
+          # Generate encoded JWT signature
+          jwtSignature=$( openssl dgst -sha256 -sign <(echo -n "${githubAppPrivateKey}") <(echo -n "${jwtHeader}.${jwtPayload}") | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
+          jwtToken=${jwtHeader}.${jwtPayload}.${jwtSignature}                              
+          token=$(curl --fail --silent -X POST -H "Authorization: Bearer ${jwtToken}" -H "Accept: application/vnd.github.v3+json" "${githubApiUrl}/app/installations/${githubAppInstallationId}/access_tokens" | jq -r .token)
+          echo "jwt=${jwtToken}" 
+          echo "token=${token}" 
+          echo "jwt=${jwtToken}" >> "${GITHUB_OUTPUT}"
+          echo "token=${token}" >> "${GITHUB_OUTPUT}"
+
+      - name: Checkout c8y-iot-build-pipeline repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.FORKED_REPO }}
+          fetch-depth: 1
+          ref: ${{ vars.BRANCH }}
+          token: ${{ steps.token.outputs.token }}
+          path: pipeline
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Get component details from helm charts
+        id: component-details
+        run: |
+          python docs/scripts/get-component-details-from-chart.py
+          echo "matrix=$(cat components_to_update.json | jq -c .)" >> $GITHUB_OUTPUT
+
+  trigger-update-changelog:
+    uses: ./.github/workflows/update-changelog-dates.yml
+    needs: [ get-component-details ]
     strategy:
       matrix:
-        include:
-          - component: 'ui-c8y'
-            contextPath: 'cockpit'
+        include: ${{ fromJson(needs.get-component-details.outputs.matrix) }}
     with:
-      component: ${{ matrix.component }}
-      contextPath: ${{ matrix.contextPath }}
-    secrets: inherit
+      version: ${{ matrix.component_version }}
+      component: ${{ matrix.component_name }}
+      date: ${{ matrix.component_update_date }}
+
+
